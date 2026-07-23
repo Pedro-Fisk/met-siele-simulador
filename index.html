@@ -479,6 +479,55 @@
     .results-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin: 2rem 0 2.5rem; }
     .results-actions .btn { flex: 1; min-width: 180px; }
 
+    /* ── Código de resultado ── */
+    .result-code-wrap {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.1rem 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .result-code-wrap p { font-size: .82rem; color: var(--text-soft); line-height: 1.5; margin-bottom: .6rem; }
+    .result-code-row { display: flex; gap: .6rem; align-items: stretch; }
+    .result-code {
+      flex: 1; resize: none; height: 3.2rem;
+      background: var(--surface-2); border: 1.5px solid var(--border);
+      border-radius: 10px; padding: .5rem .7rem;
+      font-family: monospace; font-size: .72rem; color: var(--text);
+      word-break: break-all;
+    }
+    .btn-copy { white-space: nowrap; padding: .6rem 1.2rem; font-size: .85rem; }
+
+    /* ── Painel de resultados (professor) ── */
+    .log-table-wrap { overflow-x: auto; margin-top: 1rem; }
+    .log-table {
+      width: 100%; border-collapse: collapse;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font-size: .85rem;
+      min-width: 640px;
+    }
+    .log-table th, .log-table td { padding: .6rem .8rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .log-table th {
+      font-family: var(--font-h); font-size: .68rem; font-weight: 800;
+      letter-spacing: .07em; text-transform: uppercase; color: var(--text-soft);
+    }
+    .log-table tr:last-child td { border-bottom: none; }
+    .log-empty { color: var(--text-soft); font-size: .88rem; padding: 1.2rem 0; }
+    .log-import {
+      width: 100%; min-height: 4.2rem; resize: vertical;
+      background: var(--surface); border: 2px solid var(--border);
+      border-radius: var(--radius); padding: .7rem .9rem;
+      font-family: monospace; font-size: .74rem; color: var(--text);
+      outline: none;
+    }
+    .log-import:focus { border-color: var(--red); }
+    .log-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin: .8rem 0 2.2rem; }
+    .log-actions .btn { padding: .65rem 1.3rem; font-size: .88rem; }
+    .log-feedback { font-size: .82rem; font-weight: 700; margin-top: .5rem; }
+
     .end-note {
       text-align: center; padding: 3rem 1rem;
     }
@@ -529,6 +578,15 @@
       <div class="section-label" id="sections-label" style="display:none">Por seção</div>
       <div class="cards-grid" id="sections-grid" style="display:none"></div>
 
+      <div class="section-label" id="log-label" style="display:none">Acompanhamento</div>
+      <div class="cards-grid" id="log-grid" style="display:none">
+        <button class="pick-card" style="--accent:#c9922e" id="open-log">
+          <div class="pick-icon">📋</div>
+          <h3>Resultados dos alunos</h3>
+          <p>Veja os simulados concluídos neste navegador, importe códigos enviados pelos alunos e exporte CSV</p>
+        </button>
+      </div>
+
       <p class="home-note" id="home-note">
         No modo aluno, você responde tudo antes de ver a correção — como na prova real. Ao final,
         você recebe o gabarito comentado e uma estimativa do seu nível no Quadro Comum Europeu (CEFR).
@@ -558,6 +616,35 @@
         <button class="btn btn-primary" id="phase-btn" style="min-width:220px">Enviar respostas</button>
       </div>
     </div>
+  </div>
+
+  <!-- ═══════════ PAINEL DO PROFESSOR: RESULTADOS ═══════════ -->
+  <div class="screen" id="screen-log">
+    <div class="quiz-header">
+      <button class="back-btn" id="log-back">← Início</button>
+      <div>
+        <div class="qh-title">📋 Resultados dos alunos</div>
+        <div class="qh-sub">Registros deste navegador + códigos importados</div>
+      </div>
+      <div class="qh-spacer"></div>
+      <button class="theme-toggle" id="theme-toggle-4" title="Alternar tema" style="position:relative;top:auto;right:auto">🌙</button>
+    </div>
+    <main class="container" style="flex:1">
+      <div class="section-label">Importar códigos de resultado</div>
+      <p style="font-size:.82rem;color:var(--text-soft);line-height:1.5;margin-bottom:.6rem">
+        Cole aqui um ou mais códigos que os alunos enviaram (pode colar vários de uma vez, separados por espaço ou linha).
+      </p>
+      <textarea class="log-import" id="log-import" placeholder="MET1.abc123..."></textarea>
+      <div class="log-feedback" id="log-feedback"></div>
+      <div class="log-actions">
+        <button class="btn btn-primary" id="log-import-btn">Importar códigos</button>
+        <button class="btn btn-ghost" id="log-export-btn">⬇ Exportar CSV</button>
+        <button class="btn btn-ghost" id="log-clear-btn">🗑 Limpar registros</button>
+      </div>
+      <div class="section-label">Registros</div>
+      <div class="log-table-wrap" id="log-table-wrap"></div>
+      <div style="height:2rem"></div>
+    </main>
   </div>
 
   <!-- ═══════════ RESULTADOS ═══════════ -->
@@ -652,6 +739,90 @@
     } catch (e) {}
   }
 
+  /* ══════════════ Registro de resultados ══════════════ */
+  const LOG_KEY = 'met_results_log';
+  function loadLog() { try { return JSON.parse(localStorage.getItem(LOG_KEY)) || []; } catch (e) { return []; } }
+  function saveLogList(list) { try { localStorage.setItem(LOG_KEY, JSON.stringify(list)); } catch (e) {} }
+  function addLogEntry(entry) {
+    const list = loadLog();
+    if (list.some(e => e.t === entry.t && e.n === entry.n)) return false;
+    list.push(entry);
+    saveLogList(list);
+    return true;
+  }
+  function encodeResult(entry) {
+    const json = JSON.stringify(entry);
+    return 'MET1.' + btoa(unescape(encodeURIComponent(json))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  function decodeResult(code) {
+    code = code.trim();
+    if (!code.startsWith('MET1.')) return null;
+    try {
+      let b = code.slice(5).replace(/-/g, '+').replace(/_/g, '/');
+      while (b.length % 4) b += '=';
+      const e = JSON.parse(decodeURIComponent(escape(atob(b))));
+      return (e && typeof e.t === 'number' && e.n && typeof e.c === 'number' && typeof e.q === 'number') ? e : null;
+    } catch (e) { return null; }
+  }
+  function cefrLabelOf(scaled) { return scaled === null || scaled === undefined ? '—' : cefrBand(scaled).level; }
+
+  function renderLogTable() {
+    const wrap = $('log-table-wrap');
+    const list = loadLog().slice().sort((a, b) => b.t - a.t);
+    if (!list.length) {
+      wrap.innerHTML = '<div class="log-empty">Nenhum resultado registrado ainda. Os resultados aparecem aqui quando um aluno conclui um simulado neste navegador ou quando você importa um código.</div>';
+      return;
+    }
+    let html = '<table class="log-table"><thead><tr><th>Data</th><th>Aluno</th><th>Simulado</th><th>Acertos</th><th>%</th><th>Listening</th><th>R&G</th><th>Geral</th></tr></thead><tbody>';
+    list.forEach(e => {
+      const d = new Date(e.t).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' });
+      html += '<tr><td>' + d + '</td><td>' + esc(e.n) + '</td><td>' + esc(e.s) + '</td><td>' + e.c + '/' + e.q + '</td><td>' + Math.round(e.c / e.q * 100) + '%</td>' +
+        '<td>' + cefrLabelOf(e.L) + '</td><td>' + cefrLabelOf(e.R) + '</td><td>' + cefrLabelOf(e.O) + '</td></tr>';
+    });
+    wrap.innerHTML = html + '</tbody></table>';
+  }
+  function showLog() {
+    renderLogTable();
+    $('log-feedback').textContent = '';
+    $('log-import').value = '';
+    showScreen('screen-log');
+  }
+  $('log-back').addEventListener('click', goHome);
+  $('log-import-btn').addEventListener('click', () => {
+    const codes = $('log-import').value.split(/\s+/).filter(Boolean);
+    let ok = 0, dup = 0, bad = 0;
+    codes.forEach(c => {
+      const e = decodeResult(c);
+      if (!e) { bad++; return; }
+      addLogEntry(e) ? ok++ : dup++;
+    });
+    const fb = $('log-feedback');
+    fb.textContent = codes.length === 0 ? 'Cole ao menos um código.' :
+      '✔ ' + ok + ' importado(s)' + (dup ? ' · ' + dup + ' já registrado(s)' : '') + (bad ? ' · ' + bad + ' inválido(s)' : '');
+    fb.style.color = bad && !ok ? 'var(--red)' : 'var(--green)';
+    if (ok) { $('log-import').value = ''; renderLogTable(); }
+  });
+  $('log-export-btn').addEventListener('click', () => {
+    const list = loadLog().slice().sort((a, b) => b.t - a.t);
+    const rows = [['Data', 'Aluno', 'Simulado', 'Acertos', 'Total', 'Porcentagem', 'CEFR Listening', 'CEFR Reading&Grammar', 'CEFR Geral']];
+    list.forEach(e => rows.push([
+      new Date(e.t).toLocaleString('pt-BR'), e.n, e.s, e.c, e.q,
+      Math.round(e.c / e.q * 100) + '%', cefrLabelOf(e.L), cefrLabelOf(e.R), cefrLabelOf(e.O)
+    ]));
+    const csv = '﻿' + rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    a.download = 'met-resultados.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+  $('log-clear-btn').addEventListener('click', () => {
+    if (confirm('Apagar todos os resultados registrados neste navegador? Essa ação não pode ser desfeita.')) {
+      saveLogList([]);
+      renderLogTable();
+    }
+  });
+
   /* ══════════════ Carregamento ══════════════ */
   fetch(TEST_FILE)
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
@@ -672,6 +843,9 @@
       $('name-wrap').style.display = 'none';
       $('sections-label').style.display = 'block';
       $('sections-grid').style.display = 'grid';
+      $('log-label').style.display = 'block';
+      $('log-grid').style.display = 'grid';
+      $('open-log').addEventListener('click', showLog);
       $('home-note').textContent = 'No modo professor, você conduz o simulado questão a questão: projeta na TV, controla o áudio, a turma vota e você revela a resposta com o comentário.';
     }
     // Mini cards
@@ -1070,24 +1244,31 @@
     const cefrPanel = document.createElement('div');
     cefrPanel.className = 'cefr-panel';
     const cards = [];
-    let scaledSum = 0, scaledCount = 0;
+    let scaledL = null, scaledR = null, scaledO = null;
     if (listeningQs.length) {
       const raw = listeningQs.filter(q => state.answers[q.n] === q.key).length;
-      const scaled = Math.round(raw / listeningQs.length * 80);
-      scaledSum += scaled; scaledCount++;
-      cards.push(cefrCardHTML('Listening', scaled, raw, listeningQs.length, false));
+      scaledL = Math.round(raw / listeningQs.length * 80);
+      cards.push(cefrCardHTML('Listening', scaledL, raw, listeningQs.length, false));
     }
     if (rgQs.length) {
       const raw = rgQs.filter(q => state.answers[q.n] === q.key).length;
-      const scaled = Math.round(raw / rgQs.length * 80);
-      scaledSum += scaled; scaledCount++;
-      cards.push(cefrCardHTML('Reading & Grammar', scaled, raw, rgQs.length, false));
+      scaledR = Math.round(raw / rgQs.length * 80);
+      cards.push(cefrCardHTML('Reading & Grammar', scaledR, raw, rgQs.length, false));
     }
-    if (scaledCount === 2) {
-      cards.push(cefrCardHTML('Nível geral estimado', Math.round(scaledSum / 2), null, null, true));
+    if (scaledL !== null && scaledR !== null) {
+      scaledO = Math.round((scaledL + scaledR) / 2);
+      cards.push(cefrCardHTML('Nível geral estimado', scaledO, null, null, true));
     }
     cefrPanel.innerHTML = cards.join('');
     body.appendChild(cefrPanel);
+
+    // Registra o resultado e gera o código para o professor
+    const entry = {
+      t: Date.now(), n: state.studentName, s: state.scope.label,
+      c: correct, q: total, L: scaledL, R: scaledR, O: scaledO
+    };
+    addLogEntry(entry);
+    const code = encodeResult(entry);
 
     const note = document.createElement('p');
     note.className = 'cefr-note';
@@ -1113,6 +1294,29 @@
       secWrap.appendChild(row);
     });
     body.appendChild(secWrap);
+
+    // Código do resultado (para enviar ao professor)
+    const codeWrap = document.createElement('div');
+    codeWrap.className = 'result-code-wrap';
+    codeWrap.innerHTML =
+      '<div class="section-label" style="margin:0 0 .45rem">📨 Código do resultado</div>' +
+      '<p>Envie este código para o seu professor (por exemplo, pelo WhatsApp). Ele importa o código no painel do professor e registra o seu resultado.</p>' +
+      '<div class="result-code-row"><textarea class="result-code" readonly id="result-code">' + esc(code) + '</textarea>' +
+      '<button class="btn btn-primary btn-copy" id="copy-code">Copiar</button></div>';
+    body.appendChild(codeWrap);
+    codeWrap.querySelector('#copy-code').addEventListener('click', () => {
+      const ta = codeWrap.querySelector('#result-code');
+      const done = () => {
+        const b = codeWrap.querySelector('#copy-code');
+        b.textContent = 'Copiado ✓';
+        setTimeout(() => b.textContent = 'Copiar', 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(ta.value).then(done, () => { ta.select(); document.execCommand('copy'); done(); });
+      } else {
+        ta.select(); document.execCommand('copy'); done();
+      }
+    });
 
     // Ações
     const actions = document.createElement('div');
