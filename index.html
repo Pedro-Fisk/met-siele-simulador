@@ -159,6 +159,7 @@
       font-size: 1.25rem;
     }
     .pick-card h3 { font-size: 1.02rem; font-weight: 800; }
+    .test-tag { color: var(--red); font-size: .82em; font-weight: 800; margin-left: .3rem; }
     .pick-card p  { font-size: .8rem; color: var(--text-soft); line-height: 1.45; }
     .pick-full { --accent: #d81f26; }
     .pick-mini { --accent: #0EA5A0; }
@@ -630,6 +631,19 @@
       <button class="theme-toggle" id="theme-toggle-4" title="Alternar tema" style="position:relative;top:auto;right:auto">🌙</button>
     </div>
     <main class="container" style="flex:1">
+      <div id="log-cloud-section" style="display:none">
+        <div class="section-label">☁️ Resultados na nuvem</div>
+        <p style="font-size:.82rem;color:var(--text-soft);line-height:1.5;margin-bottom:.6rem">
+          Os resultados dos alunos são enviados automaticamente para a planilha do Fisk Hub.
+          Digite a chave do professor para buscá-los.
+        </p>
+        <div style="display:flex;gap:.7rem;flex-wrap:wrap">
+          <input class="name-field-input" id="log-teacher-key" type="password" placeholder="Chave do professor" autocomplete="off" style="flex:1;min-width:220px">
+          <button class="btn btn-primary" id="log-cloud-btn" style="padding:.65rem 1.3rem;font-size:.88rem">Buscar da nuvem</button>
+        </div>
+        <div class="log-feedback" id="log-cloud-feedback"></div>
+        <div style="height:1.2rem"></div>
+      </div>
       <div class="section-label">Importar códigos de resultado</div>
       <p style="font-size:.82rem;color:var(--text-soft);line-height:1.5;margin-bottom:.6rem">
         Cole aqui um ou mais códigos que os alunos enviaram (pode colar vários de uma vez, separados por espaço ou linha).
@@ -639,7 +653,6 @@
       <div class="log-actions">
         <button class="btn btn-primary" id="log-import-btn">Importar códigos</button>
         <button class="btn btn-ghost" id="log-export-btn">⬇ Exportar CSV</button>
-        <button class="btn btn-ghost" id="log-clear-btn">🗑 Limpar registros</button>
       </div>
       <div class="section-label">Registros</div>
       <div class="log-table-wrap" id="log-table-wrap"></div>
@@ -669,6 +682,14 @@
   /* ══════════════ Setup ══════════════ */
   const PROF_MODE = new URLSearchParams(location.search).get('modo') === 'professor';
   const TEST_FILE = 'questions/red.json';
+
+  /* Backend do Fisk Hub (Google Apps Script + Sheets) — envio/consulta de resultados */
+  const CLOUD = {
+    endpoint: '___CLOUD_ENDPOINT___',
+    appKey: 'fisk_0719bacbecc857f61d1e',
+    tool: 'met'
+  };
+  const CLOUD_ON = CLOUD.endpoint.indexOf('https://') === 0;
   const LETTERS = ['A', 'B', 'C', 'D'];
   const SPEAKER_SVG = '<svg class="replay-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
 
@@ -766,6 +787,47 @@
   }
   function cefrLabelOf(scaled) { return scaled === null || scaled === undefined ? '—' : cefrBand(scaled).level; }
 
+  function sendResultToCloud(entry, statusEl) {
+    if (!CLOUD_ON) { if (statusEl) statusEl.textContent = ''; return; }
+    if (statusEl) statusEl.textContent = '☁️ Enviando resultado ao professor…';
+    fetch(CLOUD.endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ key: CLOUD.appKey, tool: CLOUD.tool, data: entry })
+    }).then(r => r.json()).then(res => {
+      if (statusEl) statusEl.textContent = res.ok
+        ? '☁️ Resultado enviado ao professor automaticamente ✓ (o código acima é só um plano B)'
+        : '⚠️ Não foi possível enviar automaticamente — envie o código acima ao seu professor.';
+    }).catch(() => {
+      if (statusEl) statusEl.textContent = '⚠️ Sem conexão com a nuvem — envie o código acima ao seu professor.';
+    });
+  }
+
+  async function fetchCloudResults() {
+    const key = $('log-teacher-key').value.trim();
+    const fb = $('log-cloud-feedback');
+    if (!key) { fb.textContent = 'Digite a chave do professor.'; fb.style.color = 'var(--red)'; return; }
+    try { localStorage.setItem('met_teacher_key', key); } catch (e) {}
+    fb.style.color = 'var(--text-soft)';
+    fb.textContent = '☁️ Buscando resultados na nuvem…';
+    try {
+      const r = await fetch(CLOUD.endpoint + '?key=' + encodeURIComponent(key) + '&tool=' + CLOUD.tool);
+      const res = await r.json();
+      if (!res.ok) { fb.textContent = '⚠️ ' + (res.error === 'chave inválida' ? 'Chave incorreta.' : res.error); fb.style.color = 'var(--red)'; return; }
+      let novos = 0;
+      (res.results || []).forEach(e => {
+        if (e && typeof e.t === 'number' && e.n && typeof e.c === 'number' && typeof e.q === 'number') {
+          if (addLogEntry(e)) novos++;
+        }
+      });
+      fb.style.color = 'var(--green)';
+      fb.textContent = '☁️ ' + (res.results || []).length + ' resultado(s) na nuvem · ' + novos + ' novo(s) adicionado(s)';
+      renderLogTable();
+    } catch (e) {
+      fb.textContent = '⚠️ Erro de conexão com a nuvem.'; fb.style.color = 'var(--red)';
+    }
+  }
+
   function renderLogTable() {
     const wrap = $('log-table-wrap');
     const list = loadLog().slice().sort((a, b) => b.t - a.t);
@@ -785,8 +847,17 @@
     renderLogTable();
     $('log-feedback').textContent = '';
     $('log-import').value = '';
+    if (CLOUD_ON) {
+      $('log-cloud-section').style.display = 'block';
+      let saved = '';
+      try { saved = localStorage.getItem('met_teacher_key') || ''; } catch (e) {}
+      $('log-teacher-key').value = saved;
+      $('log-cloud-feedback').textContent = '';
+      if (saved) fetchCloudResults();
+    }
     showScreen('screen-log');
   }
+  $('log-cloud-btn').addEventListener('click', fetchCloudResults);
   $('log-back').addEventListener('click', goHome);
   $('log-import-btn').addEventListener('click', () => {
     const codes = $('log-import').value.split(/\s+/).filter(Boolean);
@@ -816,12 +887,6 @@
     a.click();
     URL.revokeObjectURL(a.href);
   });
-  $('log-clear-btn').addEventListener('click', () => {
-    if (confirm('Apagar todos os resultados registrados neste navegador? Essa ação não pode ser desfeita.')) {
-      saveLogList([]);
-      renderLogTable();
-    }
-  });
 
   /* ══════════════ Carregamento ══════════════ */
   fetch(TEST_FILE)
@@ -838,6 +903,9 @@
 
   function buildHome() {
     $('hero-sub').textContent = DATA.examLabel + ' · ' + DATA.name;
+    const TAG = '#' + DATA.id;
+    const tagHTML = ' <span class="test-tag">' + esc(TAG) + '</span>';
+    document.querySelector('[data-scope="full"] h3').innerHTML = 'Simulado Completo' + tagHTML;
     if (PROF_MODE) {
       $('prof-badge').style.display = 'inline-block';
       $('name-wrap').style.display = 'none';
@@ -854,8 +922,8 @@
     DATA.minis.forEach((m, i) => {
       const b = document.createElement('button');
       b.className = 'pick-card pick-mini';
-      b.innerHTML = '<div class="pick-icon">⚡️</div><h3>' + esc(m.name) + '</h3><p>' + esc(m.desc) + '</p>';
-      b.addEventListener('click', () => startPractice({ type: 'mini', id: m.id, label: m.name }));
+      b.innerHTML = '<div class="pick-icon">⚡️</div><h3>' + esc(m.name) + tagHTML + '</h3><p>' + esc(m.desc) + '</p>';
+      b.addEventListener('click', () => startPractice({ type: 'mini', id: m.id, label: m.name + ' ' + TAG }));
       mg.appendChild(b);
     });
     // Section cards (professor)
@@ -866,13 +934,13 @@
         const n = DATA.units.filter(u => u.section === s.id).reduce((a, u) => a + u.questions.length, 0);
         const b = document.createElement('button');
         b.className = 'pick-card pick-sec';
-        b.innerHTML = '<div class="pick-icon">' + (s.kind === 'listening' ? '🎧' : '📖') + '</div><h3>' + esc(s.name) + '</h3><p>' + n + ' questões</p>';
-        b.addEventListener('click', () => startPractice({ type: 'section', id: s.id, label: s.name }));
+        b.innerHTML = '<div class="pick-icon">' + (s.kind === 'listening' ? '🎧' : '📖') + '</div><h3>' + esc(s.name) + tagHTML + '</h3><p>' + n + ' questões</p>';
+        b.addEventListener('click', () => startPractice({ type: 'section', id: s.id, label: s.name + ' ' + TAG }));
         sg.appendChild(b);
       });
     }
     document.querySelector('[data-scope="full"]').addEventListener('click', () =>
-      startPractice({ type: 'full', id: 'full', label: 'Simulado Completo' }));
+      startPractice({ type: 'full', id: 'full', label: 'Simulado Completo ' + TAG }));
     $('student-name').addEventListener('input', e => { state.studentName = e.target.value.trim(); });
   }
 
@@ -1265,7 +1333,7 @@
     // Registra o resultado e gera o código para o professor
     const entry = {
       t: Date.now(), n: state.studentName, s: state.scope.label,
-      c: correct, q: total, L: scaledL, R: scaledR, O: scaledO
+      c: correct, q: total, L: scaledL, R: scaledR, O: scaledO, test: DATA.id
     };
     addLogEntry(entry);
     const code = encodeResult(entry);
@@ -1302,8 +1370,10 @@
       '<div class="section-label" style="margin:0 0 .45rem">📨 Código do resultado</div>' +
       '<p>Envie este código para o seu professor (por exemplo, pelo WhatsApp). Ele importa o código no painel do professor e registra o seu resultado.</p>' +
       '<div class="result-code-row"><textarea class="result-code" readonly id="result-code">' + esc(code) + '</textarea>' +
-      '<button class="btn btn-primary btn-copy" id="copy-code">Copiar</button></div>';
+      '<button class="btn btn-primary btn-copy" id="copy-code">Copiar</button></div>' +
+      '<div class="log-feedback" id="cloud-status" style="color:var(--text-soft)"></div>';
     body.appendChild(codeWrap);
+    sendResultToCloud(entry, codeWrap.querySelector('#cloud-status'));
     codeWrap.querySelector('#copy-code').addEventListener('click', () => {
       const ta = codeWrap.querySelector('#result-code');
       const done = () => {
