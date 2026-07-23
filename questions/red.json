@@ -1,0 +1,1980 @@
+{
+  "id": "red",
+  "name": "Practice Test #5 · RED",
+  "examLabel": "MET — Michigan English Test",
+  "audioBase": "audio/red/",
+  "secondsPerRGQuestion": 78,
+  "cefr": {
+    "note": "Estimativa baseada nas faixas oficiais CEFR do MET (Michigan Language Assessment). A conversão de acertos para scaled score é aproximada (linear).",
+    "scale": 1.6,
+    "bands": [
+      {
+        "min": 64,
+        "level": "C1",
+        "desc": "Usuário proficiente — compreende com facilidade discursos e textos longos e complexos."
+      },
+      {
+        "min": 53,
+        "level": "B2",
+        "desc": "Usuário independente avançado — compreende ideias principais e pontos de vista em contextos sociais, profissionais e acadêmicos."
+      },
+      {
+        "min": 40,
+        "level": "B1",
+        "desc": "Usuário independente — compreende os pontos principais de fala e textos claros sobre assuntos familiares."
+      },
+      {
+        "min": 27,
+        "level": "A2",
+        "desc": "Usuário básico — compreende informações essenciais de mensagens curtas, simples e previsíveis."
+      },
+      {
+        "min": 0,
+        "level": "Pré-A2",
+        "desc": "Abaixo do nível mínimo medido pelo MET nesta seção."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "l1",
+      "name": "Listening · Part 1",
+      "kind": "listening",
+      "introAudio": "l1-intro.mp3",
+      "instructions": "In this part of the test, you will hear short conversations between two people. After each conversation, you will hear a question about it. Choose the best answer to the question. There are 19 questions in Part 1. The conversations and questions will not be repeated."
+    },
+    {
+      "id": "l2",
+      "name": "Listening · Part 2",
+      "kind": "listening",
+      "introAudio": "l2-intro.mp3",
+      "instructions": "In this part of the test, you will hear longer conversations between two people. After each conversation, you will answer some questions about it. There are 14 questions in Part 2. The conversations and questions will not be repeated. If you want to, you may take notes as you listen."
+    },
+    {
+      "id": "l3",
+      "name": "Listening · Part 3",
+      "kind": "listening",
+      "introAudio": "l3-intro.mp3",
+      "instructions": "In this part, you will hear some short talks. After each talk, you will answer some questions about it. There are 17 questions in Part 3. The talks and questions will not be repeated. If you want to, you may take notes as you listen."
+    },
+    {
+      "id": "gr",
+      "name": "Grammar",
+      "kind": "text",
+      "instructions": "This section focuses on your ability to use English grammar. Each question has only one correct answer."
+    },
+    {
+      "id": "rd",
+      "name": "Reading",
+      "kind": "text",
+      "instructions": "This section focuses on your ability to understand written English. Read each passage and answer the questions about it."
+    }
+  ],
+  "units": [
+    {
+      "id": "l1-q1",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q01.mp3",
+      "questions": [
+        {
+          "n": 1,
+          "text": "What does the woman say about the bus?",
+          "opts": [
+            "It is late.",
+            "It stops in a different place.",
+            "It has broken down.",
+            "It already came."
+          ],
+          "key": 0,
+          "expl": "A mulher diz que o ônibus deveria ter passado \"five minutes ago\" e explica: \"No, it's just late\" — está atrasado por causa de uma obra na Main Street, não quebrado."
+        }
+      ]
+    },
+    {
+      "id": "l1-q2",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q02.mp3",
+      "questions": [
+        {
+          "n": 2,
+          "text": "What will the woman probably do the following day?",
+          "opts": [
+            "drive to the city",
+            "watch the parade on television",
+            "give the man's family a ride",
+            "take the train to the city"
+          ],
+          "key": 3,
+          "expl": "Perguntada se vai dirigir ou pegar o trem, ela responde: \"Definitely the train. Traffic and parking will be a nightmare.\""
+        }
+      ]
+    },
+    {
+      "id": "l1-q3",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q03.mp3",
+      "questions": [
+        {
+          "n": 3,
+          "text": "What does the woman hope to do?",
+          "opts": [
+            "learn to cook",
+            "bring lunch from home",
+            "avoid bad weather",
+            "try some new restaurants"
+          ],
+          "key": 1,
+          "expl": "Ela torce pelo micro-ondas novo porque anda gastando demais comprando almoço fora — a ideia é passar a trazer comida de casa e poder esquentá-la no escritório."
+        }
+      ]
+    },
+    {
+      "id": "l1-q4",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q04.mp3",
+      "questions": [
+        {
+          "n": 4,
+          "text": "What will the students do tomorrow?",
+          "opts": [
+            "call the professor for their grades",
+            "turn in their papers",
+            "make appointments to see the professor",
+            "pick up their quizzes"
+          ],
+          "key": 3,
+          "expl": "O professor manda deixar os quizzes corrigidos na caixa em frente à sala: \"The students will be expecting them there tomorrow\" — os alunos vão retirá-los amanhã."
+        }
+      ]
+    },
+    {
+      "id": "l1-q5",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q05.mp3",
+      "questions": [
+        {
+          "n": 5,
+          "text": "What does the woman most likely want to do?",
+          "opts": [
+            "compare different phone models",
+            "have her phone repaired",
+            "receive a refund",
+            "explain her problem"
+          ],
+          "key": 1,
+          "expl": "O vendedor sugere comprar um aparelho novo, mas ela responde que tem seguro do celular, \"so I think there's a better solution than that\" — ou seja, prefere consertá-lo pelo seguro."
+        }
+      ]
+    },
+    {
+      "id": "l1-q6",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q06.mp3",
+      "questions": [
+        {
+          "n": 6,
+          "text": "How did the man feel when he heard the news?",
+          "opts": [
+            "happy",
+            "surprised",
+            "embarrassed",
+            "angry"
+          ],
+          "key": 1,
+          "expl": "\"My supervisor and I were both taken aback by the news\" — a expressão \"taken aback\" significa surpreso, pego de surpresa."
+        }
+      ]
+    },
+    {
+      "id": "l1-q7",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q07.mp3",
+      "questions": [
+        {
+          "n": 7,
+          "text": "What does the woman imply about the man?",
+          "opts": [
+            "He should continue down the street.",
+            "He's going to be late.",
+            "He's going in the wrong direction.",
+            "He should take a bus."
+          ],
+          "key": 1,
+          "expl": "Que ele está na direção errada a mulher DIZ diretamente (\"You are turned around\") — logo, não é o que ela \"implica\". O que fica implícito é a consequência: com a estação ainda a quatro quarteirões dali, ele vai acabar se atrasando."
+        }
+      ]
+    },
+    {
+      "id": "l1-q8",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q08.mp3",
+      "questions": [
+        {
+          "n": 8,
+          "text": "How does the man feel?",
+          "opts": [
+            "nervous",
+            "confident",
+            "confused",
+            "excited"
+          ],
+          "key": 0,
+          "expl": "As respostas hesitantes — \"as ready as I'll ever be, I guess\" e \"We'll see about that\" — mostram insegurança e nervosismo, apesar das semanas de preparação."
+        }
+      ]
+    },
+    {
+      "id": "l1-q9",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q09.mp3",
+      "questions": [
+        {
+          "n": 9,
+          "text": "What is probably true about the company?",
+          "opts": [
+            "It has new owners.",
+            "It is expanding rapidly.",
+            "It has lost many staff recently.",
+            "It is having financial problems."
+          ],
+          "key": 1,
+          "expl": "\"Our orders have tripled since then. Everyone's maxed out, and we can afford to hire\" — pedidos triplicaram em seis meses: a empresa está crescendo rapidamente."
+        }
+      ]
+    },
+    {
+      "id": "l1-q10",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q10.mp3",
+      "questions": [
+        {
+          "n": 10,
+          "text": "What happened when the man went to university?",
+          "opts": [
+            "He took his instrument with him.",
+            "He stopped playing the piano.",
+            "He began playing a new instrument.",
+            "He signed up for music classes."
+          ],
+          "key": 1,
+          "expl": "\"When I went to university, I moved away and left the piano at home\" — ao ir para a universidade, ele parou de tocar piano."
+        }
+      ]
+    },
+    {
+      "id": "l1-q11",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q11.mp3",
+      "questions": [
+        {
+          "n": 11,
+          "text": "What does the woman say about the article?",
+          "opts": [
+            "She read part of it earlier.",
+            "She doesn't remember what it was about.",
+            "She looked it over very quickly.",
+            "She won't read it for another few days."
+          ],
+          "key": 0,
+          "expl": "\"I had to read an excerpt of it for a different class the other day\" — ela já tinha lido um trecho (excerpt) do artigo antes, para outra disciplina."
+        }
+      ]
+    },
+    {
+      "id": "l1-q12",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q12.mp3",
+      "questions": [
+        {
+          "n": 12,
+          "text": "What kind of toy does the man want to buy?",
+          "opts": [
+            "something simple",
+            "something that plays music",
+            "something cheap",
+            "something educational"
+          ],
+          "key": 0,
+          "expl": "\"I'd prefer something without so many bells and whistles\" — \"bells and whistles\" são recursos/funções extras; ele quer um brinquedo simples, como os de antigamente."
+        }
+      ]
+    },
+    {
+      "id": "l1-q13",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q13.mp3",
+      "questions": [
+        {
+          "n": 13,
+          "text": "What are the speakers discussing?",
+          "opts": [
+            "their math exam",
+            "their group project",
+            "their homework",
+            "their favorite class"
+          ],
+          "key": 0,
+          "expl": "\"Are you ready for tomorrow's test?... I'm just not very good with numbers\" — a prova envolve números: é a prova de matemática."
+        }
+      ]
+    },
+    {
+      "id": "l1-q14",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q14.mp3",
+      "questions": [
+        {
+          "n": 14,
+          "text": "Why will the professor contact the class?",
+          "opts": [
+            "to cancel a class",
+            "to give them materials for homework",
+            "to explain a recent lecture",
+            "to complain about the bookstore"
+          ],
+          "key": 1,
+          "expl": "Como a livraria está sem o livro-texto, o professor decide: \"I'll send the reading to the whole class\" — vai mandar o material da tarefa para todos."
+        }
+      ]
+    },
+    {
+      "id": "l1-q15",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q15.mp3",
+      "questions": [
+        {
+          "n": 15,
+          "text": "What are the speakers mainly discussing?",
+          "opts": [
+            "an athlete they like",
+            "a team they play for",
+            "a game they watched",
+            "a sports team's potential"
+          ],
+          "key": 3,
+          "expl": "\"I think they'll compete for a championship... but they do have a lot of new players and a difficult schedule\" — eles avaliam as chances (o potencial) do time nesta temporada."
+        }
+      ]
+    },
+    {
+      "id": "l1-q16",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q16.mp3",
+      "questions": [
+        {
+          "n": 16,
+          "text": "What does the man describe as annoying?",
+          "opts": [
+            "airports",
+            "waiting for relatives",
+            "snowy weather",
+            "travel delays"
+          ],
+          "key": 3,
+          "expl": "\"If my flight is canceled, it might be days before I can get another one. That's happened to me before. Such a pain\" — o que ele chama de irritante são os atrasos/transtornos de viagem."
+        }
+      ]
+    },
+    {
+      "id": "l1-q17",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q17.mp3",
+      "questions": [
+        {
+          "n": 17,
+          "text": "When should the man probably feel better?",
+          "opts": [
+            "in about a week",
+            "by this evening",
+            "in two or three days",
+            "on Friday"
+          ],
+          "key": 2,
+          "expl": "O médico diz que o creme \"won't work immediately, but in a few days it should stop itching\" — alguns dias ≈ dois ou três; se não melhorar até o fim da semana, ele deve voltar."
+        }
+      ]
+    },
+    {
+      "id": "l1-q18",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q18.mp3",
+      "questions": [
+        {
+          "n": 18,
+          "text": "What are the speakers mainly talking about?",
+          "opts": [
+            "moving to a new apartment",
+            "their plans for the summer",
+            "how hot the weather is",
+            "fixing the air conditioner"
+          ],
+          "key": 2,
+          "expl": "O ar-condicionado é só o gancho: a conversa gira em torno do calorão fora de época — \"summer started six weeks early\", \"maybe it'll cool off in a couple of days\"."
+        }
+      ]
+    },
+    {
+      "id": "l1-q19",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q19.mp3",
+      "questions": [
+        {
+          "n": 19,
+          "text": "How does the man feel about the new policy?",
+          "opts": [
+            "He thinks it benefits all students.",
+            "He thinks it is a good idea.",
+            "He believes it will affect him negatively.",
+            "He believes it will make little difference."
+          ],
+          "key": 1,
+          "expl": "\"Probably not the worst thing... I don't think it'll be that big a deal. Besides, it'll make campus safer\" — ele acha a medida boa (mas não chega a dizer que beneficia todos os alunos)."
+        }
+      ]
+    },
+    {
+      "id": "l2-set1",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q20-23.mp3",
+      "title": "Conversa 1 · Questões 20–23",
+      "cues": [
+        {
+          "label": "Conversa",
+          "t": 7.5
+        },
+        {
+          "n": 20,
+          "t": 67.3
+        },
+        {
+          "n": 21,
+          "t": 83.3
+        },
+        {
+          "n": 22,
+          "t": 99.6
+        },
+        {
+          "n": 23,
+          "t": 116.1
+        }
+      ],
+      "questions": [
+        {
+          "n": 20,
+          "text": "What are the speakers mainly discussing?",
+          "opts": [
+            "the state of the man's business",
+            "the woman's new company",
+            "a seminar the man will attend",
+            "an event for business owners"
+          ],
+          "key": 3,
+          "expl": "Toda a conversa acontece na convenção anual de empresários: \"that's why we come, to learn from each other\", \"coming here each year is a great way to learn...\" — o assunto principal é o evento."
+        },
+        {
+          "n": 21,
+          "text": "Why does the man mention next year?",
+          "opts": [
+            "He will start a new business then.",
+            "He will miss the conference then.",
+            "He thinks the economy will be better then.",
+            "He thinks his business may be closed then."
+          ],
+          "key": 2,
+          "expl": "\"We'll be lucky if we break even this year. The forecast is brighter for next year though\" — ele menciona o ano que vem porque espera uma economia melhor."
+        },
+        {
+          "n": 22,
+          "text": "What is the man likely to do next?",
+          "opts": [
+            "call his office",
+            "attend a seminar",
+            "ask the woman to lunch",
+            "drive back to his office"
+          ],
+          "key": 0,
+          "expl": "Antes do seminário, ele diz: \"I need to check in on things back in my office before that\" — o próximo passo é contatar (ligar para) o escritório."
+        },
+        {
+          "n": 23,
+          "text": "What does the man mean when he says:",
+          "replay": true,
+          "opts": [
+            "His business will close soon.",
+            "His business suffered some damage.",
+            "His business isn't yet ready to open.",
+            "His business may not make money."
+          ],
+          "key": 3,
+          "expl": "\"Break even\" = empatar receitas e despesas, sem lucro nem prejuízo. \"We'll be lucky if we break even\" = teremos sorte se ao menos empatarmos — o negócio talvez não dê dinheiro."
+        }
+      ]
+    },
+    {
+      "id": "l2-set2",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q24-26.mp3",
+      "title": "Conversa 2 · Questões 24–26",
+      "cues": [
+        {
+          "label": "Conversa",
+          "t": 0.3
+        },
+        {
+          "n": 24,
+          "t": 67.9
+        },
+        {
+          "n": 25,
+          "t": 85.4
+        },
+        {
+          "n": 26,
+          "t": 102.4
+        }
+      ],
+      "questions": [
+        {
+          "n": 24,
+          "text": "Why does the man tell the woman she's lucky?",
+          "opts": [
+            "The item she wants is on sale.",
+            "The store is open late today.",
+            "He has what she is looking for.",
+            "She is getting married."
+          ],
+          "key": 2,
+          "expl": "\"You're very lucky. The one in the window is actually our last, and I believe it's your size\" — ele tem exatamente o que ela procura, no tamanho dela."
+        },
+        {
+          "n": 25,
+          "text": "What problem does the woman have?",
+          "opts": [
+            "The store doesn't have her size.",
+            "Someone else bought what she wanted.",
+            "She doesn't like anything in the store.",
+            "She doesn't have enough money."
+          ],
+          "key": 3,
+          "expl": "\"I left my credit card at home, and I don't think I have enough cash\" — ela não tem dinheiro suficiente no momento."
+        },
+        {
+          "n": 26,
+          "text": "What does the man mean when he says:",
+          "replay": true,
+          "opts": [
+            "He will close the store early.",
+            "He will recommend another suit.",
+            "He will sell the suit to someone else.",
+            "He will reserve the suit temporarily."
+          ],
+          "key": 3,
+          "expl": "\"I'll make an exception and set it aside so that no one else can buy it\" — abrir uma exceção e separar a peça até a loja fechar é reservá-la temporariamente."
+        }
+      ]
+    },
+    {
+      "id": "l2-set3",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q27-30.mp3",
+      "title": "Conversa 3 · Questões 27–30",
+      "cues": [
+        {
+          "label": "Conversa",
+          "t": 0.3
+        },
+        {
+          "n": 27,
+          "t": 80.4
+        },
+        {
+          "n": 28,
+          "t": 96.8
+        },
+        {
+          "n": 29,
+          "t": 114.2
+        },
+        {
+          "n": 30,
+          "t": 130.7
+        }
+      ],
+      "questions": [
+        {
+          "n": 27,
+          "text": "What are the speakers discussing?",
+          "opts": [
+            "a course textbook the woman is returning",
+            "a course textbook the woman needs",
+            "a book the woman had reserved online",
+            "a book the woman's friend recommended"
+          ],
+          "key": 3,
+          "expl": "\"A friend of mine was in here earlier today and saw a book that might help me with a research project\" — é um livro que a amiga viu e recomendou."
+        },
+        {
+          "n": 28,
+          "text": "Why does the man ask about the woman's research?",
+          "opts": [
+            "to send her to the correct building",
+            "to suggest a topic for a project",
+            "to help her find what she needs",
+            "to learn more about her interests"
+          ],
+          "key": 2,
+          "expl": "\"Tell me more about your research. Maybe that will point us in the right direction\" — ele pergunta para conseguir localizar o livro que ela precisa."
+        },
+        {
+          "n": 29,
+          "text": "What will the woman probably do?",
+          "opts": [
+            "get the electronic version of the book",
+            "borrow the book from her friend",
+            "check the book out from the library",
+            "come back later to get the book"
+          ],
+          "key": 2,
+          "expl": "Ao saber do empréstimo de dois dias, ela conclui: \"I won't need it for more than two days, so I'll just use the hard copy\" — vai retirar o exemplar físico da biblioteca."
+        },
+        {
+          "n": 30,
+          "text": "What does the woman mean when she says:",
+          "replay": true,
+          "opts": [
+            "The book didn't contain useful information.",
+            "The book wasn't available online.",
+            "She didn't know what to do.",
+            "She didn't find the name of the book."
+          ],
+          "key": 3,
+          "expl": "\"I came up empty\" = voltei de mãos vazias; ela pesquisou on-line \"to see if I could figure out what it was called\" e não conseguiu descobrir o nome do livro."
+        }
+      ]
+    },
+    {
+      "id": "l2-set4",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q31-33.mp3",
+      "title": "Conversa 4 · Questões 31–33",
+      "cues": [
+        {
+          "label": "Conversa",
+          "t": 0.3
+        },
+        {
+          "n": 31,
+          "t": 77.9
+        },
+        {
+          "n": 32,
+          "t": 94.6
+        },
+        {
+          "n": 33,
+          "t": 111.2
+        }
+      ],
+      "questions": [
+        {
+          "n": 31,
+          "text": "What did the woman do the previous semester?",
+          "opts": [
+            "started to use technology while teaching",
+            "trained her assistant to teach her course",
+            "asked students about how they used laptops",
+            "gathered evidence about students' use of laptops"
+          ],
+          "key": 3,
+          "expl": "\"My teaching assistant and I gathered informal data this past semester... up to 70% of my students are doing something on their computers other than taking notes\" — ela coletou evidências sobre o uso dos laptops."
+        },
+        {
+          "n": 32,
+          "text": "Why does the woman talk about research studies?",
+          "opts": [
+            "to explain how she got her idea",
+            "to argue against the man's opinion",
+            "to describe the type of work she enjoys",
+            "to explain what she'll discuss with her students"
+          ],
+          "key": 3,
+          "expl": "\"I'm going to lay out the rationale... go over the studies that show that taking notes by hand leads to better retention\" — os estudos são o que ela pretende apresentar aos alunos para justificar a nova regra."
+        },
+        {
+          "n": 33,
+          "text": "What does the man think about the woman's idea?",
+          "opts": [
+            "It is better than his idea.",
+            "It might influence others.",
+            "It is already accepted at their school.",
+            "It might be rejected by the administration."
+          ],
+          "key": 1,
+          "expl": "\"I might even give it a try in my classes, and who knows? Maybe you'll start a school-wide trend\" — ele acha que a ideia pode influenciar outros professores."
+        }
+      ]
+    },
+    {
+      "id": "l3-set1",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q34-37.mp3",
+      "title": "Palestra 1 · Questões 34–37",
+      "cues": [
+        {
+          "label": "Palestra",
+          "t": 7.5
+        },
+        {
+          "n": 34,
+          "t": 92.7
+        },
+        {
+          "n": 35,
+          "t": 108.7
+        },
+        {
+          "n": 36,
+          "t": 125.5
+        },
+        {
+          "n": 37,
+          "t": 143.2
+        }
+      ],
+      "questions": [
+        {
+          "n": 34,
+          "text": "What is the talk mainly about?",
+          "opts": [
+            "the different types of birds in a park",
+            "the eating habits of a type of bird",
+            "the speaker's research on endangered species",
+            "the characteristics of a type of bird"
+          ],
+          "key": 3,
+          "expl": "O guia descreve o blue heron por completo — ninho, tamanho (\"well over a meter tall\"), aparência e hábitos — ou seja, as características de uma espécie de ave."
+        },
+        {
+          "n": 35,
+          "text": "What does the speaker suggest the listeners do?",
+          "opts": [
+            "use equipment to help them see better",
+            "use equipment to climb a tree",
+            "try to catch some fish",
+            "try to take a photo of the bird"
+          ],
+          "key": 0,
+          "expl": "\"If you don't have binoculars, we have a telescope set up over here that you can use\" — equipamentos para enxergar melhor."
+        },
+        {
+          "n": 36,
+          "text": "What does the speaker think the bird standing on the nest is doing?",
+          "opts": [
+            "waiting for its mate",
+            "protecting eggs",
+            "looking for food",
+            "watching the tour group"
+          ],
+          "key": 1,
+          "expl": "\"It's probably standing guard over the eggs, watching for owls and hawks\" — a ave no ninho está protegendo os ovos."
+        },
+        {
+          "n": 37,
+          "text": "Why does the speaker mention fish?",
+          "opts": [
+            "to tell the listeners what they'll do next",
+            "to compare the behavior of different animals",
+            "to explain what one bird is doing",
+            "to describe what lives in the lake"
+          ],
+          "key": 2,
+          "expl": "O parceiro está na água rasa \"probably looking for fish, which blue herons like to eat\" — os peixes explicam o que aquela ave está fazendo (caçando comida)."
+        }
+      ]
+    },
+    {
+      "id": "l3-set2",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q38-41.mp3",
+      "title": "Palestra 2 · Questões 38–41",
+      "cues": [
+        {
+          "label": "Palestra",
+          "t": 0.3
+        },
+        {
+          "n": 38,
+          "t": 75.4
+        },
+        {
+          "n": 39,
+          "t": 91.8
+        },
+        {
+          "n": 40,
+          "t": 109.4
+        },
+        {
+          "n": 41,
+          "t": 126.8
+        }
+      ],
+      "questions": [
+        {
+          "n": 38,
+          "text": "What is the speaker mainly discussing?",
+          "opts": [
+            "the schedule for a project",
+            "principles of design",
+            "different construction materials",
+            "plans for a new building"
+          ],
+          "key": 3,
+          "expl": "O arquiteto apresenta \"my firm's ideas for the design of your company's new supermarket\" — os planos do novo prédio/loja do cliente."
+        },
+        {
+          "n": 39,
+          "text": "Why does the speaker mention a home appliance store?",
+          "opts": [
+            "to suggest an interesting storage method",
+            "to criticize a common sales strategy",
+            "to describe inexpensive display ideas",
+            "to compare different types of shoppers"
+          ],
+          "key": 1,
+          "expl": "A loja de eletrodomésticos exemplifica o layout de corredores compridos que \"keeps customers in the store as long as possible\" — uma estratégia de vendas comum que ele critica por frustrar o cliente."
+        },
+        {
+          "n": 40,
+          "text": "What will the meeting participants most likely do next?",
+          "opts": [
+            "discuss the project's budget",
+            "visit a store",
+            "view some drawings",
+            "sign a contract"
+          ],
+          "key": 2,
+          "expl": "\"Now, let's look at some sketches that illustrate what we have in mind\" — o próximo passo é ver os desenhos do projeto."
+        },
+        {
+          "n": 41,
+          "text": "What does the speaker suggest about his team when he says:",
+          "replay": true,
+          "opts": [
+            "They had difficulty making a decision.",
+            "They were confused about the instructions.",
+            "They did not want to change their minds.",
+            "They had concerns about an idea."
+          ],
+          "key": 0,
+          "expl": "\"On the fence\" = em cima do muro, indeciso. \"At first we were on the fence about which one to go with\" — a equipe teve dificuldade para decidir."
+        }
+      ]
+    },
+    {
+      "id": "l3-set3",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q42-46.mp3",
+      "title": "Palestra 3 · Questões 42–46",
+      "cues": [
+        {
+          "label": "Palestra",
+          "t": 0.3
+        },
+        {
+          "n": 42,
+          "t": 102.8
+        },
+        {
+          "n": 43,
+          "t": 119.1
+        },
+        {
+          "n": 44,
+          "t": 135.7
+        },
+        {
+          "n": 45,
+          "t": 152.6
+        },
+        {
+          "n": 46,
+          "t": 170.2
+        }
+      ],
+      "questions": [
+        {
+          "n": 42,
+          "text": "What is the talk mainly about?",
+          "opts": [
+            "student activities at a high school",
+            "academic programs at a high school",
+            "teaching staff at a high school",
+            "an upcoming sporting event at a high school"
+          ],
+          "key": 0,
+          "expl": "A fala apresenta \"the various sports and other extracurricular activities\" da escola — as atividades estudantis."
+        },
+        {
+          "n": 43,
+          "text": "What does the speaker say about other teachers?",
+          "opts": [
+            "They help with the sports programs.",
+            "They teach a variety of subjects.",
+            "They will also talk to the parents.",
+            "They will take the parents on a tour."
+          ],
+          "key": 2,
+          "expl": "\"Then you'll hear from some other teachers who also lead programs\" — os outros professores também vão falar aos pais (Fine Arts, organizações acadêmicas, clubes sociais)."
+        },
+        {
+          "n": 44,
+          "text": "Why does the speaker mention some equipment?",
+          "opts": [
+            "to explain what parents will need to buy",
+            "to explain how students play sports safely",
+            "to explain a benefit of two sports teams",
+            "to explain a disadvantage of a sports team"
+          ],
+          "key": 2,
+          "expl": "\"We also have soccer and tennis teams, both of which received brand new equipment last year\" — o equipamento novo é citado como um benefício desses dois times."
+        },
+        {
+          "n": 45,
+          "text": "What does the speaker say about participating in a sport?",
+          "opts": [
+            "It can be dangerous.",
+            "It is required at this school.",
+            "It is not appropriate for all students.",
+            "It is a valuable experience."
+          ],
+          "key": 3,
+          "expl": "\"Participating in a sport is a great character building experience, a way to develop teamwork and leadership skills\" — uma experiência valiosa."
+        },
+        {
+          "n": 46,
+          "text": "What will the audience probably do next?",
+          "opts": [
+            "hear about music and art",
+            "watch a basketball game",
+            "listen to some students speak",
+            "ask the speaker some questions"
+          ],
+          "key": 0,
+          "expl": "A fala termina com \"now let's hear from Mr. Morris about Fine Arts\" — o diretor de artes falará sobre música, arte e teatro."
+        }
+      ]
+    },
+    {
+      "id": "l3-set4",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q47-50.mp3",
+      "title": "Palestra 4 · Questões 47–50",
+      "cues": [
+        {
+          "label": "Palestra",
+          "t": 0.3
+        },
+        {
+          "n": 47,
+          "t": 94.8
+        },
+        {
+          "n": 48,
+          "t": 111.0
+        },
+        {
+          "n": 49,
+          "t": 127.3
+        },
+        {
+          "n": 50,
+          "t": 143.6
+        }
+      ],
+      "questions": [
+        {
+          "n": 47,
+          "text": "What will the students be doing?",
+          "opts": [
+            "making copies of ancient objects",
+            "looking for artifacts in Greece",
+            "selling some of the pottery they make",
+            "volunteering at a local museum"
+          ],
+          "key": 0,
+          "expl": "\"They'll try to recreate these ancient objects\" / \"how will these replicas be created?\" — os alunos farão réplicas (cópias) de objetos antigos."
+        },
+        {
+          "n": 48,
+          "text": "What does the speaker wish he could do?",
+          "opts": [
+            "be a student at City College",
+            "touch museum objects",
+            "meet a famous artist",
+            "own an ancient Greek bowl"
+          ],
+          "key": 1,
+          "expl": "\"[I] wondered what it would be like to hold them in my hands\" — desde criança o locutor queria poder tocar as peças do museu."
+        },
+        {
+          "n": 49,
+          "text": "What is mentioned about the oven?",
+          "opts": [
+            "It is very old.",
+            "It was made in Greece.",
+            "It was made for this project.",
+            "It was designed by the students."
+          ],
+          "key": 2,
+          "expl": "\"The bowls will be fired in a wood oven built especially for this project\" — o forno foi construído especialmente para o projeto."
+        },
+        {
+          "n": 50,
+          "text": "What will happen in May at the museum?",
+          "opts": [
+            "There will be an exhibit of student pottery.",
+            "Students will teach a pottery class.",
+            "The museum will be temporarily closed.",
+            "Art scholars will give lectures about Greek pottery."
+          ],
+          "key": 0,
+          "expl": "\"To celebrate the project's conclusion in May, the museum plans to hold an exhibit of the students' reproductions\" — haverá uma exposição da cerâmica dos alunos."
+        }
+      ]
+    },
+    {
+      "id": "gr-q51",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 51,
+          "text": "Next month, you _____ in this department.",
+          "opts": [
+            "will start working",
+            "started working",
+            "have started work",
+            "had started to work"
+          ],
+          "key": 0,
+          "expl": "\"Next month\" indica futuro, então usamos \"will start working\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q52",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 52,
+          "text": "_____ chemistry that we must study today, but also physics.",
+          "opts": [
+            "Not only is",
+            "Only it is",
+            "It is not only",
+            "It only is"
+          ],
+          "key": 2,
+          "expl": "Frase clivada com \"not only… but also\": \"It is not only chemistry… but also physics\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q53",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 53,
+          "text": "Artists _____ will show their work at the festival next week.",
+          "opts": [
+            "of all kinds",
+            "from all kinds",
+            "all the kinds",
+            "kind of all"
+          ],
+          "key": 0,
+          "expl": "\"Artists of all kinds\" = artistas de todos os tipos."
+        }
+      ]
+    },
+    {
+      "id": "gr-q54",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 54,
+          "text": "The natural history museum _____ most popular attraction in the area.",
+          "opts": [
+            "it remains",
+            "is remaining a",
+            "remained in the",
+            "has remained the"
+          ],
+          "key": 3,
+          "expl": "Present perfect + artigo definido antes do superlativo: \"has remained the most popular attraction\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q55",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 55,
+          "text": "Ms. Simpson was _____ in the neighborhood improvement project.",
+          "opts": [
+            "involved as much",
+            "as much involving",
+            "very much involved",
+            "very much involving"
+          ],
+          "key": 2,
+          "expl": "\"Very much involved\" — particípio passado usado como adjetivo (estava muito envolvida)."
+        }
+      ]
+    },
+    {
+      "id": "gr-q56",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 56,
+          "text": "It is required that students' grades _____ in digital format, rather than on paper.",
+          "opts": [
+            "be submitted",
+            "are submitting",
+            "submitting",
+            "submit"
+          ],
+          "key": 0,
+          "expl": "Depois de \"It is required that\" usa-se o subjuntivo: \"(should) be submitted\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q57",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 57,
+          "text": "_____ the market analysts nor the public know if stocks will recover next year.",
+          "opts": [
+            "Nor",
+            "None",
+            "Neither",
+            "Either"
+          ],
+          "key": 2,
+          "expl": "Correlação \"neither… nor\" = nem… nem."
+        }
+      ]
+    },
+    {
+      "id": "gr-q58",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 58,
+          "text": "Lisa put _____ pressure on herself to succeed in her classes.",
+          "opts": [
+            "tremendous amount",
+            "tremendous amount of",
+            "a tremendous amount of",
+            "a tremendous amount"
+          ],
+          "key": 2,
+          "expl": "\"Pressure\" é incontável: \"a tremendous amount of pressure\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q59",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 59,
+          "text": "As _____ in this report, our company's future looks strong.",
+          "opts": [
+            "pointed it out",
+            "pointed out",
+            "it pointed to",
+            "to be pointed"
+          ],
+          "key": 1,
+          "expl": "\"As pointed out in this report\" = como apontado neste relatório (construção passiva reduzida)."
+        }
+      ]
+    },
+    {
+      "id": "gr-q60",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 60,
+          "text": "When Rebecca first moved to Atlanta, she knew almost no one there _____ than Susan.",
+          "opts": [
+            "more",
+            "other",
+            "rather",
+            "else"
+          ],
+          "key": 1,
+          "expl": "\"Other than\" = além de / exceto: não conhecia ninguém além de Susan."
+        }
+      ]
+    },
+    {
+      "id": "gr-q61",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 61,
+          "text": "To see who had finished the reading, the teacher asked for _____.",
+          "opts": [
+            "a hand to show",
+            "a show of hands",
+            "their hands showed",
+            "showing their hands"
+          ],
+          "key": 1,
+          "expl": "\"A show of hands\" é expressão fixa: votação/contagem levantando as mãos."
+        }
+      ]
+    },
+    {
+      "id": "gr-q62",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 62,
+          "text": "There is an entire engineering field dedicated to workplace _____.",
+          "opts": [
+            "efficient",
+            "efficiently",
+            "efficiency",
+            "efficacious"
+          ],
+          "key": 2,
+          "expl": "Após \"workplace\" precisamos do substantivo: \"efficiency\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q63",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 63,
+          "text": "Jeff couldn't decide whether _____ to go out with friends.",
+          "opts": [
+            "to stay home or",
+            "to stay home either",
+            "staying home unless",
+            "staying home and"
+          ],
+          "key": 0,
+          "expl": "\"Whether to stay home or (to) go out\" — alternativa com infinitivo."
+        }
+      ]
+    },
+    {
+      "id": "gr-q64",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 64,
+          "text": "_____ for a scholarship this year?",
+          "opts": [
+            "She does apply",
+            "She applies herself",
+            "Is she applying",
+            "Is she applying herself"
+          ],
+          "key": 2,
+          "expl": "Pergunta no presente contínuo: \"Is she applying for…?\" (\"apply herself\" mudaria o sentido para \"esforçar-se\")."
+        }
+      ]
+    },
+    {
+      "id": "gr-q65",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 65,
+          "text": "My brother _____ extra income from his new part-time job.",
+          "opts": [
+            "brings on",
+            "brings into",
+            "is bringing in",
+            "is bringing by"
+          ],
+          "key": 2,
+          "expl": "Phrasal verb \"bring in\" = gerar/receber renda."
+        }
+      ]
+    },
+    {
+      "id": "gr-q66",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 66,
+          "text": "Roger said he _____ to the party at Sally's place this coming Saturday.",
+          "opts": [
+            "has been going",
+            "goes",
+            "was going",
+            "had gone"
+          ],
+          "key": 2,
+          "expl": "Discurso indireto depois de \"said\": \"was going\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q67",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 67,
+          "text": "The other day, I heard an interesting _____ on the radio.",
+          "opts": [
+            "piece of news",
+            "piece of new",
+            "news",
+            "new"
+          ],
+          "key": 0,
+          "expl": "\"News\" é incontável; a unidade é \"a piece of news\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q68",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 68,
+          "text": "Help yourself _____ of the soup in the kitchen.",
+          "opts": [
+            "from a little",
+            "for a bit",
+            "out much",
+            "to some"
+          ],
+          "key": 3,
+          "expl": "\"Help yourself to\" = sirva-se de."
+        }
+      ]
+    },
+    {
+      "id": "gr-q69",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 69,
+          "text": "Generally speaking, the more funding a university receives _____ its facilities will be.",
+          "opts": [
+            "best",
+            "better",
+            "the better",
+            "the best"
+          ],
+          "key": 2,
+          "expl": "Comparativo correlativo: \"the more…, the better\"."
+        }
+      ]
+    },
+    {
+      "id": "gr-q70",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 70,
+          "text": "_____ raining, we would have visited the zoo.",
+          "opts": [
+            "It had not been",
+            "It has not been",
+            "Having not been",
+            "Had it not been"
+          ],
+          "key": 3,
+          "expl": "Inversão condicional formal: \"Had it not been raining\" = \"If it had not been raining\"."
+        }
+      ]
+    },
+    {
+      "id": "rd-set1",
+      "section": "rd",
+      "type": "reading",
+      "title": "Passagem 1 · Questões 71–75",
+      "passageIntro": "This passage is about a new type of health care service.",
+      "passage": "<p>What if the next time you need to visit the doctor, you could just turn on your computer instead of driving to the doctor's office for your appointment? Right before your appointment, you go online to complete a questionnaire about your medical needs, and then, when you are ready, you speak to a medical professional by phone or video chat. The doctor writes up a plan for your treatment and sends it to you by email. A prescription for medication, if needed, goes directly to the pharmacy of your choice. If your pharmacy provides a home delivery service, you may never need to leave your own home during your illness.</p><p>This idea of <em>telemedicine</em> has been gaining popularity in the United States over the last several years as it offers benefits to both consumers and health care providers. For people who live in isolated, rural areas, a trip to the nearest doctor may take hours, so telemedicine is not only convenient, but perhaps the only reasonably available medical care in their community. Even for those who have ready access to medical services, the availability of online consultations may lead patients to seek medical help earlier and more frequently, instead of waiting and eventually needing emergency care, which is much more expensive to both patients and insurance companies.</p><p>Of course, there are limits to virtual medicine. Many diagnoses require lab tests or X-rays that cannot be done remotely. More than that, many doctors feel that face-to-face communication with their patients is essential. During online consultations, doctors might easily miss subtle signals that would help them better understand their patients' problems. Even so, virtual medicine is likely to become more prevalent in the medical care of tomorrow, as patients continue to look for easy access and convenience, and insurers identify ways to reduce their expenses.</p>",
+      "questions": [
+        {
+          "n": 71,
+          "text": "Why does the passage begin with a question?",
+          "opts": [
+            "to show how little is known about telemedicine",
+            "to suggest the possibility of telemedicine",
+            "to question the effectiveness of telemedicine",
+            "to criticize the current research on telemedicine"
+          ],
+          "key": 1,
+          "expl": "A pergunta inicial (\"What if... you could just turn on your computer instead of driving to the doctor's office?\") convida o leitor a imaginar a telemedicina — apresenta a possibilidade, sem criticar nem questionar."
+        },
+        {
+          "n": 72,
+          "text": "According to the passage, why could pharmacy delivery service be important?",
+          "opts": [
+            "It lets people stay at home when sick.",
+            "It is helpful for people who are very ill.",
+            "Pharmacy employees can check on patients.",
+            "Patients can get their medications faster."
+          ],
+          "key": 0,
+          "expl": "O texto diz que, se a farmácia entrega em casa, \"you may never need to leave your own home during your illness\" — a pessoa doente pode ficar em casa."
+        },
+        {
+          "n": 73,
+          "text": "In the third sentence of paragraph 2, which word is closest in meaning to <strong>ready</strong>?",
+          "opts": [
+            "completed",
+            "quick",
+            "willing",
+            "prepared"
+          ],
+          "key": 1,
+          "expl": "\"Ready access\" = acesso rápido, imediato. Entre as opções, \"quick\" é a mais próxima."
+        },
+        {
+          "n": 74,
+          "text": "What claim does the author make to support the belief that telemedicine can reduce costs?",
+          "opts": [
+            "Doctors do not need to pay for office space.",
+            "Fewer lab tests will be conducted.",
+            "Patients will need less emergency care.",
+            "There are no transportation expenses."
+          ],
+          "key": 2,
+          "expl": "O texto afirma que as consultas on-line levam o paciente a procurar ajuda mais cedo, \"instead of waiting and eventually needing emergency care, which is much more expensive\" — menos atendimentos de emergência = menos custo."
+        },
+        {
+          "n": 75,
+          "text": "In the third sentence of paragraph 3, what does the word <strong>that</strong> refer to?",
+          "opts": [
+            "the importance of face-to-face communication with patients",
+            "the inability to perform certain tests remotely",
+            "the limits of virtual medicine",
+            "the fact that some doctors dislike telemedicine"
+          ],
+          "key": 1,
+          "expl": "Em \"More than that...\", o \"that\" retoma o que acabou de ser dito: muitos diagnósticos exigem exames (lab tests/X-rays) que não podem ser feitos a distância."
+        }
+      ]
+    },
+    {
+      "id": "rd-set2",
+      "section": "rd",
+      "type": "reading",
+      "title": "Passagem 2 · Questões 76–80",
+      "passageIntro": "This passage is about changes in language.",
+      "passage": "<p>It is commonly accepted that languages change over time, with new words added and older terms dropped from common use. Charles Darwin, more famously associated with biological evolution, claimed that languages were also evolving over time, but this was only a speculative account of linguistic evolution. Modern research now suggests that Darwin's assertion was right and that words used most commonly in everyday language evolve at the slowest rate, while rarer words are more likely to change.</p><p>Researchers in the United Kingdom investigated the evolution of language by studying cognates, words that sound similar in different languages and express the same meaning, to identify how much variation now exists in Indo-European languages after 6,000 to 10,000 years of evolution. They discovered that frequently used words are more likely to have cognates, while less common words are more likely to be unrelated in different languages. The findings allowed a \"mutation rate\" to be calculated, based on frequency of use, which showed that the most common vocabulary exhibited almost no variation in 10,000 years. Vocabulary used less often was replaced in as few as 750 years.</p><p>A second study, in the United States, examined the roots of English from over 1,200 years ago to compile a list of 177 irregular old English verbs. Researchers discovered that of the original irregular verbs only 98 remain irregular today, suggesting that verbs tend to become \"regularized\" over time. The rarest verbs in the list were the most likely to have been regularized. A statistical analysis of these verbs indicated that if one was used 100 times less frequently than another, it would evolve 10 times faster than the more commonly used verb. Both studies support the notion that languages evolve much like natural species do.</p>",
+      "questions": [
+        {
+          "n": 76,
+          "text": "According to the passage, why was Darwin's theory of linguistic evolution unproven?",
+          "opts": [
+            "He did not consider Indo-European languages.",
+            "He never published his finding.",
+            "His theory did not account for how verbs evolved.",
+            "His theory was not based on experimental evidence."
+          ],
+          "key": 3,
+          "expl": "O texto diz que a afirmação de Darwin \"was only a speculative account of linguistic evolution\" — era especulativa, sem base em evidência experimental."
+        },
+        {
+          "n": 77,
+          "text": "How did researchers in the United Kingdom study linguistic evolution?",
+          "opts": [
+            "by identifying the most important words in Indo-European languages",
+            "by determining how long it has taken Indo-European languages to evolve",
+            "by comparing cognates found in Indo-European languages",
+            "by examining how different European languages define cognates"
+          ],
+          "key": 2,
+          "expl": "\"Researchers in the United Kingdom investigated the evolution of language by studying cognates... in Indo-European languages\" — comparando cognatos dessas línguas."
+        },
+        {
+          "n": 78,
+          "text": "What did the \"mutation rate\" allow researchers to understand?",
+          "opts": [
+            "that rarely used words took 10,000 years to change",
+            "whether or not a word was related to other words",
+            "how much variation occurred in words of certain frequencies",
+            "if a word was evolving quickly enough"
+          ],
+          "key": 2,
+          "expl": "A \"mutation rate\", calculada \"based on frequency of use\", mostrou quanta variação sofreram as palavras conforme sua frequência (as comuns quase não mudaram; as raras mudaram em até 750 anos)."
+        },
+        {
+          "n": 79,
+          "text": "Which irregular verbs are most likely to become regularized?",
+          "opts": [
+            "those that are the least irregular",
+            "those that are most commonly used",
+            "those that have cognates in other languages",
+            "those that are used infrequently"
+          ],
+          "key": 3,
+          "expl": "\"The rarest verbs in the list were the most likely to have been regularized\" — os verbos usados com menos frequência são os que mais se regularizam."
+        },
+        {
+          "n": 80,
+          "text": "What do the two studies reported in the passage have in common?",
+          "opts": [
+            "Both investigate the relationship between word frequency and rate of change.",
+            "Both identify the most commonly used words in a variety of European languages.",
+            "Both challenge Charles Darwin's theory that languages will evolve over time.",
+            "Both analyze languages to determine the reasons for important words being replaced."
+          ],
+          "key": 0,
+          "expl": "Os dois estudos relacionam frequência de uso com velocidade de mudança: cognatos por frequência no primeiro; no segundo, o verbo 100× menos usado evolui 10× mais rápido."
+        }
+      ]
+    },
+    {
+      "id": "rd-set3",
+      "section": "rd",
+      "type": "reading-multi",
+      "title": "Textos A, B e C · Questões 81–90",
+      "texts": [
+        {
+          "tag": "A",
+          "html": "<h4>Midvillage's Fifth Annual International Film Festival</h4><p><strong>April 1–8</strong></p><p><strong>Come check out our film festival. It's bigger and better than ever!</strong></p><ul><li>Over 50 films representing 25 countries</li><li>A wide selection of award-winning entries — dramas, comedies, documentaries, and animation</li><li>Screenings featuring introductions and panel discussions with the films' stars</li><li>Post-festival events including workshops with leading producers, directors, screenwriters, and actors</li></ul><p>Reserve your tickets early at midvillagefilmfest.com or by calling 1-800-555-0000. Films will be shown at 10 different theaters around Midvillage at conveniently scheduled afternoon and evening times.</p>"
+        },
+        {
+          "tag": "B",
+          "html": "<h4>Midvillage's <em>Daily News</em> staff reporter Gary Davis interviews film critic Sophie Allen.</h4><p><strong>Q:</strong> In your opinion, who was the most influential film director of the 20th century?</p><p><strong>A:</strong> Oh, without a doubt, Federico Fellini! He was an award-winning, highly respected Italian filmmaker who lived from 1920–1993.</p><p><strong>Q:</strong> Tell us about his early life.</p><p><strong>A:</strong> Fellini was born in the small town of Rimini, Italy. In 1926, he saw his first film. It had a strong effect on him and sparked his lifelong love of cinema.</p><p><strong>Q:</strong> How did he start his career in the film business?</p><p><strong>A:</strong> He went to Rome in 1939 and began writing newspaper and magazine articles. This put him in contact with screenwriters and he soon received his first screenwriting credit. In 1942, Fellini went to Africa, where he transitioned from writing to being a filmmaker.</p><p><strong>Q:</strong> What was his most significant contribution to the world of cinema?</p><p><strong>A:</strong> I would say that it was his unique, very personal style, which combined memory, dreams, and fantasy. Fellini's approach can be seen in many of today's most renowned films.</p>"
+        },
+        {
+          "tag": "C",
+          "html": "<h4>Value of Using Movies as a Teaching Tool</h4><p><em>by Dr. Hannah Peters</em></p><p>Using film in the classroom has a positive effect on both young children and adolescent learners.</p><p>Movies, when used appropriately, can be an effective teaching tool for children. This is because, in addition to being attention-grabbing, they have the potential to teach life skills and promote values needed in today's world. The vivid images evoked by film bring about strong emotions and can spark a child's interest and imagination. By providing a picture of people, places, and moral dilemmas, many of which may be new to children, films raise awareness of social issues and promote social responsibility. In turn, children become introspective and reflect on their own lives, seeing them more clearly and, perhaps, differently. They learn to think more deeply and critically about the world, and develop feelings of compassion for others. Thus, their lives are enriched.</p><p>Movies are very much a part of today's world, and older students have become quite used to this fact. When film is brought into the classroom, these students can connect with concepts in ways that are comfortable and familiar to them. Movie topics are generally current and relevant, and therefore more likely to generate interest and hold students' attention. By engaging with the visuals, students can learn and retain more.</p><p>As an added bonus to teachers, those who use film in class are generally seen as friendlier and more human, generating a stronger teacher-student relationship. As students feel more comfortable with the media and the instructor, they learn and remember more.</p><p><em>Dr. Hannah Peters is a movie producer and a professor of film studies at Midvillage College.</em></p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 81,
+          "ref": "A",
+          "text": "What can participants do after the festival?",
+          "opts": [
+            "watch a special screening of foreign films",
+            "attend sessions with professionals in the field",
+            "lead a panel discussion",
+            "try out for a part in a movie"
+          ],
+          "key": 1,
+          "expl": "O anúncio lista \"post-festival events including workshops with leading producers, directors, screenwriters, and actors\" — sessões com profissionais da área depois do festival."
+        },
+        {
+          "n": 82,
+          "ref": "A",
+          "text": "In the first sentence of the final paragraph, what does <strong>Reserve</strong> mean?",
+          "opts": [
+            "remember",
+            "sell",
+            "trade",
+            "secure"
+          ],
+          "key": 3,
+          "expl": "\"Reserve your tickets early\" = garanta/assegure seus ingressos com antecedência — \"secure\"."
+        },
+        {
+          "n": 83,
+          "ref": "B",
+          "text": "What is the main purpose of section B?",
+          "opts": [
+            "to explain the work of a film critic",
+            "to describe life in Italy",
+            "to tell about a movie director",
+            "to promote Italian movies"
+          ],
+          "key": 2,
+          "expl": "A entrevista inteira é sobre Federico Fellini — vida, carreira e contribuição ao cinema. O propósito é falar de um diretor."
+        },
+        {
+          "n": 84,
+          "ref": "B",
+          "text": "In the first question, what does <strong>influential</strong> mean?",
+          "opts": [
+            "being popular around the world",
+            "having the power to cause change",
+            "creating the most movies",
+            "being the best writer"
+          ],
+          "key": 1,
+          "expl": "\"Influential\" = influente, com poder de provocar mudança; a crítica reforça isso ao dizer que a abordagem de Fellini \"can be seen in many of today's most renowned films\"."
+        },
+        {
+          "n": 85,
+          "ref": "B",
+          "text": "How did Fellini begin his career?",
+          "opts": [
+            "as a movie script writer",
+            "as a travel writer in Africa",
+            "as a film critic",
+            "as a journalist"
+          ],
+          "key": 3,
+          "expl": "\"He went to Rome in 1939 and began writing newspaper and magazine articles\" — ele começou como jornalista."
+        },
+        {
+          "n": 86,
+          "ref": "B",
+          "text": "In the last answer, why does Sophie Allen mention dreams?",
+          "opts": [
+            "to talk about a popular movie topic",
+            "to tell about her hopes for the future",
+            "to describe a method of an important director",
+            "to promote a current film"
+          ],
+          "key": 2,
+          "expl": "Os sonhos aparecem na descrição do estilo de Fellini — \"his unique, very personal style, which combined memory, dreams, and fantasy\" — o método de um diretor importante."
+        },
+        {
+          "n": 87,
+          "ref": "C",
+          "text": "In the second paragraph, why does the author mention imagination?",
+          "opts": [
+            "to state something that can be positively affected by films",
+            "to describe something that parents try to encourage",
+            "to refer to something that is harmed by watching movies",
+            "to illustrate how teachers must plan lessons using films"
+          ],
+          "key": 0,
+          "expl": "\"The vivid images evoked by film... can spark a child's interest and imagination\" — a imaginação é algo que os filmes afetam positivamente."
+        },
+        {
+          "n": 88,
+          "ref": "C",
+          "text": "According to the author, what is one reason older children can connect to film?",
+          "opts": [
+            "They are used to its presence in their lives.",
+            "They spend a lot of time playing video games.",
+            "They often need to watch movies for homework.",
+            "They prefer movies to books."
+          ],
+          "key": 0,
+          "expl": "\"Movies are very much a part of today's world, and older students have become quite used to this fact\" — eles estão acostumados à presença do cinema em suas vidas."
+        },
+        {
+          "n": 89,
+          "ref": "C",
+          "text": "In the second sentence of paragraph 4, what does <strong>they</strong> refer to?",
+          "opts": [
+            "teachers",
+            "media",
+            "students",
+            "films"
+          ],
+          "key": 2,
+          "expl": "\"As students feel more comfortable with the media and the instructor, they learn and remember more\" — \"they\" retoma \"students\"."
+        },
+        {
+          "n": 90,
+          "ref": "multi",
+          "text": "Who is most likely to lead a workshop after the Midvillage Film Festival?",
+          "opts": [
+            "Hannah Peters",
+            "Gary Davis",
+            "Sophie Allen",
+            "Federico Fellini"
+          ],
+          "key": 0,
+          "expl": "O festival terá workshops com \"leading producers\" (texto A), e a Dra. Hannah Peters é \"a movie producer\" (texto C) — a única produtora entre as opções."
+        }
+      ]
+    },
+    {
+      "id": "rd-set4",
+      "section": "rd",
+      "type": "reading-multi",
+      "title": "Textos A, B e C · Questões 91–100",
+      "texts": [
+        {
+          "tag": "A",
+          "html": "<h4>Mayday Inn: Come to beautiful Victorian Cape May!</h4><p>Founded in 1857, Cape May is one of the oldest ocean resorts in the United States. Our graceful hotel has spacious rooms with old-world charm and modern conveniences, like antique furniture and Internet access. Situated on a tree-lined street in the historic district, we are surrounded by fine examples of Victorian architecture.</p><p>Our friendly staff will happily help you:</p><ul><li>book a ride in a horse-drawn carriage</li><li>take a city tour</li><li>visit the lighthouse</li><li>arrange visits to antique stores</li></ul><p><strong>Visit us online at www.maydayinn.com.</strong></p>"
+        },
+        {
+          "tag": "B",
+          "html": "<h4>History 287/English Literature 242</h4><p><strong>The Victorian Era: An Overview</strong><br><em>Professor Donald Wilson</em></p><p>The United Kingdom's Queen Victoria reigned from 1837 until 1901. Characterized by a rapidly growing middle class, this crucial period saw dramatic changes to British society.</p><p>Through lectures, discussions, and readings, learn about the Victorian era by exploring three time periods:</p><p><strong>Early (1830–1848)</strong><br>Britain's first railroad opened, allowing the middle class to travel, resulting in the development of a tourist infrastructure.</p><p><strong>Middle (1848–1870)</strong><br>The Great Exhibition of 1851, the first world's fair, presented views of modern architecture. Private homes went from being part of the workplace to separate, self-contained structures.</p><p><strong>Late (1870–1901)</strong><br>This period saw the beginning of the decline of Britain as a world power.</p><p>The second half of the course will focus on the publishing industry of the Victorian era. With the increase in literacy, the public's appetite for books and magazines grew. Novels and works of nonfiction were presented to the public as a series, in monthly parts over a period of time. Several such selections will be included on the course reading list.</p>"
+        },
+        {
+          "tag": "C",
+          "html": "<h4>Charles Dickens: His Life and Work</h4><p><em>by Donald Wilson</em></p><p>Charles Dickens (1812–1870) was a renowned British writer whose many Victorian era works are considered literary classics.</p><p>The second of eight children, Dickens was born into poverty. Due to unfortunate circumstances, he spent a good portion of his youth working to help support his family. His loneliness and feelings of abandonment and betrayal by the adults who were supposed to take care of him became common themes in his work.</p><p>At age 15, for the second time in his childhood, he was forced to leave school and contribute to his family's income. He began an office job that became the starting point of his career as an author. Dickens was later employed as a reporter, then a magazine publisher.</p><p>One of his early novels, <em>Oliver Twist</em>, was based on his experiences as a child, supporting himself and figuring out life on his own. The book was published chapter by chapter, and readers eagerly looked forward to the next monthly installment. Dickens's success continued with <em>David Copperfield</em>, <em>A Tale of Two Cities</em>, and <em>Great Expectations</em>.</p><p>Charles Dickens's large body of work went beyond the novel to include autobiography, travel books, and plays. In 1851, he even took part in a theater production that was performed before Queen Victoria.</p><p>Sadly, he was involved in a railroad accident in 1865 and suffered injuries from which he never fully recovered. Fortunately, Dickens's lengthy stories, with their unforgettable characters, live on.</p><p><em>Donald Wilson is a biographer of Charles Dickens and an expert on Victorian life and literature.</em></p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 91,
+          "ref": "A",
+          "text": "In the third sentence of the paragraph, what does <strong>architecture</strong> mean?",
+          "opts": [
+            "building design",
+            "garden layout",
+            "traditional homes",
+            "old-fashioned hotels"
+          ],
+          "key": 0,
+          "expl": "\"Architecture\" ali se refere ao estilo/projeto das construções — o hotel é cercado por \"fine examples of Victorian architecture\" (belos exemplos de design de edifícios)."
+        },
+        {
+          "n": 92,
+          "ref": "B",
+          "text": "What is the main purpose of section B?",
+          "opts": [
+            "to tell about the life of Queen Victoria",
+            "to describe a university class",
+            "to give details about British society",
+            "to encourage reading about history"
+          ],
+          "key": 1,
+          "expl": "O texto B é a ementa de um curso universitário (History 287/English Literature 242) do professor Donald Wilson — descreve uma disciplina."
+        },
+        {
+          "n": 93,
+          "ref": "B",
+          "text": "According to the passage, what important event took place during the early Victorian era?",
+          "opts": [
+            "An international convention was held.",
+            "A new form of transportation was developed.",
+            "More workplaces were built.",
+            "Britain started to become less important."
+          ],
+          "key": 1,
+          "expl": "No período inicial, \"Britain's first railroad opened\" — a ferrovia, uma nova forma de transporte."
+        },
+        {
+          "n": 94,
+          "ref": "B",
+          "text": "Why does the author mention private homes in the middle Victorian period?",
+          "opts": [
+            "to describe housing prices of the Victorian era",
+            "to tell about a new British industry",
+            "to report on changes in family structure",
+            "to give an example of how British society changed"
+          ],
+          "key": 3,
+          "expl": "As casas que deixaram de ser parte do local de trabalho para virar estruturas separadas ilustram as \"dramatic changes to British society\" — um exemplo de mudança social."
+        },
+        {
+          "n": 95,
+          "ref": "B",
+          "text": "In the second sentence of the last paragraph, what does <strong>literacy</strong> mean?",
+          "opts": [
+            "reading ability",
+            "publications",
+            "education",
+            "culture"
+          ],
+          "key": 0,
+          "expl": "\"With the increase in literacy, the public's appetite for books and magazines grew\" — \"literacy\" = alfabetização, capacidade de leitura."
+        },
+        {
+          "n": 96,
+          "ref": "C",
+          "text": "According to the passage, what did Dickens do for much of his youth?",
+          "opts": [
+            "He studied at school.",
+            "He worked to earn money.",
+            "He wrote novels and plays.",
+            "He traveled across Great Britain."
+          ],
+          "key": 1,
+          "expl": "\"He spent a good portion of his youth working to help support his family\" — passou boa parte da juventude trabalhando para ganhar dinheiro."
+        },
+        {
+          "n": 97,
+          "ref": "C",
+          "text": "How did the young Dickens feel about the adults in his life?",
+          "opts": [
+            "They frightened him.",
+            "They took good care of him.",
+            "They disappointed him.",
+            "They appreciated his hard work."
+          ],
+          "key": 2,
+          "expl": "O texto fala dos \"feelings of abandonment and betrayal by the adults who were supposed to take care of him\" — os adultos o decepcionaram."
+        },
+        {
+          "n": 98,
+          "ref": "C",
+          "text": "In the last sentence of paragraph 4, why does the author mention <em>David Copperfield</em>?",
+          "opts": [
+            "to describe Dickens's most famous novel",
+            "to give an example of another Dickens novel",
+            "to name a magazine that Dickens published",
+            "to tell about an unsuccessful Dickens work"
+          ],
+          "key": 1,
+          "expl": "David Copperfield aparece na frase \"Dickens's success continued with David Copperfield, A Tale of Two Cities...\" — é citado como exemplo de outro romance dele."
+        },
+        {
+          "n": 99,
+          "ref": "C",
+          "text": "What was Dickens's relationship to Queen Victoria?",
+          "opts": [
+            "He wrote a book for her.",
+            "He worked for her.",
+            "He never met her.",
+            "He acted in a play for her."
+          ],
+          "key": 3,
+          "expl": "\"In 1851, he even took part in a theater production that was performed before Queen Victoria\" — ele atuou numa peça apresentada para a rainha."
+        },
+        {
+          "n": 100,
+          "ref": "multi",
+          "text": "How are Dickens's novels typical of Victorian literature?",
+          "opts": [
+            "They have children as the main characters.",
+            "They often used architecture for their subject matter.",
+            "They were published in sections over time.",
+            "They tried to help those who lived in poverty."
+          ],
+          "key": 2,
+          "expl": "O texto B diz que os romances vitorianos eram publicados \"as a series, in monthly parts\", e o C conta que Oliver Twist saiu \"chapter by chapter\" — publicação em partes ao longo do tempo."
+        }
+      ]
+    }
+  ],
+  "minis": [
+    {
+      "id": "mini1",
+      "name": "Mini Simulado 1",
+      "desc": "Questões 1–5, 20–23, 34–37, 51–55 e 71–75 · 23 questões",
+      "units": [
+        "l1-q1",
+        "l1-q2",
+        "l1-q3",
+        "l1-q4",
+        "l1-q5",
+        "l2-set1",
+        "l3-set1",
+        "gr-q51",
+        "gr-q52",
+        "gr-q53",
+        "gr-q54",
+        "gr-q55",
+        "rd-set1"
+      ]
+    },
+    {
+      "id": "mini2",
+      "name": "Mini Simulado 2",
+      "desc": "Questões 6–10, 24–26, 38–41, 56–60 e 76–80 · 22 questões",
+      "units": [
+        "l1-q6",
+        "l1-q7",
+        "l1-q8",
+        "l1-q9",
+        "l1-q10",
+        "l2-set2",
+        "l3-set2",
+        "gr-q56",
+        "gr-q57",
+        "gr-q58",
+        "gr-q59",
+        "gr-q60",
+        "rd-set2"
+      ]
+    },
+    {
+      "id": "mini3",
+      "name": "Mini Simulado 3",
+      "desc": "Questões 11–14, 27–30, 42–46, 61–65 e 81–90 · 28 questões",
+      "units": [
+        "l1-q11",
+        "l1-q12",
+        "l1-q13",
+        "l1-q14",
+        "l2-set3",
+        "l3-set3",
+        "gr-q61",
+        "gr-q62",
+        "gr-q63",
+        "gr-q64",
+        "gr-q65",
+        "rd-set3"
+      ]
+    },
+    {
+      "id": "mini4",
+      "name": "Mini Simulado 4",
+      "desc": "Questões 15–19, 31–33, 47–50, 66–70 e 91–100 · 27 questões",
+      "units": [
+        "l1-q15",
+        "l1-q16",
+        "l1-q17",
+        "l1-q18",
+        "l1-q19",
+        "l2-set4",
+        "l3-set4",
+        "gr-q66",
+        "gr-q67",
+        "gr-q68",
+        "gr-q69",
+        "gr-q70",
+        "rd-set4"
+      ]
+    }
+  ]
+}
