@@ -4,6 +4,7 @@
   "examLabel": "MET — Michigan English Test",
   "audioBase": "audio/red/",
   "secondsPerRGQuestion": 78,
+  "secondsPerListeningQuestion": 48,
   "cefr": {
     "note": "Estimativa baseada nas faixas oficiais CEFR do MET (Michigan Language Assessment). A conversão de acertos para scaled score é aproximada (linear).",
     "scale": 1.6,
