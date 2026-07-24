@@ -753,6 +753,7 @@
     answers: {},          // qNum -> option index
     playedAudio: {},      // unitId -> true (simulado completo: áudio toca 1x)
     studentName: '',
+    studentRaf: '',       // RAF do aluno (quando entra pelo Portal do Aluno)
     submitted: false,
     timerId: null,
     timeLeft: 0,
@@ -961,6 +962,25 @@
     document.querySelector('[data-scope="full"]').addEventListener('click', () =>
       startPractice({ type: 'full', id: 'full', label: 'Simulado Completo ' + TAG }));
     $('student-name').addEventListener('input', e => { state.studentName = e.target.value.trim(); });
+
+    // Entrada pelo Portal do Aluno: identidade já vem na URL (?raf=&nome=)
+    if (!PROF_MODE) {
+      const qs = new URLSearchParams(location.search);
+      const raf = (qs.get('raf') || '').trim();
+      const nome = (qs.get('nome') || '').trim();
+      if (raf) {
+        state.studentRaf = raf;
+        if (nome) {
+          state.studentName = nome;
+          $('name-wrap').style.display = 'none';
+          const badge = document.createElement('div');
+          badge.className = 'prof-badge';
+          badge.style.display = 'inline-block';
+          badge.textContent = '👤 ' + nome;
+          $('prof-badge').insertAdjacentElement('afterend', badge);
+        }
+      }
+    }
   }
 
   /* ══════════════ Montagem do escopo ══════════════ */
@@ -1477,7 +1497,7 @@
 
     // Registra o resultado e gera o código para o professor
     const entry = {
-      t: Date.now(), n: state.studentName, s: state.scope.label,
+      t: Date.now(), n: state.studentName, raf: state.studentRaf, s: state.scope.label,
       c: correct, q: total, L: scaledL, R: scaledR, O: scaledO, test: DATA.id
     };
     addLogEntry(entry);
