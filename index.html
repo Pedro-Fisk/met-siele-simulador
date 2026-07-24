@@ -699,14 +699,7 @@
         <div class="log-feedback" id="log-cloud-feedback"></div>
         <div style="height:1.2rem"></div>
       </div>
-      <div class="section-label">Importar códigos de resultado</div>
-      <p style="font-size:.82rem;color:var(--text-soft);line-height:1.5;margin-bottom:.6rem">
-        Cole aqui um ou mais códigos que os alunos enviaram (pode colar vários de uma vez, separados por espaço ou linha).
-      </p>
-      <textarea class="log-import" id="log-import" placeholder="MET1.abc123..."></textarea>
-      <div class="log-feedback" id="log-feedback"></div>
       <div class="log-actions">
-        <button class="btn btn-primary" id="log-import-btn">Importar códigos</button>
         <button class="btn btn-ghost" id="log-export-btn">⬇ Exportar CSV</button>
       </div>
       <div class="section-label">Registros</div>
@@ -829,36 +822,20 @@
     saveLogList(list);
     return true;
   }
-  function encodeResult(entry) {
-    const json = JSON.stringify(entry);
-    return 'MET1.' + btoa(unescape(encodeURIComponent(json))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-  }
-  function decodeResult(code) {
-    code = code.trim();
-    if (!code.startsWith('MET1.')) return null;
-    try {
-      let b = code.slice(5).replace(/-/g, '+').replace(/_/g, '/');
-      while (b.length % 4) b += '=';
-      const e = JSON.parse(decodeURIComponent(escape(atob(b))));
-      return (e && typeof e.t === 'number' && e.n && typeof e.c === 'number' && typeof e.q === 'number') ? e : null;
-    } catch (e) { return null; }
-  }
   function cefrLabelOf(scaled) { return scaled === null || scaled === undefined ? '—' : cefrBand(scaled).level; }
 
-  function sendResultToCloud(entry, statusEl) {
+  function sendResultToCloud(entry, statusEl, onFail) {
     if (!CLOUD_ON) { if (statusEl) statusEl.textContent = ''; return; }
     if (statusEl) statusEl.textContent = '☁️ Enviando resultado ao professor…';
+    const fail = msg => { if (statusEl) statusEl.textContent = msg; if (onFail) onFail(); };
     fetch(CLOUD.endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ key: CLOUD.appKey, tool: CLOUD.tool, data: entry })
     }).then(r => r.json()).then(res => {
-      if (statusEl) statusEl.textContent = res.ok
-        ? '☁️ Resultado enviado ao professor automaticamente ✓ (o código acima é só um plano B)'
-        : '⚠️ Não foi possível enviar automaticamente — envie o código acima ao seu professor.';
-    }).catch(() => {
-      if (statusEl) statusEl.textContent = '⚠️ Sem conexão com a nuvem — envie o código acima ao seu professor.';
-    });
+      if (res.ok) { if (statusEl) statusEl.textContent = '☁️ Resultado enviado ao professor automaticamente ✓'; }
+      else fail('⚠️ Não foi possível enviar o resultado agora.');
+    }).catch(() => fail('⚠️ Sem conexão para enviar o resultado agora.'));
   }
 
   async function fetchCloudResults() {
@@ -903,8 +880,6 @@
   }
   function showLog() {
     renderLogTable();
-    $('log-feedback').textContent = '';
-    $('log-import').value = '';
     if (CLOUD_ON) {
       $('log-cloud-section').style.display = 'block';
       let saved = '';
@@ -917,20 +892,6 @@
   }
   $('log-cloud-btn').addEventListener('click', fetchCloudResults);
   $('log-back').addEventListener('click', goHome);
-  $('log-import-btn').addEventListener('click', () => {
-    const codes = $('log-import').value.split(/\s+/).filter(Boolean);
-    let ok = 0, dup = 0, bad = 0;
-    codes.forEach(c => {
-      const e = decodeResult(c);
-      if (!e) { bad++; return; }
-      addLogEntry(e) ? ok++ : dup++;
-    });
-    const fb = $('log-feedback');
-    fb.textContent = codes.length === 0 ? 'Cole ao menos um código.' :
-      '✔ ' + ok + ' importado(s)' + (dup ? ' · ' + dup + ' já registrado(s)' : '') + (bad ? ' · ' + bad + ' inválido(s)' : '');
-    fb.style.color = bad && !ok ? 'var(--red)' : 'var(--green)';
-    if (ok) { $('log-import').value = ''; renderLogTable(); }
-  });
   $('log-export-btn').addEventListener('click', () => {
     const list = loadLog().slice().sort((a, b) => b.t - a.t);
     const rows = [['Data', 'Aluno', 'Simulado', 'Acertos', 'Total', 'Porcentagem', 'CEFR Listening', 'CEFR Reading&Grammar', 'CEFR Geral']];
@@ -1027,14 +988,12 @@
     state.phaseIdx = 0;
     clearTimer();
 
-    // Fases: cada parte do Listening é uma seção separada (sem volta); R&G é uma só
+    // Fases: cada seção da prova (L1, L2, L3, Grammar, Reading) é um bloco separado, sem volta
     state.phases = [];
-    ['l1', 'l2', 'l3'].forEach(sid => {
-      const us = state.units.filter(u => u.section === sid);
-      if (us.length) state.phases.push({ kind: 'listening', sec: sid, units: us });
+    DATA.sections.forEach(sec => {
+      const us = state.units.filter(u => u.section === sec.id);
+      if (us.length) state.phases.push({ kind: sec.kind === 'listening' ? 'listening' : 'rg', sec: sec.id, units: us });
     });
-    const rg = state.units.filter(u => !isListeningUnit(u));
-    if (rg.length) state.phases.push({ kind: 'rg', units: rg });
 
     $('qh-title').textContent = scope.label;
 
@@ -1074,9 +1033,9 @@
     const total = st.L + st.R;
     $('brief-title').textContent = state.scope.label;
     const full = state.scope.type === 'full';
-    const secMin = sid => {
+    const secMin = (sid, listening) => {
       const n = state.units.filter(u => u.section === sid).flatMap(u => u.questions).length;
-      return Math.ceil(n * DATA.secondsPerListeningQuestion / 60);
+      return Math.ceil(n * (listening ? DATA.secondsPerListeningQuestion : DATA.secondsPerRGQuestion) / 60);
     };
     let html = '';
     html += '<div class="unit-card" style="margin-top:1.4rem"><h3 style="margin-bottom:.6rem">' +
@@ -1100,14 +1059,15 @@
     html += '<li>Cada parte do Listening é uma seção separada: ao concluir uma, você avança para a próxima e <b>não pode voltar</b>.</li>' +
       '<li>Nas seções de conversas longas e palestras há um campo <b>"Notes"</b> para anotações livres enquanto ouve, como na prova oficial (as anotações não são salvas nem corrigidas).</li></ul></div>';
 
-    html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">📖 Reading & Grammar (' + st.R + ' questões · ' + st.tR + ' min)</h3><ul class="brief-list">' +
-      '<li><b>Grammar:</b> ' + st.gr + ' questões de completar frases.</li>' +
-      '<li><b>Reading:</b> ' + st.rd + ' questões sobre textos.</li>' +
-      '<li>⚠️ Depois de entrar nesta seção, <b>não é possível voltar ao Listening</b> — como na prova real.</li></ul></div>';
+    if (st.gr) html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">✍️ Grammar (' + st.gr + ' questões · ' + secMin('gr') + ' min)</h3><ul class="brief-list">' +
+      '<li>Questões de completar frases, escolhendo a melhor opção.</li></ul></div>';
+
+    if (st.rd) html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">📖 Reading (' + st.rd + ' questões · ' + secMin('rd') + ' min)</h3><ul class="brief-list">' +
+      '<li>Perguntas sobre textos: passagens e conjuntos de textos relacionados.</li></ul></div>';
 
     html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">⏱ Tempo e resultado</h3><ul class="brief-list">' +
-      '<li>Cada seção tem tempo cronometrado. Quando o tempo acaba, você avança automaticamente para a próxima seção (ou o teste é enviado, na última).</li>' +
-      '<li>Você só vê a correção no final: gabarito comentado, acertos por seção e sua <b>nota estimada no Quadro Europeu (CEFR, A2–C1)</b>.</li>' +
+      '<li>Cada seção tem tempo cronometrado. Ao concluir (ou quando o tempo acaba), você avança para a próxima seção e <b>não pode voltar</b>.</li>' +
+      '<li>No final você vê sua pontuação, os acertos por seção e a <b>nota estimada no Quadro Europeu (CEFR, A2–C1)</b>. A correção detalhada de cada questão é feita com o seu professor.</li>' +
       '<li>O resultado é enviado automaticamente ao seu professor.</li></ul></div>' +
       '<div style="height:1.5rem"></div>';
     b.innerHTML = html;
@@ -1324,7 +1284,7 @@
   function currentPhase() { return state.phases[state.phaseIdx]; }
 
   function phaseLabel(phase) {
-    return phase.kind === 'rg' ? 'Reading & Grammar' : sectionById[phase.sec].name;
+    return sectionById[phase.sec].name;
   }
   function renderStudentPhase() {
     stopAllAudio();
@@ -1359,20 +1319,20 @@
       container.appendChild(renderUnitCard(u, { interactive: true }));
     });
 
-    // Timer em todas as etapas (estimado a partir do tempo do exame oficial)
+    // Timer em todas as seções (estimado a partir do tempo do exame oficial)
     clearTimer();
     const n = questionsOf(phase.units).length;
-    if (phase.kind === 'rg') {
-      startTimer(Math.ceil(n * DATA.secondsPerRGQuestion / 60) * 60, () => {
+    const rate = phase.kind === 'listening' ? DATA.secondsPerListeningQuestion : DATA.secondsPerRGQuestion;
+    const last = state.phaseIdx === state.phases.length - 1;
+    startTimer(Math.ceil(n * rate / 60) * 60, () => {
+      if (last) {
         alert('⏰ Tempo esgotado! Suas respostas serão enviadas.');
         submitStudent();
-      });
-    } else {
-      startTimer(Math.ceil(n * DATA.secondsPerListeningQuestion / 60) * 60, () => {
+      } else {
         alert('⏰ Tempo desta seção esgotado! Avançando para a próxima seção.');
         advancePhase();
-      });
-    }
+      }
+    });
     updatePhaseBtn();
     updateAnswerCount();
   }
@@ -1521,7 +1481,6 @@
       c: correct, q: total, L: scaledL, R: scaledR, O: scaledO, test: DATA.id
     };
     addLogEntry(entry);
-    const code = encodeResult(entry);
 
     const note = document.createElement('p');
     note.className = 'cefr-note';
@@ -1548,30 +1507,29 @@
     });
     body.appendChild(secWrap);
 
-    // Código do resultado (para enviar ao professor)
-    const codeWrap = document.createElement('div');
-    codeWrap.className = 'result-code-wrap';
-    codeWrap.innerHTML =
-      '<div class="section-label" style="margin:0 0 .45rem">📨 Código do resultado</div>' +
-      '<p>Envie este código para o seu professor (por exemplo, pelo WhatsApp). Ele importa o código no painel do professor e registra o seu resultado.</p>' +
-      '<div class="result-code-row"><textarea class="result-code" readonly id="result-code">' + esc(code) + '</textarea>' +
-      '<button class="btn btn-primary btn-copy" id="copy-code">Copiar</button></div>' +
-      '<div class="log-feedback" id="cloud-status" style="color:var(--text-soft)"></div>';
-    body.appendChild(codeWrap);
-    sendResultToCloud(entry, codeWrap.querySelector('#cloud-status'));
-    codeWrap.querySelector('#copy-code').addEventListener('click', () => {
-      const ta = codeWrap.querySelector('#result-code');
-      const done = () => {
-        const b = codeWrap.querySelector('#copy-code');
-        b.textContent = 'Copiado ✓';
-        setTimeout(() => b.textContent = 'Copiar', 2000);
+    // Envio do resultado à nuvem (com reenvio manual se falhar)
+    if (CLOUD_ON) {
+      const cloudWrap = document.createElement('div');
+      cloudWrap.className = 'result-code-wrap';
+      cloudWrap.innerHTML = '<div class="log-feedback" id="cloud-status" style="color:var(--text-soft)"></div>' +
+        '<button class="btn btn-ghost" id="cloud-retry" style="display:none;margin-top:.6rem;padding:.55rem 1.2rem;font-size:.85rem">↻ Tentar enviar novamente</button>';
+      body.appendChild(cloudWrap);
+      const statusEl = cloudWrap.querySelector('#cloud-status');
+      const retryBtn = cloudWrap.querySelector('#cloud-retry');
+      const trySend = () => {
+        retryBtn.style.display = 'none';
+        sendResultToCloud(entry, statusEl, () => { retryBtn.style.display = 'inline-flex'; });
       };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(ta.value).then(done, () => { ta.select(); document.execCommand('copy'); done(); });
-      } else {
-        ta.select(); document.execCommand('copy'); done();
-      }
-    });
+      retryBtn.addEventListener('click', trySend);
+      trySend();
+    }
+
+    // Nota: a correção detalhada (gabarito comentado) não aparece para o aluno —
+    // é feita com o professor no Teacher Mode. Aqui mostramos só desempenho e nível.
+    const note2 = document.createElement('p');
+    note2.className = 'cefr-note';
+    note2.textContent = '📝 A correção comentada de cada questão é feita com o seu professor.';
+    body.appendChild(note2);
 
     // Ações
     const actions = document.createElement('div');
@@ -1586,23 +1544,6 @@
     btnHome.addEventListener('click', goHome);
     actions.append(btnRetry, btnHome);
     body.appendChild(actions);
-
-    // Revisão comentada
-    const revLabel = document.createElement('div');
-    revLabel.className = 'section-label review-label';
-    revLabel.textContent = 'Revisão comentada — suas respostas';
-    body.appendChild(revLabel);
-    let lastSection = null;
-    state.units.forEach(u => {
-      if (u.section !== lastSection) {
-        lastSection = u.section;
-        const sh = document.createElement('div');
-        sh.className = 'sec-header';
-        sh.innerHTML = '<h2><span class="sec-chip">' + (sectionById[u.section].kind === 'listening' ? '🎧' : '📖') + '</span>' + esc(sectionById[u.section].name) + '</h2>';
-        body.appendChild(sh);
-      }
-      body.appendChild(renderUnitCard(u, { review: true }));
-    });
   }
 
   function cefrCardHTML(skill, scaled, raw, total, overall) {
