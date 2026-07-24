@@ -457,10 +457,10 @@
       "section": "l2",
       "type": "audio-set",
       "audio": "l2-q20-23.mp3",
-      "title": "Conversa 1 · Questões 20–23",
+      "title": "Conversation 1 · Questions 20–23",
       "cues": [
         {
-          "label": "Conversa",
+          "label": "Conversation",
           "t": 7.5
         },
         {
@@ -537,10 +537,10 @@
       "section": "l2",
       "type": "audio-set",
       "audio": "l2-q24-26.mp3",
-      "title": "Conversa 2 · Questões 24–26",
+      "title": "Conversation 2 · Questions 24–26",
       "cues": [
         {
-          "label": "Conversa",
+          "label": "Conversation",
           "t": 0.3
         },
         {
@@ -601,10 +601,10 @@
       "section": "l2",
       "type": "audio-set",
       "audio": "l2-q27-30.mp3",
-      "title": "Conversa 3 · Questões 27–30",
+      "title": "Conversation 3 · Questions 27–30",
       "cues": [
         {
-          "label": "Conversa",
+          "label": "Conversation",
           "t": 0.3
         },
         {
@@ -681,10 +681,10 @@
       "section": "l2",
       "type": "audio-set",
       "audio": "l2-q31-33.mp3",
-      "title": "Conversa 4 · Questões 31–33",
+      "title": "Conversation 4 · Questions 31–33",
       "cues": [
         {
-          "label": "Conversa",
+          "label": "Conversation",
           "t": 0.3
         },
         {
@@ -744,10 +744,10 @@
       "section": "l3",
       "type": "audio-set",
       "audio": "l3-q34-37.mp3",
-      "title": "Palestra 1 · Questões 34–37",
+      "title": "Lecture 1 · Questions 34–37",
       "cues": [
         {
-          "label": "Palestra",
+          "label": "Lecture",
           "t": 7.5
         },
         {
@@ -823,10 +823,10 @@
       "section": "l3",
       "type": "audio-set",
       "audio": "l3-q38-41.mp3",
-      "title": "Palestra 2 · Questões 38–41",
+      "title": "Lecture 2 · Questions 38–41",
       "cues": [
         {
-          "label": "Palestra",
+          "label": "Lecture",
           "t": 0.3
         },
         {
@@ -903,10 +903,10 @@
       "section": "l3",
       "type": "audio-set",
       "audio": "l3-q42-46.mp3",
-      "title": "Palestra 3 · Questões 42–46",
+      "title": "Lecture 3 · Questions 42–46",
       "cues": [
         {
-          "label": "Palestra",
+          "label": "Lecture",
           "t": 0.3
         },
         {
@@ -998,10 +998,10 @@
       "section": "l3",
       "type": "audio-set",
       "audio": "l3-q47-50.mp3",
-      "title": "Palestra 4 · Questões 47–50",
+      "title": "Lecture 4 · Questions 47–50",
       "cues": [
         {
-          "label": "Palestra",
+          "label": "Lecture",
           "t": 0.3
         },
         {
@@ -1456,7 +1456,7 @@
       "id": "rd-set1",
       "section": "rd",
       "type": "reading",
-      "title": "Passagem 1 · Questões 71–75",
+      "title": "Passage 1 · Questions 71–75",
       "passageIntro": "This passage is about a new type of health care service.",
       "passage": "<p>What if the next time you need to visit the doctor, you could just turn on your computer instead of driving to the doctor's office for your appointment? Right before your appointment, you go online to complete a questionnaire about your medical needs, and then, when you are ready, you speak to a medical professional by phone or video chat. The doctor writes up a plan for your treatment and sends it to you by email. A prescription for medication, if needed, goes directly to the pharmacy of your choice. If your pharmacy provides a home delivery service, you may never need to leave your own home during your illness.</p><p>This idea of <em>telemedicine</em> has been gaining popularity in the United States over the last several years as it offers benefits to both consumers and health care providers. For people who live in isolated, rural areas, a trip to the nearest doctor may take hours, so telemedicine is not only convenient, but perhaps the only reasonably available medical care in their community. Even for those who have ready access to medical services, the availability of online consultations may lead patients to seek medical help earlier and more frequently, instead of waiting and eventually needing emergency care, which is much more expensive to both patients and insurance companies.</p><p>Of course, there are limits to virtual medicine. Many diagnoses require lab tests or X-rays that cannot be done remotely. More than that, many doctors feel that face-to-face communication with their patients is essential. During online consultations, doctors might easily miss subtle signals that would help them better understand their patients' problems. Even so, virtual medicine is likely to become more prevalent in the medical care of tomorrow, as patients continue to look for easy access and convenience, and insurers identify ways to reduce their expenses.</p>",
       "questions": [
@@ -1526,7 +1526,7 @@
       "id": "rd-set2",
       "section": "rd",
       "type": "reading",
-      "title": "Passagem 2 · Questões 76–80",
+      "title": "Passage 2 · Questions 76–80",
       "passageIntro": "This passage is about changes in language.",
       "passage": "<p>It is commonly accepted that languages change over time, with new words added and older terms dropped from common use. Charles Darwin, more famously associated with biological evolution, claimed that languages were also evolving over time, but this was only a speculative account of linguistic evolution. Modern research now suggests that Darwin's assertion was right and that words used most commonly in everyday language evolve at the slowest rate, while rarer words are more likely to change.</p><p>Researchers in the United Kingdom investigated the evolution of language by studying cognates, words that sound similar in different languages and express the same meaning, to identify how much variation now exists in Indo-European languages after 6,000 to 10,000 years of evolution. They discovered that frequently used words are more likely to have cognates, while less common words are more likely to be unrelated in different languages. The findings allowed a \"mutation rate\" to be calculated, based on frequency of use, which showed that the most common vocabulary exhibited almost no variation in 10,000 years. Vocabulary used less often was replaced in as few as 750 years.</p><p>A second study, in the United States, examined the roots of English from over 1,200 years ago to compile a list of 177 irregular old English verbs. Researchers discovered that of the original irregular verbs only 98 remain irregular today, suggesting that verbs tend to become \"regularized\" over time. The rarest verbs in the list were the most likely to have been regularized. A statistical analysis of these verbs indicated that if one was used 100 times less frequently than another, it would evolve 10 times faster than the more commonly used verb. Both studies support the notion that languages evolve much like natural species do.</p>",
       "questions": [
@@ -1596,7 +1596,7 @@
       "id": "rd-set3",
       "section": "rd",
       "type": "reading-multi",
-      "title": "Textos A, B e C · Questões 81–90",
+      "title": "Texts A, B & C · Questions 81–90",
       "texts": [
         {
           "tag": "A",
@@ -1748,7 +1748,7 @@
       "id": "rd-set4",
       "section": "rd",
       "type": "reading-multi",
-      "title": "Textos A, B e C · Questões 91–100",
+      "title": "Texts A, B & C · Questions 91–100",
       "texts": [
         {
           "tag": "A",

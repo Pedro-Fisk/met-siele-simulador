@@ -366,6 +366,34 @@
     .brief-p { font-size: .95rem; line-height: 1.6; }
     .brief-list { padding-left: 1.2rem; display: flex; flex-direction: column; gap: .45rem; font-size: .92rem; line-height: 1.55; }
 
+    /* ── Notes (Parts 2 e 3 do Listening) ── */
+    .phase-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 1rem; align-items: start; }
+    .notes-panel {
+      position: sticky; top: 76px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: .9rem 1rem 1rem;
+      margin-top: 1rem;
+    }
+    .notes-title { font-family: var(--font-h); font-weight: 800; font-size: .88rem; margin-bottom: .5rem; }
+    .notes-area {
+      width: 100%; min-height: 340px; resize: vertical;
+      background: var(--surface-2);
+      border: 1.5px dashed var(--border);
+      border-radius: 10px;
+      padding: .6rem .7rem;
+      font-family: var(--font-b); font-size: .9rem; line-height: 1.55;
+      color: var(--text); outline: none;
+    }
+    .notes-area:focus { border-color: var(--blue); }
+    @media (max-width: 900px) {
+      .phase-grid { grid-template-columns: 1fr; }
+      .notes-panel { position: static; order: -1; }
+      .notes-area { min-height: 110px; }
+    }
+
     /* ── Questions ── */
     .q-block { margin-top: 1.05rem; padding-top: 1.05rem; border-top: 1px dashed var(--border); }
     .q-block:first-child, .unit-card > .q-block:first-of-type { border-top: none; padding-top: 0; }
@@ -999,10 +1027,13 @@
     state.phaseIdx = 0;
     clearTimer();
 
-    const listening = state.units.filter(isListeningUnit);
-    const rg = state.units.filter(u => !isListeningUnit(u));
+    // Fases: cada parte do Listening é uma seção separada (sem volta); R&G é uma só
     state.phases = [];
-    if (listening.length) state.phases.push({ kind: 'listening', units: listening });
+    ['l1', 'l2', 'l3'].forEach(sid => {
+      const us = state.units.filter(u => u.section === sid);
+      if (us.length) state.phases.push({ kind: 'listening', sec: sid, units: us });
+    });
+    const rg = state.units.filter(u => !isListeningUnit(u));
     if (rg.length) state.phases.push({ kind: 'rg', units: rg });
 
     $('qh-title').textContent = scope.label;
@@ -1043,33 +1074,39 @@
     const total = st.L + st.R;
     $('brief-title').textContent = state.scope.label;
     const full = state.scope.type === 'full';
+    const secMin = sid => {
+      const n = state.units.filter(u => u.section === sid).flatMap(u => u.questions).length;
+      return Math.ceil(n * DATA.secondsPerListeningQuestion / 60);
+    };
     let html = '';
     html += '<div class="unit-card" style="margin-top:1.4rem"><h3 style="margin-bottom:.6rem">' +
       (full ? 'Como funciona o simulado completo' : 'Como funciona este mini simulado') + '</h3>' +
       '<p class="brief-p">Você fará <b>' + total + ' questões</b>' +
-      (full ? ' — o MET completo, na sequência oficial da prova.' : ', uma amostra proporcional do exame MET, na sequência oficial da prova.') + '</p></div>';
+      (full ? ' — o MET completo, na sequência oficial da prova.' : ', uma amostra proporcional do exame MET, na sequência oficial da prova.') +
+      ' Durante o teste, tudo aparece em inglês, como no exame oficial.</p></div>';
 
-    html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">🎧 Etapa 1 — Listening (' + st.L + ' questões · até ' + st.tL + ' min)</h3><ul class="brief-list">';
+    html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">🎧 Listening (' + st.L + ' questões · 3 seções)</h3><ul class="brief-list">';
     if (full) {
-      html += '<li><b>Part 1</b> (Q1–19): 19 conversas curtas — ouça e responda uma pergunta sobre cada.</li>' +
-        '<li><b>Part 2</b> (Q20–33): 4 conversas longas, com 3–4 perguntas cada.</li>' +
-        '<li><b>Part 3</b> (Q34–50): 4 palestras curtas, com 4–5 perguntas cada.</li>' +
-        '<li>⚠️ <b>Como no exame oficial, cada áudio toca UMA ÚNICA VEZ</b> — não é possível pausar para repetir, voltar ou mudar a velocidade. Dê play em cada áudio quando estiver pronto.</li>';
+      html += '<li><b>Part 1</b> (Q1–19): 19 conversas curtas, uma pergunta cada · até ' + secMin('l1') + ' min.</li>' +
+        '<li><b>Part 2</b> (Q20–33): 4 conversas longas, com 3–4 perguntas cada · até ' + secMin('l2') + ' min.</li>' +
+        '<li><b>Part 3</b> (Q34–50): 4 palestras curtas, com 4–5 perguntas cada · até ' + secMin('l3') + ' min.</li>' +
+        '<li>⚠️ <b>Como no exame oficial, cada áudio toca UMA ÚNICA VEZ</b> — não dá para repetir, voltar ou mudar a velocidade. Dê play em cada áudio quando estiver pronto.</li>';
     } else {
-      html += '<li><b>Part 1:</b> ' + st.p1 + ' conversas curtas, uma pergunta cada.</li>';
-      st.sets2.forEach(u => html += '<li><b>Part 2:</b> 1 conversa longa com ' + u.questions.length + ' perguntas.</li>');
-      st.sets3.forEach(u => html += '<li><b>Part 3:</b> 1 palestra com ' + u.questions.length + ' perguntas.</li>');
+      html += '<li><b>Part 1:</b> ' + st.p1 + ' conversas curtas, uma pergunta cada · até ' + secMin('l1') + ' min.</li>';
+      st.sets2.forEach(u => html += '<li><b>Part 2:</b> 1 conversa longa com ' + u.questions.length + ' perguntas · até ' + secMin('l2') + ' min.</li>');
+      st.sets3.forEach(u => html += '<li><b>Part 3:</b> 1 palestra com ' + u.questions.length + ' perguntas · até ' + secMin('l3') + ' min.</li>');
       html += '<li>Nos mini simulados você <b>pode repetir os áudios</b> à vontade (no simulado completo, cada áudio toca uma única vez, como na prova real).</li>';
     }
-    html += '</ul></div>';
+    html += '<li>Cada parte do Listening é uma seção separada: ao concluir uma, você avança para a próxima e <b>não pode voltar</b>.</li>' +
+      '<li>Nas seções de conversas longas e palestras há um campo <b>"Notes"</b> para anotações livres enquanto ouve, como na prova oficial (as anotações não são salvas nem corrigidas).</li></ul></div>';
 
-    html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">📖 Etapa 2 — Reading & Grammar (' + st.R + ' questões · ' + st.tR + ' min)</h3><ul class="brief-list">' +
+    html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">📖 Reading & Grammar (' + st.R + ' questões · ' + st.tR + ' min)</h3><ul class="brief-list">' +
       '<li><b>Grammar:</b> ' + st.gr + ' questões de completar frases.</li>' +
       '<li><b>Reading:</b> ' + st.rd + ' questões sobre textos.</li>' +
-      '<li>⚠️ Depois de avançar para esta etapa, <b>não é possível voltar ao Listening</b> — como na prova real.</li></ul></div>';
+      '<li>⚠️ Depois de entrar nesta seção, <b>não é possível voltar ao Listening</b> — como na prova real.</li></ul></div>';
 
     html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">⏱ Tempo e resultado</h3><ul class="brief-list">' +
-      '<li>Cada etapa tem tempo cronometrado (Listening: ' + st.tL + ' min · Reading & Grammar: ' + st.tR + ' min). Quando o tempo acabar, a etapa é enviada automaticamente.</li>' +
+      '<li>Cada seção tem tempo cronometrado. Quando o tempo acaba, você avança automaticamente para a próxima seção (ou o teste é enviado, na última).</li>' +
       '<li>Você só vê a correção no final: gabarito comentado, acertos por seção e sua <b>nota estimada no Quadro Europeu (CEFR, A2–C1)</b>.</li>' +
       '<li>O resultado é enviado automaticamente ao seu professor.</li></ul></div>' +
       '<div style="height:1.5rem"></div>';
@@ -1122,14 +1159,14 @@
     const note = document.createElement('div');
     note.className = 'p-note';
     if (oneShot) {
-      note.textContent = '⚠️ Este áudio toca uma única vez — dê play quando estiver pronto.';
+      note.textContent = '⚠️ This audio plays ONLY ONCE — press play when you are ready.';
       wrap.appendChild(note);
     }
     function lockUI() {
       play.disabled = true;
       play.style.opacity = '.35';
       play.style.cursor = 'not-allowed';
-      note.textContent = '✔ Áudio reproduzido. No simulado completo, cada áudio toca uma única vez, como no exame oficial.';
+      note.textContent = '✔ Audio played. In the full test, each audio plays only once — just like in the official exam.';
     }
     const alreadyPlayed = () => !!(state.playedAudio && state.playedAudio[unit.id]);
     if (oneShot && alreadyPlayed()) lockUI();
@@ -1196,7 +1233,7 @@
     if (q.ref) {
       const ref = document.createElement('span');
       ref.className = 'q-ref';
-      ref.textContent = q.ref === 'multi' ? 'Refere-se a dois ou mais textos' : 'Refere-se ao texto ' + q.ref;
+      ref.textContent = q.ref === 'multi' ? 'Refers to two or more texts' : 'Refers to text ' + q.ref;
       block.appendChild(ref);
     }
     const qt = document.createElement('div');
@@ -1286,21 +1323,40 @@
   /* ══════════════ Modo Aluno ══════════════ */
   function currentPhase() { return state.phases[state.phaseIdx]; }
 
+  function phaseLabel(phase) {
+    return phase.kind === 'rg' ? 'Reading & Grammar' : sectionById[phase.sec].name;
+  }
   function renderStudentPhase() {
     stopAllAudio();
     const body = $('quiz-body');
     body.innerHTML = '';
     const phase = currentPhase();
-    $('qh-sub').textContent = state.studentName + ' · Fase ' + (state.phaseIdx + 1) + ' de ' + state.phases.length +
-      (phase.kind === 'listening' ? ' · Listening' : ' · Reading & Grammar');
+    $('qh-sub').textContent = state.studentName + ' · Section ' + (state.phaseIdx + 1) + ' of ' + state.phases.length + ' · ' + phaseLabel(phase);
 
+    // Campo de anotações livres nas seções de conversas longas e palestras (como na prova oficial)
+    let container = body;
     let lastSection = null;
+    if (phase.kind === 'listening' && (phase.sec === 'l2' || phase.sec === 'l3')) {
+      body.appendChild(sectionHeader(sectionById[phase.sec]));
+      lastSection = phase.sec;
+      const grid = document.createElement('div');
+      grid.className = 'phase-grid';
+      const unitsCol = document.createElement('div');
+      unitsCol.style.minWidth = '0';
+      const notes = document.createElement('div');
+      notes.className = 'notes-panel';
+      notes.innerHTML = '<div class="notes-title">📝 Notes</div>' +
+        '<textarea class="notes-area" placeholder="If you want to, you may take notes here as you listen.\nNotes are not saved or graded."></textarea>';
+      grid.append(unitsCol, notes);
+      body.appendChild(grid);
+      container = unitsCol;
+    }
     phase.units.forEach(u => {
       if (u.section !== lastSection) {
         lastSection = u.section;
-        body.appendChild(sectionHeader(sectionById[u.section]));
+        container.appendChild(sectionHeader(sectionById[u.section]));
       }
-      body.appendChild(renderUnitCard(u, { interactive: true }));
+      container.appendChild(renderUnitCard(u, { interactive: true }));
     });
 
     // Timer em todas as etapas (estimado a partir do tempo do exame oficial)
@@ -1313,7 +1369,7 @@
       });
     } else {
       startTimer(Math.ceil(n * DATA.secondsPerListeningQuestion / 60) * 60, () => {
-        alert('⏰ Tempo do Listening esgotado! Avançando para Reading & Grammar.');
+        alert('⏰ Tempo desta seção esgotado! Avançando para a próxima seção.');
         advancePhase();
       });
     }
@@ -1334,7 +1390,7 @@
     const h = document.createElement('div');
     h.className = 'sec-header';
     const title = document.createElement('h2');
-    title.innerHTML = '<span class="sec-chip">' + (sec.kind === 'listening' ? '🎧 Áudio' : '📖 Leitura') + '</span>' + esc(sec.name);
+    title.innerHTML = '<span class="sec-chip">' + (sec.kind === 'listening' ? '🎧 Audio' : '📖 Text') + '</span>' + esc(sec.name);
     h.appendChild(title);
     const inst = document.createElement('p');
     inst.className = 'sec-instructions';
@@ -1342,7 +1398,7 @@
     h.appendChild(inst);
     if (sec.introAudio) {
       const secUnit = { id: 'intro-' + sec.id };
-      h.appendChild(getPlayer(secUnit, sec.introAudio, [{ label: '🔈 Instruções oficiais (áudio)', t: 0 }]));
+      h.appendChild(getPlayer(secUnit, sec.introAudio, [{ label: '🔈 Official audio instructions', t: 0 }]));
       const p = h.lastChild;
       p.style.marginTop = '.5rem';
     }
@@ -1354,25 +1410,26 @@
 
   function updateAnswerCount() {
     const total = phaseQuestions().length;
-    $('answer-count').innerHTML = 'Respondidas: <b>' + answeredInPhase() + '</b> / ' + total;
+    $('answer-count').innerHTML = 'Answered: <b>' + answeredInPhase() + '</b> / ' + total;
   }
   function updatePhaseBtn() {
     const last = state.phaseIdx === state.phases.length - 1;
-    $('phase-btn').textContent = last ? 'Enviar respostas' : 'Concluir Listening → Reading & Grammar';
+    $('phase-btn').textContent = last ? 'Submit answers ✓' : 'Continue → ' + phaseLabel(state.phases[state.phaseIdx + 1]);
   }
 
   $('phase-btn').addEventListener('click', () => {
     const missing = phaseQuestions().length - answeredInPhase();
     const last = state.phaseIdx === state.phases.length - 1;
-    if (missing > 0) {
-      const msg = 'Você deixou ' + missing + (missing === 1 ? ' questão' : ' questões') + ' em branco.' +
-        (last ? '\n\nEnviar mesmo assim?' : '\n\nComo na prova real, não será possível voltar ao Listening depois. Avançar mesmo assim?');
-      if (!confirm(msg)) return;
-    } else if (!last) {
-      if (!confirm('Concluir o Listening e iniciar Reading & Grammar?\n\nComo na prova real, não será possível voltar.')) return;
+    const blank = missing > 0
+      ? 'Você deixou ' + missing + (missing === 1 ? ' questão' : ' questões') + ' em branco nesta seção.\n\n'
+      : '';
+    if (last) {
+      if (!confirm(blank + 'Enviar suas respostas? Depois de enviar não é possível alterar.')) return;
+      submitStudent();
+    } else {
+      if (!confirm(blank + 'Tem certeza que quer seguir para a próxima seção? Você NÃO poderá voltar.')) return;
+      advancePhase();
     }
-    if (last) { submitStudent(); }
-    else { advancePhase(); }
   });
 
   /* ── Timer ── */
@@ -1588,7 +1645,7 @@
     const sec = sectionById[unit.section];
     const sh = document.createElement('div');
     sh.className = 'sec-header';
-    sh.innerHTML = '<h2><span class="sec-chip">' + (sec.kind === 'listening' ? '🎧 Áudio' : '📖 Leitura') + '</span>' + esc(sec.name) + '</h2>';
+    sh.innerHTML = '<h2><span class="sec-chip">' + (sec.kind === 'listening' ? '🎧 Audio' : '📖 Text') + '</span>' + esc(sec.name) + '</h2>';
     body.appendChild(sh);
 
     const card = document.createElement('div');
@@ -1629,7 +1686,7 @@
     if (q.ref) {
       const ref = document.createElement('span');
       ref.className = 'q-ref';
-      ref.textContent = q.ref === 'multi' ? 'Refere-se a dois ou mais textos' : 'Refere-se ao texto ' + q.ref;
+      ref.textContent = q.ref === 'multi' ? 'Refers to two or more texts' : 'Refers to text ' + q.ref;
       block.appendChild(ref);
     }
     const qt = document.createElement('div');
