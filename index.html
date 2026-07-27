@@ -1698,8 +1698,52 @@
       if (state.stepIdx === state.steps.length - 1) { profEnd(); }
       else { state.stepIdx++; profRender(); window.scrollTo(0, 0); }
     });
-    nav.append(prev, reveal, next);
+    // mudo do som de acerto, junto dos controles que o professor já usa
+    const som = document.createElement('button');
+    som.className = 'btn btn-ghost som-toggle';
+    som.type = 'button';
+    som.addEventListener('click', alternarSom);
+    nav.append(prev, reveal, next, som);
     body.appendChild(nav);
+    pintarBotoesSom();
+  }
+
+
+  /* ── Som discreto de acerto ──────────────────────────────────────────────
+     WebAudio puro: nenhum arquivo e nenhuma dependência. Desligável porque o
+     simulado roda projetado na TV — som que não se cala vira incômodo.
+     No modo aluno NÃO toca durante a prova: seria dar a resposta de graça. */
+  const SOM_KEY = 'fisk_som';
+  function somLigado() { try { return localStorage.getItem(SOM_KEY) !== 'off'; } catch (e) { return true; } }
+  function alternarSom() {
+    try { localStorage.setItem(SOM_KEY, somLigado() ? 'off' : 'on'); } catch (e) {}
+    pintarBotoesSom();
+    if (somLigado()) tocarAcerto();
+  }
+  function pintarBotoesSom() {
+    const on = somLigado();
+    document.querySelectorAll('.som-toggle').forEach(b => {
+      b.textContent = on ? '\u{1F50A}' : '\u{1F507}';
+      b.title = on ? 'Correct-answer sound on' : 'Correct-answer sound off';
+    });
+  }
+  function tocarAcerto() {
+    if (!somLigado()) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+      const ctx = tocarAcerto._ctx || (tocarAcerto._ctx = new AC());
+      if (ctx.state === 'suspended') ctx.resume();
+      const t = ctx.currentTime;
+      [[880, 0], [1320, 0.085]].forEach(([hz, atraso]) => {
+        const osc = ctx.createOscillator(), g = ctx.createGain();
+        osc.type = 'sine'; osc.frequency.value = hz;
+        g.gain.setValueAtTime(0.0001, t + atraso);
+        g.gain.exponentialRampToValueAtTime(0.055, t + atraso + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + atraso + 0.17);
+        osc.connect(g); g.connect(ctx.destination);
+        osc.start(t + atraso); osc.stop(t + atraso + 0.19);
+      });
+    } catch (e) {}
   }
 
   function profReveal(q) {
@@ -1707,6 +1751,7 @@
     state.profRevealed = true;
     const correctBtn = $('prof-opt-' + q.key);
     if (correctBtn) correctBtn.classList.add('correct');
+    if (state.profChosen === q.key) tocarAcerto();   // a turma acertou
     if (state.profChosen !== null && state.profChosen !== q.key) {
       const wrongBtn = $('prof-opt-' + state.profChosen);
       if (wrongBtn) { wrongBtn.classList.remove('chosen'); wrongBtn.classList.add('wrong'); }
