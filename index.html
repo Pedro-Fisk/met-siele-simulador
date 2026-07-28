@@ -834,9 +834,46 @@
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ key: CLOUD.appKey, tool: CLOUD.tool, data: entry })
     }).then(r => r.json()).then(res => {
-      if (res.ok) { if (statusEl) statusEl.textContent = '☁️ Resultado enviado ao professor automaticamente ✓'; }
+      if (res.ok) {
+        if (statusEl) statusEl.textContent = '☁️ Resultado enviado ao professor automaticamente ✓';
+        // Fisk Dólares: o backend credita e devolve o ganho em res.fd
+        if (res.fd && res.fd.credito > 0) fdToast(res.fd.credito);
+      }
       else fail('⚠️ Não foi possível enviar o resultado agora.');
     }).catch(() => fail('⚠️ Sem conexão para enviar o resultado agora.'));
+  }
+
+  /* Aviso + barulhinho de Fisk Dólares ganhos (quando a carteira estiver ativa no backend) */
+  function fdToast(valor) {
+    const el = document.createElement('div');
+    el.style.cssText = 'position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%);z-index:999;' +
+      'background:#161414;color:#f5c563;border:2px solid #c9922e;border-radius:999px;' +
+      'padding:.7rem 1.4rem;font-family:Poppins,sans-serif;font-weight:800;font-size:1rem;' +
+      'box-shadow:0 6px 20px rgba(0,0,0,.35);transition:opacity .4s';
+    el.textContent = '💵 +F$ ' + valor + ' na sua carteira!';
+    document.body.appendChild(el);
+    setTimeout(() => { el.style.opacity = '0'; }, 5200);
+    setTimeout(() => { el.remove(); }, 5800);
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) {
+        if (!fdToast.ctx) fdToast.ctx = new AC();
+        const ctx = fdToast.ctx; if (ctx.resume) ctx.resume();
+        const plins = valor >= 200 ? 3 : valor >= 80 ? 2 : 1;
+        for (let i = 0; i < plins; i++) {
+          const t0 = ctx.currentTime + i * 0.13;
+          const o = ctx.createOscillator(), g = ctx.createGain();
+          o.type = 'triangle';
+          o.frequency.setValueAtTime(987.77, t0);
+          o.frequency.setValueAtTime(1318.51, t0 + 0.08);
+          g.gain.setValueAtTime(0.0001, t0);
+          g.gain.exponentialRampToValueAtTime(0.2, t0 + 0.015);
+          g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.5);
+          o.connect(g); g.connect(ctx.destination);
+          o.start(t0); o.stop(t0 + 0.55);
+        }
+      }
+    } catch (e) {}
   }
 
   async function fetchCloudResults() {
