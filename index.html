@@ -1826,5 +1826,38 @@
   $('brief-start').addEventListener('click', beginQuiz);
   $('brief-back').addEventListener('click', goHome);
   </script>
+<script src="assets/tour.js"></script>
+<script>
+/* Tour guiado de primeiro acesso do Treino MET (PT). Espera o buildHome()
+   popular a home (fetch das questões) antes de iniciar. */
+(function(){
+  if(!window.FiskTour) return;
+  function vis(sel){ var el=document.querySelector(sel); return !!(el && el.offsetParent!==null); }
+  var tries=0;
+  var iv=setInterval(function(){
+    tries++;
+    var g=document.getElementById('minis-grid');
+    var homeActive=(document.getElementById('screen-home')||{}).classList && document.getElementById('screen-home').classList.contains('active');
+    if((g && g.children.length>0 && homeActive) || tries>40){ clearInterval(iv); mountMet(); }
+  }, 150);
+  function mountMet(){
+    if(!document.getElementById('screen-home').classList.contains('active')) return; // não intromete se já saiu da home
+    var steps=[
+      { el:null, title:'Bem-vindo ao Treino MET! 🎧',
+        html:'Aqui você faz simulados do <b>MET</b> (Michigan English Test), com áudio e uma nota estimada por nível. Deixa eu te apresentar.' }
+    ];
+    if(vis('#name-wrap'))
+      steps.push({ el:'#name-wrap', title:'Seu nome 📝', html:'Digite seu nome antes de começar — ele aparece no seu resultado.' });
+    steps.push({ el:'[data-scope="full"]', title:'Simulado completo 📄',
+      html:'O exame inteiro (listening + reading), no formato do MET de verdade. Reserve um tempo — é o simulado mais longo.' });
+    if(vis('#minis-grid'))
+      steps.push({ el:'#minis-grid', title:'Mini-simulados ⏱️',
+        html:'Treinos mais curtos, por parte do exame — ótimos para praticar no dia a dia sem fazer a prova toda.' });
+    steps.push({ el:'#home-note', title:'Sua nota vira nível CEFR 🎯',
+      html:'No fim, seus acertos viram uma <b>estimativa de nível</b> (A2, B1, B2, C1), como no Quadro Europeu. Toque no <b>❓</b> para rever este tour.' });
+    FiskTour.mount(steps, { key:'met_v1', delay:400 });
+  }
+})();
+</script>
 </body>
 </html>
