@@ -1,0 +1,397 @@
+{
+  "id": "siele-m0",
+  "name": "Modelo 0 · SIELE S1",
+  "examLabel": "SIELE — Servicio Internacional de Evaluación de la Lengua Española",
+  "modality": "S1 · Comprensión de lectura + Comprensión auditiva",
+  "lang": "es",
+  "toolId": "siele",
+  "audioBase": "audio/siele-m0/",
+  "letters": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ"],
+  "refLabel": "Se refiere al texto {n}",
+  "fullLabel": "Examen completo S1",
+  "uiSection": "Prueba {i} de {n}",
+  "uiAnswered": "Respondidas:",
+  "scoreLabel": "Puntuación estimada:",
+  "brief": {
+    "title": "Como funciona o exame completo S1",
+    "titleMini": "Como funciona este treino por nível",
+    "intro": "Você fará <b>{n} questões</b> — o S1 completo, na sequência oficial: primeiro a <b>Comprensión de lectura</b>, depois a <b>Comprensión auditiva</b>. Tudo aparece em espanhol, como no exame real.",
+    "introMini": "Você fará <b>{n} questões</b> das tarefas de um mesmo nível do CEFR. É um recorte para treinar um tipo de tarefa por vez — o exame inteiro segue no <i>Examen completo S1</i>.",
+    "cards": [
+      {
+        "title": "📖 Comprensión de lectura ({n} questões · {min} min)",
+        "sections": ["cl"],
+        "items": [
+          "São 5 tarefas em ordem crescente de dificuldade, do A1 ao C1: cinco textos curtos, um e-mail, três depoimentos, dois textos com fragmentos faltando e um texto com doze lacunas.",
+          "Nas tarefas de fragmento e de lacuna, o número dentro do texto indica a lacuna — a resposta é a letra correspondente na lista de opções.",
+          "Atenção na Tarefa 4: são <b>cinco</b> fragmentos para <b>quatro</b> lacunas em cada texto. Um deles sempre sobra."
+        ]
+      },
+      {
+        "title": "🎧 Comprensión auditiva ({n} questões · {min} min)",
+        "sections": ["ca"],
+        "items": [
+          "São 6 tarefas do A1 ao C1: uma conversa, cinco anúncios de rádio, oito pessoas falando, uma entrevista e duas conferências.",
+          "⚠️ <b>Cada áudio é a tarefa inteira</b>: já vem com o tempo para ler as perguntas, a primeira escuta, a pausa e a repetição. Dê play quando estiver pronto e ouça até o fim — no exame real não se pode parar nem voltar.",
+          "Nas tarefas com lista de opções, leia a lista durante o silêncio inicial do áudio. É para isso que ele existe.",
+          "A última tarefa é diferente: você marca <b>seis</b> opções entre doze, e cada acerto vale um ponto."
+        ],
+        "itemsMini": [
+          "Nos treinos por nível você <b>pode repetir os áudios</b> à vontade. No exame completo, cada um toca uma única vez, como na prova real."
+        ]
+      }
+    ],
+    "closing": {
+      "title": "⏱ Tempo e resultado",
+      "items": [
+        "Cada prova é cronometrada separadamente. Ao concluir uma (ou quando o tempo acaba), você avança para a seguinte e <b>não pode voltar</b> — é assim no exame oficial.",
+        "No final você vê a <b>pontuação de 0 a 250 em cada prova</b> e o nível correspondente no Quadro Europeu (CEFR), além da soma de 0 a 500 que é o resultado do S1.",
+        "A correção comentada de cada questão é feita com o seu professor.",
+        "O resultado é enviado automaticamente ao seu professor."
+      ]
+    }
+  },
+  "source": "EXAMEN SIELE. Modelo 0 (abril 2019) — Instituto Cervantes / Universidad de Salamanca / UNAM / Universidad de Buenos Aires. Uso interno das escolas Fisk para treino dos alunos.",
+  "cefr": {
+    "note": "Pontuação e faixas do CEFR conforme a Guía de examen SIELE: cada prova vale no máximo 250 pontos e o exame S1 soma 0–500. Abaixo de 33 pontos numa prova, o resultado oficial seria NO APTO — não há descritores abaixo do A1.",
+    "scale": 250
+  },
+  "cefrGroups": [
+    {
+      "label": "Comprensión de lectura",
+      "short": "CL",
+      "sections": ["cl"],
+      "scale": 250,
+      "bands": [
+        { "min": 217, "level": "C1", "desc": "Lê com facilidade textos longos e complexos e capta significados implícitos." },
+        { "min": 178, "level": "B2", "desc": "Lê artigos e relatórios sobre temas atuais e compreende textos literários contemporâneos em prosa." },
+        { "min": 118, "level": "B1", "desc": "Lê, com compreensão satisfatória, textos simples sobre fatos concretos e temas da sua especialidade." },
+        { "min": 66, "level": "A2", "desc": "Compreende textos breves e simples sobre assuntos cotidianos ou de trabalho, com vocabulário muito frequente." },
+        { "min": 33, "level": "A1", "desc": "Compreende textos muito breves e simples, lendo frase por frase e captando nomes e palavras básicas." },
+        { "min": 0, "level": "NO APTO", "desc": "Abaixo da pontuação mínima do A1 nesta prova. Não há descritores de uso da língua abaixo do A1." }
+      ]
+    },
+    {
+      "label": "Comprensión auditiva",
+      "short": "CA",
+      "sections": ["ca"],
+      "scale": 250,
+      "bands": [
+        { "min": 211, "level": "C1", "desc": "Compreende discurso extenso mesmo sem estrutura explícita e sem esforço excessivo." },
+        { "min": 164, "level": "B2", "desc": "Compreende discursos e palestras extensos e acompanha argumentações complexas sobre temas familiares." },
+        { "min": 112, "level": "B1", "desc": "Compreende as ideias principais de um discurso claro e padrão sobre assuntos cotidianos." },
+        { "min": 66, "level": "A2", "desc": "Compreende frases e expressões de necessidade imediata, desde que o discurso seja claro e lento." },
+        { "min": 33, "level": "A1", "desc": "Compreende discurso oral produzido lentamente, com articulação cuidada e pausas para assimilar o sentido." },
+        { "min": 0, "level": "NO APTO", "desc": "Abaixo da pontuação mínima do A1 nesta prova. Não há descritores de uso da língua abaixo do A1." }
+      ]
+    },
+    {
+      "label": "Puntuación S1",
+      "short": "S1 (0-500)",
+      "sumOf": [0, 1],
+      "max": 500,
+      "isOverall": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "cl",
+      "name": "Comprensión de lectura",
+      "short": "CL",
+      "kind": "text",
+      "minutes": 60,
+      "tasks": 5,
+      "items": 38,
+      "instructions": "Esta prueba tiene 5 tareas y 38 preguntas. Dispone de 60 minutos. Atención: en el examen real no se puede volver a las tareas terminadas — cuando termine una tarea, no podrá retroceder."
+    },
+    {
+      "id": "ca",
+      "name": "Comprensión auditiva",
+      "short": "CA",
+      "kind": "listening",
+      "minutes": 55,
+      "tasks": 6,
+      "items": 38,
+      "instructions": "Esta prueba tiene 6 tareas y 38 preguntas. Dispone de unos 55 minutos. Cada audio incluye ya el tiempo para leer las preguntas, la primera escucha y la repetición: se escucha una sola vez, de principio a fin, y no se puede parar."
+    }
+  ],
+  "units": [
+    {
+      "id": "cl-t1",
+      "section": "cl",
+      "title": "Tarea 1 · Nivel A1",
+      "type": "reading-multi",
+      "instr": "Usted va a leer cinco textos breves. Elija la opción correcta para cada una de las cinco preguntas.",
+      "texts": [
+        { "tag": "Texto 1", "html": "<p>Hola, María:</p><p>¿Quieres venir al concierto de Shakira? Canta en Santiago este verano, los días 24, 25 y 26. Es un concierto con sus grandes canciones, y canta con Alejandro Sanz, Juanes y otros amigos. Adela y yo queremos ir el viernes 24 pero, si no puedes, cambiamos el día. ¿Vienes con nosotros? Dime algo pronto porque el lunes empiezan a vender las entradas y siempre se terminan muy rápido.</p><p>Adiós,<br>Pedro</p>" },
+        { "tag": "Texto 2", "html": "<h4>SE ALQUILA</h4><p>Se alquila una habitación en apartamento compartido con tres estudiantes. Está muy bien para una joven. El apartamento es grande con 4 dormitorios, 2 baños y cocina. Tiene 100 m² y está al lado del metro y de algunas paradas de autobuses que llevan al centro. 200 €/mes.</p>" },
+        { "tag": "Texto 3", "html": "<h4>Pasión</h4><p>Un año más llega a nuestra ciudad la empresa andaluza Hípicus con su interesante grupo <em>Pasión</em>. Más de cien actores y cincuenta caballos en un circo que gusta a pequeños y a grandes.</p><p>Horarios:</p><ul><li>de martes a viernes: 18 h y 21 h</li><li>sábado y domingo: 18 h y 22 h</li></ul><p>Con la compra de dos entradas para padres, los niños no pagan.</p><p>Venta de entradas en la página: www.pasion.com</p>" },
+        { "tag": "Texto 4", "html": "<h4>VETUSTA EN CONCIERTO</h4><p>Lugar: Teatro Principal.<br>Fecha: viernes 20 de noviembre<br>Hora: las puertas se abren a las 20:00 horas. El concierto empieza a las 22:00 horas.<br>Precio: 27 euros. Concierto para mayores de 16 años.</p><p>Compra tu entrada en las tiendas del centro comercial Las Torres.</p>" },
+        { "tag": "Texto 5", "html": "<p>Queridos compañeros:</p><p>Vendo un billete de tren a Barcelona, con ida el viernes 26 de junio y vuelta el domingo 28. El de ida sale de la estación de Madrid a las 19:00 y llega a Barcelona a las 21:30. El de vuelta sale a las 21:00 y llega a las 23:30. Lo vendo porque al final esos días trabajo. Cuesta 80 €, más barato que en la estación.</p><p>Gracias,<br>Juan</p>" }
+      ],
+      "questions": [
+        { "n": 1, "ref": "1", "text": "Pedro dice que…", "opts": ["en el concierto hay diferentes cantantes.", "quiere ir al concierto el lunes.", "ya no hay entradas para el concierto."], "key": 0, "expl": "O texto diz que Shakira \"canta con Alejandro Sanz, Juanes y otros amigos\" — ou seja, vários cantores no mesmo show. O lunes é quando começam a vender as entradas, não quando ele quer ir (ele quer o viernes 24), e as entradas ainda não acabaram." },
+        { "n": 2, "ref": "2", "text": "El anuncio es para personas que quieren...", "opts": ["un apartamento para su familia.", "una casa bien comunicada.", "vivir en el centro de la ciudad."], "key": 1, "expl": "\"Bien comunicada\" quer dizer com bom transporte — e o anúncio diz \"está al lado del metro y de algunas paradas de autobuses\". Não serve para família (é um quarto em apartamento compartilhado com estudantes) e não fica no centro: os ônibus só *levam* ao centro." },
+        { "n": 3, "ref": "3", "text": "El circo Pasión…", "opts": ["tiene un horario diferente los fines de semana.", "es especialmente para niños.", "no cuesta dinero a las familias."], "key": 0, "expl": "Compare os horários: de martes a viernes é 18 h e 21 h; sábado e domingo, 18 h e 22 h. A segunda sessão do fim de semana é uma hora mais tarde. O circo \"gusta a pequeños y a grandes\" (não é só para crianças) e os pais pagam — só os filhos não." },
+        { "n": 4, "ref": "4", "text": "En el anuncio se dice que...", "opts": ["el concierto de Vetusta es por la noche.", "los niños pueden entrar al concierto.", "hay un concierto en el centro comercial."], "key": 0, "expl": "O show começa às 22:00 — de noite. É \"para mayores de 16 años\", então crianças não entram, e no centro comercial só se vendem as entradas: o show é no Teatro Principal." },
+        { "n": 5, "ref": "5", "text": "Juan dice en su mensaje que…", "opts": ["tiene billetes de tren baratos.", "puede viajar ese fin de semana.", "quiere ir a Barcelona con un compañero."], "key": 0, "expl": "\"Cuesta 80 €, más barato que en la estación\" — ele está vendendo mais barato. E justamente não pode viajar: \"lo vendo porque al final esos días trabajo\"." }
+      ]
+    },
+    {
+      "id": "cl-t2",
+      "section": "cl",
+      "title": "Tarea 2 · Nivel A2",
+      "type": "reading",
+      "instr": "Usted va a leer un correo que Isabel ha escrito a su amiga Sara. Elija la opción correcta para cada una de las cinco preguntas.",
+      "passageIntro": "Correo de Isabel a Sara",
+      "passage": "<p>Hola Sara, ¿qué tal todo?</p><p>Perdona, ayer no te llamé para comer juntas porque me dolía mucho la cabeza. Pero por la tarde ya me sentí mejor y fui a dar un paseo por el centro. Por cierto, ¿sabes con quien me encontré? Con Eugenia, que salía del cine. Llevaba el vestido que le compramos para su cumpleaños y estaba guapísima. Me preguntó por ti y me dijo que está muy contenta porque ha empezado a trabajar en una tienda de decoración.</p><p>En el centro siempre me encuentro con gente conocida: hace dos días vi a tu hermano en una exposición. Me contó que lo pasó muy bien en el concierto de Maná, pero después leí en el periódico que empezó treinta minutos tarde. Decían que los músicos llegaron tarde y que la gente estaba bastante enfadada. Tienes que decirme qué pasó. Ya sabes que me encanta Maná y estuve triste por no poder ir.</p><p>Estaba muy ocupada con los exámenes. Sin embargo, la próxima semana quiero descansar, por eso voy a reservar una habitación en un hotel en la montaña. Está muy cerca de la casa donde pasaba los veranos con mis abuelos. ¿Te apetece venir? He visto que va a hacer buen tiempo, podemos pasear y montar en bici.</p><p>Si quieres, podemos vernos mañana y lo hablamos. Por la tarde tengo que ir a la biblioteca de la universidad que está cerca de tu oficina. Puedo verte en la cafetería que está enfrente de la biblioteca, esa donde ponen un café tan rico. Dime algo.</p><p>Un beso y hasta pronto,<br>Isabel</p>",
+      "questions": [
+        { "n": 6, "text": "Isabel escribe este correo a Sara para…", "opts": ["comer con ella.", "invitarla a un viaje.", "hablarle de su nuevo trabajo."], "key": 1, "expl": "O centro do e-mail é o convite: \"voy a reservar una habitación en un hotel en la montaña. (…) ¿Te apetece venir?\". O almoço é do dia anterior e não aconteceu, e o trabalho novo é da Eugenia, não da Isabel." },
+        { "n": 7, "text": "En el texto se dice que ayer Isabel…", "opts": ["vio una película.", "salió de compras.", "estuvo con una amiga."], "key": 2, "expl": "Ontem ela encontrou Eugenia no centro. Cuidado com as pistas falsas: quem saía do cinema era a Eugenia, e o vestido foi comprado antes, no aniversário dela." },
+        { "n": 8, "text": "El día del concierto, el hermano de Sara…", "opts": ["llegó un poco tarde.", "estuvo muy contento.", "se enfadó con Isabel."], "key": 1, "expl": "\"Me contó que lo pasó muy bien en el concierto\". Quem chegou tarde foram os músicos (e o show, com 30 minutos de atraso), e quem estava \"bastante enfadada\" era o público em geral." },
+        { "n": 9, "text": "La próxima semana, Isabel…", "opts": ["quiere ir a un hotel.", "tiene que hacer exámenes.", "va de vacaciones con sus abuelos."], "key": 0, "expl": "\"La próxima semana quiero descansar, por eso voy a reservar una habitación en un hotel\". As provas já passaram (\"estaba muy ocupada\", pretérito) e os avós aparecem só na lembrança dos verões de infância." },
+        { "n": 10, "text": "Isabel va a ver a Sara en…", "opts": ["su oficina.", "la biblioteca.", "una cafetería."], "key": 2, "expl": "\"Puedo verte en la cafetería que está enfrente de la biblioteca\". A biblioteca é para onde a Isabel precisa ir, e o escritório da Sara é só a referência de localização." }
+      ]
+    },
+    {
+      "id": "cl-t3",
+      "section": "cl",
+      "title": "Tarea 3 · Nivel B1",
+      "type": "reading-multi",
+      "instr": "Usted va a leer tres textos en los que unas jóvenes chilenas hablan sobre su experiencia como estudiantes en un país extranjero. Elija la opción correcta para cada una de las ocho preguntas.",
+      "sourceNote": "(Adaptado de www.yfuchile.cl/opiniones. Chile)",
+      "texts": [
+        { "tag": "GABRIELA", "html": "<p>Tenía varios compañeros que se habían ido anteriormente a estudiar al extranjero y me dijeron que la experiencia era fantástica y que por qué no buscaba la forma y hacía lo mismo. Pensaba ir a Alemania por seis meses, pero me gustó tanto que me quedé todo el año. Al principio lo pasé muy mal porque, aunque estudiaba mucho, el idioma me resultaba muy complicado y no me enteraba de nada. Sin embargo, al final conseguí aprobar los exámenes y me sentí muy feliz conmigo misma. Estuve viviendo con dos familias y tuve mucha suerte con las dos: nuestra relación fue muy linda y familiar. Mi experiencia fue excelente. Me divertí y aprendí muchas cosas, entre ellas, a organizar mi economía y a convivir con más gente.</p>" },
+        { "tag": "PAULA", "html": "<p>Yo quería escapar del día a día y esta fue la principal razón por la que fui a Holanda a estudiar. Debo decir que el colegio me impresionó muchísimo. Al principio no sabía ni una palabra de holandés y, como soy tímida, me daba vergüenza cuando no entendía lo que explicaba el profesor. Pero mis compañeros de clase me recibieron muy bien y me trataban como a una amiga. Para mí fue un año muy positivo y siempre recordaré con cariño esta experiencia. El único problema que tuve fue el dinero, porque el coste de vida era muy alto.</p>" },
+        { "tag": "SARA", "html": "<p>La experiencia de irse a otro país es increíble, se lo aconsejo a todo el mundo sin dudarlo. Cuando pienso en lo que viví, siempre es con una sonrisa en la cara. Lo que más recuerdo es la llegada a la casa de la familia en Bélgica, sin saber muy bien lo que iba a encontrarme y con ganas de conocerlo todo. La familia con la que viví era la mejor, tuve mucha suerte con ellos y les estoy muy agradecida por lo bien que se portaron conmigo. Siempre me hicieron sentir como una más. Lo que viví allí me enriqueció personalmente porque aprendí a solucionar los problemas por mí misma. Me gustaría volver algún día porque quiero hablar mejor el idioma.</p>" }
+      ],
+      "questions": [
+        { "n": 11, "text": "¿Quién decidió estudiar en el extranjero porque se lo aconsejaron?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 0, "expl": "Gabriela: \"varios compañeros (…) me dijeron que la experiencia era fantástica y que por qué no buscaba la forma y hacía lo mismo\". Sara *dá* o conselho aos outros — não o recebeu." },
+        { "n": 12, "text": "¿Quién se fue a otro país porque buscaba un cambio en su vida?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 1, "expl": "Paula: \"quería escapar del día a día y esta fue la principal razón\". \"Escapar do dia a dia\" é exatamente buscar uma mudança." },
+        { "n": 13, "text": "¿Quién dice que le costó mucho aprender el idioma?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 0, "expl": "Gabriela: \"aunque estudiaba mucho, el idioma me resultaba muy complicado y no me enteraba de nada\". Paula também não sabia holandês, mas o que ela relata é a vergonha, não a dificuldade de aprender." },
+        { "n": 14, "text": "¿Quién dice que tuvo complicaciones económicas?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 1, "expl": "Paula: \"El único problema que tuve fue el dinero, porque el coste de vida era muy alto\". Gabriela fala de dinheiro, mas para dizer que *aprendeu* a administrá-lo." },
+        { "n": 15, "text": "¿Quién aprendió a administrar su dinero gracias a esta experiencia?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 0, "expl": "Gabriela: \"aprendí muchas cosas, entre ellas, a organizar mi economía\". Note o contraste com a questão anterior: Paula *teve* problema de dinheiro, Gabriela *aprendeu* a organizá-lo." },
+        { "n": 16, "text": "¿Quién dice que esta vivencia le ayudó a ser más independiente?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 2, "expl": "Sara: \"me enriqueció personalmente porque aprendí a solucionar los problemas por mí misma\" — resolver as coisas por si mesma é ganhar independência." },
+        { "n": 17, "text": "¿Quién afirma que repetiría la experiencia de regresar al país?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 2, "expl": "Sara: \"Me gustaría volver algún día porque quiero hablar mejor el idioma\". Paula lembra com carinho, mas não diz que voltaria." },
+        { "n": 18, "text": "¿Quién cambió de opinión con respecto al tiempo que iba a pasar en el país de destino?", "opts": ["Gabriela.", "Paula.", "Sara."], "key": 0, "expl": "Gabriela: \"Pensaba ir a Alemania por seis meses, pero me gustó tanto que me quedé todo el año\" — mudou o plano de seis meses para um ano." }
+      ]
+    },
+    {
+      "id": "cl-t4a",
+      "section": "cl",
+      "title": "Tarea 4 · Nivel B2 · Texto 1",
+      "type": "reading",
+      "instr": "Usted va a leer dos textos en los que faltan cuatro fragmentos. Elija el fragmento correcto para cada hueco. De los cinco fragmentos, solo tiene que utilizar cuatro.",
+      "passageIntro": "LA EDUCACIÓN DE LOS NIÑOS",
+      "passage": "<p>En una ocasión, Fabricio Caivano, fundador de <em>Cuadernos de Pedagogía</em>, le preguntó al premio Nobel Gabriel García Márquez acerca de la educación de los niños. El autor de <em>Cien años de soledad</em> le contestó: «Lo único importante es encontrar el juguete que llevan dentro». <span class=\"gap\">1</span></p><p>García Márquez había sido un estudiante malísimo hasta que un maestro se dio cuenta de su amor por la lectura. A partir de entonces, todo fue miel sobre hojuelas pues, en su caso, el juguete oculto eran las palabras. Es una idea que conecta la educación con el juego. <span class=\"gap\">2</span></p><p>Y al igual que García Márquez no está de acuerdo con separar la educación del juego, yo no soy capaz de entender la educación sin la felicidad y el amor. Por una parte, un niño feliz no solo es más alegre y tranquilo, sino que también puede ser educado con más facilidad: el bienestar le hace creer que el mundo es un lugar en el que merece la pena vivir, por extraño que pueda parecer muchas veces. <span class=\"gap\">3</span> El amor consiste básicamente en tratar de ponerse en el lugar del otro; pero ponerse en el lugar del niño, saber cómo es cada niño, no es una tarea sencilla para la mayoría de los adultos.</p><p>Por eso prefiero a los padres tolerantes, incluso a los padres que aceptan demasiadas cosas, antes que a los padres que insisten en decirles continuamente a sus hijos lo que deben hacer. <span class=\"gap\">4</span> Sin duda, tiene sus peligros, pero creo que estos son menos terribles que los peligros del rigor o de la indiferencia.</p>",
+      "sourceNote": "(Adaptado de http://elpais.com. España)",
+      "bankTitle": "Opciones de respuesta · Texto 1",
+      "bank": [
+        "Permitir demasiado significa mimar, ser indulgente, pero también significa sentir con el otro, desear el bien para la persona que amamos.",
+        "Por consiguiente, hay adultos que tienen el maravilloso don de ponerse en lugar de los niños.",
+        "Según esta, educar consistiría en encontrar el tipo de juego que debemos jugar con cada niño, ese juego en que está su propio ser.",
+        "Y por otra parte, la mejor manera de empezar a educar a un niño es hacer que se sienta querido.",
+        "Para el escritor colombiano, cada niño llevaría un juguete distinto, y educarlo consistiría en averiguar cuál es para ponerse a jugar con él."
+      ],
+      "questions": [
+        { "n": 19, "bankRef": true, "text": "Hueco 1", "opts": ["Permitir demasiado significa mimar, ser indulgente, pero también significa sentir con el otro, desear el bien para la persona que amamos.", "Por consiguiente, hay adultos que tienen el maravilloso don de ponerse en lugar de los niños.", "Según esta, educar consistiría en encontrar el tipo de juego que debemos jugar con cada niño, ese juego en que está su propio ser.", "Y por otra parte, la mejor manera de empezar a educar a un niño es hacer que se sienta querido.", "Para el escritor colombiano, cada niño llevaría un juguete distinto, y educarlo consistiría en averiguar cuál es para ponerse a jugar con él."], "key": 4, "expl": "O fragmento (e) explica a citação que acabou de aparecer: \"el escritor colombiano\" retoma García Márquez e \"cada niño llevaría un juguete distinto\" parafraseia \"el juguete que llevan dentro\". Repare no condicional (llevaría, consistiría), que marca a interpretação da frase alheia." },
+        { "n": 20, "bankRef": true, "text": "Hueco 2", "opts": ["Permitir demasiado significa mimar, ser indulgente, pero también significa sentir con el otro, desear el bien para la persona que amamos.", "Por consiguiente, hay adultos que tienen el maravilloso don de ponerse en lugar de los niños.", "Según esta, educar consistiría en encontrar el tipo de juego que debemos jugar con cada niño, ese juego en que está su propio ser.", "Y por otra parte, la mejor manera de empezar a educar a un niño es hacer que se sienta querido.", "Para el escritor colombiano, cada niño llevaría un juguete distinto, y educarlo consistiría en averiguar cuál es para ponerse a jugar con él."], "key": 2, "expl": "A pista é gramatical: \"Según esta\" precisa de um substantivo feminino imediatamente antes, e a frase anterior termina em \"una idea que conecta la educación con el juego\". O fragmento (c) desenvolve essa ideia falando do tipo de jogo." },
+        { "n": 21, "bankRef": true, "text": "Hueco 3", "opts": ["Permitir demasiado significa mimar, ser indulgente, pero también significa sentir con el otro, desear el bien para la persona que amamos.", "Por consiguiente, hay adultos que tienen el maravilloso don de ponerse en lugar de los niños.", "Según esta, educar consistiría en encontrar el tipo de juego que debemos jugar con cada niño, ese juego en que está su propio ser.", "Y por otra parte, la mejor manera de empezar a educar a un niño es hacer que se sienta querido.", "Para el escritor colombiano, cada niño llevaría un juguete distinto, y educarlo consistiría en averiguar cuál es para ponerse a jugar con él."], "key": 3, "expl": "O parágrafo abre com \"Por una parte…\" (a felicidade) — o correlato \"Y por otra parte…\" do fragmento (d) fecha o par e introduz o amor, que é justamente o tema da frase seguinte." },
+        { "n": 22, "bankRef": true, "text": "Hueco 4", "opts": ["Permitir demasiado significa mimar, ser indulgente, pero también significa sentir con el otro, desear el bien para la persona que amamos.", "Por consiguiente, hay adultos que tienen el maravilloso don de ponerse en lugar de los niños.", "Según esta, educar consistiría en encontrar el tipo de juego que debemos jugar con cada niño, ese juego en que está su propio ser.", "Y por otra parte, la mejor manera de empezar a educar a un niño es hacer que se sienta querido.", "Para el escritor colombiano, cada niño llevaría un juguete distinto, y educarlo consistiría en averiguar cuál es para ponerse a jugar con él."], "key": 0, "expl": "O fragmento (a) define \"permitir demasiado\", retomando \"los padres que aceptan demasiadas cosas\" da frase anterior, e prepara o \"tiene sus peligros\" da frase seguinte. O fragmento (b) é o distrator que sobra: dos cinco, só quatro se usam." }
+      ]
+    },
+    {
+      "id": "cl-t4b",
+      "section": "cl",
+      "title": "Tarea 4 · Nivel B2 · Texto 2",
+      "type": "reading",
+      "instr": "Segundo texto de la Tarea 4. Elija el fragmento correcto para cada hueco. De los cinco fragmentos, solo tiene que utilizar cuatro.",
+      "passageIntro": "EL NUEVO CONSUMIDOR EN UN PANORAMA DE CAMBIO",
+      "passage": "<p>Cada día los profesionales de la mercadotecnia y de la publicidad intentan comprender el comportamiento del consumidor y hallar las verdades humanas que lo mueven. <span class=\"gap\">5</span> Lo cierto es que en los últimos años el perfil de los consumidores ha cambiado. Hoy nos encontramos ante un consumidor más informado y exigente, que interactúa con distintos medios para distintos propósitos.</p><p>Internet ha revolucionado el mundo del consumidor, que se siente capaz de convertirse en un entendido sobre cualquier sector del mercado que le interese y de elegir con conciencia. Y como valora mucho su tiempo, busca informarse de la forma más rápida que le sea posible. <span class=\"gap\">6</span> Conoce muy bien las marcas y es consciente del poder que tiene entre sus manos. Víctor Lozano, de la consultora Future Labs, comenta que hoy en día «el consumidor puede ejercer su poder de manera mucho más concreta y clara. Es crítico, hace saber lo que piensa en las redes sociales y tiene la capacidad de destruir una marca a través del boca a boca». <span class=\"gap\">7</span></p><p>El nuevo consumidor quiere sentirse parte de la empresa y adquirir un papel protagonista en la creación de los productos. Desea ser escuchado y tomado en cuenta. Para satisfacer esta necesidad, las empresas se han visto obligadas a establecer puentes que ayuden a acercar la marca a los posibles compradores. <span class=\"gap\">8</span></p>",
+      "sourceNote": "(Adaptado de http://beta.udep.edu.pe. Perú)",
+      "bankTitle": "Opciones de respuesta · Texto 2",
+      "bank": [
+        "Pero también puede convertirse en un aliado que ayude a que la marca mejore el valor de su propuesta.",
+        "No obstante, ha dejado de ser un receptor pasivo para convertirse en un receptor activo que quiere ser amigo de la marca.",
+        "Un claro ejemplo de esto se ve en el uso que se hace de las redes sociales, que representan un canal de comunicación fundamental en el mercado actual.",
+        "El nuevo consumidor, en definitiva, recurre a medios que le ofrecen la inmediatez deseada y que satisfacen su necesidad de conocimientos.",
+        "Este conocimiento les permite conectar con él y hacer que se involucre con las propuestas que hacen las marcas."
+      ],
+      "questions": [
+        { "n": 23, "bankRef": true, "text": "Hueco 5", "opts": ["Pero también puede convertirse en un aliado que ayude a que la marca mejore el valor de su propuesta.", "No obstante, ha dejado de ser un receptor pasivo para convertirse en un receptor activo que quiere ser amigo de la marca.", "Un claro ejemplo de esto se ve en el uso que se hace de las redes sociales, que representan un canal de comunicación fundamental en el mercado actual.", "El nuevo consumidor, en definitiva, recurre a medios que le ofrecen la inmediatez deseada y que satisfacen su necesidad de conocimientos.", "Este conocimiento les permite conectar con él y hacer que se involucre con las propuestas que hacen las marcas."], "key": 4, "expl": "\"Este conocimiento\" retoma o esforço dos profissionais para \"comprender el comportamiento del consumidor\", e o \"les\" plural refere-se a eles. Depois vem \"Lo cierto es que…\", que só faz sentido depois de uma afirmação sobre esse conhecimento." },
+        { "n": 24, "bankRef": true, "text": "Hueco 6", "opts": ["Pero también puede convertirse en un aliado que ayude a que la marca mejore el valor de su propuesta.", "No obstante, ha dejado de ser un receptor pasivo para convertirse en un receptor activo que quiere ser amigo de la marca.", "Un claro ejemplo de esto se ve en el uso que se hace de las redes sociales, que representan un canal de comunicación fundamental en el mercado actual.", "El nuevo consumidor, en definitiva, recurre a medios que le ofrecen la inmediatez deseada y que satisfacen su necesidad de conocimientos.", "Este conocimiento les permite conectar con él y hacer que se involucre con las propuestas que hacen las marcas."], "key": 3, "expl": "O fragmento (d) fecha o raciocínio com \"en definitiva\": a frase anterior diz que ele \"busca informarse de la forma más rápida\", e a \"inmediatez deseada\" é exatamente a retomada dessa ideia." },
+        { "n": 25, "bankRef": true, "text": "Hueco 7", "opts": ["Pero también puede convertirse en un aliado que ayude a que la marca mejore el valor de su propuesta.", "No obstante, ha dejado de ser un receptor pasivo para convertirse en un receptor activo que quiere ser amigo de la marca.", "Un claro ejemplo de esto se ve en el uso que se hace de las redes sociales, que representan un canal de comunicación fundamental en el mercado actual.", "El nuevo consumidor, en definitiva, recurre a medios que le ofrecen la inmediatez deseada y que satisfacen su necesidad de conocimientos.", "Este conocimiento les permite conectar con él y hacer que se involucre con las propuestas que hacen las marcas."], "key": 0, "expl": "A citação termina em \"la capacidad de destruir una marca\" — o \"Pero también puede convertirse en un aliado\" faz o contraste direto entre destruir e ajudar. O fragmento (c), sobre redes sociais, é o distrator tentador aqui, mas repetiria informação já dada na citação." },
+        { "n": 26, "bankRef": true, "text": "Hueco 8", "opts": ["Pero también puede convertirse en un aliado que ayude a que la marca mejore el valor de su propuesta.", "No obstante, ha dejado de ser un receptor pasivo para convertirse en un receptor activo que quiere ser amigo de la marca.", "Un claro ejemplo de esto se ve en el uso que se hace de las redes sociales, que representan un canal de comunicación fundamental en el mercado actual.", "El nuevo consumidor, en definitiva, recurre a medios que le ofrecen la inmediatez deseada y que satisfacen su necesidad de conocimientos.", "Este conocimiento les permite conectar con él y hacer que se involucre con las propuestas que hacen las marcas."], "key": 2, "expl": "\"Un claro ejemplo de esto\" retoma os \"puentes\" que as empresas criaram para se aproximar dos compradores — e as redes sociais são justamente esse exemplo. Sobra o fragmento (b)." }
+      ]
+    },
+    {
+      "id": "cl-t5",
+      "section": "cl",
+      "title": "Tarea 5 · Nivel C1",
+      "type": "reading",
+      "instr": "Usted va a leer un texto en el que faltan doce palabras. Elija la opción correcta para cada hueco.",
+      "passageIntro": "PELIGRAN ARRECIFES DE CORAL POR EL CAMBIO CLIMÁTICO",
+      "passage": "<p>Recientes investigaciones del Instituto de Ciencias del Mar y Limnología de la UNAM han demostrado que los efectos del cambio climático producen la pérdida de los arrecifes de coral, informó Roberto Iglesias Prieto, académico de esta entidad.</p><p>El <span class=\"gap\">1</span> de tan sólo un grado centígrado en la temperatura de los océanos ocasiona el blanqueamiento generalizado de las colonias de coral y les causa la muerte, <span class=\"gap\">2</span> significa la pérdida de miles de especies, debido a que en estos ecosistemas se encuentran las más <span class=\"gap\">3</span> del planeta.</p><p>Además, estos arrecifes son la más importante fuente turística de México, pues producen la arena blanca del mar Caribe, preferida por el turismo internacional, que representa la tercera fuente de divisas, solo por debajo de la industria petrolera y de las remesas <span class=\"gap\">4</span> de Estados Unidos, refirió.</p><p><span class=\"gap\">5</span> solo ocupan el dos por ciento de la superficie terrestre, mencionó el investigador, estos ecosistemas son una gran fuente de riqueza económica y de servicios ambientales <span class=\"gap\">6</span> más de cien millones de personas en el mundo, y capturan aproximadamente 50 por ciento del carbono planetario.</p><p><span class=\"gap\">7</span>, informó, son las estructuras geológicas de origen biológico más grandes del orbe y han dominado las zonas poco profundas de los mares tropicales en los últimos 200 millones de años.</p><p>Por eso, argumentó, sería necesario que se <span class=\"gap\">8</span> conciencia entre la población para el cuidado de estas fuentes de riqueza, <span class=\"gap\">9</span> tan perjudiciales son el calentamiento global y el efecto invernadero como la contaminación marítima producida por la población.</p><p>Como ya se dijo, los arrecifes <span class=\"gap\">10</span> del crecimiento de las colonias de corales que dejan sus esqueletos en la roca calcárea, y a través de miles de años forman una estructura definida que se incrementa mientras no <span class=\"gap\">11</span> erosión. Si bien este último fenómeno explica las playas blancas como las de Cancún, especificó el investigador, en caso de que la erosión sea mayor a la incorporación de carbonato de calcio, se seguirá produciendo la arena blanca pero el arrecife no podrá prosperar.</p><p>Las acciones para el cuidado de los arrecifes son escasas e insuficientes, algo no exclusivo del país, señaló el especialista, pues en todo el mundo persiste el desconocimiento sobre el estado de ese ecosistema o se minimiza su importancia, <span class=\"gap\">12</span> en países que tienen políticas de protección del medio ambiente.</p>",
+      "sourceNote": "(Adaptado de www.dgcs.unam.mx/boletin/bdboletin/2008_368.html. México)",
+      "questions": [
+        { "n": 27, "text": "Hueco 1", "opts": ["crecimiento", "incremento", "alargamiento"], "key": 1, "expl": "Temperatura que sobe é \"incremento\" (aumento de quantidade). \"Crecimiento\" serve para o que cresce em tamanho ou desenvolvimento, e \"alargamiento\" é ficar mais comprido — nenhum dos dois combina com grau centígrado." },
+        { "n": 28, "text": "Hueco 2", "opts": ["lo que", "la que", "el que"], "key": 0, "expl": "O relativo retoma toda a oração anterior (a morte dos corais), não um substantivo específico. Para retomar uma ideia inteira usa-se sempre o neutro \"lo que\"." },
+        { "n": 29, "text": "Hueco 3", "opts": ["variadas", "específicas", "persistentes"], "key": 0, "expl": "O superlativo \"las más variadas\" (do planeta) fala de diversidade de espécies — é o que faz sentido depois de \"la pérdida de miles de especies\"." },
+        { "n": 30, "text": "Hueco 4", "opts": ["provenientes", "proviniendo", "provistas"], "key": 0, "expl": "Precisa-se de um adjetivo/particípio que concorde com \"las remesas\": \"provenientes de Estados Unidos\". O gerúndio \"proviniendo\" não funciona como modificador de substantivo em espanhol, e \"provistas\" (fornecidas) muda o sentido." },
+        { "n": 31, "text": "Hueco 5", "opts": ["A pesar de que", "Debido a que", "Sumado a que"], "key": 0, "expl": "Há contraste: ocupam só 2% da superfície, *mas* são uma grande fonte de riqueza. \"A pesar de que\" é a concessiva; \"debido a que\" seria causa e inverteria a lógica." },
+        { "n": 32, "text": "Hueco 6", "opts": ["por", "para", "a"], "key": 1, "expl": "\"Servicios ambientales para más de cien millones de personas\" — a preposição marca o destinatário, o beneficiário do serviço. Essa é a função clássica de *para*." },
+        { "n": 33, "text": "Hueco 7", "opts": ["Entonces", "Por su parte", "Asimismo"], "key": 2, "expl": "O parágrafo acrescenta mais uma informação na mesma linha (além de riqueza, são as maiores estruturas geológicas): \"Asimismo\" = além disso. \"Entonces\" marcaria consequência e \"por su parte\" exigiria um novo sujeito em contraste." },
+        { "n": 34, "text": "Hueco 8", "opts": ["generaría", "generaba", "generara"], "key": 2, "expl": "\"Sería necesario que…\" exige subjuntivo, e a correlação com o condicional pede o imperfeito do subjuntivo: \"que se generara conciencia\". Este é o item que mais separa o C1 do B2." },
+        { "n": 35, "text": "Hueco 9", "opts": ["por lo tanto", "ya que", "aunque"], "key": 1, "expl": "A oração explica *por que* seria necessário conscientizar: \"ya que tan perjudiciales son…\". É causa, não consequência nem concessão." },
+        { "n": 36, "text": "Hueco 10", "opts": ["resultan", "producen", "suceden"], "key": 0, "expl": "\"Resultar de\" = ser resultado de. Os recifes *resultam do* crescimento das colônias. \"Producen\" inverteria a direção (eles seriam a causa) e \"suceden\" não se constrói com *de* nesse sentido." },
+        { "n": 37, "text": "Hueco 11", "opts": ["hubiera", "hay", "haya"], "key": 2, "expl": "\"Mientras no…\" com valor de condição futura pede subjuntivo presente: \"mientras no haya erosión\". O indicativo *hay* não cabe depois de *mientras no* com projeção futura." },
+        { "n": 38, "text": "Hueco 12", "opts": ["además", "por añadidura", "inclusive"], "key": 2, "expl": "O sentido é de caso extremo: o desconhecimento persiste *até mesmo* em países com políticas ambientais. \"Inclusive\" tem esse valor de inclusão surpreendente; \"además\" e \"por añadidura\" apenas somariam informação." }
+      ]
+    },
+    {
+      "id": "ca-t1",
+      "section": "ca",
+      "title": "Tarea 1 · Nivel A1",
+      "type": "audio-set",
+      "audio": "ca-t1.mp3",
+      "instr": "Usted va a escuchar a una mujer, Isabel, que habla sobre la casa donde va a pasar las vacaciones con su familia. Lea las cinco frases y elija la opción correcta para cada hueco. Va a escuchar la conversación dos veces. El audio ya incluye los 30 segundos para leer las frases y la repetición.",
+      "bankTitle": "Opciones de respuesta",
+      "bank": ["terraza", "diez", "segundo", "quince", "primer", "abuela", "leen", "hermana", "cantan", "piscina", "madre", "juegan", "tercer", "balcón", "cinco"],
+      "questions": [
+        { "n": 39, "bankRef": true, "text": "La casa es de la _____ de Isabel.", "opts": ["terraza", "diez", "segundo", "quince", "primer", "abuela", "leen", "hermana", "cantan", "piscina", "madre", "juegan", "tercer", "balcón", "cinco"], "key": 7, "expl": "Isabel diz: \"siempre nos vamos en agosto a la casa que mi hermana tiene en la playa\". A mãe (\"mi mamá\") aparece, mas como quem viaja com ela — a casa é da irmã." },
+        { "n": 40, "bankRef": true, "text": "El cuarto de baño está en el _____ piso.", "opts": ["terraza", "diez", "segundo", "quince", "primer", "abuela", "leen", "hermana", "cantan", "piscina", "madre", "juegan", "tercer", "balcón", "cinco"], "key": 4, "expl": "\"En el primer piso están la sala, la cocina y el cuarto de baño y en el segundo, los dormitorios.\" O \"segundo\" é o distrator: ali ficam os quartos." },
+        { "n": 41, "bankRef": true, "text": "Los hijos de Isabel _____ en el jardín.", "opts": ["terraza", "diez", "segundo", "quince", "primer", "abuela", "leen", "hermana", "cantan", "piscina", "madre", "juegan", "tercer", "balcón", "cinco"], "key": 11, "expl": "\"Mis hijos juegan allí al fútbol.\" Quem lê (\"leemos\") são ela, o marido e a mãe, e cantar é o que fazem nas festas da varanda." },
+        { "n": 42, "bankRef": true, "text": "La casa no tiene _____.", "opts": ["terraza", "diez", "segundo", "quince", "primer", "abuela", "leen", "hermana", "cantan", "piscina", "madre", "juegan", "tercer", "balcón", "cinco"], "key": 9, "expl": "\"¿La casa tiene piscina? — No. No hay.\" Atenção: a casa *tem* terraço e *tem* jardim; a piscina é a única coisa que falta." },
+        { "n": 43, "bankRef": true, "text": "Está situada a _____ minutos a pie de la playa.", "opts": ["terraza", "diez", "segundo", "quince", "primer", "abuela", "leen", "hermana", "cantan", "piscina", "madre", "juegan", "tercer", "balcón", "cinco"], "key": 14, "expl": "\"No hay porque la playa está a cinco minutos a pie.\" O banco traz \"diez\" e \"quince\" como distratores numéricos." }
+      ]
+    },
+    {
+      "id": "ca-t2",
+      "section": "ca",
+      "title": "Tarea 2 · Nivel A2",
+      "type": "audio-set",
+      "audio": "ca-t2.mp3",
+      "instr": "Usted va a escuchar cinco anuncios o noticias de radio. Elija la opción correcta para cada una de las cinco preguntas. Va a escuchar los anuncios dos veces. El audio ya incluye los 30 segundos para leer las preguntas y las repeticiones.",
+      "questions": [
+        { "n": 44, "text": "Anuncio 1. Si llama a la radio, puede…", "opts": ["ganar un disco.", "conocer a un cantante.", "ir a un concierto sin pagar."], "key": 1, "expl": "\"Radio Música le invita a una cena con este conocido cantante\" — jantar com o cantor é conhecê-lo. O disco você já tem (\"¿Tiene el nuevo disco…?\") e o show só aparece dentro da pergunta do concurso." },
+        { "n": 45, "text": "Anuncio 2. El grupo ¡Chévere! hace actividades…", "opts": ["para jóvenes.", "por las mañanas.", "durante toda la semana."], "key": 0, "expl": "\"Si tienes entre diecisiete y veinte años puedes ser de nuestro grupo\" — é para jovens. As atividades são de tarde e noite (de cinco a dez), só na sexta e no sábado." },
+        { "n": 46, "text": "Anuncio 3. La tienda Supermueble…", "opts": ["va a cambiar de lugar.", "vende muebles modernos.", "tiene precios más bajos."], "key": 2, "expl": "\"Tenemos precios baratos por cambio de exposición.\" Cuidado com os dois distratores: o que muda é a *exposição*, não o endereço da loja, e os móveis são \"clásicos\", não modernos." },
+        { "n": 47, "text": "Anuncio 4. En este anuncio se hace publicidad de…", "opts": ["un viaje.", "una película.", "un libro."], "key": 2, "expl": "\"Eso y mucho más se puede leer en Emociones, la nueva novela del escritor argentino Felipe López.\" A viagem ao Egito e o cinema são o conteúdo e o histórico do autor — o que se anuncia é o romance." },
+        { "n": 48, "text": "Anuncio 5. La exposición El dibujo Manga japonés…", "opts": ["se abre el martes día 20.", "va a estar más tiempo en la ciudad.", "ha recibido la visita de dos mil jóvenes."], "key": 1, "expl": "\"Quiere tener abierta la exposición hasta el próximo martes día veinte\" — dia 20 é quando *fecha*, e a intenção é prolongá-la. E as duas mil pessoas eram \"la mayoría jóvenes\", não todas." }
+      ]
+    },
+    {
+      "id": "ca-t3",
+      "section": "ca",
+      "title": "Tarea 3 · Nivel B1",
+      "type": "audio-set",
+      "audio": "ca-t3.mp3",
+      "instr": "Usted va a escuchar a ocho personas que hablan sobre el día de su boda. Elija la frase que corresponde a cada persona. Va a escuchar a cada persona dos veces. El audio ya incluye los 30 segundos para leer las frases y las repeticiones.",
+      "bankTitle": "Frases de respuesta",
+      "bank": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."],
+      "questions": [
+        { "n": 49, "bankRef": true, "text": "Persona 1", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 5, "expl": "\"De repente se nubló y empezó a llover muy fuerte. ¡La gente corría con los trajes y los sombreros mojados!\" Note que para ele não foi um desastre — \"a mí no me importó mucho\"." },
+        { "n": 50, "bankRef": true, "text": "Persona 2", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 10, "expl": "\"Todo salió perfecto (…) todavía hay amigos que nos recuerdan lo bien que lo pasaron\" — é a definição de sucesso. A música contratada não é a mesma coisa que uma orquestra." },
+        { "n": 51, "bankRef": true, "text": "Persona 3", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 2, "expl": "\"Una iglesia pequeñita, en lo alto de un cerro (…) entre los árboles, hicimos unas ensaladas y asamos unos corderos\" — no campo. Repare que não diz \"pueblo\"." },
+        { "n": 52, "bankRef": true, "text": "Persona 4", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 4, "expl": "Anéis esquecidos, calor no restaurante e a banda que não apareceu: \"desde el principio las cosas no salieron bien\". Quem chegou tarde foi o primo, não o noivo." },
+        { "n": 53, "bankRef": true, "text": "Persona 5", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 8, "expl": "\"Lo mejor fue el viaje que hicimos luego por el Caribe (…) ¡Estuvimos encantados!\" — a viagem depois do casamento é a lua de mel. O mar aparece, mas não há barco." },
+        { "n": 54, "bankRef": true, "text": "Persona 6", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 9, "expl": "\"En cuanto comenzó la misa, empecé a llorar y, con la música, ya no podía parar.\" Quem fala é a noiva — atenção ao \"mal rato\", que não chega a fazer da festa um desastre." },
+        { "n": 55, "bankRef": true, "text": "Persona 7", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 7, "expl": "\"El coche no funcionó y no encontrábamos ni un taxi (…) Llegamos muy tarde\" — quem fala é o noivo, e Ana o esperava \"con cara de preocupación\". Não foi desastre: \"lo demás salió fenomenal\"." },
+        { "n": 56, "bankRef": true, "text": "Persona 8", "opts": ["Se celebró en un barco.", "Hubo personas de varios países.", "Tuvo lugar en el campo.", "Hubo una orquesta.", "Resultó un desastre.", "Llovió mucho.", "Fue en su pueblo.", "El novio no llegó puntual.", "Disfrutó en la luna de miel.", "La novia lloró mucho.", "Fue un éxito."], "key": 1, "expl": "Esposa mexicana, casamento em Madri e colegas estrangeiros conhecidos em Paris: \"aquello parecía un congreso internacional\" — gente de vários países." }
+      ]
+    },
+    {
+      "id": "ca-t4",
+      "section": "ca",
+      "title": "Tarea 4 · Nivel B2",
+      "type": "audio-set",
+      "audio": "ca-t4.mp3",
+      "instr": "Usted va a escuchar, en versión locutada, una entrevista a Pablo Moreno, un empresario mexicano. Elija la opción correcta para cada una de las ocho preguntas. Va a escuchar la entrevista dos veces. El audio ya incluye los 45 segundos para leer las preguntas y la repetición.",
+      "questions": [
+        { "n": 57, "text": "El director de AMPM dice que su empresa…", "opts": ["fue muy original cuando apareció.", "fue la primera de ámbito nacional.", "es la que más mensajeros tiene del país."], "key": 0, "expl": "\"En aquel momento supuso una auténtica novedad en el sector.\" Ele diz também \"aunque nació en el ámbito local\", o que elimina (b), e o que afirma ser hoje é a empresa \"más importante\" — não a que tem mais mensageiros, o que elimina (c)." },
+        { "n": 58, "text": "La idea de crear la empresa de mensajería AMPM nació cuando el entrevistado…", "opts": ["acababa de licenciarse.", "estudiaba en la universidad.", "trabajaba en el servicio postal."], "key": 1, "expl": "\"Yo cursaba la carrera y trabajaba en una universidad…\" — ele ainda estudava. Cuidado com (c): ele *usava* o serviço postal para enviar as cartas, nunca trabalhou nele. E \"acabar de licenciarse\" (ter acabado de se formar) seria depois, não durante." },
+        { "n": 59, "text": "Según Pablo Moreno, para montar un negocio es esencial…", "opts": ["disponer de un buen proyecto.", "contar con recursos económicos.", "tener espíritu innovador."], "key": 0, "expl": "\"Lo más importante es tener un plan bien diseñado. Si cuentas con él, la inversión sobra.\" Ele menciona dinheiro e espírito inovador só para descartá-los: \"para mí todo esto es secundario\"." },
+        { "n": 60, "text": "El entrevistado dice que AMPM…", "opts": ["está administrada por tres ejecutivos.", "tiene contratadas a unas dos mil personas.", "atiende a más de diez millones de clientes."], "key": 2, "expl": "Item de eliminação — é o mais difícil da tarefa. Os três em cima dos números do áudio: \"apenas tres colaboradores\" era o quadro *inicial*, não três executivos que administram hoje (elimina a); \"más de dos mil trabajadores\" não é \"unas dos mil\", que significa cerca de dois mil (elimina b); sobra (c), o único compatível com \"reparte más de diez millones de sobres cada mes\". Lição da tarefa: ligar cada cifra à coisa certa e desconfiar de \"unas\" e \"más de\"." },
+        { "n": 61, "text": "Según el entrevistado, uno de los principales problemas de AMPM era…", "opts": ["la falta de formación de los trabajadores.", "el número de bajas por accidentes de moto.", "los bajos sueldos de los empleados."], "key": 0, "expl": "\"La cantidad de personas que entraban en nuestra empresa sin tener preparación antes de ocupar el puesto.\" A moto aparece no áudio, mas na atitude errada de quem acha que entregar cartas \"era subirse a una motocicleta y ponerse a repartir\" — não em acidentes (elimina b). E (c) é o oposto do que ele diz: \"somos la empresa que más paga\"." },
+        { "n": 62, "text": "Pablo Moreno dice que uno de los objetivos de la escuela de mensajeros de AMPM es…", "opts": ["reducir las ausencias del personal.", "identificar a posibles trabajadores.", "aumentar la actividad de la plantilla."], "key": 1, "expl": "\"Nuestra meta (…) es que AMPM no solo ofrezca formación a su personal, sino que encuentre a aquellos jóvenes que tienen el interés por la profesión de mensajero.\" Encontrar jovens interessados é identificar possíveis trabalhadores. A \"mayor estabilidad\" que ele cita em seguida é *resultado*, não o objetivo — é aí que mora o distrator (a)." },
+        { "n": 63, "text": "La satisfacción de los trabajadores de AMPM se debe...", "opts": ["a la duración del contrato.", "a la pensión de jubilación.", "al reparto de los beneficios."], "key": 0, "expl": "\"Les ofrecemos un trabajo hasta la jubilación\" — isso é duração de contrato, não pensão. A palavra *jubilación* está no áudio de propósito para atrair você para (b). E os \"beneficios\" de (c) aparecem como crítica às escolas de administração modernas, \"en donde lo único importante es que la empresa obtenga cada vez más beneficios\" — é o contrário do que AMPM faz." },
+        { "n": 64, "text": "Otro de los aspectos que AMPM ofrece a sus trabajadores es…", "opts": ["el contacto con el resto de miembros de la compañía.", "la oportunidad de trabajar en una empresa que mejora cada día.", "la posibilidad de conseguir un puesto de trabajo mejor."], "key": 2, "expl": "\"Hay capacidad de mejorar dentro de la empresa (…) donde vas formando responsables para cubrir nuevos puestos.\" Ele lista mensageiros, diretores e secretárias, mas para dizer que todos se capacitam — não para falar de convívio entre eles (elimina a)." }
+      ]
+    },
+    {
+      "id": "ca-t5",
+      "section": "ca",
+      "title": "Tarea 5 · Nivel C1",
+      "type": "audio-set",
+      "audio": "ca-t5.mp3",
+      "instr": "Usted va a escuchar, en versión locutada, seis fragmentos de una conferencia del filósofo argentino Néstor García Canclini titulada «La radio aclara ciertas dudas». Elija, para cada fragmento, la opción que contenga una de las ideas mencionadas. Va a escuchar los fragmentos dos veces. El audio ya incluye los 45 segundos para leer las opciones y la repetición.",
+      "questions": [
+        { "n": 65, "text": "Fragmento 1", "opts": ["Los medios de comunicación acaban suplantándose los unos a los otros.", "Los avances tecnológicos tienen una gran influencia en las artes visuales.", "Los antiguos medios perviven pese a la irrupción de los más nuevos."], "key": 2, "expl": "\"La invención de un nuevo medio de comunicación no mata a los anteriores\" — e vem a lista: o cinema não acabou com o teatro, a TV não extinguiu o cinema, os celulares não fizeram jogar fora os computadores. A opção (a) afirma exatamente o contrário, a substituição que a conferência vem refutar." },
+        { "n": 66, "text": "Fragmento 2", "opts": ["La radio ya no está de moda entre las generaciones jóvenes.", "La radio y los otros medios de comunicación se influyen mutuamente.", "Existen dudas sobre la capacidad de supervivencia de la radio."], "key": 1, "expl": "\"Las estaciones se nutren en esos otros medios y ellos también la utilizan\" — os dois sentidos, que é o que \"mutuamente\" exige. E o fragmento abre negando (a) e (c): \"a la radio no le va mal en esta competencia\" e o uso \"multigeneracional\" contradiz \"su supuesta caducidad\"." },
+        { "n": 67, "text": "Fragmento 3", "opts": ["Hay pesimismo entre los defensores de lo escrito sobre su futuro.", "Las publicaciones impresas están disminuyendo cada vez más.", "Ciertos sectores de la sociedad se niegan a dar el paso hacia lo digital."], "key": 0, "expl": "\"Esta visión alarmista del presente y el futuro de las culturas es pregonada por conservadores críticos como si temieran perder lo que han conseguido publicar en papel\" — defensores do escrito, pessimistas quanto ao futuro. As outras duas afirmam fatos (queda das tiragens, recusa ao digital) que o fragmento não diz." },
+        { "n": 68, "text": "Fragmento 4", "opts": ["Actualmente hay una división estricta de los distintos ámbitos de la sociedad.", "La cultura del espectáculo es el origen de un cambio radical en la sociedad actual.", "Ha habido una transformación de la relación entre los distintos planos de nuestra vida."], "key": 2, "expl": "\"Forma parte de una transformación más amplia de las conexiones entre trabajo, comunicación y consumo, entre lo íntimo y lo público\" — são os planos da vida se rearranjando. Isso mesmo elimina (b): a espetacularização é *parte* de algo maior, não a origem — \"no es el único rasgo importante\". E (a) inverte tudo ao afirmar divisão estrita." },
+        { "n": 69, "text": "Fragmento 5", "opts": ["Parece que el ser humano requiere escuchar a otras personas.", "La cultura visual ha sido el motor de todo tipo de cambios.", "La literatura también ha sufrido el impacto de los medios visuales."], "key": 0, "expl": "\"Su ausencia en la radio y el que sea tan escuchada indica que necesitamos que nos hablen.\" O distrator (c) é o mais perigoso: a literatura *é* mencionada, mas para dizer que ela **resiste** — \"su persistencia, tanto como la de la literatura, desautoriza las previsiones negativas\" — e não que sofreu impacto." },
+        { "n": 70, "text": "Fragmento 6", "opts": ["La radio digital será determinante en un futuro no muy lejano.", "La radio se adapta bien a diversos entornos y funciones.", "Varios expertos coinciden en su percepción negativa sobre la radio."], "key": 1, "expl": "\"La versatilidad de la radio para situarse en escenas y usos diversos, en repertorios culturales heterogéneos\" — é essa flexibilidade que responde às \"dudas\" do título. O digital aparece, mas como comparação (\"la asemeja a los medios digitales\"), não como previsão de futuro." }
+      ]
+    },
+    {
+      "id": "ca-t6",
+      "section": "ca",
+      "title": "Tarea 6 · Nivel C1",
+      "type": "audio-set",
+      "audio": "ca-t6.mp3",
+      "instr": "Usted va a escuchar, en versión locutada, un fragmento de una conferencia de Victoria Camps sobre las emociones morales. En ella se mencionan seis de las doce opciones que aparecen a continuación. Elija las seis opciones que corresponden a esta conferencia. Para quitar una opción seleccionada, pulse de nuevo sobre ella. Va a escuchar la conferencia dos veces. El audio ya incluye los 50 segundos para leer las opciones y la repetición.",
+      "questions": [
+        {
+          "n": 71,
+          "type": "multi",
+          "pick": 6,
+          "items": 6,
+          "text": "Elija las seis ideas que se mencionan en la conferencia.",
+          "opts": [
+            "El término “emoción”, como tal, no ha gozado de mucha popularidad en tratados filosóficos.",
+            "Los conceptos de “emoción” y “pasión” son considerablemente distintos.",
+            "Para el conferenciante, los conceptos que van a tratarse pueden considerarse equivalentes.",
+            "La ética actual se diferencia de la antigua en que parte de la idea de razón.",
+            "La ética de la razón y la de la emoción son incompatibles.",
+            "La ética se ha basado tradicionalmente en aquello que debemos hacer.",
+            "Aristóteles fue el primer filósofo que se refirió a la ética de los sentimientos.",
+            "La ética de Aristóteles se caracterizó por superar el plano teórico.",
+            "En la ética aristotélica hay cierta resistencia a definir el término de virtud.",
+            "Spinoza considera que la ética está unida a los afectos.",
+            "Para Spinoza, el equilibrio emocional es el secreto para vivir en libertad.",
+            "Según las ideas de Hume, la pasión domina y guía la razón."
+          ],
+          "keys": [0, 2, 5, 7, 9, 11],
+          "expl": "As seis mencionadas são (a), (c), (f), (h), (j) e (l). Na abertura, Camps diz que \"en filosofía, la palabra emoción no aparece mucho\" — daí (a) — e que por isso vai se referir \"indistintamente a las pasiones, a los sentimientos, a los afectos, a las emociones\": trata os conceitos como equivalentes, então (c) está certa e (b), que os separa, está errada. Depois vêm a ética herdada \"basada en deberes, en normas, en obligaciones\" (f); Aristóteles, que \"piensa que la ética debe ser una tarea práctica\" — \"ese paso de la teoría a la práctica\" (h); \"otro filósofo que no concibe la ética separada de los afectos es Spinoza\" (j); e Hume, com a paixão guiando a razão (l). Os três distratores mais perigosos: (e) é desmentida na letra, porque ela diz que a ética das virtudes entra \"no como sustituto a las otras éticas, sino como complemento\"; (g) atribui a Aristóteles um pioneirismo que ela não afirma — ele é \"uno de ellos\", não o primeiro; e (d) inverte a relação, já que é a ética tradicional que parte da razão."
+        }
+      ]
+    }
+  ],
+  "minis": [
+    {
+      "id": "niveles-a",
+      "name": "Nivel A1–A2",
+      "desc": "Tareas iniciales de las dos pruebas · 20 preguntas",
+      "units": ["cl-t1", "cl-t2", "ca-t1", "ca-t2"]
+    },
+    {
+      "id": "nivel-b1",
+      "name": "Nivel B1",
+      "desc": "Tarea 3 de lectura y Tarea 3 de audición · 16 preguntas",
+      "units": ["cl-t3", "ca-t3"]
+    },
+    {
+      "id": "nivel-b2",
+      "name": "Nivel B2",
+      "desc": "Tarea 4 de lectura (dos textos) y la entrevista · 16 preguntas",
+      "units": ["cl-t4a", "cl-t4b", "ca-t4"]
+    },
+    {
+      "id": "nivel-c1",
+      "name": "Nivel C1",
+      "desc": "Texto con doce huecos y las dos conferencias · 24 preguntas",
+      "units": ["cl-t5", "ca-t5", "ca-t6"]
+    }
+  ]
+}

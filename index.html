@@ -365,6 +365,54 @@
     .text-box.highlight { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
     .brief-p { font-size: .95rem; line-height: 1.6; }
     .brief-list { padding-left: 1.2rem; display: flex; flex-direction: column; gap: .45rem; font-size: .92rem; line-height: 1.55; }
+    .text-box ol { margin-top: .55rem; padding-left: 1.3rem; }
+
+    /* ── Tarefas do SIELE ── */
+    /* Instrução da tarefa: no SIELE ela é parte do item, não do cabeçalho da prova. */
+    .unit-instr {
+      font-size: .88rem; line-height: 1.55;
+      border-left: 3px solid var(--blue);
+      padding: .1rem 0 .1rem .75rem;
+      margin-bottom: .9rem;
+      color: var(--text-soft);
+    }
+    .source-note { font-size: .78rem; color: var(--text-soft); font-style: italic; margin: -.4rem 0 1rem; }
+    /* Lacuna numerada dentro do texto (Tareas 4 e 5 da leitura). */
+    .gap {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 2.6rem; height: 1.45rem; padding: 0 .35rem;
+      border: 1.5px dashed var(--blue); border-radius: 7px;
+      background: var(--surface);
+      font-family: var(--font-h); font-weight: 800; font-size: .8rem;
+      color: var(--blue); vertical-align: middle;
+    }
+    /* Banco de opções compartilhado pela tarefa. */
+    .bank {
+      background: var(--surface-2);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: .85rem 1rem 1rem;
+      margin-bottom: 1.1rem;
+    }
+    .bank-title { font-weight: 800; font-size: .85rem; margin-bottom: .6rem; }
+    .bank-list {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .4rem .8rem;
+    }
+    .bank-list li { display: flex; gap: .5rem; align-items: flex-start; font-size: .85rem; line-height: 1.45; }
+    .bank-list .letter {
+      flex: 0 0 auto;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.4rem; height: 1.4rem; border-radius: 6px;
+      background: var(--black); color: #fff;
+      font-family: var(--font-h); font-weight: 800; font-size: .72rem;
+    }
+    body.theme-dark .bank-list .letter { background: var(--blue); }
+    /* Opções só com a letra: o texto já está no banco acima. */
+    .opts.opts-letters { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .opts.opts-letters .opt { width: 2.9rem; padding: .5rem 0; justify-content: center; }
+    .opts.opts-letters .opt .letter { margin: 0; }
+    .multi-hint { font-size: .82rem; font-weight: 700; color: var(--blue); margin: -.2rem 0 .6rem; }
 
     /* ── Notes (Parts 2 e 3 do Listening) ── */
     .phase-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 1rem; align-items: start; }
@@ -729,21 +777,29 @@
 
   /* ══════════════ Setup ══════════════ */
   const PROF_MODE = new URLSearchParams(location.search).get('modo') === 'professor';
-  const TEST_FILE = 'questions/red.json';
+
+  /* Qual exame abrir: ?exame=met (padrão, inglês) ou ?exame=siele (espanhol, S1).
+     O engine é o mesmo — só muda o banco de itens. */
+  const EXAMS = { met: 'questions/red.json', siele: 'questions/siele-m0.json' };
+  const EXAM = (new URLSearchParams(location.search).get('exame') || 'met').toLowerCase();
+  const TEST_FILE = EXAMS[EXAM] || EXAMS.met;
 
   /* Backend do Fisk Hub (Google Apps Script + Sheets) — envio/consulta de resultados */
   const CLOUD = {
     endpoint: 'https://script.google.com/macros/s/AKfycbw13tpIVD3Ji9XhWW1VwDSw8qAZOmtMGPV0FI1rlHpEQ7HABumVpi_aMWQXfo7dwkd1/exec',
     appKey: 'fisk_0719bacbecc857f61d1e',
-    tool: 'met'
+    tool: 'met'   // sobrescrito pelo toolId do banco de itens (met | siele)
   };
   const CLOUD_ON = CLOUD.endpoint.indexOf('https://') === 0;
-  const LETTERS = ['A', 'B', 'C', 'D'];
+  /* Letras das opções. O SIELE chega a 15 opções por item e usa o alfabeto
+     espanhol, com ñ entre n e o — por isso vem do banco de itens. */
+  let LETTERS = ['A', 'B', 'C', 'D'];
   const SPEAKER_SVG = '<svg class="replay-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
 
   let DATA = null;
   let unitById = {};
   let sectionById = {};
+  let unitOfQ = {};        // nº da questão -> unidade a que pertence
 
   const state = {
     scope: null,          // { type: 'full'|'mini'|'section', id, label }
@@ -813,7 +869,9 @@
   function isOneShot() { return !PROF_MODE && state.scope && state.scope.type === 'full'; }
 
   /* ══════════════ Registro de resultados ══════════════ */
-  const LOG_KEY = 'met_results_log';
+  /* Log local separado por exame: o professor de espanhol não deve ver a fila
+     de resultados do MET na mesma máquina, nem o contrário. */
+  const LOG_KEY = EXAM === 'met' ? 'met_results_log' : EXAM + '_results_log';
   function loadLog() { try { return JSON.parse(localStorage.getItem(LOG_KEY)) || []; } catch (e) { return []; } }
   function saveLogList(list) { try { localStorage.setItem(LOG_KEY, JSON.stringify(list)); } catch (e) {} }
   function addLogEntry(entry) {
@@ -823,7 +881,19 @@
     saveLogList(list);
     return true;
   }
-  function cefrLabelOf(scaled) { return scaled === null || scaled === undefined ? '—' : cefrBand(scaled).level; }
+  /* Rótulo da coluna de nível no painel do professor. Cada grupo tem as próprias
+     faixas (no SIELE, CL e CA têm cortes diferentes), e o grupo somado é uma
+     pontuação — não existe faixa do CEFR para a soma das duas provas. */
+  function cefrLabelOf(scaled, groupIdx) {
+    if (scaled === null || scaled === undefined) return '—';
+    const g = (DATA.cefrGroups || [])[groupIdx] || {};
+    if (g.sumOf) return String(scaled);
+    const band = cefrBand(scaled, g.bands);
+    return band ? band.level : String(scaled);
+  }
+  function groupHeaders() {
+    return (DATA.cefrGroups || []).map(g => g.short || g.label);
+  }
 
   function sendResultToCloud(entry, statusEl, onFail) {
     if (!CLOUD_ON) { if (statusEl) statusEl.textContent = ''; return; }
@@ -908,11 +978,14 @@
       wrap.innerHTML = '<div class="log-empty">Nenhum resultado registrado ainda. Os resultados aparecem aqui quando um aluno conclui um simulado neste navegador ou quando você importa um código.</div>';
       return;
     }
-    let html = '<table class="log-table"><thead><tr><th>Data</th><th>Aluno</th><th>Simulado</th><th>Acertos</th><th>%</th><th>Listening</th><th>R&G</th><th>Geral</th></tr></thead><tbody>';
+    const heads = groupHeaders();
+    let html = '<table class="log-table"><thead><tr><th>Data</th><th>Aluno</th><th>Simulado</th><th>Acertos</th><th>%</th>' +
+      heads.map(h => '<th>' + esc(h) + '</th>').join('') + '</tr></thead><tbody>';
     list.forEach(e => {
       const d = new Date(e.t).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' });
+      const vals = [e.L, e.R, e.O];
       html += '<tr><td>' + d + '</td><td>' + esc(e.n) + '</td><td>' + esc(e.s) + '</td><td>' + e.c + '/' + e.q + '</td><td>' + Math.round(e.c / e.q * 100) + '%</td>' +
-        '<td>' + cefrLabelOf(e.L) + '</td><td>' + cefrLabelOf(e.R) + '</td><td>' + cefrLabelOf(e.O) + '</td></tr>';
+        heads.map((h, i) => '<td>' + esc(cefrLabelOf(vals[i], i)) + '</td>').join('') + '</tr>';
     });
     wrap.innerHTML = html + '</tbody></table>';
   }
@@ -932,15 +1005,19 @@
   $('log-back').addEventListener('click', goHome);
   $('log-export-btn').addEventListener('click', () => {
     const list = loadLog().slice().sort((a, b) => b.t - a.t);
-    const rows = [['Data', 'Aluno', 'Simulado', 'Acertos', 'Total', 'Porcentagem', 'CEFR Listening', 'CEFR Reading&Grammar', 'CEFR Geral']];
-    list.forEach(e => rows.push([
-      new Date(e.t).toLocaleString('pt-BR'), e.n, e.s, e.c, e.q,
-      Math.round(e.c / e.q * 100) + '%', cefrLabelOf(e.L), cefrLabelOf(e.R), cefrLabelOf(e.O)
-    ]));
+    const heads = groupHeaders();
+    const rows = [['Data', 'Aluno', 'Simulado', 'Acertos', 'Total', 'Porcentagem'].concat(heads)];
+    list.forEach(e => {
+      const vals = [e.L, e.R, e.O];
+      rows.push([
+        new Date(e.t).toLocaleString('pt-BR'), e.n, e.s, e.c, e.q,
+        Math.round(e.c / e.q * 100) + '%'
+      ].concat(heads.map((h, i) => cefrLabelOf(vals[i], i))));
+    });
     const csv = '﻿' + rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')).join('\n');
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
-    a.download = 'met-resultados.csv';
+    a.download = EXAM + '-resultados.csv';
     a.click();
     URL.revokeObjectURL(a.href);
   });
@@ -950,7 +1027,21 @@
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(d => {
       DATA = d;
-      d.units.forEach(u => unitById[u.id] = u);
+      if (Array.isArray(d.letters) && d.letters.length) LETTERS = d.letters;
+      if (d.toolId) CLOUD.tool = d.toolId;
+      /* Sem cefrGroups declarados, cai no comportamento histórico do MET:
+         Listening são as questões até 50, Reading & Grammar as demais. */
+      if (!d.cefrGroups) {
+        d.cefrGroups = [
+          { label: 'Listening', short: 'Listening', upTo: 50, scale: 80, bands: d.cefr.bands },
+          { label: 'Reading & Grammar', short: 'R&G', from: 51, scale: 80, bands: d.cefr.bands },
+          { label: 'Nível geral estimado', short: 'Geral', avgOf: [0, 1], scale: 80, bands: d.cefr.bands, isOverall: true }
+        ];
+      }
+      d.units.forEach(u => {
+        unitById[u.id] = u;
+        u.questions.forEach(q => unitOfQ[q.n] = u);
+      });
       d.sections.forEach(s => sectionById[s.id] = s);
       buildHome();
     })
@@ -962,7 +1053,8 @@
     $('hero-sub').textContent = DATA.examLabel + ' · ' + DATA.name;
     const TAG = '#' + DATA.id;
     const tagHTML = ' <span class="test-tag">' + esc(TAG) + '</span>';
-    document.querySelector('[data-scope="full"] h3').innerHTML = 'Simulado Completo' + tagHTML;
+    const FULL_LABEL = DATA.fullLabel || 'Simulado Completo';
+    document.querySelector('[data-scope="full"] h3').innerHTML = esc(FULL_LABEL) + tagHTML;
     if (PROF_MODE) {
       $('prof-badge').style.display = 'inline-block';
       $('name-wrap').style.display = 'none';
@@ -997,7 +1089,7 @@
       });
     }
     document.querySelector('[data-scope="full"]').addEventListener('click', () =>
-      startPractice({ type: 'full', id: 'full', label: 'Simulado Completo ' + TAG }));
+      startPractice({ type: 'full', id: 'full', label: FULL_LABEL + ' ' + TAG }));
     $('student-name').addEventListener('input', e => { state.studentName = e.target.value.trim(); });
 
     // Entrada pelo Portal do Aluno: identidade já vem na URL (?raf=&nome=)
@@ -1029,6 +1121,29 @@
   }
   function questionsOf(units) { return units.flatMap(u => u.questions); }
   function isListeningUnit(u) { return sectionById[u.section].kind === 'listening'; }
+
+  /* ══════════════ Pontuação ══════════════
+     Quase todo item vale 1 ponto e tem uma única resposta. A exceção é o tipo
+     'multi' (Tarea 6 da Comprensión auditiva do SIELE): o aluno marca 6 opções
+     entre 12 e o exame conta cada acerto como um item — por isso `items` e a
+     contagem por interseção. */
+  function itemsOf(q) { return q.items || 1; }
+  function scoreOf(q) {
+    const a = state.answers[q.n];
+    if (q.type === 'multi') return Array.isArray(a) ? a.filter(i => q.keys.indexOf(i) >= 0).length : 0;
+    return a === q.key ? 1 : 0;
+  }
+  function isRight(q) { return scoreOf(q) === itemsOf(q); }
+  function tally(qs) {
+    return qs.reduce((acc, q) => {
+      acc.correct += scoreOf(q); acc.total += itemsOf(q); return acc;
+    }, { correct: 0, total: 0 });
+  }
+  function isAnswered(q) {
+    const a = state.answers[q.n];
+    if (q.type === 'multi') return Array.isArray(a) && a.length === q.pick;
+    return a !== undefined;
+  }
 
   function startPractice(scope) {
     if (!PROF_MODE && !state.studentName) {
@@ -1084,7 +1199,44 @@
       rd: state.units.filter(u => u.section === 'rd').flatMap(u => u.questions).length
     };
   }
+  /* Instruções orientadas a dados. Cada exame descreve as próprias provas no
+     banco de itens; o MET, que não declara `brief`, segue na função abaixo. */
+  function renderBriefFromData() {
+    const b = $('brief-body');
+    const br = DATA.brief;
+    const full = state.scope.type === 'full';
+    const totalItems = tally(questionsOf(state.units)).total;
+    $('brief-title').textContent = state.scope.label;
+    const fill = s => String(s).replace('{n}', totalItems);
+
+    let html = '<div class="unit-card" style="margin-top:1.4rem"><h3 style="margin-bottom:.6rem">' +
+      esc(full ? br.title : (br.titleMini || br.title)) + '</h3>' +
+      '<p class="brief-p">' + fill(full ? br.intro : (br.introMini || br.intro)) + '</p></div>';
+
+    (br.cards || []).forEach(c => {
+      const qs = state.units.filter(u => (c.sections || []).indexOf(u.section) >= 0).flatMap(u => u.questions);
+      if (!qs.length) return;
+      const n = tally(qs).total;
+      const sec = sectionById[(c.sections || [])[0]];
+      const min = sec && sec.minutes && sec.items
+        ? (full ? sec.minutes : Math.max(1, Math.ceil(sec.minutes * n / sec.items)))
+        : null;
+      const head = String(c.title).replace('{n}', n).replace('{min}', min === null ? '?' : min);
+      html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">' + esc(head) + '</h3><ul class="brief-list">' +
+        (c.items || []).map(i => '<li>' + i + '</li>').join('') +
+        ((full ? c.itemsFull : c.itemsMini) || []).map(i => '<li>' + i + '</li>').join('') +
+        '</ul></div>';
+    });
+
+    if (br.closing) {
+      html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">' + esc(br.closing.title) + '</h3><ul class="brief-list">' +
+        (br.closing.items || []).map(i => '<li>' + i + '</li>').join('') + '</ul></div>';
+    }
+    b.innerHTML = html + '<div style="height:1.5rem"></div>';
+  }
+
   function renderBrief() {
+    if (DATA.brief) return renderBriefFromData();
     const b = $('brief-body');
     const st = briefStats();
     const total = st.L + st.R;
@@ -1250,7 +1402,9 @@
     if (q.ref) {
       const ref = document.createElement('span');
       ref.className = 'q-ref';
-      ref.textContent = q.ref === 'multi' ? 'Refers to two or more texts' : 'Refers to text ' + q.ref;
+      ref.textContent = q.ref === 'multi'
+        ? (DATA.refLabelMulti || 'Refers to two or more texts')
+        : (DATA.refLabel || 'Refers to text {n}').replace('{n}', q.ref);
       block.appendChild(ref);
     }
     const qt = document.createElement('div');
@@ -1258,25 +1412,66 @@
     qt.innerHTML = '<span class="q-num">' + q.n + '.</span><span>' + q.text + (q.replay ? ' ' + SPEAKER_SVG : '') + '</span>';
     block.appendChild(qt);
 
+    const multi = q.type === 'multi';
     const optsWrap = document.createElement('div');
-    optsWrap.className = 'opts';
+    /* bankRef: as opções já estão escritas por extenso no banco no topo da
+       tarefa, então aqui basta a letra — é assim que a prova oficial funciona
+       (uma lista de opções e um seletor por lacuna). Sem isso, 15 opções por
+       item repetidas 8 vezes tornariam a tela ilegível. */
+    optsWrap.className = 'opts' + (q.bankRef ? ' opts-letters' : '') + (multi ? ' opts-multi' : '');
+
+    if (multi) {
+      const hint = document.createElement('div');
+      hint.className = 'multi-hint';
+      block.appendChild(hint);
+      const paint = () => {
+        const sel = state.answers[q.n] || [];
+        hint.textContent = opts.review
+          ? 'Respuesta correcta: ' + q.keys.map(k => LETTERS[k]).join(', ') +
+            ' · você marcou ' + (sel.length ? sel.map(k => LETTERS[k]).join(', ') : '—') +
+            ' · ' + scoreOf(q) + ' de ' + itemsOf(q) + ' acertos'
+          : 'Marque ' + q.pick + ' opções · ' + sel.length + ' de ' + q.pick + ' marcadas' +
+            (sel.length >= q.pick ? ' · clique de novo para desmarcar' : '');
+      };
+      block._paintMulti = paint;
+    }
+
     q.opts.forEach((txt, j) => {
       const b = document.createElement('button');
       b.className = 'opt';
       b.dataset.q = q.n; b.dataset.j = j;
-      b.innerHTML = '<span class="letter">' + LETTERS[j] + '</span><span>' + esc(txt) + '</span>';
+      b.innerHTML = '<span class="letter">' + LETTERS[j] + '</span>' +
+        (q.bankRef ? '' : '<span>' + esc(txt) + '</span>');
+      if (q.bankRef) b.title = txt;
+
+      const chosen = () => multi
+        ? (state.answers[q.n] || []).indexOf(j) >= 0
+        : state.answers[q.n] === j;
+      const correctHere = () => multi ? q.keys.indexOf(j) >= 0 : j === q.key;
+
       if (opts.review) {
         b.disabled = true;
         b.style.cursor = 'default';
-        if (j === q.key) b.classList.add('correct');
-        if (state.answers[q.n] === j && j !== q.key) b.classList.add('wrong');
-        if (state.answers[q.n] === j && j === q.key) b.classList.add('correct');
+        if (correctHere()) b.classList.add('correct');
+        else if (chosen()) b.classList.add('wrong');
       } else if (opts.interactive) {
-        if (state.answers[q.n] === j) b.classList.add('chosen');
+        if (chosen()) b.classList.add('chosen');
         b.addEventListener('click', () => {
-          state.answers[q.n] = j;
-          optsWrap.querySelectorAll('.opt').forEach(o => o.classList.remove('chosen'));
-          b.classList.add('chosen');
+          if (multi) {
+            const sel = (state.answers[q.n] || []).slice();
+            const at = sel.indexOf(j);
+            if (at >= 0) sel.splice(at, 1);
+            else if (sel.length < q.pick) sel.push(j);
+            else return;                       // já marcou o limite: desmarque uma antes
+            state.answers[q.n] = sel;
+            optsWrap.querySelectorAll('.opt').forEach(o =>
+              o.classList.toggle('chosen', sel.indexOf(+o.dataset.j) >= 0));
+            block._paintMulti();
+          } else {
+            state.answers[q.n] = j;
+            optsWrap.querySelectorAll('.opt').forEach(o => o.classList.remove('chosen'));
+            b.classList.add('chosen');
+          }
           persist();
           updateAnswerCount();
         });
@@ -1284,6 +1479,7 @@
       optsWrap.appendChild(b);
     });
     block.appendChild(optsWrap);
+    if (multi) block._paintMulti();
 
     if (q.expl) {
       const ex = document.createElement('div');
@@ -1303,6 +1499,14 @@
       t.className = 'unit-title';
       t.innerHTML = '<span class="dot"></span>' + esc(unit.title);
       card.appendChild(t);
+    }
+    /* Instrução da tarefa. No SIELE ela é por tarea (não por seção como no MET)
+       e faz parte do item: diz quantas vezes o áudio toca e o que fazer. */
+    if (unit.instr) {
+      const ins = document.createElement('div');
+      ins.className = 'unit-instr';
+      ins.textContent = unit.instr;
+      card.appendChild(ins);
     }
     if (unit.audio && !opts.review) {
       card.appendChild(getPlayer(unit, unit.audio, unit.cues, isOneShot()));
@@ -1333,6 +1537,21 @@
       });
       card.appendChild(grid);
     }
+    if (unit.sourceNote) {
+      const sn = document.createElement('div');
+      sn.className = 'source-note';
+      sn.textContent = unit.sourceNote;
+      card.appendChild(sn);
+    }
+    /* Banco de opções compartilhado pela tarefa: as questões referenciam por letra. */
+    if (unit.bank) {
+      const bk = document.createElement('div');
+      bk.className = 'bank';
+      bk.innerHTML = '<div class="bank-title">' + esc(unit.bankTitle || 'Opciones de respuesta') + '</div>' +
+        '<ol class="bank-list">' + unit.bank.map((t, j) =>
+          '<li><span class="letter">' + LETTERS[j] + '</span><span>' + esc(t) + '</span></li>').join('') + '</ol>';
+      card.appendChild(bk);
+    }
     unit.questions.forEach(q => card.appendChild(renderQuestion(q, opts)));
     return card;
   }
@@ -1348,7 +1567,9 @@
     const body = $('quiz-body');
     body.innerHTML = '';
     const phase = currentPhase();
-    $('qh-sub').textContent = state.studentName + ' · Section ' + (state.phaseIdx + 1) + ' of ' + state.phases.length + ' · ' + phaseLabel(phase);
+    const stepLabel = (DATA.uiSection || 'Section {i} of {n}')
+      .replace('{i}', state.phaseIdx + 1).replace('{n}', state.phases.length);
+    $('qh-sub').textContent = state.studentName + ' · ' + stepLabel + ' · ' + phaseLabel(phase);
 
     // Campo de anotações livres nas seções de conversas longas e palestras (como na prova oficial)
     let container = body;
@@ -1376,12 +1597,28 @@
       container.appendChild(renderUnitCard(u, { interactive: true }));
     });
 
-    // Timer em todas as seções (estimado a partir do tempo do exame oficial)
+    // Timer em todas as seções. Quando a seção declara `minutes` (SIELE, que
+    // publica o tempo oficial por prova), usa esse valor; senão estima pelo
+    // número de questões, como o MET, cujo tempo é por prova inteira.
     clearTimer();
-    const n = questionsOf(phase.units).length;
-    const rate = phase.kind === 'listening' ? DATA.secondsPerListeningQuestion : DATA.secondsPerRGQuestion;
+    const sec = sectionById[phase.sec];
+    let seconds;
+    if (sec && sec.minutes && state.scope.type === 'full') {
+      seconds = sec.minutes * 60;
+    } else {
+      const n = tally(questionsOf(phase.units)).total;
+      // Em recorte (mini/seção) com tempo oficial declarado, rateia pelo total da prova.
+      if (sec && sec.minutes && sec.items) {
+        seconds = Math.max(60, Math.ceil(sec.minutes * 60 * (n / sec.items) / 60) * 60);
+      } else {
+        const rate = phase.kind === 'listening'
+          ? (DATA.secondsPerListeningQuestion || 48)
+          : (DATA.secondsPerRGQuestion || 78);
+        seconds = Math.ceil(n * rate / 60) * 60;
+      }
+    }
     const last = state.phaseIdx === state.phases.length - 1;
-    startTimer(Math.ceil(n * rate / 60) * 60, () => {
+    startTimer(seconds, () => {
       if (last) {
         alert('⏰ Tempo esgotado! Suas respostas serão enviadas.');
         submitStudent();
@@ -1423,11 +1660,11 @@
   }
 
   function phaseQuestions() { return questionsOf(currentPhase().units); }
-  function answeredInPhase() { return phaseQuestions().filter(q => state.answers[q.n] !== undefined).length; }
+  function answeredInPhase() { return phaseQuestions().filter(isAnswered).length; }
 
   function updateAnswerCount() {
     const total = phaseQuestions().length;
-    $('answer-count').innerHTML = 'Answered: <b>' + answeredInPhase() + '</b> / ' + total;
+    $('answer-count').innerHTML = (DATA.uiAnswered || 'Answered:') + ' <b>' + answeredInPhase() + '</b> / ' + total;
   }
   function updatePhaseBtn() {
     const last = state.phaseIdx === state.phases.length - 1;
@@ -1481,16 +1718,15 @@
     showScreen('screen-results');
   }
 
-  function cefrBand(scaled) {
-    return DATA.cefr.bands.find(b => scaled >= b.min);
+  function cefrBand(scaled, bands) {
+    return (bands || DATA.cefr.bands).find(b => scaled >= b.min);
   }
 
   function renderResults() {
     const body = $('results-body');
     body.innerHTML = '';
     const allQs = questionsOf(state.units);
-    const correct = allQs.filter(q => state.answers[q.n] === q.key).length;
-    const total = allQs.length;
+    const { correct, total } = tally(allQs);
     const pct = Math.round(correct / total * 100);
     $('results-sub').textContent = state.scope.label + ' · ' + state.studentName;
 
@@ -1508,29 +1744,42 @@
       '<div class="results-student">' + esc(state.scope.label) + '</div>';
     body.appendChild(hero);
 
-    // CEFR
-    const listeningQs = allQs.filter(q => q.n <= 50);
-    const rgQs = allQs.filter(q => q.n > 50);
+    // CEFR — os grupos vêm do banco de itens. No MET são Listening e
+    // Reading & Grammar numa escala de 80; no SIELE é uma prova por grupo, cada
+    // uma valendo 250 pontos, e o S1 é a soma das duas (0 a 500).
     const cefrPanel = document.createElement('div');
     cefrPanel.className = 'cefr-panel';
     const cards = [];
-    let scaledL = null, scaledR = null, scaledO = null;
-    if (listeningQs.length) {
-      const raw = listeningQs.filter(q => state.answers[q.n] === q.key).length;
-      scaledL = Math.round(raw / listeningQs.length * 80);
-      cards.push(cefrCardHTML('Listening', scaledL, raw, listeningQs.length, false));
-    }
-    if (rgQs.length) {
-      const raw = rgQs.filter(q => state.answers[q.n] === q.key).length;
-      scaledR = Math.round(raw / rgQs.length * 80);
-      cards.push(cefrCardHTML('Reading & Grammar', scaledR, raw, rgQs.length, false));
-    }
-    if (scaledL !== null && scaledR !== null) {
-      scaledO = Math.round((scaledL + scaledR) / 2);
-      cards.push(cefrCardHTML('Nível geral estimado', scaledO, null, null, true));
-    }
+    const scores = [];   // pontuação de cada grupo, na ordem declarada
+    DATA.cefrGroups.forEach(g => {
+      if (g.avgOf || g.sumOf) { scores.push(null); return; }   // derivados: numa segunda passada
+      const qs = allQs.filter(q => {
+        if (g.sections) return g.sections.indexOf(unitOfQ[q.n].section) >= 0;
+        if (g.upTo) return q.n <= g.upTo;
+        if (g.from) return q.n >= g.from;
+        return true;
+      });
+      if (!qs.length) { scores.push(null); return; }
+      const t = tally(qs);
+      const scaled = Math.round(t.correct / t.total * (g.scale || 80));
+      scores.push(scaled);
+      cards.push(cefrCardHTML(g.label, scaled, t.correct, t.total, false, g));
+    });
+    DATA.cefrGroups.forEach((g, i) => {
+      const src = g.avgOf || g.sumOf;
+      if (!src) return;
+      const vals = src.map(k => scores[k]).filter(v => v !== null && v !== undefined);
+      if (vals.length !== src.length) return;   // só faz sentido com as duas provas feitas
+      const sum = vals.reduce((a, b) => a + b, 0);
+      const v = g.avgOf ? Math.round(sum / vals.length) : sum;
+      scores[i] = v;
+      cards.push(cefrCardHTML(g.label, v, null, null, true, g));
+    });
     cefrPanel.innerHTML = cards.join('');
     body.appendChild(cefrPanel);
+    const scaledL = scores[0] !== undefined ? scores[0] : null;
+    const scaledR = scores[1] !== undefined ? scores[1] : null;
+    const scaledO = scores[2] !== undefined ? scores[2] : null;
 
     // Registra o resultado e gera o código para o professor
     const entry = {
@@ -1554,12 +1803,12 @@
     DATA.sections.forEach(sec => {
       const qs = state.units.filter(u => u.section === sec.id).flatMap(u => u.questions);
       if (!qs.length) return;
-      const ok = qs.filter(q => state.answers[q.n] === q.key).length;
+      const { correct: ok, total: n } = tally(qs);
       const row = document.createElement('div');
       row.className = 'sec-score-row';
       row.innerHTML = '<span class="ss-name">' + esc(sec.name) + '</span>' +
-        '<span class="ss-bar"><i style="width:' + Math.round(ok / qs.length * 100) + '%"></i></span>' +
-        '<span class="ss-val">' + ok + '/' + qs.length + '</span>';
+        '<span class="ss-bar"><i style="width:' + Math.round(ok / n * 100) + '%"></i></span>' +
+        '<span class="ss-val">' + ok + '/' + n + '</span>';
       secWrap.appendChild(row);
     });
     body.appendChild(secWrap);
@@ -1603,12 +1852,26 @@
     body.appendChild(actions);
   }
 
-  function cefrCardHTML(skill, scaled, raw, total, overall) {
-    const band = cefrBand(scaled);
+  function cefrCardHTML(skill, scaled, raw, total, overall, g) {
+    g = g || {};
+    const max = g.max || g.scale || 80;
+    const acertos = raw !== null && raw !== undefined ? ' · ' + raw + ' de ' + total + ' acertos' : '';
+    /* O grupo somado (S1 = CL + CA) é uma pontuação, não um nível: não há faixa
+       do CEFR para a soma das duas provas, só para cada prova em separado. */
+    if (g.sumOf) {
+      return '<div class="cefr-card overall">' +
+        '<div class="cefr-skill">' + esc(skill) + '</div>' +
+        '<div class="cefr-level">' + scaled + '</div>' +
+        '<div class="cefr-scaled">de 0 a ' + max + ' pontos</div>' +
+        '<div class="cefr-desc">Soma das duas provas, como no Informe SIELE. O nível do CEFR é informado por prova, ao lado.</div>' +
+      '</div>';
+    }
+    const band = cefrBand(scaled, g.bands);
+    const label = (DATA.scoreLabel || 'Scaled estimado:') + ' ' + scaled + ' / ' + max;
     return '<div class="cefr-card' + (overall ? ' overall' : '') + '">' +
       '<div class="cefr-skill">' + esc(skill) + '</div>' +
       '<div class="cefr-level">' + esc(band.level) + '</div>' +
-      '<div class="cefr-scaled">Scaled estimado: ' + scaled + ' / 80' + (raw !== null ? ' · ' + raw + ' de ' + total + ' acertos' : '') + '</div>' +
+      '<div class="cefr-scaled">' + label + acertos + '</div>' +
       '<div class="cefr-desc">' + esc(band.desc) + '</div>' +
     '</div>';
   }
@@ -1684,7 +1947,9 @@
     if (q.ref) {
       const ref = document.createElement('span');
       ref.className = 'q-ref';
-      ref.textContent = q.ref === 'multi' ? 'Refers to two or more texts' : 'Refers to text ' + q.ref;
+      ref.textContent = q.ref === 'multi'
+        ? (DATA.refLabelMulti || 'Refers to two or more texts')
+        : (DATA.refLabel || 'Refers to text {n}').replace('{n}', q.ref);
       block.appendChild(ref);
     }
     const qt = document.createElement('div');
@@ -1700,9 +1965,19 @@
       b.innerHTML = '<span class="letter">' + LETTERS[j] + '</span><span>' + esc(txt) + '</span>';
       b.addEventListener('click', () => {
         if (state.profRevealed) return;
-        state.profChosen = j;
-        optsWrap.querySelectorAll('.opt').forEach(o => o.classList.remove('chosen'));
-        b.classList.add('chosen');
+        if (q.type === 'multi') {
+          // A turma vota em várias opções: aqui o clique alterna, sem limite,
+          // para o professor registrar o que a turma levantou antes de revelar.
+          const sel = Array.isArray(state.profChosen) ? state.profChosen.slice() : [];
+          const at = sel.indexOf(j);
+          if (at >= 0) sel.splice(at, 1); else sel.push(j);
+          state.profChosen = sel;
+          b.classList.toggle('chosen', sel.indexOf(j) >= 0);
+        } else {
+          state.profChosen = j;
+          optsWrap.querySelectorAll('.opt').forEach(o => o.classList.remove('chosen'));
+          b.classList.add('chosen');
+        }
       });
       optsWrap.appendChild(b);
     });
@@ -1786,13 +2061,21 @@
   function profReveal(q) {
     if (state.profRevealed) return;
     state.profRevealed = true;
-    const correctBtn = $('prof-opt-' + q.key);
-    if (correctBtn) correctBtn.classList.add('correct');
-    if (state.profChosen === q.key) tocarAcerto();   // a turma acertou
-    if (state.profChosen !== null && state.profChosen !== q.key) {
-      const wrongBtn = $('prof-opt-' + state.profChosen);
-      if (wrongBtn) { wrongBtn.classList.remove('chosen'); wrongBtn.classList.add('wrong'); }
-    }
+    const keys = q.type === 'multi' ? q.keys : [q.key];
+    const voted = q.type === 'multi'
+      ? (Array.isArray(state.profChosen) ? state.profChosen : [])
+      : (state.profChosen !== null ? [state.profChosen] : []);
+    keys.forEach(k => {
+      const btn = $('prof-opt-' + k);
+      if (btn) btn.classList.add('correct');
+    });
+    voted.forEach(v => {
+      if (keys.indexOf(v) >= 0) return;
+      const btn = $('prof-opt-' + v);
+      if (btn) { btn.classList.remove('chosen'); btn.classList.add('wrong'); }
+    });
+    // Som de acerto só quando a turma acertou tudo o que havia para acertar.
+    if (voted.length && voted.length === keys.length && voted.every(v => keys.indexOf(v) >= 0)) tocarAcerto();
     const ex = $('prof-expl');
     if (ex && q.expl) { ex.textContent = '💡 ' + q.expl; ex.classList.add('show'); }
     const btn = $('prof-reveal');
@@ -1828,34 +2111,49 @@
   </script>
 <script src="assets/tour.js"></script>
 <script>
-/* Tour guiado de primeiro acesso do Treino MET (PT). Espera o buildHome()
-   popular a home (fetch das questões) antes de iniciar. */
+/* Tour guiado de primeiro acesso (PT). Espera o buildHome() popular a home
+   (fetch das questões) antes de iniciar. O texto muda conforme o exame: um
+   aluno de espanhol não pode receber o tour do MET. */
 (function(){
   if(!window.FiskTour) return;
+  var exame=(new URLSearchParams(location.search).get('exame')||'met').toLowerCase();
+  var siele=(exame==='siele');
   function vis(sel){ var el=document.querySelector(sel); return !!(el && el.offsetParent!==null); }
   var tries=0;
   var iv=setInterval(function(){
     tries++;
     var g=document.getElementById('minis-grid');
     var homeActive=(document.getElementById('screen-home')||{}).classList && document.getElementById('screen-home').classList.contains('active');
-    if((g && g.children.length>0 && homeActive) || tries>40){ clearInterval(iv); mountMet(); }
+    if((g && g.children.length>0 && homeActive) || tries>40){ clearInterval(iv); mountTour(); }
   }, 150);
-  function mountMet(){
+  function mountTour(){
     if(!document.getElementById('screen-home').classList.contains('active')) return; // não intromete se já saiu da home
     var steps=[
-      { el:null, title:'Bem-vindo ao Treino MET! 🎧',
-        html:'Aqui você faz simulados do <b>MET</b> (Michigan English Test), com áudio e uma nota estimada por nível. Deixa eu te apresentar.' }
+      siele
+        ? { el:null, title:'¡Bienvenido al Treino SIELE! 🎧',
+            html:'Aqui você treina o <b>SIELE</b> na modalidade <b>S1</b> — o exame final do curso de espanhol —, com áudio e pontuação por nível. Deixa eu te apresentar.' }
+        : { el:null, title:'Bem-vindo ao Treino MET! 🎧',
+            html:'Aqui você faz simulados do <b>MET</b> (Michigan English Test), com áudio e uma nota estimada por nível. Deixa eu te apresentar.' }
     ];
     if(vis('#name-wrap'))
       steps.push({ el:'#name-wrap', title:'Seu nome 📝', html:'Digite seu nome antes de começar — ele aparece no seu resultado.' });
-    steps.push({ el:'[data-scope="full"]', title:'Simulado completo 📄',
-      html:'O exame inteiro (listening + reading), no formato do MET de verdade. Reserve um tempo — é o simulado mais longo.' });
+    steps.push(siele
+      ? { el:'[data-scope="full"]', title:'Exame completo S1 📄',
+          html:'As duas provas do S1 na sequência oficial: <b>Comprensión de lectura</b> (60 min) e <b>Comprensión auditiva</b> (55 min). Reserve um tempo — é o treino mais longo.' }
+      : { el:'[data-scope="full"]', title:'Simulado completo 📄',
+          html:'O exame inteiro (listening + reading), no formato do MET de verdade. Reserve um tempo — é o simulado mais longo.' });
     if(vis('#minis-grid'))
-      steps.push({ el:'#minis-grid', title:'Mini-simulados ⏱️',
-        html:'Treinos mais curtos, por parte do exame — ótimos para praticar no dia a dia sem fazer a prova toda.' });
-    steps.push({ el:'#home-note', title:'Sua nota vira nível CEFR 🎯',
-      html:'No fim, seus acertos viram uma <b>estimativa de nível</b> (A2, B1, B2, C1), como no Quadro Europeu. Toque no <b>❓</b> para rever este tour.' });
-    FiskTour.mount(steps, { key:'met_v1', delay:400 });
+      steps.push(siele
+        ? { el:'#minis-grid', title:'Treinos por nível ⏱️',
+            html:'Cada tarefa do SIELE mira um nível do Quadro Europeu. Aqui você treina um nível por vez — de A1–A2 até C1 — sem fazer o exame todo.' }
+        : { el:'#minis-grid', title:'Mini-simulados ⏱️',
+            html:'Treinos mais curtos, por parte do exame — ótimos para praticar no dia a dia sem fazer a prova toda.' });
+    steps.push(siele
+      ? { el:'#home-note', title:'Sua pontuação e seu nível 🎯',
+          html:'No fim você recebe <b>0 a 250 pontos em cada prova</b> com o nível correspondente (A1 a C1) e a soma de 0 a 500, como no Informe SIELE. Toque no <b>❓</b> para rever este tour.' }
+      : { el:'#home-note', title:'Sua nota vira nível CEFR 🎯',
+          html:'No fim, seus acertos viram uma <b>estimativa de nível</b> (A2, B1, B2, C1), como no Quadro Europeu. Toque no <b>❓</b> para rever este tour.' });
+    FiskTour.mount(steps, { key: siele ? 'siele_v1' : 'met_v1', delay:400 });
   }
 })();
 </script>
