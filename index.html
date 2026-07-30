@@ -634,7 +634,7 @@
       <div class="hero-badge">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="7" fill="#d81f26"/><text x="16" y="23" font-family="Arial" font-size="19" font-weight="800" fill="#fff" text-anchor="middle">F</text></svg>
       </div>
-      <h1>Treino MET</h1>
+      <h1 id="home-h1">Treino MET</h1>
       <p id="hero-sub">Michigan English Test · Practice Test #5 RED</p>
       <span class="prof-badge" id="prof-badge" style="display:none">📺 Modo Professor</span>
     </header>
@@ -645,16 +645,16 @@
         <input class="name-field-input" id="student-name" type="text" placeholder="Digite seu nome para começar" autocomplete="off">
       </div>
 
-      <div class="section-label">Simulado completo</div>
+      <div class="section-label" id="full-label">Simulado completo</div>
       <div class="cards-grid">
         <button class="pick-card pick-full" data-scope="full">
           <div class="pick-icon">🎓</div>
           <h3>Simulado Completo</h3>
-          <p>As 100 questões na sequência oficial: Listening (Parts 1–3), Grammar e Reading. Reading &amp; Grammar com tempo de 65 min.</p>
+          <p id="full-desc">As 100 questões na sequência oficial: Listening (Parts 1–3), Grammar e Reading. Reading &amp; Grammar com tempo de 65 min.</p>
         </button>
       </div>
 
-      <div class="section-label">Mini simulados</div>
+      <div class="section-label" id="minis-label">Mini simulados</div>
       <div class="cards-grid" id="minis-grid"></div>
 
       <div class="section-label" id="sections-label" style="display:none">Por seção</div>
@@ -674,7 +674,7 @@
         você recebe o gabarito comentado e uma estimativa do seu nível no Quadro Comum Europeu (CEFR).
       </p>
     </main>
-    <footer>FISK Personalizado · Treino MET</footer>
+    <footer id="home-footer">FISK Personalizado · Treino MET</footer>
   </div>
 
   <!-- ═══════════ PRÉ-PÁGINA (instruções) ═══════════ -->
@@ -1051,6 +1051,17 @@
 
   function buildHome() {
     $('hero-sub').textContent = DATA.examLabel + ' · ' + DATA.name;
+    /* Identidade da ferramenta. O HTML nasce com os textos do MET; quando o
+       banco de itens é de outro exame, tudo o que nomeia a ferramenta troca —
+       senão o aluno de espanhol abre uma página escrita "Treino MET". */
+    const TOOL_NAME = DATA.toolName || 'Treino MET';
+    document.title = TOOL_NAME + ' - Fisk';
+    $('home-h1').textContent = TOOL_NAME;
+    $('home-footer').textContent = 'FISK Personalizado · ' + TOOL_NAME;
+    $('full-label').textContent = DATA.fullSectionLabel || 'Simulado completo';
+    $('minis-label').textContent = DATA.minisSectionLabel || 'Mini simulados';
+    if (DATA.fullDesc) $('full-desc').textContent = DATA.fullDesc;
+    if (DATA.homeNote) $('home-note').textContent = DATA.homeNote;
     const TAG = '#' + DATA.id;
     const tagHTML = ' <span class="test-tag">' + esc(TAG) + '</span>';
     const FULL_LABEL = DATA.fullLabel || 'Simulado Completo';
