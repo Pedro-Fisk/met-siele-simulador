@@ -8,6 +8,49 @@
   "audioBase": "audio/siele-m0/",
   "letters": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ"],
   "refLabel": "Se refiere al texto {n}",
+  "fullLabel": "Examen completo S1",
+  "uiSection": "Prueba {i} de {n}",
+  "uiAnswered": "Respondidas:",
+  "scoreLabel": "Puntuación estimada:",
+  "brief": {
+    "title": "Como funciona o exame completo S1",
+    "titleMini": "Como funciona este treino por nível",
+    "intro": "Você fará <b>{n} questões</b> — o S1 completo, na sequência oficial: primeiro a <b>Comprensión de lectura</b>, depois a <b>Comprensión auditiva</b>. Tudo aparece em espanhol, como no exame real.",
+    "introMini": "Você fará <b>{n} questões</b> das tarefas de um mesmo nível do CEFR. É um recorte para treinar um tipo de tarefa por vez — o exame inteiro segue no <i>Examen completo S1</i>.",
+    "cards": [
+      {
+        "title": "📖 Comprensión de lectura ({n} questões · {min} min)",
+        "sections": ["cl"],
+        "items": [
+          "São 5 tarefas em ordem crescente de dificuldade, do A1 ao C1: cinco textos curtos, um e-mail, três depoimentos, dois textos com fragmentos faltando e um texto com doze lacunas.",
+          "Nas tarefas de fragmento e de lacuna, o número dentro do texto indica a lacuna — a resposta é a letra correspondente na lista de opções.",
+          "Atenção na Tarefa 4: são <b>cinco</b> fragmentos para <b>quatro</b> lacunas em cada texto. Um deles sempre sobra."
+        ]
+      },
+      {
+        "title": "🎧 Comprensión auditiva ({n} questões · {min} min)",
+        "sections": ["ca"],
+        "items": [
+          "São 6 tarefas do A1 ao C1: uma conversa, cinco anúncios de rádio, oito pessoas falando, uma entrevista e duas conferências.",
+          "⚠️ <b>Cada áudio é a tarefa inteira</b>: já vem com o tempo para ler as perguntas, a primeira escuta, a pausa e a repetição. Dê play quando estiver pronto e ouça até o fim — no exame real não se pode parar nem voltar.",
+          "Nas tarefas com lista de opções, leia a lista durante o silêncio inicial do áudio. É para isso que ele existe.",
+          "A última tarefa é diferente: você marca <b>seis</b> opções entre doze, e cada acerto vale um ponto."
+        ],
+        "itemsMini": [
+          "Nos treinos por nível você <b>pode repetir os áudios</b> à vontade. No exame completo, cada um toca uma única vez, como na prova real."
+        ]
+      }
+    ],
+    "closing": {
+      "title": "⏱ Tempo e resultado",
+      "items": [
+        "Cada prova é cronometrada separadamente. Ao concluir uma (ou quando o tempo acaba), você avança para a seguinte e <b>não pode voltar</b> — é assim no exame oficial.",
+        "No final você vê a <b>pontuação de 0 a 250 em cada prova</b> e o nível correspondente no Quadro Europeu (CEFR), além da soma de 0 a 500 que é o resultado do S1.",
+        "A correção comentada de cada questão é feita com o seu professor.",
+        "O resultado é enviado automaticamente ao seu professor."
+      ]
+    }
+  },
   "source": "EXAMEN SIELE. Modelo 0 (abril 2019) — Instituto Cervantes / Universidad de Salamanca / UNAM / Universidad de Buenos Aires. Uso interno das escolas Fisk para treino dos alunos.",
   "cefr": {
     "note": "Pontuação e faixas do CEFR conforme a Guía de examen SIELE: cada prova vale no máximo 250 pontos e o exame S1 soma 0–500. Abaixo de 33 pontos numa prova, o resultado oficial seria NO APTO — não há descritores abaixo do A1.",
@@ -16,6 +59,7 @@
   "cefrGroups": [
     {
       "label": "Comprensión de lectura",
+      "short": "CL",
       "sections": ["cl"],
       "scale": 250,
       "bands": [
@@ -29,6 +73,7 @@
     },
     {
       "label": "Comprensión auditiva",
+      "short": "CA",
       "sections": ["ca"],
       "scale": 250,
       "bands": [
@@ -42,6 +87,7 @@
     },
     {
       "label": "Puntuación S1",
+      "short": "S1 (0-500)",
       "sumOf": [0, 1],
       "max": 500,
       "isOverall": true
