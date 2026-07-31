@@ -885,7 +885,7 @@
      faixas (no SIELE, CL e CA têm cortes diferentes), e o grupo somado é uma
      pontuação — não existe faixa do CEFR para a soma das duas provas. */
   function cefrLabelOf(scaled, groupIdx) {
-    if (scaled === null || scaled === undefined) return '—';
+    if (scaled === null || scaled === undefined) return '-';
     const g = (DATA.cefrGroups || [])[groupIdx] || {};
     if (g.sumOf) return String(scaled);
     const band = cefrBand(scaled, g.bands);
@@ -1261,7 +1261,7 @@
     html += '<div class="unit-card" style="margin-top:1.4rem"><h3 style="margin-bottom:.6rem">' +
       (full ? 'Como funciona o simulado completo' : 'Como funciona este mini simulado') + '</h3>' +
       '<p class="brief-p">Você fará <b>' + total + ' questões</b>' +
-      (full ? ' — o MET completo, na sequência oficial da prova.' : ', uma amostra proporcional do exame MET, na sequência oficial da prova.') +
+      (full ? ', o MET completo, na sequência oficial da prova.' : ', uma amostra proporcional do exame MET, na sequência oficial da prova.') +
       ' Durante o teste, tudo aparece em inglês, como no exame oficial.</p></div>';
 
     html += '<div class="unit-card"><h3 style="margin-bottom:.6rem">🎧 Listening (' + st.L + ' questões · 3 seções)</h3><ul class="brief-list">';
@@ -1269,7 +1269,7 @@
       html += '<li><b>Part 1</b> (Q1–19): 19 conversas curtas, uma pergunta cada · até ' + secMin('l1') + ' min.</li>' +
         '<li><b>Part 2</b> (Q20–33): 4 conversas longas, com 3–4 perguntas cada · até ' + secMin('l2') + ' min.</li>' +
         '<li><b>Part 3</b> (Q34–50): 4 palestras curtas, com 4–5 perguntas cada · até ' + secMin('l3') + ' min.</li>' +
-        '<li>⚠️ <b>Como no exame oficial, cada áudio toca UMA ÚNICA VEZ</b> — não dá para repetir, voltar ou mudar a velocidade. Dê play em cada áudio quando estiver pronto.</li>';
+        '<li>⚠️ <b>Como no exame oficial, cada áudio toca UMA ÚNICA VEZ</b>. Não dá para repetir, voltar ou mudar a velocidade. Dê play em cada áudio quando estiver pronto.</li>';
     } else {
       html += '<li><b>Part 1:</b> ' + st.p1 + ' conversas curtas, uma pergunta cada · até ' + secMin('l1') + ' min.</li>';
       st.sets2.forEach(u => html += '<li><b>Part 2:</b> 1 conversa longa com ' + u.questions.length + ' perguntas · até ' + secMin('l2') + ' min.</li>');
@@ -1339,14 +1339,14 @@
     const note = document.createElement('div');
     note.className = 'p-note';
     if (oneShot) {
-      note.textContent = '⚠️ This audio plays ONLY ONCE — press play when you are ready.';
+      note.textContent = '⚠️ This audio plays ONLY ONCE, press play when you are ready.';
       wrap.appendChild(note);
     }
     function lockUI() {
       play.disabled = true;
       play.style.opacity = '.35';
       play.style.cursor = 'not-allowed';
-      note.textContent = '✔ Audio played. In the full test, each audio plays only once — just like in the official exam.';
+      note.textContent = '✔ Audio played. In the full test, each audio plays only once, just like in the official exam.';
     }
     const alreadyPlayed = () => !!(state.playedAudio && state.playedAudio[unit.id]);
     if (oneShot && alreadyPlayed()) lockUI();
@@ -1439,7 +1439,7 @@
         const sel = state.answers[q.n] || [];
         hint.textContent = opts.review
           ? 'Respuesta correcta: ' + q.keys.map(k => LETTERS[k]).join(', ') +
-            ' · você marcou ' + (sel.length ? sel.map(k => LETTERS[k]).join(', ') : '—') +
+            ' · você marcou ' + (sel.length ? sel.map(k => LETTERS[k]).join(', ') : '-') +
             ' · ' + scoreOf(q) + ' de ' + itemsOf(q) + ' acertos'
           : 'Marque ' + q.pick + ' opções · ' + sel.length + ' de ' + q.pick + ' marcadas' +
             (sel.length >= q.pick ? ' · clique de novo para desmarcar' : '');
@@ -2142,23 +2142,23 @@
     var steps=[
       siele
         ? { el:null, title:'¡Bienvenido al Treino SIELE! 🎧',
-            html:'Aqui você treina o <b>SIELE</b> na modalidade <b>S1</b> — o exame final do curso de espanhol —, com áudio e pontuação por nível. Deixa eu te apresentar.' }
+            html:'Aqui você treina o <b>SIELE</b> na modalidade <b>S1</b> (o exame final do curso de espanhol), com áudio e pontuação por nível. Deixa eu te apresentar.' }
         : { el:null, title:'Bem-vindo ao Treino MET! 🎧',
             html:'Aqui você faz simulados do <b>MET</b> (Michigan English Test), com áudio e uma nota estimada por nível. Deixa eu te apresentar.' }
     ];
     if(vis('#name-wrap'))
-      steps.push({ el:'#name-wrap', title:'Seu nome 📝', html:'Digite seu nome antes de começar — ele aparece no seu resultado.' });
+      steps.push({ el:'#name-wrap', title:'Seu nome 📝', html:'Digite seu nome antes de começar. Ele aparece no seu resultado.' });
     steps.push(siele
       ? { el:'[data-scope="full"]', title:'Exame completo S1 📄',
-          html:'As duas provas do S1 na sequência oficial: <b>Comprensión de lectura</b> (60 min) e <b>Comprensión auditiva</b> (55 min). Reserve um tempo — é o treino mais longo.' }
+          html:'As duas provas do S1 na sequência oficial: <b>Comprensión de lectura</b> (60 min) e <b>Comprensión auditiva</b> (55 min). Reserve um tempo. É o treino mais longo.' }
       : { el:'[data-scope="full"]', title:'Simulado completo 📄',
-          html:'O exame inteiro (listening + reading), no formato do MET de verdade. Reserve um tempo — é o simulado mais longo.' });
+          html:'O exame inteiro (listening + reading), no formato do MET de verdade. Reserve um tempo. É o simulado mais longo.' });
     if(vis('#minis-grid'))
       steps.push(siele
         ? { el:'#minis-grid', title:'Treinos por nível ⏱️',
-            html:'Cada tarefa do SIELE mira um nível do Quadro Europeu. Aqui você treina um nível por vez — de A1–A2 até C1 — sem fazer o exame todo.' }
+            html:'Cada tarefa do SIELE mira um nível do Quadro Europeu. Aqui você treina um nível por vez (de A1–A2 até C1) sem fazer o exame todo.' }
         : { el:'#minis-grid', title:'Mini-simulados ⏱️',
-            html:'Treinos mais curtos, por parte do exame — ótimos para praticar no dia a dia sem fazer a prova toda.' });
+            html:'Treinos mais curtos, por parte do exame. Ótimos para praticar no dia a dia sem fazer a prova toda.' });
     steps.push(siele
       ? { el:'#home-note', title:'Sua pontuação e seu nível 🎯',
           html:'No fim você recebe <b>0 a 250 pontos em cada prova</b> com o nível correspondente (A1 a C1) e a soma de 0 a 500, como no Informe SIELE. Toque no <b>❓</b> para rever este tour.' }
