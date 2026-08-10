@@ -493,6 +493,490 @@
           "expl": "WHOSE marca posse dentro da oração relativa: os achados são do pesquisador. \"Who\" e \"whom\" não indicam posse, e \"which\" não se usa para pessoas. Portanto, a resposta correta é WHOSE."
         }
       ]
+    },
+    {
+      "id": "rd-set1",
+      "section": "rd",
+      "type": "reading",
+      "title": "Passage 1 · Questions 71–75",
+      "passageIntro": "This passage is about why cities are hotter than the countryside around them.",
+      "passage": "<p>Step out of a park and onto a parking lot on a summer afternoon and you can feel the difference without any instrument. The air above the asphalt is several degrees warmer, and it stays warmer long after the sun has set. Climate scientists call this the urban heat island, and for decades it was treated as a curiosity of city life rather than a problem worth solving.</p><p>The mechanism is not complicated. Concrete, brick and asphalt absorb solar radiation during the day and release it slowly at night, while the dark colour of most road surfaces makes them absorb more than they reflect. Trees and soil do the opposite: water evaporating from leaves carries heat away, and a canopy of branches keeps the ground beneath it in shade. A neighbourhood that has replaced its trees with buildings has, in effect, removed its own cooling system.</p><p>What has changed is the precision with which the effect can be measured. Satellites now record surface temperature street by street, and in city after city the maps show the same pattern: the hottest districts are the ones with the fewest trees, and those districts tend to be the poorest. In one American study, the gap between the leafiest and the barest neighbourhoods of a single city reached seven degrees Celsius on the same afternoon.</p><p>That finding has moved the heat island out of the weather report and into city budgets. Planting a tree is cheap, and unlike an air conditioner it cools the street rather than warming it further. The difficulty is that a sapling planted today will not shade anyone for fifteen years, which is a long time in the life of a city council.</p>",
+      "questions": [
+        {
+          "n": 71,
+          "id": "magentaq071",
+          "topic": "Reading · Propósito",
+          "text": "Why does the author describe stepping from a park onto a parking lot?",
+          "opts": [
+            "to show that the effect can be noticed without measurement",
+            "to argue that parking lots should be removed from cities",
+            "to explain how satellites record surface temperature",
+            "to compare summer afternoons with summer evenings"
+          ],
+          "key": 0,
+          "expl": "A frase diz que a diferença se sente \"without any instrument\". A cena de abertura serve para mostrar que o fenômeno é perceptível sem medição — e não para criticar estacionamentos ou explicar satélites, que só aparecem mais adiante."
+        },
+        {
+          "n": 72,
+          "id": "magentaq072",
+          "topic": "Reading · Detalhe",
+          "text": "According to the passage, how do trees cool the area around them?",
+          "opts": [
+            "by evaporating water from their leaves and shading the ground",
+            "by reflecting solar radiation back into the atmosphere",
+            "by absorbing heat during the day and releasing it at night",
+            "by lowering the temperature of the soil beneath the asphalt"
+          ],
+          "key": 0,
+          "expl": "O segundo parágrafo diz exatamente isso: \"water evaporating from leaves carries heat away, and a canopy of branches keeps the ground beneath it in shade\". Absorver de dia e soltar à noite é o que fazem concreto e asfalto, não as árvores."
+        },
+        {
+          "n": 73,
+          "id": "magentaq073",
+          "topic": "Reading · Vocabulário",
+          "text": "In the third sentence of paragraph 3, which word is closest in meaning to <strong>bare</strong>?",
+          "opts": [
+            "having few trees",
+            "having little rainfall",
+            "having narrow streets",
+            "having old buildings"
+          ],
+          "key": 0,
+          "expl": "O trecho contrasta \"the leafiest\" com \"the barest\" bairros. Se um extremo é o mais arborizado, o outro é o que quase não tem árvore. O contraste dentro da própria frase é que resolve."
+        },
+        {
+          "n": 74,
+          "id": "magentaq074",
+          "topic": "Reading · Inferência",
+          "text": "What does the passage suggest about the districts with the fewest trees?",
+          "opts": [
+            "They are usually inhabited by people with lower incomes.",
+            "They were built more recently than the leafier districts.",
+            "They are the districts where satellites are least accurate.",
+            "They have already begun large tree-planting programmes."
+          ],
+          "key": 0,
+          "expl": "O texto afirma que os bairros mais quentes são os com menos árvores e acrescenta que \"those districts tend to be the poorest\". A conclusão sobre a renda é sustentada pelo texto, embora ele não fale em renda com todas as letras."
+        },
+        {
+          "n": 75,
+          "id": "magentaq075",
+          "topic": "Reading · Detalhe",
+          "text": "According to the last paragraph, what makes tree planting difficult for a city council?",
+          "opts": [
+            "The benefit arrives many years after the cost.",
+            "Trees are more expensive than air conditioning.",
+            "Saplings do not survive in the hottest districts.",
+            "City budgets are decided by national governments."
+          ],
+          "key": 0,
+          "expl": "O último parágrafo diz que plantar é barato, mas que a muda \"will not shade anyone for fifteen years, which is a long time in the life of a city council\". O obstáculo é o prazo, não o preço — o texto diz o contrário sobre custo."
+        }
+      ]
+    },
+    {
+      "id": "rd-set2",
+      "section": "rd",
+      "type": "reading",
+      "title": "Passage 2 · Questions 76–80",
+      "passageIntro": "This passage is about how researchers study the way birds find their way.",
+      "passage": "<p>Every autumn, millions of songbirds leave northern Europe for Africa, and most of them travel at night. A bird that has never made the journey before will arrive, alone, at a wintering ground it has never seen. How it does so has occupied biologists for more than a century, and the answer has proved to be several answers at once.</p><p>The first serious evidence came from a planetarium. In the 1960s, researchers placed captive buntings in a circular cage during the migration season and recorded the direction in which the restless birds tried to escape. When the artificial sky above them was rotated, the birds changed direction accordingly. They were reading the stars — or, more precisely, the point around which the stars appear to turn.</p><p>A second line of work pointed somewhere else entirely. Birds fitted with small magnets, or tested inside coils that distorted the magnetic field, lost their sense of direction even under a clear sky. Whatever the mechanism, the planet's magnetic field was clearly part of the system. For a while the two findings were treated as rival explanations, and researchers argued about which sense was the real one.</p><p>The argument faded once it became possible to test the two together. Birds deprived of one cue simply relied more heavily on the other, and birds given contradictory information recalibrated overnight, treating the stars as the reference against which the magnetic reading was corrected. The modern view is less tidy than either of the old ones: migration runs on a set of overlapping systems, none of which is indispensable on its own.</p>",
+      "questions": [
+        {
+          "n": 76,
+          "id": "magentaq076",
+          "topic": "Reading · Detalhe",
+          "text": "According to the passage, what did the researchers in the 1960s observe?",
+          "opts": [
+            "The birds changed direction when the artificial sky was rotated.",
+            "The birds stopped trying to escape when the stars were hidden.",
+            "The birds followed the magnetic field rather than the stars.",
+            "The birds were unable to orient themselves inside a cage."
+          ],
+          "key": 0,
+          "expl": "O segundo parágrafo descreve o experimento do planetário: girando o céu artificial, \"the birds changed direction accordingly\". As outras alternativas trocam esse resultado por outro que o texto não relata."
+        },
+        {
+          "n": 77,
+          "id": "magentaq077",
+          "topic": "Reading · Propósito",
+          "text": "Why does the author mention birds fitted with small magnets?",
+          "opts": [
+            "to introduce evidence for a second navigational sense",
+            "to explain why the planetarium experiment was flawed",
+            "to describe how birds are tracked on their journey south",
+            "to show that captive birds behave differently from wild ones"
+          ],
+          "key": 0,
+          "expl": "Os ímãs abrem o parágrafo que apresenta \"a second line of work\". A menção serve para trazer a evidência do campo magnético, não para desqualificar o experimento anterior."
+        },
+        {
+          "n": 78,
+          "id": "magentaq078",
+          "topic": "Reading · Referência",
+          "text": "In the last sentence of paragraph 3, what does the word <strong>the two findings</strong> refer to?",
+          "opts": [
+            "the star compass and the magnetic sense",
+            "the magnets and the coils used in the tests",
+            "the clear sky and the distorted field",
+            "the northern breeding grounds and the wintering grounds"
+          ],
+          "key": 0,
+          "expl": "Os dois achados são os dos dois parágrafos anteriores: a orientação pelas estrelas e a orientação pelo campo magnético. Ímãs e bobinas são instrumentos de um mesmo achado, não dois achados."
+        },
+        {
+          "n": 79,
+          "id": "magentaq079",
+          "topic": "Reading · Vocabulário",
+          "text": "In the last paragraph, which phrase is closest in meaning to <strong>recalibrated</strong>?",
+          "opts": [
+            "adjusted one system using the other",
+            "returned to the place where they started",
+            "repeated the journey a second time",
+            "lost the ability to orient themselves"
+          ],
+          "key": 0,
+          "expl": "A própria frase explica o termo: as aves passaram a tratar as estrelas como referência \"against which the magnetic reading was corrected\" — ou seja, ajustaram um sistema pelo outro."
+        },
+        {
+          "n": 80,
+          "id": "magentaq080",
+          "topic": "Reading · Ideia principal",
+          "text": "What is the main point of the passage?",
+          "opts": [
+            "Bird navigation depends on several systems that back one another up.",
+            "The planetarium experiments of the 1960s have since been disproved.",
+            "The magnetic sense is the only reliable guide over long distances.",
+            "Young birds learn the route by following experienced adults."
+          ],
+          "key": 0,
+          "expl": "O texto percorre dois achados, mostra que foram tratados como rivais e fecha dizendo que a migração \"runs on a set of overlapping systems, none of which is indispensable on its own\". As outras alternativas cobrem só um trecho ou contradizem o texto."
+        }
+      ]
+    },
+    {
+      "id": "rd-set3",
+      "section": "rd",
+      "type": "reading-multi",
+      "title": "Texts A, B & C · Questions 81–90",
+      "texts": [
+        {
+          "tag": "A",
+          "html": "<h4>The Riverside Tool Library</h4><p><strong>Borrow what you need. Return it when you're done.</strong></p><p>A tool library works like any other library, except that the shelves hold drills, ladders and sewing machines instead of books. Members pay an annual fee and may borrow up to four items at a time for one week.</p><ul><li>Over 1,200 tools, from garden shears to tile cutters</li><li>Annual membership: £30, or £12 for students and pensioners</li><li>Free repair clinic every second Saturday, 10 a.m. to 1 p.m.</li><li>No experience required — staff will show you how to use anything you borrow</li></ul><p>Open Tuesday to Saturday. Membership can be arranged at the counter or online.</p>"
+        },
+        {
+          "tag": "B",
+          "html": "<h4>Frequently asked questions</h4><p><strong>Why does the library charge a fee at all?</strong><br>The fee covers replacement of worn tools and the wages of one part-time technician. It is deliberately kept below the cost of hiring a single power tool for a weekend, so that membership pays for itself on the first visit.</p><p><strong>What happens if I break something?</strong><br>Nothing, in most cases. Ordinary wear is expected and is what the fee is for. We ask only that you report the damage, because a tool returned quietly with a fault will injure the next borrower.</p><p><strong>Can I keep an item longer than a week?</strong><br>Yes, provided nobody is waiting for it. Renewals are made online and take effect immediately; items on the waiting list cannot be renewed.</p>"
+        },
+        {
+          "tag": "C",
+          "html": "<h4>Five minutes with Nadia Okafor, founder</h4><p><strong>Where did the idea come from?</strong><br>From a cupboard. I had bought a tile cutter for one bathroom and used it once in nine years. Multiply that cupboard by every household on the street and you have an enormous amount of metal sitting still.</p><p><strong>Was it hard to convince people?</strong><br>The borrowing was easy to explain. What surprised me was the repair clinic. People arrive with a broken lamp expecting to be told it is beyond saving, and they leave having mended it themselves. That is when they join — not when they borrow, but when they fix.</p><p><strong>What would you tell another town?</strong><br>Start with the shelf you already have. We began with forty tools in a church hall. The building came later, and it came because the members asked for it.</p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 81,
+          "id": "magentaq081",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, how many items may a member borrow at one time?",
+          "opts": [
+            "four",
+            "one",
+            "twelve",
+            "thirty"
+          ],
+          "key": 0,
+          "expl": "O texto A diz que os membros \"may borrow up to four items at a time for one week\". Os outros números aparecem no texto, mas são o preço e o prazo, não a quantidade."
+        },
+        {
+          "n": 82,
+          "id": "magentaq082",
+          "topic": "Reading · Propósito",
+          "text": "What is the main purpose of Text B?",
+          "opts": [
+            "to answer doubts that might stop someone from joining",
+            "to advertise the tools that have recently arrived",
+            "to explain how the library was originally founded",
+            "to warn members about the penalties for late returns"
+          ],
+          "key": 0,
+          "expl": "As três perguntas do texto B são objeções típicas de quem hesita — a taxa, o estrago e o prazo. Ele existe para desarmar essas dúvidas. A fundação é assunto do texto C."
+        },
+        {
+          "n": 83,
+          "id": "magentaq083",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text B, what should a member do after damaging a tool?",
+          "opts": [
+            "report the damage",
+            "pay for a replacement",
+            "repair it before returning it",
+            "renew the item online"
+          ],
+          "key": 0,
+          "expl": "O texto B diz que, na maioria dos casos, nada acontece: \"We ask only that you report the damage\". Pagar pelo conserto é justamente o que ele diz não ser necessário."
+        },
+        {
+          "n": 84,
+          "id": "magentaq084",
+          "topic": "Reading · Inferência",
+          "text": "What can be inferred from Text B about the annual fee?",
+          "opts": [
+            "It is lower than the cost of renting one power tool for a weekend.",
+            "It has risen every year since the library opened.",
+            "It is waived for members who volunteer at the repair clinic.",
+            "It is the library's only source of income."
+          ],
+          "key": 0,
+          "expl": "O texto diz que a taxa é mantida \"below the cost of hiring a single power tool for a weekend\". As outras alternativas afirmam coisas que o texto não sustenta."
+        },
+        {
+          "n": 85,
+          "id": "magentaq085",
+          "topic": "Reading · Vocabulário",
+          "text": "In Text B, which phrase is closest in meaning to <strong>ordinary wear</strong>?",
+          "opts": [
+            "normal damage from regular use",
+            "a fee charged for heavy items",
+            "clothing lent with the equipment",
+            "the time a tool spends on the shelf"
+          ],
+          "key": 0,
+          "expl": "A frase seguinte esclarece: é o que a taxa cobre e o que se espera do uso. \"Wear\" aqui é o desgaste natural de quem usa a ferramenta."
+        },
+        {
+          "n": 86,
+          "id": "magentaq086",
+          "topic": "Reading · Propósito",
+          "text": "Why does Nadia Okafor mention a cupboard in Text C?",
+          "opts": [
+            "to illustrate how much unused equipment sits in homes",
+            "to explain where the first tools were stored",
+            "to describe the shelving used in the current building",
+            "to complain about the price of a tile cutter"
+          ],
+          "key": 0,
+          "expl": "Ela conta que comprou um cortador de azulejo e o usou uma vez em nove anos, e conclui: \"Multiply that cupboard by every household\". O armário é a imagem do equipamento parado."
+        },
+        {
+          "n": 87,
+          "id": "magentaq087",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text C, what surprised the founder?",
+          "opts": [
+            "how much people valued the repair clinic",
+            "how quickly the membership fee was accepted",
+            "how difficult it was to explain borrowing",
+            "how few tools the church hall could hold"
+          ],
+          "key": 0,
+          "expl": "Ela diz que o empréstimo era fácil de explicar e que \"What surprised me was the repair clinic\". A alternativa sobre a dificuldade de explicar inverte o que ela afirma."
+        },
+        {
+          "n": 88,
+          "id": "magentaq088",
+          "topic": "Reading · Referência",
+          "text": "In Text C, in the sentence \"That is when they join\", what does <strong>That</strong> refer to?",
+          "opts": [
+            "the moment they repair something themselves",
+            "the moment they borrow their first tool",
+            "the moment the building was opened",
+            "the moment they hear about the library"
+          ],
+          "key": 0,
+          "expl": "A frase inteira é \"That is when they join — not when they borrow, but when they fix\". O próprio período dá a resposta e descarta o empréstimo."
+        },
+        {
+          "n": 89,
+          "id": "magentaq089",
+          "topic": "Reading · Inferência",
+          "text": "What does Text C suggest about how a new tool library should begin?",
+          "opts": [
+            "on a small scale, with whatever space is available",
+            "with a purpose-built building from the start",
+            "with at least 1,200 tools in stock",
+            "only after a technician has been hired"
+          ],
+          "key": 0,
+          "expl": "O conselho dela é \"Start with the shelf you already have\", e ela conta que começaram com quarenta ferramentas num salão de igreja, com o prédio vindo depois."
+        },
+        {
+          "n": 90,
+          "id": "magentaq090",
+          "topic": "Reading · Detalhe",
+          "text": "A member wants to keep a ladder for a second week. According to the three texts, this is possible if",
+          "opts": [
+            "nobody is on the waiting list for it",
+            "the member pays an additional fee",
+            "the request is made at the counter",
+            "the ladder is returned to the repair clinic first"
+          ],
+          "key": 0,
+          "expl": "O texto B responde: renovar é possível \"provided nobody is waiting for it\", e itens na lista de espera não podem ser renovados. A renovação é online, não no balcão."
+        }
+      ]
+    },
+    {
+      "id": "rd-set4",
+      "section": "rd",
+      "type": "reading-multi",
+      "title": "Texts A, B & C · Questions 91–100",
+      "texts": [
+        {
+          "tag": "A",
+          "html": "<h4>The Night Shift: photographs of a city that does not sleep</h4><p><strong>Municipal Gallery · 3 March – 28 May</strong></p><p>For two years the photographer Ilan Serra followed the people whose working day begins when everyone else's ends: bakers, nurses, cleaners, port workers. The result is ninety black-and-white portraits, none of them posed.</p><ul><li>Free entry on Wednesdays</li><li>Guided tours Saturdays at 11 a.m. (booking essential)</li><li>Not recommended for children under 10</li></ul><p>An accompanying book is available at the gallery shop.</p>"
+        },
+        {
+          "tag": "B",
+          "html": "<h4>From the exhibition catalogue</h4><p>Serra's decision to work only in black and white has been read as nostalgia, and he rejects the reading. Colour, he argues, would have told the viewer what time of night it was, and the point of the series is that the people in it have lost that information themselves. A nurse at four in the morning and a baker at four in the morning inhabit the same hour differently.</p><p>The absence of posing is equally deliberate. Serra spent the first months of each shift photographing nothing at all, on the grounds that a camera stops being an event only after it has been ignored several times. Critics who describe the portraits as candid are half right: they are unposed, but they were not taken by surprise.</p>"
+        },
+        {
+          "tag": "C",
+          "html": "<h4>Letters to the gallery</h4><p>I worked nights in a hospital laundry for eleven years and I have never seen that work in a gallery before. My daughter came with me and asked why nobody was smiling. I told her they were, but not for the camera. — <em>R. Mendes</em></p><p>The guided tour was excellent, though I would gently suggest that eleven in the morning is a cruel hour for an exhibition about people who sleep then. Could a late tour be added? — <em>K. Abara</em></p><p>I came for the photographs and left thinking about the captions. Each one gives the person's name and trade and nothing else — no age, no story. It took me a room and a half to realise that this was the argument, not an omission. — <em>T. Villar</em></p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 91,
+          "id": "magentaq091",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, what is required to join a guided tour?",
+          "opts": [
+            "a booking in advance",
+            "an entry fee on Wednesdays",
+            "the purchase of the exhibition book",
+            "a child under the age of ten"
+          ],
+          "key": 0,
+          "expl": "O texto A traz \"Guided tours Saturdays at 11 a.m. (booking essential)\". A entrada gratuita de quarta e o livro são outras informações da mesma lista."
+        },
+        {
+          "n": 92,
+          "id": "magentaq092",
+          "topic": "Reading · Propósito",
+          "text": "Why does the author of Text B mention a nurse and a baker?",
+          "opts": [
+            "to show that the same hour is experienced in different ways",
+            "to explain which trades the photographer preferred",
+            "to argue that night work is harder in hospitals than in bakeries",
+            "to describe the two portraits that open the exhibition"
+          ],
+          "key": 0,
+          "expl": "A frase é \"A nurse at four in the morning and a baker at four in the morning inhabit the same hour differently\". Os dois são exemplos de uma mesma hora vivida de modos distintos."
+        },
+        {
+          "n": 93,
+          "id": "magentaq093",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text B, why did Serra work in black and white?",
+          "opts": [
+            "because colour would have revealed the time of night",
+            "because black and white was cheaper to print",
+            "because the gallery asked for a uniform series",
+            "because he wanted the series to look nostalgic"
+          ],
+          "key": 0,
+          "expl": "O texto diz que a cor \"would have told the viewer what time of night it was\", e registra que ele REJEITA a leitura nostálgica — que é justamente a alternativa oposta."
+        },
+        {
+          "n": 94,
+          "id": "magentaq094",
+          "topic": "Reading · Vocabulário",
+          "text": "In Text B, which phrase is closest in meaning to <strong>candid</strong>?",
+          "opts": [
+            "taken without the subject posing",
+            "printed without any editing",
+            "photographed from a long distance",
+            "published without permission"
+          ],
+          "key": 0,
+          "expl": "A própria frase esclarece: \"they are unposed, but they were not taken by surprise\". O crítico acerta a parte de não haver pose."
+        },
+        {
+          "n": 95,
+          "id": "magentaq095",
+          "topic": "Reading · Inferência",
+          "text": "What does Text B suggest about Serra's first months on each shift?",
+          "opts": [
+            "They were spent making the workers used to his presence.",
+            "They produced the strongest images of the series.",
+            "They were required by the hospitals and bakeries.",
+            "They were used to test different kinds of film."
+          ],
+          "key": 0,
+          "expl": "Ele passou os primeiros meses \"photographing nothing at all\", porque a câmera só deixa de ser um acontecimento depois de ser ignorada várias vezes. O objetivo era o hábito, não a imagem."
+        },
+        {
+          "n": 96,
+          "id": "magentaq096",
+          "topic": "Reading · Detalhe",
+          "text": "In Text C, what does R. Mendes say about the people in the photographs?",
+          "opts": [
+            "They were smiling, but not for the camera.",
+            "They were too tired to be photographed.",
+            "They had all worked in a hospital laundry.",
+            "They were posed by the photographer."
+          ],
+          "key": 0,
+          "expl": "A carta responde à pergunta da filha: \"I told her they were, but not for the camera\". A lavanderia é o trabalho de quem escreve, não o dos retratados."
+        },
+        {
+          "n": 97,
+          "id": "magentaq097",
+          "topic": "Reading · Propósito",
+          "text": "Why does K. Abara write to the gallery?",
+          "opts": [
+            "to propose a tour at a more convenient time",
+            "to complain about the quality of the guided tour",
+            "to ask for a refund of the entry fee",
+            "to praise the captions used in the exhibition"
+          ],
+          "key": 0,
+          "expl": "Ela elogia a visita guiada e sugere que onze da manhã é hora cruel para quem dorme nesse horário, perguntando: \"Could a late tour be added?\"."
+        },
+        {
+          "n": 98,
+          "id": "magentaq098",
+          "topic": "Reading · Referência",
+          "text": "In Text C, in \"this was the argument, not an omission\", what does <strong>this</strong> refer to?",
+          "opts": [
+            "giving only the name and trade in each caption",
+            "hanging the photographs in a single room",
+            "printing the series in black and white",
+            "leaving the exhibition without buying the book"
+          ],
+          "key": 0,
+          "expl": "A carta fala das legendas, que trazem \"the person's name and trade and nothing else\". É essa escolha que ele passou a ler como argumento, e não como falha."
+        },
+        {
+          "n": 99,
+          "id": "magentaq099",
+          "topic": "Reading · Inferência",
+          "text": "What do the three letters in Text C have in common?",
+          "opts": [
+            "Each responds to a specific choice made by the exhibition.",
+            "Each asks the gallery to extend the exhibition.",
+            "Each was written by someone who works at night.",
+            "Each criticises the photographer's technique."
+          ],
+          "key": 0,
+          "expl": "As três reagem a uma decisão concreta: a ausência de sorrisos posados, o horário da visita e as legendas. Só a primeira carta é de quem trabalhou à noite."
+        },
+        {
+          "n": 100,
+          "id": "magentaq100",
+          "topic": "Reading · Ideia principal",
+          "text": "Taken together, what do Texts A, B and C show about the exhibition?",
+          "opts": [
+            "Its choices were deliberate and were noticed by visitors.",
+            "It was more popular with critics than with the public.",
+            "It was assembled quickly and with little planning.",
+            "It focused on a single profession in one hospital."
+          ],
+          "key": 0,
+          "expl": "O texto A apresenta a exposição, o B explica as decisões do fotógrafo e o C mostra visitantes reagindo justamente a essas decisões. As outras alternativas contradizem os textos."
+        }
+      ]
     }
   ],
   "minis": [],
