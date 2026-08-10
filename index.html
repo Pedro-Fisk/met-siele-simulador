@@ -806,7 +806,12 @@
 
   /* Qual exame abrir: ?exame=met (padrão, inglês) ou ?exame=siele (espanhol, S1).
      O engine é o mesmo — só muda o banco de itens. */
-  const EXAMS = { met: 'questions/red.json', siele: 'questions/siele-m0.json' };
+  /* O MAGENTA é escrito pela Fisk e está EM CONSTRUÇÃO: nenhum card do Portal
+     aponta para ele, e só se chega por ?exame=magenta. Enquanto o banco tiver
+     `rascunho: true`, a página avisa na tela e NÃO envia resultado nenhum —
+     nem do aluno logado, nem solto. Para publicar, tire o `rascunho` do JSON. */
+  const EXAMS = { met: 'questions/red.json', siele: 'questions/siele-m0.json',
+                  magenta: 'questions/magenta.json' };
   const EXAM = (new URLSearchParams(location.search).get('exame') || 'met').toLowerCase();
   const TEST_FILE = EXAMS[EXAM] || EXAMS.met;
 
@@ -836,6 +841,7 @@
     playedAudio: {},      // unitId -> true (simulado completo: áudio toca 1x)
     studentName: '',
     studentRaf: '',       // RAF do aluno (quando entra pelo Portal do Aluno)
+    studentBook: '',      // estágio do aluno, para o painel de diagnóstico filtrar
     submitted: false,
     timerId: null,
     timeLeft: 0,
@@ -932,6 +938,12 @@
      simulador (só o nome digitado): não credita nada e o dossiê não enxerga. */
   function sendResultToCloud(entry, statusEl, onFail) {
     if (!CLOUD_ON) { if (statusEl) statusEl.textContent = ''; return; }
+    /* Rascunho não grava. Um simulado em construção entrando no histórico do
+       aluno sujaria o painel de diagnóstico com questão que ainda vai mudar. */
+    if (DATA && DATA.rascunho) {
+      if (statusEl) statusEl.textContent = '🚧 Simulado em construção: o resultado não foi registrado.';
+      return;
+    }
     if (statusEl) statusEl.textContent = '☁️ Enviando resultado ao professor…';
     const fail = msg => { if (statusEl) statusEl.textContent = msg; if (onFail) onFail(); };
 
@@ -1104,6 +1116,14 @@
 
   function buildHome() {
     $('hero-sub').textContent = DATA.examLabel + ' · ' + DATA.name;
+    if (DATA.rascunho) {
+      var av = document.createElement('div');
+      av.className = 'cefr-note';
+      av.style.cssText = 'max-width:680px;margin:.9rem auto 0;border-left-color:#D97706';
+      av.textContent = '🚧 Simulado em construção, escrito pela Fisk. Não é uma prova oficial da '
+        + 'Michigan Language Assessment, e nada que você responder aqui é registrado.';
+      $('hero-sub').insertAdjacentElement('afterend', av);
+    }
     /* Identidade da ferramenta. O HTML nasce com os textos do MET; quando o
        banco de itens é de outro exame, tudo o que nomeia a ferramenta troca —
        senão o aluno de espanhol abre uma página escrita "Treino MET". */
@@ -1161,6 +1181,10 @@
       const qs = new URLSearchParams(location.search);
       const raf = (qs.get('raf') || '').trim();
       const nome = (qs.get('nome') || '').trim();
+      /* O Portal manda o estágio do aluno em toda ferramenta. Guardamos para
+         viajar junto do resultado: é por ele que o painel de diagnóstico
+         separa "o que eu erro no meu estágio" do que ficou para trás. */
+      state.studentBook = (qs.get('book') || '').trim();
       if (raf) {
         state.studentRaf = raf;
         if (nome) {
@@ -1921,7 +1945,8 @@
     // Registra o resultado e gera o código para o professor
     const entry = {
       t: Date.now(), n: state.studentName, raf: state.studentRaf, s: state.scope.label,
-      c: correct, q: total, L: scaledL, R: scaledR, O: scaledO, test: DATA.id
+      c: correct, q: total, L: scaledL, R: scaledR, O: scaledO, test: DATA.id,
+      book: state.studentBook || ''
     };
     addLogEntry(entry);
 
