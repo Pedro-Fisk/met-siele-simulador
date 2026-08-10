@@ -89,7 +89,8 @@
           ],
           "key": 0,
           "expl": "A mulher diz que o ônibus deveria ter passado \"five minutes ago\" e explica: \"No, it's just late\". Está atrasado por causa de uma obra na Main Street, não quebrado.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq001"
         }
       ]
     },
@@ -110,7 +111,8 @@
           ],
           "key": 3,
           "expl": "Perguntada se vai dirigir ou pegar o trem, ela responde: \"Definitely the train. Traffic and parking will be a nightmare.\"",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq002"
         }
       ]
     },
@@ -131,7 +133,8 @@
           ],
           "key": 1,
           "expl": "Ela torce pelo micro-ondas novo porque anda gastando demais comprando almoço fora. A ideia é passar a trazer comida de casa e poder esquentá-la no escritório.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq003"
         }
       ]
     },
@@ -152,7 +155,8 @@
           ],
           "key": 3,
           "expl": "O professor manda deixar os quizzes corrigidos na caixa em frente à sala: \"The students will be expecting them there tomorrow\". Os alunos vão retirá-los amanhã.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq004"
         }
       ]
     },
@@ -173,7 +177,8 @@
           ],
           "key": 1,
           "expl": "O vendedor sugere comprar um aparelho novo, mas ela responde que tem seguro do celular, \"so I think there's a better solution than that\", ou seja, prefere consertá-lo pelo seguro.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq005"
         }
       ]
     },
@@ -194,7 +199,8 @@
           ],
           "key": 1,
           "expl": "\"My supervisor and I were both taken aback by the news\". A expressão \"taken aback\" significa surpreso, pego de surpresa.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq006"
         }
       ]
     },
@@ -215,7 +221,8 @@
           ],
           "key": 1,
           "expl": "Que ele está na direção errada a mulher DIZ diretamente (\"You are turned around\"). Logo, não é o que ela \"implica\". O que fica implícito é a consequência: com a estação ainda a quatro quarteirões dali, ele vai acabar se atrasando.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq007"
         }
       ]
     },
@@ -236,7 +243,8 @@
           ],
           "key": 0,
           "expl": "As respostas hesitantes (\"as ready as I'll ever be, I guess\" e \"We'll see about that\") mostram insegurança e nervosismo, apesar das semanas de preparação.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq008"
         }
       ]
     },
@@ -257,7 +265,8 @@
           ],
           "key": 1,
           "expl": "\"Our orders have tripled since then. Everyone's maxed out, and we can afford to hire\". Pedidos triplicaram em seis meses: a empresa está crescendo rapidamente.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq009"
         }
       ]
     },
@@ -278,7 +287,8 @@
           ],
           "key": 1,
           "expl": "\"When I went to university, I moved away and left the piano at home\". Ao ir para a universidade, ele parou de tocar piano.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq010"
         }
       ]
     },
@@ -299,7 +309,8 @@
           ],
           "key": 0,
           "expl": "\"I had to read an excerpt of it for a different class the other day\". Ela já tinha lido um trecho (excerpt) do artigo antes, para outra disciplina.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq011"
         }
       ]
     },
@@ -320,7 +331,8 @@
           ],
           "key": 0,
           "expl": "\"I'd prefer something without so many bells and whistles\". \"Bells and whistles\" são recursos/funções extras; ele quer um brinquedo simples, como os de antigamente.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq012"
         }
       ]
     },
@@ -341,7 +353,8 @@
           ],
           "key": 0,
           "expl": "\"Are you ready for tomorrow's test?... I'm just not very good with numbers\". A prova envolve números: é a prova de matemática.",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq013"
         }
       ]
     },
@@ -362,7 +375,8 @@
           ],
           "key": 1,
           "expl": "Como a livraria está sem o livro-texto, o professor decide: \"I'll send the reading to the whole class\". Vai mandar o material da tarefa para todos.",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq014"
         }
       ]
     },
@@ -383,7 +397,8 @@
           ],
           "key": 3,
           "expl": "\"I think they'll compete for a championship... but they do have a lot of new players and a difficult schedule\". Eles avaliam as chances (o potencial) do time nesta temporada.",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq015"
         }
       ]
     },
@@ -404,7 +419,8 @@
           ],
           "key": 3,
           "expl": "\"If my flight is canceled, it might be days before I can get another one. That's happened to me before. Such a pain\". O que ele chama de irritante são os atrasos/transtornos de viagem.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq016"
         }
       ]
     },
@@ -425,7 +441,8 @@
           ],
           "key": 2,
           "expl": "O médico diz que o creme \"won't work immediately, but in a few days it should stop itching\". Alguns dias ≈ dois ou três; se não melhorar até o fim da semana, ele deve voltar.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq017"
         }
       ]
     },
@@ -446,7 +463,8 @@
           ],
           "key": 2,
           "expl": "O ar-condicionado é só o gancho: a conversa gira em torno do calorão fora de época. \"Summer started six weeks early\", \"maybe it'll cool off in a couple of days\".",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq018"
         }
       ]
     },
@@ -467,7 +485,8 @@
           ],
           "key": 1,
           "expl": "\"Probably not the worst thing... I don't think it'll be that big a deal. Besides, it'll make campus safer\". Ele acha a medida boa (mas não chega a dizer que beneficia todos os alunos).",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq019"
         }
       ]
     },
@@ -511,7 +530,8 @@
           ],
           "key": 3,
           "expl": "Toda a conversa acontece na convenção anual de empresários: \"that's why we come, to learn from each other\", \"coming here each year is a great way to learn...\". O assunto principal é o evento.",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq020"
         },
         {
           "n": 21,
@@ -524,7 +544,8 @@
           ],
           "key": 2,
           "expl": "\"We'll be lucky if we break even this year. The forecast is brighter for next year though\". Ele menciona o ano que vem porque espera uma economia melhor.",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq021"
         },
         {
           "n": 22,
@@ -537,7 +558,8 @@
           ],
           "key": 0,
           "expl": "Antes do seminário, ele diz: \"I need to check in on things back in my office before that\". O próximo passo é contatar (ligar para) o escritório.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq022"
         },
         {
           "n": 23,
@@ -551,7 +573,8 @@
           ],
           "key": 3,
           "expl": "\"Break even\" = empatar receitas e despesas, sem lucro nem prejuízo. \"We'll be lucky if we break even\" = teremos sorte se ao menos empatarmos, o negócio talvez não dê dinheiro.",
-          "topic": "Intenção do falante"
+          "topic": "Listening · Intenção do falante",
+          "id": "redq023"
         }
       ]
     },
@@ -591,7 +614,8 @@
           ],
           "key": 2,
           "expl": "\"You're very lucky. The one in the window is actually our last, and I believe it's your size\". Ele tem exatamente o que ela procura, no tamanho dela.",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq024"
         },
         {
           "n": 25,
@@ -604,7 +628,8 @@
           ],
           "key": 3,
           "expl": "\"I left my credit card at home, and I don't think I have enough cash\". Ela não tem dinheiro suficiente no momento.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq025"
         },
         {
           "n": 26,
@@ -618,7 +643,8 @@
           ],
           "key": 3,
           "expl": "\"I'll make an exception and set it aside so that no one else can buy it\". Abrir uma exceção e separar a peça até a loja fechar é reservá-la temporariamente.",
-          "topic": "Intenção do falante"
+          "topic": "Listening · Intenção do falante",
+          "id": "redq026"
         }
       ]
     },
@@ -662,7 +688,8 @@
           ],
           "key": 3,
           "expl": "\"A friend of mine was in here earlier today and saw a book that might help me with a research project\". É um livro que a amiga viu e recomendou.",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq027"
         },
         {
           "n": 28,
@@ -675,7 +702,8 @@
           ],
           "key": 2,
           "expl": "\"Tell me more about your research. Maybe that will point us in the right direction\". Ele pergunta para conseguir localizar o livro que ela precisa.",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq028"
         },
         {
           "n": 29,
@@ -688,7 +716,8 @@
           ],
           "key": 2,
           "expl": "Ao saber do empréstimo de dois dias, ela conclui: \"I won't need it for more than two days, so I'll just use the hard copy\". Vai retirar o exemplar físico da biblioteca.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq029"
         },
         {
           "n": 30,
@@ -702,7 +731,8 @@
           ],
           "key": 3,
           "expl": "\"I came up empty\" = voltei de mãos vazias; ela pesquisou on-line \"to see if I could figure out what it was called\" e não conseguiu descobrir o nome do livro.",
-          "topic": "Intenção do falante"
+          "topic": "Listening · Intenção do falante",
+          "id": "redq030"
         }
       ]
     },
@@ -742,7 +772,8 @@
           ],
           "key": 3,
           "expl": "\"My teaching assistant and I gathered informal data this past semester... up to 70% of my students are doing something on their computers other than taking notes\", ela coletou evidências sobre o uso dos laptops.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq031"
         },
         {
           "n": 32,
@@ -755,7 +786,8 @@
           ],
           "key": 3,
           "expl": "\"I'm going to lay out the rationale... go over the studies that show that taking notes by hand leads to better retention\". Os estudos são o que ela pretende apresentar aos alunos para justificar a nova regra.",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq032"
         },
         {
           "n": 33,
@@ -768,7 +800,8 @@
           ],
           "key": 1,
           "expl": "\"I might even give it a try in my classes, and who knows? Maybe you'll start a school-wide trend\". Ele acha que a ideia pode influenciar outros professores.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq033"
         }
       ]
     },
@@ -812,7 +845,8 @@
           ],
           "key": 3,
           "expl": "O guia descreve o blue heron por completo (ninho, tamanho (\"well over a meter tall\"), aparência e hábitos) ou seja, as características de uma espécie de ave.",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq034"
         },
         {
           "n": 35,
@@ -825,7 +859,8 @@
           ],
           "key": 0,
           "expl": "\"If you don't have binoculars, we have a telescope set up over here that you can use\", equipamentos para enxergar melhor.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq035"
         },
         {
           "n": 36,
@@ -838,7 +873,8 @@
           ],
           "key": 1,
           "expl": "\"It's probably standing guard over the eggs, watching for owls and hawks\". A ave no ninho está protegendo os ovos.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq036"
         },
         {
           "n": 37,
@@ -851,7 +887,8 @@
           ],
           "key": 2,
           "expl": "O parceiro está na água rasa \"probably looking for fish, which blue herons like to eat\". Os peixes explicam o que aquela ave está fazendo (caçando comida).",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq037"
         }
       ]
     },
@@ -895,7 +932,8 @@
           ],
           "key": 3,
           "expl": "O arquiteto apresenta \"my firm's ideas for the design of your company's new supermarket\", os planos do novo prédio/loja do cliente.",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq038"
         },
         {
           "n": 39,
@@ -908,7 +946,8 @@
           ],
           "key": 1,
           "expl": "A loja de eletrodomésticos exemplifica o layout de corredores compridos que \"keeps customers in the store as long as possible\". Uma estratégia de vendas comum que ele critica por frustrar o cliente.",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq039"
         },
         {
           "n": 40,
@@ -921,7 +960,8 @@
           ],
           "key": 2,
           "expl": "\"Now, let's look at some sketches that illustrate what we have in mind\". O próximo passo é ver os desenhos do projeto.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq040"
         },
         {
           "n": 41,
@@ -935,7 +975,8 @@
           ],
           "key": 0,
           "expl": "\"On the fence\" = em cima do muro, indeciso. \"At first we were on the fence about which one to go with\", a equipe teve dificuldade para decidir.",
-          "topic": "Intenção do falante"
+          "topic": "Listening · Intenção do falante",
+          "id": "redq041"
         }
       ]
     },
@@ -983,7 +1024,8 @@
           ],
           "key": 0,
           "expl": "A fala apresenta \"the various sports and other extracurricular activities\" da escola, as atividades estudantis.",
-          "topic": "Ideia principal"
+          "topic": "Listening · Ideia principal",
+          "id": "redq042"
         },
         {
           "n": 43,
@@ -996,7 +1038,8 @@
           ],
           "key": 2,
           "expl": "\"Then you'll hear from some other teachers who also lead programs\". Os outros professores também vão falar aos pais (Fine Arts, organizações acadêmicas, clubes sociais).",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq043"
         },
         {
           "n": 44,
@@ -1009,7 +1052,8 @@
           ],
           "key": 2,
           "expl": "\"We also have soccer and tennis teams, both of which received brand new equipment last year\". O equipamento novo é citado como um benefício desses dois times.",
-          "topic": "Propósito"
+          "topic": "Listening · Propósito",
+          "id": "redq044"
         },
         {
           "n": 45,
@@ -1022,7 +1066,8 @@
           ],
           "key": 3,
           "expl": "\"Participating in a sport is a great character building experience, a way to develop teamwork and leadership skills\", uma experiência valiosa.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq045"
         },
         {
           "n": 46,
@@ -1035,7 +1080,8 @@
           ],
           "key": 0,
           "expl": "A fala termina com \"now let's hear from Mr. Morris about Fine Arts\". O diretor de artes falará sobre música, arte e teatro.",
-          "topic": "Inferência"
+          "topic": "Listening · Inferência",
+          "id": "redq046"
         }
       ]
     },
@@ -1079,7 +1125,8 @@
           ],
           "key": 0,
           "expl": "\"They'll try to recreate these ancient objects\" / \"how will these replicas be created?\", os alunos farão réplicas (cópias) de objetos antigos.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq047"
         },
         {
           "n": 48,
@@ -1092,7 +1139,8 @@
           ],
           "key": 1,
           "expl": "\"[I] wondered what it would be like to hold them in my hands\". Desde criança o locutor queria poder tocar as peças do museu.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq048"
         },
         {
           "n": 49,
@@ -1105,7 +1153,8 @@
           ],
           "key": 2,
           "expl": "\"The bowls will be fired in a wood oven built especially for this project\". O forno foi construído especialmente para o projeto.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq049"
         },
         {
           "n": 50,
@@ -1118,7 +1167,8 @@
           ],
           "key": 0,
           "expl": "\"To celebrate the project's conclusion in May, the museum plans to hold an exhibit of the students' reproductions\", haverá uma exposição da cerâmica dos alunos.",
-          "topic": "Detalhe"
+          "topic": "Listening · Detalhe",
+          "id": "redq050"
         }
       ]
     },
@@ -1138,7 +1188,8 @@
           ],
           "key": 0,
           "expl": "\"Next month\" mostra que a frase fala do futuro: \"you will start working\". \"Você vai começar a trabalhar\".",
-          "topic": "Tenses"
+          "topic": "Tenses",
+          "id": "redq051"
         }
       ]
     },
@@ -1158,7 +1209,8 @@
           ],
           "key": 2,
           "expl": "A ideia é \"não é só química que temos que estudar hoje, mas também física\". Em inglês: \"It is not only chemistry... but also physics.\"",
-          "topic": "Inversion & Emphasis"
+          "topic": "Inversion & Emphasis",
+          "id": "redq052"
         }
       ]
     },
@@ -1178,7 +1230,8 @@
           ],
           "key": 0,
           "expl": "\"Of all kinds\" = \"de todos os tipos\": artistas de todos os tipos vão mostrar seu trabalho no festival.",
-          "topic": "Phrasal Verbs & Prepositions"
+          "topic": "Phrasal Verbs & Prepositions",
+          "id": "redq053"
         }
       ]
     },
@@ -1198,7 +1251,8 @@
           ],
           "key": 3,
           "expl": "O museu \"continua sendo a atração mais popular\" = \"has remained the most popular attraction\". Antes de \"most popular\", o inglês pede \"the\".",
-          "topic": "Tenses"
+          "topic": "Tenses",
+          "id": "redq054"
         }
       ]
     },
@@ -1218,7 +1272,8 @@
           ],
           "key": 2,
           "expl": "\"Very much involved\" = \"muito envolvida\". É assim que dizemos que alguém participou bastante de algo.",
-          "topic": "Adverbs, Modals & Tags"
+          "topic": "Adverbs, Modals & Tags",
+          "id": "redq055"
         }
       ]
     },
@@ -1238,7 +1293,8 @@
           ],
           "key": 0,
           "expl": "Depois de \"It is required that...\" (\"é obrigatório que...\"), o verbo fica na forma básica: \"be submitted\", \"que as notas sejam enviadas\".",
-          "topic": "Conditionals & Subjunctive"
+          "topic": "Conditionals & Subjunctive",
+          "id": "redq056"
         }
       ]
     },
@@ -1258,7 +1314,8 @@
           ],
           "key": 2,
           "expl": "Para dizer \"nem os analistas nem o público\", o inglês usa o par \"neither... nor\".",
-          "topic": "Connectors"
+          "topic": "Connectors",
+          "id": "redq057"
         }
       ]
     },
@@ -1278,7 +1335,8 @@
           ],
           "key": 2,
           "expl": "\"Pressure\" (pressão) não dá para contar em unidades, então dizemos \"a tremendous amount of pressure\", \"uma quantidade enorme de pressão\". Repare que a expressão completa precisa do \"a\" e do \"of\".",
-          "topic": "Pronouns & Determiners"
+          "topic": "Pronouns & Determiners",
+          "id": "redq058"
         }
       ]
     },
@@ -1298,7 +1356,8 @@
           ],
           "key": 1,
           "expl": "\"As pointed out in this report\" = \"como apontado neste relatório\". O jeito comum de citar de onde veio a informação.",
-          "topic": "Relative Clauses & Passive"
+          "topic": "Relative Clauses & Passive",
+          "id": "redq059"
         }
       ]
     },
@@ -1318,7 +1377,8 @@
           ],
           "key": 1,
           "expl": "\"Other than Susan\" = \"além da Susan / fora a Susan\": ela não conhecia quase ninguém além da Susan.",
-          "topic": "Adverbs, Modals & Tags"
+          "topic": "Adverbs, Modals & Tags",
+          "id": "redq060"
         }
       ]
     },
@@ -1338,7 +1398,8 @@
           ],
           "key": 1,
           "expl": "\"A show of hands\" é a expressão para \"votação levantando as mãos\". O professor pediu que levantassem a mão para ver quem tinha terminado.",
-          "topic": "Embedded Questions & Word Order"
+          "topic": "Embedded Questions & Word Order",
+          "id": "redq061"
         }
       ]
     },
@@ -1358,7 +1419,8 @@
           ],
           "key": 2,
           "expl": "Aqui precisamos do nome da qualidade: \"efficiency\" (eficiência), \"um campo dedicado à eficiência no trabalho\". \"Efficient\" e \"efficiently\" descreveriam algo, não nomeiam a qualidade.",
-          "topic": "Phrasal Verbs & Prepositions"
+          "topic": "Phrasal Verbs & Prepositions",
+          "id": "redq062"
         }
       ]
     },
@@ -1378,7 +1440,8 @@
           ],
           "key": 0,
           "expl": "\"Whether to stay home or go out\" = \"se ficava em casa ou saía\". As duas alternativas aparecem com \"to + verbo\".",
-          "topic": "Embedded Questions & Word Order"
+          "topic": "Embedded Questions & Word Order",
+          "id": "redq063"
         }
       ]
     },
@@ -1398,7 +1461,8 @@
           ],
           "key": 2,
           "expl": "Pergunta sobre algo em andamento: \"Is she applying for a scholarship this year?\" = \"Ela está se candidatando a uma bolsa este ano?\". (\"Apply herself\" mudaria o sentido para \"esforçar-se\".)",
-          "topic": "Embedded Questions & Word Order"
+          "topic": "Embedded Questions & Word Order",
+          "id": "redq064"
         }
       ]
     },
@@ -1418,7 +1482,8 @@
           ],
           "key": 2,
           "expl": "\"Bring in\" é o verbo para \"trazer/gerar dinheiro\": \"is bringing in extra income\". \"Está ganhando uma renda extra\".",
-          "topic": "Phrasal Verbs & Prepositions"
+          "topic": "Phrasal Verbs & Prepositions",
+          "id": "redq065"
         }
       ]
     },
@@ -1438,7 +1503,8 @@
           ],
           "key": 2,
           "expl": "Roger contou um plano: \"Roger said he was going to the party\", \"disse que ia à festa\". Depois de \"said\", o verbo recua para o passado.",
-          "topic": "Tenses"
+          "topic": "Tenses",
+          "id": "redq066"
         }
       ]
     },
@@ -1458,7 +1524,8 @@
           ],
           "key": 0,
           "expl": "Em inglês não se diz \"a news\"; a unidade é \"a piece of news\", \"uma notícia interessante\".",
-          "topic": "Pronouns & Determiners"
+          "topic": "Pronouns & Determiners",
+          "id": "redq067"
         }
       ]
     },
@@ -1478,7 +1545,8 @@
           ],
           "key": 3,
           "expl": "\"Help yourself to...\" = \"sirva-se de...\": \"Help yourself to some of the soup\", \"sirva-se da sopa\".",
-          "topic": "Phrasal Verbs & Prepositions"
+          "topic": "Phrasal Verbs & Prepositions",
+          "id": "redq068"
         }
       ]
     },
@@ -1498,7 +1566,8 @@
           ],
           "key": 2,
           "expl": "Estrutura \"quanto mais..., melhor\": \"the more funding a university receives, the better its facilities will be\".",
-          "topic": "Comparatives & Superlatives"
+          "topic": "Comparatives & Superlatives",
+          "id": "redq069"
         }
       ]
     },
@@ -1518,7 +1587,8 @@
           ],
           "key": 3,
           "expl": "\"Had it not been raining\" é o jeito mais formal de dizer \"If it had not been raining\", \"se não estivesse chovendo, teríamos visitado o zoológico\".",
-          "topic": "Inversion & Emphasis"
+          "topic": "Inversion & Emphasis",
+          "id": "redq070"
         }
       ]
     },
@@ -1541,7 +1611,8 @@
           ],
           "key": 1,
           "expl": "A pergunta inicial (\"What if... you could just turn on your computer instead of driving to the doctor's office?\") convida o leitor a imaginar a telemedicina, apresenta a possibilidade, sem criticar nem questionar.",
-          "topic": "Propósito"
+          "topic": "Reading · Propósito",
+          "id": "redq071"
         },
         {
           "n": 72,
@@ -1554,7 +1625,8 @@
           ],
           "key": 0,
           "expl": "O texto diz que, se a farmácia entrega em casa, \"you may never need to leave your own home during your illness\". A pessoa doente pode ficar em casa.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq072"
         },
         {
           "n": 73,
@@ -1567,7 +1639,8 @@
           ],
           "key": 1,
           "expl": "\"Ready access\" = acesso rápido, imediato. Entre as opções, \"quick\" é a mais próxima.",
-          "topic": "Vocabulário"
+          "topic": "Reading · Vocabulário",
+          "id": "redq073"
         },
         {
           "n": 74,
@@ -1580,7 +1653,8 @@
           ],
           "key": 2,
           "expl": "O texto afirma que as consultas on-line levam o paciente a procurar ajuda mais cedo, \"instead of waiting and eventually needing emergency care, which is much more expensive\", menos atendimentos de emergência = menos custo.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq074"
         },
         {
           "n": 75,
@@ -1593,7 +1667,8 @@
           ],
           "key": 1,
           "expl": "Em \"More than that...\", o \"that\" retoma o que acabou de ser dito: muitos diagnósticos exigem exames (lab tests/X-rays) que não podem ser feitos a distância.",
-          "topic": "Referência"
+          "topic": "Reading · Referência",
+          "id": "redq075"
         }
       ]
     },
@@ -1616,7 +1691,8 @@
           ],
           "key": 3,
           "expl": "O texto diz que a afirmação de Darwin \"was only a speculative account of linguistic evolution\". Era especulativa, sem base em evidência experimental.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq076"
         },
         {
           "n": 77,
@@ -1629,7 +1705,8 @@
           ],
           "key": 2,
           "expl": "\"Researchers in the United Kingdom investigated the evolution of language by studying cognates... in Indo-European languages\", comparando cognatos dessas línguas.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq077"
         },
         {
           "n": 78,
@@ -1642,7 +1719,8 @@
           ],
           "key": 2,
           "expl": "A \"mutation rate\", calculada \"based on frequency of use\", mostrou quanta variação sofreram as palavras conforme sua frequência (as comuns quase não mudaram; as raras mudaram em até 750 anos).",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq078"
         },
         {
           "n": 79,
@@ -1655,7 +1733,8 @@
           ],
           "key": 3,
           "expl": "\"The rarest verbs in the list were the most likely to have been regularized\". Os verbos usados com menos frequência são os que mais se regularizam.",
-          "topic": "Inferência"
+          "topic": "Reading · Inferência",
+          "id": "redq079"
         },
         {
           "n": 80,
@@ -1668,7 +1747,8 @@
           ],
           "key": 0,
           "expl": "Os dois estudos relacionam frequência de uso com velocidade de mudança: cognatos por frequência no primeiro; no segundo, o verbo 100× menos usado evolui 10× mais rápido.",
-          "topic": "Ideia principal"
+          "topic": "Reading · Ideia principal",
+          "id": "redq080"
         }
       ]
     },
@@ -1704,7 +1784,8 @@
           ],
           "key": 1,
           "expl": "O anúncio lista \"post-festival events including workshops with leading producers, directors, screenwriters, and actors\", sessões com profissionais da área depois do festival.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq081"
         },
         {
           "n": 82,
@@ -1718,7 +1799,8 @@
           ],
           "key": 3,
           "expl": "\"Reserve your tickets early\" = garanta/assegure seus ingressos com antecedência, \"secure\".",
-          "topic": "Vocabulário"
+          "topic": "Reading · Vocabulário",
+          "id": "redq082"
         },
         {
           "n": 83,
@@ -1732,7 +1814,8 @@
           ],
           "key": 2,
           "expl": "A entrevista inteira é sobre Federico Fellini, vida, carreira e contribuição ao cinema. O propósito é falar de um diretor.",
-          "topic": "Propósito"
+          "topic": "Reading · Propósito",
+          "id": "redq083"
         },
         {
           "n": 84,
@@ -1746,7 +1829,8 @@
           ],
           "key": 1,
           "expl": "\"Influential\" = influente, com poder de provocar mudança; a crítica reforça isso ao dizer que a abordagem de Fellini \"can be seen in many of today's most renowned films\".",
-          "topic": "Vocabulário"
+          "topic": "Reading · Vocabulário",
+          "id": "redq084"
         },
         {
           "n": 85,
@@ -1760,7 +1844,8 @@
           ],
           "key": 3,
           "expl": "\"He went to Rome in 1939 and began writing newspaper and magazine articles\", ele começou como jornalista.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq085"
         },
         {
           "n": 86,
@@ -1774,7 +1859,8 @@
           ],
           "key": 2,
           "expl": "Os sonhos aparecem na descrição do estilo de Fellini (\"his unique, very personal style, which combined memory, dreams, and fantasy\") o método de um diretor importante.",
-          "topic": "Propósito"
+          "topic": "Reading · Propósito",
+          "id": "redq086"
         },
         {
           "n": 87,
@@ -1788,7 +1874,8 @@
           ],
           "key": 0,
           "expl": "\"The vivid images evoked by film... can spark a child's interest and imagination\". A imaginação é algo que os filmes afetam positivamente.",
-          "topic": "Propósito"
+          "topic": "Reading · Propósito",
+          "id": "redq087"
         },
         {
           "n": 88,
@@ -1802,7 +1889,8 @@
           ],
           "key": 0,
           "expl": "\"Movies are very much a part of today's world, and older students have become quite used to this fact\". Eles estão acostumados à presença do cinema em suas vidas.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq088"
         },
         {
           "n": 89,
@@ -1816,7 +1904,8 @@
           ],
           "key": 2,
           "expl": "\"As students feel more comfortable with the media and the instructor, they learn and remember more\", \"they\" retoma \"students\".",
-          "topic": "Referência"
+          "topic": "Reading · Referência",
+          "id": "redq089"
         },
         {
           "n": 90,
@@ -1830,7 +1919,8 @@
           ],
           "key": 0,
           "expl": "O festival terá workshops com \"leading producers\" (texto A), e a Dra. Hannah Peters é \"a movie producer\" (texto C), a única produtora entre as opções.",
-          "topic": "Inferência"
+          "topic": "Reading · Inferência",
+          "id": "redq090"
         }
       ]
     },
@@ -1866,7 +1956,8 @@
           ],
           "key": 0,
           "expl": "\"Architecture\" ali se refere ao estilo/projeto das construções. O hotel é cercado por \"fine examples of Victorian architecture\" (belos exemplos de design de edifícios).",
-          "topic": "Vocabulário"
+          "topic": "Reading · Vocabulário",
+          "id": "redq091"
         },
         {
           "n": 92,
@@ -1880,7 +1971,8 @@
           ],
           "key": 1,
           "expl": "O texto B é a ementa de um curso universitário (History 287/English Literature 242) do professor Donald Wilson, descreve uma disciplina.",
-          "topic": "Propósito"
+          "topic": "Reading · Propósito",
+          "id": "redq092"
         },
         {
           "n": 93,
@@ -1894,7 +1986,8 @@
           ],
           "key": 1,
           "expl": "No período inicial, \"Britain's first railroad opened\", a ferrovia, uma nova forma de transporte.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq093"
         },
         {
           "n": 94,
@@ -1908,7 +2001,8 @@
           ],
           "key": 3,
           "expl": "As casas que deixaram de ser parte do local de trabalho para virar estruturas separadas ilustram as \"dramatic changes to British society\", um exemplo de mudança social.",
-          "topic": "Propósito"
+          "topic": "Reading · Propósito",
+          "id": "redq094"
         },
         {
           "n": 95,
@@ -1922,7 +2016,8 @@
           ],
           "key": 0,
           "expl": "\"With the increase in literacy, the public's appetite for books and magazines grew\", \"literacy\" = alfabetização, capacidade de leitura.",
-          "topic": "Vocabulário"
+          "topic": "Reading · Vocabulário",
+          "id": "redq095"
         },
         {
           "n": 96,
@@ -1936,7 +2031,8 @@
           ],
           "key": 1,
           "expl": "\"He spent a good portion of his youth working to help support his family\". Passou boa parte da juventude trabalhando para ganhar dinheiro.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq096"
         },
         {
           "n": 97,
@@ -1950,7 +2046,8 @@
           ],
           "key": 2,
           "expl": "O texto fala dos \"feelings of abandonment and betrayal by the adults who were supposed to take care of him\", os adultos o decepcionaram.",
-          "topic": "Inferência"
+          "topic": "Reading · Inferência",
+          "id": "redq097"
         },
         {
           "n": 98,
@@ -1964,7 +2061,8 @@
           ],
           "key": 1,
           "expl": "David Copperfield aparece na frase \"Dickens's success continued with David Copperfield, A Tale of Two Cities...\". É citado como exemplo de outro romance dele.",
-          "topic": "Propósito"
+          "topic": "Reading · Propósito",
+          "id": "redq098"
         },
         {
           "n": 99,
@@ -1978,7 +2076,8 @@
           ],
           "key": 3,
           "expl": "\"In 1851, he even took part in a theater production that was performed before Queen Victoria\", ele atuou numa peça apresentada para a rainha.",
-          "topic": "Detalhe"
+          "topic": "Reading · Detalhe",
+          "id": "redq099"
         },
         {
           "n": 100,
@@ -1992,7 +2091,8 @@
           ],
           "key": 2,
           "expl": "O texto B diz que os romances vitorianos eram publicados \"as a series, in monthly parts\", e o C conta que Oliver Twist saiu \"chapter by chapter\", publicação em partes ao longo do tempo.",
-          "topic": "Inferência"
+          "topic": "Reading · Inferência",
+          "id": "redq100"
         }
       ]
     }

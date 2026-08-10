@@ -921,21 +921,48 @@
     return (DATA.cefrGroups || []).map(g => g.short || g.label);
   }
 
+  /* Envio do resultado. São DUAS portas, e a diferença não é cosmética.
+     ALUNO LOGADO (veio do Portal, tem RAF) → `alunoAtividade`: manda as
+     RESPOSTAS, não o placar, e o servidor corrige com o gabarito dele. É a
+     porta que substituiu o `fdEarn` em 03/08/2026, quando a rota antiga passou
+     a recusar qualquer resultado com RAF. O Treino MET nunca tinha sido
+     migrado, e por isso nenhum simulado de aluno logado era gravado desde
+     então: o aluno via a nota na tela e recebia "não foi possível enviar".
+     SEM RAF → a rota antiga, que continua valendo para o uso solto do
+     simulador (só o nome digitado): não credita nada e o dossiê não enxerga. */
   function sendResultToCloud(entry, statusEl, onFail) {
     if (!CLOUD_ON) { if (statusEl) statusEl.textContent = ''; return; }
     if (statusEl) statusEl.textContent = '☁️ Enviando resultado ao professor…';
     const fail = msg => { if (statusEl) statusEl.textContent = msg; if (onFail) onFail(); };
+
+    let corpo;
+    if (entry.raf) {
+      const respostas = {};
+      questionsOf(state.units).forEach(q => {
+        const a = state.answers[q.n];
+        if (!q.id || a == null) return;
+        respostas[q.id] = a;          // aqui as alternativas não são embaralhadas:
+      });                             // o índice da tela É o índice do banco
+      if (!Object.keys(respostas).length) { fail('⚠️ Nenhuma resposta para enviar.'); return; }
+      corpo = { action: 'alunoAtividade', key: CLOUD.appKey, raf: entry.raf,
+                activityId: CLOUD.tool + ':' + entry.s, respostas: respostas,
+                test: entry.test || '', book: entry.book || '',
+                L: entry.L, R: entry.R, O: entry.O };
+    } else {
+      corpo = { key: CLOUD.appKey, tool: CLOUD.tool, data: entry };
+    }
+
     fetch(CLOUD.endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ key: CLOUD.appKey, tool: CLOUD.tool, data: entry })
+      body: JSON.stringify(corpo)
     }).then(r => r.json()).then(res => {
       if (res.ok) {
         if (statusEl) statusEl.textContent = '☁️ Resultado enviado ao professor automaticamente ✓';
         // Fisk Dólares: o backend credita e devolve o ganho em res.fd
         if (res.fd && res.fd.credito > 0) fdToast(res.fd.credito);
       }
-      else fail('⚠️ Não foi possível enviar o resultado agora.');
+      else fail('⚠️ ' + (res.error || 'Não foi possível enviar o resultado agora.'));
     }).catch(() => fail('⚠️ Sem conexão para enviar o resultado agora.'));
   }
 
@@ -1811,8 +1838,12 @@
       grupo.innerHTML = '<h4>' + esc(fam.titulo) + '</h4>' + linhas.map(t => {
         const d = topicos[t];
         const cap = CAPS[t];
+        /* O rótulo guardado é "Listening · Detalhe" para o dado não fundir
+           listening com reading; aqui o grupo já diz a habilidade, então na
+           tela fica só "Detalhe". */
+        const nome = t.indexOf(' · ') > 0 ? t.split(' · ').slice(1).join(' · ') : t;
         return '<div class="miss-row">' +
-          '<span class="m-name">' + esc(t) + '</span>' +
+          '<span class="m-name">' + esc(nome) + '</span>' +
           (cap ? '<span class="m-page">Study Guide, p. ' + cap.guidePage + '</span>' : '') +
           '<span class="m-val">' + d.err + ' de ' + d.tot + '</span>' +
         '</div>';
