@@ -499,78 +499,78 @@
       "section": "rd",
       "type": "reading",
       "title": "Passage 1 · Questions 71–75",
-      "passageIntro": "This passage is about why cities are hotter than the countryside around them.",
-      "passage": "<p>Step out of a park and onto a parking lot on a summer afternoon and you can feel the difference without any instrument. The air above the asphalt is several degrees warmer, and it stays warmer long after the sun has set. Climate scientists call this the urban heat island, and for decades it was treated as a curiosity of city life rather than a problem worth solving.</p><p>The mechanism is not complicated. Concrete, brick and asphalt absorb solar radiation during the day and release it slowly at night, while the dark colour of most road surfaces makes them absorb more than they reflect. Trees and soil do the opposite: water evaporating from leaves carries heat away, and a canopy of branches keeps the ground beneath it in shade. A neighbourhood that has replaced its trees with buildings has, in effect, removed its own cooling system.</p><p>What has changed is the precision with which the effect can be measured. Satellites now record surface temperature street by street, and in city after city the maps show the same pattern: the hottest districts are the ones with the fewest trees, and those districts tend to be the poorest. In one American study, the gap between the leafiest and the barest neighbourhoods of a single city reached seven degrees Celsius on the same afternoon.</p><p>That finding has moved the heat island out of the weather report and into city budgets. Planting a tree is cheap, and unlike an air conditioner it cools the street rather than warming it further. The difficulty is that a sapling planted today will not shade anyone for fifteen years, which is a long time in the life of a city council.</p>",
+      "passageIntro": "This passage is about why university students rarely visit their professors.",
+      "passage": "<p>Every syllabus carries them, and almost every instructor complains that nobody comes. Office hours — the weekly period when a professor sits in an office waiting for students who want help — are among the oldest arrangements in university teaching, and among the least used. Surveys at large institutions regularly find that more than half of undergraduates finish a course without attending a single one.</p><p>The obvious explanation is that students are busy, and it is partly true. But when researchers asked directly, the reasons that came back had less to do with schedules than with fear. Students reported worrying that their question would sound foolish, that arriving would signal they had fallen behind, or that the professor would rather be doing something else. A striking number said they did not know what office hours were for, having assumed the period was reserved for disputes about grades.</p><p>Some departments have responded by changing the label. Renaming the period 'student hours', or advertising it as a time to talk about the reading rather than about marks, raised attendance in several trials — in one case doubling it within a semester. Moving the meetings out of the office helped too: instructors who held them in a café or in the library reported that students who had never appeared began to drop in.</p><p>None of this is expensive, which is precisely why it is easy to overlook. A department that spends a year debating class size can change the wording on a syllabus in an afternoon. The evidence suggests that the second measure may reach more students than the first.</p>",
       "questions": [
         {
           "n": 71,
           "id": "magentaq071",
           "topic": "Reading · Propósito",
-          "text": "Why does the author describe stepping from a park onto a parking lot?",
+          "text": "Why does the author mention that every syllabus carries office hours?",
           "opts": [
-            "to show that the effect can be noticed without measurement",
-            "to argue that parking lots should be removed from cities",
-            "to explain how satellites record surface temperature",
-            "to compare summer afternoons with summer evenings"
+            "to contrast how common they are with how little they are used",
+            "to argue that syllabuses should be shorter and clearer",
+            "to explain how professors organise their teaching week",
+            "to show that the practice was introduced only recently"
           ],
           "key": 0,
-          "expl": "A frase diz que a diferença se sente \"without any instrument\". A cena de abertura serve para mostrar que o fenômeno é perceptível sem medição — e não para criticar estacionamentos ou explicar satélites, que só aparecem mais adiante."
+          "expl": "A abertura põe lado a lado duas coisas: elas estão em todo plano de curso e quase ninguém aparece. O contraste é o assunto do texto, que ainda diz serem \"among the oldest arrangements\" — o oposto de recentes."
         },
         {
           "n": 72,
           "id": "magentaq072",
           "topic": "Reading · Detalhe",
-          "text": "According to the passage, how do trees cool the area around them?",
+          "text": "According to the passage, what did students say when researchers asked them directly?",
           "opts": [
-            "by evaporating water from their leaves and shading the ground",
-            "by reflecting solar radiation back into the atmosphere",
-            "by absorbing heat during the day and releasing it at night",
-            "by lowering the temperature of the soil beneath the asphalt"
+            "They were afraid of how their question would be received.",
+            "They preferred to ask their questions by email.",
+            "They had never seen office hours listed on a syllabus.",
+            "They were satisfied with the help they already received."
           ],
           "key": 0,
-          "expl": "O segundo parágrafo diz exatamente isso: \"water evaporating from leaves carries heat away, and a canopy of branches keeps the ground beneath it in shade\". Absorver de dia e soltar à noite é o que fazem concreto e asfalto, não as árvores."
+          "expl": "O segundo parágrafo é explícito: os motivos \"had less to do with schedules than with fear\" — medo de a pergunta soar boba, de parecer atrasado, de incomodar o professor."
         },
         {
           "n": 73,
           "id": "magentaq073",
-          "topic": "Reading · Vocabulário",
-          "text": "In the third sentence of paragraph 3, which word is closest in meaning to <strong>bare</strong>?",
+          "topic": "Reading · Detalhe",
+          "text": "What did a striking number of students assume about office hours?",
           "opts": [
-            "having few trees",
-            "having little rainfall",
-            "having narrow streets",
-            "having old buildings"
+            "that the period was only for arguing about grades",
+            "that attendance was recorded and counted",
+            "that the period was reserved for graduate students",
+            "that professors were paid extra for holding them"
           ],
           "key": 0,
-          "expl": "O trecho contrasta \"the leafiest\" com \"the barest\" bairros. Se um extremo é o mais arborizado, o outro é o que quase não tem árvore. O contraste dentro da própria frase é que resolve."
+          "expl": "O texto diz que muitos \"did not know what office hours were for, having assumed the period was reserved for disputes about grades\"."
         },
         {
           "n": 74,
           "id": "magentaq074",
-          "topic": "Reading · Inferência",
-          "text": "What does the passage suggest about the districts with the fewest trees?",
+          "topic": "Reading · Vocabulário",
+          "text": "In the third paragraph, which phrase is closest in meaning to <strong>drop in</strong>?",
           "opts": [
-            "They are usually inhabited by people with lower incomes.",
-            "They were built more recently than the leafier districts.",
-            "They are the districts where satellites are least accurate.",
-            "They have already begun large tree-planting programmes."
+            "come without an appointment",
+            "give up the course",
+            "lower their final marks",
+            "fall behind the schedule"
           ],
           "key": 0,
-          "expl": "O texto afirma que os bairros mais quentes são os com menos árvores e acrescenta que \"those districts tend to be the poorest\". A conclusão sobre a renda é sustentada pelo texto, embora ele não fale em renda com todas as letras."
+          "expl": "A frase fala de alunos que nunca apareciam e passaram a ir. \"Drop in\" é justamente aparecer sem marcar hora — não tem relação com abandonar a disciplina nem com nota."
         },
         {
           "n": 75,
           "id": "magentaq075",
-          "topic": "Reading · Detalhe",
-          "text": "According to the last paragraph, what makes tree planting difficult for a city council?",
+          "topic": "Reading · Inferência",
+          "text": "What does the last paragraph suggest about changing the name of office hours?",
           "opts": [
-            "The benefit arrives many years after the cost.",
-            "Trees are more expensive than air conditioning.",
-            "Saplings do not survive in the hottest districts.",
-            "City budgets are decided by national governments."
+            "It may help more students than costlier reforms.",
+            "It works only in departments with small classes.",
+            "It has been rejected by most instructors.",
+            "It requires approval from the whole university."
           ],
           "key": 0,
-          "expl": "O último parágrafo diz que plantar é barato, mas que a muda \"will not shade anyone for fifteen years, which is a long time in the life of a city council\". O obstáculo é o prazo, não o preço — o texto diz o contrário sobre custo."
+          "expl": "O parágrafo compara um departamento que passa um ano discutindo tamanho de turma com a mudança de uma palavra no plano de curso, e conclui que \"the second measure may reach more students than the first\"."
         }
       ]
     },
@@ -579,78 +579,78 @@
       "section": "rd",
       "type": "reading",
       "title": "Passage 2 · Questions 76–80",
-      "passageIntro": "This passage is about how researchers study the way birds find their way.",
-      "passage": "<p>Every autumn, millions of songbirds leave northern Europe for Africa, and most of them travel at night. A bird that has never made the journey before will arrive, alone, at a wintering ground it has never seen. How it does so has occupied biologists for more than a century, and the answer has proved to be several answers at once.</p><p>The first serious evidence came from a planetarium. In the 1960s, researchers placed captive buntings in a circular cage during the migration season and recorded the direction in which the restless birds tried to escape. When the artificial sky above them was rotated, the birds changed direction accordingly. They were reading the stars — or, more precisely, the point around which the stars appear to turn.</p><p>A second line of work pointed somewhere else entirely. Birds fitted with small magnets, or tested inside coils that distorted the magnetic field, lost their sense of direction even under a clear sky. Whatever the mechanism, the planet's magnetic field was clearly part of the system. For a while the two findings were treated as rival explanations, and researchers argued about which sense was the real one.</p><p>The argument faded once it became possible to test the two together. Birds deprived of one cue simply relied more heavily on the other, and birds given contradictory information recalibrated overnight, treating the stars as the reference against which the magnetic reading was corrected. The modern view is less tidy than either of the old ones: migration runs on a set of overlapping systems, none of which is indispensable on its own.</p>",
+      "passageIntro": "This passage is about what happens when instructors change their deadline rules.",
+      "passage": "<p>Ask any group of instructors about late work and the room divides. One side holds that a deadline without a penalty is not a deadline; the other answers that a fixed date punishes the student whose bus broke down rather than the one who left the assignment until the last night. Until recently the argument was conducted almost entirely on principle, because nobody had the numbers.</p><p>The numbers began to arrive when several departments started experimenting. In one large course, students were offered three 'extension tokens' at the start of the semester, each worth two extra days on any assignment, to be used without explanation. The instructors expected a flood of late submissions. What they got was a modest rise in the number of papers handed in after the original date — and a sharp fall in requests for individual extensions, which had previously consumed hours of their week.</p><p>The quality of the work also shifted. Papers submitted with a token scored slightly higher on average than those submitted on time, which the researchers read not as evidence that time improves writing but as evidence that the students using the tokens were the ones who cared enough to want the extra days. The students most at risk of failing rarely used them at all.</p><p>That last finding is the one the study's authors underline. A flexible policy removes a source of stress for students who are already coping, and it saves the instructor a great deal of correspondence. What it does not do, on this evidence, is reach the student who has stopped attending — and it is that student the deadline debate usually claims to be about.</p>",
       "questions": [
         {
           "n": 76,
           "id": "magentaq076",
           "topic": "Reading · Detalhe",
-          "text": "According to the passage, what did the researchers in the 1960s observe?",
+          "text": "According to the passage, what were extension tokens worth?",
           "opts": [
-            "The birds changed direction when the artificial sky was rotated.",
-            "The birds stopped trying to escape when the stars were hidden.",
-            "The birds followed the magnetic field rather than the stars.",
-            "The birds were unable to orient themselves inside a cage."
+            "two extra days on an assignment",
+            "two extra marks on a paper",
+            "two weeks at the end of the semester",
+            "two meetings with the instructor"
           ],
           "key": 0,
-          "expl": "O segundo parágrafo descreve o experimento do planetário: girando o céu artificial, \"the birds changed direction accordingly\". As outras alternativas trocam esse resultado por outro que o texto não relata."
+          "expl": "O segundo parágrafo define: três fichas, \"each worth two extra days on any assignment\", usadas sem precisar justificar."
         },
         {
           "n": 77,
           "id": "magentaq077",
-          "topic": "Reading · Propósito",
-          "text": "Why does the author mention birds fitted with small magnets?",
+          "topic": "Reading · Detalhe",
+          "text": "What happened to requests for individual extensions during the experiment?",
           "opts": [
-            "to introduce evidence for a second navigational sense",
-            "to explain why the planetarium experiment was flawed",
-            "to describe how birds are tracked on their journey south",
-            "to show that captive birds behave differently from wild ones"
+            "They fell sharply.",
+            "They rose slightly.",
+            "They stayed at the same level.",
+            "They were no longer permitted."
           ],
           "key": 0,
-          "expl": "Os ímãs abrem o parágrafo que apresenta \"a second line of work\". A menção serve para trazer a evidência do campo magnético, não para desqualificar o experimento anterior."
+          "expl": "O texto registra \"a sharp fall in requests for individual extensions, which had previously consumed hours of their week\". Quem subiu, e pouco, foi a entrega depois da data original."
         },
         {
           "n": 78,
           "id": "magentaq078",
           "topic": "Reading · Referência",
-          "text": "In the last sentence of paragraph 3, what does the word <strong>the two findings</strong> refer to?",
+          "text": "In the third paragraph, what does <strong>them</strong> in the last sentence refer to?",
           "opts": [
-            "the star compass and the magnetic sense",
-            "the magnets and the coils used in the tests",
-            "the clear sky and the distorted field",
-            "the northern breeding grounds and the wintering grounds"
+            "the extension tokens",
+            "the papers submitted on time",
+            "the researchers",
+            "the higher scores"
           ],
           "key": 0,
-          "expl": "Os dois achados são os dos dois parágrafos anteriores: a orientação pelas estrelas e a orientação pelo campo magnético. Ímãs e bobinas são instrumentos de um mesmo achado, não dois achados."
+          "expl": "A frase é \"The students most at risk of failing rarely used them at all\". O que se usa, no parágrafo inteiro, são as fichas de prorrogação."
         },
         {
           "n": 79,
           "id": "magentaq079",
-          "topic": "Reading · Vocabulário",
-          "text": "In the last paragraph, which phrase is closest in meaning to <strong>recalibrated</strong>?",
+          "topic": "Reading · Inferência",
+          "text": "Why did the researchers doubt that extra time by itself improves writing?",
           "opts": [
-            "adjusted one system using the other",
-            "returned to the place where they started",
-            "repeated the journey a second time",
-            "lost the ability to orient themselves"
+            "because the students who used tokens were already the more committed ones",
+            "because the difference in scores was too large to be believed",
+            "because the papers were marked by different instructors",
+            "because most students returned their tokens unused"
           ],
           "key": 0,
-          "expl": "A própria frase explica o termo: as aves passaram a tratar as estrelas como referência \"against which the magnetic reading was corrected\" — ou seja, ajustaram um sistema pelo outro."
+          "expl": "O texto diz que a nota um pouco maior foi lida \"not as evidence that time improves writing but as evidence that the students using the tokens were the ones who cared enough\"."
         },
         {
           "n": 80,
           "id": "magentaq080",
           "topic": "Reading · Ideia principal",
-          "text": "What is the main point of the passage?",
+          "text": "What is the main point of the last paragraph?",
           "opts": [
-            "Bird navigation depends on several systems that back one another up.",
-            "The planetarium experiments of the 1960s have since been disproved.",
-            "The magnetic sense is the only reliable guide over long distances.",
-            "Young birds learn the route by following experienced adults."
+            "The policy helps students who are already managing, not those in real difficulty.",
+            "Instructors should return to fixed deadlines with penalties.",
+            "The experiment should be repeated in smaller courses.",
+            "Students who stop attending should be removed from the course."
           ],
           "key": 0,
-          "expl": "O texto percorre dois achados, mostra que foram tratados como rivais e fecha dizendo que a migração \"runs on a set of overlapping systems, none of which is indispensable on its own\". As outras alternativas cobrem só um trecho ou contradizem o texto."
+          "expl": "O parágrafo diz que a política tira estresse de quem já está dando conta e poupa o professor, mas \"does not reach the student who has stopped attending\" — que é de quem o debate diz tratar."
         }
       ]
     },
@@ -662,15 +662,15 @@
       "texts": [
         {
           "tag": "A",
-          "html": "<h4>The Riverside Tool Library</h4><p><strong>Borrow what you need. Return it when you're done.</strong></p><p>A tool library works like any other library, except that the shelves hold drills, ladders and sewing machines instead of books. Members pay an annual fee and may borrow up to four items at a time for one week.</p><ul><li>Over 1,200 tools, from garden shears to tile cutters</li><li>Annual membership: £30, or £12 for students and pensioners</li><li>Free repair clinic every second Saturday, 10 a.m. to 1 p.m.</li><li>No experience required — staff will show you how to use anything you borrow</li></ul><p>Open Tuesday to Saturday. Membership can be arranged at the counter or online.</p>"
+          "html": "<h4>Spring Registration — Office of the Registrar</h4><p><strong>Registration opens Monday 4 November at 8 a.m.</strong></p><p>Students register in order of credits completed. Your assigned time appears in the student portal one week before registration opens.</p><ul><li>Full-time status requires a minimum of 12 credits</li><li>Courses marked <em>PR</em> in the catalogue have a prerequisite that must already appear on your transcript</li><li><strong>Add/drop period:</strong> the first ten days of term. A course dropped in this period leaves no record</li><li>After day ten, a withdrawal is recorded as <em>W</em> and the tuition is not refunded</li></ul><p>Questions about which courses count towards your major should go to your academic advisor, not to this office.</p>"
         },
         {
           "tag": "B",
-          "html": "<h4>Frequently asked questions</h4><p><strong>Why does the library charge a fee at all?</strong><br>The fee covers replacement of worn tools and the wages of one part-time technician. It is deliberately kept below the cost of hiring a single power tool for a weekend, so that membership pays for itself on the first visit.</p><p><strong>What happens if I break something?</strong><br>Nothing, in most cases. Ordinary wear is expected and is what the fee is for. We ask only that you report the damage, because a tool returned quietly with a fault will injure the next borrower.</p><p><strong>Can I keep an item longer than a week?</strong><br>Yes, provided nobody is waiting for it. Renewals are made online and take effect immediately; items on the waiting list cannot be renewed.</p>"
+          "html": "<h4>Choosing an elective — advice from the Advising Centre</h4><p><strong>Does an elective count for anything?</strong><br>Yes. Electives are graded like any other course and the mark appears on your transcript and in your average. Treating them as free time is the most common mistake we see.</p><p><strong>How many should I take at once?</strong><br>One, in most cases. Students who take two demanding electives alongside a full load of required courses are the students who come back in week eight asking about withdrawal.</p><p><strong>Can I try a course before committing?</strong><br>That is what the add/drop period is for. Attend the first sessions, look at the assignments listed in the syllabus, and decide before day ten — after that the decision costs you both a <em>W</em> and the fee.</p>"
         },
         {
           "tag": "C",
-          "html": "<h4>Five minutes with Nadia Okafor, founder</h4><p><strong>Where did the idea come from?</strong><br>From a cupboard. I had bought a tile cutter for one bathroom and used it once in nine years. Multiply that cupboard by every household on the street and you have an enormous amount of metal sitting still.</p><p><strong>Was it hard to convince people?</strong><br>The borrowing was easy to explain. What surprised me was the repair clinic. People arrive with a broken lamp expecting to be told it is beyond saving, and they leave having mended it themselves. That is when they join — not when they borrow, but when they fix.</p><p><strong>What would you tell another town?</strong><br>Start with the shelf you already have. We began with forty tools in a church hall. The building came later, and it came because the members asked for it.</p>"
+          "html": "<h4>Two students on the same course</h4><p><strong>Marisa, third year:</strong> I picked Introduction to Acoustics because it fitted my Tuesday. That was the whole reason. It turned out to have a lab report every fortnight, which nobody had told me, and I spent the semester behind. I passed, but my average did not thank me.</p><p><strong>Yannick, third year:</strong> I took the same course the year after and loved it. The difference is that I read the syllabus first and saw the fortnightly reports. I dropped a different course to make room, on day four, so it left no record. My advisor spent twenty minutes with me on that decision and it was the most useful twenty minutes of my degree.</p>"
         }
       ],
       "questions": [
@@ -678,141 +678,141 @@
           "n": 81,
           "id": "magentaq081",
           "topic": "Reading · Detalhe",
-          "text": "According to Text A, how many items may a member borrow at one time?",
+          "text": "According to Text A, what determines when a student may register?",
           "opts": [
-            "four",
-            "one",
-            "twelve",
-            "thirty"
+            "the number of credits already completed",
+            "the student's year of birth",
+            "the order in which students apply",
+            "the major the student has chosen"
           ],
           "key": 0,
-          "expl": "O texto A diz que os membros \"may borrow up to four items at a time for one week\". Os outros números aparecem no texto, mas são o preço e o prazo, não a quantidade."
+          "expl": "O texto A abre com \"Students register in order of credits completed\". O curso escolhido e a ordem de inscrição não aparecem como critério."
         },
         {
           "n": 82,
           "id": "magentaq082",
-          "topic": "Reading · Propósito",
-          "text": "What is the main purpose of Text B?",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, what happens to a course dropped on the fifth day of term?",
           "opts": [
-            "to answer doubts that might stop someone from joining",
-            "to advertise the tools that have recently arrived",
-            "to explain how the library was originally founded",
-            "to warn members about the penalties for late returns"
+            "It leaves no record on the transcript.",
+            "It appears on the transcript as a W.",
+            "It counts towards full-time status.",
+            "It is refunded only in part."
           ],
           "key": 0,
-          "expl": "As três perguntas do texto B são objeções típicas de quem hesita — a taxa, o estrago e o prazo. Ele existe para desarmar essas dúvidas. A fundação é assunto do texto C."
+          "expl": "O período de add/drop são os dez primeiros dias, e nele \"A course dropped in this period leaves no record\". O W e a não devolução da mensalidade valem depois do décimo dia."
         },
         {
           "n": 83,
           "id": "magentaq083",
-          "topic": "Reading · Detalhe",
-          "text": "According to Text B, what should a member do after damaging a tool?",
+          "topic": "Reading · Propósito",
+          "text": "What is the main purpose of Text B?",
           "opts": [
-            "report the damage",
-            "pay for a replacement",
-            "repair it before returning it",
-            "renew the item online"
+            "to correct common mistakes students make when choosing electives",
+            "to list the electives available in the spring term",
+            "to explain how tuition fees are calculated",
+            "to announce a change in the registration system"
           ],
           "key": 0,
-          "expl": "O texto B diz que, na maioria dos casos, nada acontece: \"We ask only that you report the damage\". Pagar pelo conserto é justamente o que ele diz não ser necessário."
+          "expl": "As três perguntas do texto B tratam de enganos frequentes: achar que eletiva não conta, pegar duas de uma vez e decidir tarde demais. Ele existe para corrigir isso."
         },
         {
           "n": 84,
           "id": "magentaq084",
-          "topic": "Reading · Inferência",
-          "text": "What can be inferred from Text B about the annual fee?",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text B, how many demanding electives should a student normally take at once?",
           "opts": [
-            "It is lower than the cost of renting one power tool for a weekend.",
-            "It has risen every year since the library opened.",
-            "It is waived for members who volunteer at the repair clinic.",
-            "It is the library's only source of income."
+            "one",
+            "two",
+            "three",
+            "as many as the schedule allows"
           ],
           "key": 0,
-          "expl": "O texto diz que a taxa é mantida \"below the cost of hiring a single power tool for a weekend\". As outras alternativas afirmam coisas que o texto não sustenta."
+          "expl": "A resposta do texto B é direta: \"One, in most cases\", e descreve o que acontece com quem pega duas junto de uma carga cheia de obrigatórias."
         },
         {
           "n": 85,
           "id": "magentaq085",
           "topic": "Reading · Vocabulário",
-          "text": "In Text B, which phrase is closest in meaning to <strong>ordinary wear</strong>?",
+          "text": "In Text A, which phrase is closest in meaning to <strong>prerequisite</strong>?",
           "opts": [
-            "normal damage from regular use",
-            "a fee charged for heavy items",
-            "clothing lent with the equipment",
-            "the time a tool spends on the shelf"
+            "a course that must be completed first",
+            "a fee that must be paid in advance",
+            "a form signed by an academic advisor",
+            "a minimum grade in the final exam"
           ],
           "key": 0,
-          "expl": "A frase seguinte esclarece: é o que a taxa cobre e o que se espera do uso. \"Wear\" aqui é o desgaste natural de quem usa a ferramenta."
+          "expl": "O próprio item explica: são as disciplinas marcadas PR, cujo requisito \"must already appear on your transcript\" — ou seja, já ter sido cursado."
         },
         {
           "n": 86,
           "id": "magentaq086",
-          "topic": "Reading · Propósito",
-          "text": "Why does Nadia Okafor mention a cupboard in Text C?",
+          "topic": "Reading · Inferência",
+          "text": "What can be inferred from Texts A and B about withdrawing in week eight?",
           "opts": [
-            "to illustrate how much unused equipment sits in homes",
-            "to explain where the first tools were stored",
-            "to describe the shelving used in the current building",
-            "to complain about the price of a tile cutter"
+            "The student loses the tuition and receives a W.",
+            "The student may register for a replacement course.",
+            "The student needs the approval of the registrar only.",
+            "The student's transcript is unaffected."
           ],
           "key": 0,
-          "expl": "Ela conta que comprou um cortador de azulejo e o usou uma vez em nove anos, e conclui: \"Multiply that cupboard by every household\". O armário é a imagem do equipamento parado."
+          "expl": "O texto A diz que depois do décimo dia a saída vira W e a mensalidade não é devolvida; o B menciona os alunos que voltam na semana oito perguntando de trancamento. Juntando os dois, a semana oito está muito além do prazo."
         },
         {
           "n": 87,
           "id": "magentaq087",
           "topic": "Reading · Detalhe",
-          "text": "According to Text C, what surprised the founder?",
+          "text": "According to Text C, why did Marisa choose Introduction to Acoustics?",
           "opts": [
-            "how much people valued the repair clinic",
-            "how quickly the membership fee was accepted",
-            "how difficult it was to explain borrowing",
-            "how few tools the church hall could hold"
+            "because it fitted her timetable",
+            "because her advisor recommended it",
+            "because it had no lab reports",
+            "because it counted towards her major"
           ],
           "key": 0,
-          "expl": "Ela diz que o empréstimo era fácil de explicar e que \"What surprised me was the repair clinic\". A alternativa sobre a dificuldade de explicar inverte o que ela afirma."
+          "expl": "Ela é explícita: \"I picked Introduction to Acoustics because it fitted my Tuesday. That was the whole reason.\""
         },
         {
           "n": 88,
           "id": "magentaq088",
-          "topic": "Reading · Referência",
-          "text": "In Text C, in the sentence \"That is when they join\", what does <strong>That</strong> refer to?",
+          "topic": "Reading · Propósito",
+          "text": "Why does Yannick mention day four?",
           "opts": [
-            "the moment they repair something themselves",
-            "the moment they borrow their first tool",
-            "the moment the building was opened",
-            "the moment they hear about the library"
+            "to show that he dropped the other course while it still left no record",
+            "to explain when the course's first lab report was due",
+            "to describe how long he waited to see his advisor",
+            "to indicate when registration for the term closed"
           ],
           "key": 0,
-          "expl": "A frase inteira é \"That is when they join — not when they borrow, but when they fix\". O próprio período dá a resposta e descarta o empréstimo."
+          "expl": "Ele diz que trocou de disciplina \"on day four, so it left no record\" — dentro dos dez dias do add/drop que o texto A define."
         },
         {
           "n": 89,
           "id": "magentaq089",
-          "topic": "Reading · Inferência",
-          "text": "What does Text C suggest about how a new tool library should begin?",
+          "topic": "Reading · Referência",
+          "text": "In Text C, in \"it was the most useful twenty minutes of my degree\", what does <strong>it</strong> refer to?",
           "opts": [
-            "on a small scale, with whatever space is available",
-            "with a purpose-built building from the start",
-            "with at least 1,200 tools in stock",
-            "only after a technician has been hired"
+            "the conversation with his advisor",
+            "the first session of the course",
+            "the time spent reading the syllabus",
+            "the fortnightly lab report"
           ],
           "key": 0,
-          "expl": "O conselho dela é \"Start with the shelf you already have\", e ela conta que começaram com quarenta ferramentas num salão de igreja, com o prédio vindo depois."
+          "expl": "A frase anterior é \"My advisor spent twenty minutes with me on that decision\". São esses vinte minutos que ele chama de mais úteis."
         },
         {
           "n": 90,
           "id": "magentaq090",
-          "topic": "Reading · Detalhe",
-          "text": "A member wants to keep a ladder for a second week. According to the three texts, this is possible if",
+          "topic": "Reading · Ideia principal",
+          "text": "What do the two accounts in Text C illustrate together?",
           "opts": [
-            "nobody is on the waiting list for it",
-            "the member pays an additional fee",
-            "the request is made at the counter",
-            "the ladder is returned to the repair clinic first"
+            "that reading the syllabus before committing changes the outcome",
+            "that acoustics is too difficult for third-year students",
+            "that advisors decide which courses a student may take",
+            "that electives should be avoided in the third year"
           ],
           "key": 0,
-          "expl": "O texto B responde: renovar é possível \"provided nobody is waiting for it\", e itens na lista de espera não podem ser renovados. A renovação é online, não no balcão."
+          "expl": "Os dois fizeram a mesma disciplina com resultados opostos, e Yannick nomeia a diferença: \"I read the syllabus first\". Nenhum dos dois diz que a disciplina seja difícil demais."
         }
       ]
     },
@@ -824,15 +824,15 @@
       "texts": [
         {
           "tag": "A",
-          "html": "<h4>The Night Shift: photographs of a city that does not sleep</h4><p><strong>Municipal Gallery · 3 March – 28 May</strong></p><p>For two years the photographer Ilan Serra followed the people whose working day begins when everyone else's ends: bakers, nurses, cleaners, port workers. The result is ninety black-and-white portraits, none of them posed.</p><ul><li>Free entry on Wednesdays</li><li>Guided tours Saturdays at 11 a.m. (booking essential)</li><li>Not recommended for children under 10</li></ul><p>An accompanying book is available at the gallery shop.</p>"
+          "html": "<h4>Summer Research Assistantships — call for applications</h4><p><strong>Applications close 15 February.</strong></p><p>Undergraduates in their second year or above may apply to work eight weeks with a faculty supervisor on an ongoing project. Assistants receive a stipend and, where the project allows, are named on any resulting publication.</p><ul><li>One page describing why this project and not another</li><li>A current transcript</li><li>The name of one instructor who has taught you this year</li></ul><p>No previous laboratory experience is required. Supervisors are asked to select for curiosity rather than for marks.</p>"
         },
         {
           "tag": "B",
-          "html": "<h4>From the exhibition catalogue</h4><p>Serra's decision to work only in black and white has been read as nostalgia, and he rejects the reading. Colour, he argues, would have told the viewer what time of night it was, and the point of the series is that the people in it have lost that information themselves. A nurse at four in the morning and a baker at four in the morning inhabit the same hour differently.</p><p>The absence of posing is equally deliberate. Serra spent the first months of each shift photographing nothing at all, on the grounds that a camera stops being an event only after it has been ignored several times. Critics who describe the portraits as candid are half right: they are unposed, but they were not taken by surprise.</p>"
+          "html": "<h4>Notes for applicants</h4><p>The one-page letter is where most applications are lost. Supervisors read dozens of them, and the ones that fail are almost always the ones that could have been sent to any project in the faculty. Name the project. Say which part of it you do not yet understand and would like to.</p><p>You are asked for the name of an instructor, not for a written reference. We contact them ourselves, and we ask a single question: does this student ask questions? Choose accordingly — the instructor whose seminar you spoke in is worth more here than the one who gave you the highest mark.</p><p>Finally, a warning that applicants dislike: eight weeks is full-time. Students who plan to hold a second job in the same period should apply next year instead.</p>"
         },
         {
           "tag": "C",
-          "html": "<h4>Letters to the gallery</h4><p>I worked nights in a hospital laundry for eleven years and I have never seen that work in a gallery before. My daughter came with me and asked why nobody was smiling. I told her they were, but not for the camera. — <em>R. Mendes</em></p><p>The guided tour was excellent, though I would gently suggest that eleven in the morning is a cruel hour for an exhibition about people who sleep then. Could a late tour be added? — <em>K. Abara</em></p><p>I came for the photographs and left thinking about the captions. Each one gives the person's name and trade and nothing else — no age, no story. It took me a room and a half to realise that this was the argument, not an omission. — <em>T. Villar</em></p>"
+          "html": "<h4>A former assistant answers questions from students</h4><p><strong>I have no lab experience. Is it worth applying?</strong><br>I had none either. On my first day I was shown how to use a pipette. What my supervisor wanted was somebody who would say 'I don't follow' instead of nodding, and that took me about three weeks to learn.</p><p><strong>What surprised you most?</strong><br>How much of research is repetition. I had imagined discoveries. What I got was the same measurement four hundred times, and the discovery, when it came, was somebody noticing that eleven of those four hundred did not fit.</p><p><strong>Was the stipend enough?</strong><br>It covered my rent and not much else. I would still do it again, but I want to be honest: it is a summer of work, not a summer of earning.</p>"
         }
       ],
       "questions": [
@@ -840,141 +840,141 @@
           "n": 91,
           "id": "magentaq091",
           "topic": "Reading · Detalhe",
-          "text": "According to Text A, what is required to join a guided tour?",
+          "text": "According to Text A, who may apply for an assistantship?",
           "opts": [
-            "a booking in advance",
-            "an entry fee on Wednesdays",
-            "the purchase of the exhibition book",
-            "a child under the age of ten"
+            "undergraduates in their second year or above",
+            "students with previous laboratory experience",
+            "graduates of the faculty from any year",
+            "students who have already been published"
           ],
           "key": 0,
-          "expl": "O texto A traz \"Guided tours Saturdays at 11 a.m. (booking essential)\". A entrada gratuita de quarta e o livro são outras informações da mesma lista."
+          "expl": "O texto A diz \"Undergraduates in their second year or above may apply\", e mais adiante afirma que nenhuma experiência prévia de laboratório é exigida."
         },
         {
           "n": 92,
           "id": "magentaq092",
-          "topic": "Reading · Propósito",
-          "text": "Why does the author of Text B mention a nurse and a baker?",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, what are supervisors asked to look for?",
           "opts": [
-            "to show that the same hour is experienced in different ways",
-            "to explain which trades the photographer preferred",
-            "to argue that night work is harder in hospitals than in bakeries",
-            "to describe the two portraits that open the exhibition"
+            "curiosity rather than marks",
+            "the highest average in the faculty",
+            "experience with laboratory equipment",
+            "a written reference from an instructor"
           ],
           "key": 0,
-          "expl": "A frase é \"A nurse at four in the morning and a baker at four in the morning inhabit the same hour differently\". Os dois são exemplos de uma mesma hora vivida de modos distintos."
+          "expl": "A última linha do texto A é explícita: \"Supervisors are asked to select for curiosity rather than for marks\"."
         },
         {
           "n": 93,
           "id": "magentaq093",
-          "topic": "Reading · Detalhe",
-          "text": "According to Text B, why did Serra work in black and white?",
+          "topic": "Reading · Propósito",
+          "text": "Why does Text B say that most applications are lost in the one-page letter?",
           "opts": [
-            "because colour would have revealed the time of night",
-            "because black and white was cheaper to print",
-            "because the gallery asked for a uniform series",
-            "because he wanted the series to look nostalgic"
+            "to warn applicants against writing something too general",
+            "to explain why the letter should be longer than one page",
+            "to discourage students from applying in their second year",
+            "to describe how supervisors divide the reading among themselves"
           ],
           "key": 0,
-          "expl": "O texto diz que a cor \"would have told the viewer what time of night it was\", e registra que ele REJEITA a leitura nostálgica — que é justamente a alternativa oposta."
+          "expl": "O texto diz que as cartas que fracassam são as que \"could have been sent to any project in the faculty\", e manda nomear o projeto. O alerta é contra a carta genérica."
         },
         {
           "n": 94,
           "id": "magentaq094",
-          "topic": "Reading · Vocabulário",
-          "text": "In Text B, which phrase is closest in meaning to <strong>candid</strong>?",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text B, what single question is put to the named instructor?",
           "opts": [
-            "taken without the subject posing",
-            "printed without any editing",
-            "photographed from a long distance",
-            "published without permission"
+            "whether the student asks questions",
+            "whether the student attends every seminar",
+            "what mark the student received",
+            "whether the student has laboratory experience"
           ],
           "key": 0,
-          "expl": "A própria frase esclarece: \"they are unposed, but they were not taken by surprise\". O crítico acerta a parte de não haver pose."
+          "expl": "O texto B diz que a instituição faz o contato e pergunta uma coisa só: \"does this student ask questions?\"."
         },
         {
           "n": 95,
           "id": "magentaq095",
           "topic": "Reading · Inferência",
-          "text": "What does Text B suggest about Serra's first months on each shift?",
+          "text": "What does Text B suggest about choosing which instructor to name?",
           "opts": [
-            "They were spent making the workers used to his presence.",
-            "They produced the strongest images of the series.",
-            "They were required by the hospitals and bakeries.",
-            "They were used to test different kinds of film."
+            "A seminar where you spoke is better than a course where you scored highly.",
+            "The instructor should be from the same department as the supervisor.",
+            "The instructor must agree to write a reference in advance.",
+            "Any instructor from the current year will do equally well."
           ],
           "key": 0,
-          "expl": "Ele passou os primeiros meses \"photographing nothing at all\", porque a câmera só deixa de ser um acontecimento depois de ser ignorada várias vezes. O objetivo era o hábito, não a imagem."
+          "expl": "O texto compara os dois casos e conclui: \"the instructor whose seminar you spoke in is worth more here than the one who gave you the highest mark\"."
         },
         {
           "n": 96,
           "id": "magentaq096",
-          "topic": "Reading · Detalhe",
-          "text": "In Text C, what does R. Mendes say about the people in the photographs?",
+          "topic": "Reading · Vocabulário",
+          "text": "In Text A, which phrase is closest in meaning to <strong>stipend</strong>?",
           "opts": [
-            "They were smiling, but not for the camera.",
-            "They were too tired to be photographed.",
-            "They had all worked in a hospital laundry.",
-            "They were posed by the photographer."
+            "a fixed sum paid for the work",
+            "a certificate awarded at the end",
+            "a place in a university residence",
+            "a reduction in tuition fees"
           ],
           "key": 0,
-          "expl": "A carta responde à pergunta da filha: \"I told her they were, but not for the camera\". A lavanderia é o trabalho de quem escreve, não o dos retratados."
+          "expl": "O texto C esclarece o sentido ao dizer que ela cobria o aluguel e pouco mais: é um valor pago pelo período de trabalho."
         },
         {
           "n": 97,
           "id": "magentaq097",
-          "topic": "Reading · Propósito",
-          "text": "Why does K. Abara write to the gallery?",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text C, what did the former assistant have to learn?",
           "opts": [
-            "to propose a tour at a more convenient time",
-            "to complain about the quality of the guided tour",
-            "to ask for a refund of the entry fee",
-            "to praise the captions used in the exhibition"
+            "to say when she did not understand something",
+            "to use a pipette before the first day",
+            "to work a second job during the summer",
+            "to write up the results for publication"
           ],
           "key": 0,
-          "expl": "Ela elogia a visita guiada e sugere que onze da manhã é hora cruel para quem dorme nesse horário, perguntando: \"Could a late tour be added?\"."
+          "expl": "Ela conta que o orientador queria alguém que dissesse \"I don't follow\" em vez de concordar com a cabeça, \"and that took me about three weeks to learn\". A pipeta ela aprendeu no primeiro dia, no lugar."
         },
         {
           "n": 98,
           "id": "magentaq098",
           "topic": "Reading · Referência",
-          "text": "In Text C, in \"this was the argument, not an omission\", what does <strong>this</strong> refer to?",
+          "text": "In Text C, in \"eleven of those four hundred did not fit\", what does <strong>those four hundred</strong> refer to?",
           "opts": [
-            "giving only the name and trade in each caption",
-            "hanging the photographs in a single room",
-            "printing the series in black and white",
-            "leaving the exhibition without buying the book"
+            "the repeated measurements",
+            "the weeks of the programme",
+            "the applications received",
+            "the students in the seminar"
           ],
           "key": 0,
-          "expl": "A carta fala das legendas, que trazem \"the person's name and trade and nothing else\". É essa escolha que ele passou a ler como argumento, e não como falha."
+          "expl": "A frase anterior fala do que ela de fato fez: \"the same measurement four hundred times\". São as medições repetidas."
         },
         {
           "n": 99,
           "id": "magentaq099",
           "topic": "Reading · Inferência",
-          "text": "What do the three letters in Text C have in common?",
+          "text": "What can be inferred from Text C about the reality of research work?",
           "opts": [
-            "Each responds to a specific choice made by the exhibition.",
-            "Each asks the gallery to extend the exhibition.",
-            "Each was written by someone who works at night.",
-            "Each criticises the photographer's technique."
+            "Most of it is routine, and discovery depends on noticing exceptions.",
+            "It is better suited to students who already know the equipment.",
+            "It produces a publication for every assistant who takes part.",
+            "It is easier than the coursework of the second year."
           ],
           "key": 0,
-          "expl": "As três reagem a uma decisão concreta: a ausência de sorrisos posados, o horário da visita e as legendas. Só a primeira carta é de quem trabalhou à noite."
+          "expl": "Ela imaginava descobertas e encontrou repetição, e descreve a descoberta como alguém reparar que onze medições entre quatrocentas não se encaixavam."
         },
         {
           "n": 100,
           "id": "magentaq100",
-          "topic": "Reading · Ideia principal",
-          "text": "Taken together, what do Texts A, B and C show about the exhibition?",
+          "topic": "Reading · Propósito",
+          "text": "Why does the former assistant mention her rent in Text C?",
           "opts": [
-            "Its choices were deliberate and were noticed by visitors.",
-            "It was more popular with critics than with the public.",
-            "It was assembled quickly and with little planning.",
-            "It focused on a single profession in one hospital."
+            "to be honest about how far the stipend goes",
+            "to complain that the programme should pay more",
+            "to explain why she moved closer to the laboratory",
+            "to advise students to apply for housing first"
           ],
           "key": 0,
-          "expl": "O texto A apresenta a exposição, o B explica as decisões do fotógrafo e o C mostra visitantes reagindo justamente a essas decisões. As outras alternativas contradizem os textos."
+          "expl": "Ela mesma diz o motivo logo depois: \"I want to be honest: it is a summer of work, not a summer of earning\". A menção mede o alcance da bolsa, e ela acrescenta que faria de novo."
         }
       ]
     }
