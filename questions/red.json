@@ -88,7 +88,8 @@
             "It already came."
           ],
           "key": 0,
-          "expl": "A mulher diz que o ônibus deveria ter passado \"five minutes ago\" e explica: \"No, it's just late\". Está atrasado por causa de uma obra na Main Street, não quebrado."
+          "expl": "A mulher diz que o ônibus deveria ter passado \"five minutes ago\" e explica: \"No, it's just late\". Está atrasado por causa de uma obra na Main Street, não quebrado.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -108,7 +109,8 @@
             "take the train to the city"
           ],
           "key": 3,
-          "expl": "Perguntada se vai dirigir ou pegar o trem, ela responde: \"Definitely the train. Traffic and parking will be a nightmare.\""
+          "expl": "Perguntada se vai dirigir ou pegar o trem, ela responde: \"Definitely the train. Traffic and parking will be a nightmare.\"",
+          "topic": "Inferência"
         }
       ]
     },
@@ -128,7 +130,8 @@
             "try some new restaurants"
           ],
           "key": 1,
-          "expl": "Ela torce pelo micro-ondas novo porque anda gastando demais comprando almoço fora. A ideia é passar a trazer comida de casa e poder esquentá-la no escritório."
+          "expl": "Ela torce pelo micro-ondas novo porque anda gastando demais comprando almoço fora. A ideia é passar a trazer comida de casa e poder esquentá-la no escritório.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -148,7 +151,8 @@
             "pick up their quizzes"
           ],
           "key": 3,
-          "expl": "O professor manda deixar os quizzes corrigidos na caixa em frente à sala: \"The students will be expecting them there tomorrow\". Os alunos vão retirá-los amanhã."
+          "expl": "O professor manda deixar os quizzes corrigidos na caixa em frente à sala: \"The students will be expecting them there tomorrow\". Os alunos vão retirá-los amanhã.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -168,7 +172,8 @@
             "explain her problem"
           ],
           "key": 1,
-          "expl": "O vendedor sugere comprar um aparelho novo, mas ela responde que tem seguro do celular, \"so I think there's a better solution than that\", ou seja, prefere consertá-lo pelo seguro."
+          "expl": "O vendedor sugere comprar um aparelho novo, mas ela responde que tem seguro do celular, \"so I think there's a better solution than that\", ou seja, prefere consertá-lo pelo seguro.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -188,7 +193,8 @@
             "angry"
           ],
           "key": 1,
-          "expl": "\"My supervisor and I were both taken aback by the news\". A expressão \"taken aback\" significa surpreso, pego de surpresa."
+          "expl": "\"My supervisor and I were both taken aback by the news\". A expressão \"taken aback\" significa surpreso, pego de surpresa.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -208,7 +214,8 @@
             "He should take a bus."
           ],
           "key": 1,
-          "expl": "Que ele está na direção errada a mulher DIZ diretamente (\"You are turned around\"). Logo, não é o que ela \"implica\". O que fica implícito é a consequência: com a estação ainda a quatro quarteirões dali, ele vai acabar se atrasando."
+          "expl": "Que ele está na direção errada a mulher DIZ diretamente (\"You are turned around\"). Logo, não é o que ela \"implica\". O que fica implícito é a consequência: com a estação ainda a quatro quarteirões dali, ele vai acabar se atrasando.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -228,7 +235,8 @@
             "excited"
           ],
           "key": 0,
-          "expl": "As respostas hesitantes (\"as ready as I'll ever be, I guess\" e \"We'll see about that\") mostram insegurança e nervosismo, apesar das semanas de preparação."
+          "expl": "As respostas hesitantes (\"as ready as I'll ever be, I guess\" e \"We'll see about that\") mostram insegurança e nervosismo, apesar das semanas de preparação.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -248,7 +256,8 @@
             "It is having financial problems."
           ],
           "key": 1,
-          "expl": "\"Our orders have tripled since then. Everyone's maxed out, and we can afford to hire\". Pedidos triplicaram em seis meses: a empresa está crescendo rapidamente."
+          "expl": "\"Our orders have tripled since then. Everyone's maxed out, and we can afford to hire\". Pedidos triplicaram em seis meses: a empresa está crescendo rapidamente.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -268,7 +277,8 @@
             "He signed up for music classes."
           ],
           "key": 1,
-          "expl": "\"When I went to university, I moved away and left the piano at home\". Ao ir para a universidade, ele parou de tocar piano."
+          "expl": "\"When I went to university, I moved away and left the piano at home\". Ao ir para a universidade, ele parou de tocar piano.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -288,7 +298,8 @@
             "She won't read it for another few days."
           ],
           "key": 0,
-          "expl": "\"I had to read an excerpt of it for a different class the other day\". Ela já tinha lido um trecho (excerpt) do artigo antes, para outra disciplina."
+          "expl": "\"I had to read an excerpt of it for a different class the other day\". Ela já tinha lido um trecho (excerpt) do artigo antes, para outra disciplina.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -308,7 +319,8 @@
             "something educational"
           ],
           "key": 0,
-          "expl": "\"I'd prefer something without so many bells and whistles\". \"Bells and whistles\" são recursos/funções extras; ele quer um brinquedo simples, como os de antigamente."
+          "expl": "\"I'd prefer something without so many bells and whistles\". \"Bells and whistles\" são recursos/funções extras; ele quer um brinquedo simples, como os de antigamente.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -328,7 +340,8 @@
             "their favorite class"
           ],
           "key": 0,
-          "expl": "\"Are you ready for tomorrow's test?... I'm just not very good with numbers\". A prova envolve números: é a prova de matemática."
+          "expl": "\"Are you ready for tomorrow's test?... I'm just not very good with numbers\". A prova envolve números: é a prova de matemática.",
+          "topic": "Ideia principal"
         }
       ]
     },
@@ -348,7 +361,8 @@
             "to complain about the bookstore"
           ],
           "key": 1,
-          "expl": "Como a livraria está sem o livro-texto, o professor decide: \"I'll send the reading to the whole class\". Vai mandar o material da tarefa para todos."
+          "expl": "Como a livraria está sem o livro-texto, o professor decide: \"I'll send the reading to the whole class\". Vai mandar o material da tarefa para todos.",
+          "topic": "Propósito"
         }
       ]
     },
@@ -368,7 +382,8 @@
             "a sports team's potential"
           ],
           "key": 3,
-          "expl": "\"I think they'll compete for a championship... but they do have a lot of new players and a difficult schedule\". Eles avaliam as chances (o potencial) do time nesta temporada."
+          "expl": "\"I think they'll compete for a championship... but they do have a lot of new players and a difficult schedule\". Eles avaliam as chances (o potencial) do time nesta temporada.",
+          "topic": "Ideia principal"
         }
       ]
     },
@@ -388,7 +403,8 @@
             "travel delays"
           ],
           "key": 3,
-          "expl": "\"If my flight is canceled, it might be days before I can get another one. That's happened to me before. Such a pain\". O que ele chama de irritante são os atrasos/transtornos de viagem."
+          "expl": "\"If my flight is canceled, it might be days before I can get another one. That's happened to me before. Such a pain\". O que ele chama de irritante são os atrasos/transtornos de viagem.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -408,7 +424,8 @@
             "on Friday"
           ],
           "key": 2,
-          "expl": "O médico diz que o creme \"won't work immediately, but in a few days it should stop itching\". Alguns dias ≈ dois ou três; se não melhorar até o fim da semana, ele deve voltar."
+          "expl": "O médico diz que o creme \"won't work immediately, but in a few days it should stop itching\". Alguns dias ≈ dois ou três; se não melhorar até o fim da semana, ele deve voltar.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -428,7 +445,8 @@
             "fixing the air conditioner"
           ],
           "key": 2,
-          "expl": "O ar-condicionado é só o gancho: a conversa gira em torno do calorão fora de época. \"Summer started six weeks early\", \"maybe it'll cool off in a couple of days\"."
+          "expl": "O ar-condicionado é só o gancho: a conversa gira em torno do calorão fora de época. \"Summer started six weeks early\", \"maybe it'll cool off in a couple of days\".",
+          "topic": "Ideia principal"
         }
       ]
     },
@@ -448,7 +466,8 @@
             "He believes it will make little difference."
           ],
           "key": 1,
-          "expl": "\"Probably not the worst thing... I don't think it'll be that big a deal. Besides, it'll make campus safer\". Ele acha a medida boa (mas não chega a dizer que beneficia todos os alunos)."
+          "expl": "\"Probably not the worst thing... I don't think it'll be that big a deal. Besides, it'll make campus safer\". Ele acha a medida boa (mas não chega a dizer que beneficia todos os alunos).",
+          "topic": "Inferência"
         }
       ]
     },
@@ -491,7 +510,8 @@
             "an event for business owners"
           ],
           "key": 3,
-          "expl": "Toda a conversa acontece na convenção anual de empresários: \"that's why we come, to learn from each other\", \"coming here each year is a great way to learn...\". O assunto principal é o evento."
+          "expl": "Toda a conversa acontece na convenção anual de empresários: \"that's why we come, to learn from each other\", \"coming here each year is a great way to learn...\". O assunto principal é o evento.",
+          "topic": "Ideia principal"
         },
         {
           "n": 21,
@@ -503,7 +523,8 @@
             "He thinks his business may be closed then."
           ],
           "key": 2,
-          "expl": "\"We'll be lucky if we break even this year. The forecast is brighter for next year though\". Ele menciona o ano que vem porque espera uma economia melhor."
+          "expl": "\"We'll be lucky if we break even this year. The forecast is brighter for next year though\". Ele menciona o ano que vem porque espera uma economia melhor.",
+          "topic": "Propósito"
         },
         {
           "n": 22,
@@ -515,7 +536,8 @@
             "drive back to his office"
           ],
           "key": 0,
-          "expl": "Antes do seminário, ele diz: \"I need to check in on things back in my office before that\". O próximo passo é contatar (ligar para) o escritório."
+          "expl": "Antes do seminário, ele diz: \"I need to check in on things back in my office before that\". O próximo passo é contatar (ligar para) o escritório.",
+          "topic": "Inferência"
         },
         {
           "n": 23,
@@ -528,7 +550,8 @@
             "His business may not make money."
           ],
           "key": 3,
-          "expl": "\"Break even\" = empatar receitas e despesas, sem lucro nem prejuízo. \"We'll be lucky if we break even\" = teremos sorte se ao menos empatarmos, o negócio talvez não dê dinheiro."
+          "expl": "\"Break even\" = empatar receitas e despesas, sem lucro nem prejuízo. \"We'll be lucky if we break even\" = teremos sorte se ao menos empatarmos, o negócio talvez não dê dinheiro.",
+          "topic": "Intenção do falante"
         }
       ]
     },
@@ -567,7 +590,8 @@
             "She is getting married."
           ],
           "key": 2,
-          "expl": "\"You're very lucky. The one in the window is actually our last, and I believe it's your size\". Ele tem exatamente o que ela procura, no tamanho dela."
+          "expl": "\"You're very lucky. The one in the window is actually our last, and I believe it's your size\". Ele tem exatamente o que ela procura, no tamanho dela.",
+          "topic": "Propósito"
         },
         {
           "n": 25,
@@ -579,7 +603,8 @@
             "She doesn't have enough money."
           ],
           "key": 3,
-          "expl": "\"I left my credit card at home, and I don't think I have enough cash\". Ela não tem dinheiro suficiente no momento."
+          "expl": "\"I left my credit card at home, and I don't think I have enough cash\". Ela não tem dinheiro suficiente no momento.",
+          "topic": "Detalhe"
         },
         {
           "n": 26,
@@ -592,7 +617,8 @@
             "He will reserve the suit temporarily."
           ],
           "key": 3,
-          "expl": "\"I'll make an exception and set it aside so that no one else can buy it\". Abrir uma exceção e separar a peça até a loja fechar é reservá-la temporariamente."
+          "expl": "\"I'll make an exception and set it aside so that no one else can buy it\". Abrir uma exceção e separar a peça até a loja fechar é reservá-la temporariamente.",
+          "topic": "Intenção do falante"
         }
       ]
     },
@@ -635,7 +661,8 @@
             "a book the woman's friend recommended"
           ],
           "key": 3,
-          "expl": "\"A friend of mine was in here earlier today and saw a book that might help me with a research project\". É um livro que a amiga viu e recomendou."
+          "expl": "\"A friend of mine was in here earlier today and saw a book that might help me with a research project\". É um livro que a amiga viu e recomendou.",
+          "topic": "Ideia principal"
         },
         {
           "n": 28,
@@ -647,7 +674,8 @@
             "to learn more about her interests"
           ],
           "key": 2,
-          "expl": "\"Tell me more about your research. Maybe that will point us in the right direction\". Ele pergunta para conseguir localizar o livro que ela precisa."
+          "expl": "\"Tell me more about your research. Maybe that will point us in the right direction\". Ele pergunta para conseguir localizar o livro que ela precisa.",
+          "topic": "Propósito"
         },
         {
           "n": 29,
@@ -659,7 +687,8 @@
             "come back later to get the book"
           ],
           "key": 2,
-          "expl": "Ao saber do empréstimo de dois dias, ela conclui: \"I won't need it for more than two days, so I'll just use the hard copy\". Vai retirar o exemplar físico da biblioteca."
+          "expl": "Ao saber do empréstimo de dois dias, ela conclui: \"I won't need it for more than two days, so I'll just use the hard copy\". Vai retirar o exemplar físico da biblioteca.",
+          "topic": "Inferência"
         },
         {
           "n": 30,
@@ -672,7 +701,8 @@
             "She didn't find the name of the book."
           ],
           "key": 3,
-          "expl": "\"I came up empty\" = voltei de mãos vazias; ela pesquisou on-line \"to see if I could figure out what it was called\" e não conseguiu descobrir o nome do livro."
+          "expl": "\"I came up empty\" = voltei de mãos vazias; ela pesquisou on-line \"to see if I could figure out what it was called\" e não conseguiu descobrir o nome do livro.",
+          "topic": "Intenção do falante"
         }
       ]
     },
@@ -711,7 +741,8 @@
             "gathered evidence about students' use of laptops"
           ],
           "key": 3,
-          "expl": "\"My teaching assistant and I gathered informal data this past semester... up to 70% of my students are doing something on their computers other than taking notes\", ela coletou evidências sobre o uso dos laptops."
+          "expl": "\"My teaching assistant and I gathered informal data this past semester... up to 70% of my students are doing something on their computers other than taking notes\", ela coletou evidências sobre o uso dos laptops.",
+          "topic": "Detalhe"
         },
         {
           "n": 32,
@@ -723,7 +754,8 @@
             "to explain what she'll discuss with her students"
           ],
           "key": 3,
-          "expl": "\"I'm going to lay out the rationale... go over the studies that show that taking notes by hand leads to better retention\". Os estudos são o que ela pretende apresentar aos alunos para justificar a nova regra."
+          "expl": "\"I'm going to lay out the rationale... go over the studies that show that taking notes by hand leads to better retention\". Os estudos são o que ela pretende apresentar aos alunos para justificar a nova regra.",
+          "topic": "Propósito"
         },
         {
           "n": 33,
@@ -735,7 +767,8 @@
             "It might be rejected by the administration."
           ],
           "key": 1,
-          "expl": "\"I might even give it a try in my classes, and who knows? Maybe you'll start a school-wide trend\". Ele acha que a ideia pode influenciar outros professores."
+          "expl": "\"I might even give it a try in my classes, and who knows? Maybe you'll start a school-wide trend\". Ele acha que a ideia pode influenciar outros professores.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -778,7 +811,8 @@
             "the characteristics of a type of bird"
           ],
           "key": 3,
-          "expl": "O guia descreve o blue heron por completo (ninho, tamanho (\"well over a meter tall\"), aparência e hábitos) ou seja, as características de uma espécie de ave."
+          "expl": "O guia descreve o blue heron por completo (ninho, tamanho (\"well over a meter tall\"), aparência e hábitos) ou seja, as características de uma espécie de ave.",
+          "topic": "Ideia principal"
         },
         {
           "n": 35,
@@ -790,7 +824,8 @@
             "try to take a photo of the bird"
           ],
           "key": 0,
-          "expl": "\"If you don't have binoculars, we have a telescope set up over here that you can use\", equipamentos para enxergar melhor."
+          "expl": "\"If you don't have binoculars, we have a telescope set up over here that you can use\", equipamentos para enxergar melhor.",
+          "topic": "Detalhe"
         },
         {
           "n": 36,
@@ -802,7 +837,8 @@
             "watching the tour group"
           ],
           "key": 1,
-          "expl": "\"It's probably standing guard over the eggs, watching for owls and hawks\". A ave no ninho está protegendo os ovos."
+          "expl": "\"It's probably standing guard over the eggs, watching for owls and hawks\". A ave no ninho está protegendo os ovos.",
+          "topic": "Detalhe"
         },
         {
           "n": 37,
@@ -814,7 +850,8 @@
             "to describe what lives in the lake"
           ],
           "key": 2,
-          "expl": "O parceiro está na água rasa \"probably looking for fish, which blue herons like to eat\". Os peixes explicam o que aquela ave está fazendo (caçando comida)."
+          "expl": "O parceiro está na água rasa \"probably looking for fish, which blue herons like to eat\". Os peixes explicam o que aquela ave está fazendo (caçando comida).",
+          "topic": "Propósito"
         }
       ]
     },
@@ -857,7 +894,8 @@
             "plans for a new building"
           ],
           "key": 3,
-          "expl": "O arquiteto apresenta \"my firm's ideas for the design of your company's new supermarket\", os planos do novo prédio/loja do cliente."
+          "expl": "O arquiteto apresenta \"my firm's ideas for the design of your company's new supermarket\", os planos do novo prédio/loja do cliente.",
+          "topic": "Ideia principal"
         },
         {
           "n": 39,
@@ -869,7 +907,8 @@
             "to compare different types of shoppers"
           ],
           "key": 1,
-          "expl": "A loja de eletrodomésticos exemplifica o layout de corredores compridos que \"keeps customers in the store as long as possible\". Uma estratégia de vendas comum que ele critica por frustrar o cliente."
+          "expl": "A loja de eletrodomésticos exemplifica o layout de corredores compridos que \"keeps customers in the store as long as possible\". Uma estratégia de vendas comum que ele critica por frustrar o cliente.",
+          "topic": "Propósito"
         },
         {
           "n": 40,
@@ -881,7 +920,8 @@
             "sign a contract"
           ],
           "key": 2,
-          "expl": "\"Now, let's look at some sketches that illustrate what we have in mind\". O próximo passo é ver os desenhos do projeto."
+          "expl": "\"Now, let's look at some sketches that illustrate what we have in mind\". O próximo passo é ver os desenhos do projeto.",
+          "topic": "Inferência"
         },
         {
           "n": 41,
@@ -894,7 +934,8 @@
             "They had concerns about an idea."
           ],
           "key": 0,
-          "expl": "\"On the fence\" = em cima do muro, indeciso. \"At first we were on the fence about which one to go with\", a equipe teve dificuldade para decidir."
+          "expl": "\"On the fence\" = em cima do muro, indeciso. \"At first we were on the fence about which one to go with\", a equipe teve dificuldade para decidir.",
+          "topic": "Intenção do falante"
         }
       ]
     },
@@ -941,7 +982,8 @@
             "an upcoming sporting event at a high school"
           ],
           "key": 0,
-          "expl": "A fala apresenta \"the various sports and other extracurricular activities\" da escola, as atividades estudantis."
+          "expl": "A fala apresenta \"the various sports and other extracurricular activities\" da escola, as atividades estudantis.",
+          "topic": "Ideia principal"
         },
         {
           "n": 43,
@@ -953,7 +995,8 @@
             "They will take the parents on a tour."
           ],
           "key": 2,
-          "expl": "\"Then you'll hear from some other teachers who also lead programs\". Os outros professores também vão falar aos pais (Fine Arts, organizações acadêmicas, clubes sociais)."
+          "expl": "\"Then you'll hear from some other teachers who also lead programs\". Os outros professores também vão falar aos pais (Fine Arts, organizações acadêmicas, clubes sociais).",
+          "topic": "Detalhe"
         },
         {
           "n": 44,
@@ -965,7 +1008,8 @@
             "to explain a disadvantage of a sports team"
           ],
           "key": 2,
-          "expl": "\"We also have soccer and tennis teams, both of which received brand new equipment last year\". O equipamento novo é citado como um benefício desses dois times."
+          "expl": "\"We also have soccer and tennis teams, both of which received brand new equipment last year\". O equipamento novo é citado como um benefício desses dois times.",
+          "topic": "Propósito"
         },
         {
           "n": 45,
@@ -977,7 +1021,8 @@
             "It is a valuable experience."
           ],
           "key": 3,
-          "expl": "\"Participating in a sport is a great character building experience, a way to develop teamwork and leadership skills\", uma experiência valiosa."
+          "expl": "\"Participating in a sport is a great character building experience, a way to develop teamwork and leadership skills\", uma experiência valiosa.",
+          "topic": "Detalhe"
         },
         {
           "n": 46,
@@ -989,7 +1034,8 @@
             "ask the speaker some questions"
           ],
           "key": 0,
-          "expl": "A fala termina com \"now let's hear from Mr. Morris about Fine Arts\". O diretor de artes falará sobre música, arte e teatro."
+          "expl": "A fala termina com \"now let's hear from Mr. Morris about Fine Arts\". O diretor de artes falará sobre música, arte e teatro.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -1032,7 +1078,8 @@
             "volunteering at a local museum"
           ],
           "key": 0,
-          "expl": "\"They'll try to recreate these ancient objects\" / \"how will these replicas be created?\", os alunos farão réplicas (cópias) de objetos antigos."
+          "expl": "\"They'll try to recreate these ancient objects\" / \"how will these replicas be created?\", os alunos farão réplicas (cópias) de objetos antigos.",
+          "topic": "Detalhe"
         },
         {
           "n": 48,
@@ -1044,7 +1091,8 @@
             "own an ancient Greek bowl"
           ],
           "key": 1,
-          "expl": "\"[I] wondered what it would be like to hold them in my hands\". Desde criança o locutor queria poder tocar as peças do museu."
+          "expl": "\"[I] wondered what it would be like to hold them in my hands\". Desde criança o locutor queria poder tocar as peças do museu.",
+          "topic": "Detalhe"
         },
         {
           "n": 49,
@@ -1056,7 +1104,8 @@
             "It was designed by the students."
           ],
           "key": 2,
-          "expl": "\"The bowls will be fired in a wood oven built especially for this project\". O forno foi construído especialmente para o projeto."
+          "expl": "\"The bowls will be fired in a wood oven built especially for this project\". O forno foi construído especialmente para o projeto.",
+          "topic": "Detalhe"
         },
         {
           "n": 50,
@@ -1068,7 +1117,8 @@
             "Art scholars will give lectures about Greek pottery."
           ],
           "key": 0,
-          "expl": "\"To celebrate the project's conclusion in May, the museum plans to hold an exhibit of the students' reproductions\", haverá uma exposição da cerâmica dos alunos."
+          "expl": "\"To celebrate the project's conclusion in May, the museum plans to hold an exhibit of the students' reproductions\", haverá uma exposição da cerâmica dos alunos.",
+          "topic": "Detalhe"
         }
       ]
     },
@@ -1087,7 +1137,8 @@
             "had started to work"
           ],
           "key": 0,
-          "expl": "\"Next month\" mostra que a frase fala do futuro: \"you will start working\". \"Você vai começar a trabalhar\"."
+          "expl": "\"Next month\" mostra que a frase fala do futuro: \"you will start working\". \"Você vai começar a trabalhar\".",
+          "topic": "Tenses"
         }
       ]
     },
@@ -1106,7 +1157,8 @@
             "It only is"
           ],
           "key": 2,
-          "expl": "A ideia é \"não é só química que temos que estudar hoje, mas também física\". Em inglês: \"It is not only chemistry... but also physics.\""
+          "expl": "A ideia é \"não é só química que temos que estudar hoje, mas também física\". Em inglês: \"It is not only chemistry... but also physics.\"",
+          "topic": "Inversion & Emphasis"
         }
       ]
     },
@@ -1125,7 +1177,8 @@
             "kind of all"
           ],
           "key": 0,
-          "expl": "\"Of all kinds\" = \"de todos os tipos\": artistas de todos os tipos vão mostrar seu trabalho no festival."
+          "expl": "\"Of all kinds\" = \"de todos os tipos\": artistas de todos os tipos vão mostrar seu trabalho no festival.",
+          "topic": "Phrasal Verbs & Prepositions"
         }
       ]
     },
@@ -1144,7 +1197,8 @@
             "has remained the"
           ],
           "key": 3,
-          "expl": "O museu \"continua sendo a atração mais popular\" = \"has remained the most popular attraction\". Antes de \"most popular\", o inglês pede \"the\"."
+          "expl": "O museu \"continua sendo a atração mais popular\" = \"has remained the most popular attraction\". Antes de \"most popular\", o inglês pede \"the\".",
+          "topic": "Tenses"
         }
       ]
     },
@@ -1163,7 +1217,8 @@
             "very much involving"
           ],
           "key": 2,
-          "expl": "\"Very much involved\" = \"muito envolvida\". É assim que dizemos que alguém participou bastante de algo."
+          "expl": "\"Very much involved\" = \"muito envolvida\". É assim que dizemos que alguém participou bastante de algo.",
+          "topic": "Adverbs, Modals & Tags"
         }
       ]
     },
@@ -1182,7 +1237,8 @@
             "submit"
           ],
           "key": 0,
-          "expl": "Depois de \"It is required that...\" (\"é obrigatório que...\"), o verbo fica na forma básica: \"be submitted\", \"que as notas sejam enviadas\"."
+          "expl": "Depois de \"It is required that...\" (\"é obrigatório que...\"), o verbo fica na forma básica: \"be submitted\", \"que as notas sejam enviadas\".",
+          "topic": "Conditionals & Subjunctive"
         }
       ]
     },
@@ -1201,7 +1257,8 @@
             "Either"
           ],
           "key": 2,
-          "expl": "Para dizer \"nem os analistas nem o público\", o inglês usa o par \"neither... nor\"."
+          "expl": "Para dizer \"nem os analistas nem o público\", o inglês usa o par \"neither... nor\".",
+          "topic": "Connectors"
         }
       ]
     },
@@ -1220,7 +1277,8 @@
             "a tremendous amount"
           ],
           "key": 2,
-          "expl": "\"Pressure\" (pressão) não dá para contar em unidades, então dizemos \"a tremendous amount of pressure\", \"uma quantidade enorme de pressão\". Repare que a expressão completa precisa do \"a\" e do \"of\"."
+          "expl": "\"Pressure\" (pressão) não dá para contar em unidades, então dizemos \"a tremendous amount of pressure\", \"uma quantidade enorme de pressão\". Repare que a expressão completa precisa do \"a\" e do \"of\".",
+          "topic": "Pronouns & Determiners"
         }
       ]
     },
@@ -1239,7 +1297,8 @@
             "to be pointed"
           ],
           "key": 1,
-          "expl": "\"As pointed out in this report\" = \"como apontado neste relatório\". O jeito comum de citar de onde veio a informação."
+          "expl": "\"As pointed out in this report\" = \"como apontado neste relatório\". O jeito comum de citar de onde veio a informação.",
+          "topic": "Relative Clauses & Passive"
         }
       ]
     },
@@ -1258,7 +1317,8 @@
             "else"
           ],
           "key": 1,
-          "expl": "\"Other than Susan\" = \"além da Susan / fora a Susan\": ela não conhecia quase ninguém além da Susan."
+          "expl": "\"Other than Susan\" = \"além da Susan / fora a Susan\": ela não conhecia quase ninguém além da Susan.",
+          "topic": "Adverbs, Modals & Tags"
         }
       ]
     },
@@ -1277,7 +1337,8 @@
             "showing their hands"
           ],
           "key": 1,
-          "expl": "\"A show of hands\" é a expressão para \"votação levantando as mãos\". O professor pediu que levantassem a mão para ver quem tinha terminado."
+          "expl": "\"A show of hands\" é a expressão para \"votação levantando as mãos\". O professor pediu que levantassem a mão para ver quem tinha terminado.",
+          "topic": "Embedded Questions & Word Order"
         }
       ]
     },
@@ -1296,7 +1357,8 @@
             "efficacious"
           ],
           "key": 2,
-          "expl": "Aqui precisamos do nome da qualidade: \"efficiency\" (eficiência), \"um campo dedicado à eficiência no trabalho\". \"Efficient\" e \"efficiently\" descreveriam algo, não nomeiam a qualidade."
+          "expl": "Aqui precisamos do nome da qualidade: \"efficiency\" (eficiência), \"um campo dedicado à eficiência no trabalho\". \"Efficient\" e \"efficiently\" descreveriam algo, não nomeiam a qualidade.",
+          "topic": "Phrasal Verbs & Prepositions"
         }
       ]
     },
@@ -1315,7 +1377,8 @@
             "staying home and"
           ],
           "key": 0,
-          "expl": "\"Whether to stay home or go out\" = \"se ficava em casa ou saía\". As duas alternativas aparecem com \"to + verbo\"."
+          "expl": "\"Whether to stay home or go out\" = \"se ficava em casa ou saía\". As duas alternativas aparecem com \"to + verbo\".",
+          "topic": "Embedded Questions & Word Order"
         }
       ]
     },
@@ -1334,7 +1397,8 @@
             "Is she applying herself"
           ],
           "key": 2,
-          "expl": "Pergunta sobre algo em andamento: \"Is she applying for a scholarship this year?\" = \"Ela está se candidatando a uma bolsa este ano?\". (\"Apply herself\" mudaria o sentido para \"esforçar-se\".)"
+          "expl": "Pergunta sobre algo em andamento: \"Is she applying for a scholarship this year?\" = \"Ela está se candidatando a uma bolsa este ano?\". (\"Apply herself\" mudaria o sentido para \"esforçar-se\".)",
+          "topic": "Embedded Questions & Word Order"
         }
       ]
     },
@@ -1353,7 +1417,8 @@
             "is bringing by"
           ],
           "key": 2,
-          "expl": "\"Bring in\" é o verbo para \"trazer/gerar dinheiro\": \"is bringing in extra income\". \"Está ganhando uma renda extra\"."
+          "expl": "\"Bring in\" é o verbo para \"trazer/gerar dinheiro\": \"is bringing in extra income\". \"Está ganhando uma renda extra\".",
+          "topic": "Phrasal Verbs & Prepositions"
         }
       ]
     },
@@ -1372,7 +1437,8 @@
             "had gone"
           ],
           "key": 2,
-          "expl": "Roger contou um plano: \"Roger said he was going to the party\", \"disse que ia à festa\". Depois de \"said\", o verbo recua para o passado."
+          "expl": "Roger contou um plano: \"Roger said he was going to the party\", \"disse que ia à festa\". Depois de \"said\", o verbo recua para o passado.",
+          "topic": "Tenses"
         }
       ]
     },
@@ -1391,7 +1457,8 @@
             "new"
           ],
           "key": 0,
-          "expl": "Em inglês não se diz \"a news\"; a unidade é \"a piece of news\", \"uma notícia interessante\"."
+          "expl": "Em inglês não se diz \"a news\"; a unidade é \"a piece of news\", \"uma notícia interessante\".",
+          "topic": "Pronouns & Determiners"
         }
       ]
     },
@@ -1410,7 +1477,8 @@
             "to some"
           ],
           "key": 3,
-          "expl": "\"Help yourself to...\" = \"sirva-se de...\": \"Help yourself to some of the soup\", \"sirva-se da sopa\"."
+          "expl": "\"Help yourself to...\" = \"sirva-se de...\": \"Help yourself to some of the soup\", \"sirva-se da sopa\".",
+          "topic": "Phrasal Verbs & Prepositions"
         }
       ]
     },
@@ -1429,7 +1497,8 @@
             "the best"
           ],
           "key": 2,
-          "expl": "Estrutura \"quanto mais..., melhor\": \"the more funding a university receives, the better its facilities will be\"."
+          "expl": "Estrutura \"quanto mais..., melhor\": \"the more funding a university receives, the better its facilities will be\".",
+          "topic": "Comparatives & Superlatives"
         }
       ]
     },
@@ -1448,7 +1517,8 @@
             "Had it not been"
           ],
           "key": 3,
-          "expl": "\"Had it not been raining\" é o jeito mais formal de dizer \"If it had not been raining\", \"se não estivesse chovendo, teríamos visitado o zoológico\"."
+          "expl": "\"Had it not been raining\" é o jeito mais formal de dizer \"If it had not been raining\", \"se não estivesse chovendo, teríamos visitado o zoológico\".",
+          "topic": "Inversion & Emphasis"
         }
       ]
     },
@@ -1470,7 +1540,8 @@
             "to criticize the current research on telemedicine"
           ],
           "key": 1,
-          "expl": "A pergunta inicial (\"What if... you could just turn on your computer instead of driving to the doctor's office?\") convida o leitor a imaginar a telemedicina, apresenta a possibilidade, sem criticar nem questionar."
+          "expl": "A pergunta inicial (\"What if... you could just turn on your computer instead of driving to the doctor's office?\") convida o leitor a imaginar a telemedicina, apresenta a possibilidade, sem criticar nem questionar.",
+          "topic": "Propósito"
         },
         {
           "n": 72,
@@ -1482,7 +1553,8 @@
             "Patients can get their medications faster."
           ],
           "key": 0,
-          "expl": "O texto diz que, se a farmácia entrega em casa, \"you may never need to leave your own home during your illness\". A pessoa doente pode ficar em casa."
+          "expl": "O texto diz que, se a farmácia entrega em casa, \"you may never need to leave your own home during your illness\". A pessoa doente pode ficar em casa.",
+          "topic": "Detalhe"
         },
         {
           "n": 73,
@@ -1494,7 +1566,8 @@
             "prepared"
           ],
           "key": 1,
-          "expl": "\"Ready access\" = acesso rápido, imediato. Entre as opções, \"quick\" é a mais próxima."
+          "expl": "\"Ready access\" = acesso rápido, imediato. Entre as opções, \"quick\" é a mais próxima.",
+          "topic": "Vocabulário"
         },
         {
           "n": 74,
@@ -1506,7 +1579,8 @@
             "There are no transportation expenses."
           ],
           "key": 2,
-          "expl": "O texto afirma que as consultas on-line levam o paciente a procurar ajuda mais cedo, \"instead of waiting and eventually needing emergency care, which is much more expensive\", menos atendimentos de emergência = menos custo."
+          "expl": "O texto afirma que as consultas on-line levam o paciente a procurar ajuda mais cedo, \"instead of waiting and eventually needing emergency care, which is much more expensive\", menos atendimentos de emergência = menos custo.",
+          "topic": "Detalhe"
         },
         {
           "n": 75,
@@ -1518,7 +1592,8 @@
             "the fact that some doctors dislike telemedicine"
           ],
           "key": 1,
-          "expl": "Em \"More than that...\", o \"that\" retoma o que acabou de ser dito: muitos diagnósticos exigem exames (lab tests/X-rays) que não podem ser feitos a distância."
+          "expl": "Em \"More than that...\", o \"that\" retoma o que acabou de ser dito: muitos diagnósticos exigem exames (lab tests/X-rays) que não podem ser feitos a distância.",
+          "topic": "Referência"
         }
       ]
     },
@@ -1540,7 +1615,8 @@
             "His theory was not based on experimental evidence."
           ],
           "key": 3,
-          "expl": "O texto diz que a afirmação de Darwin \"was only a speculative account of linguistic evolution\". Era especulativa, sem base em evidência experimental."
+          "expl": "O texto diz que a afirmação de Darwin \"was only a speculative account of linguistic evolution\". Era especulativa, sem base em evidência experimental.",
+          "topic": "Detalhe"
         },
         {
           "n": 77,
@@ -1552,7 +1628,8 @@
             "by examining how different European languages define cognates"
           ],
           "key": 2,
-          "expl": "\"Researchers in the United Kingdom investigated the evolution of language by studying cognates... in Indo-European languages\", comparando cognatos dessas línguas."
+          "expl": "\"Researchers in the United Kingdom investigated the evolution of language by studying cognates... in Indo-European languages\", comparando cognatos dessas línguas.",
+          "topic": "Detalhe"
         },
         {
           "n": 78,
@@ -1564,7 +1641,8 @@
             "if a word was evolving quickly enough"
           ],
           "key": 2,
-          "expl": "A \"mutation rate\", calculada \"based on frequency of use\", mostrou quanta variação sofreram as palavras conforme sua frequência (as comuns quase não mudaram; as raras mudaram em até 750 anos)."
+          "expl": "A \"mutation rate\", calculada \"based on frequency of use\", mostrou quanta variação sofreram as palavras conforme sua frequência (as comuns quase não mudaram; as raras mudaram em até 750 anos).",
+          "topic": "Detalhe"
         },
         {
           "n": 79,
@@ -1576,7 +1654,8 @@
             "those that are used infrequently"
           ],
           "key": 3,
-          "expl": "\"The rarest verbs in the list were the most likely to have been regularized\". Os verbos usados com menos frequência são os que mais se regularizam."
+          "expl": "\"The rarest verbs in the list were the most likely to have been regularized\". Os verbos usados com menos frequência são os que mais se regularizam.",
+          "topic": "Inferência"
         },
         {
           "n": 80,
@@ -1588,7 +1667,8 @@
             "Both analyze languages to determine the reasons for important words being replaced."
           ],
           "key": 0,
-          "expl": "Os dois estudos relacionam frequência de uso com velocidade de mudança: cognatos por frequência no primeiro; no segundo, o verbo 100× menos usado evolui 10× mais rápido."
+          "expl": "Os dois estudos relacionam frequência de uso com velocidade de mudança: cognatos por frequência no primeiro; no segundo, o verbo 100× menos usado evolui 10× mais rápido.",
+          "topic": "Ideia principal"
         }
       ]
     },
@@ -1623,7 +1703,8 @@
             "try out for a part in a movie"
           ],
           "key": 1,
-          "expl": "O anúncio lista \"post-festival events including workshops with leading producers, directors, screenwriters, and actors\", sessões com profissionais da área depois do festival."
+          "expl": "O anúncio lista \"post-festival events including workshops with leading producers, directors, screenwriters, and actors\", sessões com profissionais da área depois do festival.",
+          "topic": "Detalhe"
         },
         {
           "n": 82,
@@ -1636,7 +1717,8 @@
             "secure"
           ],
           "key": 3,
-          "expl": "\"Reserve your tickets early\" = garanta/assegure seus ingressos com antecedência, \"secure\"."
+          "expl": "\"Reserve your tickets early\" = garanta/assegure seus ingressos com antecedência, \"secure\".",
+          "topic": "Vocabulário"
         },
         {
           "n": 83,
@@ -1649,7 +1731,8 @@
             "to promote Italian movies"
           ],
           "key": 2,
-          "expl": "A entrevista inteira é sobre Federico Fellini, vida, carreira e contribuição ao cinema. O propósito é falar de um diretor."
+          "expl": "A entrevista inteira é sobre Federico Fellini, vida, carreira e contribuição ao cinema. O propósito é falar de um diretor.",
+          "topic": "Propósito"
         },
         {
           "n": 84,
@@ -1662,7 +1745,8 @@
             "being the best writer"
           ],
           "key": 1,
-          "expl": "\"Influential\" = influente, com poder de provocar mudança; a crítica reforça isso ao dizer que a abordagem de Fellini \"can be seen in many of today's most renowned films\"."
+          "expl": "\"Influential\" = influente, com poder de provocar mudança; a crítica reforça isso ao dizer que a abordagem de Fellini \"can be seen in many of today's most renowned films\".",
+          "topic": "Vocabulário"
         },
         {
           "n": 85,
@@ -1675,7 +1759,8 @@
             "as a journalist"
           ],
           "key": 3,
-          "expl": "\"He went to Rome in 1939 and began writing newspaper and magazine articles\", ele começou como jornalista."
+          "expl": "\"He went to Rome in 1939 and began writing newspaper and magazine articles\", ele começou como jornalista.",
+          "topic": "Detalhe"
         },
         {
           "n": 86,
@@ -1688,7 +1773,8 @@
             "to promote a current film"
           ],
           "key": 2,
-          "expl": "Os sonhos aparecem na descrição do estilo de Fellini (\"his unique, very personal style, which combined memory, dreams, and fantasy\") o método de um diretor importante."
+          "expl": "Os sonhos aparecem na descrição do estilo de Fellini (\"his unique, very personal style, which combined memory, dreams, and fantasy\") o método de um diretor importante.",
+          "topic": "Propósito"
         },
         {
           "n": 87,
@@ -1701,7 +1787,8 @@
             "to illustrate how teachers must plan lessons using films"
           ],
           "key": 0,
-          "expl": "\"The vivid images evoked by film... can spark a child's interest and imagination\". A imaginação é algo que os filmes afetam positivamente."
+          "expl": "\"The vivid images evoked by film... can spark a child's interest and imagination\". A imaginação é algo que os filmes afetam positivamente.",
+          "topic": "Propósito"
         },
         {
           "n": 88,
@@ -1714,7 +1801,8 @@
             "They prefer movies to books."
           ],
           "key": 0,
-          "expl": "\"Movies are very much a part of today's world, and older students have become quite used to this fact\". Eles estão acostumados à presença do cinema em suas vidas."
+          "expl": "\"Movies are very much a part of today's world, and older students have become quite used to this fact\". Eles estão acostumados à presença do cinema em suas vidas.",
+          "topic": "Detalhe"
         },
         {
           "n": 89,
@@ -1727,7 +1815,8 @@
             "films"
           ],
           "key": 2,
-          "expl": "\"As students feel more comfortable with the media and the instructor, they learn and remember more\", \"they\" retoma \"students\"."
+          "expl": "\"As students feel more comfortable with the media and the instructor, they learn and remember more\", \"they\" retoma \"students\".",
+          "topic": "Referência"
         },
         {
           "n": 90,
@@ -1740,7 +1829,8 @@
             "Federico Fellini"
           ],
           "key": 0,
-          "expl": "O festival terá workshops com \"leading producers\" (texto A), e a Dra. Hannah Peters é \"a movie producer\" (texto C), a única produtora entre as opções."
+          "expl": "O festival terá workshops com \"leading producers\" (texto A), e a Dra. Hannah Peters é \"a movie producer\" (texto C), a única produtora entre as opções.",
+          "topic": "Inferência"
         }
       ]
     },
@@ -1775,7 +1865,8 @@
             "old-fashioned hotels"
           ],
           "key": 0,
-          "expl": "\"Architecture\" ali se refere ao estilo/projeto das construções. O hotel é cercado por \"fine examples of Victorian architecture\" (belos exemplos de design de edifícios)."
+          "expl": "\"Architecture\" ali se refere ao estilo/projeto das construções. O hotel é cercado por \"fine examples of Victorian architecture\" (belos exemplos de design de edifícios).",
+          "topic": "Vocabulário"
         },
         {
           "n": 92,
@@ -1788,7 +1879,8 @@
             "to encourage reading about history"
           ],
           "key": 1,
-          "expl": "O texto B é a ementa de um curso universitário (History 287/English Literature 242) do professor Donald Wilson, descreve uma disciplina."
+          "expl": "O texto B é a ementa de um curso universitário (History 287/English Literature 242) do professor Donald Wilson, descreve uma disciplina.",
+          "topic": "Propósito"
         },
         {
           "n": 93,
@@ -1801,7 +1893,8 @@
             "Britain started to become less important."
           ],
           "key": 1,
-          "expl": "No período inicial, \"Britain's first railroad opened\", a ferrovia, uma nova forma de transporte."
+          "expl": "No período inicial, \"Britain's first railroad opened\", a ferrovia, uma nova forma de transporte.",
+          "topic": "Detalhe"
         },
         {
           "n": 94,
@@ -1814,7 +1907,8 @@
             "to give an example of how British society changed"
           ],
           "key": 3,
-          "expl": "As casas que deixaram de ser parte do local de trabalho para virar estruturas separadas ilustram as \"dramatic changes to British society\", um exemplo de mudança social."
+          "expl": "As casas que deixaram de ser parte do local de trabalho para virar estruturas separadas ilustram as \"dramatic changes to British society\", um exemplo de mudança social.",
+          "topic": "Propósito"
         },
         {
           "n": 95,
@@ -1827,7 +1921,8 @@
             "culture"
           ],
           "key": 0,
-          "expl": "\"With the increase in literacy, the public's appetite for books and magazines grew\", \"literacy\" = alfabetização, capacidade de leitura."
+          "expl": "\"With the increase in literacy, the public's appetite for books and magazines grew\", \"literacy\" = alfabetização, capacidade de leitura.",
+          "topic": "Vocabulário"
         },
         {
           "n": 96,
@@ -1840,7 +1935,8 @@
             "He traveled across Great Britain."
           ],
           "key": 1,
-          "expl": "\"He spent a good portion of his youth working to help support his family\". Passou boa parte da juventude trabalhando para ganhar dinheiro."
+          "expl": "\"He spent a good portion of his youth working to help support his family\". Passou boa parte da juventude trabalhando para ganhar dinheiro.",
+          "topic": "Detalhe"
         },
         {
           "n": 97,
@@ -1853,7 +1949,8 @@
             "They appreciated his hard work."
           ],
           "key": 2,
-          "expl": "O texto fala dos \"feelings of abandonment and betrayal by the adults who were supposed to take care of him\", os adultos o decepcionaram."
+          "expl": "O texto fala dos \"feelings of abandonment and betrayal by the adults who were supposed to take care of him\", os adultos o decepcionaram.",
+          "topic": "Inferência"
         },
         {
           "n": 98,
@@ -1866,7 +1963,8 @@
             "to tell about an unsuccessful Dickens work"
           ],
           "key": 1,
-          "expl": "David Copperfield aparece na frase \"Dickens's success continued with David Copperfield, A Tale of Two Cities...\". É citado como exemplo de outro romance dele."
+          "expl": "David Copperfield aparece na frase \"Dickens's success continued with David Copperfield, A Tale of Two Cities...\". É citado como exemplo de outro romance dele.",
+          "topic": "Propósito"
         },
         {
           "n": 99,
@@ -1879,7 +1977,8 @@
             "He acted in a play for her."
           ],
           "key": 3,
-          "expl": "\"In 1851, he even took part in a theater production that was performed before Queen Victoria\", ele atuou numa peça apresentada para a rainha."
+          "expl": "\"In 1851, he even took part in a theater production that was performed before Queen Victoria\", ele atuou numa peça apresentada para a rainha.",
+          "topic": "Detalhe"
         },
         {
           "n": 100,
@@ -1892,7 +1991,8 @@
             "They tried to help those who lived in poverty."
           ],
           "key": 2,
-          "expl": "O texto B diz que os romances vitorianos eram publicados \"as a series, in monthly parts\", e o C conta que Oliver Twist saiu \"chapter by chapter\", publicação em partes ao longo do tempo."
+          "expl": "O texto B diz que os romances vitorianos eram publicados \"as a series, in monthly parts\", e o C conta que Oliver Twist saiu \"chapter by chapter\", publicação em partes ao longo do tempo.",
+          "topic": "Inferência"
         }
       ]
     }
@@ -1976,6 +2076,74 @@
         "gr-q70",
         "rd-set4"
       ]
+    }
+  ],
+  "grammarChapters": [
+    {
+      "n": 1,
+      "topic": "Connectors",
+      "metQuestions": 13,
+      "guidePage": 4
+    },
+    {
+      "n": 2,
+      "topic": "Gerunds & Infinitives",
+      "metQuestions": 12,
+      "guidePage": 6
+    },
+    {
+      "n": 3,
+      "topic": "Phrasal Verbs & Prepositions",
+      "metQuestions": 11,
+      "guidePage": 8
+    },
+    {
+      "n": 4,
+      "topic": "Inversion & Emphasis",
+      "metQuestions": 10,
+      "guidePage": 10
+    },
+    {
+      "n": 5,
+      "topic": "Pronouns & Determiners",
+      "metQuestions": 10,
+      "guidePage": 12
+    },
+    {
+      "n": 6,
+      "topic": "Comparatives & Superlatives",
+      "metQuestions": 10,
+      "guidePage": 14
+    },
+    {
+      "n": 7,
+      "topic": "Embedded Questions & Word Order",
+      "metQuestions": 10,
+      "guidePage": 16
+    },
+    {
+      "n": 8,
+      "topic": "Conditionals & Subjunctive",
+      "metQuestions": 7,
+      "guidePage": 18
+    },
+    {
+      "n": 9,
+      "topic": "Adverbs, Modals & Tags",
+      "metQuestions": 7,
+      "guidePage": 20
+    },
+    {
+      "n": 10,
+      "topic": "Tenses",
+      "metQuestions": 6,
+      "guidePage": 22
+    },
+    {
+      "n": 11,
+      "topic": "Relative Clauses & Passive",
+      "metQuestions": 4,
+      "guidePage": 24
     }
   ]
 }

@@ -557,6 +557,24 @@
     .sec-score-row .ss-bar i { display: block; height: 100%; background: var(--green); border-radius: 999px; }
     .sec-score-row .ss-val { width: 3.6rem; text-align: right; color: var(--text-soft); font-variant-numeric: tabular-nums; }
 
+    /* ── Onde o aluno perdeu ponto ── */
+    .miss-group { margin-top: 1.1rem; }
+    .miss-group h4 {
+      font-family: var(--font-h); font-size: .78rem; font-weight: 800;
+      letter-spacing: .06em; text-transform: uppercase; color: var(--text-soft);
+      margin: 0 0 .5rem;
+    }
+    .miss-row {
+      display: flex; align-items: baseline; gap: .7rem;
+      padding: .42rem 0; border-bottom: 1px solid var(--border);
+      font-size: .86rem;
+    }
+    .miss-row:last-child { border-bottom: none; }
+    .miss-row .m-name { flex: 1; font-weight: 700; }
+    .miss-row .m-page { font-size: .74rem; color: var(--text-soft); font-weight: 600; white-space: nowrap; }
+    .miss-row .m-val { color: var(--red); font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .miss-none { font-size: .86rem; color: var(--text-soft); }
+
     .review-label { margin-top: 2.4rem; }
     .results-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin: 2rem 0 2.5rem; }
     .results-actions .btn { flex: 1; min-width: 180px; }
@@ -1741,6 +1759,75 @@
     return (bands || DATA.cefr.bands).find(b => scaled >= b.min);
   }
 
+  /* Agrupa os erros por tópico dentro de cada habilidade.
+     A classificação vem do campo `topic` de cada questão: na gramática são os
+     11 capítulos do MET Study Guide (que saíram da contagem das 100 questões
+     dos cinco simulados), no reading são os seis tipos de pergunta que o guia
+     descreve, e no listening a mesma família de rótulos.
+     Questão sem `topic` simplesmente não entra — banco antigo não quebra. */
+  function renderMisses(body, allQs) {
+    const CAPS = {};
+    (DATA.grammarChapters || []).forEach(c => CAPS[c.topic] = c);
+
+    const FAMILIAS = [
+      { id: 'listening', titulo: 'Listening', bate: s => s.kind === 'listening' },
+      { id: 'gr',        titulo: 'Grammar',   bate: s => s.id === 'gr' },
+      { id: 'rd',        titulo: 'Reading',   bate: s => s.id === 'rd' },
+    ];
+
+    const porFamilia = {};
+    let temTopico = false;
+    allQs.forEach(q => {
+      if (!q.topic) return;
+      temTopico = true;
+      const u = unitOfQ[q.n];
+      const sec = DATA.sections.filter(s => s.id === u.section)[0];
+      if (!sec) return;
+      const fam = FAMILIAS.filter(f => f.bate(sec))[0];
+      if (!fam) return;
+      const alvo = porFamilia[fam.id] || (porFamilia[fam.id] = {});
+      const t = alvo[q.topic] || (alvo[q.topic] = { err: 0, tot: 0 });
+      t.tot++;
+      if (!isRight(q)) t.err++;
+    });
+    if (!temTopico) return;   // simulado ainda não classificado
+
+    const label = document.createElement('div');
+    label.className = 'section-label';
+    label.textContent = 'Onde você perdeu ponto';
+    body.appendChild(label);
+
+    let algumErro = false;
+    FAMILIAS.forEach(fam => {
+      const topicos = porFamilia[fam.id];
+      if (!topicos) return;
+      const linhas = Object.keys(topicos)
+        .filter(t => topicos[t].err > 0)
+        .sort((a, b) => topicos[b].err - topicos[a].err || a.localeCompare(b, 'pt'));
+      if (!linhas.length) return;
+      algumErro = true;
+      const grupo = document.createElement('div');
+      grupo.className = 'miss-group';
+      grupo.innerHTML = '<h4>' + esc(fam.titulo) + '</h4>' + linhas.map(t => {
+        const d = topicos[t];
+        const cap = CAPS[t];
+        return '<div class="miss-row">' +
+          '<span class="m-name">' + esc(t) + '</span>' +
+          (cap ? '<span class="m-page">Study Guide, p. ' + cap.guidePage + '</span>' : '') +
+          '<span class="m-val">' + d.err + ' de ' + d.tot + '</span>' +
+        '</div>';
+      }).join('');
+      body.appendChild(grupo);
+    });
+
+    const nota = document.createElement('p');
+    nota.className = 'cefr-note';
+    nota.textContent = algumErro
+      ? 'Isto diz o tipo de questão em que você errou, não a resposta. Nos capítulos de gramática, a página indicada é a do seu Study Guide.'
+      : 'Você não errou nenhum tipo de questão nesta rodada.';
+    body.appendChild(nota);
+  }
+
   function renderResults() {
     const body = $('results-body');
     body.innerHTML = '';
@@ -1831,6 +1918,11 @@
       secWrap.appendChild(row);
     });
     body.appendChild(secWrap);
+
+    // Onde o aluno perdeu ponto. Diz o TIPO da questão errada, nunca a
+    // resposta: o gabarito comentado continua sendo assunto do professor.
+    // Nos capítulos de gramática, aponta a página do Study Guide.
+    renderMisses(body, allQs);
 
     // Envio do resultado à nuvem (com reenvio manual se falhar)
     if (CLOUD_ON) {
