@@ -76,7 +76,13 @@ alternativa repetida.
 
 ---
 
-## 3. O que falta: 50 questões de listening
+## 3. O que falta: 50 questões de listening — PARADO por decisão do Pedro
+
+**Em 10/08/2026 o Pedro parou esta frente:** "em relação ao simulado depois eu
+vejo o que eu faço". A prática de escuta que ele quer agora é outra coisa, e foi
+para o Listening Lab do Portal do Aluno — ver a seção 5.
+
+O que está escrito abaixo continua valendo quando ele retomar.
 
 Estrutura do RED, que o MAGENTA deve copiar:
 
@@ -129,8 +135,18 @@ Gerei duas conversas com `say` (vozes Ava, Tom e Allison), calibradas a 163 e
 169 ppm, no formato exato do RED. O Pedro ouviu e reprovou: "absolutamente
 horrorosa, não tem como usar".
 
-**O erro foi a ferramenta, não a ideia.** O `say` do macOS é TTS de geração
-antiga. Não refaça por ali.
+**O erro foi a ferramenta, não a ideia — e a ferramenta certa já estava na
+casa.** A trilha de espanhol do Listening Lab, no `portal-aluno-fisk`, usa
+**edge-TTS da Microsoft** (vozes neurais, gratuito, sem chave de API) e foi
+aceita em produção: seis atividades com roteiro original e áudio sintético, uma
+voz por país. O gerador está descrito em `docs/roadmap-listening.md` daquele
+repositório (`scratchpad/build_es.py`, edge-TTS por fala e concatenação com
+ffmpeg), com uma nota técnica útil: no ambiente o edge-TTS falhava por
+verificação TLS do proxy, resolvido apontando o certifi para o bundle do proxy.
+
+Ou seja: eu comparei "voz sintética" com o `say` do macOS quando o ecossistema já
+tinha uma neural funcionando. **Se o listening do MAGENTA for retomado, comece
+por edge-TTS**, não por API paga e não pelo `say`.
 
 O que sobrou de útil está em **`scripts/montar-audio.py`**: a montagem (pausas
 entre turnos, concatenação, formato final) serve para **qualquer origem de voz**.
@@ -149,6 +165,13 @@ justamente o cuidado que ele já tem ao não usar os quatro simulados oficiais.
 Existe o filtro Creative Commons do YouTube (CC-BY permite reuso com crédito),
 mas o acervo de conversa em cena acadêmica sob essa licença é raro e irregular.
 
+**O Pedro então propôs o caminho certo: incorporar em vez de baixar.** Isso não
+serve para o simulado (ver por quê no roadmap do Listening Lab), mas virou uma
+frente própria e aprovada — prática de escuta nos estágios avançados, dentro do
+Listening Lab do Portal do Aluno. Está registrada em
+`../portal-aluno-fisk/docs/roadmap-listening.md`, seção "Vídeos do YouTube
+incorporados".
+
 ### Corpora abertos · pesquisados, encaixe ruim
 
 - **ELLLO** — conversas naturais de ESL, mas Creative Commons **não comercial**.
@@ -164,10 +187,9 @@ natural". Escrever a cena e produzir a voz continua sendo o caminho.
 
 ## 5. As opções que restam, em ordem de recomendação
 
-1. **TTS neural moderno via API** (ElevenLabs, OpenAI, Google, Azure). É o que
-   "voz sintética hoje" significa de verdade, e para diálogo roteirizado a
-   qualidade é outra. **Precisa de uma chave de API — não há nenhuma nesta
-   máquina** (conferido). Custo estimado baixo para ~15 minutos de áudio.
+1. **edge-TTS (Microsoft), que a casa já usa e já aprovou.** Vozes neurais,
+   gratuito, sem chave de API. É a primeira coisa a tentar, e a comparação justa
+   que eu deveria ter feito antes de mostrar o `say`. Ver a seção 4.
 2. **Locutor nativo em plataforma de freelancer.** Duas vozes, ~15 minutos de
    áudio no total. Fidelidade perfeita e nenhuma dúvida de licença.
 3. **VOA só para a Part 3** (17 questões), com o fluxo invertido: escolher a
