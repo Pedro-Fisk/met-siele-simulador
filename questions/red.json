@@ -2183,67 +2183,152 @@
       "n": 1,
       "topic": "Connectors",
       "metQuestions": 13,
-      "guidePage": 4
+      "guidePage": 4,
+      "qp": [
+        "Connectors – Addition & Sequence",
+        "Connectors – Cause & Result",
+        "Connectors – Contrast",
+        "Connectors – Purpose & Condition"
+      ]
     },
     {
       "n": 2,
       "topic": "Gerunds & Infinitives",
       "metQuestions": 12,
-      "guidePage": 6
+      "guidePage": 6,
+      "qp": [
+        "Gerunds vs Infinitives",
+        "Gerunds vs Infinitives – Meaning Change",
+        "Gerunds – Prepositions",
+        "Possessive + Gerund",
+        "Verb + Object + Infinitive"
+      ]
     },
     {
       "n": 3,
       "topic": "Phrasal Verbs & Prepositions",
       "metQuestions": 11,
-      "guidePage": 8
+      "guidePage": 8,
+      "qp": [
+        "Phrasal Verbs – MET High-Frequency",
+        "Verb + Preposition",
+        "Adjective + Preposition",
+        "Nouns + Particles"
+      ]
     },
     {
       "n": 4,
       "topic": "Inversion & Emphasis",
       "metQuestions": 10,
-      "guidePage": 10
+      "guidePage": 10,
+      "qp": [
+        "Inversion",
+        "Inversion – Negative Adverbials",
+        "Inversion – Expressions with Only",
+        "Inversion – So/Neither",
+        "Emphatic Forms – Do/Does/Did",
+        "Cleft Sentences",
+        "Cleft Sentences – It Is...That",
+        "Cleft Sentences – What"
+      ]
     },
     {
       "n": 5,
       "topic": "Pronouns & Determiners",
       "metQuestions": 10,
-      "guidePage": 12
+      "guidePage": 12,
+      "qp": [
+        "Reflexive and Intensive Pronouns",
+        "Confusing Words"
+      ]
     },
     {
       "n": 6,
       "topic": "Comparatives & Superlatives",
       "metQuestions": 10,
-      "guidePage": 14
+      "guidePage": 14,
+      "qp": [
+        "Comparatives/Superlatives – Advanced",
+        "Comparatives – Modification",
+        "The + Comparative… The + Comparative",
+        "Comparative + and + Comparative"
+      ]
     },
     {
       "n": 7,
       "topic": "Embedded Questions & Word Order",
       "metQuestions": 10,
-      "guidePage": 16
+      "guidePage": 16,
+      "qp": [
+        "Embedded Questions",
+        "Word Order & Parallel Structure",
+        "If vs Whether / Wh- + Infinitive"
+      ]
     },
     {
       "n": 8,
       "topic": "Conditionals & Subjunctive",
       "metQuestions": 7,
-      "guidePage": 18
+      "guidePage": 18,
+      "qp": [
+        "Zero Conditional",
+        "First Conditional",
+        "Second Conditional",
+        "Third Conditional",
+        "Mixed Conditionals",
+        "Conditionals – Unless/As Long As",
+        "Conditionals – Formal Inversion",
+        "Subjunctive – Wish / If + Were",
+        "Subjunctive – That-Clauses"
+      ]
     },
     {
       "n": 9,
       "topic": "Adverbs, Modals & Tags",
       "metQuestions": 7,
-      "guidePage": 20
+      "guidePage": 20,
+      "qp": [
+        "Adverbs – Almost, Hardly, Still, Yet, Else",
+        "Modal Perfects",
+        "Tag Questions & Short Answers"
+      ]
     },
     {
       "n": 10,
       "topic": "Tenses",
       "metQuestions": 6,
-      "guidePage": 22
+      "guidePage": 22,
+      "qp": [
+        "Present Tenses",
+        "Present Tenses – State Verbs",
+        "Past Tenses",
+        "Past Tenses – While/When",
+        "Used To / Be Used To",
+        "Future Tenses",
+        "Future Tenses – Future Perfect",
+        "Future Continuous"
+      ]
     },
     {
       "n": 11,
       "topic": "Relative Clauses & Passive",
       "metQuestions": 4,
-      "guidePage": 24
+      "guidePage": 24,
+      "qp": [
+        "Relative Pronouns – Advanced",
+        "Relative Pronouns – Non-Defining",
+        "Relative Pronouns – Omission",
+        "Relative Clauses – Special Use of Which",
+        "Passive Voice – All Tenses",
+        "Passive Voice – Modal",
+        "Passive Voice – Continuous",
+        "Passive Voice – Reporting Verbs",
+        "Passive Voice – Two Objects"
+      ]
     }
-  ]
+  ],
+  "quickPractice": {
+    "url": "https://pedro-fisk.github.io/fisk-simulador/",
+    "book": "infocus"
+  }
 }

@@ -1,0 +1,2313 @@
+{
+  "id": "emerald",
+  "name": "Practice Test · EMERALD",
+  "examLabel": "MET, Michigan English Test",
+  "cor": "#059669",
+  "rascunho": true,
+  "toolId": "met",
+  "audioBase": "audio/emerald/",
+  "secondsPerRGQuestion": 78,
+  "secondsPerListeningQuestion": 48,
+  "cefr": {
+    "note": "Simulado escrito pela Fisk, com a estrutura e os pesos do MET. Não é uma prova oficial da Michigan Language Assessment: a nota aqui é uma estimativa de treino, e a conversão de acertos para scaled score é aproximada (linear).",
+    "scale": 1.6,
+    "bands": [
+      {
+        "min": 64,
+        "level": "C1",
+        "desc": "Usuário proficiente. Compreende com facilidade discursos e textos longos e complexos."
+      },
+      {
+        "min": 53,
+        "level": "B2",
+        "desc": "Usuário independente avançado. Compreende ideias principais e pontos de vista em contextos sociais, profissionais e acadêmicos."
+      },
+      {
+        "min": 40,
+        "level": "B1",
+        "desc": "Usuário independente. Compreende os pontos principais de fala e textos claros sobre assuntos familiares."
+      },
+      {
+        "min": 27,
+        "level": "A2",
+        "desc": "Usuário básico. Compreende informações essenciais de mensagens curtas, simples e previsíveis."
+      },
+      {
+        "min": 0,
+        "level": "Pré-A2",
+        "desc": "Abaixo do nível mínimo medido pelo MET nesta seção."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "l1",
+      "name": "Listening · Part 1",
+      "kind": "listening",
+      "introAudio": "l1-intro.mp3",
+      "instructions": "In this part of the test, you will hear short conversations between two people. After each conversation, you will hear a question about it. Choose the best answer to the question. There are 19 questions in Part 1. The conversations and questions will not be repeated."
+    },
+    {
+      "id": "l2",
+      "name": "Listening · Part 2",
+      "kind": "listening",
+      "introAudio": "l2-intro.mp3",
+      "instructions": "In this part of the test, you will hear longer conversations between two people. After each conversation, you will answer some questions about it. There are 14 questions in Part 2. The conversations and questions will not be repeated. If you want to, you may take notes as you listen."
+    },
+    {
+      "id": "l3",
+      "name": "Listening · Part 3",
+      "kind": "listening",
+      "introAudio": "l3-intro.mp3",
+      "instructions": "In this part, you will hear some short talks. After each talk, you will answer some questions about it. There are 17 questions in Part 3. The talks and questions will not be repeated. If you want to, you may take notes as you listen."
+    },
+    {
+      "id": "gr",
+      "name": "Grammar",
+      "kind": "text",
+      "instructions": "This section focuses on your ability to use English grammar. Each question has only one correct answer."
+    },
+    {
+      "id": "rd",
+      "name": "Reading",
+      "kind": "text",
+      "instructions": "This section focuses on your ability to understand written English. Read each passage and answer the questions about it."
+    }
+  ],
+  "units": [
+    {
+      "id": "l1-q01",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q01.mp3",
+      "questions": [
+        {
+          "n": 1,
+          "id": "emeraldq001",
+          "topic": "Listening · Detalhe",
+          "text": "What does the professor ask the student to do?",
+          "opts": [
+            "send him her outline today",
+            "buy a new laptop",
+            "come to his office on Monday",
+            "rewrite the essay from the beginning"
+          ],
+          "key": 0,
+          "expl": "Ele dá o prazo novo e emenda um pedido: \"But send me that outline today, so I can see where you got to\". O que ele PEDE é o roteiro, hoje."
+        }
+      ]
+    },
+    {
+      "id": "l1-q02",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q02.mp3",
+      "questions": [
+        {
+          "n": 2,
+          "id": "emeraldq002",
+          "topic": "Listening · Inferência",
+          "text": "What does the man imply about the woman?",
+          "opts": [
+            "She may not want the elective enough.",
+            "She should change her chemistry lab.",
+            "She will not be allowed to take the elective.",
+            "She prefers early morning classes."
+          ],
+          "key": 0,
+          "expl": "\"That tells you how badly you want the elective\" é irônico: se a sexta às oito da manhã já derruba o plano, a vontade não era tanta."
+        }
+      ]
+    },
+    {
+      "id": "l1-q03",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q03.mp3",
+      "questions": [
+        {
+          "n": 3,
+          "id": "emeraldq003",
+          "topic": "Listening · Detalhe",
+          "text": "What does the man say about the study rooms?",
+          "opts": [
+            "They must be reserved online.",
+            "They are all taken on Thursday.",
+            "They are only for groups of two.",
+            "They close in the afternoon."
+          ],
+          "key": 0,
+          "expl": "\"You'll have to do that yourself, on the library website\": a reserva saiu do balcão e virou online."
+        }
+      ]
+    },
+    {
+      "id": "l1-q04",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q04.mp3",
+      "questions": [
+        {
+          "n": 4,
+          "id": "emeraldq004",
+          "topic": "Listening · Inferência",
+          "text": "What does the woman imply about Carla?",
+          "opts": [
+            "Carla was ill on Tuesday.",
+            "Carla let her down.",
+            "Carla finished the procedure alone.",
+            "Carla sent a message before the lab."
+          ],
+          "key": 1,
+          "expl": "A mulher fez o trabalho inteiro sozinha (\"both halves of the procedure myself\") e o \"Three days later\", jogado no fim, é a reclamação: a satisfação veio tarde demais."
+        }
+      ]
+    },
+    {
+      "id": "l1-q05",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q05.mp3",
+      "questions": [
+        {
+          "n": 5,
+          "id": "emeraldq005",
+          "topic": "Listening · Ideia principal",
+          "text": "What are the speakers mainly discussing?",
+          "opts": [
+            "a change of program the man is considering",
+            "a course the man failed",
+            "an advisor the woman recommends",
+            "the credits the woman needs"
+          ],
+          "key": 0,
+          "expl": "Tudo gira em torno da mudança de economia para linguística: o tempo pensando nela, os créditos que ela custa e a conversa com o orientador que vai decidi-la."
+        }
+      ]
+    },
+    {
+      "id": "l1-q06",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q06.mp3",
+      "questions": [
+        {
+          "n": 6,
+          "id": "emeraldq006",
+          "topic": "Listening · Detalhe",
+          "text": "What does the woman suggest the man do?",
+          "opts": [
+            "use a copy kept at the library",
+            "wait for the next shipment",
+            "ask for more time on the assignment",
+            "order the book from another store"
+          ],
+          "key": 0,
+          "expl": "\"Then use the library's copy. There are three on reserve at the front desk.\" A saída que ela oferece é a biblioteca, não a espera."
+        }
+      ]
+    },
+    {
+      "id": "l1-q07",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q07.mp3",
+      "questions": [
+        {
+          "n": 7,
+          "id": "emeraldq007",
+          "topic": "Listening · Inferência",
+          "text": "What will most likely happen?",
+          "opts": [
+            "The woman's grade will be corrected.",
+            "The woman will rewrite the paper.",
+            "The professor will remove the comments.",
+            "The other student will complain."
+          ],
+          "key": 0,
+          "expl": "O professor reconhece a troca (\"that's the mark for a different student\") e promete \"By this afternoon\": a nota errada vai ser trocada ainda hoje."
+        }
+      ]
+    },
+    {
+      "id": "l1-q08",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q08.mp3",
+      "questions": [
+        {
+          "n": 8,
+          "id": "emeraldq008",
+          "topic": "Listening · Detalhe",
+          "text": "What does the woman say about dropping a course after Monday?",
+          "opts": [
+            "It will appear on the transcript.",
+            "It will no longer be allowed.",
+            "It will not need a signature.",
+            "It will take four days."
+          ],
+          "key": 0,
+          "expl": "\"From Monday on, anything you drop appears as a withdrawal\": depois de segunda o trancamento fica registrado no histórico."
+        }
+      ]
+    },
+    {
+      "id": "l1-q09",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q09.mp3",
+      "questions": [
+        {
+          "n": 9,
+          "id": "emeraldq009",
+          "topic": "Listening · Inferência",
+          "text": "What does the man imply?",
+          "opts": [
+            "He does not expect Daniel to deliver his part.",
+            "He wants to present on another day.",
+            "He thinks Daniel's slides are ready.",
+            "He would rather present alone."
+          ],
+          "key": 0,
+          "expl": "Ele escreveu a parte do colega \"just in case\" e, quando ela lembra da sexta, responde \"That's exactly why I wrote it\": não conta com o Daniel."
+        }
+      ]
+    },
+    {
+      "id": "l1-q10",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q10.mp3",
+      "questions": [
+        {
+          "n": 10,
+          "id": "emeraldq010",
+          "topic": "Listening · Propósito",
+          "text": "Why does the woman mention the shuttle?",
+          "opts": [
+            "to suggest a cheaper way to get there",
+            "to explain why she will be late",
+            "to complain about the price of taxis",
+            "to show how far the seminar is"
+          ],
+          "key": 0,
+          "expl": "Ele propõe rachar um táxi; ela responde com o ônibus \"free with a student card\" e fecha com os onze dólares que os outros pagam. A fala existe para oferecer a alternativa barata."
+        }
+      ]
+    },
+    {
+      "id": "l1-q11",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q11.mp3",
+      "questions": [
+        {
+          "n": 11,
+          "id": "emeraldq011",
+          "topic": "Listening · Detalhe",
+          "text": "What does the man tell the woman about her file?",
+          "opts": [
+            "It has to be a PDF.",
+            "It has to be printed on Thursday.",
+            "It has to be uploaded after five.",
+            "It has to be made from slides."
+          ],
+          "key": 0,
+          "expl": "\"And it has to be a PDF. We can't print from slides.\" O formato é a exigência, e os slides são justamente o que não serve."
+        }
+      ]
+    },
+    {
+      "id": "l1-q12",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q12.mp3",
+      "questions": [
+        {
+          "n": 12,
+          "id": "emeraldq012",
+          "topic": "Listening · Inferência",
+          "text": "What does the woman suggest about the letter?",
+          "opts": [
+            "It will be weaker because of the short notice.",
+            "She will not be able to write it.",
+            "The man should ask another professor.",
+            "The deadline has already passed."
+          ],
+          "key": 0,
+          "expl": "Ela aceita, mas o \"Next time, come to me three weeks earlier, and the letter will be worth reading\" diz que ESTA, escrita da noite para o dia, não vai valer muito."
+        }
+      ]
+    },
+    {
+      "id": "l1-q13",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q13.mp3",
+      "questions": [
+        {
+          "n": 13,
+          "id": "emeraldq013",
+          "topic": "Listening · Ideia principal",
+          "text": "What are the speakers mainly discussing?",
+          "opts": [
+            "a study space that has become noisy",
+            "a café that is about to close",
+            "the opening hours of a library",
+            "a rule the woman broke"
+          ],
+          "key": 0,
+          "expl": "A conversa inteira é sobre o terceiro andar ter perdido o silêncio: a regra que ninguém aplica, o café embaixo e a fuga para a outra biblioteca."
+        }
+      ]
+    },
+    {
+      "id": "l1-q14",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q14.mp3",
+      "questions": [
+        {
+          "n": 14,
+          "id": "emeraldq014",
+          "topic": "Listening · Detalhe",
+          "text": "What is required before the man can start?",
+          "opts": [
+            "passing an online safety course",
+            "spending two hours in the lab",
+            "written permission from the professor",
+            "a test taken on Monday"
+          ],
+          "key": 0,
+          "expl": "\"Only if you've done the safety module... Nobody starts in that lab without passing it.\" A condição é o curso online, e não basta fazer: tem que passar."
+        }
+      ]
+    },
+    {
+      "id": "l1-q15",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q15.mp3",
+      "questions": [
+        {
+          "n": 15,
+          "id": "emeraldq015",
+          "topic": "Listening · Inferência",
+          "text": "What does the man imply?",
+          "opts": [
+            "The woman missed information she cannot find online.",
+            "The woman should not worry about the lectures.",
+            "The exam format will change again.",
+            "The reading list is in the slides."
+          ],
+          "key": 0,
+          "expl": "\"The slides are online. The rest of it isn't\": o formato da prova, o novo prazo e a lista de leitura só existiam na aula."
+        }
+      ]
+    },
+    {
+      "id": "l1-q16",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q16.mp3",
+      "questions": [
+        {
+          "n": 16,
+          "id": "emeraldq016",
+          "topic": "Listening · Detalhe",
+          "text": "What does the woman say about the position?",
+          "opts": [
+            "The hours cannot be changed.",
+            "It takes ten hours on Tuesday.",
+            "The interviews are run on Tuesday.",
+            "It is only open to first-year students."
+          ],
+          "key": 0,
+          "expl": "\"Ten, and they're fixed\", e a aula de quinta às nove é justamente a hora das entrevistas, por isso \"it won't work\". O horário é rígido."
+        }
+      ]
+    },
+    {
+      "id": "l1-q17",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q17.mp3",
+      "questions": [
+        {
+          "n": 17,
+          "id": "emeraldq017",
+          "topic": "Listening · Inferência",
+          "text": "What does the woman mean?",
+          "opts": [
+            "She has read almost none of the chapter.",
+            "She found the chapter too short.",
+            "She finished the chapter quickly.",
+            "She read a different chapter."
+          ],
+          "key": 0,
+          "expl": "\"A very small start\" em quarenta páginas é o modo educado de admitir que ela quase não leu."
+        }
+      ]
+    },
+    {
+      "id": "l1-q18",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q18.mp3",
+      "questions": [
+        {
+          "n": 18,
+          "id": "emeraldq018",
+          "topic": "Listening · Ideia principal",
+          "text": "What are the speakers mainly discussing?",
+          "opts": [
+            "a change to the final exam",
+            "a book they have to buy",
+            "an essay they have written",
+            "the marks they received"
+          ],
+          "key": 0,
+          "expl": "Os dois falam da nova forma da prova final: consulta aberta, mas metade da nota numa única dissertação."
+        }
+      ]
+    },
+    {
+      "id": "l1-q19",
+      "section": "l1",
+      "type": "audio-single",
+      "audio": "l1-q19.mp3",
+      "questions": [
+        {
+          "n": 19,
+          "id": "emeraldq019",
+          "topic": "Listening · Inferência",
+          "text": "What does the woman imply?",
+          "opts": [
+            "She has not decided whether to drop a course.",
+            "She has already dropped one course.",
+            "She missed the deadline on Friday.",
+            "She was advised to take both courses."
+          ],
+          "key": 0,
+          "expl": "O prazo ainda está de pé (\"Until Friday\") e ela \"keeps opening the form and closing it again\": está em cima do muro."
+        }
+      ]
+    },
+    {
+      "id": "l2-set1",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q20-23.mp3",
+      "title": "Conversation 1 · Questions 20–23",
+      "cues": [
+        {
+          "label": "Conversation",
+          "t": 10.9
+        },
+        {
+          "n": 20,
+          "t": 92.2
+        },
+        {
+          "n": 21,
+          "t": 110.2
+        },
+        {
+          "n": 22,
+          "t": 129.9
+        },
+        {
+          "n": 23,
+          "t": 149.6
+        }
+      ],
+      "questions": [
+        {
+          "n": 20,
+          "id": "emeraldq020",
+          "topic": "Listening · Ideia principal",
+          "text": "What are the speakers mainly discussing?",
+          "opts": [
+            "whether the woman should write a thesis",
+            "a seminar the woman is teaching",
+            "the woman's application to a master's program",
+            "a deadline the woman has already missed"
+          ],
+          "key": 0,
+          "expl": "A conversa inteira é a escolha da aluna para o ano seguinte: a monografia ou os dois seminários. Tudo o mais (o mestrado, a pergunta de pesquisa) entra a serviço dessa decisão."
+        },
+        {
+          "n": 21,
+          "id": "emeraldq021",
+          "topic": "Listening · Propósito",
+          "text": "Why does the advisor ask whether she is going on to a master's?",
+          "opts": [
+            "to find out what her decision should be built around",
+            "to suggest that she apply this year",
+            "to explain why the thesis is required",
+            "to warn her about the Friday deadline"
+          ],
+          "key": 0,
+          "expl": "Quando ela responde \"I don't know yet\", ele emenda: \"Then that's the answer we should plan around\". A pergunta serviu para descobrir sobre que base decidir."
+        },
+        {
+          "n": 22,
+          "id": "emeraldq022",
+          "topic": "Listening · Detalhe",
+          "text": "What does the advisor say about students who take only seminars?",
+          "opts": [
+            "Some of them regret never writing anything long.",
+            "They read less widely than other students.",
+            "They usually go on to a master's.",
+            "They finish their program a semester earlier."
+          ],
+          "key": 0,
+          "expl": "\"Some students leave here having never written anything longer than fifteen pages, and a fair number of them regret it.\""
+        },
+        {
+          "n": 23,
+          "id": "emeraldq023",
+          "topic": "Listening · Intenção do falante",
+          "text": "What does the advisor mean when he says this?",
+          "opts": [
+            "Her interest in the topic shows she should write the thesis.",
+            "She has already decided about the master's.",
+            "The question she raised in his course was the wrong one.",
+            "He is not able to help her decide."
+          ],
+          "key": 0,
+          "expl": "Ele havia perguntado se existia uma questão com que ela quisesse conviver por um ano. Ela responde com uma em que não para de pensar, e é isso que decide a favor da monografia."
+        }
+      ]
+    },
+    {
+      "id": "l2-set2",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q24-26.mp3",
+      "title": "Conversation 2 · Questions 24–26",
+      "cues": [
+        {
+          "label": "Conversation",
+          "t": 7.7
+        },
+        {
+          "n": 24,
+          "t": 79.3
+        },
+        {
+          "n": 25,
+          "t": 97.4
+        },
+        {
+          "n": 26,
+          "t": 115.8
+        }
+      ],
+      "questions": [
+        {
+          "n": 24,
+          "id": "emeraldq024",
+          "topic": "Listening · Propósito",
+          "text": "Why does the woman mention Thursday?",
+          "opts": [
+            "to point to a possible cause of the strange results",
+            "to remind the man when the report is due",
+            "to explain why she missed the second run",
+            "to complain about the technician"
+          ],
+          "key": 0,
+          "expl": "Ela liga a data ao equipamento: \"Thursday is when they recalibrated the water bath\", com um desvio de meio grau. É a explicação da curva estranha."
+        },
+        {
+          "n": 25,
+          "id": "emeraldq025",
+          "topic": "Listening · Inferência",
+          "text": "What will the students most likely do?",
+          "opts": [
+            "report both runs and explain the calibration",
+            "repeat the second run before Monday",
+            "leave the second run out of the report",
+            "ask Doctor Lima for extra time"
+          ],
+          "key": 0,
+          "expl": "\"Both, with a note explaining the calibration\", e o homem aceita ao dividir as seções entre os dois. A hora extra é justamente para escrever essa nota."
+        },
+        {
+          "n": 26,
+          "id": "emeraldq026",
+          "topic": "Listening · Intenção do falante",
+          "text": "What does the woman mean when she says this?",
+          "opts": [
+            "She wants to look at the original data herself.",
+            "She thinks his table is badly formatted.",
+            "She will build the table for him.",
+            "She does not need the raw file."
+          ],
+          "key": 0,
+          "expl": "Ela pede o arquivo bruto: quer os dados originais, não os já organizados por ele. É o que se espera de quem acabou de descobrir um erro de calibragem."
+        }
+      ]
+    },
+    {
+      "id": "l2-set3",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q27-30.mp3",
+      "title": "Conversation 3 · Questions 27–30",
+      "cues": [
+        {
+          "label": "Conversation",
+          "t": 8.1
+        },
+        {
+          "n": 27,
+          "t": 86.8
+        },
+        {
+          "n": 28,
+          "t": 105.2
+        },
+        {
+          "n": 29,
+          "t": 124.4
+        },
+        {
+          "n": 30,
+          "t": 144.2
+        }
+      ],
+      "questions": [
+        {
+          "n": 27,
+          "id": "emeraldq027",
+          "topic": "Listening · Ideia principal",
+          "text": "What are the speakers mainly discussing?",
+          "opts": [
+            "how the man should search for his sources",
+            "an article the man was asked to pay for",
+            "a deadline the man cannot meet",
+            "a database the library has cancelled"
+          ],
+          "key": 0,
+          "expl": "Do começo ao fim, a bibliotecária corrige o método de busca dele: a caixa errada, o filtro certo, o caminho de acesso e por onde começar a ler."
+        },
+        {
+          "n": 28,
+          "id": "emeraldq028",
+          "topic": "Listening · Detalhe",
+          "text": "What does the librarian say about the main search box?",
+          "opts": [
+            "It searches the newspaper archive as well.",
+            "It cannot be used from home.",
+            "It shows only peer-reviewed articles.",
+            "It returns about thirty results."
+          ],
+          "key": 0,
+          "expl": "\"The main box searches everything we own, including the newspaper archive\": é por isso que voltam duzentos resultados em sua maioria inúteis."
+        },
+        {
+          "n": 29,
+          "id": "emeraldq029",
+          "topic": "Listening · Propósito",
+          "text": "Why does the librarian tell him to go in through the library's page?",
+          "opts": [
+            "so that the system recognizes him as a student",
+            "so that his searches are saved for later",
+            "so that he can borrow books from other libraries",
+            "so that he can change the date range"
+          ],
+          "key": 0,
+          "expl": "\"so the system knows you're a student. If you go straight to the publisher's site, you'll be asked to pay\". O caminho existe para o acesso ser reconhecido."
+        },
+        {
+          "n": 30,
+          "id": "emeraldq030",
+          "topic": "Listening · Inferência",
+          "text": "What does the librarian suggest about the man's problem yesterday?",
+          "opts": [
+            "The article was probably available to him at no cost.",
+            "The article had not been published yet.",
+            "He had searched in the wrong database.",
+            "His deadline was too close for a request."
+          ],
+          "key": 0,
+          "expl": "Ele achou que a biblioteca não tinha o artigo; ela responde \"We almost always do\". O texto provavelmente estava disponível, e o que faltou foi entrar pelo caminho certo."
+        }
+      ]
+    },
+    {
+      "id": "l2-set4",
+      "section": "l2",
+      "type": "audio-set",
+      "audio": "l2-q31-33.mp3",
+      "title": "Conversation 4 · Questions 31–33",
+      "cues": [
+        {
+          "label": "Conversation",
+          "t": 7.8
+        },
+        {
+          "n": 31,
+          "t": 74.8
+        },
+        {
+          "n": 32,
+          "t": 92.9
+        },
+        {
+          "n": 33,
+          "t": 111.8
+        }
+      ],
+      "questions": [
+        {
+          "n": 31,
+          "id": "emeraldq031",
+          "topic": "Listening · Propósito",
+          "text": "Why does the woman mention emails?",
+          "opts": [
+            "to show how the policy changed her own workload",
+            "to explain why so many students were ill",
+            "to complain about a department decision",
+            "to describe a message she sent to a student"
+          ],
+          "key": 0,
+          "expl": "Ela perdia \"an evening a week\" lendo justificativas; com a prorrogação automática, \"now they click a button\". Os e-mails medem o que mudou para ela."
+        },
+        {
+          "n": 32,
+          "id": "emeraldq032",
+          "topic": "Listening · Inferência",
+          "text": "What does the woman suggest about her students' work?",
+          "opts": [
+            "It did not get worse under the new policy.",
+            "It improved a great deal.",
+            "It usually arrives two days late.",
+            "It is graded five percent lower."
+          ],
+          "key": 0,
+          "expl": "\"That was my worry too. The average went up slightly.\" O medo de piorar não se confirmou, e ainda caiu o número de trabalhos que nunca chegavam."
+        },
+        {
+          "n": 33,
+          "id": "emeraldq033",
+          "topic": "Listening · Intenção do falante",
+          "text": "What does the man mean when he says this?",
+          "opts": [
+            "He thinks she should make that argument to the department.",
+            "He wants her to write the new policy herself.",
+            "He disagrees with what she has just said.",
+            "He will repeat her words for her."
+          ],
+          "key": 0,
+          "expl": "Ela acabou de resumir a diferença entre a regra e as exceções. Ele acha a formulação tão boa que quer ouvi-la, igual, na reunião do departamento."
+        }
+      ]
+    },
+    {
+      "id": "l3-set1",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q34-37.mp3",
+      "title": "Lecture 1 · Questions 34–37",
+      "cues": [
+        {
+          "label": "Lecture",
+          "t": 9.4
+        },
+        {
+          "n": 34,
+          "t": 104.5
+        },
+        {
+          "n": 35,
+          "t": 122.5
+        },
+        {
+          "n": 36,
+          "t": 141.1
+        },
+        {
+          "n": 37,
+          "t": 159.8
+        }
+      ],
+      "questions": [
+        {
+          "n": 34,
+          "id": "emeraldq034",
+          "topic": "Listening · Ideia principal",
+          "text": "What is the talk mainly about?",
+          "opts": [
+            "what the writing center does and does not do",
+            "how to improve the grammar of a paper",
+            "the opening hours of the university library",
+            "how to apply to a doctoral program"
+          ],
+          "key": 0,
+          "expl": "A fala se organiza em torno de três crenças erradas sobre o centro: o conserto de última hora, o público e o momento de procurar. É uma descrição do serviço pelo avesso."
+        },
+        {
+          "n": 35,
+          "id": "emeraldq035",
+          "topic": "Listening · Detalhe",
+          "text": "What does the speaker say about proofreading?",
+          "opts": [
+            "The center does not do it.",
+            "It is done while the writer waits.",
+            "It is offered only to graduate students.",
+            "It takes a full fifty-minute session."
+          ],
+          "key": 0,
+          "expl": "\"We won't proofread it, and we never edit a text without its writer in the room.\" A revisão de superfície está fora do serviço."
+        },
+        {
+          "n": 36,
+          "id": "emeraldq036",
+          "topic": "Listening · Detalhe",
+          "text": "Who used the center most often last year?",
+          "opts": [
+            "graduate students",
+            "first-year students",
+            "students who were failing",
+            "students in their final year"
+          ],
+          "key": 0,
+          "expl": "\"Last year our most frequent visitors were graduate students\", e a semana mais cheia foi a das inscrições de doutorado."
+        },
+        {
+          "n": 37,
+          "id": "emeraldq037",
+          "topic": "Listening · Propósito",
+          "text": "Why does the speaker mention the four o'clock walk-in slots?",
+          "opts": [
+            "to point out an opportunity students fail to use",
+            "to explain why booking is difficult",
+            "to announce a change in the schedule",
+            "to ask students to arrive before four"
+          ],
+          "key": 0,
+          "expl": "\"Those are almost never taken, which tells you something about how students plan\". A vaga existe, sobra, e a sobra é a crítica."
+        }
+      ]
+    },
+    {
+      "id": "l3-set2",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q38-41.mp3",
+      "title": "Lecture 2 · Questions 38–41",
+      "cues": [
+        {
+          "label": "Lecture",
+          "t": 7.7
+        },
+        {
+          "n": 38,
+          "t": 104.2
+        },
+        {
+          "n": 39,
+          "t": 122.2
+        },
+        {
+          "n": 40,
+          "t": 141.7
+        },
+        {
+          "n": 41,
+          "t": 161.7
+        }
+      ],
+      "questions": [
+        {
+          "n": 38,
+          "id": "emeraldq038",
+          "topic": "Listening · Ideia principal",
+          "text": "What is the lecture mainly about?",
+          "opts": [
+            "why spreading study out works better than concentrating it",
+            "how Ebbinghaus invented the nonsense syllable",
+            "why students forget lists of unfamiliar words",
+            "how surgeons are trained to perform new procedures"
+          ],
+          "key": 0,
+          "expl": "A aula parte da curva do esquecimento para chegar ao efeito do espaçamento e a por que os alunos não o usam. O assunto é esse efeito."
+        },
+        {
+          "n": 39,
+          "id": "emeraldq039",
+          "topic": "Listening · Detalhe",
+          "text": "What did Ebbinghaus find about the same amount of study time?",
+          "opts": [
+            "It worked better when divided across several days.",
+            "It worked better when taken in one sitting.",
+            "It made no difference to how much was recalled.",
+            "It only worked with nonsense syllables."
+          ],
+          "key": 0,
+          "expl": "\"The same total study time, divided across several days, produced far better recall than the same minutes taken in one sitting.\""
+        },
+        {
+          "n": 40,
+          "id": "emeraldq040",
+          "topic": "Listening · Detalhe",
+          "text": "According to the speaker, why does studying in one sitting feel effective?",
+          "opts": [
+            "The material starts to feel familiar.",
+            "The material is forgotten more slowly.",
+            "The student is less tired at the end.",
+            "The student recalls more a week later."
+          ],
+          "key": 0,
+          "expl": "\"The text becomes fluent, and fluency feels like knowledge... it was never knowledge. It was familiarity.\" A sensação vem da familiaridade, não do aprendizado."
+        },
+        {
+          "n": 41,
+          "id": "emeraldq041",
+          "topic": "Listening · Inferência",
+          "text": "What does the speaker suggest about the reading he assigns?",
+          "opts": [
+            "It is meant to illustrate the point of the lecture.",
+            "It will be discussed over two weeks.",
+            "It is optional for most of the class.",
+            "It replaces the chapter in the textbook."
+          ],
+          "key": 0,
+          "expl": "Ele manda ler duas vezes em dias diferentes e emenda: \"either an instruction or a demonstration, depending on how you take it\". A tarefa é o próprio espaçamento em ação."
+        }
+      ]
+    },
+    {
+      "id": "l3-set3",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q42-46.mp3",
+      "title": "Lecture 3 · Questions 42–46",
+      "cues": [
+        {
+          "label": "Lecture",
+          "t": 8.5
+        },
+        {
+          "n": 42,
+          "t": 104.4
+        },
+        {
+          "n": 43,
+          "t": 122.4
+        },
+        {
+          "n": 44,
+          "t": 142.3
+        },
+        {
+          "n": 45,
+          "t": 161.6
+        },
+        {
+          "n": 46,
+          "t": 179.7
+        }
+      ],
+      "questions": [
+        {
+          "n": 42,
+          "id": "emeraldq042",
+          "topic": "Listening · Ideia principal",
+          "text": "What is the talk mainly about?",
+          "opts": [
+            "what a herbarium is and why it is useful",
+            "how rare plants are grown at the university",
+            "the history of a university building",
+            "how photographs of plants are stored"
+          ],
+          "key": 0,
+          "expl": "A guia define o herbário, explica por que as folhas secas continuam valendo mais que fotografias e como se cuida delas. É a apresentação da coleção."
+        },
+        {
+          "n": 43,
+          "id": "emeraldq043",
+          "topic": "Listening · Detalhe",
+          "text": "What does the speaker say the specimens have that photographs do not?",
+          "opts": [
+            "genetic material",
+            "a sharper image",
+            "the name of the collector",
+            "the original colour of the flower"
+          ],
+          "key": 0,
+          "expl": "\"A photograph has no DNA, and sheets from the eighteen hundreds have been sequenced successfully.\""
+        },
+        {
+          "n": 44,
+          "id": "emeraldq044",
+          "topic": "Listening · Detalhe",
+          "text": "How has the collection been used by climate scientists?",
+          "opts": [
+            "to show that plants now flower earlier than before",
+            "to measure the rainfall of two centuries ago",
+            "to identify insects that have disappeared",
+            "to establish the date of the oldest sheet"
+          ],
+          "key": 0,
+          "expl": "As etiquetas trazem data e lugar escritos por quem coletou, e é por isso que se pôde mostrar que muitas espécies florescem \"about ten days earlier than they did a hundred years ago\"."
+        },
+        {
+          "n": 45,
+          "id": "emeraldq045",
+          "topic": "Listening · Propósito",
+          "text": "Why does the speaker mention a beetle?",
+          "opts": [
+            "to explain why the doors must be kept closed",
+            "to describe one of the specimens on display",
+            "to warn visitors not to touch the sheets",
+            "to give an example of a pollinating insect"
+          ],
+          "key": 0,
+          "expl": "\"Keep the doors closed behind you, because our worst enemy is not damp. It's a small beetle...\" O inseto é a razão da regra da porta."
+        },
+        {
+          "n": 46,
+          "id": "emeraldq046",
+          "topic": "Listening · Intenção do falante",
+          "text": "What does the speaker mean when she says this?",
+          "opts": [
+            "Visitors should not expect to see living plants.",
+            "The name of the collection was changed at some point.",
+            "The building used to be a garden.",
+            "Part of the collection is kept outdoors."
+          ],
+          "key": 0,
+          "expl": "Ela avisa antes de entrar e completa: \"Nothing in here is alive\". A frase existe para desfazer a expectativa de jardim."
+        }
+      ]
+    },
+    {
+      "id": "l3-set4",
+      "section": "l3",
+      "type": "audio-set",
+      "audio": "l3-q47-50.mp3",
+      "title": "Lecture 4 · Questions 47–50",
+      "cues": [
+        {
+          "label": "Lecture",
+          "t": 7.8
+        },
+        {
+          "n": 47,
+          "t": 101.6
+        },
+        {
+          "n": 48,
+          "t": 119.8
+        },
+        {
+          "n": 49,
+          "t": 139.3
+        },
+        {
+          "n": 50,
+          "t": 158.2
+        }
+      ],
+      "questions": [
+        {
+          "n": 47,
+          "id": "emeraldq047",
+          "topic": "Listening · Detalhe",
+          "text": "Why did the observatory close?",
+          "opts": [
+            "The mechanism that turns the dome stopped working.",
+            "The lens of the telescope was broken.",
+            "The department lost its funding.",
+            "The building was unsafe for visitors."
+          ],
+          "key": 0,
+          "expl": "\"It closed in twenty fifteen, when the mechanism that turns the dome failed.\" O telescópio nunca foi o problema: continua o mesmo de 1924."
+        },
+        {
+          "n": 48,
+          "id": "emeraldq048",
+          "topic": "Listening · Detalhe",
+          "text": "What finally convinced the department to repair the observatory?",
+          "opts": [
+            "the loss of the school visits",
+            "a gift from a former student",
+            "the age of the telescope",
+            "the low cost of the electric drive"
+          ],
+          "key": 0,
+          "expl": "\"What settled the argument... was not astronomy but teaching\": as seiscentas visitas escolares por ano que caíram a zero."
+        },
+        {
+          "n": 49,
+          "id": "emeraldq049",
+          "topic": "Listening · Propósito",
+          "text": "Why does the speaker say that booking is not optional?",
+          "opts": [
+            "because there is very little space in the dome",
+            "because the evenings are offered free of charge",
+            "because the forecast is often wrong",
+            "because the staff have to prepare a talk"
+          ],
+          "key": 0,
+          "expl": "\"The dome holds twenty-two people, and the first three evenings filled up within an hour.\" A reserva é obrigatória porque cabe pouca gente."
+        },
+        {
+          "n": 50,
+          "id": "emeraldq050",
+          "topic": "Listening · Inferência",
+          "text": "What does the speaker suggest that listeners do?",
+          "opts": [
+            "give up their place if they are not going to attend",
+            "avoid booking when the evening may be cloudy",
+            "arrive at the observatory before eight o'clock",
+            "put their names on the waiting list first"
+          ],
+          "key": 0,
+          "expl": "\"Either come anyway or cancel it, because somebody on the waiting list would have taken it.\" O pedido é liberar o lugar em vez de faltar."
+        }
+      ]
+    },
+    {
+      "id": "gr-q51",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 51,
+          "id": "emeraldq051",
+          "topic": "Connectors",
+          "text": "_____ the committee's objections, the proposal moved forward unchanged.",
+          "opts": [
+            "Despite",
+            "Although",
+            "Even though",
+            "Whereas"
+          ],
+          "key": 0,
+          "expl": "Depois da lacuna vem um substantivo (\"the committee's objections\"), e antes de substantivo o contraste se marca com DESPITE (ou in spite of). Although, even though e whereas exigiriam uma oração com sujeito e verbo. Portanto, a resposta correta é DESPITE."
+        }
+      ]
+    },
+    {
+      "id": "gr-q52",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 52,
+          "id": "emeraldq052",
+          "topic": "Connectors",
+          "text": "The lab repeated the experiment _____ the first set of readings was inconsistent.",
+          "opts": [
+            "because",
+            "because of",
+            "due to",
+            "owing to"
+          ],
+          "key": 0,
+          "expl": "Aqui vem uma oração completa (\"the first set of readings was inconsistent\"), e a causa antes de oração é BECAUSE. Because of, due to e owing to só aparecem antes de substantivo. Portanto, a resposta correta é BECAUSE."
+        }
+      ]
+    },
+    {
+      "id": "gr-q53",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 53,
+          "id": "emeraldq053",
+          "topic": "Connectors",
+          "text": "Attendance fell every year; _____, the festival was cancelled in 2024.",
+          "opts": [
+            "consequently",
+            "nevertheless",
+            "meanwhile",
+            "besides"
+          ],
+          "key": 0,
+          "expl": "O cancelamento é o resultado da queda de público, e CONSEQUENTLY (como therefore, thus, as a result) é o conector de resultado. \"Nevertheless\" marcaria contraste, que não é o caso. Portanto, a resposta correta é CONSEQUENTLY."
+        }
+      ]
+    },
+    {
+      "id": "gr-q54",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 54,
+          "id": "emeraldq054",
+          "topic": "Gerunds & Infinitives",
+          "text": "The council agreed _____ the decision until the new budget is approved.",
+          "opts": [
+            "to postpone",
+            "postponing",
+            "to postponing",
+            "postpone"
+          ],
+          "key": 0,
+          "expl": "O verbo AGREE é seguido de to + infinitivo. \"Postponing\" seguiria verbos como avoid, consider ou suggest, que pedem gerúndio. Portanto, a resposta correta é TO POSTPONE."
+        }
+      ]
+    },
+    {
+      "id": "gr-q55",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 55,
+          "id": "emeraldq055",
+          "topic": "Gerunds & Infinitives",
+          "text": "Residents objected to _____ charged for a service they never requested.",
+          "opts": [
+            "being",
+            "be",
+            "have been",
+            "been"
+          ],
+          "key": 0,
+          "expl": "Em \"object to\", o \"to\" é preposição, e depois de preposição o verbo vai para -ing. Como os moradores receberam a cobrança, a forma é passiva: BEING charged. Portanto, a resposta correta é BEING."
+        }
+      ]
+    },
+    {
+      "id": "gr-q56",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 56,
+          "id": "emeraldq056",
+          "topic": "Phrasal Verbs & Prepositions",
+          "text": "The auditors will _____ the discrepancy before signing the report.",
+          "opts": [
+            "look into",
+            "call off",
+            "put off",
+            "take up"
+          ],
+          "key": 0,
+          "expl": "LOOK INTO é investigar, examinar os fatos de uma situação, que é o que auditores fazem com uma divergência antes de assinar. Portanto, a resposta correta é LOOK INTO."
+        }
+      ]
+    },
+    {
+      "id": "gr-q57",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 57,
+          "id": "emeraldq057",
+          "topic": "Phrasal Verbs & Prepositions",
+          "text": "The success of the trial depends _____ how quickly volunteers can be recruited.",
+          "opts": [
+            "on",
+            "of",
+            "from",
+            "in"
+          ],
+          "key": 0,
+          "expl": "É DEPEND ON. \"Depend of\" é um dos erros mais frequentes de falantes avançados e não existe em inglês. Portanto, a resposta correta é ON."
+        }
+      ]
+    },
+    {
+      "id": "gr-q58",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 58,
+          "id": "emeraldq058",
+          "topic": "Inversion & Emphasis",
+          "text": "Not until the audit was complete _____ the extent of the loss.",
+          "opts": [
+            "did the board realize",
+            "the board realized",
+            "the board did realize",
+            "realized the board"
+          ],
+          "key": 0,
+          "expl": "Expressão negativa no início da frase (\"not until\") exige inversão: o auxiliar vem antes do sujeito, como numa pergunta, e o verbo principal fica na forma base. Portanto, a resposta correta é DID THE BOARD REALIZE."
+        }
+      ]
+    },
+    {
+      "id": "gr-q59",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 59,
+          "id": "emeraldq059",
+          "topic": "Inversion & Emphasis",
+          "text": "_____ the funding been approved earlier, the clinic would have opened in March.",
+          "opts": [
+            "Had",
+            "If",
+            "Were",
+            "Should"
+          ],
+          "key": 0,
+          "expl": "É a condicional sem \"if\": HAD + sujeito + particípio equivale a \"If the funding had been approved\". Com \"if\" a frase precisaria de \"had\" depois do sujeito. Portanto, a resposta correta é HAD."
+        }
+      ]
+    },
+    {
+      "id": "gr-q60",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 60,
+          "id": "emeraldq060",
+          "topic": "Pronouns & Determiners",
+          "text": "The dispute was settled between the landlord and _____.",
+          "opts": [
+            "me",
+            "I",
+            "myself",
+            "mine"
+          ],
+          "key": 0,
+          "expl": "Depois de preposição entra o pronome objeto. \"Between you and I\" é o erro mais comum de quem já fala bem, justamente por soar mais formal. Portanto, a resposta correta é ME."
+        }
+      ]
+    },
+    {
+      "id": "gr-q61",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 61,
+          "id": "emeraldq061",
+          "topic": "Pronouns & Determiners",
+          "text": "There is very little _____ that the policy achieved its aim.",
+          "opts": [
+            "evidence",
+            "evidences",
+            "an evidence",
+            "many evidence"
+          ],
+          "key": 0,
+          "expl": "EVIDENCE é incontável em inglês: não tem plural e não aceita artigo indefinido. Por isso vem com \"little\", e não com \"few\" ou \"many\". Portanto, a resposta correta é EVIDENCE."
+        }
+      ]
+    },
+    {
+      "id": "gr-q62",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 62,
+          "id": "emeraldq062",
+          "topic": "Comparatives & Superlatives",
+          "text": "The second prototype performed _____ than the first.",
+          "opts": [
+            "far better",
+            "very better",
+            "more better",
+            "the better"
+          ],
+          "key": 0,
+          "expl": "Comparativo se intensifica com far, much ou considerably, nunca com \"very\". E \"better\" já é o comparativo de \"well\", então não leva \"more\". Portanto, a resposta correta é FAR BETTER."
+        }
+      ]
+    },
+    {
+      "id": "gr-q63",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 63,
+          "id": "emeraldq063",
+          "topic": "Comparatives & Superlatives",
+          "text": "The longer the drought lasted, _____ the harvest became.",
+          "opts": [
+            "the smaller",
+            "smaller",
+            "the smallest",
+            "more small"
+          ],
+          "key": 0,
+          "expl": "Na estrutura \"the + comparativo… the + comparativo\", as duas partes levam THE. \"Small\" é adjetivo curto, então o comparativo é \"smaller\". Portanto, a resposta correta é THE SMALLER."
+        }
+      ]
+    },
+    {
+      "id": "gr-q64",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 64,
+          "id": "emeraldq064",
+          "topic": "Embedded Questions & Word Order",
+          "text": "The manual does not explain _____ after each use.",
+          "opts": [
+            "how the filter should be cleaned",
+            "how should the filter be cleaned",
+            "how should be the filter cleaned",
+            "the filter how should be cleaned"
+          ],
+          "key": 0,
+          "expl": "Pergunta encaixada volta à ordem da afirmativa: sujeito antes do verbo, sem inversão. Depois de \"does not explain\" não há mais pergunta. Portanto, a resposta correta é HOW THE FILTER SHOULD BE CLEANED."
+        }
+      ]
+    },
+    {
+      "id": "gr-q65",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 65,
+          "id": "emeraldq065",
+          "topic": "Embedded Questions & Word Order",
+          "text": "The technicians calibrate the instruments _____.",
+          "opts": [
+            "carefully in the lab every morning",
+            "in the lab carefully every morning",
+            "every morning carefully in the lab",
+            "in the lab every morning carefully"
+          ],
+          "key": 0,
+          "expl": "A ordem dos advérbios é modo, lugar e tempo: como (carefully), onde (in the lab) e quando (every morning). Portanto, a resposta correta é CAREFULLY IN THE LAB EVERY MORNING."
+        }
+      ]
+    },
+    {
+      "id": "gr-q66",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 66,
+          "id": "emeraldq066",
+          "topic": "Conditionals & Subjunctive",
+          "text": "The committee recommended that the deadline _____ by two weeks.",
+          "opts": [
+            "be extended",
+            "is extended",
+            "was extended",
+            "will be extended"
+          ],
+          "key": 0,
+          "expl": "Depois de verbos como recommend, insist e request, a oração com \"that\" usa o subjuntivo: o verbo fica na forma base, e na passiva isso dá BE + particípio. Portanto, a resposta correta é BE EXTENDED."
+        }
+      ]
+    },
+    {
+      "id": "gr-q67",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 67,
+          "id": "emeraldq067",
+          "topic": "Conditionals & Subjunctive",
+          "text": "If the sensor _____ calibrated last week, the readings would be reliable now.",
+          "opts": [
+            "had been",
+            "was",
+            "were",
+            "has been"
+          ],
+          "key": 0,
+          "expl": "É um condicional misto: a condição está no passado (\"last week\") e o resultado, no presente (\"now\"). A condição pede had + particípio. Portanto, a resposta correta é HAD BEEN."
+        }
+      ]
+    },
+    {
+      "id": "gr-q68",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 68,
+          "id": "emeraldq068",
+          "topic": "Adverbs, Modals & Tags",
+          "text": "The samples arrived unsealed; someone _____ the container during transport.",
+          "opts": [
+            "must have opened",
+            "should have opened",
+            "can't have opened",
+            "might not have opened"
+          ],
+          "key": 0,
+          "expl": "MUST HAVE é a conclusão quase certa sobre o passado, apoiada na evidência: aqui, as amostras terem chegado abertas. Portanto, a resposta correta é MUST HAVE OPENED."
+        }
+      ]
+    },
+    {
+      "id": "gr-q69",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 69,
+          "id": "emeraldq069",
+          "topic": "Tenses",
+          "text": "By the time the results are published, the team _____ on the project for three years.",
+          "opts": [
+            "will have been working",
+            "will work",
+            "will be working",
+            "has been working"
+          ],
+          "key": 0,
+          "expl": "Com \"by the time\" e uma duração (\"for three years\"), a forma é o future perfect continuous: a ação começou antes e continua até aquele ponto do futuro. Portanto, a resposta correta é WILL HAVE BEEN WORKING."
+        }
+      ]
+    },
+    {
+      "id": "gr-q70",
+      "section": "gr",
+      "type": "single",
+      "questions": [
+        {
+          "n": 70,
+          "id": "emeraldq070",
+          "topic": "Relative Clauses & Passive",
+          "text": "The researcher _____ findings were questioned has since published a correction.",
+          "opts": [
+            "whose",
+            "who",
+            "whom",
+            "which"
+          ],
+          "key": 0,
+          "expl": "WHOSE marca posse dentro da oração relativa: os achados são do pesquisador. \"Who\" e \"whom\" não indicam posse, e \"which\" não se usa para pessoas. Portanto, a resposta correta é WHOSE."
+        }
+      ]
+    },
+    {
+      "id": "rd-set1",
+      "section": "rd",
+      "type": "reading",
+      "title": "Passage 1 · Questions 71–75",
+      "passageIntro": "This passage is about why university students rarely visit their professors.",
+      "passage": "<p>Every syllabus carries them, and almost every instructor complains that nobody comes. Office hours — the weekly period when a professor sits in an office waiting for students who want help — are among the oldest arrangements in university teaching, and among the least used. Surveys at large institutions regularly find that more than half of undergraduates finish a course without attending a single one.</p><p>The obvious explanation is that students are busy, and it is partly true. But when researchers asked directly, the reasons that came back had less to do with schedules than with fear. Students reported worrying that their question would sound foolish, that arriving would signal they had fallen behind, or that the professor would rather be doing something else. A striking number said they did not know what office hours were for, having assumed the period was reserved for disputes about grades.</p><p>Some departments have responded by changing the label. Renaming the period 'student hours', or advertising it as a time to talk about the reading rather than about marks, raised attendance in several trials — in one case doubling it within a semester. Moving the meetings out of the office helped too: instructors who held them in a café or in the library reported that students who had never appeared began to drop in.</p><p>None of this is expensive, which is precisely why it is easy to overlook. A department that spends a year debating class size can change the wording on a syllabus in an afternoon. The evidence suggests that the second measure may reach more students than the first.</p>",
+      "questions": [
+        {
+          "n": 71,
+          "id": "emeraldq071",
+          "topic": "Reading · Propósito",
+          "text": "Why does the author mention that every syllabus carries office hours?",
+          "opts": [
+            "to contrast how common they are with how little they are used",
+            "to argue that syllabuses should be shorter and clearer",
+            "to explain how professors organise their teaching week",
+            "to show that the practice was introduced only recently"
+          ],
+          "key": 0,
+          "expl": "A abertura põe lado a lado duas coisas: elas estão em todo plano de curso e quase ninguém aparece. O contraste é o assunto do texto, que ainda diz serem \"among the oldest arrangements\", o oposto de recentes."
+        },
+        {
+          "n": 72,
+          "id": "emeraldq072",
+          "topic": "Reading · Detalhe",
+          "text": "According to the passage, what did students say when researchers asked them directly?",
+          "opts": [
+            "They were afraid of how their question would be received.",
+            "They preferred to ask their questions by email.",
+            "They had never seen office hours listed on a syllabus.",
+            "They were satisfied with the help they already received."
+          ],
+          "key": 0,
+          "expl": "O segundo parágrafo é explícito: os motivos \"had less to do with schedules than with fear\", isto é, medo de a pergunta soar boba, de parecer atrasado, de incomodar o professor."
+        },
+        {
+          "n": 73,
+          "id": "emeraldq073",
+          "topic": "Reading · Detalhe",
+          "text": "What did a striking number of students assume about office hours?",
+          "opts": [
+            "that the period was only for arguing about grades",
+            "that attendance was recorded and counted",
+            "that the period was reserved for graduate students",
+            "that professors were paid extra for holding them"
+          ],
+          "key": 0,
+          "expl": "O texto diz que muitos \"did not know what office hours were for, having assumed the period was reserved for disputes about grades\"."
+        },
+        {
+          "n": 74,
+          "id": "emeraldq074",
+          "topic": "Reading · Vocabulário",
+          "text": "In the third paragraph, which phrase is closest in meaning to <strong>drop in</strong>?",
+          "opts": [
+            "come without an appointment",
+            "give up the course",
+            "lower their final marks",
+            "fall behind the schedule"
+          ],
+          "key": 0,
+          "expl": "A frase fala de alunos que nunca apareciam e passaram a ir. \"Drop in\" é justamente aparecer sem marcar hora, e não tem relação com abandonar a disciplina nem com nota."
+        },
+        {
+          "n": 75,
+          "id": "emeraldq075",
+          "topic": "Reading · Inferência",
+          "text": "What does the last paragraph suggest about changing the name of office hours?",
+          "opts": [
+            "It may help more students than costlier reforms.",
+            "It works only in departments with small classes.",
+            "It has been rejected by most instructors.",
+            "It requires approval from the whole university."
+          ],
+          "key": 0,
+          "expl": "O parágrafo compara um departamento que passa um ano discutindo tamanho de turma com a mudança de uma palavra no plano de curso, e conclui que \"the second measure may reach more students than the first\"."
+        }
+      ]
+    },
+    {
+      "id": "rd-set2",
+      "section": "rd",
+      "type": "reading",
+      "title": "Passage 2 · Questions 76–80",
+      "passageIntro": "This passage is about what happens when instructors change their deadline rules.",
+      "passage": "<p>Ask any group of instructors about late work and the room divides. One side holds that a deadline without a penalty is not a deadline; the other answers that a fixed date punishes the student whose bus broke down rather than the one who left the assignment until the last night. Until recently the argument was conducted almost entirely on principle, because nobody had the numbers.</p><p>The numbers began to arrive when several departments started experimenting. In one large course, students were offered three 'extension tokens' at the start of the semester, each worth two extra days on any assignment, to be used without explanation. The instructors expected a flood of late submissions. What they got was a modest rise in the number of papers handed in after the original date — and a sharp fall in requests for individual extensions, which had previously consumed hours of their week.</p><p>The quality of the work also shifted. Papers submitted with a token scored slightly higher on average than those submitted on time, which the researchers read not as evidence that time improves writing but as evidence that the students using the tokens were the ones who cared enough to want the extra days. The students most at risk of failing rarely used them at all.</p><p>That last finding is the one the study's authors underline. A flexible policy removes a source of stress for students who are already coping, and it saves the instructor a great deal of correspondence. What it does not do, on this evidence, is reach the student who has stopped attending — and it is that student the deadline debate usually claims to be about.</p>",
+      "questions": [
+        {
+          "n": 76,
+          "id": "emeraldq076",
+          "topic": "Reading · Detalhe",
+          "text": "According to the passage, what were extension tokens worth?",
+          "opts": [
+            "two extra days on an assignment",
+            "two extra marks on a paper",
+            "two weeks at the end of the semester",
+            "two meetings with the instructor"
+          ],
+          "key": 0,
+          "expl": "O segundo parágrafo define: três fichas, \"each worth two extra days on any assignment\", usadas sem precisar justificar."
+        },
+        {
+          "n": 77,
+          "id": "emeraldq077",
+          "topic": "Reading · Detalhe",
+          "text": "What happened to requests for individual extensions during the experiment?",
+          "opts": [
+            "They fell sharply.",
+            "They rose slightly.",
+            "They stayed at the same level.",
+            "They were no longer permitted."
+          ],
+          "key": 0,
+          "expl": "O texto registra \"a sharp fall in requests for individual extensions, which had previously consumed hours of their week\". Quem subiu, e pouco, foi a entrega depois da data original."
+        },
+        {
+          "n": 78,
+          "id": "emeraldq078",
+          "topic": "Reading · Referência",
+          "text": "In the third paragraph, what does <strong>them</strong> in the last sentence refer to?",
+          "opts": [
+            "the extension tokens",
+            "the papers submitted on time",
+            "the researchers",
+            "the higher scores"
+          ],
+          "key": 0,
+          "expl": "A frase é \"The students most at risk of failing rarely used them at all\". O que se usa, no parágrafo inteiro, são as fichas de prorrogação."
+        },
+        {
+          "n": 79,
+          "id": "emeraldq079",
+          "topic": "Reading · Inferência",
+          "text": "Why did the researchers doubt that extra time by itself improves writing?",
+          "opts": [
+            "because the students who used tokens were already the more committed ones",
+            "because the difference in scores was too large to be believed",
+            "because the papers were marked by different instructors",
+            "because most students returned their tokens unused"
+          ],
+          "key": 0,
+          "expl": "O texto diz que a nota um pouco maior foi lida \"not as evidence that time improves writing but as evidence that the students using the tokens were the ones who cared enough\"."
+        },
+        {
+          "n": 80,
+          "id": "emeraldq080",
+          "topic": "Reading · Ideia principal",
+          "text": "What is the main point of the last paragraph?",
+          "opts": [
+            "The policy helps students who are already managing, not those in real difficulty.",
+            "Instructors should return to fixed deadlines with penalties.",
+            "The experiment should be repeated in smaller courses.",
+            "Students who stop attending should be removed from the course."
+          ],
+          "key": 0,
+          "expl": "O parágrafo diz que a política tira estresse de quem já está dando conta e poupa o professor, mas \"does not reach the student who has stopped attending\", que é de quem o debate diz tratar."
+        }
+      ]
+    },
+    {
+      "id": "rd-set3",
+      "section": "rd",
+      "type": "reading-multi",
+      "title": "Texts A, B & C · Questions 81–90",
+      "texts": [
+        {
+          "tag": "A",
+          "html": "<h4>Spring Registration — Office of the Registrar</h4><p><strong>Registration opens Monday 4 November at 8 a.m.</strong></p><p>Students register in order of credits completed. Your assigned time appears in the student portal one week before registration opens.</p><ul><li>Full-time status requires a minimum of 12 credits</li><li>Courses marked <em>PR</em> in the catalogue have a prerequisite that must already appear on your transcript</li><li><strong>Add/drop period:</strong> the first ten days of term. A course dropped in this period leaves no record</li><li>After day ten, a withdrawal is recorded as <em>W</em> and the tuition is not refunded</li></ul><p>Questions about which courses count towards your major should go to your academic advisor, not to this office.</p>"
+        },
+        {
+          "tag": "B",
+          "html": "<h4>Choosing an elective — advice from the Advising Centre</h4><p><strong>Does an elective count for anything?</strong><br>Yes. Electives are graded like any other course and the mark appears on your transcript and in your average. Treating them as free time is the most common mistake we see.</p><p><strong>How many should I take at once?</strong><br>One, in most cases. Students who take two demanding electives alongside a full load of required courses are the students who come back in week eight asking about withdrawal.</p><p><strong>Can I try a course before committing?</strong><br>That is what the add/drop period is for. Attend the first sessions, look at the assignments listed in the syllabus, and decide before day ten — after that the decision costs you both a <em>W</em> and the fee.</p>"
+        },
+        {
+          "tag": "C",
+          "html": "<h4>Two students on the same course</h4><p><strong>Marisa, third year:</strong> I picked Introduction to Acoustics because it fitted my Tuesday. That was the whole reason. It turned out to have a lab report every fortnight, which nobody had told me, and I spent the semester behind. I passed, but my average did not thank me.</p><p><strong>Yannick, third year:</strong> I took the same course the year after and loved it. The difference is that I read the syllabus first and saw the fortnightly reports. I dropped a different course to make room, on day four, so it left no record. My advisor spent twenty minutes with me on that decision and it was the most useful twenty minutes of my degree.</p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 81,
+          "id": "emeraldq081",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, what determines when a student may register?",
+          "opts": [
+            "the number of credits already completed",
+            "the student's year of birth",
+            "the order in which students apply",
+            "the major the student has chosen"
+          ],
+          "key": 0,
+          "expl": "O texto A abre com \"Students register in order of credits completed\". O curso escolhido e a ordem de inscrição não aparecem como critério."
+        },
+        {
+          "n": 82,
+          "id": "emeraldq082",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, what happens to a course dropped on the fifth day of term?",
+          "opts": [
+            "It leaves no record on the transcript.",
+            "It appears on the transcript as a W.",
+            "It counts towards full-time status.",
+            "It is refunded only in part."
+          ],
+          "key": 0,
+          "expl": "O período de add/drop são os dez primeiros dias, e nele \"A course dropped in this period leaves no record\". O W e a não devolução da mensalidade valem depois do décimo dia."
+        },
+        {
+          "n": 83,
+          "id": "emeraldq083",
+          "topic": "Reading · Propósito",
+          "text": "What is the main purpose of Text B?",
+          "opts": [
+            "to correct common mistakes students make when choosing electives",
+            "to list the electives available in the spring term",
+            "to explain how tuition fees are calculated",
+            "to announce a change in the registration system"
+          ],
+          "key": 0,
+          "expl": "As três perguntas do texto B tratam de enganos frequentes: achar que eletiva não conta, pegar duas de uma vez e decidir tarde demais. Ele existe para corrigir isso."
+        },
+        {
+          "n": 84,
+          "id": "emeraldq084",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text B, how many demanding electives should a student normally take at once?",
+          "opts": [
+            "one",
+            "two",
+            "three",
+            "as many as the schedule allows"
+          ],
+          "key": 0,
+          "expl": "A resposta do texto B é direta: \"One, in most cases\", e descreve o que acontece com quem pega duas junto de uma carga cheia de obrigatórias."
+        },
+        {
+          "n": 85,
+          "id": "emeraldq085",
+          "topic": "Reading · Vocabulário",
+          "text": "In Text A, which phrase is closest in meaning to <strong>prerequisite</strong>?",
+          "opts": [
+            "a course that must be completed first",
+            "a fee that must be paid in advance",
+            "a form signed by an academic advisor",
+            "a minimum grade in the final exam"
+          ],
+          "key": 0,
+          "expl": "O próprio item explica: são as disciplinas marcadas PR, cujo requisito \"must already appear on your transcript\", ou seja, já ter sido cursado."
+        },
+        {
+          "n": 86,
+          "id": "emeraldq086",
+          "topic": "Reading · Inferência",
+          "text": "What can be inferred from Texts A and B about withdrawing in week eight?",
+          "opts": [
+            "The student loses the tuition and receives a W.",
+            "The student may register for a replacement course.",
+            "The student needs the approval of the registrar only.",
+            "The student's transcript is unaffected."
+          ],
+          "key": 0,
+          "expl": "O texto A diz que depois do décimo dia a saída vira W e a mensalidade não é devolvida; o B menciona os alunos que voltam na semana oito perguntando de trancamento. Juntando os dois, a semana oito está muito além do prazo."
+        },
+        {
+          "n": 87,
+          "id": "emeraldq087",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text C, why did Marisa choose Introduction to Acoustics?",
+          "opts": [
+            "because it fitted her timetable",
+            "because her advisor recommended it",
+            "because it had no lab reports",
+            "because it counted towards her major"
+          ],
+          "key": 0,
+          "expl": "Ela é explícita: \"I picked Introduction to Acoustics because it fitted my Tuesday. That was the whole reason.\""
+        },
+        {
+          "n": 88,
+          "id": "emeraldq088",
+          "topic": "Reading · Propósito",
+          "text": "Why does Yannick mention day four?",
+          "opts": [
+            "to show that he dropped the other course while it still left no record",
+            "to explain when the course's first lab report was due",
+            "to describe how long he waited to see his advisor",
+            "to indicate when registration for the term closed"
+          ],
+          "key": 0,
+          "expl": "Ele diz que trocou de disciplina \"on day four, so it left no record\", dentro dos dez dias do add/drop que o texto A define."
+        },
+        {
+          "n": 89,
+          "id": "emeraldq089",
+          "topic": "Reading · Referência",
+          "text": "In Text C, in \"it was the most useful twenty minutes of my degree\", what does <strong>it</strong> refer to?",
+          "opts": [
+            "the conversation with his advisor",
+            "the first session of the course",
+            "the time spent reading the syllabus",
+            "the fortnightly lab report"
+          ],
+          "key": 0,
+          "expl": "A frase anterior é \"My advisor spent twenty minutes with me on that decision\". São esses vinte minutos que ele chama de mais úteis."
+        },
+        {
+          "n": 90,
+          "id": "emeraldq090",
+          "topic": "Reading · Ideia principal",
+          "text": "What do the two accounts in Text C illustrate together?",
+          "opts": [
+            "that reading the syllabus before committing changes the outcome",
+            "that acoustics is too difficult for third-year students",
+            "that advisors decide which courses a student may take",
+            "that electives should be avoided in the third year"
+          ],
+          "key": 0,
+          "expl": "Os dois fizeram a mesma disciplina com resultados opostos, e Yannick nomeia a diferença: \"I read the syllabus first\". Nenhum dos dois diz que a disciplina seja difícil demais."
+        }
+      ]
+    },
+    {
+      "id": "rd-set4",
+      "section": "rd",
+      "type": "reading-multi",
+      "title": "Texts A, B & C · Questions 91–100",
+      "texts": [
+        {
+          "tag": "A",
+          "html": "<h4>Summer Research Assistantships — call for applications</h4><p><strong>Applications close 15 February.</strong></p><p>Undergraduates in their second year or above may apply to work eight weeks with a faculty supervisor on an ongoing project. Assistants receive a stipend and, where the project allows, are named on any resulting publication.</p><ul><li>One page describing why this project and not another</li><li>A current transcript</li><li>The name of one instructor who has taught you this year</li></ul><p>No previous laboratory experience is required. Supervisors are asked to select for curiosity rather than for marks.</p>"
+        },
+        {
+          "tag": "B",
+          "html": "<h4>Notes for applicants</h4><p>The one-page letter is where most applications are lost. Supervisors read dozens of them, and the ones that fail are almost always the ones that could have been sent to any project in the faculty. Name the project. Say which part of it you do not yet understand and would like to.</p><p>You are asked for the name of an instructor, not for a written reference. We contact them ourselves, and we ask a single question: does this student ask questions? Choose accordingly — the instructor whose seminar you spoke in is worth more here than the one who gave you the highest mark.</p><p>Finally, a warning that applicants dislike: eight weeks is full-time. Students who plan to hold a second job in the same period should apply next year instead.</p>"
+        },
+        {
+          "tag": "C",
+          "html": "<h4>A former assistant answers questions from students</h4><p><strong>I have no lab experience. Is it worth applying?</strong><br>I had none either. On my first day I was shown how to use a pipette. What my supervisor wanted was somebody who would say 'I don't follow' instead of nodding, and that took me about three weeks to learn.</p><p><strong>What surprised you most?</strong><br>How much of research is repetition. I had imagined discoveries. What I got was the same measurement four hundred times, and the discovery, when it came, was somebody noticing that eleven of those four hundred did not fit.</p><p><strong>Was the stipend enough?</strong><br>It covered my rent and not much else. I would still do it again, but I want to be honest: it is a summer of work, not a summer of earning.</p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 91,
+          "id": "emeraldq091",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, who may apply for an assistantship?",
+          "opts": [
+            "undergraduates in their second year or above",
+            "students with previous laboratory experience",
+            "graduates of the faculty from any year",
+            "students who have already been published"
+          ],
+          "key": 0,
+          "expl": "O texto A diz \"Undergraduates in their second year or above may apply\", e mais adiante afirma que nenhuma experiência prévia de laboratório é exigida."
+        },
+        {
+          "n": 92,
+          "id": "emeraldq092",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text A, what are supervisors asked to look for?",
+          "opts": [
+            "curiosity rather than marks",
+            "the highest average in the faculty",
+            "experience with laboratory equipment",
+            "a written reference from an instructor"
+          ],
+          "key": 0,
+          "expl": "A última linha do texto A é explícita: \"Supervisors are asked to select for curiosity rather than for marks\"."
+        },
+        {
+          "n": 93,
+          "id": "emeraldq093",
+          "topic": "Reading · Propósito",
+          "text": "Why does Text B say that most applications are lost in the one-page letter?",
+          "opts": [
+            "to warn applicants against writing something too general",
+            "to explain why the letter should be longer than one page",
+            "to discourage students from applying in their second year",
+            "to describe how supervisors divide the reading among themselves"
+          ],
+          "key": 0,
+          "expl": "O texto diz que as cartas que fracassam são as que \"could have been sent to any project in the faculty\", e manda nomear o projeto. O alerta é contra a carta genérica."
+        },
+        {
+          "n": 94,
+          "id": "emeraldq094",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text B, what single question is put to the named instructor?",
+          "opts": [
+            "whether the student asks questions",
+            "whether the student attends every seminar",
+            "what mark the student received",
+            "whether the student has laboratory experience"
+          ],
+          "key": 0,
+          "expl": "O texto B diz que a instituição faz o contato e pergunta uma coisa só: \"does this student ask questions?\"."
+        },
+        {
+          "n": 95,
+          "id": "emeraldq095",
+          "topic": "Reading · Inferência",
+          "text": "What does Text B suggest about choosing which instructor to name?",
+          "opts": [
+            "A seminar where you spoke is better than a course where you scored highly.",
+            "The instructor should be from the same department as the supervisor.",
+            "The instructor must agree to write a reference in advance.",
+            "Any instructor from the current year will do equally well."
+          ],
+          "key": 0,
+          "expl": "O texto compara os dois casos e conclui: \"the instructor whose seminar you spoke in is worth more here than the one who gave you the highest mark\"."
+        },
+        {
+          "n": 96,
+          "id": "emeraldq096",
+          "topic": "Reading · Vocabulário",
+          "text": "In Text A, which phrase is closest in meaning to <strong>stipend</strong>?",
+          "opts": [
+            "a fixed sum paid for the work",
+            "a certificate awarded at the end",
+            "a place in a university residence",
+            "a reduction in tuition fees"
+          ],
+          "key": 0,
+          "expl": "O texto C esclarece o sentido ao dizer que ela cobria o aluguel e pouco mais: é um valor pago pelo período de trabalho."
+        },
+        {
+          "n": 97,
+          "id": "emeraldq097",
+          "topic": "Reading · Detalhe",
+          "text": "According to Text C, what did the former assistant have to learn?",
+          "opts": [
+            "to say when she did not understand something",
+            "to use a pipette before the first day",
+            "to work a second job during the summer",
+            "to write up the results for publication"
+          ],
+          "key": 0,
+          "expl": "Ela conta que o orientador queria alguém que dissesse \"I don't follow\" em vez de concordar com a cabeça, \"and that took me about three weeks to learn\". A pipeta ela aprendeu no primeiro dia, no lugar."
+        },
+        {
+          "n": 98,
+          "id": "emeraldq098",
+          "topic": "Reading · Referência",
+          "text": "In Text C, in \"eleven of those four hundred did not fit\", what does <strong>those four hundred</strong> refer to?",
+          "opts": [
+            "the repeated measurements",
+            "the weeks of the programme",
+            "the applications received",
+            "the students in the seminar"
+          ],
+          "key": 0,
+          "expl": "A frase anterior fala do que ela de fato fez: \"the same measurement four hundred times\". São as medições repetidas."
+        },
+        {
+          "n": 99,
+          "id": "emeraldq099",
+          "topic": "Reading · Inferência",
+          "text": "What can be inferred from Text C about the reality of research work?",
+          "opts": [
+            "Most of it is routine, and discovery depends on noticing exceptions.",
+            "It is better suited to students who already know the equipment.",
+            "It produces a publication for every assistant who takes part.",
+            "It is easier than the coursework of the second year."
+          ],
+          "key": 0,
+          "expl": "Ela imaginava descobertas e encontrou repetição, e descreve a descoberta como alguém reparar que onze medições entre quatrocentas não se encaixavam."
+        },
+        {
+          "n": 100,
+          "id": "emeraldq100",
+          "topic": "Reading · Propósito",
+          "text": "Why does the former assistant mention her rent in Text C?",
+          "opts": [
+            "to be honest about how far the stipend goes",
+            "to complain that the programme should pay more",
+            "to explain why she moved closer to the laboratory",
+            "to advise students to apply for housing first"
+          ],
+          "key": 0,
+          "expl": "Ela mesma diz o motivo logo depois: \"I want to be honest: it is a summer of work, not a summer of earning\". A menção mede o alcance da bolsa, e ela acrescenta que faria de novo."
+        }
+      ]
+    }
+  ],
+  "minis": [
+    {
+      "id": "mini1",
+      "name": "Mini Simulado 1",
+      "desc": "Questões 1–5, 20–23, 34–37, 51–55 e 71–75 · 23 questões",
+      "units": [
+        "l1-q01",
+        "l1-q02",
+        "l1-q03",
+        "l1-q04",
+        "l1-q05",
+        "l2-set1",
+        "l3-set1",
+        "gr-q51",
+        "gr-q52",
+        "gr-q53",
+        "gr-q54",
+        "gr-q55",
+        "rd-set1"
+      ]
+    },
+    {
+      "id": "mini2",
+      "name": "Mini Simulado 2",
+      "desc": "Questões 6–10, 24–26, 38–41, 56–60 e 76–80 · 22 questões",
+      "units": [
+        "l1-q06",
+        "l1-q07",
+        "l1-q08",
+        "l1-q09",
+        "l1-q10",
+        "l2-set2",
+        "l3-set2",
+        "gr-q56",
+        "gr-q57",
+        "gr-q58",
+        "gr-q59",
+        "gr-q60",
+        "rd-set2"
+      ]
+    },
+    {
+      "id": "mini3",
+      "name": "Mini Simulado 3",
+      "desc": "Questões 11–14, 27–30, 42–46, 61–65 e 81–90 · 28 questões",
+      "units": [
+        "l1-q11",
+        "l1-q12",
+        "l1-q13",
+        "l1-q14",
+        "l2-set3",
+        "l3-set3",
+        "gr-q61",
+        "gr-q62",
+        "gr-q63",
+        "gr-q64",
+        "gr-q65",
+        "rd-set3"
+      ]
+    },
+    {
+      "id": "mini4",
+      "name": "Mini Simulado 4",
+      "desc": "Questões 15–19, 31–33, 47–50, 66–70 e 91–100 · 27 questões",
+      "units": [
+        "l1-q15",
+        "l1-q16",
+        "l1-q17",
+        "l1-q18",
+        "l1-q19",
+        "l2-set4",
+        "l3-set4",
+        "gr-q66",
+        "gr-q67",
+        "gr-q68",
+        "gr-q69",
+        "gr-q70",
+        "rd-set4"
+      ]
+    }
+  ],
+  "grammarChapters": [
+    {
+      "n": 1,
+      "topic": "Connectors",
+      "metQuestions": 13,
+      "guidePage": 4,
+      "qp": [
+        "Connectors – Addition & Sequence",
+        "Connectors – Cause & Result",
+        "Connectors – Contrast",
+        "Connectors – Purpose & Condition"
+      ]
+    },
+    {
+      "n": 2,
+      "topic": "Gerunds & Infinitives",
+      "metQuestions": 12,
+      "guidePage": 6,
+      "qp": [
+        "Gerunds vs Infinitives",
+        "Gerunds vs Infinitives – Meaning Change",
+        "Gerunds – Prepositions",
+        "Possessive + Gerund",
+        "Verb + Object + Infinitive"
+      ]
+    },
+    {
+      "n": 3,
+      "topic": "Phrasal Verbs & Prepositions",
+      "metQuestions": 11,
+      "guidePage": 8,
+      "qp": [
+        "Phrasal Verbs – MET High-Frequency",
+        "Verb + Preposition",
+        "Adjective + Preposition",
+        "Nouns + Particles"
+      ]
+    },
+    {
+      "n": 4,
+      "topic": "Inversion & Emphasis",
+      "metQuestions": 10,
+      "guidePage": 10,
+      "qp": [
+        "Inversion",
+        "Inversion – Negative Adverbials",
+        "Inversion – Expressions with Only",
+        "Inversion – So/Neither",
+        "Emphatic Forms – Do/Does/Did",
+        "Cleft Sentences",
+        "Cleft Sentences – It Is...That",
+        "Cleft Sentences – What"
+      ]
+    },
+    {
+      "n": 5,
+      "topic": "Pronouns & Determiners",
+      "metQuestions": 10,
+      "guidePage": 12,
+      "qp": [
+        "Reflexive and Intensive Pronouns",
+        "Confusing Words"
+      ]
+    },
+    {
+      "n": 6,
+      "topic": "Comparatives & Superlatives",
+      "metQuestions": 10,
+      "guidePage": 14,
+      "qp": [
+        "Comparatives/Superlatives – Advanced",
+        "Comparatives – Modification",
+        "The + Comparative… The + Comparative",
+        "Comparative + and + Comparative"
+      ]
+    },
+    {
+      "n": 7,
+      "topic": "Embedded Questions & Word Order",
+      "metQuestions": 10,
+      "guidePage": 16,
+      "qp": [
+        "Embedded Questions",
+        "Word Order & Parallel Structure",
+        "If vs Whether / Wh- + Infinitive"
+      ]
+    },
+    {
+      "n": 8,
+      "topic": "Conditionals & Subjunctive",
+      "metQuestions": 7,
+      "guidePage": 18,
+      "qp": [
+        "Zero Conditional",
+        "First Conditional",
+        "Second Conditional",
+        "Third Conditional",
+        "Mixed Conditionals",
+        "Conditionals – Unless/As Long As",
+        "Conditionals – Formal Inversion",
+        "Subjunctive – Wish / If + Were",
+        "Subjunctive – That-Clauses"
+      ]
+    },
+    {
+      "n": 9,
+      "topic": "Adverbs, Modals & Tags",
+      "metQuestions": 7,
+      "guidePage": 20,
+      "qp": [
+        "Adverbs – Almost, Hardly, Still, Yet, Else",
+        "Modal Perfects",
+        "Tag Questions & Short Answers"
+      ]
+    },
+    {
+      "n": 10,
+      "topic": "Tenses",
+      "metQuestions": 6,
+      "guidePage": 22,
+      "qp": [
+        "Present Tenses",
+        "Present Tenses – State Verbs",
+        "Past Tenses",
+        "Past Tenses – While/When",
+        "Used To / Be Used To",
+        "Future Tenses",
+        "Future Tenses – Future Perfect",
+        "Future Continuous"
+      ]
+    },
+    {
+      "n": 11,
+      "topic": "Relative Clauses & Passive",
+      "metQuestions": 4,
+      "guidePage": 24,
+      "qp": [
+        "Relative Pronouns – Advanced",
+        "Relative Pronouns – Non-Defining",
+        "Relative Pronouns – Omission",
+        "Relative Clauses – Special Use of Which",
+        "Passive Voice – All Tenses",
+        "Passive Voice – Modal",
+        "Passive Voice – Continuous",
+        "Passive Voice – Reporting Verbs",
+        "Passive Voice – Two Objects"
+      ]
+    }
+  ],
+  "quickPractice": {
+    "url": "https://pedro-fisk.github.io/fisk-simulador/",
+    "book": "infocus"
+  }
+}

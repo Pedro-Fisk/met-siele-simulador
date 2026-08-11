@@ -1,0 +1,504 @@
+{
+ "l1-q03": {
+  "id": "l1-q03",
+  "arquivo": "l1-q03.mp3",
+  "dur": 24.1,
+  "palavras": 64,
+  "ppm": 159,
+  "ppm_fala": 145,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l2-set2": {
+  "id": "l2-set2",
+  "arquivo": "l2-q24-26.mp3",
+  "dur": 126.2,
+  "palavras": 227,
+  "ppm": 108,
+  "ppm_fala": 151,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 7.7
+   },
+   {
+    "n": 24,
+    "t": 79.3
+   },
+   {
+    "n": 25,
+    "t": 97.4
+   },
+   {
+    "n": 26,
+    "t": 115.8
+   }
+  ]
+ },
+ "l3-set2": {
+  "id": "l3-set2",
+  "arquivo": "l3-q38-41.mp3",
+  "dur": 169.2,
+  "palavras": 300,
+  "ppm": 106,
+  "ppm_fala": 148,
+  "cues": [
+   {
+    "label": "Lecture",
+    "t": 7.7
+   },
+   {
+    "n": 38,
+    "t": 104.2
+   },
+   {
+    "n": 39,
+    "t": 122.2
+   },
+   {
+    "n": 40,
+    "t": 141.7
+   },
+   {
+    "n": 41,
+    "t": 161.7
+   }
+  ]
+ },
+ "l1-q01": {
+  "id": "l1-q01",
+  "arquivo": "l1-q01.mp3",
+  "dur": 24.1,
+  "palavras": 66,
+  "ppm": 164,
+  "ppm_fala": 151,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q02": {
+  "id": "l1-q02",
+  "arquivo": "l1-q02.mp3",
+  "dur": 24.4,
+  "palavras": 64,
+  "ppm": 157,
+  "ppm_fala": 146,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q04": {
+  "id": "l1-q04",
+  "arquivo": "l1-q04.mp3",
+  "dur": 18.6,
+  "palavras": 46,
+  "ppm": 149,
+  "ppm_fala": 136,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q05": {
+  "id": "l1-q05",
+  "arquivo": "l1-q05.mp3",
+  "dur": 22.0,
+  "palavras": 54,
+  "ppm": 147,
+  "ppm_fala": 140,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.3
+   }
+  ]
+ },
+ "l1-q06": {
+  "id": "l1-q06",
+  "arquivo": "l1-q06.mp3",
+  "dur": 23.8,
+  "palavras": 59,
+  "ppm": 149,
+  "ppm_fala": 137,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.3
+   }
+  ]
+ },
+ "l1-q07": {
+  "id": "l1-q07",
+  "arquivo": "l1-q07.mp3",
+  "dur": 22.1,
+  "palavras": 50,
+  "ppm": 136,
+  "ppm_fala": 130,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q08": {
+  "id": "l1-q08",
+  "arquivo": "l1-q08.mp3",
+  "dur": 22.5,
+  "palavras": 57,
+  "ppm": 152,
+  "ppm_fala": 130,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q09": {
+  "id": "l1-q09",
+  "arquivo": "l1-q09.mp3",
+  "dur": 17.1,
+  "palavras": 40,
+  "ppm": 140,
+  "ppm_fala": 133,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q10": {
+  "id": "l1-q10",
+  "arquivo": "l1-q10.mp3",
+  "dur": 21.3,
+  "palavras": 54,
+  "ppm": 152,
+  "ppm_fala": 141,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q11": {
+  "id": "l1-q11",
+  "arquivo": "l1-q11.mp3",
+  "dur": 23.4,
+  "palavras": 57,
+  "ppm": 146,
+  "ppm_fala": 128,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q12": {
+  "id": "l1-q12",
+  "arquivo": "l1-q12.mp3",
+  "dur": 19.5,
+  "palavras": 50,
+  "ppm": 154,
+  "ppm_fala": 139,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.2
+   }
+  ]
+ },
+ "l1-q13": {
+  "id": "l1-q13",
+  "arquivo": "l1-q13.mp3",
+  "dur": 20.3,
+  "palavras": 44,
+  "ppm": 130,
+  "ppm_fala": 121,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.5
+   }
+  ]
+ },
+ "l1-q14": {
+  "id": "l1-q14",
+  "arquivo": "l1-q14.mp3",
+  "dur": 21.4,
+  "palavras": 53,
+  "ppm": 149,
+  "ppm_fala": 137,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.5
+   }
+  ]
+ },
+ "l1-q15": {
+  "id": "l1-q15",
+  "arquivo": "l1-q15.mp3",
+  "dur": 20.5,
+  "palavras": 44,
+  "ppm": 129,
+  "ppm_fala": 123,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.4
+   }
+  ]
+ },
+ "l1-q16": {
+  "id": "l1-q16",
+  "arquivo": "l1-q16.mp3",
+  "dur": 20.2,
+  "palavras": 49,
+  "ppm": 146,
+  "ppm_fala": 132,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.4
+   }
+  ]
+ },
+ "l1-q17": {
+  "id": "l1-q17",
+  "arquivo": "l1-q17.mp3",
+  "dur": 14.1,
+  "palavras": 31,
+  "ppm": 132,
+  "ppm_fala": 124,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.5
+   }
+  ]
+ },
+ "l1-q18": {
+  "id": "l1-q18",
+  "arquivo": "l1-q18.mp3",
+  "dur": 18.4,
+  "palavras": 42,
+  "ppm": 137,
+  "ppm_fala": 128,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.4
+   }
+  ]
+ },
+ "l1-q19": {
+  "id": "l1-q19",
+  "arquivo": "l1-q19.mp3",
+  "dur": 19.5,
+  "palavras": 44,
+  "ppm": 135,
+  "ppm_fala": 130,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 2.4
+   }
+  ]
+ },
+ "l2-set1": {
+  "id": "l2-set1",
+  "arquivo": "l2-q20-23.mp3",
+  "dur": 159.9,
+  "palavras": 288,
+  "ppm": 108,
+  "ppm_fala": 159,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 10.9
+   },
+   {
+    "n": 20,
+    "t": 92.2
+   },
+   {
+    "n": 21,
+    "t": 110.2
+   },
+   {
+    "n": 22,
+    "t": 129.9
+   },
+   {
+    "n": 23,
+    "t": 149.6
+   }
+  ]
+ },
+ "l2-set3": {
+  "id": "l2-set3",
+  "arquivo": "l2-q27-30.mp3",
+  "dur": 151.9,
+  "palavras": 261,
+  "ppm": 103,
+  "ppm_fala": 152,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 8.1
+   },
+   {
+    "n": 27,
+    "t": 86.8
+   },
+   {
+    "n": 28,
+    "t": 105.2
+   },
+   {
+    "n": 29,
+    "t": 124.4
+   },
+   {
+    "n": 30,
+    "t": 144.2
+   }
+  ]
+ },
+ "l2-set4": {
+  "id": "l2-set4",
+  "arquivo": "l2-q31-33.mp3",
+  "dur": 122.9,
+  "palavras": 227,
+  "ppm": 111,
+  "ppm_fala": 158,
+  "cues": [
+   {
+    "label": "Conversation",
+    "t": 7.8
+   },
+   {
+    "n": 31,
+    "t": 74.8
+   },
+   {
+    "n": 32,
+    "t": 92.9
+   },
+   {
+    "n": 33,
+    "t": 111.8
+   }
+  ]
+ },
+ "l3-set1": {
+  "id": "l3-set1",
+  "arquivo": "l3-q34-37.mp3",
+  "dur": 167.4,
+  "palavras": 298,
+  "ppm": 107,
+  "ppm_fala": 151,
+  "cues": [
+   {
+    "label": "Lecture",
+    "t": 9.4
+   },
+   {
+    "n": 34,
+    "t": 104.5
+   },
+   {
+    "n": 35,
+    "t": 122.5
+   },
+   {
+    "n": 36,
+    "t": 141.1
+   },
+   {
+    "n": 37,
+    "t": 159.8
+   }
+  ]
+ },
+ "l3-set3": {
+  "id": "l3-set3",
+  "arquivo": "l3-q42-46.mp3",
+  "dur": 191.5,
+  "palavras": 322,
+  "ppm": 101,
+  "ppm_fala": 150,
+  "cues": [
+   {
+    "label": "Lecture",
+    "t": 8.5
+   },
+   {
+    "n": 42,
+    "t": 104.4
+   },
+   {
+    "n": 43,
+    "t": 122.4
+   },
+   {
+    "n": 44,
+    "t": 142.3
+   },
+   {
+    "n": 45,
+    "t": 161.6
+   },
+   {
+    "n": 46,
+    "t": 179.7
+   }
+  ]
+ },
+ "l3-set4": {
+  "id": "l3-set4",
+  "arquivo": "l3-q47-50.mp3",
+  "dur": 165.1,
+  "palavras": 290,
+  "ppm": 105,
+  "ppm_fala": 151,
+  "cues": [
+   {
+    "label": "Lecture",
+    "t": 7.8
+   },
+   {
+    "n": 47,
+    "t": 101.6
+   },
+   {
+    "n": 48,
+    "t": 119.8
+   },
+   {
+    "n": 49,
+    "t": 139.3
+   },
+   {
+    "n": 50,
+    "t": 158.2
+   }
+  ]
+ }
+}
