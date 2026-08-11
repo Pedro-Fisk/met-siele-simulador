@@ -139,6 +139,22 @@
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: .9rem;
     }
+    /* Os minis, uma coluna por prova. Abaixo de 640px as colunas viram uma só,
+       empilhadas, e o título de cada prova continua separando as duas. */
+    .minis-provas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.4rem;
+      align-items: start;
+    }
+    .minis-col { display: flex; flex-direction: column; gap: .9rem; }
+    .minis-col > .mc-head {
+      font-family: var(--font-h); font-weight: 800; font-size: .82rem;
+      letter-spacing: .04em; display: flex; align-items: center; gap: .45rem;
+    }
+    .minis-col > .mc-head .mc-dot {
+      width: .7rem; height: .7rem; border-radius: 999px; display: inline-block;
+    }
     .pick-card {
       display: flex; flex-direction: column; align-items: flex-start; gap: .6rem;
       background: var(--surface);
@@ -701,7 +717,11 @@
       <div class="cards-grid" id="full-grid"></div>
 
       <div class="section-label" id="minis-label">Mini simulados</div>
-      <div class="cards-grid" id="minis-grid"></div>
+      <!-- Uma coluna por prova: todos os minis do RED de um lado, os do
+           EMERALD do outro. Numa grade corrida eles se intercalavam e o
+           aluno precisava ler a etiqueta de cada card para saber de qual
+           prova era. -->
+      <div class="minis-provas" id="minis-grid"></div>
 
       <div class="section-label" id="sections-label" style="display:none">Por seção</div>
       <div class="cards-grid" id="sections-grid" style="display:none"></div>
@@ -1281,12 +1301,27 @@
       fg.appendChild(b);
     });
 
-    // Mini cards, de todas as provas
+    /* Mini cards, UMA COLUNA POR PROVA. Numa grade corrida os minis das duas
+       provas se intercalavam, e o aluno tinha de ler a etiqueta de cada card
+       para saber de qual prova era. */
     const mg = $('minis-grid');
     mg.innerHTML = '';
     ORDEM.forEach(k => {
       const d = BANCOS[k];
-      (d.minis || []).forEach(m => {
+      if (!(d.minis || []).length) return;
+      const col = document.createElement('div');
+      col.className = 'minis-col';
+      /* Com uma prova só, o título da coluna seria repetir o que a seção já
+         diz. Ele só aparece quando há duas para separar. */
+      if (ORDEM.length > 1) {
+        const h = document.createElement('div');
+        h.className = 'mc-head';
+        h.style.color = d.cor || 'var(--red)';
+        h.innerHTML = '<span class="mc-dot" style="background:' + esc(d.cor || '#d81f26') + '"></span>'
+          + esc(tagDe(d));
+        col.appendChild(h);
+      }
+      d.minis.forEach(m => {
         const b = document.createElement('button');
         b.className = 'pick-card pick-mini';
         if (d.cor) b.style.setProperty('--accent', d.cor);
@@ -1294,8 +1329,9 @@
           + '<p>' + esc(m.desc) + '</p>';
         b.addEventListener('click', () =>
           abrir(d, { type: 'mini', id: m.id, label: m.name + ' ' + tagDe(d) }));
-        mg.appendChild(b);
+        col.appendChild(b);
       });
+      mg.appendChild(col);
     });
 
     // Section cards (professor), também de todas as provas
