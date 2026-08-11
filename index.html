@@ -617,6 +617,13 @@
     .btn-copy { white-space: nowrap; padding: .6rem 1.2rem; font-size: .85rem; }
 
     /* ── Painel de resultados (professor) ── */
+    .log-student { margin-top: 1.6rem; }
+    .log-student h4 {
+      font-size: .96rem; font-weight: 800;
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem;
+    }
+    .log-student .ls-meta { font-size: .76rem; font-weight: 700; color: var(--text-soft); }
+    .log-student .log-table-wrap { margin-top: .5rem; }
     .log-table-wrap { overflow-x: auto; margin-top: 1rem; }
     .log-table {
       width: 100%; border-collapse: collapse;
@@ -953,7 +960,7 @@
      então: o aluno via a nota na tela e recebia "não foi possível enviar".
      SEM RAF → a rota antiga, que continua valendo para o uso solto do
      simulador (só o nome digitado): não credita nada e o dossiê não enxerga. */
-  function sendResultToCloud(entry, statusEl, onFail) {
+  function sendResultToCloud(entry, statusEl, onFail, onDone) {
     if (!CLOUD_ON) { if (statusEl) statusEl.textContent = ''; return; }
     /* Rascunho não grava. Um simulado em construção entrando no histórico do
        aluno sujaria o painel de diagnóstico com questão que ainda vai mudar. */
@@ -990,6 +997,9 @@
         if (statusEl) statusEl.textContent = '☁️ Resultado enviado ao professor automaticamente ✓';
         // Fisk Dólares: o backend credita e devolve o ganho em res.fd
         if (res.fd && res.fd.credito > 0) fdToast(res.fd.credito);
+        /* Só agora o histórico vale a pena: antes do envio, a tentativa de
+           agora ainda não está na planilha, e o aluno veria a lista sem ela. */
+        if (onDone) onDone();
       }
       else fail('⚠️ ' + (res.error || 'Não foi possível enviar o resultado agora.'));
     }).catch(() => fail('⚠️ Sem conexão para enviar o resultado agora.'));
@@ -1053,6 +1063,10 @@
     }
   }
 
+  /* O painel agrupa por ALUNO, não por data. A lista corrida respondia "quem
+     fez simulado esta semana"; a pergunta do professor é "como fulano está
+     indo", e para isso as tentativas da mesma pessoa precisam ficar juntas.
+     A exportação em CSV continua corrida: planilha se ordena sozinha. */
   function renderLogTable() {
     const wrap = $('log-table-wrap');
     const list = loadLog().slice().sort((a, b) => b.t - a.t);
@@ -1061,15 +1075,51 @@
       return;
     }
     const heads = groupHeaders();
-    let html = '<table class="log-table"><thead><tr><th>Data</th><th>Aluno</th><th>Simulado</th><th>Acertos</th><th>%</th>' +
-      heads.map(h => '<th>' + esc(h) + '</th>').join('') + '</tr></thead><tbody>';
+    /* Sem RAF aqui: o registro que chega por código digitado não tem. Agrupar
+       por nome é o que dá, e nome repetido junta duas pessoas numa só. Por
+       isso o cabeçalho do grupo mostra o RAF quando ele existe. */
+    const chave = e => (e.raf ? 'raf:' + e.raf : 'nome:' + String(e.n || '').trim().toLowerCase());
+    const grupos = {}, ordem = [];
     list.forEach(e => {
-      const d = new Date(e.t).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' });
-      const vals = [e.L, e.R, e.O];
-      html += '<tr><td>' + d + '</td><td>' + esc(e.n) + '</td><td>' + esc(e.s) + '</td><td>' + e.c + '/' + e.q + '</td><td>' + Math.round(e.c / e.q * 100) + '%</td>' +
-        heads.map((h, i) => '<td>' + esc(cefrLabelOf(vals[i], i)) + '</td>').join('') + '</tr>';
+      const k = chave(e);
+      if (!grupos[k]) { grupos[k] = []; ordem.push(k); }
+      grupos[k].push(e);
     });
-    wrap.innerHTML = html + '</tbody></table>';
+    ordem.sort((a, b) => String(grupos[a][0].n || '').localeCompare(String(grupos[b][0].n || ''), 'pt'));
+
+    const pct = e => Math.round(e.c / e.q * 100);
+    wrap.innerHTML = ordem.map(k => {
+      const tent = grupos[k];                    // já vem do mais novo para o mais antigo
+      const melhor = Math.max.apply(null, tent.map(pct));
+      /* A evolução só é honesta entre tentativas do MESMO simulado: o mini 3
+         é mais difícil que o mini 1, e comparar os dois mediria a prova, não
+         o aluno. Sem par repetido, não afirmamos nada. */
+      let evo = '';
+      for (let i = 0; i < tent.length && !evo; i++) {
+        const par = tent.slice(i + 1).filter(x => x.s === tent[i].s)[0];
+        if (!par) continue;
+        const d = pct(tent[i]) - pct(par);
+        evo = d > 0 ? '▲ ' + d + ' pp em ' + tent[i].s
+            : d < 0 ? '▼ ' + (-d) + ' pp em ' + tent[i].s
+            : '= repetiu em ' + tent[i].s;
+      }
+      return '<div class="log-student">' +
+        '<h4>' + esc(tent[0].n || 'sem nome') +
+          '<span class="ls-meta">' + tent.length + (tent.length === 1 ? ' tentativa' : ' tentativas') +
+          ' · melhor ' + melhor + '%' + (evo ? ' · ' + esc(evo) : '') +
+          (tent[0].raf ? ' · RAF ' + esc(tent[0].raf) : '') + '</span></h4>' +
+        '<div class="log-table-wrap"><table class="log-table"><thead><tr><th>Data</th><th>Simulado</th>' +
+        '<th>Acertos</th><th>%</th>' + heads.map(h => '<th>' + esc(h) + '</th>').join('') +
+        '</tr></thead><tbody>' +
+        tent.map(e => {
+          const d = new Date(e.t).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' });
+          const vals = [e.L, e.R, e.O];
+          return '<tr><td>' + d + '</td><td>' + esc(e.s) + '</td><td>' + e.c + '/' + e.q + '</td>' +
+            '<td>' + pct(e) + '%</td>' +
+            heads.map((h, i) => '<td>' + esc(cefrLabelOf(vals[i], i)) + '</td>').join('') + '</tr>';
+        }).join('') +
+        '</tbody></table></div></div>';
+    }).join('');
   }
   function showLog() {
     renderLogTable();
@@ -1938,6 +1988,78 @@
     body.appendChild(nota);
   }
 
+  /* ── Os simulados anteriores do aluno ────────────────────────────────────
+     Só existe para quem entra pelo Portal: é o RAF que identifica a pessoa,
+     e sem ele o servidor não tem a quem atribuir tentativa nenhuma. O nome
+     digitado não serve, porque dois alunos podem digitar o mesmo.
+     A rota `history` devolve TODAS as ferramentas do aluno; aqui fica só esta,
+     senão a lista encheria de Quick Practice e o aluno não acharia o simulado. */
+  function montarHistorico(box) {
+    if (!CLOUD_ON || !state.studentRaf) return;
+    const alvo = document.createElement('div');
+    alvo.id = 'hist-simulados';
+    box.appendChild(alvo);
+  }
+
+  function carregarHistorico() {
+    const alvo = $('hist-simulados');
+    if (!alvo) return;
+    fetch(CLOUD.endpoint + '?action=history&raf=' + encodeURIComponent(state.studentRaf))
+      .then(r => r.json())
+      .then(res => {
+        if (!res.ok) return;
+        const meus = (res.results || [])
+          .filter(d => d.tool === CLOUD.tool && d.q)
+          .sort((a, b) => (b.t || 0) - (a.t || 0))
+          .slice(0, 12);
+        /* Com uma tentativa só não há histórico, há a de agora. */
+        if (meus.length < 2) return;
+
+        const label = document.createElement('div');
+        label.className = 'section-label';
+        label.textContent = 'Seus simulados anteriores';
+        alvo.appendChild(label);
+
+        /* A comparação que interessa é com a MESMA prova: o mini 3 é mais
+           difícil que o mini 1, e comparar os dois diria só isso. */
+        const agora = meus[0];
+        const igual = meus.slice(1).filter(d => d.s === agora.s)[0];
+        if (igual) {
+          const pctA = Math.round(agora.c / agora.q * 100);
+          const pctB = Math.round(igual.c / igual.q * 100);
+          const dif = pctA - pctB;
+          const p = document.createElement('p');
+          p.className = 'cefr-note';
+          p.textContent = dif > 0
+            ? '📈 Você subiu ' + dif + ' pontos percentuais neste mesmo simulado, de ' + pctB + '% para ' + pctA + '%.'
+            : dif < 0
+              ? '📉 Neste mesmo simulado você fez ' + pctA + '%, contra ' + pctB + '% da vez anterior.'
+              : '➡️ Você repetiu os ' + pctA + '% da vez anterior neste mesmo simulado.';
+          alvo.appendChild(p);
+        }
+
+        const heads = groupHeaders();
+        const wrap = document.createElement('div');
+        wrap.className = 'log-table-wrap';
+        wrap.innerHTML = '<table class="log-table"><thead><tr><th>Data</th><th>Simulado</th>' +
+          '<th>Acertos</th><th>%</th>' + heads.map(h => '<th>' + esc(h) + '</th>').join('') +
+          '</tr></thead><tbody>' +
+          meus.map((d, i) => {
+            const data = d.t ? new Date(d.t).toLocaleDateString('pt-BR',
+              { day: '2-digit', month: '2-digit', year: '2-digit' }) : '-';
+            const vals = [d.L, d.R, d.O];
+            return '<tr><td>' + data + (i === 0 ? ' <b>· agora</b>' : '') + '</td>' +
+              '<td>' + esc(d.s || '-') + '</td>' +
+              '<td>' + d.c + '/' + d.q + '</td>' +
+              '<td>' + Math.round(d.c / d.q * 100) + '%</td>' +
+              heads.map((h, k) => '<td>' + esc(cefrLabelOf(vals[k], k)) + '</td>').join('') +
+            '</tr>';
+          }).join('') + '</tbody></table>';
+        alvo.appendChild(wrap);
+      })
+      .catch(() => {});
+  }
+
   function renderResults() {
     const body = $('results-body');
     body.innerHTML = '';
@@ -2046,11 +2168,15 @@
       const retryBtn = cloudWrap.querySelector('#cloud-retry');
       const trySend = () => {
         retryBtn.style.display = 'none';
-        sendResultToCloud(entry, statusEl, () => { retryBtn.style.display = 'inline-flex'; });
+        sendResultToCloud(entry, statusEl, () => { retryBtn.style.display = 'inline-flex'; },
+                          carregarHistorico);
       };
       retryBtn.addEventListener('click', trySend);
       trySend();
     }
+
+    // Os simulados anteriores deste aluno, preenchidos quando o envio conclui.
+    montarHistorico(body);
 
     // Nota: a correção detalhada (gabarito comentado) não aparece para o aluno —
     // é feita com o professor no Teacher Mode. Aqui mostramos só desempenho e nível.
