@@ -696,13 +696,9 @@
       </div>
 
       <div class="section-label" id="full-label">Simulado completo</div>
-      <div class="cards-grid">
-        <button class="pick-card pick-full" data-scope="full">
-          <div class="pick-icon">🎓</div>
-          <h3>Simulado Completo</h3>
-          <p id="full-desc">As 100 questões na sequência oficial: Listening (Parts 1–3), Grammar e Reading. Reading &amp; Grammar com tempo de 65 min.</p>
-        </button>
-      </div>
+      <!-- Um card por prova. São bancos diferentes do MESMO exame (RED, EMERALD),
+           e o aluno escolhe qual fazer sem trocar de página. Montado em JS. -->
+      <div class="cards-grid" id="full-grid"></div>
 
       <div class="section-label" id="minis-label">Mini simulados</div>
       <div class="cards-grid" id="minis-grid"></div>
@@ -836,7 +832,14 @@
      nem do aluno logado, nem solto. Para publicar, tire o `rascunho` do JSON. */
   const EXAMS = { met: 'questions/red.json', siele: 'questions/siele-m0.json',
                   emerald: 'questions/emerald.json' };
+  /* PROVAS IRMÃS: bancos diferentes do MESMO exame, que dividem uma home só.
+     O aluno abre "Treino MET" e vê os dois simulados e os oito minis na mesma
+     página, em vez de precisar de uma URL por prova. O SIELE é outro exame e
+     fica sozinho — misturar as duas famílias mandaria o aluno de espanhol
+     fazer o MET. Prova nova entra aqui e no EXAMS, e mais nada. */
+  const FAMILIAS = { met: ['met', 'emerald'], emerald: ['met', 'emerald'], siele: ['siele'] };
   const EXAM = (new URLSearchParams(location.search).get('exame') || 'met').toLowerCase();
+  const FAMILIA = FAMILIAS[EXAM] || FAMILIAS.met;
   const TEST_FILE = EXAMS[EXAM] || EXAMS.met;
 
   /* Backend do Fisk Hub (Google Apps Script + Sheets) — envio/consulta de resultados */
@@ -1155,26 +1158,50 @@
   });
 
   /* ══════════════ Carregamento ══════════════ */
-  fetch(TEST_FILE)
-    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(d => {
-      DATA = d;
-      if (Array.isArray(d.letters) && d.letters.length) LETTERS = d.letters;
-      if (d.toolId) CLOUD.tool = d.toolId;
-      /* Sem cefrGroups declarados, cai no comportamento histórico do MET:
-         Listening são as questões até 50, Reading & Grammar as demais. */
-      if (!d.cefrGroups) {
-        d.cefrGroups = [
-          { label: 'Listening', short: 'Listening', upTo: 50, scale: 80, bands: d.cefr.bands },
-          { label: 'Reading & Grammar', short: 'R&G', from: 51, scale: 80, bands: d.cefr.bands },
-          { label: 'Nível geral estimado', short: 'Geral', avgOf: [0, 1], scale: 80, bands: d.cefr.bands, isOverall: true }
-        ];
-      }
-      d.units.forEach(u => {
-        unitById[u.id] = u;
-        u.questions.forEach(q => unitOfQ[q.n] = u);
-      });
-      d.sections.forEach(s => sectionById[s.id] = s);
+  /* Todos os bancos da família ficam carregados; `DATA` é o que está em uso.
+     Trocar de prova é trocar o DATA e refazer os índices, sem recarregar. */
+  const BANCOS = {};
+
+  function normaliza(d) {
+    /* Sem cefrGroups declarados, cai no comportamento histórico do MET:
+       Listening são as questões até 50, Reading & Grammar as demais. */
+    if (!d.cefrGroups) {
+      d.cefrGroups = [
+        { label: 'Listening', short: 'Listening', upTo: 50, scale: 80, bands: d.cefr.bands },
+        { label: 'Reading & Grammar', short: 'R&G', from: 51, scale: 80, bands: d.cefr.bands },
+        { label: 'Nível geral estimado', short: 'Geral', avgOf: [0, 1], scale: 80, bands: d.cefr.bands, isOverall: true }
+      ];
+    }
+    return d;
+  }
+
+  /* Põe um banco em uso. Os índices são RECONSTRUÍDOS do zero: `gr-q51` existe
+     nos dois bancos, e um mapa acumulado devolveria a questão da prova errada.
+     Este é o erro que o aluno não veria acontecer, só o resultado estranho. */
+  function aplicarBanco(d) {
+    DATA = d;
+    LETTERS = (Array.isArray(d.letters) && d.letters.length) ? d.letters : ['A', 'B', 'C', 'D'];
+    if (d.toolId) CLOUD.tool = d.toolId;
+    unitById = {}; sectionById = {}; unitOfQ = {};
+    d.units.forEach(u => {
+      unitById[u.id] = u;
+      u.questions.forEach(q => unitOfQ[q.n] = u);
+    });
+    d.sections.forEach(s => sectionById[s.id] = s);
+  }
+
+  Promise.all(FAMILIA.map(k =>
+    fetch(EXAMS[k])
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(d => { BANCOS[k] = normaliza(d); })
+      /* Uma prova que não carrega não pode derrubar a outra: a home mostra as
+         que vieram. Sem isto, um JSON com erro tirava a ferramenta do ar. */
+      .catch(err => { console.warn('banco', k, 'não carregou:', err.message); })
+  ))
+    .then(() => {
+      const atual = BANCOS[EXAM] ? EXAM : FAMILIA.filter(k => BANCOS[k])[0];
+      if (!atual) throw new Error('nenhum banco carregou');
+      aplicarBanco(BANCOS[atual]);
       buildHome();
     })
     .catch(err => {
@@ -1182,16 +1209,21 @@
     });
 
   function buildHome() {
-    $('hero-sub').textContent = DATA.examLabel + ' · ' + DATA.name;
-    /* O nome da prova é uma cor, e a tela veste essa cor. Banco sem `cor`
-       continua vermelho, que é o que o RED sempre foi. */
+    const provas = FAMILIA.filter(k => BANCOS[k]);
+    /* Com mais de uma prova na página, o subtítulo não pode nomear uma delas:
+       quem nomeia cada prova é a etiqueta do card. */
+    $('hero-sub').textContent = provas.length > 1
+      ? DATA.examLabel + ' · ' + provas.length + ' provas'
+      : DATA.examLabel + ' · ' + DATA.name;
+    /* O nome da prova é uma cor, e a tela veste essa cor. Com duas provas na
+       home, cada card veste a sua e o cromo fica com a da prova aberta. */
     if (DATA.cor) document.documentElement.style.setProperty('--cor-exame', DATA.cor);
-    if (DATA.rascunho) {
+    if (provas.some(k => BANCOS[k].rascunho)) {
       var av = document.createElement('div');
       av.className = 'cefr-note';
       av.style.cssText = 'max-width:680px;margin:.9rem auto 0;border-left-color:#D97706';
-      av.textContent = '🚧 Simulado em construção, escrito pela Fisk. Não é uma prova oficial da '
-        + 'Michigan Language Assessment, e nada que você responder aqui é registrado.';
+      av.textContent = '🚧 Simulado marcado com 🚧 está em construção, escrito pela Fisk. Não é uma '
+        + 'prova oficial da Michigan Language Assessment, e nada que você responder nele é registrado.';
       $('hero-sub').insertAdjacentElement('afterend', av);
     }
     /* Identidade da ferramenta. O HTML nasce com os textos do MET; quando o
@@ -1203,12 +1235,24 @@
     $('home-footer').textContent = 'FISK Personalizado · ' + TOOL_NAME;
     $('full-label').textContent = DATA.fullSectionLabel || 'Simulado completo';
     $('minis-label').textContent = DATA.minisSectionLabel || 'Mini simulados';
-    if (DATA.fullDesc) $('full-desc').textContent = DATA.fullDesc;
     if (DATA.homeNote) $('home-note').textContent = DATA.homeNote;
-    const TAG = '#' + DATA.id;
-    const tagHTML = ' <span class="test-tag">' + esc(TAG) + '</span>';
-    const FULL_LABEL = DATA.fullLabel || 'Simulado Completo';
-    document.querySelector('[data-scope="full"] h3').innerHTML = esc(FULL_LABEL) + tagHTML;
+
+    /* As provas da família, na ordem em que foram declaradas. Cada uma vira um
+       card de completo e os minis dela, todos na mesma home. */
+    const ORDEM = FAMILIA.filter(k => BANCOS[k]);
+    const DESC_PADRAO = 'As 100 questões na sequência oficial: Listening (Parts 1–3), '
+      + 'Grammar e Reading. Reading & Grammar com tempo de 65 min.';
+    const tagDe = d => '#' + d.id;
+    const tagHTML = d => ' <span class="test-tag"' + (d.cor ? ' style="color:' + esc(d.cor) + '"' : '')
+      + '>' + esc(tagDe(d)) + '</span>' + (d.rascunho ? ' 🚧' : '');
+
+    /* Abrir uma prova é trocar o banco em uso e só então começar. A cor da
+       tela acompanha, senão o aluno faria o EMERALD numa página vermelha. */
+    function abrir(d, scope) {
+      if (DATA !== d) aplicarBanco(d);
+      document.documentElement.style.setProperty('--cor-exame', d.cor || '#d81f26');
+      startPractice(scope);
+    }
     if (PROF_MODE) {
       $('prof-badge').style.display = 'inline-block';
       $('name-wrap').style.display = 'none';
@@ -1219,31 +1263,60 @@
       $('open-log').addEventListener('click', showLog);
       $('home-note').textContent = 'No modo professor, você conduz o simulado questão a questão: projeta na TV, controla o áudio, a turma vota e você revela a resposta com o comentário.';
     }
-    // Mini cards
+    // Simulado completo: um card por prova
+    const fg = $('full-grid');
+    fg.innerHTML = '';
+    ORDEM.forEach((k, i) => {
+      const d = BANCOS[k];
+      const rot = d.fullLabel || 'Simulado Completo';
+      const b = document.createElement('button');
+      b.className = 'pick-card pick-full';
+      if (d.cor) b.style.setProperty('--accent', d.cor);
+      // o tour guiado aponta para o primeiro card do completo
+      if (i === 0) b.dataset.scope = 'full';
+      b.innerHTML = '<div class="pick-icon">🎓</div><h3>' + esc(rot) + tagHTML(d) + '</h3>'
+        + '<p>' + esc(d.fullDesc || DESC_PADRAO) + '</p>';
+      b.addEventListener('click', () =>
+        abrir(d, { type: 'full', id: 'full', label: rot + ' ' + tagDe(d) }));
+      fg.appendChild(b);
+    });
+
+    // Mini cards, de todas as provas
     const mg = $('minis-grid');
     mg.innerHTML = '';
-    DATA.minis.forEach((m, i) => {
-      const b = document.createElement('button');
-      b.className = 'pick-card pick-mini';
-      b.innerHTML = '<div class="pick-icon">⚡️</div><h3>' + esc(m.name) + tagHTML + '</h3><p>' + esc(m.desc) + '</p>';
-      b.addEventListener('click', () => startPractice({ type: 'mini', id: m.id, label: m.name + ' ' + TAG }));
-      mg.appendChild(b);
+    ORDEM.forEach(k => {
+      const d = BANCOS[k];
+      (d.minis || []).forEach(m => {
+        const b = document.createElement('button');
+        b.className = 'pick-card pick-mini';
+        if (d.cor) b.style.setProperty('--accent', d.cor);
+        b.innerHTML = '<div class="pick-icon">⚡️</div><h3>' + esc(m.name) + tagHTML(d) + '</h3>'
+          + '<p>' + esc(m.desc) + '</p>';
+        b.addEventListener('click', () =>
+          abrir(d, { type: 'mini', id: m.id, label: m.name + ' ' + tagDe(d) }));
+        mg.appendChild(b);
+      });
     });
-    // Section cards (professor)
+
+    // Section cards (professor), também de todas as provas
     if (PROF_MODE) {
       const sg = $('sections-grid');
       sg.innerHTML = '';
-      DATA.sections.forEach(s => {
-        const n = DATA.units.filter(u => u.section === s.id).reduce((a, u) => a + u.questions.length, 0);
-        const b = document.createElement('button');
-        b.className = 'pick-card pick-sec';
-        b.innerHTML = '<div class="pick-icon">' + (s.kind === 'listening' ? '🎧' : '📖') + '</div><h3>' + esc(s.name) + tagHTML + '</h3><p>' + n + ' questões</p>';
-        b.addEventListener('click', () => startPractice({ type: 'section', id: s.id, label: s.name + ' ' + TAG }));
-        sg.appendChild(b);
+      ORDEM.forEach(k => {
+        const d = BANCOS[k];
+        d.sections.forEach(s => {
+          const n = d.units.filter(u => u.section === s.id).reduce((a, u) => a + u.questions.length, 0);
+          const b = document.createElement('button');
+          b.className = 'pick-card pick-sec';
+          if (d.cor) b.style.setProperty('--accent', d.cor);
+          b.innerHTML = '<div class="pick-icon">' + (s.kind === 'listening' ? '🎧' : '📖') + '</div>'
+            + '<h3>' + esc(s.name) + tagHTML(d) + '</h3><p>' + n + ' questões</p>';
+          b.addEventListener('click', () =>
+            abrir(d, { type: 'section', id: s.id, label: s.name + ' ' + tagDe(d) }));
+          sg.appendChild(b);
+        });
       });
     }
-    document.querySelector('[data-scope="full"]').addEventListener('click', () =>
-      startPractice({ type: 'full', id: 'full', label: FULL_LABEL + ' ' + TAG }));
     $('student-name').addEventListener('input', e => { state.studentName = e.target.value.trim(); });
 
     // Entrada pelo Portal do Aluno: identidade já vem na URL (?raf=&nome=)
@@ -2510,8 +2583,15 @@
 (function () {
   var el = document.getElementById('mst-back');
   if (!el) return;
-  if (/[?&]raf=/.test(location.search)) el.href = 'https://portalfisk.com.br/';
+  /* Quem chegou com ?raf= veio do Portal e volta para lá, não para o Hub.
+     O RAF vai junto: sem ele, a aba que não tem histórico (link colado, PWA
+     aberto do zero) cairia no formulário de login, e o aluno leria isso como
+     ter sido deslogado. O Portal entra direto e limpa o código da URL. */
+  var raf = (new URLSearchParams(location.search).get('raf') || '').trim();
+  if (raf) el.href = 'https://portalfisk.com.br/?raf=' + encodeURIComponent(raf);
   el.addEventListener('click', function (ev) {
+    /* Voltar de verdade preserva a página do Portal como ela estava, sem
+       recarregar nada. O href acima é a rede de segurança. */
     if (history.length > 1) { ev.preventDefault(); history.back(); }
   });
 })();
