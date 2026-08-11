@@ -3,7 +3,6 @@
   "name": "Practice Test · EMERALD",
   "examLabel": "MET, Michigan English Test",
   "cor": "#059669",
-  "rascunho": true,
   "toolId": "met",
   "audioBase": "audio/emerald/",
   "secondsPerRGQuestion": 78,
