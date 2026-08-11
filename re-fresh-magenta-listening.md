@@ -76,13 +76,16 @@ alternativa repetida.
 
 ---
 
-## 3. O que falta: 50 questões de listening — PARADO por decisão do Pedro
+## 3. O que falta: 50 questões de listening — DESTRAVADO, a voz foi aprovada
 
-**Em 10/08/2026 o Pedro parou esta frente:** "em relação ao simulado depois eu
-vejo o que eu faço". A prática de escuta que ele quer agora é outra coisa, e foi
-para o Listening Lab do Portal do Aluno — ver a seção 5.
+**A decisão que travava tudo foi resolvida em 10/08/2026: edge-TTS, aprovado
+pelo Pedro** ("ficou muito melhor"). O que falta agora é só trabalho, e ele
+pediu que a próxima sessão comece por ele:
 
-O que está escrito abaixo continua valendo quando ele retomar.
+> "pode fazer os 23 roteiros restantes em uma próxima sessão, a partir do
+> handoff atualizado"
+
+**A PRÓXIMA SESSÃO COMEÇA AQUI** — ver a seção 6 para a lista do que escrever.
 
 Estrutura do RED, que o MAGENTA deve copiar:
 
@@ -129,31 +132,45 @@ tem lá inclusive uma reportagem de rádio. E de preferência com o site princip
 da VOA, que fala em velocidade natural, conferindo caso a caso o material de
 terceiros.
 
-### TTS do macOS · REPROVADA pelo Pedro
+### Voz · RESOLVIDA: edge-TTS da Microsoft, aprovado
 
-Gerei duas conversas com `say` (vozes Ava, Tom e Allison), calibradas a 163 e
-169 ppm, no formato exato do RED. O Pedro ouviu e reprovou: "absolutamente
-horrorosa, não tem como usar".
+A primeira tentativa usou o `say` do macOS e o Pedro reprovou na hora
+("absolutamente horrorosa"). **O erro foi a ferramenta, não a ideia** — e a
+ferramenta certa já estava na casa: a trilha de espanhol do Listening Lab, no
+`portal-aluno-fisk`, já usava **edge-TTS** em produção. Refeitas as mesmas duas
+conversas com ele, o veredito mudou: "ficou muito melhor".
 
-**O erro foi a ferramenta, não a ideia — e a ferramenta certa já estava na
-casa.** A trilha de espanhol do Listening Lab, no `portal-aluno-fisk`, usa
-**edge-TTS da Microsoft** (vozes neurais, gratuito, sem chave de API) e foi
-aceita em produção: seis atividades com roteiro original e áudio sintético, uma
-voz por país. O gerador está descrito em `docs/roadmap-listening.md` daquele
-repositório (`scratchpad/build_es.py`, edge-TTS por fala e concatenação com
-ffmpeg), com uma nota técnica útil: no ambiente o edge-TTS falhava por
-verificação TLS do proxy, resolvido apontando o certifi para o bundle do proxy.
+**A receita aprovada está em `scripts/montar-audio.py`, pronta para rodar.**
 
-Ou seja: eu comparei "voz sintética" com o `say` do macOS quando o ecossistema já
-tinha uma neural funcionando. **Se o listening do MAGENTA for retomado, comece
-por edge-TTS**, não por API paga e não pelo `say`.
+| | |
+|---|---|
+| Motor | edge-TTS (Microsoft) — vozes neurais, gratuito, **sem chave de API** |
+| Vozes | as **Multilingual**, que são a geração mais natural em diálogo |
+| Par do item 1 | Ava + Andrew |
+| Par do item 2 | Emma + Brian |
+| Narradora | Aria, fixa em todos os itens |
+| Formato | mono, 96 kbps, 44,1 kHz — idêntico ao RED |
+| Pausas | 0,35s entre falas · 0,9s antes da pergunta |
 
-O que sobrou de útil está em **`scripts/montar-audio.py`**: a montagem (pausas
-entre turnos, concatenação, formato final) serve para **qualquer origem de voz**.
-Troca-se só a função que produz o áudio de cada fala.
+**RITMO — a parte que exigiu duas rodadas e é a mais fácil de errar.**
 
-**Achado de calibração:** o `-r` do `say` não é palavra por minuto de verdade.
-Meça o resultado em vez de confiar no parâmetro — vale para qualquer ferramenta.
+A +12% o resultado saiu a 166 e 163 ppm, praticamente no ritmo medido da prova.
+O Pedro ouviu e disse: está na velocidade natural, mas **como não é voz humana,
+soa rápido demais**. Pediu ~5% mais lento. A recalibragem entregou 164 e 157 ppm.
+
+> **A lição para quem produzir os outros 48: voz sintética no ritmo humano
+> PARECE mais rápida que a humana.** O número medido no RED é o piso, não a
+> meta. Para TTS, fique um pouco abaixo dele.
+
+E o ritmo **varia por falante** de propósito — dois falantes na mesma velocidade
+exata soam mecânicos. Hoje: `+8%` e `+5%` num item, invertido no outro. A tabela
+`RITMO` do script é por item, então dá para ajustar caso a caso.
+
+Se ele ainda achar corrido, é uma linha: baixar os percentuais dessa tabela.
+
+**Achado que vale para qualquer motor:** o parâmetro de velocidade é promessa,
+não medida. No `say`, pedir 165 devolvia 178 ppm. O script imprime o ppm de cada
+arquivo para fechar esse laço — **sempre confira a saída**.
 
 ### YouTube · não é caminho
 
@@ -185,45 +202,56 @@ natural". Escrever a cena e produzir a voz continua sendo o caminho.
 
 ---
 
-## 5. As opções que restam, em ordem de recomendação
+## 5. Frente separada: o Listening Lab com YouTube
 
-1. **edge-TTS (Microsoft), que a casa já usa e já aprovou.** Vozes neurais,
-   gratuito, sem chave de API. É a primeira coisa a tentar, e a comparação justa
-   que eu deveria ter feito antes de mostrar o `say`. Ver a seção 4.
-2. **Locutor nativo em plataforma de freelancer.** Duas vozes, ~15 minutos de
-   áudio no total. Fidelidade perfeita e nenhuma dúvida de licença.
-3. **VOA só para a Part 3** (17 questões), com o fluxo invertido: escolher a
-   reportagem real, transcrever e escrever as questões em cima dela. Não resolve
-   as 33 questões das Parts 1 e 2.
+Enquanto se discutia o áudio do simulado, o Pedro propôs incorporar vídeos do
+YouTube em vez de baixá-los. **Não serve para o simulado** (o aluno veria quem
+fala, controlaria o play, e esconder a imagem é proibido pelos termos), mas
+virou frente própria e aprovada: prática de escuta nos estágios avançados,
+dentro do Listening Lab do Portal do Aluno.
 
-O Pedro descartou gravar ele mesmo com um professor: os dois são brasileiros e
-ele quer fidelidade ao falante nativo.
-
----
+Registrada em `../portal-aluno-fisk/docs/roadmap-listening.md`, seção "Vídeos do
+YouTube incorporados". **É outra frente, não bloqueia esta.**
 
 ## 6. O que fazer na próxima sessão
 
-**Independe da decisão do áudio** e pode começar já: escrever os **23 roteiros**
-(19 conversas curtas, 4 longas) e as **4 palestras**, com as 50 questões, no
-universo acadêmico e nos ritmos da tabela da seção 3. É onde está o valor
-pedagógico, e ele não muda conforme quem dubla.
+**Escrever os 23 roteiros e as 4 palestras, com as 50 questões, e gerar o áudio.**
+A voz já está resolvida; o que falta é conteúdo.
 
-Duas conversas já foram escritas e aprovadas como conteúdo (só a voz foi
-reprovada), e estão em `scripts/montar-audio.py`:
+| Falta escrever | Itens | Questões | Alvo de ritmo |
+|---|---|---|---|
+| Part 1 · conversas curtas | 17 (as 2 primeiras estão prontas) | 17 | ~155 ppm |
+| Part 2 · conversas longas | 4 | 14 (3–4 cada) | ~120 ppm |
+| Part 3 · palestras | 4 | 17 (4–5 cada) | ~110 ppm |
 
-- **Q1 · prorrogação de prazo** — aluna perde metade do trabalho quando o laptop
-  morre; o professor dá até segunda e pede o roteiro no mesmo dia.
-- **Q2 · a eletiva** — a disciplina choca com o laboratório de química, e a única
-  outra turma é sexta às oito da manhã.
+As Parts 2 e 3 são naturalmente mais lentas na prova real (121 e 112 ppm
+medidos), então o percentual do edge-TTS ali deve ser menor ou negativo.
 
-**Depois de decidido o áudio:** produzir, montar com `scripts/montar-audio.py`,
-conferir duração e ppm contra a tabela, gravar os MP3s em `audio/magenta/`,
-acrescentar as unidades `l1`/`l2`/`l3` ao `questions/magenta.json` com os
-`topic` já no padrão (`Listening · Detalhe`, `Listening · Inferência`,
-`Listening · Ideia principal`, `Listening · Propósito`,
-`Listening · Intenção do falante`) e só então publicar.
+**Universo:** o acadêmico, o mesmo da leitura. As cenas do RED servem de guia —
+monitor corrigindo provas, livro esgotado na livraria, projeto de pesquisa na
+biblioteca, professores decidindo proibir laptops, visita de pais à escola,
+reportagem de rádio sobre um museu.
 
----
+**Duas já prontas e aprovadas como conteúdo**, dentro de `scripts/montar-audio.py`:
+
+- **Q1 · prorrogação de prazo** — a aluna perde metade do trabalho quando o
+  laptop morre; o professor dá até segunda e pede o roteiro no mesmo dia.
+- **Q2 · a eletiva** — choca com o laboratório de química, e a única outra turma
+  é sexta às oito da manhã.
+
+**Passo a passo:**
+
+1. Escrever os roteiros e as questões, com os `topic` no padrão já usado:
+   `Listening · Detalhe`, `Listening · Inferência`, `Listening · Ideia principal`,
+   `Listening · Propósito`, `Listening · Intenção do falante`.
+2. Acrescentar os itens à tabela `PARES` e à `RITMO` do script, variando as
+   vozes entre os itens como a prova faz.
+3. Rodar `python3 scripts/montar-audio.py` e **conferir o ppm impresso**.
+4. Mandar uma amostra para o Pedro validar antes de gerar tudo — foi assim que
+   as duas primeiras foram aprovadas, e sai muito mais barato que refazer 48.
+5. Acrescentar as unidades `l1`/`l2`/`l3` ao `questions/magenta.json`.
+6. Só então publicar: tirar o `rascunho`, rodar o gerador do gabarito e
+   implantar o backend.
 
 ## 7. Onde as coisas moram
 

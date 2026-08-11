@@ -2,47 +2,73 @@
 # -*- coding: utf-8 -*-
 """Monta o MP3 de um item de listening a partir de falas soltas.
 
-⚠️  A VOZ SINTÉTICA DAQUI FOI REPROVADA pelo Pedro em 10/08/2026. O `say` do
-macOS é TTS de geração antiga e o resultado ficou artificial demais para uma
-prova. NÃO refaça por aqui esperando resultado diferente.
+MOTOR DE VOZ: **edge-TTS da Microsoft** (vozes neurais, gratuito, sem chave de
+API). É o mesmo motor que a trilha de espanhol do Listening Lab já usa em
+produção, no `portal-aluno-fisk`.
 
-O que SOBREVIVE e é o motivo deste arquivo existir: a MONTAGEM. Ela vale para
-qualquer origem de voz — locutor humano, TTS neural de API, o que for. Troque
-apenas a função que produz o áudio de cada fala; o resto (pausas entre turnos,
-concatenação, formato final) já está calibrado contra o simulado oficial:
+  ⚠️  Histórico, para não se repetir: a primeira tentativa usou o `say` do
+  macOS, TTS de geração antiga, e o Pedro reprovou na hora ("absolutamente
+  horrorosa"). O erro foi a ferramenta, não a ideia — e a ferramenta certa já
+  estava na casa. Se um dia isto falhar, troque só a função `fala()`; a
+  montagem abaixo independe de quem dubla.
 
-  · mono, 96 kbps, 44,1 kHz — idêntico aos MP3s do RED
+MONTAGEM, calibrada contra os MP3s do simulado oficial:
+
+  · mono, 96 kbps, 44,1 kHz — idêntico aos arquivos do RED
   · 0,35s entre falas da conversa e 0,9s antes da pergunta do narrador
-  · três timbres: dois na conversa e um terceiro para o narrador, como no RED
+  · três timbres: dois na conversa e um terceiro no narrador, como no RED
 
-MEDIÇÕES DO RED que valem para calibrar qualquer voz (feitas em 10/08/2026,
-palavras da transcrição ÷ duração do MP3):
+MEDIÇÕES DO RED, para calibrar qualquer voz (10/08/2026, palavras da
+transcrição ÷ duração do MP3):
 
   Part 1  158 palavras/min · 19 conversas curtas · média 25s (17s a 70s)
   Part 2  121 palavras/min ·  4 conversas longas · média 110s
   Part 3  112 palavras/min ·  4 palestras        · média 130s
 
-ACHADO ÚTIL: o `-r` do `say` NÃO é palavra por minuto de verdade nas vozes
-neurais da Apple. A 165 o resultado saiu a ~178 ppm; 146 põe o conjunto (fala
-mais pausas) na faixa dos 158 ppm da Part 1. Se um dia outra ferramenta for
-usada, meça o resultado em vez de confiar no parâmetro.
+SEMPRE MEÇA O RESULTADO. O parâmetro de velocidade de qualquer TTS é uma
+promessa, não uma medida: no `say`, pedir 165 devolvia 178 palavras por minuto.
+Este script imprime o ppm de cada arquivo justamente para fechar esse laço.
 
-FORMATO de cada item da Part 1, copiado do RED: o narrador anuncia o número, vem
-a conversa entre duas pessoas e o narrador lê a pergunta no fim.
+FORMATO de cada item da Part 1, copiado do RED: o narrador anuncia o número,
+vem a conversa entre duas pessoas e o narrador lê a pergunta no fim.
 """
+import asyncio, subprocess, os, sys, json, re
+import edge_tts
 
-import subprocess, os, sys, json, re
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SAIDA = os.path.join(RAIZ, 'audio', 'magenta')
+TMP = '/tmp/fisk-tts'
 
-SAIDA = '/Users/pedroluz/Claude/Projects/met-siele-simulador/audio/magenta'
-TMP = '/private/tmp/claude-501/-Users-pedroluz-Claude-Projects/f668cdc2-9b2d-4ee6-b474-9fd4f9bde86c/scratchpad/tts'
+# As "Multilingual" são a geração mais recente e a mais natural em diálogo.
+# Cada item usa um par diferente, como na prova, onde as vozes mudam a cada
+# conversa. O narrador é um terceiro timbre, fixo, para o aluno reconhecê-lo.
+NARRADOR = 'en-US-AriaNeural'
+PARES = {
+    'l1-q01': {'W': 'en-US-AvaMultilingualNeural',   'M': 'en-US-AndrewMultilingualNeural'},
+    'l1-q02': {'W': 'en-US-EmmaMultilingualNeural',  'M': 'en-US-BrianMultilingualNeural'},
+}
 
-VOZ = {'W': 'Ava', 'M': 'Tom', 'N': 'Allison'}
-# Calibrado contra a medição: a 165 o resultado saiu a ~178 ppm, então o `-r`
-# do `say` não é palavra por minuto de verdade nas vozes neurais. 146 põe o
-# conjunto (fala + pausas) na faixa dos 158 ppm que medi na Part 1 do RED.
-RITMO = {'W': 146, 'M': 146, 'N': 138}
-PAUSA_TURNO = 0.35      # entre falas da conversa
-PAUSA_PERGUNTA = 0.9    # antes da pergunta do narrador
+# RITMO — calibrado por medição e depois pelo ouvido do Pedro.
+#
+# A +12% o resultado saiu a 166 e 163 ppm. Ele ouviu e disse: está na velocidade
+# natural, mas COMO NÃO É VOZ HUMANA, soa rápido demais. Pediu ~5% mais lento, e
+# isso cai justamente nas 158 ppm que medi na Part 1 do RED — o ouvido dele
+# chegou no número da prova.
+#
+# A lição a guardar: voz sintética no ritmo humano PARECE mais rápida que a
+# humana. O alvo medido é o piso, não a meta; para TTS convém ficar um pouco
+# abaixo dele.
+#
+# E o ritmo VARIA por falante, de propósito. Duas pessoas na mesma velocidade
+# exata soam mecânicas, e na prova real cada um fala no seu tempo.
+RITMO_NARRADOR = '+0%'
+RITMO = {
+    'l1-q01': {'W': '+8%', 'M': '+5%'},   # a aluna, apressada; o professor, calmo
+    'l1-q02': {'W': '+5%', 'M': '+8%'},   # invertido, para os itens não se parecerem
+}
+
+PAUSA_TURNO = 0.35
+PAUSA_PERGUNTA = 0.9
 
 
 def sh(cmd):
@@ -52,21 +78,24 @@ def sh(cmd):
     return r.stdout
 
 
-def gera(qid, linhas):
-    """linhas: [('N'|'W'|'M', texto), ...]"""
-    os.makedirs(TMP, exist_ok=True)
-    os.makedirs(SAIDA, exist_ok=True)
+async def fala(texto, voz, rate, destino):
+    """A ÚNICA parte presa ao motor de voz. Trocar aqui troca tudo."""
+    await edge_tts.Communicate(texto, voz, rate=rate).save(destino)
+
+
+async def gera(qid, linhas):
+    vozes = dict(PARES[qid]); vozes['N'] = NARRADOR
+    ritmo = dict(RITMO[qid]); ritmo['N'] = RITMO_NARRADOR
+    os.makedirs(TMP, exist_ok=True); os.makedirs(SAIDA, exist_ok=True)
     pedacos = []
     for i, (quem, txt) in enumerate(linhas):
-        aiff = '%s/%s-%02d.aiff' % (TMP, qid, i)
-        sh(['say', '-v', VOZ[quem], '-r', str(RITMO[quem]), '-o', aiff, txt])
-        wav = aiff.replace('.aiff', '.wav')
-        sh(['ffmpeg', '-y', '-loglevel', 'error', '-i', aiff, '-ar', '44100', '-ac', '1', wav])
+        bruto = '%s/%s-%02d.mp3' % (TMP, qid, i)
+        await fala(txt, vozes[quem], ritmo[quem], bruto)
+        wav = bruto.replace('.mp3', '.wav')
+        sh(['ffmpeg', '-y', '-loglevel', 'error', '-i', bruto, '-ar', '44100', '-ac', '1', wav])
         pedacos.append(wav)
-        # silêncio depois da fala: maior antes da pergunta do narrador final
-        ultimo = (i == len(linhas) - 2)
-        seg = PAUSA_PERGUNTA if ultimo else PAUSA_TURNO
         if i < len(linhas) - 1:
+            seg = PAUSA_PERGUNTA if i == len(linhas) - 2 else PAUSA_TURNO
             sil = '%s/%s-%02d-sil.wav' % (TMP, qid, i)
             sh(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'lavfi',
                 '-i', 'anullsrc=r=44100:cl=mono', '-t', str(seg), sil])
@@ -83,12 +112,12 @@ def gera(qid, linhas):
     dur = float(sh(['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
                     '-of', 'csv=p=0', mp3]).strip())
     palavras = sum(len(re.findall(r"[A-Za-z']+", t)) for _, t in linhas)
-    print('%-10s %5.1fs · %3d palavras · %3.0f ppm · %s' %
-          (qid, dur, palavras, palavras / dur * 60, mp3))
+    print('%-10s %5.1fs · %3d palavras · %3.0f ppm  (alvo 158)' %
+          (qid, dur, palavras, palavras / dur * 60))
     return {'id': qid, 'dur': round(dur, 1), 'ppm': round(palavras / dur * 60)}
 
 
-# ── as duas conversas de teste, no universo acadêmico ────────────────────────
+# ── as duas conversas, no universo acadêmico ─────────────────────────────────
 Q1 = [
   ('N', 'Number one.'),
   ('W', "Professor Hale, I wanted to ask about the essay that's due Friday. My laptop died on Sunday and I lost about half of it."),
@@ -108,9 +137,15 @@ Q2 = [
   ('N', 'What does the man imply about the woman?'),
 ]
 
-if __name__ == '__main__':
-    print('voz da mulher: %s · homem: %s · narrador: %s' % (VOZ['W'], VOZ['M'], VOZ['N']))
-    print('alvo: 158 palavras por minuto (a Part 1 do RED, medida)\n')
-    r = [gera('l1-q01', Q1), gera('l1-q02', Q2)]
+
+async def main():
+    print('motor: edge-TTS (Microsoft) · narrador: %s' % NARRADOR.replace('en-US-', ''))
+    for qid, par in PARES.items():
+        print('  %s → %s / %s' % (qid, par['W'].replace('en-US-', ''), par['M'].replace('en-US-', '')))
+    print()
+    r = [await gera('l1-q01', Q1), await gera('l1-q02', Q2)]
     print()
     print(json.dumps(r, ensure_ascii=False))
+
+if __name__ == '__main__':
+    asyncio.run(main())
