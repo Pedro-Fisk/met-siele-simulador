@@ -2620,11 +2620,18 @@
   var el = document.getElementById('mst-back');
   if (!el) return;
   /* Quem chegou com ?raf= veio do Portal e volta para lá, não para o Hub.
-     O RAF vai junto: sem ele, a aba que não tem histórico (link colado, PWA
-     aberto do zero) cairia no formulário de login, e o aluno leria isso como
-     ter sido deslogado. O Portal entra direto e limpa o código da URL. */
-  var raf = (new URLSearchParams(location.search).get('raf') || '').trim();
-  if (raf) el.href = 'https://portalfisk.com.br/?raf=' + encodeURIComponent(raf);
+     O parâmetro é o sinal, mesmo VAZIO: a direção entra com raf em branco, e
+     testar o conteúdo dele mandaria justamente ela para o lugar errado.
+     Quando há RAF, ele vai junto no endereço, porque a aba sem histórico
+     (link colado, PWA aberto do zero) cairia no formulário de login e o aluno
+     leria isso como ter sido deslogado. O Portal entra direto e limpa o
+     código da URL. */
+  var qs = new URLSearchParams(location.search);
+  var raf = (qs.get('raf') || '').trim();
+  if (qs.has('raf')) {
+    el.href = 'https://portalfisk.com.br/' + (raf ? '?raf=' + encodeURIComponent(raf) : '');
+    el.innerHTML = '&#8592; Portal do Aluno';
+  }
   el.addEventListener('click', function (ev) {
     /* Voltar de verdade preserva a página do Portal como ela estava, sem
        recarregar nada. O href acima é a rede de segurança. */
