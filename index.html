@@ -228,11 +228,15 @@
     .pick-card.is-locked:hover { transform: none; border-color: var(--border); box-shadow: var(--shadow); }
     .pick-card.is-locked .pick-icon { background: #b9b4b4; filter: grayscale(1); }
     .pick-card.is-locked h3 { color: var(--text-soft); }
-    .pick-card.is-locked .test-tag { filter: grayscale(1); opacity: .8; }
+    /* Só a etiqueta do PRÓPRIO card fica cinza. As da linha do cadeado apontam
+       para provas que estão ali ao lado, coloridas: cinza nelas mandaria o
+       aluno procurar o que não existe. */
+    .pick-card.is-locked h3 .test-tag { filter: grayscale(1); opacity: .8; }
     .pick-card .pick-lock {
       display: flex; align-items: center; gap: .4rem; margin-top: auto; padding-top: .8rem;
       font-size: .7rem; font-weight: 800; color: var(--text-soft);
     }
+    .pick-card .pick-lock .test-tag { font-size: .54rem; padding: .14rem .42rem .12rem; }
     @keyframes tremeCard { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-5px)} 40%,80%{transform:translateX(5px)} }
     .pick-card.treme { animation: tremeCard .34s ease; }
 
@@ -1505,8 +1509,11 @@
         .map(k => BANCOS[k]);
     }
     function trancaHTML(faltam) {
-      const nomes = faltam.map(x => '#' + x.id).join(' e ');
-      return '<div class="pick-lock">🔒 <span>Complete ' + esc(nomes)
+      /* As provas que faltam entram como as MESMAS pílulas dos cards, e não
+         como "#red" no meio da frase: o aluno acha na tela o que a mensagem
+         está pedindo. */
+      const pilulas = faltam.map(x => tagHTML(x)).join(' e');
+      return '<div class="pick-lock">🔒 <span>Complete' + pilulas
         + ' para liberar</span></div>';
     }
     function aplicaTranca(botao, d, faltam) {
