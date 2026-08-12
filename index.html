@@ -212,6 +212,10 @@
       transition: width .3s ease;
     }
     .pick-prog .pp-txt { font-size: .68rem; font-weight: 800; color: var(--text-soft); white-space: nowrap; }
+    .pick-prog .pick-fd {
+      font-size: .64rem; font-weight: 800; white-space: nowrap; color: #c9922e;
+      background: rgba(201,146,46,.12); border-radius: 999px; padding: .12rem .4rem;
+    }
     .pick-prog.is-done .pp-txt { color: #2563EB; }
 
     /* BLOCO COLAPSÁVEL. O rótulo da seção vira botão; a seta gira. A home tem
@@ -1010,6 +1014,43 @@
    * card. Ele precisa sobreviver ao envio, senão o simulado terminado voltaria
    * a aparecer como não começado. */
   function progKey() { return 'met_prog_' + idAluno(); }
+  /* ── A NUVEM ──────────────────────────────────────────────────────────────
+   * O local continua sendo a fonte durante a prova: gravar a cada resposta na
+   * nuvem seria uma execução do Apps Script por clique, e a medição de
+   * 30/07/2026 já achou o teto em 25 chamadas simultâneas. Então:
+   *
+   *   ler   uma vez ao abrir a home, DEPOIS de desenhar, e as barras se
+   *         atualizam quando a resposta chega. A tela nunca espera a rede.
+   *   gravar quando o aluno ENTREGA um bloco, e não a cada questão.
+   *
+   * Sem RAF não há nuvem: o aluno é do navegador, como era antes. */
+  function progSyncBaixa() {
+    if (PROF_MODE || !CLOUD_ON || !state.studentRaf) return Promise.resolve(null);
+    return fetch(CLOUD.endpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action: 'progGet', key: CLOUD.appKey, raf: state.studentRaf }) })
+      .then(r => r.json())
+      .then(res => {
+        if (!res || !res.ok || !res.prog) return null;
+        const local = loadProg(), fundido = {};
+        Object.keys(local).forEach(k => { fundido[k] = local[k]; });
+        Object.keys(res.prog).forEach(k => {
+          const a = fundido[k] || {}, b = res.prog[k];
+          fundido[k] = (Number(b.feitas || 0) > Number(a.feitas || 0) || b.done) && !(a.done && !b.done)
+            ? b : a;
+        });
+        try { localStorage.setItem(progKey(), JSON.stringify(fundido)); } catch (e) {}
+        return fundido;
+      })
+      .catch(() => null);
+  }
+  function progSyncSobe() {
+    if (PROF_MODE || !CLOUD_ON || !state.studentRaf) return;
+    try {
+      fetch(CLOUD.endpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action: 'progSet', key: CLOUD.appKey, raf: state.studentRaf,
+                               prog: loadProg() }) }).catch(() => {});
+    } catch (e) {}
+  }
   function loadProg() { try { return JSON.parse(localStorage.getItem(progKey())) || {}; } catch (e) { return {}; } }
   function progId(bancoId, scope) { return bancoId + ':' + scope.type + ':' + (scope.id || ''); }
   function salvaProg(bancoId, scope, dados) {
@@ -1092,7 +1133,12 @@
       });                             // o índice da tela É o índice do banco
       if (!Object.keys(respostas).length) { fail('⚠️ Nenhuma resposta para enviar.'); return; }
       corpo = { action: 'alunoAtividade', key: CLOUD.appKey, raf: entry.raf,
-                activityId: CLOUD.tool + ':' + entry.s, respostas: respostas,
+                activityId: CLOUD.tool + ':' + entry.s,
+                /* O bloco entregue, no mesmo id do mapa de progresso. É por ele
+                   que o servidor sabe quantas questões a atividade tem e só
+                   paga Fisk Dólar com ela inteira respondida. O rótulo (`s`)
+                   não serve: ele é texto e muda quando se renomeia um mini. */
+                escopo: entry.escopo || '', respostas: respostas,
                 test: entry.test || '', book: entry.book || '',
                 L: entry.L, R: entry.R, O: entry.O };
     } else {
@@ -1412,9 +1458,19 @@
       const done = !!p.done;
       const txt = done ? 'concluído' + (p.pct != null ? ' · ' + p.pct + '%' : '')
                        : (feitas ? feitas + ' de ' + total : 'não começado');
-      return '<div class="pick-prog' + (done ? ' is-done' : '') + '">'
+      /* QUANTO VALE. O crédito é do servidor (participação por questão, acerto
+         por acerto, conclusão), então aqui vai o TETO daquele bloco, que é o
+         que o aluno leva gabaritando: 2 por questão + 8 por acerto + 30 de
+         conclusão. E a regra que o Pedro fixou: só com o bloco inteiro. */
+      const teto = total * 10 + 30;
+      const moeda = done
+        ? ''
+        : '<span class="pick-fd" title="Fisk Dólares só com a atividade inteira respondida">'
+          + 'F$ até ' + teto + '</span>';
+      return '<div class="pick-prog' + (done ? ' is-done' : '') + '"'
+        + ' data-prog="' + esc(progId(d.id, scope)) + '" data-prog-total="' + total + '">'
         + '<span class="pp-trilho"><i class="pp-feito" style="width:' + (done ? 100 : pct) + '%"></i></span>'
-        + '<span class="pp-txt">' + esc(txt) + '</span></div>';
+        + '<span class="pp-txt">' + esc(txt) + '</span>' + moeda + '</div>';
     }
 
     /* Abrir uma prova é trocar o banco em uso e só então começar. A cor da
@@ -1556,6 +1612,26 @@
       aplica();
       rot.replaceWith(btn);
     }
+    /* A nuvem chega depois: as barras já estão na tela com o que o navegador
+       sabia, e são repintadas se o servidor souber mais (o aluno começou noutro
+       aparelho). Nada aqui atrasa a abertura da página. */
+    progSyncBaixa().then(mapa => {
+      if (!mapa) return;
+      document.querySelectorAll('[data-prog]').forEach(el => {
+        const p = mapa[el.dataset.prog] || {};
+        const total = Number(el.dataset.progTotal || 0);
+        if (!total) return;
+        const feitas = Math.min(Number(p.feitas || 0), total);
+        const done = !!p.done;
+        const pct = done ? 100 : Math.round(feitas / total * 100);
+        el.classList.toggle('is-done', done);
+        el.querySelector('.pp-feito').style.width = pct + '%';
+        el.querySelector('.pp-txt').textContent = done
+          ? 'concluído' + (p.pct != null ? ' · ' + p.pct + '%' : '')
+          : (feitas ? feitas + ' de ' + total : 'não começado');
+      });
+    });
+
     dobravel('minis-label', 'minis-grid', 'met_dobra_minis', true);
     if (PROF_MODE) dobravel('sections-label', 'sections-grid', 'met_dobra_secoes', true);
 
@@ -2171,6 +2247,7 @@
     salvaProg(DATA.id, state.scope, { feitas: totalQ, total: totalQ, done: true,
                                       pct: totalQ ? Math.round(acertos / totalQ * 100) : 0 });
     clearPersist();
+    progSyncSobe();          // a entrega é o momento que vale registrar fora daqui
     renderResults();
     showScreen('screen-results');
   }
@@ -2422,7 +2499,8 @@
     const entry = {
       t: Date.now(), n: state.studentName, raf: state.studentRaf, s: state.scope.label,
       c: correct, q: total, L: scaledL, R: scaledR, O: scaledO, test: DATA.id,
-      book: state.studentBook || ''
+      book: state.studentBook || '',
+      escopo: progId(DATA.id, state.scope)   // o servidor confere o tamanho por aqui
     };
     addLogEntry(entry);
 
