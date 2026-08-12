@@ -469,7 +469,56 @@ def espalha_gabarito(units, semente=2026):
         q['key'] = alvo
         assert q['opts'][q['key']] == certa
 
-espalha_gabarito(UNITS)
+def adota_ordem_existente(units, destino):
+    """Mantém a ordem de alternativas que o banco JÁ tem.
+
+    O espalhamento do gabarito é decidido por `espalhar-gabarito.py`, que roda
+    sobre as 100 questões. Se este gerador reescrevesse a ordem com a sua
+    própria semente, rodar de novo desfaria aquele trabalho e o banco passaria a
+    discordar do `Gabarito.js` do servidor. Então: se a questão já existe no
+    arquivo e as alternativas são as mesmas, a ordem de lá prevalece.
+    """
+    if not os.path.exists(destino):
+        return 0
+    antigo = json.load(open(destino))
+    porn = {q['n']: q for u in antigo['units'] for q in u['questions']}
+    n = 0
+    for q in [x for u in units for x in u['questions']]:
+        v = porn.get(q['n'])
+        if v and sorted(v['opts']) == sorted(q['opts']):
+            q['opts'], q['key'] = list(v['opts']), v['key']
+            n += 1
+    return n
+
+
+destino = os.path.join(REPO, 'questions', 'amber.json')
+adotadas = adota_ordem_existente(UNITS, destino)
+if adotadas:
+    print('mantida a ordem das alternativas de %d questões que já estavam no banco'
+          % adotadas)
+else:
+    # primeira geração: sem banco anterior, o gabarito nasce espalhado aqui
+    espalha_gabarito(UNITS)
+
+# ─────────────────────────────────────────────────────────────────────────────
+MINIS = [
+    {'id': 'mini1', 'name': 'Mini Simulado 1',
+     'desc': 'Questões 1–5, 20–23, 34–37, 51–55 e 71–75 · 23 questões',
+     'units': ['l1-q01', 'l1-q02', 'l1-q03', 'l1-q04', 'l1-q05', 'l2-set1', 'l3-set1',
+               'gr-q51', 'gr-q52', 'gr-q53', 'gr-q54', 'gr-q55', 'rd-set1']},
+    {'id': 'mini2', 'name': 'Mini Simulado 2',
+     'desc': 'Questões 6–10, 24–26, 38–41, 56–60 e 76–80 · 22 questões',
+     'units': ['l1-q06', 'l1-q07', 'l1-q08', 'l1-q09', 'l1-q10', 'l2-set2', 'l3-set2',
+               'gr-q56', 'gr-q57', 'gr-q58', 'gr-q59', 'gr-q60', 'rd-set2']},
+    {'id': 'mini3', 'name': 'Mini Simulado 3',
+     'desc': 'Questões 11–14, 27–30, 42–46, 61–65 e 81–90 · 28 questões',
+     'units': ['l1-q11', 'l1-q12', 'l1-q13', 'l1-q14', 'l2-set3', 'l3-set3',
+               'gr-q61', 'gr-q62', 'gr-q63', 'gr-q64', 'gr-q65', 'rd-set3']},
+    {'id': 'mini4', 'name': 'Mini Simulado 4',
+     'desc': 'Questões 15–19, 31–33, 47–50, 66–70 e 91–100 · 27 questões',
+     'units': ['l1-q15', 'l1-q16', 'l1-q17', 'l1-q18', 'l1-q19', 'l2-set4', 'l3-set4',
+               'gr-q66', 'gr-q67', 'gr-q68', 'gr-q69', 'gr-q70', 'rd-set4']},
+]
 
 amber = {
     'id': 'amber',
@@ -486,14 +535,31 @@ amber = {
     'cefr': emerald['cefr'],
     'sections': emerald['sections'],
     'units': UNITS,
-    'minis': [],          # dependem do listening; entram com ele
+    # Mesma divisão do EMERALD, item a item: cada mini é um pedaço da prova na
+    # ordem oficial, com uma conversa longa, uma palestra, um bloco de leitura,
+    # cinco da Part 1 e cinco de gramática. Os minis do RED foram desenhados
+    # assim, e comparar prova com prova só faz sentido se o recorte for igual.
+    'minis': MINIS,
     'grammarChapters': emerald['grammarChapters'],
     'quickPractice': emerald['quickPractice'],
 }
 
-destino = os.path.join(REPO, 'questions', 'amber.json')
+# O LISTENING NÃO É DAQUI. As unidades l1/l2/l3 são escritas por
+# `montar-unidades.py --prova amber` a partir de `data/roteiros-amber.json`.
+# Este script cuida de gramática e leitura, então ele PRESERVA o que já existe
+# de listening no arquivo, em vez de sobrescrever o banco inteiro.
+if os.path.exists(destino):
+    atual = json.load(open(destino))
+    listening = [u for u in atual['units'] if u['section'].startswith('l')]
+    if listening:
+        # a ordem da prova é listening → gramática → leitura
+        amber['units'] = listening + amber['units']
+        # e o gabarito do listening já espalhado não pode ser desfeito daqui
+        print('preservadas %d unidades de listening que já estavam no banco'
+              % len(listening))
+
 with open(destino, 'w') as f:
-    json.dump(amber, f, ensure_ascii=False, indent=1)
+    json.dump(amber, f, ensure_ascii=False, indent=2)
     f.write('\n')
 
 n = sum(len(u['questions']) for u in amber['units'])

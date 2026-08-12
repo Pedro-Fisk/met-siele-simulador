@@ -52,14 +52,18 @@ def espalha(banco):
         sys.exit('estas explicações citam a posição da alternativa e seriam '
                  'invalidadas: %s' % presas)
 
-    # a semente vem do id: cada banco tem a sua, e a mesma para sempre
-    rnd = random.Random(sum(ord(c) for c in banco['id']) * 1000 + len(qs))
+    # SEMENTE FIXA, e o resultado NÃO depende da ordem em que as alternativas
+    # estão agora: as posições-alvo saem do id do banco e dos números das
+    # questões, e os distratores partem sempre da mesma ordem canônica (a
+    # alfabética). Sem isso o script embaralharia o embaralhado e rodar duas
+    # vezes daria dois bancos, que é o oposto do que o Gabarito.js precisa.
+    base = sum(ord(c) for c in banco['id']) * 1000 + len(qs)
     alvos = [i % 4 for i in range(len(qs))]
-    rnd.shuffle(alvos)
-    for q, alvo in zip(qs, alvos):
+    random.Random(base).shuffle(alvos)
+    for q, alvo in zip(sorted(qs, key=lambda x: x['n']), alvos):
         certa = q['opts'][q['key']]
-        resto = [o for i, o in enumerate(q['opts']) if i != q['key']]
-        rnd.shuffle(resto)
+        resto = sorted(o for i, o in enumerate(q['opts']) if i != q['key'])
+        random.Random(base + q['n']).shuffle(resto)
         q['opts'] = resto[:alvo] + [certa] + resto[alvo:]
         q['key'] = alvo
         assert q['opts'][q['key']] == certa, q['n']
