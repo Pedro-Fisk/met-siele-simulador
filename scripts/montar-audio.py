@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Monta os MP3s do listening do EMERALD a partir de data/roteiros-emerald.json.
+"""Monta os MP3s do listening de uma prova a partir de data/roteiros-<prova>.json.
 
-    python3 scripts/montar-audio.py                # tudo
-    python3 scripts/montar-audio.py l1-q03 l2-set1 # só esses
-    python3 scripts/montar-audio.py --intros       # só as três aberturas
+    python3 scripts/montar-audio.py                          # EMERALD, tudo
+    python3 scripts/montar-audio.py l1-q03 l2-set1           # só esses
+    python3 scripts/montar-audio.py --intros                 # só as aberturas
+    python3 scripts/montar-audio.py --prova amber            # o AMBER inteiro
+    python3 scripts/montar-audio.py --prova amber l1-q03     # um item do AMBER
+
+Cada prova tem os seus três arquivos, todos pelo mesmo nome: o roteiro em
+`data/roteiros-<prova>.json`, os cues em `data/cues-<prova>.json` e os MP3s em
+`audio/<prova>/`. O `audioBase` do banco aponta para essa pasta.
 
 MOTOR DE VOZ: **edge-TTS da Microsoft** (vozes neurais, gratuito, sem chave de
 API). É o mesmo motor que a trilha de espanhol do Listening Lab já usa em
@@ -51,10 +57,21 @@ import asyncio, subprocess, os, sys, json, re
 import edge_tts
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROTEIROS = os.path.join(RAIZ, 'data', 'roteiros-emerald.json')
-CUES = os.path.join(RAIZ, 'data', 'cues-emerald.json')
-SAIDA = os.path.join(RAIZ, 'audio', 'emerald')
-TMP = '/tmp/fisk-tts'
+
+# Qual prova montar. O EMERALD continua sendo o padrão para não quebrar nenhum
+# comando escrito antes de existir uma segunda prova por voz sintética.
+PROVA = 'emerald'
+if '--prova' in sys.argv:
+    i = sys.argv.index('--prova')
+    PROVA = sys.argv[i + 1] if i + 1 < len(sys.argv) else ''
+    del sys.argv[i:i + 2]
+if not re.match(r'^[a-z0-9-]+$', PROVA or ''):
+    sys.exit('use --prova <nome do banco>, por exemplo: --prova amber')
+
+ROTEIROS = os.path.join(RAIZ, 'data', 'roteiros-%s.json' % PROVA)
+CUES = os.path.join(RAIZ, 'data', 'cues-%s.json' % PROVA)
+SAIDA = os.path.join(RAIZ, 'audio', PROVA)
+TMP = '/tmp/fisk-tts/' + PROVA
 
 # Terceiro timbre, fixo em todos os itens, para o aluno reconhecer o narrador.
 # As vozes dos diálogos vivem no roteiro, item a item.

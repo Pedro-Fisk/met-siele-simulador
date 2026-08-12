@@ -11,32 +11,53 @@
     "'quote' é o trecho que o narrador repete depois da pergunta, nas questões de",
     "intenção do falante. É o que o RED faz."
   ],
-
   "intros": {
     "l1-intro": "Michigan English Test. Practice Test EMERALD. Listening Section Instructions. In this section of the test, you will show your ability to understand spoken English. There are three parts in this section, with special directions for each part. If you do not know the answer, you may guess. Try to answer as many questions as possible. Part 1. In this part of the test, you will hear short conversations between two people. After each conversation, you will hear a question about it. Choose the best answer to the question from the choices on the screen. There are 19 questions in Part 1. The conversations and questions will not be repeated. Please listen carefully.",
     "l2-intro": "Part 2. In this part of the test, you will hear longer conversations between two people. After each conversation, you will answer some questions about it. There are 14 questions in Part 2. The conversations and questions will not be repeated. If you want to, you may take notes as you listen.",
     "l3-intro": "Part 3. In this part of the test, you will hear some short talks. After each talk, you will answer some questions about it. There are 17 questions in Part 3. The talks and questions will not be repeated. If you want to, you may take notes as you listen."
   },
-
   "itens": [
     {
       "id": "l1-q01",
       "section": "l1",
       "cena": "prorrogação de prazo: o laptop da aluna morre e leva metade do trabalho",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+8%", "M": "+5%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+8%",
+        "M": "+5%"
+      },
       "linhas": [
-        ["W", "Professor Hale, I wanted to ask about the essay that's due Friday. My laptop died on Sunday and I lost about half of it."],
-        ["M", "That's rough. Had you backed any of it up?"],
-        ["W", "Only the outline, unfortunately."],
-        ["M", "Then take until Monday. But send me that outline today, so I can see where you got to."]
+        [
+          "W",
+          "Professor Hale, I wanted to ask about the essay that's due Friday. My laptop died on Sunday and I lost about half of it."
+        ],
+        [
+          "M",
+          "That's rough. Had you backed any of it up?"
+        ],
+        [
+          "W",
+          "Only the outline, unfortunately."
+        ],
+        [
+          "M",
+          "Then take until Monday. But send me that outline today, so I can see where you got to."
+        ]
       ],
       "questoes": [
         {
           "n": 1,
           "text": "What does the professor ask the student to do?",
-          "opts": ["send him her outline today", "buy a new laptop", "come to his office on Monday", "rewrite the essay from the beginning"],
-          "key": 0,
+          "opts": [
+            "rewrite the essay from the beginning",
+            "send him her outline today",
+            "buy a new laptop",
+            "come to his office on Monday"
+          ],
+          "key": 1,
           "expl": "Ele dá o prazo novo e emenda um pedido: \"But send me that outline today, so I can see where you got to\". O que ele PEDE é o roteiro, hoje.",
           "topic": "Listening · Detalhe"
         }
@@ -46,21 +67,47 @@
       "id": "l1-q02",
       "section": "l1",
       "cena": "a eletiva que choca com o laboratório de química",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+5%", "M": "+8%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+5%",
+        "M": "+8%"
+      },
       "linhas": [
-        ["M", "Are you taking that statistics elective next term?"],
-        ["W", "I want to, but it meets at the same time as my chemistry lab."],
-        ["M", "Can't you switch to another lab section?"],
-        ["W", "I asked. The only other section is Friday at eight in the morning."],
-        ["M", "Well, I suppose that tells you how badly you want the elective."]
+        [
+          "M",
+          "Are you taking that statistics elective next term?"
+        ],
+        [
+          "W",
+          "I want to, but it meets at the same time as my chemistry lab."
+        ],
+        [
+          "M",
+          "Can't you switch to another lab section?"
+        ],
+        [
+          "W",
+          "I asked. The only other section is Friday at eight in the morning."
+        ],
+        [
+          "M",
+          "Well, I suppose that tells you how badly you want the elective."
+        ]
       ],
       "questoes": [
         {
           "n": 2,
           "text": "What does the man imply about the woman?",
-          "opts": ["She may not want the elective enough.", "She should change her chemistry lab.", "She will not be allowed to take the elective.", "She prefers early morning classes."],
-          "key": 0,
+          "opts": [
+            "She will not be allowed to take the elective.",
+            "She should change her chemistry lab.",
+            "She may not want the elective enough.",
+            "She prefers early morning classes."
+          ],
+          "key": 2,
           "expl": "\"That tells you how badly you want the elective\" é irônico: se a sexta às oito da manhã já derruba o plano, a vontade não era tanta.",
           "topic": "Listening · Inferência"
         }
@@ -70,20 +117,43 @@
       "id": "l1-q03",
       "section": "l1",
       "cena": "reservar sala de estudo na biblioteca",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+6%", "M": "+4%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+6%",
+        "M": "+4%"
+      },
       "linhas": [
-        ["W", "Hi, I'd like to book one of the group study rooms for Thursday afternoon."],
-        ["M", "You'll have to do that yourself, on the library website. We stopped taking bookings at the desk last year."],
-        ["W", "Oh. And is there a limit?"],
-        ["M", "Two hours per group per day. After that you can stay if nobody's waiting."]
+        [
+          "W",
+          "Hi, I'd like to book one of the group study rooms for Thursday afternoon."
+        ],
+        [
+          "M",
+          "You'll have to do that yourself, on the library website. We stopped taking bookings at the desk last year."
+        ],
+        [
+          "W",
+          "Oh. And is there a limit?"
+        ],
+        [
+          "M",
+          "Two hours per group per day. After that you can stay if nobody's waiting."
+        ]
       ],
       "questoes": [
         {
           "n": 3,
           "text": "What does the man say about the study rooms?",
-          "opts": ["They must be reserved online.", "They are all taken on Thursday.", "They are only for groups of two.", "They close in the afternoon."],
-          "key": 0,
+          "opts": [
+            "They close in the afternoon.",
+            "They are only for groups of two.",
+            "They must be reserved online.",
+            "They are all taken on Thursday."
+          ],
+          "key": 2,
           "expl": "\"You'll have to do that yourself, on the library website\": a reserva saiu do balcão e virou online.",
           "topic": "Listening · Detalhe"
         }
@@ -93,19 +163,42 @@
       "id": "l1-q04",
       "section": "l1",
       "cena": "a colega que faltou ao laboratório",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+4%", "M": "+7%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+4%",
+        "M": "+7%"
+      },
       "linhas": [
-        ["M", "Did Carla ever turn up for the lab on Tuesday?"],
-        ["W", "No, and I ended up doing both halves of the procedure myself."],
-        ["M", "Did she at least tell you why?"],
-        ["W", "She sent me a message. Three days later."]
+        [
+          "M",
+          "Did Carla ever turn up for the lab on Tuesday?"
+        ],
+        [
+          "W",
+          "No, and I ended up doing both halves of the procedure myself."
+        ],
+        [
+          "M",
+          "Did she at least tell you why?"
+        ],
+        [
+          "W",
+          "She sent me a message. Three days later."
+        ]
       ],
       "questoes": [
         {
           "n": 4,
           "text": "What does the woman imply about Carla?",
-          "opts": ["Carla was ill on Tuesday.", "Carla let her down.", "Carla finished the procedure alone.", "Carla sent a message before the lab."],
+          "opts": [
+            "Carla finished the procedure alone.",
+            "Carla let her down.",
+            "Carla was ill on Tuesday.",
+            "Carla sent a message before the lab."
+          ],
           "key": 1,
           "expl": "A mulher fez o trabalho inteiro sozinha (\"both halves of the procedure myself\") e o \"Three days later\", jogado no fim, é a reclamação: a satisfação veio tarde demais.",
           "topic": "Listening · Inferência"
@@ -116,19 +209,42 @@
       "id": "l1-q05",
       "section": "l1",
       "cena": "trocar de curso, e os créditos que se perdem",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+7%", "M": "+4%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+7%",
+        "M": "+4%"
+      },
       "linhas": [
-        ["W", "So you're really moving from economics to linguistics?"],
-        ["M", "I've been thinking about it since the first semester. The problem is I'd lose almost a year of credits."],
-        ["W", "Have you talked to an advisor?"],
-        ["M", "Tomorrow at ten. I want to know exactly what transfers before I decide."]
+        [
+          "W",
+          "So you're really moving from economics to linguistics?"
+        ],
+        [
+          "M",
+          "I've been thinking about it since the first semester. The problem is I'd lose almost a year of credits."
+        ],
+        [
+          "W",
+          "Have you talked to an advisor?"
+        ],
+        [
+          "M",
+          "Tomorrow at ten. I want to know exactly what transfers before I decide."
+        ]
       ],
       "questoes": [
         {
           "n": 5,
           "text": "What are the speakers mainly discussing?",
-          "opts": ["a change of program the man is considering", "a course the man failed", "an advisor the woman recommends", "the credits the woman needs"],
+          "opts": [
+            "a change of program the man is considering",
+            "an advisor the woman recommends",
+            "the credits the woman needs",
+            "a course the man failed"
+          ],
           "key": 0,
           "expl": "Tudo gira em torno da mudança de economia para linguística: o tempo pensando nela, os créditos que ela custa e a conversa com o orientador que vai decidi-la.",
           "topic": "Listening · Ideia principal"
@@ -139,20 +255,43 @@
       "id": "l1-q06",
       "section": "l1",
       "cena": "o livro esgotado na livraria antes da primeira tarefa",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+5%", "M": "+7%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+5%",
+        "M": "+7%"
+      },
       "linhas": [
-        ["M", "I'm looking for the Bennett textbook for Sociology 200. The shelf is empty."],
-        ["W", "We sold the last one this morning, and the next shipment is two weeks away."],
-        ["M", "But the first assignment is due before that."],
-        ["W", "Then use the library's copy. There are three on reserve at the front desk."]
+        [
+          "M",
+          "I'm looking for the Bennett textbook for Sociology 200. The shelf is empty."
+        ],
+        [
+          "W",
+          "We sold the last one this morning, and the next shipment is two weeks away."
+        ],
+        [
+          "M",
+          "But the first assignment is due before that."
+        ],
+        [
+          "W",
+          "Then use the library's copy. There are three on reserve at the front desk."
+        ]
       ],
       "questoes": [
         {
           "n": 6,
           "text": "What does the woman suggest the man do?",
-          "opts": ["use a copy kept at the library", "wait for the next shipment", "ask for more time on the assignment", "order the book from another store"],
-          "key": 0,
+          "opts": [
+            "ask for more time on the assignment",
+            "wait for the next shipment",
+            "order the book from another store",
+            "use a copy kept at the library"
+          ],
+          "key": 3,
           "expl": "\"Then use the library's copy. There are three on reserve at the front desk.\" A saída que ela oferece é a biblioteca, não a espera.",
           "topic": "Listening · Detalhe"
         }
@@ -162,20 +301,43 @@
       "id": "l1-q07",
       "section": "l1",
       "cena": "a nota lançada no aluno errado",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+6%", "M": "+3%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+6%",
+        "M": "+3%"
+      },
       "linhas": [
-        ["W", "Professor, the portal shows a sixty-two for my second paper, but the comments say excellent work."],
-        ["M", "Let me look. Ah — that's the mark for a different student. Same first name."],
-        ["W", "So it will change?"],
-        ["M", "By this afternoon. And thank you for checking."]
+        [
+          "W",
+          "Professor, the portal shows a sixty-two for my second paper, but the comments say excellent work."
+        ],
+        [
+          "M",
+          "Let me look. Ah — that's the mark for a different student. Same first name."
+        ],
+        [
+          "W",
+          "So it will change?"
+        ],
+        [
+          "M",
+          "By this afternoon. And thank you for checking."
+        ]
       ],
       "questoes": [
         {
           "n": 7,
           "text": "What will most likely happen?",
-          "opts": ["The woman's grade will be corrected.", "The woman will rewrite the paper.", "The professor will remove the comments.", "The other student will complain."],
-          "key": 0,
+          "opts": [
+            "The other student will complain.",
+            "The woman's grade will be corrected.",
+            "The woman will rewrite the paper.",
+            "The professor will remove the comments."
+          ],
+          "key": 1,
           "expl": "O professor reconhece a troca (\"that's the mark for a different student\") e promete \"By this afternoon\": a nota errada vai ser trocada ainda hoje.",
           "topic": "Listening · Inferência"
         }
@@ -185,20 +347,43 @@
       "id": "l1-q08",
       "section": "l1",
       "cena": "o prazo do trancamento e o que aparece no histórico",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+4%", "M": "+6%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+4%",
+        "M": "+6%"
+      },
       "linhas": [
-        ["M", "If I drop the statistics course now, does it show on my transcript?"],
-        ["W", "Not this week. From Monday on, anything you drop appears as a withdrawal."],
-        ["M", "So I have four days."],
-        ["W", "Four days — and the form still has to be signed by your advisor."]
+        [
+          "M",
+          "If I drop the statistics course now, does it show on my transcript?"
+        ],
+        [
+          "W",
+          "Not this week. From Monday on, anything you drop appears as a withdrawal."
+        ],
+        [
+          "M",
+          "So I have four days."
+        ],
+        [
+          "W",
+          "Four days — and the form still has to be signed by your advisor."
+        ]
       ],
       "questoes": [
         {
           "n": 8,
           "text": "What does the woman say about dropping a course after Monday?",
-          "opts": ["It will appear on the transcript.", "It will no longer be allowed.", "It will not need a signature.", "It will take four days."],
-          "key": 0,
+          "opts": [
+            "It will no longer be allowed.",
+            "It will appear on the transcript.",
+            "It will take four days.",
+            "It will not need a signature."
+          ],
+          "key": 1,
           "expl": "\"From Monday on, anything you drop appears as a withdrawal\": depois de segunda o trancamento fica registrado no histórico.",
           "topic": "Listening · Detalhe"
         }
@@ -208,20 +393,43 @@
       "id": "l1-q09",
       "section": "l1",
       "cena": "o colega de seminário que sumiu antes da apresentação",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+7%", "M": "+5%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+7%",
+        "M": "+5%"
+      },
       "linhas": [
-        ["W", "Has Daniel sent you his slides?"],
-        ["M", "Not a word since we split the topics. I've written his section myself, just in case."],
-        ["W", "But we present on Friday."],
-        ["M", "That's exactly why I wrote it."]
+        [
+          "W",
+          "Has Daniel sent you his slides?"
+        ],
+        [
+          "M",
+          "Not a word since we split the topics. I've written his section myself, just in case."
+        ],
+        [
+          "W",
+          "But we present on Friday."
+        ],
+        [
+          "M",
+          "That's exactly why I wrote it."
+        ]
       ],
       "questoes": [
         {
           "n": 9,
           "text": "What does the man imply?",
-          "opts": ["He does not expect Daniel to deliver his part.", "He wants to present on another day.", "He thinks Daniel's slides are ready.", "He would rather present alone."],
-          "key": 0,
+          "opts": [
+            "He would rather present alone.",
+            "He wants to present on another day.",
+            "He does not expect Daniel to deliver his part.",
+            "He thinks Daniel's slides are ready."
+          ],
+          "key": 2,
           "expl": "Ele escreveu a parte do colega \"just in case\" e, quando ela lembra da sexta, responde \"That's exactly why I wrote it\": não conta com o Daniel.",
           "topic": "Listening · Inferência"
         }
@@ -231,20 +439,43 @@
       "id": "l1-q10",
       "section": "l1",
       "cena": "o ônibus interno gratuito para o outro campus",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+6%", "M": "+4%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+6%",
+        "M": "+4%"
+      },
       "linhas": [
-        ["M", "The seminar is at the north campus at six. Do you want to share a taxi?"],
-        ["W", "The shuttle leaves the main library every twenty minutes, and it's free with a student card."],
-        ["M", "I had no idea."],
-        ["W", "Most people don't, and then they pay eleven dollars."]
+        [
+          "M",
+          "The seminar is at the north campus at six. Do you want to share a taxi?"
+        ],
+        [
+          "W",
+          "The shuttle leaves the main library every twenty minutes, and it's free with a student card."
+        ],
+        [
+          "M",
+          "I had no idea."
+        ],
+        [
+          "W",
+          "Most people don't, and then they pay eleven dollars."
+        ]
       ],
       "questoes": [
         {
           "n": 10,
           "text": "Why does the woman mention the shuttle?",
-          "opts": ["to suggest a cheaper way to get there", "to explain why she will be late", "to complain about the price of taxis", "to show how far the seminar is"],
-          "key": 0,
+          "opts": [
+            "to show how far the seminar is",
+            "to explain why she will be late",
+            "to suggest a cheaper way to get there",
+            "to complain about the price of taxis"
+          ],
+          "key": 2,
           "expl": "Ele propõe rachar um táxi; ela responde com o ônibus \"free with a student card\" e fecha com os onze dólares que os outros pagam. A fala existe para oferecer a alternativa barata.",
           "topic": "Listening · Propósito"
         }
@@ -254,19 +485,42 @@
       "id": "l1-q11",
       "section": "l1",
       "cena": "imprimir o pôster para o congresso de iniciação científica",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+5%", "M": "+7%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+5%",
+        "M": "+7%"
+      },
       "linhas": [
-        ["W", "I need my poster printed by Thursday morning, for the undergraduate conference."],
-        ["M", "Then upload the file today. Anything that arrives after five goes into the next day's batch."],
-        ["W", "And the size?"],
-        ["M", "A-zero. And it has to be a PDF — we can't print from slides."]
+        [
+          "W",
+          "I need my poster printed by Thursday morning, for the undergraduate conference."
+        ],
+        [
+          "M",
+          "Then upload the file today. Anything that arrives after five goes into the next day's batch."
+        ],
+        [
+          "W",
+          "And the size?"
+        ],
+        [
+          "M",
+          "A-zero. And it has to be a PDF — we can't print from slides."
+        ]
       ],
       "questoes": [
         {
           "n": 11,
           "text": "What does the man tell the woman about her file?",
-          "opts": ["It has to be a PDF.", "It has to be printed on Thursday.", "It has to be uploaded after five.", "It has to be made from slides."],
+          "opts": [
+            "It has to be a PDF.",
+            "It has to be made from slides.",
+            "It has to be printed on Thursday.",
+            "It has to be uploaded after five."
+          ],
           "key": 0,
           "expl": "\"And it has to be a PDF. We can't print from slides.\" O formato é a exigência, e os slides são justamente o que não serve.",
           "topic": "Listening · Detalhe"
@@ -277,20 +531,43 @@
       "id": "l1-q12",
       "section": "l1",
       "cena": "a carta de recomendação pedida em cima da hora",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+4%", "M": "+7%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+4%",
+        "M": "+7%"
+      },
       "linhas": [
-        ["M", "Would you be able to write me a reference for the exchange program?"],
-        ["W", "I'd be glad to. When is it due?"],
-        ["M", "Tomorrow at noon."],
-        ["W", "Ah. Next time, come to me three weeks earlier, and the letter will be worth reading."]
+        [
+          "M",
+          "Would you be able to write me a reference for the exchange program?"
+        ],
+        [
+          "W",
+          "I'd be glad to. When is it due?"
+        ],
+        [
+          "M",
+          "Tomorrow at noon."
+        ],
+        [
+          "W",
+          "Ah. Next time, come to me three weeks earlier, and the letter will be worth reading."
+        ]
       ],
       "questoes": [
         {
           "n": 12,
           "text": "What does the woman suggest about the letter?",
-          "opts": ["It will be weaker because of the short notice.", "She will not be able to write it.", "The man should ask another professor.", "The deadline has already passed."],
-          "key": 0,
+          "opts": [
+            "The man should ask another professor.",
+            "She will not be able to write it.",
+            "It will be weaker because of the short notice.",
+            "The deadline has already passed."
+          ],
+          "key": 2,
           "expl": "Ela aceita, mas o \"Next time, come to me three weeks earlier, and the letter will be worth reading\" diz que ESTA, escrita da noite para o dia, não vai valer muito.",
           "topic": "Listening · Inferência"
         }
@@ -300,20 +577,43 @@
       "id": "l1-q13",
       "section": "l1",
       "cena": "o andar silencioso que deixou de ser silencioso",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+6%", "M": "+5%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+6%",
+        "M": "+5%"
+      },
       "linhas": [
-        ["W", "The third floor used to be the quiet floor."],
-        ["M", "It still is, officially. Nobody has enforced it since the café opened downstairs."],
-        ["W", "I've started going to the science library instead."],
-        ["M", "So has everyone else I know."]
+        [
+          "W",
+          "The third floor used to be the quiet floor."
+        ],
+        [
+          "M",
+          "It still is, officially. Nobody has enforced it since the café opened downstairs."
+        ],
+        [
+          "W",
+          "I've started going to the science library instead."
+        ],
+        [
+          "M",
+          "So has everyone else I know."
+        ]
       ],
       "questoes": [
         {
           "n": 13,
           "text": "What are the speakers mainly discussing?",
-          "opts": ["a study space that has become noisy", "a café that is about to close", "the opening hours of a library", "a rule the woman broke"],
-          "key": 0,
+          "opts": [
+            "a rule the woman broke",
+            "a café that is about to close",
+            "the opening hours of a library",
+            "a study space that has become noisy"
+          ],
+          "key": 3,
           "expl": "A conversa inteira é sobre o terceiro andar ter perdido o silêncio: a regra que ninguém aplica, o café embaixo e a fuga para a outra biblioteca.",
           "topic": "Listening · Ideia principal"
         }
@@ -323,20 +623,43 @@
       "id": "l1-q14",
       "section": "l1",
       "cena": "o treinamento de segurança antes de entrar no laboratório",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+5%", "M": "+6%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+5%",
+        "M": "+6%"
+      },
       "linhas": [
-        ["M", "Can I start the experiment on Monday?"],
-        ["W", "Only if you've done the safety module. It's two hours, online, with a short test at the end."],
-        ["M", "And if I fail the test?"],
-        ["W", "You take it again. Nobody starts in that lab without passing it."]
+        [
+          "M",
+          "Can I start the experiment on Monday?"
+        ],
+        [
+          "W",
+          "Only if you've done the safety module. It's two hours, online, with a short test at the end."
+        ],
+        [
+          "M",
+          "And if I fail the test?"
+        ],
+        [
+          "W",
+          "You take it again. Nobody starts in that lab without passing it."
+        ]
       ],
       "questoes": [
         {
           "n": 14,
           "text": "What is required before the man can start?",
-          "opts": ["passing an online safety course", "spending two hours in the lab", "written permission from the professor", "a test taken on Monday"],
-          "key": 0,
+          "opts": [
+            "written permission from the professor",
+            "a test taken on Monday",
+            "spending two hours in the lab",
+            "passing an online safety course"
+          ],
+          "key": 3,
           "expl": "\"Only if you've done the safety module... Nobody starts in that lab without passing it.\" A condição é o curso online, e não basta fazer: tem que passar.",
           "topic": "Listening · Detalhe"
         }
@@ -346,19 +669,42 @@
       "id": "l1-q15",
       "section": "l1",
       "cena": "as duas aulas perdidas e o que não está nos slides",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+6%", "M": "+4%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+6%",
+        "M": "+4%"
+      },
       "linhas": [
-        ["W", "I missed the last two lectures. Is there anything I should know?"],
-        ["M", "The exam format changed, the deadline moved, and I handed out the reading list."],
-        ["W", "Oh no."],
-        ["M", "The slides are online. The rest of it isn't."]
+        [
+          "W",
+          "I missed the last two lectures. Is there anything I should know?"
+        ],
+        [
+          "M",
+          "The exam format changed, the deadline moved, and I handed out the reading list."
+        ],
+        [
+          "W",
+          "Oh no."
+        ],
+        [
+          "M",
+          "The slides are online. The rest of it isn't."
+        ]
       ],
       "questoes": [
         {
           "n": 15,
           "text": "What does the man imply?",
-          "opts": ["The woman missed information she cannot find online.", "The woman should not worry about the lectures.", "The exam format will change again.", "The reading list is in the slides."],
+          "opts": [
+            "The woman missed information she cannot find online.",
+            "The reading list is in the slides.",
+            "The woman should not worry about the lectures.",
+            "The exam format will change again."
+          ],
           "key": 0,
           "expl": "\"The slides are online. The rest of it isn't\": o formato da prova, o novo prazo e a lista de leitura só existiam na aula.",
           "topic": "Listening · Inferência"
@@ -369,20 +715,43 @@
       "id": "l1-q16",
       "section": "l1",
       "cena": "a bolsa de iniciação científica e os horários fixos",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+4%", "M": "+6%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+4%",
+        "M": "+6%"
+      },
       "linhas": [
-        ["M", "How many hours a week is the research assistant position?"],
-        ["W", "Ten, and they're fixed — Tuesday and Thursday mornings, in the lab."],
-        ["M", "I have a class Thursday at nine."],
-        ["W", "Then it won't work. Nine is when we run the interviews."]
+        [
+          "M",
+          "How many hours a week is the research assistant position?"
+        ],
+        [
+          "W",
+          "Ten, and they're fixed — Tuesday and Thursday mornings, in the lab."
+        ],
+        [
+          "M",
+          "I have a class Thursday at nine."
+        ],
+        [
+          "W",
+          "Then it won't work. Nine is when we run the interviews."
+        ]
       ],
       "questoes": [
         {
           "n": 16,
           "text": "What does the woman say about the position?",
-          "opts": ["The hours cannot be changed.", "It takes ten hours on Tuesday.", "The interviews are run on Tuesday.", "It is only open to first-year students."],
-          "key": 0,
+          "opts": [
+            "The interviews are run on Tuesday.",
+            "It takes ten hours on Tuesday.",
+            "It is only open to first-year students.",
+            "The hours cannot be changed."
+          ],
+          "key": 3,
           "expl": "\"Ten, and they're fixed\", e a aula de quinta às nove é justamente a hora das entrevistas, por isso \"it won't work\". O horário é rígido.",
           "topic": "Listening · Detalhe"
         }
@@ -392,20 +761,43 @@
       "id": "l1-q17",
       "section": "l1",
       "cena": "o capítulo que ela mal começou a ler",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "+7%", "M": "+5%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+7%",
+        "M": "+5%"
+      },
       "linhas": [
-        ["M", "What did you make of the Ferreira chapter?"],
-        ["W", "I made a start on it."],
-        ["M", "It's forty pages."],
-        ["W", "Then I've made a very small start."]
+        [
+          "M",
+          "What did you make of the Ferreira chapter?"
+        ],
+        [
+          "W",
+          "I made a start on it."
+        ],
+        [
+          "M",
+          "It's forty pages."
+        ],
+        [
+          "W",
+          "Then I've made a very small start."
+        ]
       ],
       "questoes": [
         {
           "n": 17,
           "text": "What does the woman mean?",
-          "opts": ["She has read almost none of the chapter.", "She found the chapter too short.", "She finished the chapter quickly.", "She read a different chapter."],
-          "key": 0,
+          "opts": [
+            "She finished the chapter quickly.",
+            "She has read almost none of the chapter.",
+            "She read a different chapter.",
+            "She found the chapter too short."
+          ],
+          "key": 1,
           "expl": "\"A very small start\" em quarenta páginas é o modo educado de admitir que ela quase não leu.",
           "topic": "Listening · Inferência"
         }
@@ -415,19 +807,42 @@
       "id": "l1-q18",
       "section": "l1",
       "cena": "a prova final que virou consulta aberta",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+5%", "M": "+7%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+5%",
+        "M": "+7%"
+      },
       "linhas": [
-        ["W", "Did you hear the final is open book this year?"],
-        ["M", "Open book, yes — but half the marks are on a single essay question."],
-        ["W", "That sounds harder, not easier."],
-        ["M", "That's what the professor said too."]
+        [
+          "W",
+          "Did you hear the final is open book this year?"
+        ],
+        [
+          "M",
+          "Open book, yes — but half the marks are on a single essay question."
+        ],
+        [
+          "W",
+          "That sounds harder, not easier."
+        ],
+        [
+          "M",
+          "That's what the professor said too."
+        ]
       ],
       "questoes": [
         {
           "n": 18,
           "text": "What are the speakers mainly discussing?",
-          "opts": ["a change to the final exam", "a book they have to buy", "an essay they have written", "the marks they received"],
+          "opts": [
+            "a change to the final exam",
+            "an essay they have written",
+            "the marks they received",
+            "a book they have to buy"
+          ],
           "key": 0,
           "expl": "Os dois falam da nova forma da prova final: consulta aberta, mas metade da nota numa única dissertação.",
           "topic": "Listening · Ideia principal"
@@ -438,26 +853,48 @@
       "id": "l1-q19",
       "section": "l1",
       "cena": "os dois laboratórios no mesmo semestre e o formulário que ela não envia",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "+6%", "M": "+4%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "+6%",
+        "M": "+4%"
+      },
       "linhas": [
-        ["M", "You've been in the lab until midnight all week."],
-        ["W", "Two lab courses in the same semester. Everyone told me not to."],
-        ["M", "Can you still drop one?"],
-        ["W", "Until Friday. I keep opening the form and closing it again."]
+        [
+          "M",
+          "You've been in the lab until midnight all week."
+        ],
+        [
+          "W",
+          "Two lab courses in the same semester. Everyone told me not to."
+        ],
+        [
+          "M",
+          "Can you still drop one?"
+        ],
+        [
+          "W",
+          "Until Friday. I keep opening the form and closing it again."
+        ]
       ],
       "questoes": [
         {
           "n": 19,
           "text": "What does the woman imply?",
-          "opts": ["She has not decided whether to drop a course.", "She has already dropped one course.", "She missed the deadline on Friday.", "She was advised to take both courses."],
-          "key": 0,
+          "opts": [
+            "She missed the deadline on Friday.",
+            "She has not decided whether to drop a course.",
+            "She was advised to take both courses.",
+            "She has already dropped one course."
+          ],
+          "key": 1,
           "expl": "O prazo ainda está de pé (\"Until Friday\") e ela \"keeps opening the form and closing it again\": está em cima do muro.",
           "topic": "Listening · Inferência"
         }
       ]
     },
-
     {
       "id": "l2-set1",
       "section": "l2",
@@ -465,46 +902,109 @@
       "title": "Conversation 1 · Questions 20–23",
       "cena": "a aluna decide entre escrever a monografia ou fazer dois seminários",
       "intro": "Now, turn the page. Numbers 20 to 23. Listen to a conversation between a student and her academic advisor.",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "-13%", "M": "-3%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "-13%",
+        "M": "-3%"
+      },
       "linhas": [
-        ["W", "Thanks for seeing me. I have to decide by Friday whether to write a thesis next year or take two more seminars instead."],
-        ["M", "And which way are you leaning?"],
-        ["W", "The thesis. But three different people have told me it's a mistake if I'm not going on to a master's."],
-        ["M", "Are you going on to a master's?"],
-        ["W", "I don't know yet. That's the honest answer."],
-        ["M", "Then that's the answer we should plan around. A thesis is two semesters with one supervisor on one question. If you like that, and you're good at it, you'll learn something about yourself that no seminar can tell you."],
-        ["W", "And if I hate it?"],
-        ["M", "You'll know that too — before you spend two years finding out."],
-        ["W", "The seminars would be safer."],
-        ["M", "Safer, and you'd read more widely. But some students leave here having never written anything longer than fifteen pages, and a fair number of them regret it."],
-        ["W", "You're not making this easier."],
-        ["M", "I'm not trying to. Let me ask you something instead. Is there a question you'd actually want to live with for a year?"],
-        ["W", "The one from your course, on migration and school choice. I haven't stopped thinking about it."],
-        ["M", "Then you've answered your own question. Come back Thursday with a page on it, and we'll see whether it holds."]
+        [
+          "W",
+          "Thanks for seeing me. I have to decide by Friday whether to write a thesis next year or take two more seminars instead."
+        ],
+        [
+          "M",
+          "And which way are you leaning?"
+        ],
+        [
+          "W",
+          "The thesis. But three different people have told me it's a mistake if I'm not going on to a master's."
+        ],
+        [
+          "M",
+          "Are you going on to a master's?"
+        ],
+        [
+          "W",
+          "I don't know yet. That's the honest answer."
+        ],
+        [
+          "M",
+          "Then that's the answer we should plan around. A thesis is two semesters with one supervisor on one question. If you like that, and you're good at it, you'll learn something about yourself that no seminar can tell you."
+        ],
+        [
+          "W",
+          "And if I hate it?"
+        ],
+        [
+          "M",
+          "You'll know that too — before you spend two years finding out."
+        ],
+        [
+          "W",
+          "The seminars would be safer."
+        ],
+        [
+          "M",
+          "Safer, and you'd read more widely. But some students leave here having never written anything longer than fifteen pages, and a fair number of them regret it."
+        ],
+        [
+          "W",
+          "You're not making this easier."
+        ],
+        [
+          "M",
+          "I'm not trying to. Let me ask you something instead. Is there a question you'd actually want to live with for a year?"
+        ],
+        [
+          "W",
+          "The one from your course, on migration and school choice. I haven't stopped thinking about it."
+        ],
+        [
+          "M",
+          "Then you've answered your own question. Come back Thursday with a page on it, and we'll see whether it holds."
+        ]
       ],
       "questoes": [
         {
           "n": 20,
           "text": "What are the speakers mainly discussing?",
-          "opts": ["whether the woman should write a thesis", "a seminar the woman is teaching", "the woman's application to a master's program", "a deadline the woman has already missed"],
-          "key": 0,
+          "opts": [
+            "the woman's application to a master's program",
+            "a deadline the woman has already missed",
+            "a seminar the woman is teaching",
+            "whether the woman should write a thesis"
+          ],
+          "key": 3,
           "expl": "A conversa inteira é a escolha da aluna para o ano seguinte: a monografia ou os dois seminários. Tudo o mais (o mestrado, a pergunta de pesquisa) entra a serviço dessa decisão.",
           "topic": "Listening · Ideia principal"
         },
         {
           "n": 21,
           "text": "Why does the advisor ask whether she is going on to a master's?",
-          "opts": ["to find out what her decision should be built around", "to suggest that she apply this year", "to explain why the thesis is required", "to warn her about the Friday deadline"],
-          "key": 0,
+          "opts": [
+            "to warn her about the Friday deadline",
+            "to explain why the thesis is required",
+            "to find out what her decision should be built around",
+            "to suggest that she apply this year"
+          ],
+          "key": 2,
           "expl": "Quando ela responde \"I don't know yet\", ele emenda: \"Then that's the answer we should plan around\". A pergunta serviu para descobrir sobre que base decidir.",
           "topic": "Listening · Propósito"
         },
         {
           "n": 22,
           "text": "What does the advisor say about students who take only seminars?",
-          "opts": ["Some of them regret never writing anything long.", "They read less widely than other students.", "They usually go on to a master's.", "They finish their program a semester earlier."],
-          "key": 0,
+          "opts": [
+            "They finish their program a semester earlier.",
+            "They usually go on to a master's.",
+            "Some of them regret never writing anything long.",
+            "They read less widely than other students."
+          ],
+          "key": 2,
           "expl": "\"Some students leave here having never written anything longer than fifteen pages, and a fair number of them regret it.\"",
           "topic": "Listening · Detalhe"
         },
@@ -512,8 +1012,13 @@
           "n": 23,
           "text": "What does the advisor mean when he says this?",
           "quote": "Then you've answered your own question.",
-          "opts": ["Her interest in the topic shows she should write the thesis.", "She has already decided about the master's.", "The question she raised in his course was the wrong one.", "He is not able to help her decide."],
-          "key": 0,
+          "opts": [
+            "She has already decided about the master's.",
+            "He is not able to help her decide.",
+            "The question she raised in his course was the wrong one.",
+            "Her interest in the topic shows she should write the thesis."
+          ],
+          "key": 3,
           "expl": "Ele havia perguntado se existia uma questão com que ela quisesse conviver por um ano. Ela responde com uma em que não para de pensar, e é isso que decide a favor da monografia.",
           "topic": "Listening · Intenção do falante"
         }
@@ -526,38 +1031,96 @@
       "title": "Conversation 2 · Questions 24–26",
       "cena": "o relatório de laboratório e a curva que não bate com a previsão",
       "intro": "Numbers 24 to 26. Listen to a conversation between two students.",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "-2%", "M": "+0%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "-2%",
+        "M": "+0%"
+      },
       "linhas": [
-        ["M", "Have you looked at the data from the second run?"],
-        ["W", "That's why I messaged you. The temperature curve doesn't match anything we predicted."],
-        ["M", "Did the probe move?"],
-        ["W", "I checked the photographs from the setup. It was in exactly the same place both times."],
-        ["M", "Then either the sample was different or the equipment was."],
-        ["W", "There is one thing. The second run was on Thursday — and Thursday is when they recalibrated the water bath."],
-        ["M", "Ah."],
-        ["W", "I asked the technician. He said the offset was about half a degree."],
-        ["M", "Half a degree would do it. So do we report both runs?"],
-        ["W", "Both, with a note explaining the calibration. Hiding the odd one would be far worse than explaining it."],
-        ["M", "The report is due Monday, though. Writing that section properly takes time."],
-        ["W", "It takes an hour. I'd rather spend the hour than have Doctor Lima ask us, in front of everyone, why our second curve is prettier than our first."],
-        ["M", "Fair enough. I'll draft the methods — you take the discussion?"],
-        ["W", "Deal. And send me the raw file. I want the numbers, not your table."]
+        [
+          "M",
+          "Have you looked at the data from the second run?"
+        ],
+        [
+          "W",
+          "That's why I messaged you. The temperature curve doesn't match anything we predicted."
+        ],
+        [
+          "M",
+          "Did the probe move?"
+        ],
+        [
+          "W",
+          "I checked the photographs from the setup. It was in exactly the same place both times."
+        ],
+        [
+          "M",
+          "Then either the sample was different or the equipment was."
+        ],
+        [
+          "W",
+          "There is one thing. The second run was on Thursday — and Thursday is when they recalibrated the water bath."
+        ],
+        [
+          "M",
+          "Ah."
+        ],
+        [
+          "W",
+          "I asked the technician. He said the offset was about half a degree."
+        ],
+        [
+          "M",
+          "Half a degree would do it. So do we report both runs?"
+        ],
+        [
+          "W",
+          "Both, with a note explaining the calibration. Hiding the odd one would be far worse than explaining it."
+        ],
+        [
+          "M",
+          "The report is due Monday, though. Writing that section properly takes time."
+        ],
+        [
+          "W",
+          "It takes an hour. I'd rather spend the hour than have Doctor Lima ask us, in front of everyone, why our second curve is prettier than our first."
+        ],
+        [
+          "M",
+          "Fair enough. I'll draft the methods — you take the discussion?"
+        ],
+        [
+          "W",
+          "Deal. And send me the raw file. I want the numbers, not your table."
+        ]
       ],
       "questoes": [
         {
           "n": 24,
           "text": "Why does the woman mention Thursday?",
-          "opts": ["to point to a possible cause of the strange results", "to remind the man when the report is due", "to explain why she missed the second run", "to complain about the technician"],
-          "key": 0,
+          "opts": [
+            "to remind the man when the report is due",
+            "to complain about the technician",
+            "to point to a possible cause of the strange results",
+            "to explain why she missed the second run"
+          ],
+          "key": 2,
           "expl": "Ela liga a data ao equipamento: \"Thursday is when they recalibrated the water bath\", com um desvio de meio grau. É a explicação da curva estranha.",
           "topic": "Listening · Propósito"
         },
         {
           "n": 25,
           "text": "What will the students most likely do?",
-          "opts": ["report both runs and explain the calibration", "repeat the second run before Monday", "leave the second run out of the report", "ask Doctor Lima for extra time"],
-          "key": 0,
+          "opts": [
+            "leave the second run out of the report",
+            "repeat the second run before Monday",
+            "ask Doctor Lima for extra time",
+            "report both runs and explain the calibration"
+          ],
+          "key": 3,
           "expl": "\"Both, with a note explaining the calibration\", e o homem aceita ao dividir as seções entre os dois. A hora extra é justamente para escrever essa nota.",
           "topic": "Listening · Inferência"
         },
@@ -565,7 +1128,12 @@
           "n": 26,
           "text": "What does the woman mean when she says this?",
           "quote": "I want the numbers, not your table.",
-          "opts": ["She wants to look at the original data herself.", "She thinks his table is badly formatted.", "She will build the table for him.", "She does not need the raw file."],
+          "opts": [
+            "She wants to look at the original data herself.",
+            "She will build the table for him.",
+            "She does not need the raw file.",
+            "She thinks his table is badly formatted."
+          ],
           "key": 0,
           "expl": "Ela pede o arquivo bruto: quer os dados originais, não os já organizados por ele. É o que se espera de quem acabou de descobrir um erro de calibragem.",
           "topic": "Listening · Intenção do falante"
@@ -579,45 +1147,108 @@
       "title": "Conversation 3 · Questions 27–30",
       "cena": "duzentos resultados inúteis e a bibliotecária que ensina a buscar",
       "intro": "Numbers 27 to 30. Listen to a conversation between a student and a librarian.",
-      "vozes": { "W": "en-US-AvaMultilingualNeural", "M": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "W": "-8%", "M": "+1%" },
+      "vozes": {
+        "W": "en-US-AvaMultilingualNeural",
+        "M": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "-8%",
+        "M": "+1%"
+      },
       "linhas": [
-        ["M", "I'm writing about school meal programs, and I've got two hundred results, most of them useless."],
-        ["W", "Two hundred from where?"],
-        ["M", "The main search box."],
-        ["W", "That's the problem — not your topic. The main box searches everything we own, including the newspaper archive. What kind of sources does your professor want?"],
-        ["M", "Peer-reviewed articles from the last ten years."],
-        ["W", "Then use the education database instead. Set the date range, tick the peer-review filter, and two hundred becomes about thirty."],
-        ["M", "Can I do that from home?"],
-        ["W", "Yes, as long as you go in through the library's own page, so the system knows you're a student. If you go straight to the publisher's site, you'll be asked to pay."],
-        ["M", "That's exactly what happened yesterday. I assumed we didn't have the article."],
-        ["W", "We almost always do. Come through our page first."],
-        ["M", "And if something really isn't there?"],
-        ["W", "Then you request it and we borrow it from another library. It's free, and it takes three or four days — so ask early, not the night before."],
-        ["M", "My deadline is in two weeks."],
-        ["W", "Then you have time. Start with the thirty, read the ones that keep citing each other, and you'll find the four that matter."]
+        [
+          "M",
+          "I'm writing about school meal programs, and I've got two hundred results, most of them useless."
+        ],
+        [
+          "W",
+          "Two hundred from where?"
+        ],
+        [
+          "M",
+          "The main search box."
+        ],
+        [
+          "W",
+          "That's the problem — not your topic. The main box searches everything we own, including the newspaper archive. What kind of sources does your professor want?"
+        ],
+        [
+          "M",
+          "Peer-reviewed articles from the last ten years."
+        ],
+        [
+          "W",
+          "Then use the education database instead. Set the date range, tick the peer-review filter, and two hundred becomes about thirty."
+        ],
+        [
+          "M",
+          "Can I do that from home?"
+        ],
+        [
+          "W",
+          "Yes, as long as you go in through the library's own page, so the system knows you're a student. If you go straight to the publisher's site, you'll be asked to pay."
+        ],
+        [
+          "M",
+          "That's exactly what happened yesterday. I assumed we didn't have the article."
+        ],
+        [
+          "W",
+          "We almost always do. Come through our page first."
+        ],
+        [
+          "M",
+          "And if something really isn't there?"
+        ],
+        [
+          "W",
+          "Then you request it and we borrow it from another library. It's free, and it takes three or four days — so ask early, not the night before."
+        ],
+        [
+          "M",
+          "My deadline is in two weeks."
+        ],
+        [
+          "W",
+          "Then you have time. Start with the thirty, read the ones that keep citing each other, and you'll find the four that matter."
+        ]
       ],
       "questoes": [
         {
           "n": 27,
           "text": "What are the speakers mainly discussing?",
-          "opts": ["how the man should search for his sources", "an article the man was asked to pay for", "a deadline the man cannot meet", "a database the library has cancelled"],
-          "key": 0,
+          "opts": [
+            "a deadline the man cannot meet",
+            "an article the man was asked to pay for",
+            "how the man should search for his sources",
+            "a database the library has cancelled"
+          ],
+          "key": 2,
           "expl": "Do começo ao fim, a bibliotecária corrige o método de busca dele: a caixa errada, o filtro certo, o caminho de acesso e por onde começar a ler.",
           "topic": "Listening · Ideia principal"
         },
         {
           "n": 28,
           "text": "What does the librarian say about the main search box?",
-          "opts": ["It searches the newspaper archive as well.", "It cannot be used from home.", "It shows only peer-reviewed articles.", "It returns about thirty results."],
-          "key": 0,
+          "opts": [
+            "It returns about thirty results.",
+            "It cannot be used from home.",
+            "It shows only peer-reviewed articles.",
+            "It searches the newspaper archive as well."
+          ],
+          "key": 3,
           "expl": "\"The main box searches everything we own, including the newspaper archive\": é por isso que voltam duzentos resultados em sua maioria inúteis.",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 29,
           "text": "Why does the librarian tell him to go in through the library's page?",
-          "opts": ["so that the system recognizes him as a student", "so that his searches are saved for later", "so that he can borrow books from other libraries", "so that he can change the date range"],
+          "opts": [
+            "so that the system recognizes him as a student",
+            "so that he can change the date range",
+            "so that his searches are saved for later",
+            "so that he can borrow books from other libraries"
+          ],
           "key": 0,
           "expl": "\"so the system knows you're a student. If you go straight to the publisher's site, you'll be asked to pay\". O caminho existe para o acesso ser reconhecido.",
           "topic": "Listening · Propósito"
@@ -625,8 +1256,13 @@
         {
           "n": 30,
           "text": "What does the librarian suggest about the man's problem yesterday?",
-          "opts": ["The article was probably available to him at no cost.", "The article had not been published yet.", "He had searched in the wrong database.", "His deadline was too close for a request."],
-          "key": 0,
+          "opts": [
+            "The article had not been published yet.",
+            "The article was probably available to him at no cost.",
+            "He had searched in the wrong database.",
+            "His deadline was too close for a request."
+          ],
+          "key": 1,
           "expl": "Ele achou que a biblioteca não tinha o artigo; ela responde \"We almost always do\". O texto provavelmente estava disponível, e o que faltou foi entrar pelo caminho certo.",
           "topic": "Listening · Inferência"
         }
@@ -639,36 +1275,88 @@
       "title": "Conversation 4 · Questions 31–33",
       "cena": "dois professores discutem a política de entrega atrasada",
       "intro": "Numbers 31 to 33. Listen to a conversation between two instructors.",
-      "vozes": { "W": "en-US-EmmaMultilingualNeural", "M": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "W": "-4%", "M": "+1%" },
+      "vozes": {
+        "W": "en-US-EmmaMultilingualNeural",
+        "M": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "W": "-4%",
+        "M": "+1%"
+      },
       "linhas": [
-        ["W", "Did you see that the department wants one late policy for all the first-year courses?"],
-        ["M", "I saw. Mine is five percent a day. Yours is what — a free extension if they ask?"],
-        ["W", "Forty-eight hours, no questions asked, once a semester. And it changed everything."],
-        ["M", "Changed what, exactly?"],
-        ["W", "The emails. I used to spend an evening a week reading explanations of why the work was late — the illness, the printer, the grandmother. Now they click a button."],
-        ["M", "And do they hand in worse work?"],
-        ["W", "That was my worry too. The average went up slightly. What went down was the number of papers that never arrived at all."],
-        ["M", "Hm. My worry is the student who uses the forty-eight hours in week two and then genuinely gets ill in week ten."],
-        ["W", "That happens. I still make exceptions — I just make far fewer of them."],
-        ["M", "So the policy isn't the whole system."],
-        ["W", "The policy is the part I don't have to think about. The exceptions are the part I do."],
-        ["M", "Put that in the meeting. Word for word."]
+        [
+          "W",
+          "Did you see that the department wants one late policy for all the first-year courses?"
+        ],
+        [
+          "M",
+          "I saw. Mine is five percent a day. Yours is what — a free extension if they ask?"
+        ],
+        [
+          "W",
+          "Forty-eight hours, no questions asked, once a semester. And it changed everything."
+        ],
+        [
+          "M",
+          "Changed what, exactly?"
+        ],
+        [
+          "W",
+          "The emails. I used to spend an evening a week reading explanations of why the work was late — the illness, the printer, the grandmother. Now they click a button."
+        ],
+        [
+          "M",
+          "And do they hand in worse work?"
+        ],
+        [
+          "W",
+          "That was my worry too. The average went up slightly. What went down was the number of papers that never arrived at all."
+        ],
+        [
+          "M",
+          "Hm. My worry is the student who uses the forty-eight hours in week two and then genuinely gets ill in week ten."
+        ],
+        [
+          "W",
+          "That happens. I still make exceptions — I just make far fewer of them."
+        ],
+        [
+          "M",
+          "So the policy isn't the whole system."
+        ],
+        [
+          "W",
+          "The policy is the part I don't have to think about. The exceptions are the part I do."
+        ],
+        [
+          "M",
+          "Put that in the meeting. Word for word."
+        ]
       ],
       "questoes": [
         {
           "n": 31,
           "text": "Why does the woman mention emails?",
-          "opts": ["to show how the policy changed her own workload", "to explain why so many students were ill", "to complain about a department decision", "to describe a message she sent to a student"],
-          "key": 0,
+          "opts": [
+            "to describe a message she sent to a student",
+            "to show how the policy changed her own workload",
+            "to complain about a department decision",
+            "to explain why so many students were ill"
+          ],
+          "key": 1,
           "expl": "Ela perdia \"an evening a week\" lendo justificativas; com a prorrogação automática, \"now they click a button\". Os e-mails medem o que mudou para ela.",
           "topic": "Listening · Propósito"
         },
         {
           "n": 32,
           "text": "What does the woman suggest about her students' work?",
-          "opts": ["It did not get worse under the new policy.", "It improved a great deal.", "It usually arrives two days late.", "It is graded five percent lower."],
-          "key": 0,
+          "opts": [
+            "It is graded five percent lower.",
+            "It did not get worse under the new policy.",
+            "It improved a great deal.",
+            "It usually arrives two days late."
+          ],
+          "key": 1,
           "expl": "\"That was my worry too. The average went up slightly.\" O medo de piorar não se confirmou, e ainda caiu o número de trabalhos que nunca chegavam.",
           "topic": "Listening · Inferência"
         },
@@ -676,14 +1364,18 @@
           "n": 33,
           "text": "What does the man mean when he says this?",
           "quote": "Put that in the meeting. Word for word.",
-          "opts": ["He thinks she should make that argument to the department.", "He wants her to write the new policy herself.", "He disagrees with what she has just said.", "He will repeat her words for her."],
-          "key": 0,
+          "opts": [
+            "He will repeat her words for her.",
+            "He thinks she should make that argument to the department.",
+            "He wants her to write the new policy herself.",
+            "He disagrees with what she has just said."
+          ],
+          "key": 1,
           "expl": "Ela acabou de resumir a diferença entre a regra e as exceções. Ele acha a formulação tão boa que quer ouvi-la, igual, na reunião do departamento.",
           "topic": "Listening · Intenção do falante"
         }
       ]
     },
-
     {
       "id": "l3-set1",
       "section": "l3",
@@ -691,21 +1383,48 @@
       "title": "Lecture 1 · Questions 34–37",
       "cena": "apresentação do centro de escrita aos calouros",
       "intro": "Now, turn the page. Numbers 34 to 37. Listen to a talk given to new students.",
-      "vozes": { "S": "en-US-AvaMultilingualNeural" },
-      "ritmo": { "S": "-20%" },
+      "vozes": {
+        "S": "en-US-AvaMultilingualNeural"
+      },
+      "ritmo": {
+        "S": "-20%"
+      },
       "linhas": [
-        ["S", "Welcome, and thank you for coming on a Friday afternoon. I run the writing center, and my job for the next half hour is to correct the three things students believe about us that are wrong."],
-        ["S", "The first is that we're a repair shop — that you bring us a finished paper the night before and we fix the grammar. We don't. We'll read it with you, and we'll ask you what your argument is, but we won't proofread it, and we never edit a text without its writer in the room."],
-        ["S", "The second is that the center is for students who are struggling. Last year our most frequent visitors were graduate students, and our single busiest week was the week before doctoral applications were due. Strong writers use us more, not less."],
-        ["S", "The third is about time. A session is fifty minutes, and you may book two a week. Most people book one, come once, and never come back — usually because they came too late for it to help. Bring us an outline. Bring us a paragraph you can't finish. Bring us the assignment sheet you don't understand."],
-        ["S", "Booking is on the library's second floor, or on our page. And there are always two walk-in slots at four o'clock, Monday to Thursday. Those are almost never taken, which tells you something about how students plan."],
-        ["S", "If you remember one thing from today: come early, and come with a question."]
+        [
+          "S",
+          "Welcome, and thank you for coming on a Friday afternoon. I run the writing center, and my job for the next half hour is to correct the three things students believe about us that are wrong."
+        ],
+        [
+          "S",
+          "The first is that we're a repair shop — that you bring us a finished paper the night before and we fix the grammar. We don't. We'll read it with you, and we'll ask you what your argument is, but we won't proofread it, and we never edit a text without its writer in the room."
+        ],
+        [
+          "S",
+          "The second is that the center is for students who are struggling. Last year our most frequent visitors were graduate students, and our single busiest week was the week before doctoral applications were due. Strong writers use us more, not less."
+        ],
+        [
+          "S",
+          "The third is about time. A session is fifty minutes, and you may book two a week. Most people book one, come once, and never come back — usually because they came too late for it to help. Bring us an outline. Bring us a paragraph you can't finish. Bring us the assignment sheet you don't understand."
+        ],
+        [
+          "S",
+          "Booking is on the library's second floor, or on our page. And there are always two walk-in slots at four o'clock, Monday to Thursday. Those are almost never taken, which tells you something about how students plan."
+        ],
+        [
+          "S",
+          "If you remember one thing from today: come early, and come with a question."
+        ]
       ],
       "questoes": [
         {
           "n": 34,
           "text": "What is the talk mainly about?",
-          "opts": ["what the writing center does and does not do", "how to improve the grammar of a paper", "the opening hours of the university library", "how to apply to a doctoral program"],
+          "opts": [
+            "what the writing center does and does not do",
+            "how to improve the grammar of a paper",
+            "the opening hours of the university library",
+            "how to apply to a doctoral program"
+          ],
           "key": 0,
           "expl": "A fala se organiza em torno de três crenças erradas sobre o centro: o conserto de última hora, o público e o momento de procurar. É uma descrição do serviço pelo avesso.",
           "topic": "Listening · Ideia principal"
@@ -713,15 +1432,25 @@
         {
           "n": 35,
           "text": "What does the speaker say about proofreading?",
-          "opts": ["The center does not do it.", "It is done while the writer waits.", "It is offered only to graduate students.", "It takes a full fifty-minute session."],
-          "key": 0,
+          "opts": [
+            "It takes a full fifty-minute session.",
+            "The center does not do it.",
+            "It is done while the writer waits.",
+            "It is offered only to graduate students."
+          ],
+          "key": 1,
           "expl": "\"We won't proofread it, and we never edit a text without its writer in the room.\" A revisão de superfície está fora do serviço.",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 36,
           "text": "Who used the center most often last year?",
-          "opts": ["graduate students", "first-year students", "students who were failing", "students in their final year"],
+          "opts": [
+            "graduate students",
+            "students who were failing",
+            "students in their final year",
+            "first-year students"
+          ],
           "key": 0,
           "expl": "\"Last year our most frequent visitors were graduate students\", e a semana mais cheia foi a das inscrições de doutorado.",
           "topic": "Listening · Detalhe"
@@ -729,8 +1458,13 @@
         {
           "n": 37,
           "text": "Why does the speaker mention the four o'clock walk-in slots?",
-          "opts": ["to point out an opportunity students fail to use", "to explain why booking is difficult", "to announce a change in the schedule", "to ask students to arrive before four"],
-          "key": 0,
+          "opts": [
+            "to explain why booking is difficult",
+            "to announce a change in the schedule",
+            "to point out an opportunity students fail to use",
+            "to ask students to arrive before four"
+          ],
+          "key": 2,
           "expl": "\"Those are almost never taken, which tells you something about how students plan\". A vaga existe, sobra, e a sobra é a crítica.",
           "topic": "Listening · Propósito"
         }
@@ -743,45 +1477,84 @@
       "title": "Lecture 2 · Questions 38–41",
       "cena": "trecho de aula de psicologia sobre o efeito do espaçamento",
       "intro": "Numbers 38 to 41. Listen to part of a lecture in a psychology course.",
-      "vozes": { "S": "en-US-AndrewMultilingualNeural" },
-      "ritmo": { "S": "-9%" },
+      "vozes": {
+        "S": "en-US-AndrewMultilingualNeural"
+      },
+      "ritmo": {
+        "S": "-9%"
+      },
       "linhas": [
-        ["S", "Last week we looked at how memories are stored. Today I want to look at a finding that is more than a century old, that almost every student has heard of, and that almost nobody acts on."],
-        ["S", "In eighteen eighty-five, Hermann Ebbinghaus taught himself lists of nonsense syllables and measured how quickly he forgot them. The forgetting was steep at first and then flattened out — that's the curve in your textbook. But the more useful part of his work is what happened when he spread the learning out. The same total study time, divided across several days, produced far better recall than the same minutes taken in one sitting. That is the spacing effect, and it has since been replicated in schoolchildren, in medical students, and in surgeons learning to suture."],
-        ["S", "So why does nobody do it? Because massed study feels better. When you read a chapter four times in one evening, the text becomes fluent, and fluency feels like knowledge. Come back a week later and the fluency is gone — because it was never knowledge. It was familiarity."],
-        ["S", "Spacing feels worse precisely because it works. Each time you return, you have forgotten a little, and the effort of recovering it is what strengthens the memory."],
-        ["S", "For Thursday, read the Bjork chapter on desirable difficulties. And read it twice, on two different days — which is either an instruction or a demonstration, depending on how you take it."]
+        [
+          "S",
+          "Last week we looked at how memories are stored. Today I want to look at a finding that is more than a century old, that almost every student has heard of, and that almost nobody acts on."
+        ],
+        [
+          "S",
+          "In eighteen eighty-five, Hermann Ebbinghaus taught himself lists of nonsense syllables and measured how quickly he forgot them. The forgetting was steep at first and then flattened out — that's the curve in your textbook. But the more useful part of his work is what happened when he spread the learning out. The same total study time, divided across several days, produced far better recall than the same minutes taken in one sitting. That is the spacing effect, and it has since been replicated in schoolchildren, in medical students, and in surgeons learning to suture."
+        ],
+        [
+          "S",
+          "So why does nobody do it? Because massed study feels better. When you read a chapter four times in one evening, the text becomes fluent, and fluency feels like knowledge. Come back a week later and the fluency is gone — because it was never knowledge. It was familiarity."
+        ],
+        [
+          "S",
+          "Spacing feels worse precisely because it works. Each time you return, you have forgotten a little, and the effort of recovering it is what strengthens the memory."
+        ],
+        [
+          "S",
+          "For Thursday, read the Bjork chapter on desirable difficulties. And read it twice, on two different days — which is either an instruction or a demonstration, depending on how you take it."
+        ]
       ],
       "questoes": [
         {
           "n": 38,
           "text": "What is the lecture mainly about?",
-          "opts": ["why spreading study out works better than concentrating it", "how Ebbinghaus invented the nonsense syllable", "why students forget lists of unfamiliar words", "how surgeons are trained to perform new procedures"],
-          "key": 0,
+          "opts": [
+            "how Ebbinghaus invented the nonsense syllable",
+            "why spreading study out works better than concentrating it",
+            "how surgeons are trained to perform new procedures",
+            "why students forget lists of unfamiliar words"
+          ],
+          "key": 1,
           "expl": "A aula parte da curva do esquecimento para chegar ao efeito do espaçamento e a por que os alunos não o usam. O assunto é esse efeito.",
           "topic": "Listening · Ideia principal"
         },
         {
           "n": 39,
           "text": "What did Ebbinghaus find about the same amount of study time?",
-          "opts": ["It worked better when divided across several days.", "It worked better when taken in one sitting.", "It made no difference to how much was recalled.", "It only worked with nonsense syllables."],
-          "key": 0,
+          "opts": [
+            "It worked better when taken in one sitting.",
+            "It worked better when divided across several days.",
+            "It only worked with nonsense syllables.",
+            "It made no difference to how much was recalled."
+          ],
+          "key": 1,
           "expl": "\"The same total study time, divided across several days, produced far better recall than the same minutes taken in one sitting.\"",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 40,
           "text": "According to the speaker, why does studying in one sitting feel effective?",
-          "opts": ["The material starts to feel familiar.", "The material is forgotten more slowly.", "The student is less tired at the end.", "The student recalls more a week later."],
-          "key": 0,
+          "opts": [
+            "The student is less tired at the end.",
+            "The student recalls more a week later.",
+            "The material starts to feel familiar.",
+            "The material is forgotten more slowly."
+          ],
+          "key": 2,
           "expl": "\"The text becomes fluent, and fluency feels like knowledge... it was never knowledge. It was familiarity.\" A sensação vem da familiaridade, não do aprendizado.",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 41,
           "text": "What does the speaker suggest about the reading he assigns?",
-          "opts": ["It is meant to illustrate the point of the lecture.", "It will be discussed over two weeks.", "It is optional for most of the class.", "It replaces the chapter in the textbook."],
-          "key": 0,
+          "opts": [
+            "It replaces the chapter in the textbook.",
+            "It will be discussed over two weeks.",
+            "It is meant to illustrate the point of the lecture.",
+            "It is optional for most of the class."
+          ],
+          "key": 2,
           "expl": "Ele manda ler duas vezes em dias diferentes e emenda: \"either an instruction or a demonstration, depending on how you take it\". A tarefa é o próprio espaçamento em ação.",
           "topic": "Listening · Inferência"
         }
@@ -794,44 +1567,80 @@
       "title": "Lecture 3 · Questions 42–46",
       "cena": "visita guiada ao herbário da universidade",
       "intro": "Numbers 42 to 46. Listen to a talk given to visitors at a university herbarium.",
-      "vozes": { "S": "en-US-EmmaMultilingualNeural" },
-      "ritmo": { "S": "-16%" },
+      "vozes": {
+        "S": "en-US-EmmaMultilingualNeural"
+      },
+      "ritmo": {
+        "S": "-16%"
+      },
       "linhas": [
-        ["S", "Before we go in, a word about what you're going to see — because the word herbarium sounds like a garden, and it isn't one. Nothing in here is alive. A herbarium is a library of dried plants: each specimen pressed flat, mounted on a sheet of card, and labelled with where and when it was collected. This one holds about four hundred thousand sheets, and the oldest was collected in eighteen twenty-two."],
-        ["S", "People ask why we keep dead plants when we have photographs. Three reasons. A photograph has no DNA, and sheets from the eighteen hundreds have been sequenced successfully. A photograph has no pollen stuck to it — ours do, and that is how we know which insects were visiting which flowers two centuries ago. And a photograph doesn't carry a date and a place written down by the person who stood there, which is why climate scientists now use this collection to show that many species here flower about ten days earlier than they did a hundred years ago."],
-        ["S", "Two rules inside. Don't touch the sheets: the glue is old and the specimens are brittle. And keep the doors closed behind you, because our worst enemy is not damp — it's a small beetle that eats dried plant tissue and can go through an entire cabinet in one season."],
-        ["S", "We'll start at the case by the window, where you'll find the single sheet this whole collection was built around."]
+        [
+          "S",
+          "Before we go in, a word about what you're going to see — because the word herbarium sounds like a garden, and it isn't one. Nothing in here is alive. A herbarium is a library of dried plants: each specimen pressed flat, mounted on a sheet of card, and labelled with where and when it was collected. This one holds about four hundred thousand sheets, and the oldest was collected in eighteen twenty-two."
+        ],
+        [
+          "S",
+          "People ask why we keep dead plants when we have photographs. Three reasons. A photograph has no DNA, and sheets from the eighteen hundreds have been sequenced successfully. A photograph has no pollen stuck to it — ours do, and that is how we know which insects were visiting which flowers two centuries ago. And a photograph doesn't carry a date and a place written down by the person who stood there, which is why climate scientists now use this collection to show that many species here flower about ten days earlier than they did a hundred years ago."
+        ],
+        [
+          "S",
+          "Two rules inside. Don't touch the sheets: the glue is old and the specimens are brittle. And keep the doors closed behind you, because our worst enemy is not damp — it's a small beetle that eats dried plant tissue and can go through an entire cabinet in one season."
+        ],
+        [
+          "S",
+          "We'll start at the case by the window, where you'll find the single sheet this whole collection was built around."
+        ]
       ],
       "questoes": [
         {
           "n": 42,
           "text": "What is the talk mainly about?",
-          "opts": ["what a herbarium is and why it is useful", "how rare plants are grown at the university", "the history of a university building", "how photographs of plants are stored"],
-          "key": 0,
+          "opts": [
+            "the history of a university building",
+            "what a herbarium is and why it is useful",
+            "how photographs of plants are stored",
+            "how rare plants are grown at the university"
+          ],
+          "key": 1,
           "expl": "A guia define o herbário, explica por que as folhas secas continuam valendo mais que fotografias e como se cuida delas. É a apresentação da coleção.",
           "topic": "Listening · Ideia principal"
         },
         {
           "n": 43,
           "text": "What does the speaker say the specimens have that photographs do not?",
-          "opts": ["genetic material", "a sharper image", "the name of the collector", "the original colour of the flower"],
-          "key": 0,
+          "opts": [
+            "the name of the collector",
+            "the original colour of the flower",
+            "a sharper image",
+            "genetic material"
+          ],
+          "key": 3,
           "expl": "\"A photograph has no DNA, and sheets from the eighteen hundreds have been sequenced successfully.\"",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 44,
           "text": "How has the collection been used by climate scientists?",
-          "opts": ["to show that plants now flower earlier than before", "to measure the rainfall of two centuries ago", "to identify insects that have disappeared", "to establish the date of the oldest sheet"],
-          "key": 0,
+          "opts": [
+            "to measure the rainfall of two centuries ago",
+            "to establish the date of the oldest sheet",
+            "to identify insects that have disappeared",
+            "to show that plants now flower earlier than before"
+          ],
+          "key": 3,
           "expl": "As etiquetas trazem data e lugar escritos por quem coletou, e é por isso que se pôde mostrar que muitas espécies florescem \"about ten days earlier than they did a hundred years ago\".",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 45,
           "text": "Why does the speaker mention a beetle?",
-          "opts": ["to explain why the doors must be kept closed", "to describe one of the specimens on display", "to warn visitors not to touch the sheets", "to give an example of a pollinating insect"],
-          "key": 0,
+          "opts": [
+            "to give an example of a pollinating insect",
+            "to explain why the doors must be kept closed",
+            "to warn visitors not to touch the sheets",
+            "to describe one of the specimens on display"
+          ],
+          "key": 1,
           "expl": "\"Keep the doors closed behind you, because our worst enemy is not damp. It's a small beetle...\" O inseto é a razão da regra da porta.",
           "topic": "Listening · Propósito"
         },
@@ -839,8 +1648,13 @@
           "n": 46,
           "text": "What does the speaker mean when she says this?",
           "quote": "The word herbarium sounds like a garden, and it isn't one.",
-          "opts": ["Visitors should not expect to see living plants.", "The name of the collection was changed at some point.", "The building used to be a garden.", "Part of the collection is kept outdoors."],
-          "key": 0,
+          "opts": [
+            "Part of the collection is kept outdoors.",
+            "The name of the collection was changed at some point.",
+            "Visitors should not expect to see living plants.",
+            "The building used to be a garden."
+          ],
+          "key": 2,
           "expl": "Ela avisa antes de entrar e completa: \"Nothing in here is alive\". A frase existe para desfazer a expectativa de jardim.",
           "topic": "Listening · Intenção do falante"
         }
@@ -853,44 +1667,83 @@
       "title": "Lecture 4 · Questions 47–50",
       "cena": "reportagem da rádio do campus sobre a reabertura do observatório",
       "intro": "Numbers 47 to 50. Listen to a report on a university radio station.",
-      "vozes": { "S": "en-US-BrianMultilingualNeural" },
-      "ritmo": { "S": "-16%" },
+      "vozes": {
+        "S": "en-US-BrianMultilingualNeural"
+      },
+      "ritmo": {
+        "S": "-16%"
+      },
       "linhas": [
-        ["S", "This is Campus Radio. After eleven years, the observatory on Hill Road is open to the public again."],
-        ["S", "It closed in twenty fifteen, when the mechanism that turns the dome failed. For most of that time the building simply sat there while the department argued about whether a hundred-year-old telescope was worth repairing. What settled the argument, according to the director, was not astronomy but teaching: around six hundred school pupils used to visit every year, and after the closure that number fell to zero."],
-        ["S", "The repair took two years and was paid for by former students. The dome now turns on an electric drive, though the telescope itself is untouched — the same eight-inch lens that was installed in nineteen twenty-four."],
-        ["S", "Public evenings run on the first and third Wednesday of every month, from eight until ten, and they are free. Booking, however, is not optional: the dome holds twenty-two people, and the first three evenings filled up within an hour of being announced."],
-        ["S", "One warning from the staff, and they were firm about it. If the sky is cloudy, the evening still goes ahead — there's a talk and a tour instead — and every single time, half the people who booked simply don't come. So if you have a place and the forecast is bad, either come anyway or cancel it, because somebody on the waiting list would have taken it."]
+        [
+          "S",
+          "This is Campus Radio. After eleven years, the observatory on Hill Road is open to the public again."
+        ],
+        [
+          "S",
+          "It closed in twenty fifteen, when the mechanism that turns the dome failed. For most of that time the building simply sat there while the department argued about whether a hundred-year-old telescope was worth repairing. What settled the argument, according to the director, was not astronomy but teaching: around six hundred school pupils used to visit every year, and after the closure that number fell to zero."
+        ],
+        [
+          "S",
+          "The repair took two years and was paid for by former students. The dome now turns on an electric drive, though the telescope itself is untouched — the same eight-inch lens that was installed in nineteen twenty-four."
+        ],
+        [
+          "S",
+          "Public evenings run on the first and third Wednesday of every month, from eight until ten, and they are free. Booking, however, is not optional: the dome holds twenty-two people, and the first three evenings filled up within an hour of being announced."
+        ],
+        [
+          "S",
+          "One warning from the staff, and they were firm about it. If the sky is cloudy, the evening still goes ahead — there's a talk and a tour instead — and every single time, half the people who booked simply don't come. So if you have a place and the forecast is bad, either come anyway or cancel it, because somebody on the waiting list would have taken it."
+        ]
       ],
       "questoes": [
         {
           "n": 47,
           "text": "Why did the observatory close?",
-          "opts": ["The mechanism that turns the dome stopped working.", "The lens of the telescope was broken.", "The department lost its funding.", "The building was unsafe for visitors."],
-          "key": 0,
+          "opts": [
+            "The department lost its funding.",
+            "The lens of the telescope was broken.",
+            "The mechanism that turns the dome stopped working.",
+            "The building was unsafe for visitors."
+          ],
+          "key": 2,
           "expl": "\"It closed in twenty fifteen, when the mechanism that turns the dome failed.\" O telescópio nunca foi o problema: continua o mesmo de 1924.",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 48,
           "text": "What finally convinced the department to repair the observatory?",
-          "opts": ["the loss of the school visits", "a gift from a former student", "the age of the telescope", "the low cost of the electric drive"],
-          "key": 0,
+          "opts": [
+            "the age of the telescope",
+            "the loss of the school visits",
+            "the low cost of the electric drive",
+            "a gift from a former student"
+          ],
+          "key": 1,
           "expl": "\"What settled the argument... was not astronomy but teaching\": as seiscentas visitas escolares por ano que caíram a zero.",
           "topic": "Listening · Detalhe"
         },
         {
           "n": 49,
           "text": "Why does the speaker say that booking is not optional?",
-          "opts": ["because there is very little space in the dome", "because the evenings are offered free of charge", "because the forecast is often wrong", "because the staff have to prepare a talk"],
-          "key": 0,
+          "opts": [
+            "because the forecast is often wrong",
+            "because the evenings are offered free of charge",
+            "because there is very little space in the dome",
+            "because the staff have to prepare a talk"
+          ],
+          "key": 2,
           "expl": "\"The dome holds twenty-two people, and the first three evenings filled up within an hour.\" A reserva é obrigatória porque cabe pouca gente.",
           "topic": "Listening · Propósito"
         },
         {
           "n": 50,
           "text": "What does the speaker suggest that listeners do?",
-          "opts": ["give up their place if they are not going to attend", "avoid booking when the evening may be cloudy", "arrive at the observatory before eight o'clock", "put their names on the waiting list first"],
+          "opts": [
+            "give up their place if they are not going to attend",
+            "put their names on the waiting list first",
+            "arrive at the observatory before eight o'clock",
+            "avoid booking when the evening may be cloudy"
+          ],
           "key": 0,
           "expl": "\"Either come anyway or cancel it, because somebody on the waiting list would have taken it.\" O pedido é liberar o lugar em vez de faltar.",
           "topic": "Listening · Inferência"

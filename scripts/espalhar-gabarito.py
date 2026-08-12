@@ -27,7 +27,7 @@ senão a correção da nuvem fica apontando para as posições velhas:
 ⚠️ NÃO RODE em banco cujo `expl` cite a POSIÇÃO da alternativa ("a letra B", "a
 primeira opção"). O script confere isso e recusa.
 """
-import json, random, re, sys
+import json, os, random, re, sys
 
 POSICAO = re.compile(r'\b(letra [A-D]\b|alternativa [A-D]\b|op[çc][ãa]o [A-D]\b|'
                      r'a (primeira|segunda|terceira|quarta|última) op[çc][ãa]o|'
@@ -90,7 +90,34 @@ def main():
     with open(caminho, 'w') as f:
         json.dump(banco, f, ensure_ascii=False, indent=2)
         f.write('\n')
-    print('\ngravado. Agora refaça o gabarito do servidor e implante.')
+    print('gravado: %s' % caminho)
+
+    # O LISTENING NÃO MORA SÓ AQUI. As unidades l1/l2/l3 são geradas por
+    # `montar-unidades.py` a partir de `data/roteiros-<prova>.json`. Espalhar só
+    # o banco deixa o roteiro com a ordem velha, e a próxima geração desfaz
+    # metade do conserto sem avisar ninguém. Aconteceu em 12/08/2026, com o
+    # EMERALD já publicado.
+    roteiro = os.path.join(os.path.dirname(os.path.dirname(caminho)),
+                           'data', 'roteiros-%s.json' % banco['id'])
+    if not os.path.exists(roteiro):
+        print('\n(sem roteiro de listening para este banco)')
+    else:
+        r = json.load(open(roteiro))
+        porn = {q['n']: q for q in questoes(banco)}
+        n = 0
+        for item in r['itens']:
+            for q in item['questoes']:
+                b = porn[q['n']]
+                assert sorted(b['opts']) == sorted(q['opts']), q['n']
+                if q['opts'] != b['opts']:
+                    q['opts'], q['key'] = list(b['opts']), b['key']
+                    n += 1
+        with open(roteiro, 'w') as f:
+            json.dump(r, f, ensure_ascii=False, indent=2)
+            f.write('\n')
+        print('roteiro alinhado: %s (%d questões)' % (roteiro, n))
+
+    print('\nAgora refaça o gabarito do servidor e implante.')
 
 
 if __name__ == '__main__':

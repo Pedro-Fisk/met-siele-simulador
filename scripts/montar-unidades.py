@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Escreve as unidades l1/l2/l3 do questions/emerald.json.
+"""Escreve as unidades l1/l2/l3 do questions/<prova>.json.
 
-    python3 scripts/montar-unidades.py
+    python3 scripts/montar-unidades.py                  # EMERALD
+    python3 scripts/montar-unidades.py --prova amber    # AMBER
 
 Junta duas fontes e não inventa nada:
 
@@ -20,9 +21,20 @@ rodar quantas vezes for preciso.
 import json, os, sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROTEIROS = os.path.join(RAIZ, 'data', 'roteiros-emerald.json')
-CUES = os.path.join(RAIZ, 'data', 'cues-emerald.json')
-BANCO = os.path.join(RAIZ, 'questions', 'emerald.json')
+
+# Mesma regra do montar-audio.py: --prova escolhe o trio de arquivos, e sem ele
+# o padrão é o EMERALD.
+PROVA = 'emerald'
+if '--prova' in sys.argv:
+    i = sys.argv.index('--prova')
+    PROVA = sys.argv[i + 1] if i + 1 < len(sys.argv) else ''
+    del sys.argv[i:i + 2]
+if not PROVA.replace('-', '').isalnum():
+    sys.exit('use --prova <nome do banco>, por exemplo: --prova amber')
+
+ROTEIROS = os.path.join(RAIZ, 'data', 'roteiros-%s.json' % PROVA)
+CUES = os.path.join(RAIZ, 'data', 'cues-%s.json' % PROVA)
+BANCO = os.path.join(RAIZ, 'questions', '%s.json' % PROVA)
 
 
 def questao(q):
