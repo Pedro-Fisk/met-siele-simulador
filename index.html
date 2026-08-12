@@ -188,7 +188,16 @@
     .pick-card h3 { font-size: 1.02rem; font-weight: 800; }
     /* A cor do simulado. Cada prova do MET é uma cor, e a etiqueta e o card do
        completo vestem a dela. Sem `cor` no banco, fica o vermelho de sempre. */
-    .test-tag { color: var(--cor-exame, var(--red)); font-size: .82em; font-weight: 800; margin-left: .3rem; }
+    /* ETIQUETA DA PROVA. Pílula com o nome dentro, no mesmo idioma das outras
+       etiquetas da casa (o nível no Listening Lab, o A2·Básico dos cards). O
+       "#red" que existia aqui era jargão de arquivo: o aluno lê "RED". */
+    .test-tag {
+      display: inline-block; vertical-align: middle; margin-left: .4rem;
+      background: var(--cor-exame, var(--red)); color: #fff;
+      font-family: var(--font-h); font-size: .58rem; font-weight: 800;
+      letter-spacing: .09em; text-transform: uppercase;
+      padding: .18rem .5rem .16rem; border-radius: 999px; white-space: nowrap;
+    }
     .pick-card p  { font-size: .8rem; color: var(--text-soft); line-height: 1.45; }
     /* A COR É DA PROVA, não do tipo de card. Cada banco traz a sua em `cor`, e
        o JS a aplica em todo card daquela prova: completo, mini e seção. Estes
@@ -1331,6 +1340,28 @@
      Trocar de prova é trocar o DATA e refazer os índices, sem recarregar. */
   const BANCOS = {};
 
+  /* ETIQUETA DA PROVA, no escopo de cima porque TODA tela usa: a home, o
+     cabeçalho da prova, as instruções e o resultado. Enquanto viveram dentro
+     do montador da home, as telas de prova quebravam ao tentar desenhá-la.
+
+     `tagDe` continua com o '#' e continua sendo TEXTO: ele entra no
+     `scope.label`, que viaja para a nuvem e agrupa as tentativas no painel do
+     professor. Renomear isso renomearia o histórico de quem já fez. O que mudou
+     em 12/08/2026 foi só o DESENHO: no lugar do "#red", uma pílula com a cor da
+     prova, no mesmo idioma das outras etiquetas da casa. */
+  const tagDe = d => '#' + d.id;
+  const rotuloProva = d => String(d.id || '').toUpperCase();
+  const tagHTML = d => ' <span class="test-tag"' + (d.cor ? ' style="background:' + esc(d.cor) + '"' : '')
+    + '>' + esc(rotuloProva(d)) + '</span>' + (d.rascunho ? ' 🚧' : '');
+  /* Troca o "#red" do fim de um rótulo pela pílula. Rótulo sem etiqueta passa
+     intacto, que é o caso do SIELE e de qualquer prova sozinha na família. */
+  function rotuloComTag(txt) {
+    const m = String(txt || '').match(/^(.*?)\s*#([a-z0-9-]+)$/i);
+    if (!m) return esc(txt);
+    const d = Object.keys(BANCOS).map(k => BANCOS[k]).filter(x => x && x.id === m[2])[0];
+    return d ? esc(m[1]) + tagHTML(d) : esc(txt);
+  }
+
   function normaliza(d) {
     /* Sem cefrGroups declarados, cai no comportamento histórico do MET:
        Listening são as questões até 50, Reading & Grammar as demais. */
@@ -1419,9 +1450,6 @@
     const ORDEM = FAMILIA.filter(k => BANCOS[k]);
     const DESC_PADRAO = 'As 100 questões na sequência oficial: Listening (Parts 1–3), '
       + 'Grammar e Reading. Reading & Grammar com tempo de 65 min.';
-    const tagDe = d => '#' + d.id;
-    const tagHTML = d => ' <span class="test-tag"' + (d.cor ? ' style="color:' + esc(d.cor) + '"' : '')
-      + '>' + esc(tagDe(d)) + '</span>' + (d.rascunho ? ' 🚧' : '');
 
     /* IDENTIDADE ANTES DOS CARDS. A barra de progresso lê o mapa do aluno, e
        o mapa é escolhido pelo RAF: se isto rodasse depois de montar os cards,
@@ -1586,9 +1614,8 @@
       if (ORDEM.length > 1) {
         const h = document.createElement('div');
         h.className = 'mc-head';
-        h.style.color = d.cor || 'var(--red)';
-        h.innerHTML = '<span class="mc-dot" style="background:' + esc(d.cor || '#d81f26') + '"></span>'
-          + esc(tagDe(d));
+        h.innerHTML = '<span class="test-tag" style="margin-left:0;background:'
+          + esc(d.cor || '#d81f26') + '">' + esc(rotuloProva(d)) + '</span>';
         col.appendChild(h);
       }
       d.minis.forEach(m => {
@@ -1769,7 +1796,9 @@
       if (us.length) state.phases.push({ kind: sec.kind === 'listening' ? 'listening' : 'rg', sec: sec.id, units: us });
     });
 
-    $('qh-title').textContent = scope.label;
+    /* O rótulo guardado tem o '#red' no fim, porque ele é dado. Na tela, essa
+       parte vira a mesma pílula dos cards. */
+    $('qh-title').innerHTML = rotuloComTag(scope.label);
 
     if (PROF_MODE) {
       state.steps = state.units.flatMap(u => u.questions.map((q, qIdx) => ({ unit: u, qIdx })));
@@ -1808,7 +1837,7 @@
     const br = DATA.brief;
     const full = state.scope.type === 'full';
     const totalItems = tally(questionsOf(state.units)).total;
-    $('brief-title').textContent = state.scope.label;
+    $('brief-title').innerHTML = rotuloComTag(state.scope.label);
     const fill = s => String(s).replace('{n}', totalItems);
 
     let html = '<div class="unit-card" style="margin-top:1.4rem"><h3 style="margin-bottom:.6rem">' +
@@ -1842,7 +1871,7 @@
     const b = $('brief-body');
     const st = briefStats();
     const total = st.L + st.R;
-    $('brief-title').textContent = state.scope.label;
+    $('brief-title').innerHTML = rotuloComTag(state.scope.label);
     const full = state.scope.type === 'full';
     const secMin = (sid, listening) => {
       const n = state.units.filter(u => u.section === sid).flatMap(u => u.questions).length;
@@ -2517,7 +2546,7 @@
     const allQs = questionsOf(state.units);
     const { correct, total } = tally(allQs);
     const pct = Math.round(correct / total * 100);
-    $('results-sub').textContent = state.scope.label + ' · ' + state.studentName;
+    $('results-sub').innerHTML = rotuloComTag(state.scope.label) + ' · ' + esc(state.studentName);
 
     // Hero com anel
     const hero = document.createElement('div');
@@ -2530,7 +2559,7 @@
         '<div class="ring-txt"><span class="pct">' + pct + '%</span><span class="frac">' + correct + ' de ' + total + '</span></div>' +
       '</div>' +
       '<div class="results-headline">' + headline(pct) + '</div>' +
-      '<div class="results-student">' + esc(state.scope.label) + '</div>';
+      '<div class="results-student">' + rotuloComTag(state.scope.label) + '</div>';
     body.appendChild(hero);
 
     // CEFR — os grupos vêm do banco de itens. No MET são Listening e
@@ -2885,7 +2914,7 @@
   function profEnd() {
     stopAllAudio();
     const body = $('quiz-body');
-    body.innerHTML = '<div class="end-note"><h2>🎉 Fim do ' + esc(state.scope.label) + '!</h2>' +
+    body.innerHTML = '<div class="end-note"><h2>🎉 Fim do ' + rotuloComTag(state.scope.label) + '!</h2>' +
       '<p>Todas as ' + state.steps.length + ' questões foram conduzidas.</p>' +
       '<div class="results-actions" style="justify-content:center;margin-top:1.6rem">' +
       '<button class="btn btn-accent" id="prof-again">↺ Recomeçar</button>' +
