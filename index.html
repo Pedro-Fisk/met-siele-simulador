@@ -197,6 +197,39 @@
        a cor do exame ATIVO — abrir o EMERALD deixava o card do RED verde. */
     .pick-full, .pick-mini, .pick-sec { --accent: #d81f26; }
 
+    /* BARRA DE PROGRESSO. Azul, uma cor só, e não a cor da prova: a cor da
+       prova diz DE QUAL simulado o card é, e a barra diz QUANTO daquele card o
+       aluno já fez. Duas perguntas diferentes não podem dividir a mesma cor.
+       Cinza é o que falta. */
+    .pick-prog { margin-top: auto; padding-top: .8rem; width: 100%; align-self: stretch;
+      display: flex; align-items: center; gap: .55rem; }
+    .pick-prog .pp-trilho {
+      flex: 1; height: 7px; border-radius: 999px; background: #e6e4e4; overflow: hidden;
+    }
+    body.dark .pick-prog .pp-trilho { background: #3a3535; }
+    .pick-prog .pp-feito {
+      display: block; height: 100%; border-radius: 999px; background: #2563EB;
+      transition: width .3s ease;
+    }
+    .pick-prog .pp-txt { font-size: .68rem; font-weight: 800; color: var(--text-soft); white-space: nowrap; }
+    .pick-prog.is-done .pp-txt { color: #2563EB; }
+
+    /* BLOCO COLAPSÁVEL. O rótulo da seção vira botão; a seta gira. A home tem
+       três blocos de cards e, com três provas, ela fica longa: poder fechar o
+       que não interessa agora é o que devolve a visão do todo. */
+    .section-label.dobra {
+      display: flex; align-items: center; gap: .5rem; width: 100%;
+      background: none; border: none; cursor: pointer; text-align: left;
+      font-family: var(--font-b); padding: 0;
+    }
+    .section-label.dobra .dobra-seta {
+      display: inline-block; font-size: .7rem; transition: transform .18s;
+      color: var(--text-soft);
+    }
+    .section-label.dobra[aria-expanded="false"] .dobra-seta { transform: rotate(-90deg); }
+    .section-label.dobra .dobra-conta { font-weight: 700; opacity: .75; letter-spacing: 0; text-transform: none; }
+    .bloco-fechado { display: none !important; }
+
     .name-field-wrap { padding: 1.4rem 0 .1rem; }
     .name-field-label {
       display: block;
@@ -748,8 +781,17 @@
       <div class="cards-grid" id="sections-grid" style="display:none"></div>
 
       <p class="home-note" id="home-note">
-        No modo aluno, você responde tudo antes de ver a correção — como na prova real. Ao final,
-        você recebe o gabarito comentado e uma estimativa do seu nível no Quadro Comum Europeu (CEFR).
+        No modo aluno, você responde tudo antes de ver a correção, como na prova real, e no fim
+        recebe o gabarito comentado e uma estimativa do seu nível no Quadro Comum Europeu (CEFR).
+      </p>
+      <!-- O aviso que separa TREINO de PROVA. Sem ele o aluno sai daqui achando
+           que já fez o simulado que a inscrição exige, e descobre o contrário
+           na hora de se inscrever. -->
+      <p class="home-note" id="home-oficial">
+        <strong>Isto é treino, e não vale como simulado oficial.</strong> O simulado oficial só conta
+        quando é feito presencialmente na escola, e acontece uma vez por mês. Aqui você tem a noção
+        dos conteúdos e das tarefas que a prova cobra. Para se inscrever no exame oficial, é preciso
+        ter feito o simulado presencial: fale com a secretaria.
       </p>
     </main>
     <footer id="home-footer">FISK Personalizado · Treino MET</footer>
@@ -944,12 +986,40 @@
   function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
   function stopAllAudio() { players.forEach(p => p.audio.pause()); }
 
-  function saveKey() { return 'met_' + DATA.id + '_' + (PROF_MODE ? 'prof_' : 'aluno_') + state.scope.type + '_' + (state.scope.id || ''); }
+  /* QUEM É O ALUNO. Com RAF (entrada pelo Portal), o progresso é dele em
+     qualquer aparelho deste navegador; sem RAF, é do navegador. Antes de
+     12/08/2026 a chave não tinha aluno nenhum: numa máquina da escola, o
+     segundo aluno retomava as respostas do primeiro. */
+  function idAluno() { return state.studentRaf ? 'raf' + state.studentRaf : 'local'; }
+  function saveKey() { return chaveEscopo(DATA.id, state.scope); }
+  function chaveEscopo(bancoId, scope) {
+    return 'met_' + bancoId + '_' + (PROF_MODE ? 'prof_' : 'aluno_') + idAluno() + '_'
+      + scope.type + '_' + (scope.id || '');
+  }
   function persist() {
     if (PROF_MODE) return;
     try { localStorage.setItem(saveKey(), JSON.stringify({ answers: state.answers, phaseIdx: state.phaseIdx, playedAudio: state.playedAudio })); } catch (e) {}
+    const total = questionsOf(state.units).length;
+    salvaProg(DATA.id, state.scope, { feitas: Object.keys(state.answers).length, total: total });
   }
   function clearPersist() { try { localStorage.removeItem(saveKey()); } catch (e) {} }
+
+  /* ── Progresso, para a home ──────────────────────────────────────────────
+   * O `saveKey` guarda as respostas para RETOMAR, e é apagado no envio. Este
+   * mapa é outra coisa: quanto de cada bloco o aluno já fez, para a barra do
+   * card. Ele precisa sobreviver ao envio, senão o simulado terminado voltaria
+   * a aparecer como não começado. */
+  function progKey() { return 'met_prog_' + idAluno(); }
+  function loadProg() { try { return JSON.parse(localStorage.getItem(progKey())) || {}; } catch (e) { return {}; } }
+  function progId(bancoId, scope) { return bancoId + ':' + scope.type + ':' + (scope.id || ''); }
+  function salvaProg(bancoId, scope, dados) {
+    if (PROF_MODE) return;
+    try {
+      const m = loadProg();
+      m[progId(bancoId, scope)] = Object.assign({}, m[progId(bancoId, scope)], dados, { t: Date.now() });
+      localStorage.setItem(progKey(), JSON.stringify(m));
+    } catch (e) {}
+  }
   function restorePersist() {
     if (PROF_MODE) return;
     try {
@@ -1292,6 +1362,61 @@
     const tagHTML = d => ' <span class="test-tag"' + (d.cor ? ' style="color:' + esc(d.cor) + '"' : '')
       + '>' + esc(tagDe(d)) + '</span>' + (d.rascunho ? ' 🚧' : '');
 
+    /* IDENTIDADE ANTES DOS CARDS. A barra de progresso lê o mapa do aluno, e
+       o mapa é escolhido pelo RAF: se isto rodasse depois de montar os cards,
+       todo card nasceria "não começado" mesmo para quem já fez metade. */
+    // Entrada pelo Portal do Aluno: identidade já vem na URL (?raf=&nome=)
+    if (!PROF_MODE) {
+      const qs = new URLSearchParams(location.search);
+      const raf = (qs.get('raf') || '').trim();
+      const nome = (qs.get('nome') || '').trim();
+      /* O Portal manda o estágio do aluno em toda ferramenta. Guardamos para
+         viajar junto do resultado: é por ele que o painel de diagnóstico
+         separa "o que eu erro no meu estágio" do que ficou para trás. */
+      state.studentBook = (qs.get('book') || '').trim();
+      if (raf) {
+        state.studentRaf = raf;
+        if (nome) {
+          state.studentName = nome;
+          $('name-wrap').style.display = 'none';
+          const badge = document.createElement('div');
+          badge.className = 'prof-badge';
+          badge.style.display = 'inline-block';
+          badge.textContent = '👤 ' + nome;
+          $('prof-badge').insertAdjacentElement('afterend', badge);
+        }
+      }
+    }
+
+    /* A BARRA DE PROGRESSO de um card. Lê o mapa do aluno e desenha quanto
+       daquele bloco ele já respondeu. No modo professor não aparece: ali quem
+       conduz é ele, e o progresso é da turma na TV, não de ninguém. */
+    const MAPA = PROF_MODE ? {} : loadProg();
+    function questoesDoEscopo(d, scope) {
+      var us;
+      if (scope.type === 'full') us = d.units;
+      else if (scope.type === 'section') us = d.units.filter(u => u.section === scope.id);
+      else {
+        const mini = (d.minis || []).find(m => m.id === scope.id);
+        us = mini ? mini.units.map(id => d.units.find(u => u.id === id)).filter(Boolean) : [];
+      }
+      return us.reduce((a, u) => a + u.questions.length, 0);
+    }
+    function barra(d, scope) {
+      if (PROF_MODE) return '';
+      const total = questoesDoEscopo(d, scope);
+      if (!total) return '';
+      const p = MAPA[progId(d.id, scope)] || {};
+      const feitas = Math.min(p.feitas || 0, total);
+      const pct = Math.round(feitas / total * 100);
+      const done = !!p.done;
+      const txt = done ? 'concluído' + (p.pct != null ? ' · ' + p.pct + '%' : '')
+                       : (feitas ? feitas + ' de ' + total : 'não começado');
+      return '<div class="pick-prog' + (done ? ' is-done' : '') + '">'
+        + '<span class="pp-trilho"><i class="pp-feito" style="width:' + (done ? 100 : pct) + '%"></i></span>'
+        + '<span class="pp-txt">' + esc(txt) + '</span></div>';
+    }
+
     /* Abrir uma prova é trocar o banco em uso e só então começar. A cor da
        tela acompanha, senão o aluno faria o EMERALD numa página vermelha. */
     function abrir(d, scope) {
@@ -1308,6 +1433,7 @@
       $('log-grid').style.display = 'grid';
       $('open-log').addEventListener('click', showLog);
       $('home-note').textContent = 'No modo professor, você conduz o simulado questão a questão: projeta na TV, controla o áudio, a turma vota e você revela a resposta com o comentário.';
+      $('home-oficial').style.display = 'none';   // o aviso de treino x oficial é para o aluno
     }
     // Simulado completo: um card por prova
     const fg = $('full-grid');
@@ -1321,7 +1447,8 @@
       // o tour guiado aponta para o primeiro card do completo
       if (i === 0) b.dataset.scope = 'full';
       b.innerHTML = '<div class="pick-icon">🎓</div><h3>' + esc(rot) + tagHTML(d) + '</h3>'
-        + '<p>' + esc(d.fullDesc || DESC_PADRAO) + '</p>';
+        + '<p>' + esc(d.fullDesc || DESC_PADRAO) + '</p>'
+        + barra(d, { type: 'full', id: 'full' });
       b.addEventListener('click', () =>
         abrir(d, { type: 'full', id: 'full', label: rot + ' ' + tagDe(d) }));
       fg.appendChild(b);
@@ -1352,7 +1479,8 @@
         b.className = 'pick-card pick-mini';
         b.style.setProperty('--accent', d.cor || '#d81f26');
         b.innerHTML = '<div class="pick-icon">⚡️</div><h3>' + esc(m.name) + tagHTML(d) + '</h3>'
-          + '<p>' + esc(m.desc) + '</p>';
+          + '<p>' + esc(m.desc) + '</p>'
+          + barra(d, { type: 'mini', id: m.id });
         b.addEventListener('click', () =>
           abrir(d, { type: 'mini', id: m.id, label: m.name + ' ' + tagDe(d) }));
         col.appendChild(b);
@@ -1387,7 +1515,8 @@
           b.className = 'pick-card pick-sec';
           b.style.setProperty('--accent', d.cor || '#d81f26');
           b.innerHTML = '<div class="pick-icon">' + (s.kind === 'listening' ? '🎧' : '📖') + '</div>'
-            + '<h3>' + esc(s.name) + tagHTML(d) + '</h3><p>' + n + ' questões</p>';
+            + '<h3>' + esc(s.name) + tagHTML(d) + '</h3><p>' + n + ' questões</p>'
+            + barra(d, { type: 'section', id: s.id });
           b.addEventListener('click', () =>
             abrir(d, { type: 'section', id: s.id, label: s.name + ' ' + tagDe(d) }));
           col.appendChild(b);
@@ -1395,30 +1524,43 @@
         sg.appendChild(col);
       });
     }
+    /* BLOCOS COLAPSÁVEIS. Os minis e as seções são as duas listas longas da
+       home, e com três provas elas passam de vinte cards. O rótulo da seção
+       vira botão, e a escolha fica guardada: quem fecha os minis não quer
+       reabri-los a cada visita. O completo NÃO dobra, é a porta principal. */
+    function dobravel(idRotulo, idGrade, chave, abertoPadrao) {
+      const rot = $(idRotulo), grade = $(idGrade);
+      if (!rot || !grade || rot.dataset.dobra) return;
+      const texto = rot.textContent;
+      const n = grade.querySelectorAll('.pick-card').length;
+      if (!n) return;
+      rot.dataset.dobra = '1';
+      rot.classList.add('dobra');
+      const btn = document.createElement('button');
+      btn.className = rot.className;
+      btn.type = 'button';
+      btn.id = rot.id;
+      btn.innerHTML = '<span class="dobra-seta">▼</span><span>' + esc(texto) + '</span>'
+        + '<span class="dobra-conta">· ' + n + '</span>';
+      var aberto = abertoPadrao;
+      try { const g = localStorage.getItem(chave); if (g !== null) aberto = g === '1'; } catch (e) {}
+      const aplica = () => {
+        btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+        grade.classList.toggle('bloco-fechado', !aberto);
+      };
+      btn.addEventListener('click', () => {
+        aberto = !aberto;
+        try { localStorage.setItem(chave, aberto ? '1' : '0'); } catch (e) {}
+        aplica();
+      });
+      aplica();
+      rot.replaceWith(btn);
+    }
+    dobravel('minis-label', 'minis-grid', 'met_dobra_minis', true);
+    if (PROF_MODE) dobravel('sections-label', 'sections-grid', 'met_dobra_secoes', true);
+
     $('student-name').addEventListener('input', e => { state.studentName = e.target.value.trim(); });
 
-    // Entrada pelo Portal do Aluno: identidade já vem na URL (?raf=&nome=)
-    if (!PROF_MODE) {
-      const qs = new URLSearchParams(location.search);
-      const raf = (qs.get('raf') || '').trim();
-      const nome = (qs.get('nome') || '').trim();
-      /* O Portal manda o estágio do aluno em toda ferramenta. Guardamos para
-         viajar junto do resultado: é por ele que o painel de diagnóstico
-         separa "o que eu erro no meu estágio" do que ficou para trás. */
-      state.studentBook = (qs.get('book') || '').trim();
-      if (raf) {
-        state.studentRaf = raf;
-        if (nome) {
-          state.studentName = nome;
-          $('name-wrap').style.display = 'none';
-          const badge = document.createElement('div');
-          badge.className = 'prof-badge';
-          badge.style.display = 'inline-block';
-          badge.textContent = '👤 ' + nome;
-          $('prof-badge').insertAdjacentElement('afterend', badge);
-        }
-      }
-    }
   }
 
   /* ══════════════ Montagem do escopo ══════════════ */
@@ -2022,6 +2164,12 @@
     clearTimer();
     stopAllAudio();
     state.submitted = true;
+    /* A marca de concluído é gravada ANTES de limpar as respostas: o que se
+       apaga é o rascunho para retomar, não a memória de ter feito. */
+    const totalQ = questionsOf(state.units).length;
+    const acertos = questionsOf(state.units).filter(q => state.answers[q.n] === q.key).length;
+    salvaProg(DATA.id, state.scope, { feitas: totalQ, total: totalQ, done: true,
+                                      pct: totalQ ? Math.round(acertos / totalQ * 100) : 0 });
     clearPersist();
     renderResults();
     showScreen('screen-results');
