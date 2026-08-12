@@ -851,13 +851,19 @@
      `rascunho: true`, a página avisa na tela e NÃO envia resultado nenhum —
      nem do aluno logado, nem solto. Para publicar, tire o `rascunho` do JSON. */
   const EXAMS = { met: 'questions/red.json', siele: 'questions/siele-m0.json',
-                  emerald: 'questions/emerald.json' };
+                  emerald: 'questions/emerald.json', amber: 'questions/amber.json' };
   /* PROVAS IRMÃS: bancos diferentes do MESMO exame, que dividem uma home só.
      O aluno abre "Treino MET" e vê os dois simulados e os oito minis na mesma
      página, em vez de precisar de uma URL por prova. O SIELE é outro exame e
      fica sozinho — misturar as duas famílias mandaria o aluno de espanhol
      fazer o MET. Prova nova entra aqui e no EXAMS, e mais nada. */
-  const FAMILIAS = { met: ['met', 'emerald'], emerald: ['met', 'emerald'], siele: ['siele'] };
+  /* O AMBER está EM CONSTRUÇÃO e por isso fica FORA da família do MET: entrar
+     nela colocaria o card dele e o aviso de rascunho na home de todo aluno que
+     abre o Treino MET. Foi o caminho do EMERALD, que só virou prova irmã depois
+     de sair do rascunho. Quando as 100 questões estiverem prontas, ele entra nas
+     três listas, como o EMERALD está. */
+  const FAMILIAS = { met: ['met', 'emerald'], emerald: ['met', 'emerald'],
+                     amber: ['amber'], siele: ['siele'] };
   const EXAM = (new URLSearchParams(location.search).get('exame') || 'met').toLowerCase();
   const FAMILIA = FAMILIAS[EXAM] || FAMILIAS.met;
   const TEST_FILE = EXAMS[EXAM] || EXAMS.met;
