@@ -143,11 +143,20 @@
        empilhadas, e o título de cada prova continua separando as duas. */
     .minis-provas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      /* 250px, e não 280: com TRÊS provas, 280 não cabia na largura de leitura
+         (880px) e o âmbar caía sozinho numa terceira linha, parecendo um resto
+         em vez de uma coluna irmã. */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.4rem;
       align-items: start;
     }
-    .minis-col { display: flex; flex-direction: column; gap: .9rem; }
+    /* O min-height é o que iguala os cards, dentro da coluna e entre colunas.
+       Sem ele, o card cujo título quebra em duas linhas (é o caso dos que levam
+       🚧, que empurram a etiqueta para baixo) fica mais alto que o vizinho e a
+       linha inteira desalinha. `min-content` nas linhas para o cabeçalho da
+       coluna não ser esticado junto. */
+    .minis-col { display: grid; grid-auto-rows: min-content; gap: .9rem; align-content: start; }
+    .minis-col > .pick-card { min-height: 12rem; }
     .minis-col > .mc-head {
       font-family: var(--font-h); font-weight: 800; font-size: .82rem;
       letter-spacing: .04em; display: flex; align-items: center; gap: .45rem;
@@ -181,9 +190,12 @@
        completo vestem a dela. Sem `cor` no banco, fica o vermelho de sempre. */
     .test-tag { color: var(--cor-exame, var(--red)); font-size: .82em; font-weight: 800; margin-left: .3rem; }
     .pick-card p  { font-size: .8rem; color: var(--text-soft); line-height: 1.45; }
-    .pick-full { --accent: var(--cor-exame, #d81f26); }
-    .pick-mini { --accent: #0EA5A0; }
-    .pick-sec  { --accent: #2563EB; }
+    /* A COR É DA PROVA, não do tipo de card. Cada banco traz a sua em `cor`, e
+       o JS a aplica em todo card daquela prova: completo, mini e seção. Estes
+       padrões só valem se algo escapar sem cor. Até 12/08/2026 os minis eram
+       teal e as seções azuis para todas as provas, e o card do completo pegava
+       a cor do exame ATIVO — abrir o EMERALD deixava o card do RED verde. */
+    .pick-full, .pick-mini, .pick-sec { --accent: #d81f26; }
 
     .name-field-wrap { padding: 1.4rem 0 .1rem; }
     .name-field-label {
@@ -706,6 +718,15 @@
     </header>
 
     <main class="container" style="flex:1">
+      <div class="section-label" id="log-label" style="display:none">Acompanhamento</div>
+      <div class="cards-grid" id="log-grid" style="display:none">
+        <button class="pick-card" style="--accent:#c9922e" id="open-log">
+          <div class="pick-icon">📋</div>
+          <h3>Resultados dos alunos</h3>
+          <p>Veja os simulados concluídos neste navegador, importe códigos enviados pelos alunos e exporte CSV</p>
+        </button>
+      </div>
+
       <div class="name-field-wrap" id="name-wrap">
         <label class="name-field-label" for="student-name">Nome do aluno <span style="color:var(--red)">*</span></label>
         <input class="name-field-input" id="student-name" type="text" placeholder="Digite seu nome para começar" autocomplete="off">
@@ -725,15 +746,6 @@
 
       <div class="section-label" id="sections-label" style="display:none">Por seção</div>
       <div class="cards-grid" id="sections-grid" style="display:none"></div>
-
-      <div class="section-label" id="log-label" style="display:none">Acompanhamento</div>
-      <div class="cards-grid" id="log-grid" style="display:none">
-        <button class="pick-card" style="--accent:#c9922e" id="open-log">
-          <div class="pick-icon">📋</div>
-          <h3>Resultados dos alunos</h3>
-          <p>Veja os simulados concluídos neste navegador, importe códigos enviados pelos alunos e exporte CSV</p>
-        </button>
-      </div>
 
       <p class="home-note" id="home-note">
         No modo aluno, você responde tudo antes de ver a correção — como na prova real. Ao final,
@@ -1305,7 +1317,7 @@
       const rot = d.fullLabel || 'Simulado Completo';
       const b = document.createElement('button');
       b.className = 'pick-card pick-full';
-      if (d.cor) b.style.setProperty('--accent', d.cor);
+      b.style.setProperty('--accent', d.cor || '#d81f26');
       // o tour guiado aponta para o primeiro card do completo
       if (i === 0) b.dataset.scope = 'full';
       b.innerHTML = '<div class="pick-icon">🎓</div><h3>' + esc(rot) + tagHTML(d) + '</h3>'
@@ -1338,7 +1350,7 @@
       d.minis.forEach(m => {
         const b = document.createElement('button');
         b.className = 'pick-card pick-mini';
-        if (d.cor) b.style.setProperty('--accent', d.cor);
+        b.style.setProperty('--accent', d.cor || '#d81f26');
         b.innerHTML = '<div class="pick-icon">⚡️</div><h3>' + esc(m.name) + tagHTML(d) + '</h3>'
           + '<p>' + esc(m.desc) + '</p>';
         b.addEventListener('click', () =>
@@ -1352,19 +1364,35 @@
     if (PROF_MODE) {
       const sg = $('sections-grid');
       sg.innerHTML = '';
+      /* UMA COLUNA POR PROVA, como nos minis. Numa grade corrida as cinco
+         seções de cada prova se intercalavam com as das outras, e com três
+         provas a linha do meio misturava Grammar do RED com Part 1 do EMERALD.
+         A cor já separava; a coluna separa antes de precisar da cor. */
+      sg.className = 'minis-provas';
       ORDEM.forEach(k => {
         const d = BANCOS[k];
+        const col = document.createElement('div');
+        col.className = 'minis-col';
+        if (ORDEM.length > 1) {
+          const h = document.createElement('div');
+          h.className = 'mc-head';
+          h.style.color = d.cor || 'var(--red)';
+          h.innerHTML = '<span class="mc-dot" style="background:' + esc(d.cor || '#d81f26') + '"></span>'
+            + esc(tagDe(d));
+          col.appendChild(h);
+        }
         d.sections.forEach(s => {
           const n = d.units.filter(u => u.section === s.id).reduce((a, u) => a + u.questions.length, 0);
           const b = document.createElement('button');
           b.className = 'pick-card pick-sec';
-          if (d.cor) b.style.setProperty('--accent', d.cor);
+          b.style.setProperty('--accent', d.cor || '#d81f26');
           b.innerHTML = '<div class="pick-icon">' + (s.kind === 'listening' ? '🎧' : '📖') + '</div>'
             + '<h3>' + esc(s.name) + tagHTML(d) + '</h3><p>' + n + ' questões</p>';
           b.addEventListener('click', () =>
             abrir(d, { type: 'section', id: s.id, label: s.name + ' ' + tagDe(d) }));
-          sg.appendChild(b);
+          col.appendChild(b);
         });
+        sg.appendChild(col);
       });
     }
     $('student-name').addEventListener('input', e => { state.studentName = e.target.value.trim(); });

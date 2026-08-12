@@ -2,6 +2,7 @@
   "id": "red",
   "name": "Practice Test #5 · RED",
   "examLabel": "MET, Michigan English Test",
+  "cor": "#d81f26",
   "audioBase": "audio/red/",
   "secondsPerRGQuestion": 78,
   "secondsPerListeningQuestion": 48,
