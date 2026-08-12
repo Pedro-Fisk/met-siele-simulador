@@ -212,6 +212,21 @@
       transition: width .3s ease;
     }
     .pick-prog .pp-txt { font-size: .68rem; font-weight: 800; color: var(--text-soft); white-space: nowrap; }
+    /* CARD TRANCADO. Mesmo idioma do Movie Program no Portal: cinza, cadeado
+       no lugar do ícone, cursor de "não dá", e um tremor ao clicar em vez de
+       silêncio. O aluno precisa entender que existe e por que não abre. */
+    .pick-card.is-locked { cursor: not-allowed; opacity: .85; }
+    .pick-card.is-locked:hover { transform: none; border-color: var(--border); box-shadow: var(--shadow); }
+    .pick-card.is-locked .pick-icon { background: #b9b4b4; filter: grayscale(1); }
+    .pick-card.is-locked h3 { color: var(--text-soft); }
+    .pick-card.is-locked .test-tag { filter: grayscale(1); opacity: .8; }
+    .pick-card .pick-lock {
+      display: flex; align-items: center; gap: .4rem; margin-top: auto; padding-top: .8rem;
+      font-size: .7rem; font-weight: 800; color: var(--text-soft);
+    }
+    @keyframes tremeCard { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-5px)} 40%,80%{transform:translateX(5px)} }
+    .pick-card.treme { animation: tremeCard .34s ease; }
+
     .pick-prog .pick-fd {
       font-size: .64rem; font-weight: 800; white-space: nowrap; color: #c9922e;
       background: rgba(201,146,46,.12); border-radius: 999px; padding: .12rem .4rem;
@@ -915,13 +930,13 @@
      página, em vez de precisar de uma URL por prova. O SIELE é outro exame e
      fica sozinho — misturar as duas famílias mandaria o aluno de espanhol
      fazer o MET. Prova nova entra aqui e no EXAMS, e mais nada. */
-  /* O AMBER está EM CONSTRUÇÃO e por isso fica FORA da família do MET: entrar
-     nela colocaria o card dele e o aviso de rascunho na home de todo aluno que
-     abre o Treino MET. Foi o caminho do EMERALD, que só virou prova irmã depois
-     de sair do rascunho. Quando as 100 questões estiverem prontas, ele entra nas
-     três listas, como o EMERALD está. */
-  const FAMILIAS = { met: ['met', 'emerald'], emerald: ['met', 'emerald'],
-                     amber: ['amber'], siele: ['siele'] };
+  /* As três provas do MET dividem a mesma home. O AMBER entrou em 12/08/2026,
+     ao sair do rascunho, e chega TRANCADO: o banco dele declara `requer`, e a
+     home só o abre para quem já fechou o RED e o EMERALD. O SIELE é outro
+     exame e fica sozinho: misturar as famílias mandaria o aluno de espanhol
+     fazer o MET. */
+  const FAMILIAS = { met: ['met', 'emerald', 'amber'], emerald: ['met', 'emerald', 'amber'],
+                     amber: ['met', 'emerald', 'amber'], siele: ['siele'] };
   const EXAM = (new URLSearchParams(location.search).get('exame') || 'met').toLowerCase();
   const FAMILIA = FAMILIAS[EXAM] || FAMILIAS.met;
   const TEST_FILE = EXAMS[EXAM] || EXAMS.met;
@@ -1350,7 +1365,7 @@
      alternativas e é corrigido por outra, e o placar sai errado sem erro
      nenhum na tela. Suba este número TODA vez que mexer num questions/*.json,
      junto com o gabarito do backend. Mesma ideia do DG_V do Portal. */
-  const BANCO_V = '20260812';
+  const BANCO_V = '20260812b';
 
   Promise.all(FAMILIA.map(k =>
     fetch(EXAMS[k] + '?v=' + BANCO_V)
@@ -1434,6 +1449,47 @@
       }
     }
 
+    /* ── TRANCA POR PRÉ-REQUISITO ────────────────────────────────────────
+     * Uma prova pode exigir que outras já tenham sido feitas. Quem declara é o
+     * banco, no campo `requer` (["met","emerald"]), e não este código: prova
+     * nova só precisa dizer de quem depende.
+     *
+     * "Feita" quer dizer a prova INTEIRA, por qualquer um dos três caminhos
+     * que a home oferece: o simulado completo, ou as cinco seções, ou os
+     * quatro minis. São recortes das mesmas 100 questões, então exigir os três
+     * seria cobrar a mesma prova três vezes.
+     *
+     * O professor nunca é barrado: ele precisa abrir para preparar a aula. */
+    function provaConcluida(d, mapa) {
+      if (!d) return false;
+      const feito = id => !!(mapa[id] && mapa[id].done);
+      if (feito(progId(d.id, { type: 'full', id: 'full' }))) return true;
+      const secs = (d.sections || []);
+      if (secs.length && secs.every(sec => feito(progId(d.id, { type: 'section', id: sec.id })))) return true;
+      const minis = (d.minis || []);
+      if (minis.length && minis.every(m => feito(progId(d.id, { type: 'mini', id: m.id })))) return true;
+      return false;
+    }
+    function pendencias(d, mapa) {
+      if (PROF_MODE) return [];
+      return (d.requer || [])
+        .filter(k => BANCOS[k] && !provaConcluida(BANCOS[k], mapa))
+        .map(k => BANCOS[k]);
+    }
+    function trancaHTML(faltam) {
+      const nomes = faltam.map(x => '#' + x.id).join(' e ');
+      return '<div class="pick-lock">🔒 <span>Complete ' + esc(nomes)
+        + ' para liberar</span></div>';
+    }
+    function aplicaTranca(botao, d, faltam) {
+      botao.classList.add('is-locked');
+      botao.setAttribute('aria-disabled', 'true');
+      botao.addEventListener('click', ev => {
+        ev.stopImmediatePropagation();
+        botao.classList.remove('treme'); void botao.offsetWidth; botao.classList.add('treme');
+      }, true);
+    }
+
     /* A BARRA DE PROGRESSO de um card. Lê o mapa do aluno e desenha quanto
        daquele bloco ele já respondeu. No modo professor não aparece: ali quem
        conduz é ele, e o progresso é da turma na TV, não de ninguém. */
@@ -1502,11 +1558,16 @@
       b.style.setProperty('--accent', d.cor || '#d81f26');
       // o tour guiado aponta para o primeiro card do completo
       if (i === 0) b.dataset.scope = 'full';
-      b.innerHTML = '<div class="pick-icon">🎓</div><h3>' + esc(rot) + tagHTML(d) + '</h3>'
+      const travaF = pendencias(d, MAPA);
+      b.innerHTML = '<div class="pick-icon">' + (travaF.length ? '🔒' : '🎓') + '</div>'
+        + '<h3>' + esc(rot) + tagHTML(d) + '</h3>'
         + '<p>' + esc(d.fullDesc || DESC_PADRAO) + '</p>'
-        + barra(d, { type: 'full', id: 'full' });
-      b.addEventListener('click', () =>
-        abrir(d, { type: 'full', id: 'full', label: rot + ' ' + tagDe(d) }));
+        + (travaF.length ? trancaHTML(travaF) : barra(d, { type: 'full', id: 'full' }));
+      if (travaF.length) aplicaTranca(b, d, travaF);
+      b.addEventListener('click', () => {
+        if (b.classList.contains('is-locked')) return;
+        abrir(d, { type: 'full', id: 'full', label: rot + ' ' + tagDe(d) });
+      });
       fg.appendChild(b);
     });
 
@@ -1534,11 +1595,16 @@
         const b = document.createElement('button');
         b.className = 'pick-card pick-mini';
         b.style.setProperty('--accent', d.cor || '#d81f26');
-        b.innerHTML = '<div class="pick-icon">⚡️</div><h3>' + esc(m.name) + tagHTML(d) + '</h3>'
+        const travaM = pendencias(d, MAPA);
+        b.innerHTML = '<div class="pick-icon">' + (travaM.length ? '🔒' : '⚡️') + '</div>'
+          + '<h3>' + esc(m.name) + tagHTML(d) + '</h3>'
           + '<p>' + esc(m.desc) + '</p>'
-          + barra(d, { type: 'mini', id: m.id });
-        b.addEventListener('click', () =>
-          abrir(d, { type: 'mini', id: m.id, label: m.name + ' ' + tagDe(d) }));
+          + (travaM.length ? trancaHTML(travaM) : barra(d, { type: 'mini', id: m.id }));
+        if (travaM.length) aplicaTranca(b, d, travaM);
+        b.addEventListener('click', () => {
+          if (b.classList.contains('is-locked')) return;
+          abrir(d, { type: 'mini', id: m.id, label: m.name + ' ' + tagDe(d) });
+        });
         col.appendChild(b);
       });
       mg.appendChild(col);
@@ -1570,11 +1636,16 @@
           const b = document.createElement('button');
           b.className = 'pick-card pick-sec';
           b.style.setProperty('--accent', d.cor || '#d81f26');
-          b.innerHTML = '<div class="pick-icon">' + (s.kind === 'listening' ? '🎧' : '📖') + '</div>'
+          const travaS = pendencias(d, MAPA);
+          b.innerHTML = '<div class="pick-icon">'
+            + (travaS.length ? '🔒' : (s.kind === 'listening' ? '🎧' : '📖')) + '</div>'
             + '<h3>' + esc(s.name) + tagHTML(d) + '</h3><p>' + n + ' questões</p>'
-            + barra(d, { type: 'section', id: s.id });
-          b.addEventListener('click', () =>
-            abrir(d, { type: 'section', id: s.id, label: s.name + ' ' + tagDe(d) }));
+            + (travaS.length ? trancaHTML(travaS) : barra(d, { type: 'section', id: s.id }));
+          if (travaS.length) aplicaTranca(b, d, travaS);
+          b.addEventListener('click', () => {
+            if (b.classList.contains('is-locked')) return;
+            abrir(d, { type: 'section', id: s.id, label: s.name + ' ' + tagDe(d) });
+          });
           col.appendChild(b);
         });
         sg.appendChild(col);
@@ -1617,6 +1688,10 @@
        aparelho). Nada aqui atrasa a abertura da página. */
     progSyncBaixa().then(mapa => {
       if (!mapa) return;
+      /* Se a nuvem trouxe conclusões que este navegador não conhecia, a tranca
+         pode ter caído. Redesenhar a home inteira é mais simples e mais seguro
+         do que destravar card a card, e acontece uma vez só. */
+      if (JSON.stringify(mapa) !== JSON.stringify(MAPA)) { buildHome(); return; }
       document.querySelectorAll('[data-prog]').forEach(el => {
         const p = mapa[el.dataset.prog] || {};
         const total = Number(el.dataset.progTotal || 0);

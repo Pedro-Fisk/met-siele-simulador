@@ -7,7 +7,10 @@
   "audioBase": "audio/amber/",
   "secondsPerRGQuestion": 78,
   "secondsPerListeningQuestion": 48,
-  "rascunho": true,
+  "requer": [
+    "met",
+    "emerald"
+  ],
   "cefr": {
     "note": "Simulado escrito pela Fisk, com a estrutura e os pesos do MET. Não é uma prova oficial da Michigan Language Assessment: a nota aqui é uma estimativa de treino, e a conversão de acertos para scaled score é aproximada (linear).",
     "scale": 1.6,
@@ -83,7 +86,7 @@
       "questions": [
         {
           "n": 1,
-          "id": "emeraldq001",
+          "id": "amberq001",
           "topic": "Listening · Detalhe",
           "text": "What does the man tell the woman to do?",
           "opts": [
@@ -105,7 +108,7 @@
       "questions": [
         {
           "n": 2,
-          "id": "emeraldq002",
+          "id": "amberq002",
           "topic": "Listening · Detalhe",
           "text": "Why is the man's card not working?",
           "opts": [
@@ -127,7 +130,7 @@
       "questions": [
         {
           "n": 3,
-          "id": "emeraldq003",
+          "id": "amberq003",
           "topic": "Listening · Detalhe",
           "text": "What does the woman ask the man to send?",
           "opts": [
@@ -149,7 +152,7 @@
       "questions": [
         {
           "n": 4,
-          "id": "emeraldq004",
+          "id": "amberq004",
           "topic": "Listening · Inferência",
           "text": "What does the man imply about the basement printer?",
           "opts": [
@@ -171,7 +174,7 @@
       "questions": [
         {
           "n": 5,
-          "id": "emeraldq005",
+          "id": "amberq005",
           "topic": "Listening · Intenção do falante",
           "text": "How does the man feel?",
           "opts": [
@@ -193,7 +196,7 @@
       "questions": [
         {
           "n": 6,
-          "id": "emeraldq006",
+          "id": "amberq006",
           "topic": "Listening · Detalhe",
           "text": "What will the man do next?",
           "opts": [
@@ -215,7 +218,7 @@
       "questions": [
         {
           "n": 7,
-          "id": "emeraldq007",
+          "id": "amberq007",
           "topic": "Listening · Detalhe",
           "text": "What has the woman already done?",
           "opts": [
@@ -237,7 +240,7 @@
       "questions": [
         {
           "n": 8,
-          "id": "emeraldq008",
+          "id": "amberq008",
           "topic": "Listening · Ideia principal",
           "text": "What is the woman's problem?",
           "opts": [
@@ -259,7 +262,7 @@
       "questions": [
         {
           "n": 9,
-          "id": "emeraldq009",
+          "id": "amberq009",
           "topic": "Listening · Detalhe",
           "text": "Why did the man lose marks?",
           "opts": [
@@ -281,7 +284,7 @@
       "questions": [
         {
           "n": 10,
-          "id": "emeraldq010",
+          "id": "amberq010",
           "topic": "Listening · Detalhe",
           "text": "What does the woman advise?",
           "opts": [
@@ -303,7 +306,7 @@
       "questions": [
         {
           "n": 11,
-          "id": "emeraldq011",
+          "id": "amberq011",
           "topic": "Listening · Detalhe",
           "text": "What can the man do?",
           "opts": [
@@ -325,7 +328,7 @@
       "questions": [
         {
           "n": 12,
-          "id": "emeraldq012",
+          "id": "amberq012",
           "topic": "Listening · Detalhe",
           "text": "What does the man suggest the woman do?",
           "opts": [
@@ -347,7 +350,7 @@
       "questions": [
         {
           "n": 13,
-          "id": "emeraldq013",
+          "id": "amberq013",
           "topic": "Listening · Intenção do falante",
           "text": "What does the man mean when he says the point gets harder the longer you wait?",
           "opts": [
@@ -369,7 +372,7 @@
       "questions": [
         {
           "n": 14,
-          "id": "emeraldq014",
+          "id": "amberq014",
           "topic": "Listening · Ideia principal",
           "text": "What does the woman warn the man about?",
           "opts": [
@@ -391,7 +394,7 @@
       "questions": [
         {
           "n": 15,
-          "id": "emeraldq015",
+          "id": "amberq015",
           "topic": "Listening · Detalhe",
           "text": "When will they meet?",
           "opts": [
@@ -413,7 +416,7 @@
       "questions": [
         {
           "n": 16,
-          "id": "emeraldq016",
+          "id": "amberq016",
           "topic": "Listening · Inferência",
           "text": "What does the woman imply?",
           "opts": [
@@ -435,7 +438,7 @@
       "questions": [
         {
           "n": 17,
-          "id": "emeraldq017",
+          "id": "amberq017",
           "topic": "Listening · Inferência",
           "text": "What does the man conclude?",
           "opts": [
@@ -457,7 +460,7 @@
       "questions": [
         {
           "n": 18,
-          "id": "emeraldq018",
+          "id": "amberq018",
           "topic": "Listening · Ideia principal",
           "text": "What is the woman's rule?",
           "opts": [
@@ -479,7 +482,7 @@
       "questions": [
         {
           "n": 19,
-          "id": "emeraldq019",
+          "id": "amberq019",
           "topic": "Listening · Detalhe",
           "text": "What does the man say about the fee?",
           "opts": [
@@ -524,7 +527,7 @@
       "questions": [
         {
           "n": 20,
-          "id": "emeraldq020",
+          "id": "amberq020",
           "topic": "Listening · Ideia principal",
           "text": "What are the speakers mainly discussing?",
           "opts": [
@@ -538,7 +541,7 @@
         },
         {
           "n": 21,
-          "id": "emeraldq021",
+          "id": "amberq021",
           "topic": "Listening · Detalhe",
           "text": "Why does the woman hesitate to accept the place?",
           "opts": [
@@ -552,7 +555,7 @@
         },
         {
           "n": 22,
-          "id": "emeraldq022",
+          "id": "amberq022",
           "topic": "Listening · Intenção do falante",
           "text": "What does the tutor mean when he says a method only one person can run is not a method yet?",
           "opts": [
@@ -566,7 +569,7 @@
         },
         {
           "n": 23,
-          "id": "emeraldq023",
+          "id": "amberq023",
           "topic": "Listening · Detalhe",
           "text": "What does the tutor advise the woman to do first?",
           "opts": [
@@ -607,7 +610,7 @@
       "questions": [
         {
           "n": 24,
-          "id": "emeraldq024",
+          "id": "amberq024",
           "topic": "Listening · Ideia principal",
           "text": "Why is the man calling?",
           "opts": [
@@ -621,7 +624,7 @@
         },
         {
           "n": 25,
-          "id": "emeraldq025",
+          "id": "amberq025",
           "topic": "Listening · Detalhe",
           "text": "What does the agent ask the man to do?",
           "opts": [
@@ -635,7 +638,7 @@
         },
         {
           "n": 26,
-          "id": "emeraldq026",
+          "id": "amberq026",
           "topic": "Listening · Inferência",
           "text": "What does the agent suggest about the deposit scheme?",
           "opts": [
@@ -680,7 +683,7 @@
       "questions": [
         {
           "n": 27,
-          "id": "emeraldq027",
+          "id": "amberq027",
           "topic": "Listening · Ideia principal",
           "text": "What is the main problem the students are discussing?",
           "opts": [
@@ -694,7 +697,7 @@
         },
         {
           "n": 28,
-          "id": "emeraldq028",
+          "id": "amberq028",
           "topic": "Listening · Detalhe",
           "text": "What do they decide to do with the second case study?",
           "opts": [
@@ -708,7 +711,7 @@
         },
         {
           "n": 29,
-          "id": "emeraldq029",
+          "id": "amberq029",
           "topic": "Listening · Propósito",
           "text": "Why does the woman refuse to talk faster?",
           "opts": [
@@ -722,7 +725,7 @@
         },
         {
           "n": 30,
-          "id": "emeraldq030",
+          "id": "amberq030",
           "topic": "Listening · Detalhe",
           "text": "What does the man agree to do before Thursday?",
           "opts": [
@@ -763,7 +766,7 @@
       "questions": [
         {
           "n": 31,
-          "id": "emeraldq031",
+          "id": "amberq031",
           "topic": "Listening · Propósito",
           "text": "Why did the man list the society above his coursework?",
           "opts": [
@@ -777,7 +780,7 @@
         },
         {
           "n": 32,
-          "id": "emeraldq032",
+          "id": "amberq032",
           "topic": "Listening · Detalhe",
           "text": "What took most of the six weeks?",
           "opts": [
@@ -791,7 +794,7 @@
         },
         {
           "n": 33,
-          "id": "emeraldq033",
+          "id": "amberq033",
           "topic": "Listening · Inferência",
           "text": "What does the interviewer approve of?",
           "opts": [
@@ -836,7 +839,7 @@
       "questions": [
         {
           "n": 34,
-          "id": "emeraldq034",
+          "id": "amberq034",
           "topic": "Listening · Ideia principal",
           "text": "What is the talk mainly about?",
           "opts": [
@@ -850,7 +853,7 @@
         },
         {
           "n": 35,
-          "id": "emeraldq035",
+          "id": "amberq035",
           "topic": "Listening · Detalhe",
           "text": "According to the speaker, what causes most of the cases she sees?",
           "opts": [
@@ -864,7 +867,7 @@
         },
         {
           "n": 36,
-          "id": "emeraldq036",
+          "id": "amberq036",
           "topic": "Listening · Detalhe",
           "text": "What does the speaker recommend doing while taking notes?",
           "opts": [
@@ -878,7 +881,7 @@
         },
         {
           "n": 37,
-          "id": "emeraldq037",
+          "id": "amberq037",
           "topic": "Listening · Intenção do falante",
           "text": "What does the speaker mean when she says the line is not the room but the document?",
           "opts": [
@@ -923,7 +926,7 @@
       "questions": [
         {
           "n": 38,
-          "id": "emeraldq038",
+          "id": "amberq038",
           "topic": "Listening · Ideia principal",
           "text": "What is the main purpose of the talk?",
           "opts": [
@@ -937,7 +940,7 @@
         },
         {
           "n": 39,
-          "id": "emeraldq039",
+          "id": "amberq039",
           "topic": "Listening · Detalhe",
           "text": "According to the speaker, why is the difference greatest at three in the morning?",
           "opts": [
@@ -951,7 +954,7 @@
         },
         {
           "n": 40,
-          "id": "emeraldq040",
+          "id": "amberq040",
           "topic": "Listening · Detalhe",
           "text": "What does the speaker say about water in cities?",
           "opts": [
@@ -965,7 +968,7 @@
         },
         {
           "n": 41,
-          "id": "emeraldq041",
+          "id": "amberq041",
           "topic": "Listening · Inferência",
           "text": "What does the speaker suggest about the design of cities?",
           "opts": [
@@ -1014,7 +1017,7 @@
       "questions": [
         {
           "n": 42,
-          "id": "emeraldq042",
+          "id": "amberq042",
           "topic": "Listening · Ideia principal",
           "text": "What is the talk mainly about?",
           "opts": [
@@ -1028,7 +1031,7 @@
         },
         {
           "n": 43,
-          "id": "emeraldq043",
+          "id": "amberq043",
           "topic": "Listening · Detalhe",
           "text": "What did the study of five hundred papers find?",
           "opts": [
@@ -1042,7 +1045,7 @@
         },
         {
           "n": 44,
-          "id": "emeraldq044",
+          "id": "amberq044",
           "topic": "Listening · Detalhe",
           "text": "According to the speaker, why is the data usually unavailable?",
           "opts": [
@@ -1056,7 +1059,7 @@
         },
         {
           "n": 45,
-          "id": "emeraldq045",
+          "id": "amberq045",
           "topic": "Listening · Inferência",
           "text": "What does the speaker suggest about the idea that science corrects itself?",
           "opts": [
@@ -1070,7 +1073,7 @@
         },
         {
           "n": 46,
-          "id": "emeraldq046",
+          "id": "amberq046",
           "topic": "Listening · Detalhe",
           "text": "What does the speaker recommend?",
           "opts": [
@@ -1115,7 +1118,7 @@
       "questions": [
         {
           "n": 47,
-          "id": "emeraldq047",
+          "id": "amberq047",
           "topic": "Listening · Ideia principal",
           "text": "What is the main purpose of the talk?",
           "opts": [
@@ -1129,7 +1132,7 @@
         },
         {
           "n": 48,
-          "id": "emeraldq048",
+          "id": "amberq048",
           "topic": "Listening · Detalhe",
           "text": "Why did bus journey times improve more than predicted?",
           "opts": [
@@ -1143,7 +1146,7 @@
         },
         {
           "n": 49,
-          "id": "emeraldq049",
+          "id": "amberq049",
           "topic": "Listening · Intenção do falante",
           "text": "What does the speaker admit?",
           "opts": [
@@ -1157,7 +1160,7 @@
         },
         {
           "n": 50,
-          "id": "emeraldq050",
+          "id": "amberq050",
           "topic": "Listening · Detalhe",
           "text": "What is being proposed?",
           "opts": [

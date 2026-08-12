@@ -529,9 +529,11 @@ amber = {
     'audioBase': 'audio/amber/',
     'secondsPerRGQuestion': emerald['secondsPerRGQuestion'],
     'secondsPerListeningQuestion': emerald['secondsPerListeningQuestion'],
-    # Rascunho tranca tudo: aviso na home, nada enviado para a nuvem e o gerador
-    # do gabarito no backend pula o banco. Sai quando as 100 estiverem prontas.
-    'rascunho': True,
+    # Publicado em 12/08/2026, com as 100 questões prontas. No lugar do rascunho
+    # entrou uma tranca de conteúdo: `requer` diz que o aluno só abre o AMBER
+    # depois de fechar o RED e o EMERALD, por qualquer um dos caminhos da home
+    # (o completo, ou as cinco seções, ou os quatro minis).
+    'requer': ['met', 'emerald'],
     'cefr': emerald['cefr'],
     'sections': emerald['sections'],
     'units': UNITS,

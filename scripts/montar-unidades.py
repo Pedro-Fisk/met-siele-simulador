@@ -38,9 +38,13 @@ BANCO = os.path.join(RAIZ, 'questions', '%s.json' % PROVA)
 
 
 def questao(q):
+    # O id carrega o NOME DA PROVA. Escrito na mão como 'emeraldq%03d', ele
+    # batizava as questões do AMBER com o id das do EMERALD, e o `Gabarito.js`
+    # é indexado por id: uma prova passaria a ser corrigida pelo gabarito da
+    # outra. Pego em 12/08/2026, antes de publicar o AMBER.
     return {
         'n': q['n'],
-        'id': 'emeraldq%03d' % q['n'],
+        'id': '%sq%03d' % (PROVA, q['n']),
         'topic': q['topic'],
         'text': q['text'],
         'opts': q['opts'],
