@@ -1216,8 +1216,16 @@
     d.sections.forEach(s => sectionById[s.id] = s);
   }
 
+  /* VERSÃO DO BANCO. Quem corrige de verdade é o servidor, pelo `Gabarito.js`,
+     e ele é gerado destes mesmos arquivos. Se o navegador do aluno guardar um
+     banco velho depois de um deles mudar, ele responde por uma ordem de
+     alternativas e é corrigido por outra, e o placar sai errado sem erro
+     nenhum na tela. Suba este número TODA vez que mexer num questions/*.json,
+     junto com o gabarito do backend. Mesma ideia do DG_V do Portal. */
+  const BANCO_V = '20260812';
+
   Promise.all(FAMILIA.map(k =>
-    fetch(EXAMS[k])
+    fetch(EXAMS[k] + '?v=' + BANCO_V)
       .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(d => { BANCOS[k] = normaliza(d); })
       /* Uma prova que não carrega não pode derrubar a outra: a home mostra as

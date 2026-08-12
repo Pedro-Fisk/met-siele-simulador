@@ -86,12 +86,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the professor ask the student to do?",
           "opts": [
+            "rewrite the essay from the beginning",
             "send him her outline today",
             "buy a new laptop",
-            "come to his office on Monday",
-            "rewrite the essay from the beginning"
+            "come to his office on Monday"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Ele dá o prazo novo e emenda um pedido: \"But send me that outline today, so I can see where you got to\". O que ele PEDE é o roteiro, hoje."
         }
       ]
@@ -108,12 +108,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the man imply about the woman?",
           "opts": [
-            "She may not want the elective enough.",
-            "She should change her chemistry lab.",
             "She will not be allowed to take the elective.",
+            "She should change her chemistry lab.",
+            "She may not want the elective enough.",
             "She prefers early morning classes."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "\"That tells you how badly you want the elective\" é irônico: se a sexta às oito da manhã já derruba o plano, a vontade não era tanta."
         }
       ]
@@ -130,12 +130,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the man say about the study rooms?",
           "opts": [
-            "They must be reserved online.",
-            "They are all taken on Thursday.",
+            "They close in the afternoon.",
             "They are only for groups of two.",
-            "They close in the afternoon."
+            "They must be reserved online.",
+            "They are all taken on Thursday."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "\"You'll have to do that yourself, on the library website\": a reserva saiu do balcão e virou online."
         }
       ]
@@ -152,9 +152,9 @@
           "topic": "Listening · Inferência",
           "text": "What does the woman imply about Carla?",
           "opts": [
-            "Carla was ill on Tuesday.",
-            "Carla let her down.",
             "Carla finished the procedure alone.",
+            "Carla let her down.",
+            "Carla was ill on Tuesday.",
             "Carla sent a message before the lab."
           ],
           "key": 1,
@@ -175,9 +175,9 @@
           "text": "What are the speakers mainly discussing?",
           "opts": [
             "a change of program the man is considering",
-            "a course the man failed",
             "an advisor the woman recommends",
-            "the credits the woman needs"
+            "the credits the woman needs",
+            "a course the man failed"
           ],
           "key": 0,
           "expl": "Tudo gira em torno da mudança de economia para linguística: o tempo pensando nela, os créditos que ela custa e a conversa com o orientador que vai decidi-la."
@@ -196,12 +196,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the woman suggest the man do?",
           "opts": [
-            "use a copy kept at the library",
-            "wait for the next shipment",
             "ask for more time on the assignment",
-            "order the book from another store"
+            "wait for the next shipment",
+            "order the book from another store",
+            "use a copy kept at the library"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "\"Then use the library's copy. There are three on reserve at the front desk.\" A saída que ela oferece é a biblioteca, não a espera."
         }
       ]
@@ -218,12 +218,12 @@
           "topic": "Listening · Inferência",
           "text": "What will most likely happen?",
           "opts": [
+            "The other student will complain.",
             "The woman's grade will be corrected.",
             "The woman will rewrite the paper.",
-            "The professor will remove the comments.",
-            "The other student will complain."
+            "The professor will remove the comments."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "O professor reconhece a troca (\"that's the mark for a different student\") e promete \"By this afternoon\": a nota errada vai ser trocada ainda hoje."
         }
       ]
@@ -240,12 +240,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the woman say about dropping a course after Monday?",
           "opts": [
-            "It will appear on the transcript.",
             "It will no longer be allowed.",
-            "It will not need a signature.",
-            "It will take four days."
+            "It will appear on the transcript.",
+            "It will take four days.",
+            "It will not need a signature."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "\"From Monday on, anything you drop appears as a withdrawal\": depois de segunda o trancamento fica registrado no histórico."
         }
       ]
@@ -262,12 +262,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the man imply?",
           "opts": [
-            "He does not expect Daniel to deliver his part.",
+            "He would rather present alone.",
             "He wants to present on another day.",
-            "He thinks Daniel's slides are ready.",
-            "He would rather present alone."
+            "He does not expect Daniel to deliver his part.",
+            "He thinks Daniel's slides are ready."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Ele escreveu a parte do colega \"just in case\" e, quando ela lembra da sexta, responde \"That's exactly why I wrote it\": não conta com o Daniel."
         }
       ]
@@ -284,12 +284,12 @@
           "topic": "Listening · Propósito",
           "text": "Why does the woman mention the shuttle?",
           "opts": [
-            "to suggest a cheaper way to get there",
+            "to show how far the seminar is",
             "to explain why she will be late",
-            "to complain about the price of taxis",
-            "to show how far the seminar is"
+            "to suggest a cheaper way to get there",
+            "to complain about the price of taxis"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Ele propõe rachar um táxi; ela responde com o ônibus \"free with a student card\" e fecha com os onze dólares que os outros pagam. A fala existe para oferecer a alternativa barata."
         }
       ]
@@ -307,9 +307,9 @@
           "text": "What does the man tell the woman about her file?",
           "opts": [
             "It has to be a PDF.",
+            "It has to be made from slides.",
             "It has to be printed on Thursday.",
-            "It has to be uploaded after five.",
-            "It has to be made from slides."
+            "It has to be uploaded after five."
           ],
           "key": 0,
           "expl": "\"And it has to be a PDF. We can't print from slides.\" O formato é a exigência, e os slides são justamente o que não serve."
@@ -328,12 +328,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the woman suggest about the letter?",
           "opts": [
-            "It will be weaker because of the short notice.",
-            "She will not be able to write it.",
             "The man should ask another professor.",
+            "She will not be able to write it.",
+            "It will be weaker because of the short notice.",
             "The deadline has already passed."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Ela aceita, mas o \"Next time, come to me three weeks earlier, and the letter will be worth reading\" diz que ESTA, escrita da noite para o dia, não vai valer muito."
         }
       ]
@@ -350,12 +350,12 @@
           "topic": "Listening · Ideia principal",
           "text": "What are the speakers mainly discussing?",
           "opts": [
-            "a study space that has become noisy",
+            "a rule the woman broke",
             "a café that is about to close",
             "the opening hours of a library",
-            "a rule the woman broke"
+            "a study space that has become noisy"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "A conversa inteira é sobre o terceiro andar ter perdido o silêncio: a regra que ninguém aplica, o café embaixo e a fuga para a outra biblioteca."
         }
       ]
@@ -372,12 +372,12 @@
           "topic": "Listening · Detalhe",
           "text": "What is required before the man can start?",
           "opts": [
-            "passing an online safety course",
-            "spending two hours in the lab",
             "written permission from the professor",
-            "a test taken on Monday"
+            "a test taken on Monday",
+            "spending two hours in the lab",
+            "passing an online safety course"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "\"Only if you've done the safety module... Nobody starts in that lab without passing it.\" A condição é o curso online, e não basta fazer: tem que passar."
         }
       ]
@@ -395,9 +395,9 @@
           "text": "What does the man imply?",
           "opts": [
             "The woman missed information she cannot find online.",
+            "The reading list is in the slides.",
             "The woman should not worry about the lectures.",
-            "The exam format will change again.",
-            "The reading list is in the slides."
+            "The exam format will change again."
           ],
           "key": 0,
           "expl": "\"The slides are online. The rest of it isn't\": o formato da prova, o novo prazo e a lista de leitura só existiam na aula."
@@ -416,12 +416,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the woman say about the position?",
           "opts": [
-            "The hours cannot be changed.",
-            "It takes ten hours on Tuesday.",
             "The interviews are run on Tuesday.",
-            "It is only open to first-year students."
+            "It takes ten hours on Tuesday.",
+            "It is only open to first-year students.",
+            "The hours cannot be changed."
           ],
-          "key": 0,
+          "key": 3,
           "expl": "\"Ten, and they're fixed\", e a aula de quinta às nove é justamente a hora das entrevistas, por isso \"it won't work\". O horário é rígido."
         }
       ]
@@ -438,12 +438,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the woman mean?",
           "opts": [
-            "She has read almost none of the chapter.",
-            "She found the chapter too short.",
             "She finished the chapter quickly.",
-            "She read a different chapter."
+            "She has read almost none of the chapter.",
+            "She read a different chapter.",
+            "She found the chapter too short."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "\"A very small start\" em quarenta páginas é o modo educado de admitir que ela quase não leu."
         }
       ]
@@ -461,9 +461,9 @@
           "text": "What are the speakers mainly discussing?",
           "opts": [
             "a change to the final exam",
-            "a book they have to buy",
             "an essay they have written",
-            "the marks they received"
+            "the marks they received",
+            "a book they have to buy"
           ],
           "key": 0,
           "expl": "Os dois falam da nova forma da prova final: consulta aberta, mas metade da nota numa única dissertação."
@@ -482,12 +482,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the woman imply?",
           "opts": [
-            "She has not decided whether to drop a course.",
-            "She has already dropped one course.",
             "She missed the deadline on Friday.",
-            "She was advised to take both courses."
+            "She has not decided whether to drop a course.",
+            "She was advised to take both courses.",
+            "She has already dropped one course."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "O prazo ainda está de pé (\"Until Friday\") e ela \"keeps opening the form and closing it again\": está em cima do muro."
         }
       ]
@@ -527,12 +527,12 @@
           "topic": "Listening · Ideia principal",
           "text": "What are the speakers mainly discussing?",
           "opts": [
-            "whether the woman should write a thesis",
-            "a seminar the woman is teaching",
             "the woman's application to a master's program",
-            "a deadline the woman has already missed"
+            "a deadline the woman has already missed",
+            "a seminar the woman is teaching",
+            "whether the woman should write a thesis"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "A conversa inteira é a escolha da aluna para o ano seguinte: a monografia ou os dois seminários. Tudo o mais (o mestrado, a pergunta de pesquisa) entra a serviço dessa decisão."
         },
         {
@@ -541,12 +541,12 @@
           "topic": "Listening · Propósito",
           "text": "Why does the advisor ask whether she is going on to a master's?",
           "opts": [
-            "to find out what her decision should be built around",
-            "to suggest that she apply this year",
+            "to warn her about the Friday deadline",
             "to explain why the thesis is required",
-            "to warn her about the Friday deadline"
+            "to find out what her decision should be built around",
+            "to suggest that she apply this year"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Quando ela responde \"I don't know yet\", ele emenda: \"Then that's the answer we should plan around\". A pergunta serviu para descobrir sobre que base decidir."
         },
         {
@@ -555,12 +555,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the advisor say about students who take only seminars?",
           "opts": [
-            "Some of them regret never writing anything long.",
-            "They read less widely than other students.",
+            "They finish their program a semester earlier.",
             "They usually go on to a master's.",
-            "They finish their program a semester earlier."
+            "Some of them regret never writing anything long.",
+            "They read less widely than other students."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "\"Some students leave here having never written anything longer than fifteen pages, and a fair number of them regret it.\""
         },
         {
@@ -569,12 +569,12 @@
           "topic": "Listening · Intenção do falante",
           "text": "What does the advisor mean when he says this?",
           "opts": [
-            "Her interest in the topic shows she should write the thesis.",
             "She has already decided about the master's.",
+            "He is not able to help her decide.",
             "The question she raised in his course was the wrong one.",
-            "He is not able to help her decide."
+            "Her interest in the topic shows she should write the thesis."
           ],
-          "key": 0,
+          "key": 3,
           "expl": "Ele havia perguntado se existia uma questão com que ela quisesse conviver por um ano. Ela responde com uma em que não para de pensar, e é isso que decide a favor da monografia."
         }
       ]
@@ -610,12 +610,12 @@
           "topic": "Listening · Propósito",
           "text": "Why does the woman mention Thursday?",
           "opts": [
-            "to point to a possible cause of the strange results",
             "to remind the man when the report is due",
-            "to explain why she missed the second run",
-            "to complain about the technician"
+            "to complain about the technician",
+            "to point to a possible cause of the strange results",
+            "to explain why she missed the second run"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Ela liga a data ao equipamento: \"Thursday is when they recalibrated the water bath\", com um desvio de meio grau. É a explicação da curva estranha."
         },
         {
@@ -624,12 +624,12 @@
           "topic": "Listening · Inferência",
           "text": "What will the students most likely do?",
           "opts": [
-            "report both runs and explain the calibration",
-            "repeat the second run before Monday",
             "leave the second run out of the report",
-            "ask Doctor Lima for extra time"
+            "repeat the second run before Monday",
+            "ask Doctor Lima for extra time",
+            "report both runs and explain the calibration"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "\"Both, with a note explaining the calibration\", e o homem aceita ao dividir as seções entre os dois. A hora extra é justamente para escrever essa nota."
         },
         {
@@ -639,9 +639,9 @@
           "text": "What does the woman mean when she says this?",
           "opts": [
             "She wants to look at the original data herself.",
-            "She thinks his table is badly formatted.",
             "She will build the table for him.",
-            "She does not need the raw file."
+            "She does not need the raw file.",
+            "She thinks his table is badly formatted."
           ],
           "key": 0,
           "expl": "Ela pede o arquivo bruto: quer os dados originais, não os já organizados por ele. É o que se espera de quem acabou de descobrir um erro de calibragem."
@@ -683,12 +683,12 @@
           "topic": "Listening · Ideia principal",
           "text": "What are the speakers mainly discussing?",
           "opts": [
-            "how the man should search for his sources",
-            "an article the man was asked to pay for",
             "a deadline the man cannot meet",
+            "an article the man was asked to pay for",
+            "how the man should search for his sources",
             "a database the library has cancelled"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Do começo ao fim, a bibliotecária corrige o método de busca dele: a caixa errada, o filtro certo, o caminho de acesso e por onde começar a ler."
         },
         {
@@ -697,12 +697,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the librarian say about the main search box?",
           "opts": [
-            "It searches the newspaper archive as well.",
+            "It returns about thirty results.",
             "It cannot be used from home.",
             "It shows only peer-reviewed articles.",
-            "It returns about thirty results."
+            "It searches the newspaper archive as well."
           ],
-          "key": 0,
+          "key": 3,
           "expl": "\"The main box searches everything we own, including the newspaper archive\": é por isso que voltam duzentos resultados em sua maioria inúteis."
         },
         {
@@ -712,9 +712,9 @@
           "text": "Why does the librarian tell him to go in through the library's page?",
           "opts": [
             "so that the system recognizes him as a student",
+            "so that he can change the date range",
             "so that his searches are saved for later",
-            "so that he can borrow books from other libraries",
-            "so that he can change the date range"
+            "so that he can borrow books from other libraries"
           ],
           "key": 0,
           "expl": "\"so the system knows you're a student. If you go straight to the publisher's site, you'll be asked to pay\". O caminho existe para o acesso ser reconhecido."
@@ -725,12 +725,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the librarian suggest about the man's problem yesterday?",
           "opts": [
-            "The article was probably available to him at no cost.",
             "The article had not been published yet.",
+            "The article was probably available to him at no cost.",
             "He had searched in the wrong database.",
             "His deadline was too close for a request."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Ele achou que a biblioteca não tinha o artigo; ela responde \"We almost always do\". O texto provavelmente estava disponível, e o que faltou foi entrar pelo caminho certo."
         }
       ]
@@ -766,12 +766,12 @@
           "topic": "Listening · Propósito",
           "text": "Why does the woman mention emails?",
           "opts": [
+            "to describe a message she sent to a student",
             "to show how the policy changed her own workload",
-            "to explain why so many students were ill",
             "to complain about a department decision",
-            "to describe a message she sent to a student"
+            "to explain why so many students were ill"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Ela perdia \"an evening a week\" lendo justificativas; com a prorrogação automática, \"now they click a button\". Os e-mails medem o que mudou para ela."
         },
         {
@@ -780,12 +780,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the woman suggest about her students' work?",
           "opts": [
+            "It is graded five percent lower.",
             "It did not get worse under the new policy.",
             "It improved a great deal.",
-            "It usually arrives two days late.",
-            "It is graded five percent lower."
+            "It usually arrives two days late."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "\"That was my worry too. The average went up slightly.\" O medo de piorar não se confirmou, e ainda caiu o número de trabalhos que nunca chegavam."
         },
         {
@@ -794,12 +794,12 @@
           "topic": "Listening · Intenção do falante",
           "text": "What does the man mean when he says this?",
           "opts": [
+            "He will repeat her words for her.",
             "He thinks she should make that argument to the department.",
             "He wants her to write the new policy herself.",
-            "He disagrees with what she has just said.",
-            "He will repeat her words for her."
+            "He disagrees with what she has just said."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Ela acabou de resumir a diferença entre a regra e as exceções. Ele acha a formulação tão boa que quer ouvi-la, igual, na reunião do departamento."
         }
       ]
@@ -853,12 +853,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the speaker say about proofreading?",
           "opts": [
+            "It takes a full fifty-minute session.",
             "The center does not do it.",
             "It is done while the writer waits.",
-            "It is offered only to graduate students.",
-            "It takes a full fifty-minute session."
+            "It is offered only to graduate students."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "\"We won't proofread it, and we never edit a text without its writer in the room.\" A revisão de superfície está fora do serviço."
         },
         {
@@ -868,9 +868,9 @@
           "text": "Who used the center most often last year?",
           "opts": [
             "graduate students",
-            "first-year students",
             "students who were failing",
-            "students in their final year"
+            "students in their final year",
+            "first-year students"
           ],
           "key": 0,
           "expl": "\"Last year our most frequent visitors were graduate students\", e a semana mais cheia foi a das inscrições de doutorado."
@@ -881,12 +881,12 @@
           "topic": "Listening · Propósito",
           "text": "Why does the speaker mention the four o'clock walk-in slots?",
           "opts": [
-            "to point out an opportunity students fail to use",
             "to explain why booking is difficult",
             "to announce a change in the schedule",
+            "to point out an opportunity students fail to use",
             "to ask students to arrive before four"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "\"Those are almost never taken, which tells you something about how students plan\". A vaga existe, sobra, e a sobra é a crítica."
         }
       ]
@@ -926,12 +926,12 @@
           "topic": "Listening · Ideia principal",
           "text": "What is the lecture mainly about?",
           "opts": [
-            "why spreading study out works better than concentrating it",
             "how Ebbinghaus invented the nonsense syllable",
-            "why students forget lists of unfamiliar words",
-            "how surgeons are trained to perform new procedures"
+            "why spreading study out works better than concentrating it",
+            "how surgeons are trained to perform new procedures",
+            "why students forget lists of unfamiliar words"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "A aula parte da curva do esquecimento para chegar ao efeito do espaçamento e a por que os alunos não o usam. O assunto é esse efeito."
         },
         {
@@ -940,12 +940,12 @@
           "topic": "Listening · Detalhe",
           "text": "What did Ebbinghaus find about the same amount of study time?",
           "opts": [
-            "It worked better when divided across several days.",
             "It worked better when taken in one sitting.",
-            "It made no difference to how much was recalled.",
-            "It only worked with nonsense syllables."
+            "It worked better when divided across several days.",
+            "It only worked with nonsense syllables.",
+            "It made no difference to how much was recalled."
           ],
-          "key": 0,
+          "key": 1,
           "expl": "\"The same total study time, divided across several days, produced far better recall than the same minutes taken in one sitting.\""
         },
         {
@@ -954,12 +954,12 @@
           "topic": "Listening · Detalhe",
           "text": "According to the speaker, why does studying in one sitting feel effective?",
           "opts": [
-            "The material starts to feel familiar.",
-            "The material is forgotten more slowly.",
             "The student is less tired at the end.",
-            "The student recalls more a week later."
+            "The student recalls more a week later.",
+            "The material starts to feel familiar.",
+            "The material is forgotten more slowly."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "\"The text becomes fluent, and fluency feels like knowledge... it was never knowledge. It was familiarity.\" A sensação vem da familiaridade, não do aprendizado."
         },
         {
@@ -968,12 +968,12 @@
           "topic": "Listening · Inferência",
           "text": "What does the speaker suggest about the reading he assigns?",
           "opts": [
-            "It is meant to illustrate the point of the lecture.",
+            "It replaces the chapter in the textbook.",
             "It will be discussed over two weeks.",
-            "It is optional for most of the class.",
-            "It replaces the chapter in the textbook."
+            "It is meant to illustrate the point of the lecture.",
+            "It is optional for most of the class."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Ele manda ler duas vezes em dias diferentes e emenda: \"either an instruction or a demonstration, depending on how you take it\". A tarefa é o próprio espaçamento em ação."
         }
       ]
@@ -1017,12 +1017,12 @@
           "topic": "Listening · Ideia principal",
           "text": "What is the talk mainly about?",
           "opts": [
-            "what a herbarium is and why it is useful",
-            "how rare plants are grown at the university",
             "the history of a university building",
-            "how photographs of plants are stored"
+            "what a herbarium is and why it is useful",
+            "how photographs of plants are stored",
+            "how rare plants are grown at the university"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "A guia define o herbário, explica por que as folhas secas continuam valendo mais que fotografias e como se cuida delas. É a apresentação da coleção."
         },
         {
@@ -1031,12 +1031,12 @@
           "topic": "Listening · Detalhe",
           "text": "What does the speaker say the specimens have that photographs do not?",
           "opts": [
-            "genetic material",
-            "a sharper image",
             "the name of the collector",
-            "the original colour of the flower"
+            "the original colour of the flower",
+            "a sharper image",
+            "genetic material"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "\"A photograph has no DNA, and sheets from the eighteen hundreds have been sequenced successfully.\""
         },
         {
@@ -1045,12 +1045,12 @@
           "topic": "Listening · Detalhe",
           "text": "How has the collection been used by climate scientists?",
           "opts": [
-            "to show that plants now flower earlier than before",
             "to measure the rainfall of two centuries ago",
+            "to establish the date of the oldest sheet",
             "to identify insects that have disappeared",
-            "to establish the date of the oldest sheet"
+            "to show that plants now flower earlier than before"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "As etiquetas trazem data e lugar escritos por quem coletou, e é por isso que se pôde mostrar que muitas espécies florescem \"about ten days earlier than they did a hundred years ago\"."
         },
         {
@@ -1059,12 +1059,12 @@
           "topic": "Listening · Propósito",
           "text": "Why does the speaker mention a beetle?",
           "opts": [
+            "to give an example of a pollinating insect",
             "to explain why the doors must be kept closed",
-            "to describe one of the specimens on display",
             "to warn visitors not to touch the sheets",
-            "to give an example of a pollinating insect"
+            "to describe one of the specimens on display"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "\"Keep the doors closed behind you, because our worst enemy is not damp. It's a small beetle...\" O inseto é a razão da regra da porta."
         },
         {
@@ -1073,12 +1073,12 @@
           "topic": "Listening · Intenção do falante",
           "text": "What does the speaker mean when she says this?",
           "opts": [
-            "Visitors should not expect to see living plants.",
+            "Part of the collection is kept outdoors.",
             "The name of the collection was changed at some point.",
-            "The building used to be a garden.",
-            "Part of the collection is kept outdoors."
+            "Visitors should not expect to see living plants.",
+            "The building used to be a garden."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Ela avisa antes de entrar e completa: \"Nothing in here is alive\". A frase existe para desfazer a expectativa de jardim."
         }
       ]
@@ -1118,12 +1118,12 @@
           "topic": "Listening · Detalhe",
           "text": "Why did the observatory close?",
           "opts": [
-            "The mechanism that turns the dome stopped working.",
-            "The lens of the telescope was broken.",
             "The department lost its funding.",
+            "The lens of the telescope was broken.",
+            "The mechanism that turns the dome stopped working.",
             "The building was unsafe for visitors."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "\"It closed in twenty fifteen, when the mechanism that turns the dome failed.\" O telescópio nunca foi o problema: continua o mesmo de 1924."
         },
         {
@@ -1132,12 +1132,12 @@
           "topic": "Listening · Detalhe",
           "text": "What finally convinced the department to repair the observatory?",
           "opts": [
-            "the loss of the school visits",
-            "a gift from a former student",
             "the age of the telescope",
-            "the low cost of the electric drive"
+            "the loss of the school visits",
+            "the low cost of the electric drive",
+            "a gift from a former student"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "\"What settled the argument... was not astronomy but teaching\": as seiscentas visitas escolares por ano que caíram a zero."
         },
         {
@@ -1146,12 +1146,12 @@
           "topic": "Listening · Propósito",
           "text": "Why does the speaker say that booking is not optional?",
           "opts": [
-            "because there is very little space in the dome",
-            "because the evenings are offered free of charge",
             "because the forecast is often wrong",
+            "because the evenings are offered free of charge",
+            "because there is very little space in the dome",
             "because the staff have to prepare a talk"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "\"The dome holds twenty-two people, and the first three evenings filled up within an hour.\" A reserva é obrigatória porque cabe pouca gente."
         },
         {
@@ -1161,9 +1161,9 @@
           "text": "What does the speaker suggest that listeners do?",
           "opts": [
             "give up their place if they are not going to attend",
-            "avoid booking when the evening may be cloudy",
+            "put their names on the waiting list first",
             "arrive at the observatory before eight o'clock",
-            "put their names on the waiting list first"
+            "avoid booking when the evening may be cloudy"
           ],
           "key": 0,
           "expl": "\"Either come anyway or cancel it, because somebody on the waiting list would have taken it.\" O pedido é liberar o lugar em vez de faltar."
@@ -1181,12 +1181,12 @@
           "topic": "Connectors",
           "text": "_____ the committee's objections, the proposal moved forward unchanged.",
           "opts": [
-            "Despite",
             "Although",
+            "Despite",
             "Even though",
             "Whereas"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Depois da lacuna vem um substantivo (\"the committee's objections\"), e antes de substantivo o contraste se marca com DESPITE (ou in spite of). Although, even though e whereas exigiriam uma oração com sujeito e verbo. Portanto, a resposta correta é DESPITE."
         }
       ]
@@ -1203,9 +1203,9 @@
           "text": "The lab repeated the experiment _____ the first set of readings was inconsistent.",
           "opts": [
             "because",
-            "because of",
             "due to",
-            "owing to"
+            "owing to",
+            "because of"
           ],
           "key": 0,
           "expl": "Aqui vem uma oração completa (\"the first set of readings was inconsistent\"), e a causa antes de oração é BECAUSE. Because of, due to e owing to só aparecem antes de substantivo. Portanto, a resposta correta é BECAUSE."
@@ -1223,12 +1223,12 @@
           "topic": "Connectors",
           "text": "Attendance fell every year; _____, the festival was cancelled in 2024.",
           "opts": [
-            "consequently",
-            "nevertheless",
+            "besides",
             "meanwhile",
-            "besides"
+            "consequently",
+            "nevertheless"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "O cancelamento é o resultado da queda de público, e CONSEQUENTLY (como therefore, thus, as a result) é o conector de resultado. \"Nevertheless\" marcaria contraste, que não é o caso. Portanto, a resposta correta é CONSEQUENTLY."
         }
       ]
@@ -1246,8 +1246,8 @@
           "opts": [
             "to postpone",
             "postponing",
-            "to postponing",
-            "postpone"
+            "postpone",
+            "to postponing"
           ],
           "key": 0,
           "expl": "O verbo AGREE é seguido de to + infinitivo. \"Postponing\" seguiria verbos como avoid, consider ou suggest, que pedem gerúndio. Portanto, a resposta correta é TO POSTPONE."
@@ -1267,8 +1267,8 @@
           "opts": [
             "being",
             "be",
-            "have been",
-            "been"
+            "been",
+            "have been"
           ],
           "key": 0,
           "expl": "Em \"object to\", o \"to\" é preposição, e depois de preposição o verbo vai para -ing. Como os moradores receberam a cobrança, a forma é passiva: BEING charged. Portanto, a resposta correta é BEING."
@@ -1286,12 +1286,12 @@
           "topic": "Phrasal Verbs & Prepositions",
           "text": "The auditors will _____ the discrepancy before signing the report.",
           "opts": [
-            "look into",
             "call off",
+            "look into",
             "put off",
             "take up"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "LOOK INTO é investigar, examinar os fatos de uma situação, que é o que auditores fazem com uma divergência antes de assinar. Portanto, a resposta correta é LOOK INTO."
         }
       ]
@@ -1307,12 +1307,12 @@
           "topic": "Phrasal Verbs & Prepositions",
           "text": "The success of the trial depends _____ how quickly volunteers can be recruited.",
           "opts": [
-            "on",
-            "of",
             "from",
-            "in"
+            "of",
+            "in",
+            "on"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "É DEPEND ON. \"Depend of\" é um dos erros mais frequentes de falantes avançados e não existe em inglês. Portanto, a resposta correta é ON."
         }
       ]
@@ -1328,12 +1328,12 @@
           "topic": "Inversion & Emphasis",
           "text": "Not until the audit was complete _____ the extent of the loss.",
           "opts": [
-            "did the board realize",
             "the board realized",
             "the board did realize",
-            "realized the board"
+            "realized the board",
+            "did the board realize"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "Expressão negativa no início da frase (\"not until\") exige inversão: o auxiliar vem antes do sujeito, como numa pergunta, e o verbo principal fica na forma base. Portanto, a resposta correta é DID THE BOARD REALIZE."
         }
       ]
@@ -1349,12 +1349,12 @@
           "topic": "Inversion & Emphasis",
           "text": "_____ the funding been approved earlier, the clinic would have opened in March.",
           "opts": [
-            "Had",
-            "If",
             "Were",
-            "Should"
+            "Should",
+            "If",
+            "Had"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "É a condicional sem \"if\": HAD + sujeito + particípio equivale a \"If the funding had been approved\". Com \"if\" a frase precisaria de \"had\" depois do sujeito. Portanto, a resposta correta é HAD."
         }
       ]
@@ -1370,12 +1370,12 @@
           "topic": "Pronouns & Determiners",
           "text": "The dispute was settled between the landlord and _____.",
           "opts": [
-            "me",
-            "I",
+            "mine",
             "myself",
-            "mine"
+            "me",
+            "I"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Depois de preposição entra o pronome objeto. \"Between you and I\" é o erro mais comum de quem já fala bem, justamente por soar mais formal. Portanto, a resposta correta é ME."
         }
       ]
@@ -1391,12 +1391,12 @@
           "topic": "Pronouns & Determiners",
           "text": "There is very little _____ that the policy achieved its aim.",
           "opts": [
-            "evidence",
-            "evidences",
+            "many evidence",
             "an evidence",
-            "many evidence"
+            "evidences",
+            "evidence"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "EVIDENCE é incontável em inglês: não tem plural e não aceita artigo indefinido. Por isso vem com \"little\", e não com \"few\" ou \"many\". Portanto, a resposta correta é EVIDENCE."
         }
       ]
@@ -1412,12 +1412,12 @@
           "topic": "Comparatives & Superlatives",
           "text": "The second prototype performed _____ than the first.",
           "opts": [
+            "the better",
             "far better",
-            "very better",
             "more better",
-            "the better"
+            "very better"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Comparativo se intensifica com far, much ou considerably, nunca com \"very\". E \"better\" já é o comparativo de \"well\", então não leva \"more\". Portanto, a resposta correta é FAR BETTER."
         }
       ]
@@ -1433,12 +1433,12 @@
           "topic": "Comparatives & Superlatives",
           "text": "The longer the drought lasted, _____ the harvest became.",
           "opts": [
-            "the smaller",
-            "smaller",
+            "more small",
             "the smallest",
-            "more small"
+            "the smaller",
+            "smaller"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Na estrutura \"the + comparativo… the + comparativo\", as duas partes levam THE. \"Small\" é adjetivo curto, então o comparativo é \"smaller\". Portanto, a resposta correta é THE SMALLER."
         }
       ]
@@ -1454,12 +1454,12 @@
           "topic": "Embedded Questions & Word Order",
           "text": "The manual does not explain _____ after each use.",
           "opts": [
-            "how the filter should be cleaned",
-            "how should the filter be cleaned",
             "how should be the filter cleaned",
-            "the filter how should be cleaned"
+            "how the filter should be cleaned",
+            "the filter how should be cleaned",
+            "how should the filter be cleaned"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Pergunta encaixada volta à ordem da afirmativa: sujeito antes do verbo, sem inversão. Depois de \"does not explain\" não há mais pergunta. Portanto, a resposta correta é HOW THE FILTER SHOULD BE CLEANED."
         }
       ]
@@ -1476,8 +1476,8 @@
           "text": "The technicians calibrate the instruments _____.",
           "opts": [
             "carefully in the lab every morning",
-            "in the lab carefully every morning",
             "every morning carefully in the lab",
+            "in the lab carefully every morning",
             "in the lab every morning carefully"
           ],
           "key": 0,
@@ -1496,12 +1496,12 @@
           "topic": "Conditionals & Subjunctive",
           "text": "The committee recommended that the deadline _____ by two weeks.",
           "opts": [
+            "will be extended",
             "be extended",
-            "is extended",
             "was extended",
-            "will be extended"
+            "is extended"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Depois de verbos como recommend, insist e request, a oração com \"that\" usa o subjuntivo: o verbo fica na forma base, e na passiva isso dá BE + particípio. Portanto, a resposta correta é BE EXTENDED."
         }
       ]
@@ -1517,12 +1517,12 @@
           "topic": "Conditionals & Subjunctive",
           "text": "If the sensor _____ calibrated last week, the readings would be reliable now.",
           "opts": [
-            "had been",
-            "was",
             "were",
-            "has been"
+            "has been",
+            "had been",
+            "was"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "É um condicional misto: a condição está no passado (\"last week\") e o resultado, no presente (\"now\"). A condição pede had + particípio. Portanto, a resposta correta é HAD BEEN."
         }
       ]
@@ -1539,9 +1539,9 @@
           "text": "The samples arrived unsealed; someone _____ the container during transport.",
           "opts": [
             "must have opened",
+            "might not have opened",
             "should have opened",
-            "can't have opened",
-            "might not have opened"
+            "can't have opened"
           ],
           "key": 0,
           "expl": "MUST HAVE é a conclusão quase certa sobre o passado, apoiada na evidência: aqui, as amostras terem chegado abertas. Portanto, a resposta correta é MUST HAVE OPENED."
@@ -1559,12 +1559,12 @@
           "topic": "Tenses",
           "text": "By the time the results are published, the team _____ on the project for three years.",
           "opts": [
-            "will have been working",
-            "will work",
             "will be working",
-            "has been working"
+            "has been working",
+            "will have been working",
+            "will work"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Com \"by the time\" e uma duração (\"for three years\"), a forma é o future perfect continuous: a ação começou antes e continua até aquele ponto do futuro. Portanto, a resposta correta é WILL HAVE BEEN WORKING."
         }
       ]
@@ -1580,12 +1580,12 @@
           "topic": "Relative Clauses & Passive",
           "text": "The researcher _____ findings were questioned has since published a correction.",
           "opts": [
-            "whose",
             "who",
+            "whose",
             "whom",
             "which"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "WHOSE marca posse dentro da oração relativa: os achados são do pesquisador. \"Who\" e \"whom\" não indicam posse, e \"which\" não se usa para pessoas. Portanto, a resposta correta é WHOSE."
         }
       ]
@@ -1604,12 +1604,12 @@
           "topic": "Reading · Propósito",
           "text": "Why does the author mention that every syllabus carries office hours?",
           "opts": [
-            "to contrast how common they are with how little they are used",
-            "to argue that syllabuses should be shorter and clearer",
+            "to show that the practice was introduced only recently",
             "to explain how professors organise their teaching week",
-            "to show that the practice was introduced only recently"
+            "to argue that syllabuses should be shorter and clearer",
+            "to contrast how common they are with how little they are used"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "A abertura põe lado a lado duas coisas: elas estão em todo plano de curso e quase ninguém aparece. O contraste é o assunto do texto, que ainda diz serem \"among the oldest arrangements\", o oposto de recentes."
         },
         {
@@ -1619,9 +1619,9 @@
           "text": "According to the passage, what did students say when researchers asked them directly?",
           "opts": [
             "They were afraid of how their question would be received.",
-            "They preferred to ask their questions by email.",
             "They had never seen office hours listed on a syllabus.",
-            "They were satisfied with the help they already received."
+            "They were satisfied with the help they already received.",
+            "They preferred to ask their questions by email."
           ],
           "key": 0,
           "expl": "O segundo parágrafo é explícito: os motivos \"had less to do with schedules than with fear\", isto é, medo de a pergunta soar boba, de parecer atrasado, de incomodar o professor."
@@ -1632,12 +1632,12 @@
           "topic": "Reading · Detalhe",
           "text": "What did a striking number of students assume about office hours?",
           "opts": [
-            "that the period was only for arguing about grades",
             "that attendance was recorded and counted",
             "that the period was reserved for graduate students",
+            "that the period was only for arguing about grades",
             "that professors were paid extra for holding them"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "O texto diz que muitos \"did not know what office hours were for, having assumed the period was reserved for disputes about grades\"."
         },
         {
@@ -1646,12 +1646,12 @@
           "topic": "Reading · Vocabulário",
           "text": "In the third paragraph, which phrase is closest in meaning to <strong>drop in</strong>?",
           "opts": [
-            "come without an appointment",
             "give up the course",
             "lower their final marks",
+            "come without an appointment",
             "fall behind the schedule"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "A frase fala de alunos que nunca apareciam e passaram a ir. \"Drop in\" é justamente aparecer sem marcar hora, e não tem relação com abandonar a disciplina nem com nota."
         },
         {
@@ -1660,12 +1660,12 @@
           "topic": "Reading · Inferência",
           "text": "What does the last paragraph suggest about changing the name of office hours?",
           "opts": [
-            "It may help more students than costlier reforms.",
             "It works only in departments with small classes.",
+            "It requires approval from the whole university.",
             "It has been rejected by most instructors.",
-            "It requires approval from the whole university."
+            "It may help more students than costlier reforms."
           ],
-          "key": 0,
+          "key": 3,
           "expl": "O parágrafo compara um departamento que passa um ano discutindo tamanho de turma com a mudança de uma palavra no plano de curso, e conclui que \"the second measure may reach more students than the first\"."
         }
       ]
@@ -1684,12 +1684,12 @@
           "topic": "Reading · Detalhe",
           "text": "According to the passage, what were extension tokens worth?",
           "opts": [
-            "two extra days on an assignment",
-            "two extra marks on a paper",
             "two weeks at the end of the semester",
-            "two meetings with the instructor"
+            "two meetings with the instructor",
+            "two extra marks on a paper",
+            "two extra days on an assignment"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "O segundo parágrafo define: três fichas, \"each worth two extra days on any assignment\", usadas sem precisar justificar."
         },
         {
@@ -1698,12 +1698,12 @@
           "topic": "Reading · Detalhe",
           "text": "What happened to requests for individual extensions during the experiment?",
           "opts": [
-            "They fell sharply.",
-            "They rose slightly.",
             "They stayed at the same level.",
-            "They were no longer permitted."
+            "They were no longer permitted.",
+            "They fell sharply.",
+            "They rose slightly."
           ],
-          "key": 0,
+          "key": 2,
           "expl": "O texto registra \"a sharp fall in requests for individual extensions, which had previously consumed hours of their week\". Quem subiu, e pouco, foi a entrega depois da data original."
         },
         {
@@ -1726,12 +1726,12 @@
           "topic": "Reading · Inferência",
           "text": "Why did the researchers doubt that extra time by itself improves writing?",
           "opts": [
-            "because the students who used tokens were already the more committed ones",
             "because the difference in scores was too large to be believed",
             "because the papers were marked by different instructors",
-            "because most students returned their tokens unused"
+            "because most students returned their tokens unused",
+            "because the students who used tokens were already the more committed ones"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "O texto diz que a nota um pouco maior foi lida \"not as evidence that time improves writing but as evidence that the students using the tokens were the ones who cared enough\"."
         },
         {
@@ -1741,9 +1741,9 @@
           "text": "What is the main point of the last paragraph?",
           "opts": [
             "The policy helps students who are already managing, not those in real difficulty.",
+            "Students who stop attending should be removed from the course.",
             "Instructors should return to fixed deadlines with penalties.",
-            "The experiment should be repeated in smaller courses.",
-            "Students who stop attending should be removed from the course."
+            "The experiment should be repeated in smaller courses."
           ],
           "key": 0,
           "expl": "O parágrafo diz que a política tira estresse de quem já está dando conta e poupa o professor, mas \"does not reach the student who has stopped attending\", que é de quem o debate diz tratar."
@@ -1791,8 +1791,8 @@
           "text": "According to Text A, what happens to a course dropped on the fifth day of term?",
           "opts": [
             "It leaves no record on the transcript.",
-            "It appears on the transcript as a W.",
             "It counts towards full-time status.",
+            "It appears on the transcript as a W.",
             "It is refunded only in part."
           ],
           "key": 0,
@@ -1805,9 +1805,9 @@
           "text": "What is the main purpose of Text B?",
           "opts": [
             "to correct common mistakes students make when choosing electives",
-            "to list the electives available in the spring term",
             "to explain how tuition fees are calculated",
-            "to announce a change in the registration system"
+            "to announce a change in the registration system",
+            "to list the electives available in the spring term"
           ],
           "key": 0,
           "expl": "As três perguntas do texto B tratam de enganos frequentes: achar que eletiva não conta, pegar duas de uma vez e decidir tarde demais. Ele existe para corrigir isso."
@@ -1832,12 +1832,12 @@
           "topic": "Reading · Vocabulário",
           "text": "In Text A, which phrase is closest in meaning to <strong>prerequisite</strong>?",
           "opts": [
+            "a minimum grade in the final exam",
             "a course that must be completed first",
-            "a fee that must be paid in advance",
             "a form signed by an academic advisor",
-            "a minimum grade in the final exam"
+            "a fee that must be paid in advance"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "O próprio item explica: são as disciplinas marcadas PR, cujo requisito \"must already appear on your transcript\", ou seja, já ter sido cursado."
         },
         {
@@ -1846,12 +1846,12 @@
           "topic": "Reading · Inferência",
           "text": "What can be inferred from Texts A and B about withdrawing in week eight?",
           "opts": [
-            "The student loses the tuition and receives a W.",
             "The student may register for a replacement course.",
+            "The student's transcript is unaffected.",
             "The student needs the approval of the registrar only.",
-            "The student's transcript is unaffected."
+            "The student loses the tuition and receives a W."
           ],
-          "key": 0,
+          "key": 3,
           "expl": "O texto A diz que depois do décimo dia a saída vira W e a mensalidade não é devolvida; o B menciona os alunos que voltam na semana oito perguntando de trancamento. Juntando os dois, a semana oito está muito além do prazo."
         },
         {
@@ -1860,12 +1860,12 @@
           "topic": "Reading · Detalhe",
           "text": "According to Text C, why did Marisa choose Introduction to Acoustics?",
           "opts": [
-            "because it fitted her timetable",
             "because her advisor recommended it",
+            "because it fitted her timetable",
             "because it had no lab reports",
             "because it counted towards her major"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "Ela é explícita: \"I picked Introduction to Acoustics because it fitted my Tuesday. That was the whole reason.\""
         },
         {
@@ -1874,12 +1874,12 @@
           "topic": "Reading · Propósito",
           "text": "Why does Yannick mention day four?",
           "opts": [
-            "to show that he dropped the other course while it still left no record",
             "to explain when the course's first lab report was due",
             "to describe how long he waited to see his advisor",
+            "to show that he dropped the other course while it still left no record",
             "to indicate when registration for the term closed"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "Ele diz que trocou de disciplina \"on day four, so it left no record\", dentro dos dez dias do add/drop que o texto A define."
         },
         {
@@ -1888,12 +1888,12 @@
           "topic": "Reading · Referência",
           "text": "In Text C, in \"it was the most useful twenty minutes of my degree\", what does <strong>it</strong> refer to?",
           "opts": [
-            "the conversation with his advisor",
-            "the first session of the course",
             "the time spent reading the syllabus",
-            "the fortnightly lab report"
+            "the fortnightly lab report",
+            "the first session of the course",
+            "the conversation with his advisor"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "A frase anterior é \"My advisor spent twenty minutes with me on that decision\". São esses vinte minutos que ele chama de mais úteis."
         },
         {
@@ -1902,12 +1902,12 @@
           "topic": "Reading · Ideia principal",
           "text": "What do the two accounts in Text C illustrate together?",
           "opts": [
-            "that reading the syllabus before committing changes the outcome",
-            "that acoustics is too difficult for third-year students",
             "that advisors decide which courses a student may take",
-            "that electives should be avoided in the third year"
+            "that acoustics is too difficult for third-year students",
+            "that electives should be avoided in the third year",
+            "that reading the syllabus before committing changes the outcome"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "Os dois fizeram a mesma disciplina com resultados opostos, e Yannick nomeia a diferença: \"I read the syllabus first\". Nenhum dos dois diz que a disciplina seja difícil demais."
         }
       ]
@@ -1938,12 +1938,12 @@
           "topic": "Reading · Detalhe",
           "text": "According to Text A, who may apply for an assistantship?",
           "opts": [
-            "undergraduates in their second year or above",
+            "students who have already been published",
             "students with previous laboratory experience",
-            "graduates of the faculty from any year",
-            "students who have already been published"
+            "undergraduates in their second year or above",
+            "graduates of the faculty from any year"
           ],
-          "key": 0,
+          "key": 2,
           "expl": "O texto A diz \"Undergraduates in their second year or above may apply\", e mais adiante afirma que nenhuma experiência prévia de laboratório é exigida."
         },
         {
@@ -1952,12 +1952,12 @@
           "topic": "Reading · Detalhe",
           "text": "According to Text A, what are supervisors asked to look for?",
           "opts": [
+            "a written reference from an instructor",
             "curiosity rather than marks",
             "the highest average in the faculty",
-            "experience with laboratory equipment",
-            "a written reference from an instructor"
+            "experience with laboratory equipment"
           ],
-          "key": 0,
+          "key": 1,
           "expl": "A última linha do texto A é explícita: \"Supervisors are asked to select for curiosity rather than for marks\"."
         },
         {
@@ -1966,12 +1966,12 @@
           "topic": "Reading · Propósito",
           "text": "Why does Text B say that most applications are lost in the one-page letter?",
           "opts": [
-            "to warn applicants against writing something too general",
-            "to explain why the letter should be longer than one page",
+            "to describe how supervisors divide the reading among themselves",
             "to discourage students from applying in their second year",
-            "to describe how supervisors divide the reading among themselves"
+            "to explain why the letter should be longer than one page",
+            "to warn applicants against writing something too general"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "O texto diz que as cartas que fracassam são as que \"could have been sent to any project in the faculty\", e manda nomear o projeto. O alerta é contra a carta genérica."
         },
         {
@@ -1981,9 +1981,9 @@
           "text": "According to Text B, what single question is put to the named instructor?",
           "opts": [
             "whether the student asks questions",
-            "whether the student attends every seminar",
             "what mark the student received",
-            "whether the student has laboratory experience"
+            "whether the student has laboratory experience",
+            "whether the student attends every seminar"
           ],
           "key": 0,
           "expl": "O texto B diz que a instituição faz o contato e pergunta uma coisa só: \"does this student ask questions?\"."
@@ -1994,12 +1994,12 @@
           "topic": "Reading · Inferência",
           "text": "What does Text B suggest about choosing which instructor to name?",
           "opts": [
-            "A seminar where you spoke is better than a course where you scored highly.",
-            "The instructor should be from the same department as the supervisor.",
             "The instructor must agree to write a reference in advance.",
-            "Any instructor from the current year will do equally well."
+            "Any instructor from the current year will do equally well.",
+            "The instructor should be from the same department as the supervisor.",
+            "A seminar where you spoke is better than a course where you scored highly."
           ],
-          "key": 0,
+          "key": 3,
           "expl": "O texto compara os dois casos e conclui: \"the instructor whose seminar you spoke in is worth more here than the one who gave you the highest mark\"."
         },
         {
@@ -2009,9 +2009,9 @@
           "text": "In Text A, which phrase is closest in meaning to <strong>stipend</strong>?",
           "opts": [
             "a fixed sum paid for the work",
-            "a certificate awarded at the end",
             "a place in a university residence",
-            "a reduction in tuition fees"
+            "a reduction in tuition fees",
+            "a certificate awarded at the end"
           ],
           "key": 0,
           "expl": "O texto C esclarece o sentido ao dizer que ela cobria o aluguel e pouco mais: é um valor pago pelo período de trabalho."
@@ -2023,9 +2023,9 @@
           "text": "According to Text C, what did the former assistant have to learn?",
           "opts": [
             "to say when she did not understand something",
-            "to use a pipette before the first day",
+            "to write up the results for publication",
             "to work a second job during the summer",
-            "to write up the results for publication"
+            "to use a pipette before the first day"
           ],
           "key": 0,
           "expl": "Ela conta que o orientador queria alguém que dissesse \"I don't follow\" em vez de concordar com a cabeça, \"and that took me about three weeks to learn\". A pipeta ela aprendeu no primeiro dia, no lugar."
@@ -2036,12 +2036,12 @@
           "topic": "Reading · Referência",
           "text": "In Text C, in \"eleven of those four hundred did not fit\", what does <strong>those four hundred</strong> refer to?",
           "opts": [
-            "the repeated measurements",
-            "the weeks of the programme",
             "the applications received",
-            "the students in the seminar"
+            "the weeks of the programme",
+            "the students in the seminar",
+            "the repeated measurements"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "A frase anterior fala do que ela de fato fez: \"the same measurement four hundred times\". São as medições repetidas."
         },
         {
@@ -2051,8 +2051,8 @@
           "text": "What can be inferred from Text C about the reality of research work?",
           "opts": [
             "Most of it is routine, and discovery depends on noticing exceptions.",
-            "It is better suited to students who already know the equipment.",
             "It produces a publication for every assistant who takes part.",
+            "It is better suited to students who already know the equipment.",
             "It is easier than the coursework of the second year."
           ],
           "key": 0,
@@ -2064,12 +2064,12 @@
           "topic": "Reading · Propósito",
           "text": "Why does the former assistant mention her rent in Text C?",
           "opts": [
-            "to be honest about how far the stipend goes",
-            "to complain that the programme should pay more",
             "to explain why she moved closer to the laboratory",
-            "to advise students to apply for housing first"
+            "to advise students to apply for housing first",
+            "to complain that the programme should pay more",
+            "to be honest about how far the stipend goes"
           ],
-          "key": 0,
+          "key": 3,
           "expl": "Ela mesma diz o motivo logo depois: \"I want to be honest: it is a summer of work, not a summer of earning\". A menção mede o alcance da bolsa, e ela acrescenta que faria de novo."
         }
       ]
