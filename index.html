@@ -72,6 +72,10 @@
       margin-bottom: .9rem;
     }
     .hero-badge svg { width: 40px; height: 40px; }
+    /* o logo virou link para o Portal em 27/08/2026 */
+    .hero-badge img { height: 40px; width: auto; display: block; }
+    a.hero-badge { text-decoration: none; transition: opacity .12s; }
+    a.hero-badge:hover { opacity: .85; }
     .hero h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 800; }
     .hero p { margin-top: .45rem; color: #d8d5d5; font-size: .95rem; }
     .prof-badge {
@@ -774,9 +778,21 @@
   <div class="screen active" id="screen-home">
     <header class="hero">
       <button class="theme-toggle" id="theme-toggle-1" title="Alternar tema">🌙</button>
-      <div class="hero-badge">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="7" fill="#d81f26"/><text x="16" y="23" font-family="Arial" font-size="19" font-weight="800" fill="#fff" text-anchor="middle">F</text></svg>
-      </div>
+      <!-- O LOGO DE VERDADE, e clicável (Pedro, 27/08/2026). Aqui havia um
+           quadradinho vermelho com a letra "F" desenhada em SVG: era marca
+           provisória, não o logo da escola, e o aluno via a Fisk como um "F"
+           genérico justo na tela do simulado.
+           O arquivo é LOCAL (assets/fisk-logo.png) e não puxado do GitHub de
+           outro repositório: imagem de fora depende de um repo continuar
+           público e de um limite de tráfego que não é nosso, e o dia em que
+           falhasse o aluno ficaria sem logo nenhum. O "F" antigo continua
+           existindo, agora como reserva no `onerror`.
+           O destino do clique é o MESMO do "← Portal do Aluno" e sai do mesmo
+           script (`mst-back` lá embaixo). -->
+      <a class="hero-badge" id="logo-home" href="https://portalfisk.com.br/" aria-label="Início">
+        <img src="assets/fisk-logo.png" alt="Fisk Taubaté · Caçapava"
+             onerror="this.outerHTML='&lt;svg viewBox=\'0 0 32 32\' xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;rect width=\'32\' height=\'32\' rx=\'7\' fill=\'#d81f26\'/&gt;&lt;text x=\'16\' y=\'23\' font-family=\'Arial\' font-size=\'19\' font-weight=\'800\' fill=\'#fff\' text-anchor=\'middle\'&gt;F&lt;/text&gt;&lt;/svg&gt;'">
+      </a>
       <h1 id="home-h1">Treino MET</h1>
       <p id="hero-sub">Michigan English Test · Practice Test #5 RED</p>
       <span class="prof-badge" id="prof-badge" style="display:none">📺 Modo Professor</span>
@@ -2998,6 +3014,10 @@
 (function () {
   var el = document.getElementById('mst-back');
   if (!el) return;
+  /* O logo da home segue a MESMA regra deste botão: mesmo destino, mesmo
+     `history.back()`. Ele é tratado à parte só porque o `innerHTML` abaixo
+     apagaria a imagem e deixaria a seta escrita no lugar do logo. */
+  var logo = document.getElementById('logo-home');
   /* Quem chegou com ?raf= veio do Portal e volta para lá, não para o Hub.
      O parâmetro é o sinal, mesmo VAZIO: a direção entra com raf em branco, e
      testar o conteúdo dele mandaria justamente ela para o lugar errado.
@@ -3010,12 +3030,15 @@
   if (qs.has('raf')) {
     el.href = 'https://portalfisk.com.br/' + (raf ? '?raf=' + encodeURIComponent(raf) : '');
     el.innerHTML = '&#8592; Portal do Aluno';
+    if (logo) logo.href = el.href;
   }
-  el.addEventListener('click', function (ev) {
-    /* Voltar de verdade preserva a página do Portal como ela estava, sem
-       recarregar nada. O href acima é a rede de segurança. */
+  /* Voltar de verdade preserva a página do Portal como ela estava, sem
+     recarregar nada. O href acima é a rede de segurança. */
+  function voltar(ev) {
     if (history.length > 1) { ev.preventDefault(); history.back(); }
-  });
+  }
+  el.addEventListener('click', voltar);
+  if (logo) logo.addEventListener('click', voltar);
 })();
 </script>
 </body>
