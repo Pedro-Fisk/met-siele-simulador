@@ -944,6 +944,23 @@
   'use strict';
 
   /* ══════════════ Setup ══════════════ */
+  /* ⚠️ A IDENTIDADE VEM DO FRAGMENTO (#raf=&nome=), não da query (01/09/2026).
+     Este repositório é servido pelo GitHub Pages, que é DOMÍNIO DE TERCEIRO:
+     com a identidade na query, o RAF e o nome completo de um menor de idade
+     entravam no log de acesso do GitHub e no `Referer` de tudo o que esta
+     página busca depois. Fragmento o navegador nunca envia ao servidor.
+     A query continua sendo lida por compatibilidade (favorito, atalho de PWA,
+     link do Dossiê): aluno que perca a identidade aqui faz a prova e o
+     resultado não é registrado, e isso some calado.
+     `exame` e `modo` seguem na query de propósito: não identificam ninguém. */
+  function fiskParams(){
+    var p = new URLSearchParams(location.search);
+    /* copia a chave MESMO VAZIA: a presença do `raf` é o sinal de "veio do
+       Portal", e a Direção entra com ele em branco */
+    new URLSearchParams(String(location.hash||'').replace(/^#/,''))
+      .forEach(function(v,k){ p.set(k,v); });
+    return p;
+  }
   const PROF_MODE = new URLSearchParams(location.search).get('modo') === 'professor';
 
   /* Qual exame abrir: ?exame=met (padrão, inglês) ou ?exame=siele (espanhol, S1).
@@ -1497,7 +1514,7 @@
        todo card nasceria "não começado" mesmo para quem já fez metade. */
     // Entrada pelo Portal do Aluno: identidade já vem na URL (?raf=&nome=)
     if (!PROF_MODE) {
-      const qs = new URLSearchParams(location.search);
+      const qs = fiskParams();
       const raf = (qs.get('raf') || '').trim();
       const nome = (qs.get('nome') || '').trim();
       /* O Portal manda o estágio do aluno em toda ferramenta. Guardamos para
@@ -3046,10 +3063,13 @@
      (link colado, PWA aberto do zero) cairia no formulário de login e o aluno
      leria isso como ter sido deslogado. O Portal entra direto e limpa o
      código da URL. */
-  var qs = new URLSearchParams(location.search);
+  var qs = fiskParams();
   var raf = (qs.get('raf') || '').trim();
+  /* A PRESENÇA do `raf`, mesmo vazio, é o sinal de "veio do Portal" — a
+     Direção entra com ele em branco, e testar o conteúdo mandaria justamente
+     ela para o lugar errado. `fiskParams` junta query e fragmento. */
   if (qs.has('raf')) {
-    el.href = 'https://portalfisk.com.br/' + (raf ? '?raf=' + encodeURIComponent(raf) : '');
+    el.href = 'https://portalfisk.com.br/' + (raf ? '#raf=' + encodeURIComponent(raf) : '');
     el.innerHTML = '&#8592; Portal do Aluno';
     if (logo) logo.href = el.href;
   }
