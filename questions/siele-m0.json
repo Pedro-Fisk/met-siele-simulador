@@ -226,7 +226,7 @@
       ],
       "questions": [
         {
-          "n": 1,
+          "n": 1, "id": "sielem0q001",
           "ref": "1",
           "text": "Pedro dice que…",
           "opts": [
@@ -238,7 +238,7 @@
           "expl": "O texto diz que Shakira \"canta con Alejandro Sanz, Juanes y otros amigos\", ou seja, vários cantores no mesmo show. O lunes é quando começam a vender as entradas, não quando ele quer ir (ele quer o viernes 24), e as entradas ainda não acabaram."
         },
         {
-          "n": 2,
+          "n": 2, "id": "sielem0q002",
           "ref": "2",
           "text": "El anuncio es para personas que quieren...",
           "opts": [
@@ -250,7 +250,7 @@
           "expl": "\"Bien comunicada\" quer dizer com bom transporte, e o anúncio diz \"está al lado del metro y de algunas paradas de autobuses\". Não serve para família (é um quarto em apartamento compartilhado com estudantes) e não fica no centro: os ônibus só *levam* ao centro."
         },
         {
-          "n": 3,
+          "n": 3, "id": "sielem0q003",
           "ref": "3",
           "text": "El circo Pasión…",
           "opts": [
@@ -262,7 +262,7 @@
           "expl": "Compare os horários: de martes a viernes é 18 h e 21 h; sábado e domingo, 18 h e 22 h. A segunda sessão do fim de semana é uma hora mais tarde. O circo \"gusta a pequeños y a grandes\" (não é só para crianças) e os pais pagam, só os filhos não."
         },
         {
-          "n": 4,
+          "n": 4, "id": "sielem0q004",
           "ref": "4",
           "text": "En el anuncio se dice que...",
           "opts": [
@@ -274,7 +274,7 @@
           "expl": "O show começa às 22:00, de noite. É \"para mayores de 16 años\", então crianças não entram, e no centro comercial só se vendem as entradas: o show é no Teatro Principal."
         },
         {
-          "n": 5,
+          "n": 5, "id": "sielem0q005",
           "ref": "5",
           "text": "Juan dice en su mensaje que…",
           "opts": [
@@ -297,7 +297,7 @@
       "passage": "<p>Hola Sara, ¿qué tal todo?</p><p>Perdona, ayer no te llamé para comer juntas porque me dolía mucho la cabeza. Pero por la tarde ya me sentí mejor y fui a dar un paseo por el centro. Por cierto, ¿sabes con quien me encontré? Con Eugenia, que salía del cine. Llevaba el vestido que le compramos para su cumpleaños y estaba guapísima. Me preguntó por ti y me dijo que está muy contenta porque ha empezado a trabajar en una tienda de decoración.</p><p>En el centro siempre me encuentro con gente conocida: hace dos días vi a tu hermano en una exposición. Me contó que lo pasó muy bien en el concierto de Maná, pero después leí en el periódico que empezó treinta minutos tarde. Decían que los músicos llegaron tarde y que la gente estaba bastante enfadada. Tienes que decirme qué pasó. Ya sabes que me encanta Maná y estuve triste por no poder ir.</p><p>Estaba muy ocupada con los exámenes. Sin embargo, la próxima semana quiero descansar, por eso voy a reservar una habitación en un hotel en la montaña. Está muy cerca de la casa donde pasaba los veranos con mis abuelos. ¿Te apetece venir? He visto que va a hacer buen tiempo, podemos pasear y montar en bici.</p><p>Si quieres, podemos vernos mañana y lo hablamos. Por la tarde tengo que ir a la biblioteca de la universidad que está cerca de tu oficina. Puedo verte en la cafetería que está enfrente de la biblioteca, esa donde ponen un café tan rico. Dime algo.</p><p>Un beso y hasta pronto,<br>Isabel</p>",
       "questions": [
         {
-          "n": 6,
+          "n": 6, "id": "sielem0q006",
           "text": "Isabel escribe este correo a Sara para…",
           "opts": [
             "comer con ella.",
@@ -308,7 +308,7 @@
           "expl": "O centro do e-mail é o convite: \"voy a reservar una habitación en un hotel en la montaña. (…) ¿Te apetece venir?\". O almoço é do dia anterior e não aconteceu, e o trabalho novo é da Eugenia, não da Isabel."
         },
         {
-          "n": 7,
+          "n": 7, "id": "sielem0q007",
           "text": "En el texto se dice que ayer Isabel…",
           "opts": [
             "vio una película.",
@@ -319,7 +319,7 @@
           "expl": "Ontem ela encontrou Eugenia no centro. Cuidado com as pistas falsas: quem saía do cinema era a Eugenia, e o vestido foi comprado antes, no aniversário dela."
         },
         {
-          "n": 8,
+          "n": 8, "id": "sielem0q008",
           "text": "El día del concierto, el hermano de Sara…",
           "opts": [
             "llegó un poco tarde.",
@@ -330,7 +330,7 @@
           "expl": "\"Me contó que lo pasó muy bien en el concierto\". Quem chegou tarde foram os músicos (e o show, com 30 minutos de atraso), e quem estava \"bastante enfadada\" era o público em geral."
         },
         {
-          "n": 9,
+          "n": 9, "id": "sielem0q009",
           "text": "La próxima semana, Isabel…",
           "opts": [
             "quiere ir a un hotel.",
@@ -341,7 +341,7 @@
           "expl": "\"La próxima semana quiero descansar, por eso voy a reservar una habitación en un hotel\". As provas já passaram (\"estaba muy ocupada\", pretérito) e os avós aparecem só na lembrança dos verões de infância."
         },
         {
-          "n": 10,
+          "n": 10, "id": "sielem0q010",
           "text": "Isabel va a ver a Sara en…",
           "opts": [
             "su oficina.",
@@ -376,7 +376,7 @@
       ],
       "questions": [
         {
-          "n": 11,
+          "n": 11, "id": "sielem0q011",
           "text": "¿Quién decidió estudiar en el extranjero porque se lo aconsejaron?",
           "opts": [
             "Gabriela.",
@@ -387,7 +387,7 @@
           "expl": "Gabriela: \"varios compañeros (…) me dijeron que la experiencia era fantástica y que por qué no buscaba la forma y hacía lo mismo\". Sara *dá* o conselho aos outros, não o recebeu."
         },
         {
-          "n": 12,
+          "n": 12, "id": "sielem0q012",
           "text": "¿Quién se fue a otro país porque buscaba un cambio en su vida?",
           "opts": [
             "Gabriela.",
@@ -398,7 +398,7 @@
           "expl": "Paula: \"quería escapar del día a día y esta fue la principal razón\". \"Escapar do dia a dia\" é exatamente buscar uma mudança."
         },
         {
-          "n": 13,
+          "n": 13, "id": "sielem0q013",
           "text": "¿Quién dice que le costó mucho aprender el idioma?",
           "opts": [
             "Gabriela.",
@@ -409,7 +409,7 @@
           "expl": "Gabriela: \"aunque estudiaba mucho, el idioma me resultaba muy complicado y no me enteraba de nada\". Paula também não sabia holandês, mas o que ela relata é a vergonha, não a dificuldade de aprender."
         },
         {
-          "n": 14,
+          "n": 14, "id": "sielem0q014",
           "text": "¿Quién dice que tuvo complicaciones económicas?",
           "opts": [
             "Gabriela.",
@@ -420,7 +420,7 @@
           "expl": "Paula: \"El único problema que tuve fue el dinero, porque el coste de vida era muy alto\". Gabriela fala de dinheiro, mas para dizer que *aprendeu* a administrá-lo."
         },
         {
-          "n": 15,
+          "n": 15, "id": "sielem0q015",
           "text": "¿Quién aprendió a administrar su dinero gracias a esta experiencia?",
           "opts": [
             "Gabriela.",
@@ -431,7 +431,7 @@
           "expl": "Gabriela: \"aprendí muchas cosas, entre ellas, a organizar mi economía\". Note o contraste com a questão anterior: Paula *teve* problema de dinheiro, Gabriela *aprendeu* a organizá-lo."
         },
         {
-          "n": 16,
+          "n": 16, "id": "sielem0q016",
           "text": "¿Quién dice que esta vivencia le ayudó a ser más independiente?",
           "opts": [
             "Gabriela.",
@@ -442,7 +442,7 @@
           "expl": "Sara: \"me enriqueció personalmente porque aprendí a solucionar los problemas por mí misma\". Resolver as coisas por si mesma é ganhar independência."
         },
         {
-          "n": 17,
+          "n": 17, "id": "sielem0q017",
           "text": "¿Quién afirma que repetiría la experiencia de regresar al país?",
           "opts": [
             "Gabriela.",
@@ -453,7 +453,7 @@
           "expl": "Sara: \"Me gustaría volver algún día porque quiero hablar mejor el idioma\". Paula lembra com carinho, mas não diz que voltaria."
         },
         {
-          "n": 18,
+          "n": 18, "id": "sielem0q018",
           "text": "¿Quién cambió de opinión con respecto al tiempo que iba a pasar en el país de destino?",
           "opts": [
             "Gabriela.",
@@ -484,7 +484,7 @@
       ],
       "questions": [
         {
-          "n": 19,
+          "n": 19, "id": "sielem0q019",
           "bankRef": true,
           "text": "Hueco 1",
           "opts": [
@@ -498,7 +498,7 @@
           "expl": "O fragmento (e) explica a citação que acabou de aparecer: \"el escritor colombiano\" retoma García Márquez e \"cada niño llevaría un juguete distinto\" parafraseia \"el juguete que llevan dentro\". Repare no condicional (llevaría, consistiría), que marca a interpretação da frase alheia."
         },
         {
-          "n": 20,
+          "n": 20, "id": "sielem0q020",
           "bankRef": true,
           "text": "Hueco 2",
           "opts": [
@@ -512,7 +512,7 @@
           "expl": "A pista é gramatical: \"Según esta\" precisa de um substantivo feminino imediatamente antes, e a frase anterior termina em \"una idea que conecta la educación con el juego\". O fragmento (c) desenvolve essa ideia falando do tipo de jogo."
         },
         {
-          "n": 21,
+          "n": 21, "id": "sielem0q021",
           "bankRef": true,
           "text": "Hueco 3",
           "opts": [
@@ -526,7 +526,7 @@
           "expl": "O parágrafo abre com \"Por una parte…\" (a felicidade). O correlato \"Y por otra parte…\" do fragmento (d) fecha o par e introduz o amor, que é justamente o tema da frase seguinte."
         },
         {
-          "n": 22,
+          "n": 22, "id": "sielem0q022",
           "bankRef": true,
           "text": "Hueco 4",
           "opts": [
@@ -560,7 +560,7 @@
       ],
       "questions": [
         {
-          "n": 23,
+          "n": 23, "id": "sielem0q023",
           "bankRef": true,
           "text": "Hueco 5",
           "opts": [
@@ -574,7 +574,7 @@
           "expl": "\"Este conocimiento\" retoma o esforço dos profissionais para \"comprender el comportamiento del consumidor\", e o \"les\" plural refere-se a eles. Depois vem \"Lo cierto es que…\", que só faz sentido depois de uma afirmação sobre esse conhecimento."
         },
         {
-          "n": 24,
+          "n": 24, "id": "sielem0q024",
           "bankRef": true,
           "text": "Hueco 6",
           "opts": [
@@ -588,7 +588,7 @@
           "expl": "O fragmento (d) fecha o raciocínio com \"en definitiva\": a frase anterior diz que ele \"busca informarse de la forma más rápida\", e a \"inmediatez deseada\" é exatamente a retomada dessa ideia."
         },
         {
-          "n": 25,
+          "n": 25, "id": "sielem0q025",
           "bankRef": true,
           "text": "Hueco 7",
           "opts": [
@@ -602,7 +602,7 @@
           "expl": "A citação termina em \"la capacidad de destruir una marca\". O \"Pero también puede convertirse en un aliado\" faz o contraste direto entre destruir e ajudar. O fragmento (c), sobre redes sociais, é o distrator tentador aqui, mas repetiria informação já dada na citação."
         },
         {
-          "n": 26,
+          "n": 26, "id": "sielem0q026",
           "bankRef": true,
           "text": "Hueco 8",
           "opts": [
@@ -628,7 +628,7 @@
       "sourceNote": "(Adaptado de www.dgcs.unam.mx/boletin/bdboletin/2008_368.html. México)",
       "questions": [
         {
-          "n": 27,
+          "n": 27, "id": "sielem0q027",
           "text": "Hueco 1",
           "opts": [
             "crecimiento",
@@ -639,7 +639,7 @@
           "expl": "Temperatura que sobe é \"incremento\" (aumento de quantidade). \"Crecimiento\" serve para o que cresce em tamanho ou desenvolvimento, e \"alargamiento\" é ficar mais comprido, nenhum dos dois combina com grau centígrado."
         },
         {
-          "n": 28,
+          "n": 28, "id": "sielem0q028",
           "text": "Hueco 2",
           "opts": [
             "lo que",
@@ -650,7 +650,7 @@
           "expl": "O relativo retoma toda a oração anterior (a morte dos corais), não um substantivo específico. Para retomar uma ideia inteira usa-se sempre o neutro \"lo que\"."
         },
         {
-          "n": 29,
+          "n": 29, "id": "sielem0q029",
           "text": "Hueco 3",
           "opts": [
             "variadas",
@@ -661,7 +661,7 @@
           "expl": "O superlativo \"las más variadas\" (do planeta) fala de diversidade de espécies. É o que faz sentido depois de \"la pérdida de miles de especies\"."
         },
         {
-          "n": 30,
+          "n": 30, "id": "sielem0q030",
           "text": "Hueco 4",
           "opts": [
             "provenientes",
@@ -672,7 +672,7 @@
           "expl": "Precisa-se de um adjetivo/particípio que concorde com \"las remesas\": \"provenientes de Estados Unidos\". O gerúndio \"proviniendo\" não funciona como modificador de substantivo em espanhol, e \"provistas\" (fornecidas) muda o sentido."
         },
         {
-          "n": 31,
+          "n": 31, "id": "sielem0q031",
           "text": "Hueco 5",
           "opts": [
             "A pesar de que",
@@ -683,7 +683,7 @@
           "expl": "Há contraste: ocupam só 2% da superfície, *mas* são uma grande fonte de riqueza. \"A pesar de que\" é a concessiva; \"debido a que\" seria causa e inverteria a lógica."
         },
         {
-          "n": 32,
+          "n": 32, "id": "sielem0q032",
           "text": "Hueco 6",
           "opts": [
             "por",
@@ -694,7 +694,7 @@
           "expl": "\"Servicios ambientales para más de cien millones de personas\". A preposição marca o destinatário, o beneficiário do serviço. Essa é a função clássica de *para*."
         },
         {
-          "n": 33,
+          "n": 33, "id": "sielem0q033",
           "text": "Hueco 7",
           "opts": [
             "Entonces",
@@ -705,7 +705,7 @@
           "expl": "O parágrafo acrescenta mais uma informação na mesma linha (além de riqueza, são as maiores estruturas geológicas): \"Asimismo\" = além disso. \"Entonces\" marcaria consequência e \"por su parte\" exigiria um novo sujeito em contraste."
         },
         {
-          "n": 34,
+          "n": 34, "id": "sielem0q034",
           "text": "Hueco 8",
           "opts": [
             "generaría",
@@ -716,7 +716,7 @@
           "expl": "\"Sería necesario que…\" exige subjuntivo, e a correlação com o condicional pede o imperfeito do subjuntivo: \"que se generara conciencia\". Este é o item que mais separa o C1 do B2."
         },
         {
-          "n": 35,
+          "n": 35, "id": "sielem0q035",
           "text": "Hueco 9",
           "opts": [
             "por lo tanto",
@@ -727,7 +727,7 @@
           "expl": "A oração explica *por que* seria necessário conscientizar: \"ya que tan perjudiciales son…\". É causa, não consequência nem concessão."
         },
         {
-          "n": 36,
+          "n": 36, "id": "sielem0q036",
           "text": "Hueco 10",
           "opts": [
             "resultan",
@@ -738,7 +738,7 @@
           "expl": "\"Resultar de\" = ser resultado de. Os recifes *resultam do* crescimento das colônias. \"Producen\" inverteria a direção (eles seriam a causa) e \"suceden\" não se constrói com *de* nesse sentido."
         },
         {
-          "n": 37,
+          "n": 37, "id": "sielem0q037",
           "text": "Hueco 11",
           "opts": [
             "hubiera",
@@ -749,7 +749,7 @@
           "expl": "\"Mientras no…\" com valor de condição futura pede subjuntivo presente: \"mientras no haya erosión\". O indicativo *hay* não cabe depois de *mientras no* com projeção futura."
         },
         {
-          "n": 38,
+          "n": 38, "id": "sielem0q038",
           "text": "Hueco 12",
           "opts": [
             "además",
@@ -788,7 +788,7 @@
       ],
       "questions": [
         {
-          "n": 39,
+          "n": 39, "id": "sielem0q039",
           "bankRef": true,
           "text": "La casa es de la _____ de Isabel.",
           "opts": [
@@ -812,7 +812,7 @@
           "expl": "Isabel diz: \"siempre nos vamos en agosto a la casa que mi hermana tiene en la playa\". A mãe (\"mi mamá\") aparece, mas como quem viaja com ela. A casa é da irmã."
         },
         {
-          "n": 40,
+          "n": 40, "id": "sielem0q040",
           "bankRef": true,
           "text": "El cuarto de baño está en el _____ piso.",
           "opts": [
@@ -836,7 +836,7 @@
           "expl": "\"En el primer piso están la sala, la cocina y el cuarto de baño y en el segundo, los dormitorios.\" O \"segundo\" é o distrator: ali ficam os quartos."
         },
         {
-          "n": 41,
+          "n": 41, "id": "sielem0q041",
           "bankRef": true,
           "text": "Los hijos de Isabel _____ en el jardín.",
           "opts": [
@@ -860,7 +860,7 @@
           "expl": "\"Mis hijos juegan allí al fútbol.\" Quem lê (\"leemos\") são ela, o marido e a mãe, e cantar é o que fazem nas festas da varanda."
         },
         {
-          "n": 42,
+          "n": 42, "id": "sielem0q042",
           "bankRef": true,
           "text": "La casa no tiene _____.",
           "opts": [
@@ -884,7 +884,7 @@
           "expl": "\"¿La casa tiene piscina?, No. No hay.\" Atenção: a casa *tem* terraço e *tem* jardim; a piscina é a única coisa que falta."
         },
         {
-          "n": 43,
+          "n": 43, "id": "sielem0q043",
           "bankRef": true,
           "text": "Está situada a _____ minutos a pie de la playa.",
           "opts": [
@@ -918,7 +918,7 @@
       "instr": "Usted va a escuchar cinco anuncios o noticias de radio. Elija la opción correcta para cada una de las cinco preguntas. Va a escuchar los anuncios dos veces. El audio ya incluye los 30 segundos para leer las preguntas y las repeticiones.",
       "questions": [
         {
-          "n": 44,
+          "n": 44, "id": "sielem0q044",
           "text": "Anuncio 1. Si llama a la radio, puede…",
           "opts": [
             "ganar un disco.",
@@ -929,7 +929,7 @@
           "expl": "\"Radio Música le invita a una cena con este conocido cantante\". Jantar com o cantor é conhecê-lo. O disco você já tem (\"¿Tiene el nuevo disco…?\") e o show só aparece dentro da pergunta do concurso."
         },
         {
-          "n": 45,
+          "n": 45, "id": "sielem0q045",
           "text": "Anuncio 2. El grupo ¡Chévere! hace actividades…",
           "opts": [
             "para jóvenes.",
@@ -940,7 +940,7 @@
           "expl": "\"Si tienes entre diecisiete y veinte años puedes ser de nuestro grupo\". É para jovens. As atividades são de tarde e noite (de cinco a dez), só na sexta e no sábado."
         },
         {
-          "n": 46,
+          "n": 46, "id": "sielem0q046",
           "text": "Anuncio 3. La tienda Supermueble…",
           "opts": [
             "va a cambiar de lugar.",
@@ -951,7 +951,7 @@
           "expl": "\"Tenemos precios baratos por cambio de exposición.\" Cuidado com os dois distratores: o que muda é a *exposição*, não o endereço da loja, e os móveis são \"clásicos\", não modernos."
         },
         {
-          "n": 47,
+          "n": 47, "id": "sielem0q047",
           "text": "Anuncio 4. En este anuncio se hace publicidad de…",
           "opts": [
             "un viaje.",
@@ -962,7 +962,7 @@
           "expl": "\"Eso y mucho más se puede leer en Emociones, la nueva novela del escritor argentino Felipe López.\" A viagem ao Egito e o cinema são o conteúdo e o histórico do autor. O que se anuncia é o romance."
         },
         {
-          "n": 48,
+          "n": 48, "id": "sielem0q048",
           "text": "Anuncio 5. La exposición El dibujo Manga japonés…",
           "opts": [
             "se abre el martes día 20.",
@@ -997,7 +997,7 @@
       ],
       "questions": [
         {
-          "n": 49,
+          "n": 49, "id": "sielem0q049",
           "bankRef": true,
           "text": "Persona 1",
           "opts": [
@@ -1017,7 +1017,7 @@
           "expl": "\"De repente se nubló y empezó a llover muy fuerte. ¡La gente corría con los trajes y los sombreros mojados!\" Note que para ele não foi um desastre, \"a mí no me importó mucho\"."
         },
         {
-          "n": 50,
+          "n": 50, "id": "sielem0q050",
           "bankRef": true,
           "text": "Persona 2",
           "opts": [
@@ -1037,7 +1037,7 @@
           "expl": "\"Todo salió perfecto (…) todavía hay amigos que nos recuerdan lo bien que lo pasaron\". É a definição de sucesso. A música contratada não é a mesma coisa que uma orquestra."
         },
         {
-          "n": 51,
+          "n": 51, "id": "sielem0q051",
           "bankRef": true,
           "text": "Persona 3",
           "opts": [
@@ -1057,7 +1057,7 @@
           "expl": "\"Una iglesia pequeñita, en lo alto de un cerro (…) entre los árboles, hicimos unas ensaladas y asamos unos corderos\", no campo. Repare que não diz \"pueblo\"."
         },
         {
-          "n": 52,
+          "n": 52, "id": "sielem0q052",
           "bankRef": true,
           "text": "Persona 4",
           "opts": [
@@ -1077,7 +1077,7 @@
           "expl": "Anéis esquecidos, calor no restaurante e a banda que não apareceu: \"desde el principio las cosas no salieron bien\". Quem chegou tarde foi o primo, não o noivo."
         },
         {
-          "n": 53,
+          "n": 53, "id": "sielem0q053",
           "bankRef": true,
           "text": "Persona 5",
           "opts": [
@@ -1097,7 +1097,7 @@
           "expl": "\"Lo mejor fue el viaje que hicimos luego por el Caribe (…) ¡Estuvimos encantados!\". A viagem depois do casamento é a lua de mel. O mar aparece, mas não há barco."
         },
         {
-          "n": 54,
+          "n": 54, "id": "sielem0q054",
           "bankRef": true,
           "text": "Persona 6",
           "opts": [
@@ -1117,7 +1117,7 @@
           "expl": "\"En cuanto comenzó la misa, empecé a llorar y, con la música, ya no podía parar.\" Quem fala é a noiva. Atenção ao \"mal rato\", que não chega a fazer da festa um desastre."
         },
         {
-          "n": 55,
+          "n": 55, "id": "sielem0q055",
           "bankRef": true,
           "text": "Persona 7",
           "opts": [
@@ -1137,7 +1137,7 @@
           "expl": "\"El coche no funcionó y no encontrábamos ni un taxi (…) Llegamos muy tarde\". Quem fala é o noivo, e Ana o esperava \"con cara de preocupación\". Não foi desastre: \"lo demás salió fenomenal\"."
         },
         {
-          "n": 56,
+          "n": 56, "id": "sielem0q056",
           "bankRef": true,
           "text": "Persona 8",
           "opts": [
@@ -1167,7 +1167,7 @@
       "instr": "Usted va a escuchar, en versión locutada, una entrevista a Pablo Moreno, un empresario mexicano. Elija la opción correcta para cada una de las ocho preguntas. Va a escuchar la entrevista dos veces. El audio ya incluye los 45 segundos para leer las preguntas y la repetición.",
       "questions": [
         {
-          "n": 57,
+          "n": 57, "id": "sielem0q057",
           "text": "El director de AMPM dice que su empresa…",
           "opts": [
             "fue muy original cuando apareció.",
@@ -1178,7 +1178,7 @@
           "expl": "\"En aquel momento supuso una auténtica novedad en el sector.\" Ele diz também \"aunque nació en el ámbito local\", o que elimina (b), e o que afirma ser hoje é a empresa \"más importante\". Não a que tem mais mensageiros, o que elimina (c)."
         },
         {
-          "n": 58,
+          "n": 58, "id": "sielem0q058",
           "text": "La idea de crear la empresa de mensajería AMPM nació cuando el entrevistado…",
           "opts": [
             "acababa de licenciarse.",
@@ -1189,7 +1189,7 @@
           "expl": "\"Yo cursaba la carrera y trabajaba en una universidad…\", ele ainda estudava. Cuidado com (c): ele *usava* o serviço postal para enviar as cartas, nunca trabalhou nele. E \"acabar de licenciarse\" (ter acabado de se formar) seria depois, não durante."
         },
         {
-          "n": 59,
+          "n": 59, "id": "sielem0q059",
           "text": "Según Pablo Moreno, para montar un negocio es esencial…",
           "opts": [
             "disponer de un buen proyecto.",
@@ -1200,7 +1200,7 @@
           "expl": "\"Lo más importante es tener un plan bien diseñado. Si cuentas con él, la inversión sobra.\" Ele menciona dinheiro e espírito inovador só para descartá-los: \"para mí todo esto es secundario\"."
         },
         {
-          "n": 60,
+          "n": 60, "id": "sielem0q060",
           "text": "El entrevistado dice que AMPM…",
           "opts": [
             "está administrada por tres ejecutivos.",
@@ -1211,7 +1211,7 @@
           "expl": "Item de eliminação. É o mais difícil da tarefa. Os três em cima dos números do áudio: \"apenas tres colaboradores\" era o quadro *inicial*, não três executivos que administram hoje (elimina a); \"más de dos mil trabajadores\" não é \"unas dos mil\", que significa cerca de dois mil (elimina b); sobra (c), o único compatível com \"reparte más de diez millones de sobres cada mes\". Lição da tarefa: ligar cada cifra à coisa certa e desconfiar de \"unas\" e \"más de\"."
         },
         {
-          "n": 61,
+          "n": 61, "id": "sielem0q061",
           "text": "Según el entrevistado, uno de los principales problemas de AMPM era…",
           "opts": [
             "la falta de formación de los trabajadores.",
@@ -1222,7 +1222,7 @@
           "expl": "\"La cantidad de personas que entraban en nuestra empresa sin tener preparación antes de ocupar el puesto.\" A moto aparece no áudio, mas na atitude errada de quem acha que entregar cartas \"era subirse a una motocicleta y ponerse a repartir\", não em acidentes (elimina b). E (c) é o oposto do que ele diz: \"somos la empresa que más paga\"."
         },
         {
-          "n": 62,
+          "n": 62, "id": "sielem0q062",
           "text": "Pablo Moreno dice que uno de los objetivos de la escuela de mensajeros de AMPM es…",
           "opts": [
             "reducir las ausencias del personal.",
@@ -1233,7 +1233,7 @@
           "expl": "\"Nuestra meta (…) es que AMPM no solo ofrezca formación a su personal, sino que encuentre a aquellos jóvenes que tienen el interés por la profesión de mensajero.\" Encontrar jovens interessados é identificar possíveis trabalhadores. A \"mayor estabilidad\" que ele cita em seguida é *resultado*, não o objetivo. É aí que mora o distrator (a)."
         },
         {
-          "n": 63,
+          "n": 63, "id": "sielem0q063",
           "text": "La satisfacción de los trabajadores de AMPM se debe...",
           "opts": [
             "a la duración del contrato.",
@@ -1244,7 +1244,7 @@
           "expl": "\"Les ofrecemos un trabajo hasta la jubilación\". Isso é duração de contrato, não pensão. A palavra *jubilación* está no áudio de propósito para atrair você para (b). E os \"beneficios\" de (c) aparecem como crítica às escolas de administração modernas, \"en donde lo único importante es que la empresa obtenga cada vez más beneficios\", é o contrário do que AMPM faz."
         },
         {
-          "n": 64,
+          "n": 64, "id": "sielem0q064",
           "text": "Otro de los aspectos que AMPM ofrece a sus trabajadores es…",
           "opts": [
             "el contacto con el resto de miembros de la compañía.",
@@ -1265,7 +1265,7 @@
       "instr": "Usted va a escuchar, en versión locutada, seis fragmentos de una conferencia del filósofo argentino Néstor García Canclini titulada «La radio aclara ciertas dudas». Elija, para cada fragmento, la opción que contenga una de las ideas mencionadas. Va a escuchar los fragmentos dos veces. El audio ya incluye los 45 segundos para leer las opciones y la repetición.",
       "questions": [
         {
-          "n": 65,
+          "n": 65, "id": "sielem0q065",
           "text": "Fragmento 1",
           "opts": [
             "Los medios de comunicación acaban suplantándose los unos a los otros.",
@@ -1276,7 +1276,7 @@
           "expl": "\"La invención de un nuevo medio de comunicación no mata a los anteriores\", e vem a lista: o cinema não acabou com o teatro, a TV não extinguiu o cinema, os celulares não fizeram jogar fora os computadores. A opção (a) afirma exatamente o contrário, a substituição que a conferência vem refutar."
         },
         {
-          "n": 66,
+          "n": 66, "id": "sielem0q066",
           "text": "Fragmento 2",
           "opts": [
             "La radio ya no está de moda entre las generaciones jóvenes.",
@@ -1287,7 +1287,7 @@
           "expl": "\"Las estaciones se nutren en esos otros medios y ellos también la utilizan\". Os dois sentidos, que é o que \"mutuamente\" exige. E o fragmento abre negando (a) e (c): \"a la radio no le va mal en esta competencia\" e o uso \"multigeneracional\" contradiz \"su supuesta caducidad\"."
         },
         {
-          "n": 67,
+          "n": 67, "id": "sielem0q067",
           "text": "Fragmento 3",
           "opts": [
             "Hay pesimismo entre los defensores de lo escrito sobre su futuro.",
@@ -1298,7 +1298,7 @@
           "expl": "\"Esta visión alarmista del presente y el futuro de las culturas es pregonada por conservadores críticos como si temieran perder lo que han conseguido publicar en papel\", defensores do escrito, pessimistas quanto ao futuro. As outras duas afirmam fatos (queda das tiragens, recusa ao digital) que o fragmento não diz."
         },
         {
-          "n": 68,
+          "n": 68, "id": "sielem0q068",
           "text": "Fragmento 4",
           "opts": [
             "Actualmente hay una división estricta de los distintos ámbitos de la sociedad.",
@@ -1309,7 +1309,7 @@
           "expl": "\"Forma parte de una transformación más amplia de las conexiones entre trabajo, comunicación y consumo, entre lo íntimo y lo público\". São os planos da vida se rearranjando. Isso mesmo elimina (b): a espetacularização é *parte* de algo maior, não a origem, \"no es el único rasgo importante\". E (a) inverte tudo ao afirmar divisão estrita."
         },
         {
-          "n": 69,
+          "n": 69, "id": "sielem0q069",
           "text": "Fragmento 5",
           "opts": [
             "Parece que el ser humano requiere escuchar a otras personas.",
@@ -1320,7 +1320,7 @@
           "expl": "\"Su ausencia en la radio y el que sea tan escuchada indica que necesitamos que nos hablen.\" O distrator (c) é o mais perigoso: a literatura *é* mencionada, mas para dizer que ela **resiste**. \"Su persistencia, tanto como la de la literatura, desautoriza las previsiones negativas\", e não que sofreu impacto."
         },
         {
-          "n": 70,
+          "n": 70, "id": "sielem0q070",
           "text": "Fragmento 6",
           "opts": [
             "La radio digital será determinante en un futuro no muy lejano.",
@@ -1341,7 +1341,7 @@
       "instr": "Usted va a escuchar, en versión locutada, un fragmento de una conferencia de Victoria Camps sobre las emociones morales. En ella se mencionan seis de las doce opciones que aparecen a continuación. Elija las seis opciones que corresponden a esta conferencia. Para quitar una opción seleccionada, pulse de nuevo sobre ella. Va a escuchar la conferencia dos veces. El audio ya incluye los 50 segundos para leer las opciones y la repetición.",
       "questions": [
         {
-          "n": 71,
+          "n": 71, "id": "sielem0q071",
           "type": "multi",
           "pick": 6,
           "items": 6,
