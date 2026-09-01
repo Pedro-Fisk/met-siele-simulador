@@ -953,7 +953,13 @@
      `rascunho: true`, a página avisa na tela e NÃO envia resultado nenhum —
      nem do aluno logado, nem solto. Para publicar, tire o `rascunho` do JSON. */
   const EXAMS = { met: 'questions/red.json', siele: 'questions/siele-m0.json',
-                  emerald: 'questions/emerald.json', amber: 'questions/amber.json' };
+                  emerald: 'questions/emerald.json', amber: 'questions/amber.json',
+                  /* Modelo 1 do SIELE, escrito pela Fisk (o m0 é o oficial de
+                     2019). EM CONSTRUÇÃO: os áudios de audio/siele-m1/ ainda
+                     não foram gerados (roteiros em docs/roteiros-siele-m1.md)
+                     e o banco está `rascunho: true`. Só se chega por
+                     ?exame=siele-m1. */
+                  'siele-m1': 'questions/siele-m1.json' };
   /* PROVAS IRMÃS: bancos diferentes do MESMO exame, que dividem uma home só.
      O aluno abre "Treino MET" e vê os dois simulados e os oito minis na mesma
      página, em vez de precisar de uma URL por prova. O SIELE é outro exame e
@@ -965,7 +971,14 @@
      exame e fica sozinho: misturar as famílias mandaria o aluno de espanhol
      fazer o MET. */
   const FAMILIAS = { met: ['met', 'emerald', 'amber'], emerald: ['met', 'emerald', 'amber'],
-                     amber: ['met', 'emerald', 'amber'], siele: ['siele'] };
+                     amber: ['met', 'emerald', 'amber'], siele: ['siele'],
+                     /* Enquanto o siele-m1 for rascunho ele fica FORA da
+                        família do siele (armadilha documentada no roadmap: em
+                        construção dentro da família, o card 🚧 aparece para
+                        todo aluno). Ao publicar: os áudios gerados, o
+                        `rascunho` tirado do JSON, e as duas linhas do siele
+                        viram ['siele', 'siele-m1']. */
+                     'siele-m1': ['siele-m1'] };
   const EXAM = (new URLSearchParams(location.search).get('exame') || 'met').toLowerCase();
   const FAMILIA = FAMILIAS[EXAM] || FAMILIAS.met;
   const TEST_FILE = EXAMS[EXAM] || EXAMS.met;

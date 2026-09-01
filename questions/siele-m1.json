@@ -1,0 +1,1416 @@
+{
+  "id": "siele-m1",
+  "name": "Modelo 1 · SIELE S1",
+  "rascunho": true,
+  "cor": "#EA5B0C",
+  "examLabel": "SIELE, Servicio Internacional de Evaluación de la Lengua Española",
+  "modality": "S1 · Comprensión de lectura + Comprensión auditiva",
+  "lang": "es",
+  "toolId": "siele",
+  "audioBase": "audio/siele-m1/",
+  "letters": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "ñ"
+  ],
+  "refLabel": "Se refiere al texto {n}",
+  "toolName": "Treino SIELE",
+  "fullLabel": "Examen completo S1",
+  "fullSectionLabel": "Exame completo",
+  "minisSectionLabel": "Treinos por nível",
+  "fullDesc": "As 76 questões do S1 na sequência oficial: Comprensión de lectura (5 tarefas, 60 min) e Comprensión auditiva (6 tarefas, 55 min).",
+  "homeNote": "No modo aluno, você responde tudo antes de ver o resultado, como na prova real. Ao final, recebe a pontuação de 0 a 250 em cada prova, o nível correspondente no Quadro Comum Europeu (CEFR) e a soma de 0 a 500 do S1.",
+  "uiSection": "Prueba {i} de {n}",
+  "uiAnswered": "Respondidas:",
+  "scoreLabel": "Puntuación estimada:",
+  "brief": {
+    "title": "Como funciona o exame completo S1",
+    "titleMini": "Como funciona este treino por nível",
+    "intro": "Você fará <b>{n} questões</b>. O S1 completo, na sequência oficial: primeiro a <b>Comprensión de lectura</b>, depois a <b>Comprensión auditiva</b>. Tudo aparece em espanhol, como no exame real.",
+    "introMini": "Você fará <b>{n} questões</b> das tarefas de um mesmo nível do CEFR. É um recorte para treinar um tipo de tarefa por vez, o exame inteiro segue no <i>Examen completo S1</i>.",
+    "cards": [
+      {
+        "title": "📖 Comprensión de lectura ({n} questões · {min} min)",
+        "sections": [
+          "cl"
+        ],
+        "items": [
+          "São 5 tarefas em ordem crescente de dificuldade, do A1 ao C1: cinco textos curtos, um e-mail, três depoimentos, dois textos com fragmentos faltando e um texto com doze lacunas.",
+          "Nas tarefas de fragmento e de lacuna, o número dentro do texto indica a lacuna. A resposta é a letra correspondente na lista de opções.",
+          "Atenção na Tarefa 4: são <b>cinco</b> fragmentos para <b>quatro</b> lacunas em cada texto. Um deles sempre sobra."
+        ]
+      },
+      {
+        "title": "🎧 Comprensión auditiva ({n} questões · {min} min)",
+        "sections": [
+          "ca"
+        ],
+        "items": [
+          "São 6 tarefas do A1 ao C1: uma conversa, cinco anúncios de rádio, oito pessoas falando, uma entrevista e duas conferências.",
+          "⚠️ <b>Cada áudio é a tarefa inteira</b>: já vem com o tempo para ler as perguntas, a primeira escuta, a pausa e a repetição. Dê play quando estiver pronto e ouça até o fim. No exame real não se pode parar nem voltar.",
+          "Nas tarefas com lista de opções, leia a lista durante o silêncio inicial do áudio. É para isso que ele existe.",
+          "A última tarefa é diferente: você marca <b>seis</b> opções entre doze, e cada acerto vale um ponto."
+        ],
+        "itemsMini": [
+          "Nos treinos por nível você <b>pode repetir os áudios</b> à vontade. No exame completo, cada um toca uma única vez, como na prova real."
+        ]
+      }
+    ],
+    "closing": {
+      "title": "⏱ Tempo e resultado",
+      "items": [
+        "Cada prova é cronometrada separadamente. Ao concluir uma (ou quando o tempo acaba), você avança para a seguinte e <b>não pode voltar</b>. É assim no exame oficial.",
+        "No final você vê a <b>pontuação de 0 a 250 em cada prova</b> e o nível correspondente no Quadro Europeu (CEFR), além da soma de 0 a 500 que é o resultado do S1.",
+        "A correção comentada de cada questão é feita com o seu professor.",
+        "O resultado é enviado automaticamente ao seu professor."
+      ]
+    }
+  },
+  "source": "Modelo 1 de treino, escrito pela Fisk na estrutura do EXAMEN SIELE Modelo 0 (abril 2019). Conteúdo original, não oficial, para uso interno das escolas Fisk no treino dos alunos.",
+  "cefr": {
+    "note": "Pontuação e faixas do CEFR conforme a Guía de examen SIELE: cada prova vale no máximo 250 pontos e o exame S1 soma 0–500. Abaixo de 33 pontos numa prova, o resultado oficial seria NO APTO. Não há descritores abaixo do A1.",
+    "scale": 250
+  },
+  "cefrGroups": [
+    {
+      "label": "Comprensión de lectura",
+      "short": "CL",
+      "sections": [
+        "cl"
+      ],
+      "scale": 250,
+      "bands": [
+        {
+          "min": 217,
+          "level": "C1",
+          "desc": "Lê com facilidade textos longos e complexos e capta significados implícitos."
+        },
+        {
+          "min": 178,
+          "level": "B2",
+          "desc": "Lê artigos e relatórios sobre temas atuais e compreende textos literários contemporâneos em prosa."
+        },
+        {
+          "min": 118,
+          "level": "B1",
+          "desc": "Lê, com compreensão satisfatória, textos simples sobre fatos concretos e temas da sua especialidade."
+        },
+        {
+          "min": 66,
+          "level": "A2",
+          "desc": "Compreende textos breves e simples sobre assuntos cotidianos ou de trabalho, com vocabulário muito frequente."
+        },
+        {
+          "min": 33,
+          "level": "A1",
+          "desc": "Compreende textos muito breves e simples, lendo frase por frase e captando nomes e palavras básicas."
+        },
+        {
+          "min": 0,
+          "level": "NO APTO",
+          "desc": "Abaixo da pontuação mínima do A1 nesta prova. Não há descritores de uso da língua abaixo do A1."
+        }
+      ]
+    },
+    {
+      "label": "Comprensión auditiva",
+      "short": "CA",
+      "sections": [
+        "ca"
+      ],
+      "scale": 250,
+      "bands": [
+        {
+          "min": 211,
+          "level": "C1",
+          "desc": "Compreende discurso extenso mesmo sem estrutura explícita e sem esforço excessivo."
+        },
+        {
+          "min": 164,
+          "level": "B2",
+          "desc": "Compreende discursos e palestras extensos e acompanha argumentações complexas sobre temas familiares."
+        },
+        {
+          "min": 112,
+          "level": "B1",
+          "desc": "Compreende as ideias principais de um discurso claro e padrão sobre assuntos cotidianos."
+        },
+        {
+          "min": 66,
+          "level": "A2",
+          "desc": "Compreende frases e expressões de necessidade imediata, desde que o discurso seja claro e lento."
+        },
+        {
+          "min": 33,
+          "level": "A1",
+          "desc": "Compreende discurso oral produzido lentamente, com articulação cuidada e pausas para assimilar o sentido."
+        },
+        {
+          "min": 0,
+          "level": "NO APTO",
+          "desc": "Abaixo da pontuação mínima do A1 nesta prova. Não há descritores de uso da língua abaixo do A1."
+        }
+      ]
+    },
+    {
+      "label": "Puntuación S1",
+      "short": "S1 (0-500)",
+      "sumOf": [
+        0,
+        1
+      ],
+      "max": 500,
+      "isOverall": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "cl",
+      "name": "Comprensión de lectura",
+      "short": "CL",
+      "kind": "text",
+      "minutes": 60,
+      "tasks": 5,
+      "items": 38,
+      "instructions": "Esta prueba tiene 5 tareas y 38 preguntas. Dispone de 60 minutos. Atención: en el examen real no se puede volver a las tareas terminadas, cuando termine una tarea, no podrá retroceder."
+    },
+    {
+      "id": "ca",
+      "name": "Comprensión auditiva",
+      "short": "CA",
+      "kind": "listening",
+      "minutes": 55,
+      "tasks": 6,
+      "items": 38,
+      "instructions": "Esta prueba tiene 6 tareas y 38 preguntas. Dispone de unos 55 minutos. Cada audio incluye ya el tiempo para leer las preguntas, la primera escucha y la repetición: se escucha una sola vez, de principio a fin, y no se puede parar."
+    }
+  ],
+  "units": [
+    {
+      "id": "cl-t1",
+      "section": "cl",
+      "title": "Tarea 1 · Nivel A1",
+      "type": "reading-multi",
+      "instr": "Usted va a leer cinco textos breves. Elija la opción correcta para cada una de las cinco preguntas.",
+      "texts": [
+        {
+          "tag": "Texto 1",
+          "html": "<p>Hola, Andrés:</p><p>El sábado es mi cumpleaños y lo voy a celebrar en el parque que está al lado de mi casa. La fiesta empieza a las cuatro de la tarde. Vamos a jugar al fútbol, comer pizza y escuchar música. Va a venir casi toda la clase, pero mi prima Camila no puede porque tiene un examen el lunes. ¿Vienes tú? Trae tu balón, el mío está roto. Responde hoy, por favor.</p><p>Un abrazo, Bruno</p>"
+        },
+        {
+          "tag": "Texto 2",
+          "html": "<p><b>SE VENDE</b></p><p>Vendo bicicleta de montaña por 90 euros. Tiene dos años pero está casi nueva: la usé pocas veces porque ahora voy al instituto en metro. Es azul, con luces y una cesta pequeña. El casco no entra en el precio, pero por 10 euros más te lo llevas también. Escríbeme por las tardes, por las mañanas estoy en clase.</p><p>Marta, 2.º B</p>"
+        },
+        {
+          "tag": "Texto 3",
+          "html": "<p><b>TALLER DE TEATRO JOVEN</b></p><p>La Casa de la Cultura invita a chicos y chicas de 12 a 17 años a su taller de teatro. Clases los martes y jueves, de seis a ocho de la tarde. No necesitas experiencia: empezamos desde cero. El taller es gratuito, pero los lugares son limitados: solo 20 estudiantes. Inscripciones en la recepción hasta el viernes 15. La obra final se presenta en diciembre para las familias.</p>"
+        },
+        {
+          "tag": "Texto 4",
+          "html": "<p><b>EXCURSIÓN AL MUSEO DE CIENCIAS</b></p><p>El próximo miércoles 12, los alumnos de tercero visitan el Museo de Ciencias. El autobús sale del instituto a las nueve de la mañana y vuelve a las cinco de la tarde. Hay que traer comida para el mediodía; el agua la pone el instituto. La entrada al museo cuesta 4 euros y se paga el lunes en clase. Los alumnos que no van a la excursión tienen clase normal.</p>"
+        },
+        {
+          "tag": "Texto 5",
+          "html": "<p>Queridos compañeros:</p><p>Vendo una entrada para el concierto del grupo Naranja Eléctrica, el sábado 30 en el estadio municipal. La compré hace dos meses, pero ese fin de semana viajo con mi familia y no puedo ir. En la página oficial cuesta 45 euros; yo la vendo por 35. Es en la zona de adelante, cerca del escenario. Si te interesa, búscame en el recreo o escríbeme.</p><p>Paula</p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 1,
+          "ref": "1",
+          "text": "Bruno dice que…",
+          "opts": [
+            "la fiesta es en su casa.",
+            "van a hacer deporte en la fiesta.",
+            "toda la clase va a ir a la fiesta."
+          ],
+          "key": 1,
+          "expl": "Bruno escreve \"vamos a jugar al fútbol\", e jogar futebol é fazer esporte. A festa é \"en el parque que está al lado de mi casa\", ao lado, não dentro. E vai \"casi toda la clase\": a prima Camila não pode, então não é a turma inteira."
+        },
+        {
+          "n": 2,
+          "ref": "2",
+          "text": "Marta vende su bicicleta porque…",
+          "opts": [
+            "ya no la usa para ir a clase.",
+            "está vieja y no funciona.",
+            "quiere comprar un casco nuevo."
+          ],
+          "key": 0,
+          "expl": "Ela diz \"la usé pocas veces porque ahora voy al instituto en metro\": trocou a bici pelo metrô. A bicicleta \"está casi nueva\", o que derruba a opção do estado dela, e o capacete é algo que ela VENDE por 10 euros a mais, não algo que quer comprar."
+        },
+        {
+          "n": 3,
+          "ref": "3",
+          "text": "El taller de teatro…",
+          "opts": [
+            "es para personas con experiencia.",
+            "cuesta poco dinero.",
+            "tiene un número limitado de lugares."
+          ],
+          "key": 2,
+          "expl": "\"Los lugares son limitados: solo 20 estudiantes.\" As outras duas dizem o contrário do texto: \"no necesitas experiencia: empezamos desde cero\" e \"el taller es gratuito\", grátis não é \"custar pouco\", é não custar nada."
+        },
+        {
+          "n": 4,
+          "ref": "4",
+          "text": "En el aviso se dice que los alumnos…",
+          "opts": [
+            "tienen que llevar su comida.",
+            "pagan la entrada el mismo día.",
+            "vuelven al instituto por la mañana."
+          ],
+          "key": 0,
+          "expl": "\"Hay que traer comida para el mediodía\": cada aluno leva o próprio almoço, só a água é do instituto. A entrada \"se paga el lunes en clase\", antes da excursão de quarta, e a volta é \"a las cinco de la tarde\"."
+        },
+        {
+          "n": 5,
+          "ref": "5",
+          "text": "Paula dice en su mensaje que…",
+          "opts": [
+            "ya no le gusta el grupo.",
+            "su entrada está lejos del escenario.",
+            "vende la entrada más barata que en la página."
+          ],
+          "key": 2,
+          "expl": "Na página oficial custa 45 e ela vende por 35: mais barata. Ela não pode ir porque viaja com a família, não porque deixou de gostar do grupo, e a entrada é \"en la zona de adelante, cerca del escenario\", perto, não longe."
+        }
+      ]
+    },
+    {
+      "id": "cl-t2",
+      "section": "cl",
+      "title": "Tarea 2 · Nivel A2",
+      "type": "reading",
+      "instr": "Usted va a leer un correo que Tomás ha escrito a su amiga Julia. Elija la opción correcta para cada una de las cinco preguntas.",
+      "passageIntro": "Correo de Tomás a Julia",
+      "passage": "<p>Hola, Julia, ¿cómo estás?</p><p>Perdona por no escribirte antes: la primera semana en la escuela nueva fue de locos. El lunes me perdí buscando el salón de música y llegué tarde a la primera clase. ¡Qué vergüenza! Pero el profesor fue muy amable y no me dijo nada.</p><p>¿Sabes qué es lo mejor? En mi grupo está Sofía, la chica que conocimos en el campamento del verano pasado. Al principio no me reconoció porque ahora llevo lentes, pero cuando le hablé del campamento se rió muchísimo. Me contó que está muy contenta porque entró al equipo de básquetbol de la escuela.</p><p>La ciudad me gusta, aunque todavía la conozco poco. Mi papá trabaja hasta tarde y mi mamá empieza su nuevo trabajo la próxima semana, así que por ahora salgo poco. Eso sí, ya encontré una tienda de cómics buenísima a dos calles de mi casa. El sábado pasado me compré dos con el dinero que me regaló mi abuela.</p><p>Te escribo también para invitarte: en diciembre hay un festival de música en el parque grande de la ciudad y mis papás dicen que puedes quedarte en casa unos días. Podemos ir en bici al festival, aquí todo el mundo anda en bici. ¿Te animas?</p><p>Contéstame pronto y cuéntame cómo va todo por allá.</p><p>Un abrazo, Tomás</p>",
+      "questions": [
+        {
+          "n": 6,
+          "text": "Tomás escribe este correo a Julia para…",
+          "opts": [
+            "contarle un problema con un profesor.",
+            "invitarla a un festival.",
+            "presentarle a su amiga Sofía."
+          ],
+          "key": 1,
+          "expl": "O centro do e-mail é o convite: \"te escribo también para invitarte: en diciembre hay un festival de música (…) ¿Te animas?\". Com o professor não houve problema nenhum (\"fue muy amable y no me dijo nada\"), e a Sofía a Julia já conhece, do acampamento."
+        },
+        {
+          "n": 7,
+          "text": "El primer día de clase, Tomás…",
+          "opts": [
+            "llegó tarde a una clase.",
+            "se perdió al volver a su casa.",
+            "tuvo un problema con un profesor."
+          ],
+          "key": 0,
+          "expl": "\"El lunes me perdí buscando el salón de música y llegué tarde a la primera clase.\" Ele se perdeu DENTRO da escola, procurando a sala, não voltando para casa. E o professor \"fue muy amable\", nenhum problema."
+        },
+        {
+          "n": 8,
+          "text": "Sofía…",
+          "opts": [
+            "conoció a Tomás en la escuela nueva.",
+            "quiere entrar al equipo de básquetbol.",
+            "no reconoció a Tomás al principio."
+          ],
+          "key": 2,
+          "expl": "\"Al principio no me reconoció porque ahora llevo lentes.\" Eles se conheceram no acampamento do verão, não na escola nova, e no time de basquete ela JÁ entrou (\"entró al equipo\"), não é um desejo."
+        },
+        {
+          "n": 9,
+          "text": "En el texto se dice que Tomás…",
+          "opts": [
+            "sale mucho por la ciudad.",
+            "compró unos cómics.",
+            "recibió dinero de sus papás."
+          ],
+          "key": 1,
+          "expl": "\"El sábado pasado me compré dos\" cómics na loja que descobriu. O dinheiro veio da avó (\"el dinero que me regaló mi abuela\"), não dos pais, e por enquanto ele \"sale poco\"."
+        },
+        {
+          "n": 10,
+          "text": "Tomás le dice a Julia que puede…",
+          "opts": [
+            "quedarse en casa de Sofía.",
+            "ir con Tomás a un campamento.",
+            "quedarse en casa de Tomás."
+          ],
+          "key": 2,
+          "expl": "\"Mis papás dicen que puedes quedarte en casa unos días\", ou seja, na casa do próprio Tomás. Sofía e o acampamento aparecem no texto, mas como lembrança do verão passado, não como convite."
+        }
+      ]
+    },
+    {
+      "id": "cl-t3",
+      "section": "cl",
+      "title": "Tarea 3 · Nivel B1",
+      "type": "reading-multi",
+      "instr": "Usted va a leer tres textos en los que unos jóvenes hablan sobre su primer trabajo. Elija la opción correcta para cada una de las ocho preguntas.",
+      "texts": [
+        {
+          "tag": "MATEO",
+          "html": "<p>El verano pasado trabajé en la heladería de mi tío. Yo quería apuntarme al viaje de intercambio que organiza mi instituto, pero es caro y en casa no podían pagarlo todo, así que decidí ganarme una parte. Al principio pensaba que servir helados era facilísimo, pero los sábados la cola llegaba hasta la esquina y salía agotado. Mi tío es muy exigente con la limpieza y los horarios, aunque conmigo fue paciente y me enseñó a tratar a los clientes. Lo que peor llevaba era levantarme temprano en vacaciones, ¡con lo que me gusta dormir! Pero mereció la pena: en septiembre pagué mi parte del viaje. Si mi tío me llama, el próximo verano vuelvo a la heladería sin pensarlo.</p>"
+        },
+        {
+          "tag": "VALENTINA",
+          "html": "<p>Mi primer trabajo llegó casi por casualidad: una vecina me pidió que ayudara a su hijo con las matemáticas, porque en la secundaria siempre fui buena con los números. Confieso que antes de la primera clase estaba muy nerviosa: soy tímida y me daba miedo no saber explicar. Pero con las semanas fui ganando confianza y hoy tengo cuatro alumnos. Lo más difícil es combinar las clases con mis propios estudios, aunque poco a poco encontré el equilibrio. Gracias a este trabajo descubrí lo que quiero hacer con mi vida: voy a estudiar para ser maestra. Cuando un alumno por fin entiende un problema, su cara lo dice todo, y esa alegría no se paga con nada.</p>"
+        },
+        {
+          "tag": "DANIEL",
+          "html": "<p>Encontré mi primer trabajo por una aplicación del celular: una tienda de ropa deportiva buscaba ayudante para las tardes. Mandé mi información un lunes y el jueves ya estaba trabajando. Me tocaba ordenar la ropa y ayudar a los clientes, y lo más complicado era aprenderme dónde estaba cada cosa: ¡la tienda tenía miles de productos! Con mi primer sueldo cometí un error clásico: lo gasté completo en dos semanas. A partir del segundo empecé a guardar la mitad, y así me compré la computadora que uso ahora. Estuve ocho meses en la tienda y me habría quedado más, pero llegaron los exámenes finales y tuve que elegir: dejé el trabajo para dedicarme a estudiar. Fue la decisión correcta, aunque extraño a mis compañeros.</p>"
+        }
+      ],
+      "questions": [
+        {
+          "n": 11,
+          "text": "¿Quién empezó a trabajar para pagar un viaje?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 0,
+          "expl": "Mateo: \"quería apuntarme al viaje de intercambio (…) así que decidí ganarme una parte\". Daniel também fala de dinheiro, mas o que ele comprou foi um computador, e a Valentina não menciona viagem."
+        },
+        {
+          "n": 12,
+          "text": "¿Quién consiguió su trabajo gracias a internet?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 2,
+          "expl": "Daniel: \"encontré mi primer trabajo por una aplicación del celular\". O de Mateo veio do tio e o de Valentina, de uma vizinha: os três caminhos clássicos, mas só um é digital."
+        },
+        {
+          "n": 13,
+          "text": "¿Quién descubrió su vocación gracias a este trabajo?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 1,
+          "expl": "Valentina: \"descubrí lo que quiero hacer con mi vida: voy a estudiar para ser maestra\". Os outros dois avaliam bem a experiência, mas nenhum diz que ela definiu o futuro profissional."
+        },
+        {
+          "n": 14,
+          "text": "¿Quién trabajó con un miembro de su familia?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 0,
+          "expl": "Mateo trabalhou \"en la heladería de mi tío\". A vizinha de Valentina não é da família, e Daniel foi contratado por uma loja."
+        },
+        {
+          "n": 15,
+          "text": "¿Quién dejó el trabajo para poder estudiar?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 2,
+          "expl": "Daniel: \"llegaron los exámenes finales y tuve que elegir: dejé el trabajo para dedicarme a estudiar\". Valentina fala do conflito com os estudos, mas ela encontrou \"el equilibrio\" e continua dando aulas."
+        },
+        {
+          "n": 16,
+          "text": "¿Quién dice que al principio tenía miedo por su timidez?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 1,
+          "expl": "Valentina: \"soy tímida y me daba miedo no saber explicar\". O nervosismo dela era antes da primeira aula; nenhum dos rapazes se descreve como tímido."
+        },
+        {
+          "n": 17,
+          "text": "¿Quién gastó muy rápido su primer sueldo?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 2,
+          "expl": "Daniel: \"con mi primer sueldo cometí un error clásico: lo gasté completo en dos semanas\". Mateo, ao contrário, guardou o que ganhou para pagar a viagem."
+        },
+        {
+          "n": 18,
+          "text": "¿Quién dice que repetiría la experiencia el próximo verano?",
+          "opts": [
+            "Mateo.",
+            "Valentina.",
+            "Daniel."
+          ],
+          "key": 0,
+          "expl": "Mateo: \"si mi tío me llama, el próximo verano vuelvo a la heladería sin pensarlo\". Daniel diz que teria FICADO mais (\"me habría quedado más\"), que é saudade do que passou, não plano para o próximo verão."
+        }
+      ]
+    },
+    {
+      "id": "cl-t4a",
+      "section": "cl",
+      "title": "Tarea 4 · Nivel B2 · Texto 1",
+      "type": "reading",
+      "instr": "Usted va a leer dos textos en los que faltan cuatro fragmentos. Elija el fragmento correcto para cada hueco. De los cinco fragmentos, solo tiene que utilizar cuatro.",
+      "passageIntro": "APRENDER OTRO IDIOMA CAMBIA LA MANERA DE VER EL MUNDO",
+      "passage": "<p>Durante décadas se pensó que estudiar un idioma consistía, sobre todo, en memorizar listas de palabras y reglas gramaticales. Hoy sabemos que el proceso es mucho más profundo. <span class=\"gap\">1</span> Esa gimnasia silenciosa explica, en parte, por qué a los estudiantes de idiomas les resulta más fácil concentrarse en tareas complejas.</p><p>Los beneficios no son solo mentales. Quien aprende una lengua extranjera se asoma también a otra forma de vivir: los horarios, el humor, las comidas y hasta los silencios significan cosas distintas en cada cultura. <span class=\"gap\">2</span> Viajar deja de ser mirar por una ventana y se convierte en entrar en la casa.</p><p>Ahora bien, ningún método hace milagros. Las aplicaciones del teléfono ayudan a empezar, pero prometen resultados en plazos imposibles. <span class=\"gap\">3</span> Lo confirma cualquier profesor con experiencia: la constancia de quince minutos diarios vale más que un atracón de horas el fin de semana.</p><p>Queda, por último, el miedo a equivocarse, que paraliza a tantos estudiantes. Los expertos coinciden en que el error no es el enemigo, sino la herramienta. <span class=\"gap\">4</span> Quien no se atreve a hablar mal hoy, difícilmente hablará bien mañana.</p>",
+      "bankTitle": "Opciones de respuesta · Texto 1",
+      "bank": [
+        "Aprender una lengua es una carrera de fondo, no una carrera de velocidad.",
+        "Cada vez que un hablante bilingüe elige una palabra, su cerebro compara, descarta y decide entre dos sistemas que compiten entre sí.",
+        "En cambio, los niños pequeños aprenden su lengua materna sin necesidad de estudiar gramática.",
+        "De hecho, cada equivocación corregida deja una huella más duradera que una regla aprendida de memoria.",
+        "Por eso, dominar un idioma permite entender a las personas y no solo sus palabras."
+      ],
+      "questions": [
+        {
+          "n": 19,
+          "bankRef": true,
+          "text": "Hueco 1",
+          "opts": [
+            "Aprender una lengua es una carrera de fondo, no una carrera de velocidad.",
+            "Cada vez que un hablante bilingüe elige una palabra, su cerebro compara, descarta y decide entre dos sistemas que compiten entre sí.",
+            "En cambio, los niños pequeños aprenden su lengua materna sin necesidad de estudiar gramática.",
+            "De hecho, cada equivocación corregida deja una huella más duradera que una regla aprendida de memoria.",
+            "Por eso, dominar un idioma permite entender a las personas y no solo sus palabras."
+          ],
+          "key": 1,
+          "expl": "A frase seguinte chama o fragmento de \"esa gimnasia silenciosa\": precisa de um fragmento que descreva um exercício mental, e é o do cérebro que \"compara, descarta y decide\". O fragmento das crianças pequenas, que é o que sobra, fala de outro assunto: aquisição da língua materna, não a ginástica do bilíngue."
+        },
+        {
+          "n": 20,
+          "bankRef": true,
+          "text": "Hueco 2",
+          "opts": [
+            "Aprender una lengua es una carrera de fondo, no una carrera de velocidad.",
+            "Cada vez que un hablante bilingüe elige una palabra, su cerebro compara, descarta y decide entre dos sistemas que compiten entre sí.",
+            "En cambio, los niños pequeños aprenden su lengua materna sin necesidad de estudiar gramática.",
+            "De hecho, cada equivocación corregida deja una huella más duradera que una regla aprendida de memoria.",
+            "Por eso, dominar un idioma permite entender a las personas y no solo sus palabras."
+          ],
+          "key": 4,
+          "expl": "O parágrafo lista o que muda de cultura para cultura e a conclusão natural é \"por eso, dominar un idioma permite entender a las personas y no solo sus palabras\", que ainda prepara a imagem de \"entrar en la casa\". O conector \"por eso\" retoma exatamente essa lista."
+        },
+        {
+          "n": 21,
+          "bankRef": true,
+          "text": "Hueco 3",
+          "opts": [
+            "Aprender una lengua es una carrera de fondo, no una carrera de velocidad.",
+            "Cada vez que un hablante bilingüe elige una palabra, su cerebro compara, descarta y decide entre dos sistemas que compiten entre sí.",
+            "En cambio, los niños pequeños aprenden su lengua materna sin necesidad de estudiar gramática.",
+            "De hecho, cada equivocación corregida deja una huella más duradera que una regla aprendida de memoria.",
+            "Por eso, dominar un idioma permite entender a las personas y no solo sus palabras."
+          ],
+          "key": 0,
+          "expl": "Depois de \"prometen resultados en plazos imposibles\", entra a correção: \"aprender una lengua es una carrera de fondo, no una carrera de velocidad\". E o que vem depois (\"la constancia de quince minutos diarios\") confirma a metáfora da corrida longa."
+        },
+        {
+          "n": 22,
+          "bankRef": true,
+          "text": "Hueco 4",
+          "opts": [
+            "Aprender una lengua es una carrera de fondo, no una carrera de velocidad.",
+            "Cada vez que un hablante bilingüe elige una palabra, su cerebro compara, descarta y decide entre dos sistemas que compiten entre sí.",
+            "En cambio, los niños pequeños aprenden su lengua materna sin necesidad de estudiar gramática.",
+            "De hecho, cada equivocación corregida deja una huella más duradera que una regla aprendida de memoria.",
+            "Por eso, dominar un idioma permite entender a las personas y no solo sus palabras."
+          ],
+          "key": 3,
+          "expl": "\"El error no es el enemigo, sino la herramienta\", e o fragmento com \"de hecho\" desenvolve a ideia: \"cada equivocación corregida deja una huella más duradera\". A frase final (\"quien no se atreve a hablar mal hoy…\") fecha o mesmo raciocínio."
+        }
+      ]
+    },
+    {
+      "id": "cl-t4b",
+      "section": "cl",
+      "title": "Tarea 4 · Nivel B2 · Texto 2",
+      "type": "reading",
+      "instr": "Segundo texto de la Tarea 4. Elija el fragmento correcto para cada hueco. De los cinco fragmentos, solo tiene que utilizar cuatro.",
+      "passageIntro": "LAS CIUDADES QUE PEDALEAN",
+      "passage": "<p>Hace veinte años, proponer que una gran ciudad latinoamericana apostara por la bicicleta parecía una ocurrencia. <span class=\"gap\">5</span> Bogotá, Ciudad de México o Santiago suman hoy cientos de kilómetros de ciclovías y sistemas públicos de préstamo que registran millones de viajes al año.</p><p>Las razones del cambio son variadas. La primera es práctica: en horas punta, la bicicleta es sencillamente el vehículo más rápido para trayectos cortos. <span class=\"gap\">6</span> A ello se añade el ahorro, nada menor para estudiantes y trabajadores jóvenes que destinan buena parte de sus ingresos al transporte.</p><p>No todo es entusiasmo, claro. Los ciclistas urbanos siguen denunciando la falta de seguridad en muchas avenidas. <span class=\"gap\">7</span> Sin esa infraestructura, dicen, animar a la gente a pedalear es invitarla a un riesgo innecesario.</p><p>Aun así, la tendencia parece imparable, sobre todo entre los menores de treinta años. <span class=\"gap\">8</span> Para esa generación, moverse en dos ruedas no es una moda: es la manera natural de habitar la ciudad.</p>",
+      "bankTitle": "Opciones de respuesta · Texto 2",
+      "bank": [
+        "Reclaman carriles protegidos, cruces bien señalizados y conductores educados para compartir la calle.",
+        "Además, las tiendas de bicicletas ofrecen descuentos especiales durante los fines de semana.",
+        "Sin embargo, lo que empezó como un experimento marginal se ha convertido en política oficial de transporte.",
+        "Las encuestas muestran que los jóvenes asocian la bicicleta con libertad, salud y compromiso con el medio ambiente.",
+        "Mientras los autos avanzan a paso de peatón, quien pedalea esquiva el tráfico y llega a tiempo."
+      ],
+      "questions": [
+        {
+          "n": 23,
+          "bankRef": true,
+          "text": "Hueco 5",
+          "opts": [
+            "Reclaman carriles protegidos, cruces bien señalizados y conductores educados para compartir la calle.",
+            "Además, las tiendas de bicicletas ofrecen descuentos especiales durante los fines de semana.",
+            "Sin embargo, lo que empezó como un experimento marginal se ha convertido en política oficial de transporte.",
+            "Las encuestas muestran que los jóvenes asocian la bicicleta con libertad, salud y compromiso con el medio ambiente.",
+            "Mientras los autos avanzan a paso de peatón, quien pedalea esquiva el tráfico y llega a tiempo."
+          ],
+          "key": 2,
+          "expl": "O parágrafo abre com o passado (\"parecía una ocurrencia\") e o fragmento com \"sin embargo\" faz a virada para o presente: \"se ha convertido en política oficial de transporte\". A frase seguinte, com as cidades e os números, é o desenvolvimento dessa política."
+        },
+        {
+          "n": 24,
+          "bankRef": true,
+          "text": "Hueco 6",
+          "opts": [
+            "Reclaman carriles protegidos, cruces bien señalizados y conductores educados para compartir la calle.",
+            "Además, las tiendas de bicicletas ofrecen descuentos especiales durante los fines de semana.",
+            "Sin embargo, lo que empezó como un experimento marginal se ha convertido en política oficial de transporte.",
+            "Las encuestas muestran que los jóvenes asocian la bicicleta con libertad, salud y compromiso con el medio ambiente.",
+            "Mientras los autos avanzan a paso de peatón, quien pedalea esquiva el tráfico y llega a tiempo."
+          ],
+          "key": 4,
+          "expl": "A frase anterior afirma que a bicicleta \"es el vehículo más rápido\" e o fragmento ilustra: \"mientras los autos avanzan a paso de peatón, quien pedalea (…) llega a tiempo\". O distrator dos descontos nas lojas ronda o tema do dinheiro, que aparece logo depois (\"el ahorro\"), mas quebra a sequência: o parágrafo ainda está na rapidez, e o \"a ello se añade\" é que introduz o ahorro."
+        },
+        {
+          "n": 25,
+          "bankRef": true,
+          "text": "Hueco 7",
+          "opts": [
+            "Reclaman carriles protegidos, cruces bien señalizados y conductores educados para compartir la calle.",
+            "Además, las tiendas de bicicletas ofrecen descuentos especiales durante los fines de semana.",
+            "Sin embargo, lo que empezó como un experimento marginal se ha convertido en política oficial de transporte.",
+            "Las encuestas muestran que los jóvenes asocian la bicicleta con libertad, salud y compromiso con el medio ambiente.",
+            "Mientras los autos avanzan a paso de peatón, quien pedalea esquiva el tráfico y llega a tiempo."
+          ],
+          "key": 0,
+          "expl": "Quem denuncia \"la falta de seguridad\" reclama de algo concreto, e o fragmento lista: \"carriles protegidos, cruces bien señalizados y conductores educados\". O \"esa infraestructura\" da frase seguinte só tem referente com essa lista no lugar."
+        },
+        {
+          "n": 26,
+          "bankRef": true,
+          "text": "Hueco 8",
+          "opts": [
+            "Reclaman carriles protegidos, cruces bien señalizados y conductores educados para compartir la calle.",
+            "Además, las tiendas de bicicletas ofrecen descuentos especiales durante los fines de semana.",
+            "Sin embargo, lo que empezó como un experimento marginal se ha convertido en política oficial de transporte.",
+            "Las encuestas muestran que los jóvenes asocian la bicicleta con libertad, salud y compromiso con el medio ambiente.",
+            "Mientras los autos avanzan a paso de peatón, quien pedalea esquiva el tráfico y llega a tiempo."
+          ],
+          "key": 3,
+          "expl": "O parágrafo é sobre \"los menores de treinta años\" e o fragmento traz a evidência: \"las encuestas muestran que los jóvenes asocian la bicicleta con libertad, salud y compromiso\". O \"esa generación\" seguinte retoma \"los jóvenes\" da pesquisa."
+        }
+      ]
+    },
+    {
+      "id": "cl-t5",
+      "section": "cl",
+      "title": "Tarea 5 · Nivel C1",
+      "type": "reading",
+      "instr": "Usted va a leer un texto en el que faltan doce palabras. Elija la opción correcta para cada hueco.",
+      "passageIntro": "LOS ADOLESCENTES DUERMEN MENOS DE LO QUE SU CEREBRO NECESITA",
+      "passage": "<p>Investigadores de la Universidad Nacional han confirmado lo que padres y profesores sospechaban desde hace tiempo: la mayoría de los adolescentes duerme bastante menos de lo que su cerebro necesita, informó la doctora Elena Ruiz, coordinadora del estudio.</p><p>El <span class=\"gap\">1</span> natural del reloj biológico durante la adolescencia hace que el sueño llegue más tarde, <span class=\"gap\">2</span> explica que tantos jóvenes se acuesten después de la medianoche aunque al día siguiente <span class=\"gap\">3</span> clase a primera hora.</p><p>A esa tendencia biológica se suman las pantallas. La luz de los teléfonos retrasa la producción de melatonina, la hormona <span class=\"gap\">4</span> de anunciar al cuerpo que es hora de dormir.</p><p><span class=\"gap\">5</span> los especialistas recomiendan entre ocho y diez horas de sueño <span class=\"gap\">6</span> los estudiantes de secundaria, las encuestas del propio estudio indican que siete de cada diez no llegan a esa cifra ni siquiera los fines de semana.</p><p><span class=\"gap\">7</span>, la investigación midió los efectos en el aula: los alumnos que duermen menos de siete horas obtienen peores resultados en pruebas de memoria y atención, y son más propensos a la irritabilidad.</p><p>Por eso, argumentó la especialista, sería necesario que las escuelas <span class=\"gap\">8</span> el horario de entrada, <span class=\"gap\">9</span> la evidencia muestra que empezar las clases más tarde mejora el rendimiento y reduce las faltas.</p><p>Los buenos hábitos también <span class=\"gap\">10</span> de decisiones cotidianas: cenar temprano, mantener horarios regulares y dejar el teléfono fuera de la habitación. Mientras no <span class=\"gap\">11</span> un cambio de costumbres, advirtió Ruiz, ninguna reforma de horarios será suficiente.</p><p>El informe recomienda, <span class=\"gap\">12</span>, involucrar a las familias: de poco sirve que la escuela empiece más tarde si en casa las pantallas siguen encendidas hasta la madrugada.</p>",
+      "questions": [
+        {
+          "n": 27,
+          "text": "Hueco 1",
+          "opts": [
+            "retroceso",
+            "retraso",
+            "alargamiento"
+          ],
+          "key": 1,
+          "expl": "Relógio biológico que passa a dormir mais tarde sofre um \"retraso\" (atraso). \"Retroceso\" seria voltar para trás, o contrário, e \"alargamiento\" é ficar mais comprido, que não combina com reloj."
+        },
+        {
+          "n": 28,
+          "text": "Hueco 2",
+          "opts": [
+            "lo que",
+            "la que",
+            "el que"
+          ],
+          "key": 0,
+          "expl": "O relativo retoma a oração inteira anterior (o sono chegar mais tarde), não um substantivo. Para retomar uma ideia inteira usa-se sempre o neutro \"lo que\"."
+        },
+        {
+          "n": 29,
+          "text": "Hueco 3",
+          "opts": [
+            "tienen",
+            "tengan",
+            "tendrían"
+          ],
+          "key": 1,
+          "expl": "O \"aunque\" aqui não afirma um fato novo, concede um obstáculo já sabido, e por isso pede subjuntivo: \"aunque al día siguiente tengan clase\". O indicativo \"tienen\" apresentaria a aula como informação nova, e o condicional não cabe depois de aunque nesse sentido."
+        },
+        {
+          "n": 30,
+          "text": "Hueco 4",
+          "opts": [
+            "encargada",
+            "encargando",
+            "encargándose"
+          ],
+          "key": 0,
+          "expl": "É um adjetivo concordando com \"la hormona\": \"la hormona encargada de anunciar\". O gerúndio, nas duas formas, não funciona como adjetivo em espanhol, esse é um dos calcos mais comuns de quem fala português."
+        },
+        {
+          "n": 31,
+          "text": "Hueco 5",
+          "opts": [
+            "A pesar de que",
+            "Debido a que",
+            "Con tal de que"
+          ],
+          "key": 0,
+          "expl": "A frase opõe a recomendação (8 a 10 horas) à realidade (7 em cada 10 não chegam lá): é uma concessão, \"a pesar de que\". \"Debido a que\" indicaria causa e \"con tal de que\" indica condição, nenhum dos dois liga recomendação e descumprimento."
+        },
+        {
+          "n": 32,
+          "text": "Hueco 6",
+          "opts": [
+            "por",
+            "para",
+            "a"
+          ],
+          "key": 1,
+          "expl": "A recomendação é destinada aos estudantes: \"ocho y diez horas de sueño para los estudiantes\". \"Por\" indicaria causa ou troca, e \"a\" exigiria outra construção (\"recomiendan a los estudiantes…\"), que não é a desta frase."
+        },
+        {
+          "n": 33,
+          "text": "Hueco 7",
+          "opts": [
+            "Entonces",
+            "En cambio",
+            "Asimismo"
+          ],
+          "key": 2,
+          "expl": "O parágrafo ACRESCENTA mais um resultado da pesquisa (os efeitos em sala), então o conector é aditivo: \"asimismo\". \"Entonces\" indicaria consequência e \"en cambio\" indicaria contraste, e não há oposição entre os parágrafos."
+        },
+        {
+          "n": 34,
+          "text": "Hueco 8",
+          "opts": [
+            "retrasarían",
+            "retrasaron",
+            "retrasaran"
+          ],
+          "key": 2,
+          "expl": "\"Sería necesario que\" pede subjuntivo, e no passado: \"que las escuelas retrasaran el horario\". É a mesma engrenagem de \"sería bueno que fuera\": condicional na principal, imperfeito do subjuntivo na subordinada."
+        },
+        {
+          "n": 35,
+          "text": "Hueco 9",
+          "opts": [
+            "por lo tanto",
+            "ya que",
+            "aunque"
+          ],
+          "key": 1,
+          "expl": "A evidência é o MOTIVO de atrasar o horário: \"ya que la evidencia muestra que…\". \"Por lo tanto\" inverteria a direção (consequência) e \"aunque\" transformaria a evidência num obstáculo, o contrário do que o texto diz."
+        },
+        {
+          "n": 36,
+          "text": "Hueco 10",
+          "opts": [
+            "dependen",
+            "consisten",
+            "resultan"
+          ],
+          "key": 0,
+          "expl": "A regência decide: \"dependen de decisiones cotidianas\". \"Consisten\" pede \"en\" e \"resultan\" pede \"de\" com outro sentido (ser produto de); hábitos que se apoiam em decisões diárias \"dependen de\" elas."
+        },
+        {
+          "n": 37,
+          "text": "Hueco 11",
+          "opts": [
+            "hubiera",
+            "hay",
+            "haya"
+          ],
+          "key": 2,
+          "expl": "\"Mientras no\" com valor de futuro pede presente do subjuntivo: \"mientras no haya un cambio\". \"Hay\" é indicativo e \"hubiera\" jogaria a frase para uma hipótese irreal do passado, que não é o caso."
+        },
+        {
+          "n": 38,
+          "text": "Hueco 12",
+          "opts": [
+            "además",
+            "inclusive",
+            "con todo"
+          ],
+          "key": 0,
+          "expl": "O relatório recomenda mais uma coisa, e o aditivo neutro entre vírgulas é \"además\". \"Inclusive\" destacaria um caso extremo e \"con todo\" é adversativo (\"apesar de tudo\"), nenhum dos dois soma uma recomendação nova."
+        }
+      ]
+    },
+    {
+      "id": "ca-t1",
+      "section": "ca",
+      "title": "Tarea 1 · Nivel A1",
+      "type": "audio-set",
+      "audio": "ca-t1.mp3",
+      "instr": "Usted va a escuchar a un chico, Pablo, que habla sobre su escuela nueva. Lea las cinco frases y elija la opción correcta para cada hueco. Va a escuchar la conversación dos veces. El audio ya incluye los 30 segundos para leer las frases y la repetición.",
+      "bankTitle": "Opciones de respuesta",
+      "bank": [
+        "música",
+        "ocho",
+        "abuela",
+        "nadan",
+        "madre",
+        "autobús",
+        "siete",
+        "hermano",
+        "cantan",
+        "historia",
+        "bicicleta",
+        "juegan",
+        "patio",
+        "nueve",
+        "biblioteca"
+      ],
+      "questions": [
+        {
+          "n": 39,
+          "bankRef": true,
+          "text": "La escuela nueva está al lado de la casa de la _____ de Pablo.",
+          "opts": [
+            "música",
+            "ocho",
+            "abuela",
+            "nadan",
+            "madre",
+            "autobús",
+            "siete",
+            "hermano",
+            "cantan",
+            "historia",
+            "bicicleta",
+            "juegan",
+            "patio",
+            "nueve",
+            "biblioteca"
+          ],
+          "key": 2,
+          "expl": "Pablo diz: \"está al lado de la casa de mi abuela\". A mãe (\"mi mamá\") aparece logo depois, mas trabalhando perto, não morando ao lado."
+        },
+        {
+          "n": 40,
+          "bankRef": true,
+          "text": "Pablo va a la escuela en _____.",
+          "opts": [
+            "música",
+            "ocho",
+            "abuela",
+            "nadan",
+            "madre",
+            "autobús",
+            "siete",
+            "hermano",
+            "cantan",
+            "historia",
+            "bicicleta",
+            "juegan",
+            "patio",
+            "nueve",
+            "biblioteca"
+          ],
+          "key": 5,
+          "expl": "\"Ahora voy en autobús.\" A bicicleta é o distrator: era como ele ia à escola ANTIGA (\"antes iba a la otra escuela en bicicleta\")."
+        },
+        {
+          "n": 41,
+          "bankRef": true,
+          "text": "Las clases de Pablo empiezan a las _____ y media.",
+          "opts": [
+            "música",
+            "ocho",
+            "abuela",
+            "nadan",
+            "madre",
+            "autobús",
+            "siete",
+            "hermano",
+            "cantan",
+            "historia",
+            "bicicleta",
+            "juegan",
+            "patio",
+            "nueve",
+            "biblioteca"
+          ],
+          "key": 6,
+          "expl": "\"Muy temprano: a las siete y media.\" O \"nueve\" que se ouve é do irmão (\"sus clases empiezan a las nueve\"), não o dele."
+        },
+        {
+          "n": 42,
+          "bankRef": true,
+          "text": "Por la tarde, Pablo y sus amigos _____ al fútbol en el patio.",
+          "opts": [
+            "música",
+            "ocho",
+            "abuela",
+            "nadan",
+            "madre",
+            "autobús",
+            "siete",
+            "hermano",
+            "cantan",
+            "historia",
+            "bicicleta",
+            "juegan",
+            "patio",
+            "nueve",
+            "biblioteca"
+          ],
+          "key": 11,
+          "expl": "\"Los amigos y yo jugamos al fútbol en el patio.\" O \"cantan\" é da aula de música das terças (\"cantamos con la profesora\"), outra atividade."
+        },
+        {
+          "n": 43,
+          "bankRef": true,
+          "text": "La materia favorita de Pablo es _____.",
+          "opts": [
+            "música",
+            "ocho",
+            "abuela",
+            "nadan",
+            "madre",
+            "autobús",
+            "siete",
+            "hermano",
+            "cantan",
+            "historia",
+            "bicicleta",
+            "juegan",
+            "patio",
+            "nueve",
+            "biblioteca"
+          ],
+          "key": 9,
+          "expl": "A amiga pergunta se é a música e ele corrige: \"¡No! Me gusta, pero mi materia favorita es historia\". A música é a pista falsa dita em voz alta."
+        }
+      ]
+    },
+    {
+      "id": "ca-t2",
+      "section": "ca",
+      "title": "Tarea 2 · Nivel A2",
+      "type": "audio-set",
+      "audio": "ca-t2.mp3",
+      "instr": "Usted va a escuchar cinco anuncios o noticias de radio. Elija la opción correcta para cada una de las cinco preguntas. Va a escuchar los anuncios dos veces. El audio ya incluye los 30 segundos para leer las preguntas y las repeticiones.",
+      "questions": [
+        {
+          "n": 44,
+          "text": "Anuncio 1. Si llama a la radio, puede…",
+          "opts": [
+            "conocer al grupo.",
+            "ganar entradas para un concierto.",
+            "recibir el nuevo disco."
+          ],
+          "key": 1,
+          "expl": "\"Radio Joven regala dos entradas para su concierto del sábado.\" O disco aparece dentro da pergunta do concurso (\"¿cómo se llama el primer disco del grupo?\") e conhecer o grupo ninguém promete."
+        },
+        {
+          "n": 45,
+          "text": "Anuncio 2. Los cursos de natación…",
+          "opts": [
+            "son por las mañanas.",
+            "duran hasta el 15 de junio.",
+            "son gratis para los menores de dieciséis años."
+          ],
+          "key": 0,
+          "expl": "\"Clases por las mañanas, de lunes a viernes.\" O 15 de junho é o prazo do DESCONTO (\"si te apuntas antes del 15 de junio, pagas la mitad\"), não a duração do curso, e pagar a metade não é de graça."
+        },
+        {
+          "n": 46,
+          "text": "Anuncio 3. La tienda Deportes Central…",
+          "opts": [
+            "va a cambiar de lugar.",
+            "cierra la próxima semana.",
+            "baja los precios de todos sus productos."
+          ],
+          "key": 0,
+          "expl": "\"Deportes Central cambia de casa: a partir del lunes nos encontrarás en la avenida del Parque.\" O desconto é só de bolas e tênis, não de tudo, e a loja muda de endereço, não fecha."
+        },
+        {
+          "n": 47,
+          "text": "Anuncio 4. En este anuncio se hace publicidad de…",
+          "opts": [
+            "un disco.",
+            "una película.",
+            "un viaje."
+          ],
+          "key": 1,
+          "expl": "\"Llega al cine la película del verano.\" A viagem é o ENREDO (dois irmãos viajam pelo sul) e as canções do grupo Los Vientos são a trilha, mas o que se anuncia é o filme."
+        },
+        {
+          "n": 48,
+          "text": "Noticia 5. La nueva biblioteca…",
+          "opts": [
+            "abre solo entre semana.",
+            "recibió pocas visitas el primer día.",
+            "ofrece talleres los sábados."
+          ],
+          "key": 2,
+          "expl": "\"Los sábados hay talleres de lectura para jóvenes.\" Ela abre \"todos los días\", e o primeiro dia teve \"más de quinientas visitas, muchas más de las esperadas\", o contrário de pouca gente."
+        }
+      ]
+    },
+    {
+      "id": "ca-t3",
+      "section": "ca",
+      "title": "Tarea 3 · Nivel B1",
+      "type": "audio-set",
+      "audio": "ca-t3.mp3",
+      "instr": "Usted va a escuchar a ocho personas que hablan sobre su primer viaje sin su familia. Elija la frase que corresponde a cada persona. Va a escuchar a cada persona dos veces. El audio ya incluye los 30 segundos para leer las frases y las repeticiones.",
+      "bankTitle": "Frases de respuesta",
+      "bank": [
+        "Perdió el transporte de vuelta.",
+        "Viajó para asistir a un concierto.",
+        "Conoció a gente de otros lugares.",
+        "El tiempo le estropeó los planes.",
+        "Se quedó sin dinero.",
+        "Fue el mejor viaje de su vida.",
+        "Se puso enfermo durante el viaje.",
+        "Viajó para ver a un familiar.",
+        "Le robaron algo importante.",
+        "Se perdió en la ciudad.",
+        "Volvió antes de lo previsto."
+      ],
+      "questions": [
+        {
+          "n": 49,
+          "bankRef": true,
+          "text": "Persona 1",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 9,
+          "expl": "\"Dimos vueltas durante dos horas por calles que parecían todas iguales\": perderam-se a caminho do museu, até uma senhora acompanhá-los. Ninguém roubou nada nem houve doença, os nervos foram só do susto."
+        },
+        {
+          "n": 50,
+          "bankRef": true,
+          "text": "Persona 2",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 2,
+          "expl": "No acampamento internacional ela dividiu barraca \"con una francesa y una irlandesa\" e resume: \"lo importante fueron las personas\". É conhecer gente de outros lugares, e não um show, que nem aparece."
+        },
+        {
+          "n": 51,
+          "bankRef": true,
+          "text": "Persona 3",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 0,
+          "expl": "\"Vimos el autobús salir delante de nosotros\": perderam o transporte de volta e esperaram cinco horas pelo seguinte. Ele NÃO voltou antes do previsto, voltou depois, cuidado com a frase vizinha."
+        },
+        {
+          "n": 52,
+          "bankRef": true,
+          "text": "Persona 4",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 3,
+          "expl": "\"Llovió los siete días, ¡los siete!\", e a praia virou jogo de tabuleiro na cabana: o tempo estragou os planos. Ela chega a mencionar a doença, mas para negá-la (\"yo pensé que me iba a enfermar (…) pero no\")."
+        },
+        {
+          "n": 53,
+          "bankRef": true,
+          "text": "Persona 5",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 7,
+          "expl": "Ele voou \"para pasar las vacaciones con mi abuelo, que vive en el sur\": viajou para ver um familiar. O nervosismo com o aeroporto passou, então não é a frase do transporte nem a da doença."
+        },
+        {
+          "n": 54,
+          "bankRef": true,
+          "text": "Persona 6",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 4,
+          "expl": "\"El jueves ya no me quedaba ni para un helado\": gastou tudo nas primeiras tardes e precisou de empréstimo das amigas até para o metrô. Ficar sem dinheiro é o centro da fala, a lição do orçamento é consequência."
+        },
+        {
+          "n": 55,
+          "bankRef": true,
+          "text": "Persona 7",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 5,
+          "expl": "\"De todos los viajes que he hecho, ninguno me ha gustado tanto como ese.\" Ele volta cansado, picado de mosquito e com a roupa suja, mas nada disso é doença nem desastre: é o melhor viagem da vida dele."
+        },
+        {
+          "n": 56,
+          "bankRef": true,
+          "text": "Persona 8",
+          "opts": [
+            "Perdió el transporte de vuelta.",
+            "Viajó para asistir a un concierto.",
+            "Conoció a gente de otros lugares.",
+            "El tiempo le estropeó los planes.",
+            "Se quedó sin dinero.",
+            "Fue el mejor viaje de su vida.",
+            "Se puso enfermo durante el viaje.",
+            "Viajó para ver a un familiar.",
+            "Le robaron algo importante.",
+            "Se perdió en la ciudad.",
+            "Volvió antes de lo previsto."
+          ],
+          "key": 10,
+          "expl": "\"Volvimos el sábado en lugar del miércoles siguiente\": iam ficar dez dias e voltaram aos cinco. Quem ficou doente foi a avó da amiga, não ela, a frase \"se puso enfermo durante el viaje\" é a armadilha desta pessoa."
+        }
+      ]
+    },
+    {
+      "id": "ca-t4",
+      "section": "ca",
+      "title": "Tarea 4 · Nivel B2",
+      "type": "audio-set",
+      "audio": "ca-t4.mp3",
+      "instr": "Usted va a escuchar, en versión locutada, una entrevista a Camila Torres, una joven diseñadora de videojuegos colombiana. Elija la opción correcta para cada una de las ocho preguntas. Va a escuchar la entrevista dos veces. El audio ya incluye los 45 segundos para leer las preguntas y la repetición.",
+      "questions": [
+        {
+          "n": 57,
+          "text": "Camila dice que, al principio, su estudio…",
+          "opts": [
+            "fue el primero de su país.",
+            "no era tomado en serio.",
+            "tenía muchos empleados."
+          ],
+          "key": 1,
+          "expl": "\"Cuando empezamos, en la industria nadie nos tomaba en serio: éramos tres estudiantes haciendo jueguitos, como decían.\" Ela mesma nega o pioneirismo (\"no fuimos el primer estudio de Colombia, ya había varios\") e o tamanho: eram três."
+        },
+        {
+          "n": 58,
+          "text": "La idea de crear el estudio nació cuando Camila…",
+          "opts": [
+            "terminó la carrera.",
+            "trabajaba en una gran empresa de tecnología.",
+            "participó en un concurso universitario."
+          ],
+          "key": 2,
+          "expl": "Foi no concurso de 48 horas da universidade, ao receber o prêmio: \"si esto lo hicimos en un fin de semana, ¿qué haríamos en un año?\". Ela desmente as outras duas na sequência: \"muchos creen que fundé la empresa al graduarme, pero no\" e \"nunca pasé por una empresa grande de tecnología, como sí hicieron mis socios\"."
+        },
+        {
+          "n": 59,
+          "text": "Para Camila, lo más importante para entrar en la industria es…",
+          "opts": [
+            "tener una computadora potente.",
+            "terminar juegos pequeños.",
+            "conocer a la gente correcta."
+          ],
+          "key": 1,
+          "expl": "\"Lo esencial es terminar cosas: es preferible tener tres juegos pequeños y terminados que un proyecto gigante que nunca sale del cajón.\" A computadora cara e os contatos são exatamente o que ela chama de \"secundario\"."
+        },
+        {
+          "n": 60,
+          "text": "Camila dice que su estudio…",
+          "opts": [
+            "vendió dos millones de copias.",
+            "abrió una sede en el extranjero.",
+            "tiene doce trabajadores."
+          ],
+          "key": 2,
+          "expl": "\"Somos doce personas: programadores, artistas, una música increíble…\" Os dois milhões são DESCARGAS, a maioria gratuita (\"no vendimos dos millones de copias, ¡ojalá!\"), e a sede fora do país foi proposta e recusada: \"por ahora seguimos todos en Medellín\"."
+        },
+        {
+          "n": 61,
+          "text": "Según Camila, el principal problema del comienzo fue…",
+          "opts": [
+            "conseguir dinero.",
+            "encontrar buenos programadores.",
+            "la falta de tiempo."
+          ],
+          "key": 0,
+          "expl": "\"Sin duda, el financiamiento. Los bancos no le prestan a tres muchachos que hacen videojuegos.\" Tempo e programadores ela cita de passagem como problemas que \"se resuelven\"; o que quase fechou o estúdio duas vezes foi não ter com que pagar os salários."
+        },
+        {
+          "n": 62,
+          "text": "Los juegos del estudio de Camila se caracterizan por…",
+          "opts": [
+            "tener gráficos realistas.",
+            "estar pensados para jugadores expertos.",
+            "estar basados en historias locales."
+          ],
+          "key": 2,
+          "expl": "\"Nuestra marca son las leyendas latinoamericanas: la Llorona, el Mohán, historias que escuchábamos de nuestras abuelas.\" Os gráficos \"no buscan el realismo, al contrario\", e os jogos são para qualquer um, \"para que mi mamá y un jugador experto los disfruten igual\"."
+        },
+        {
+          "n": 63,
+          "text": "Sobre las mujeres en la industria, Camila dice que…",
+          "opts": [
+            "ya son mayoría en su estudio.",
+            "acompaña a las que están empezando.",
+            "los eventos del sector las ignoran por completo."
+          ],
+          "key": 1,
+          "expl": "\"Dedico los viernes a un programa de mentoría: acompaño a chicas que están armando su primer juego.\" No estúdio elas são \"cinco de doce, ni siquiera la mitad\", ainda não maioria, e o que os eventos faziam era outra coisa: perguntavam \"a cuál de mis compañeros ayudaba\"."
+        },
+        {
+          "n": 64,
+          "text": "Sobre el futuro, Camila dice que quiere…",
+          "opts": [
+            "dar clases en la universidad.",
+            "mudarse a otro país.",
+            "vender el estudio a una empresa grande."
+          ],
+          "key": 0,
+          "expl": "\"Mi sueño pendiente es otro: volver a mi universidad, pero del otro lado del salón, a dar clases de diseño de juegos.\" Vender e sair do país são as duas propostas que ela recusa em voz alta: \"la respuesta es no\" e \"¿irme del país? Tampoco\"."
+        }
+      ]
+    },
+    {
+      "id": "ca-t5",
+      "section": "ca",
+      "title": "Tarea 5 · Nivel C1",
+      "type": "audio-set",
+      "audio": "ca-t5.mp3",
+      "instr": "Usted va a escuchar, en versión locutada, seis fragmentos de una conferencia de la socióloga española Marina Vidal titulada «Leer en tiempos de pantallas». Elija, para cada fragmento, la opción que contenga una de las ideas mencionadas. Va a escuchar los fragmentos dos veces. El audio ya incluye los 45 segundos para leer las opciones y la repetición.",
+      "questions": [
+        {
+          "n": 65,
+          "text": "Fragmento 1",
+          "opts": [
+            "Hoy se lee menos que en cualquier época anterior.",
+            "La lectura no ha desaparecido, sino que ha cambiado de forma.",
+            "Las pantallas han sustituido por completo al papel."
+          ],
+          "key": 1,
+          "expl": "\"Lo que ha cambiado no es la cantidad de lectura, sino su naturaleza: leemos más, pero de otra manera.\" A conferência abre desmentindo (a), \"nunca en la historia se había leído tanto texto como hoy\", e fecha o fragmento desmentindo (c): \"el papel convive con la pantalla, no ha sido enterrado por ella\"."
+        },
+        {
+          "n": 66,
+          "text": "Fragmento 2",
+          "opts": [
+            "La lectura profunda y la rápida ejercitan la misma habilidad.",
+            "El modo de leer en pantallas favorece los saltos de atención.",
+            "Los lectores jóvenes son incapaces de concentrarse."
+          ],
+          "key": 1,
+          "expl": "\"La lectura en pantalla nos entrena para saltar: un titular aquí, un enlace allá.\" Ela diz que são habilidades DISTINTAS, o que elimina (a), e recusa o diagnóstico apocalíptico de (c): \"no es que los jóvenes no puedan concentrarse, es que el entorno les propone (…) no hacerlo\"."
+        },
+        {
+          "n": 67,
+          "text": "Fragmento 3",
+          "opts": [
+            "La ficción permite ensayar el punto de vista de otras personas.",
+            "Quienes leen novelas son moralmente superiores.",
+            "Los estudios sobre lectura y empatía son concluyentes."
+          ],
+          "key": 0,
+          "expl": "\"Una novela es un simulador de vidas: nos obliga a mirar el mundo (…) con los ojos de otro\", um \"ensayo general de perspectivas\". Ela nega a superioridade moral (\"eso no convierte a los lectores en mejores personas, conozco lectores insoportables\") e pede prudência com os estudos: \"la evidencia todavía se discute\", o contrário de concluyentes."
+        },
+        {
+          "n": 68,
+          "text": "Fragmento 4",
+          "opts": [
+            "Las escuelas deberían prohibir los dispositivos en el aula.",
+            "Conviene enseñar a alternar entre modos de lectura.",
+            "La escuela ya dedica demasiado tiempo a la lectura digital."
+          ],
+          "key": 1,
+          "expl": "\"La escuela inteligente enseña a cambiar de marcha (…) alternar entre los dos modos, y saber cuándo corresponde cada uno.\" Proibir as telas é uma das \"dos tentaciones igual de equivocadas\", então (a) é o que ela critica, não o que defende."
+        },
+        {
+          "n": 69,
+          "text": "Fragmento 5",
+          "opts": [
+            "Escuchar historias responde a una necesidad muy antigua.",
+            "Los audiolibros empobrecen la experiencia literaria.",
+            "La escritura es anterior a la narración oral."
+          ],
+          "key": 0,
+          "expl": "\"¿Qué hacía la humanidad durante los milenios anteriores a la escritura? Contaba.\" A narração oral \"no es la hermana pobre de la lectura: es su madre\", o que inverte (c), e quem escuta um romance \"no está haciendo trampa\", o contrário de empobrecer."
+        },
+        {
+          "n": 70,
+          "text": "Fragmento 6",
+          "opts": [
+            "En el futuro, la lectura profunda será una capacidad valiosa.",
+            "La nostalgia es la mejor guía para pensar la lectura.",
+            "Dentro de poco, todos los libros serán digitales."
+          ],
+          "key": 0,
+          "expl": "\"La capacidad de leer una hora seguida será tan valiosa como hoy lo es hablar tres idiomas.\" E não por nostalgia: \"la nostalgia es mala consejera\", desmentindo (b). Sobre o formato futuro dos livros ela não arrisca nada: \"no sé cómo leeremos dentro de treinta años\"."
+        }
+      ]
+    },
+    {
+      "id": "ca-t6",
+      "section": "ca",
+      "title": "Tarea 6 · Nivel C1",
+      "type": "audio-set",
+      "audio": "ca-t6.mp3",
+      "instr": "Usted va a escuchar, en versión locutada, un fragmento de una conferencia del sociólogo mexicano Andrés Palacios sobre la amistad en los tiempos de las redes sociales. En ella se mencionan seis de las doce opciones que aparecen a continuación. Elija las seis opciones que corresponden a esta conferencia. Para quitar una opción seleccionada, pulse de nuevo sobre ella. Va a escuchar la conferencia dos veces. El audio ya incluye los 50 segundos para leer las opciones y la repetición.",
+      "questions": [
+        {
+          "n": 71,
+          "type": "multi",
+          "pick": 6,
+          "items": 6,
+          "text": "Elija las seis ideas que se mencionan en la conferencia.",
+          "opts": [
+            "Las palabras «amigo» y «contacto» se usan hoy casi como sinónimos.",
+            "Para el conferenciante, las amistades nacidas en internet no pueden considerarse verdaderas.",
+            "Las redes sociales han aumentado el tiempo libre de los jóvenes.",
+            "Sostener una amistad exige tiempo compartido y presencia.",
+            "El número de vínculos estrechos que una persona puede cultivar es limitado.",
+            "Tener muchos contactos garantiza compañía en los momentos difíciles.",
+            "Las redes permiten conservar amistades que antes se perdían.",
+            "Los adultos hacen amigos con más facilidad que los adolescentes.",
+            "La amistad en la adolescencia contribuye a la construcción de la identidad.",
+            "Aristóteles clasificaba las amistades según su duración.",
+            "El conferenciante propone abandonar las redes sociales.",
+            "Compartir el silencio con alguien es también una forma de amistad."
+          ],
+          "keys": [
+            0,
+            3,
+            4,
+            6,
+            8,
+            11
+          ],
+          "expl": "As seis mencionadas são (a), (d), (e), (g), (i) e (l). O conferencista abre com o filho de \"setecientos doce\" amigos e diz que \"la palabra amigo y la palabra contacto se han vuelto prácticamente intercambiables\" (a); afirma que \"una amistad se sostiene con horas compartidas, con presencia\" (d); cita os estudos segundo os quais \"el círculo de vínculos estrechos (…) es limitado\" (e); reconhece o lado bom das redes, \"el amigo que se muda de país ya no se pierde\" (g); chama a amizade adolescente de \"el taller donde se construye la identidad\" (i); e fecha com a aluna para quem a melhor amiga é \"la única persona con la que puedo estar callada\" (l). Os distratores mais perigosos: (b) é negado na letra, \"no vengo a decirles que las amistades que nacen o viven en internet sean falsas\"; (f) é o inverso de \"tener setecientos contactos no significa tener con quién llorar un martes por la noche\"; (j) atribui a Aristóteles um critério que ele não usou, o filósofo distinguia as amizades \"por lo que buscamos en ellas: la utilidad, el placer o el bien del otro\", nunca pela duração; e (k) contradiz o próprio movimento da fala, que pede \"no quedarnos en la queja\" em vez de abandonar as redes."
+        }
+      ]
+    }
+  ],
+  "minis": [
+    {
+      "id": "niveles-a",
+      "name": "Nivel A1–A2",
+      "desc": "Tareas iniciales de las dos pruebas · 20 preguntas",
+      "units": [
+        "cl-t1",
+        "cl-t2",
+        "ca-t1",
+        "ca-t2"
+      ]
+    },
+    {
+      "id": "nivel-b1",
+      "name": "Nivel B1",
+      "desc": "Tarea 3 de lectura y Tarea 3 de audición · 16 preguntas",
+      "units": [
+        "cl-t3",
+        "ca-t3"
+      ]
+    },
+    {
+      "id": "nivel-b2",
+      "name": "Nivel B2",
+      "desc": "Tarea 4 de lectura (dos textos) y la entrevista · 16 preguntas",
+      "units": [
+        "cl-t4a",
+        "cl-t4b",
+        "ca-t4"
+      ]
+    },
+    {
+      "id": "nivel-c1",
+      "name": "Nivel C1",
+      "desc": "Texto con doce huecos y las dos conferencias · 24 preguntas",
+      "units": [
+        "cl-t5",
+        "ca-t5",
+        "ca-t6"
+      ]
+    }
+  ]
+}
