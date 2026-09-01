@@ -1463,8 +1463,15 @@
       var av = document.createElement('div');
       av.className = 'cefr-note';
       av.style.cssText = 'max-width:680px;margin:.9rem auto 0;border-left-color:#D97706';
+      /* A BANCA VEM DO BANCO, como o toolName (01/09/2026). Estava fixa em
+         "Michigan Language Assessment", e o aviso do SIELE — que e do
+         Instituto Cervantes — dizia ao aluno de espanhol que ele nao estava
+         fazendo uma prova oficial de uma banca que nunca teve nada com o
+         exame dele. Banco sem `banca` continua caindo no Michigan, que e de
+         onde a ferramenta veio. */
       av.textContent = '🚧 Simulado marcado com 🚧 está em construção, escrito pela Fisk. Não é uma '
-        + 'prova oficial da Michigan Language Assessment, e nada que você responder nele é registrado.';
+        + 'prova oficial ' + (DATA.banca || 'da Michigan Language Assessment')
+        + ', e nada que você responder nele é registrado.';
       $('hero-sub').insertAdjacentElement('afterend', av);
     }
     /* Identidade da ferramenta. O HTML nasce com os textos do MET; quando o
