@@ -2,8 +2,9 @@
 
 Roteiros completos da **Comprensión auditiva** do `questions/siele-m1.json`,
 para gerar os seis MP3s de `audio/siele-m1/` (`ca-t1.mp3` … `ca-t6.mp3`, os
-nomes que o banco já aponta). **Os áudios ainda não existem**: enquanto não
-existirem, o banco fica em `rascunho: true`.
+nomes que o banco já aponta). **Os áudios existem desde 01/09/2026**
+(`scripts/montar-siele.py`, edge-TTS); o banco segue em `rascunho: true`
+até o Pedro ouvir e aprovar.
 
 ## Como gerar
 
@@ -25,15 +26,37 @@ repetição embutidos, no desenho medido no Modelo 0
 | Papel | Voz edge-TTS | Variante | Ritmo |
 |---|---|---|---|
 | NARRADOR (instruções, "Persona N", "Conteste a la pregunta…") | `es-US-AlonsoNeural` | neutra | `-5%` |
-| Tarea 1 · MUJER (vecina) | `es-MX-DaliaNeural` | mexicana | `-10%` |
-| Tarea 1 · PABLO | `es-MX-JorgeNeural` | mexicana | `-10%` |
-| Tarea 2 · Anuncios 1, 3 e 5 | `es-ES-AlvaroNeural` | peninsular | `-8%` |
-| Tarea 2 · Anuncios 2 e 4 | `es-ES-ElviraNeural` | peninsular | `-8%` |
-| Tarea 3 · ver tabela da tarefa | mistas | mistas | `-6%` |
-| Tarea 4 · PERIODISTA | `es-MX-JorgeNeural` | mexicana | `-5%` |
-| Tarea 4 · CAMILA | `es-CO-SalomeNeural` | colombiana | `-5%` |
-| Tarea 5 · CONFERENCIANTE | `es-ES-ElviraNeural` | peninsular | `-4%` |
-| Tarea 6 · CONFERENCIANTE | `es-MX-JorgeNeural` | mexicana | `-4%` |
+| Tarea 1 · MUJER (vecina) | `es-MX-DaliaNeural` | mexicana | `-38%` |
+| Tarea 1 · PABLO | `es-MX-JorgeNeural` | mexicana | `-38%` |
+| Tarea 2 · Anuncios 1, 3 e 5 | `es-ES-AlvaroNeural` | peninsular | `-29%` |
+| Tarea 2 · Anuncios 2 e 4 | `es-ES-ElviraNeural` | peninsular | `-29%` |
+| Tarea 3 · ver tabela da tarefa | mistas | mistas | `-30%` |
+| Tarea 4 · PERIODISTA | `es-MX-JorgeNeural` | mexicana | `-15%` |
+| Tarea 4 · CAMILA | `es-CO-SalomeNeural` | colombiana | `-15%` |
+| Tarea 5 · CONFERENCIANTE | `es-ES-ElviraNeural` | peninsular | `-24%` |
+| Tarea 6 · CONFERENCIANTE | `es-MX-JorgeNeural` | mexicana | `-11%` |
+
+⚠️ **Estes ritmos são MEDIDOS, não escolhidos** (01/09/2026). A primeira versão
+da tabela trazia `-10%` a `-4%`, escritos no olho: gerado e medido contra o
+áudio **oficial** do Modelo 0 (`audio/siele-m0/`, gravação humana), o resultado
+saiu de 12% a 46% **mais rápido** que o exame, e pior justamente nos níveis
+baixos (A1 a 186 ppm contra 134 do oficial). Com os números acima, as seis
+tarefas caem dentro de 0 a 2% do ritmo oficial:
+
+| | A1 | A2 | B1 | B2 | C1 | C1 |
+|---|---|---|---|---|---|---|
+| oficial (Modelo 0) | 134 | 146 | 139 | 147 | 141 | 157 |
+| nosso (Modelo 1) | 134 | 150 | 139 | 148 | 142 | 159 |
+
+Repare que **o exame acelera conforme o nível sobe**: 134 ppm no A1, 157 no C1.
+Um ritmo único para as seis tarefas apagaria essa escada, que é parte do que a
+prova mede.
+
+⚠️ **A régua é ppm sobre a FALA REAL**, medida no próprio arquivo com o
+`silencedetect` do ffmpeg, nunca sobre a duração total nem sobre os colchetes
+do roteiro. Colchete é silêncio PLANEJADO, e o TTS acrescenta silêncio próprio
+em cada emenda: medindo pelos colchetes, as seis tarefas pareciam certas, e
+não estavam.
 
 O narrador é um timbre fixo que não dubla nenhum personagem, regra herdada do
 MET. A variante alterna ENTRE tarefas (como o SIELE real), nunca dentro do
