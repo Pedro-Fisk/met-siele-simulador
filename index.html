@@ -612,6 +612,100 @@
     .prof-nav { display: flex; gap: .7rem; align-items: center; }
     .prof-nav .btn { flex: 1; padding: .75rem 1rem; font-size: .92rem; }
 
+    /* ⚠️ O TAMANHO NA TV É ENCAIXADO, NÃO FIXO (17/09/2026). Até aqui o modo
+       professor usava as mesmas fontes do aluno numa coluna de 880 px: na TV
+       da sala a turma não lia a questão, e a barra de botões ficava no fim da
+       página, obrigando o professor a rolar a cada item. Agora, só com
+       `body.prof-mode` (o aluno não é tocado):
+       (1) as fontes são proporcionais à LARGURA e à ALTURA (`min(vw, vh)`),
+           multiplicadas pelo fator `--pf`;
+       (2) `profEncaixa()` reduz o `--pf` (passo 0,05, mínimo 0,55) até o fim
+           do cartão (texto de leitura, player, questão, opções e a explicação
+           aberta) ficar acima da barra;
+       (3) a barra é fixa no rodapé (`#prof-bar`), como no Quick Practice.
+       Leitura vai em duas colunas (texto à esquerda, questão à direita): numa
+       coluna só, o texto de 1.900 caracteres empurrava a questão para fora. */
+    body.prof-mode #screen-quiz .container { max-width: min(96vw, 1800px); }
+    body.prof-mode #quiz-body { --pf: 1; padding-bottom: 1rem; }
+    body.prof-mode .prof-progress {
+      font-size: clamp(.75rem, min(.9vw, 1.6vh), 1.3rem); margin: 1vh 0 .3vh;
+    }
+    body.prof-mode .sec-header { margin: .6vh 0 0; }
+    body.prof-mode .sec-header h2 { font-size: calc(clamp(1rem, min(1.4vw, 2.5vh), 2.2rem) * var(--pf)); }
+    body.prof-mode .unit-card { margin-top: .8vh; padding: calc(min(1.4vw, 2.4vh) * var(--pf)) 1.6vw; }
+    body.prof-mode .unit-title { font-size: calc(clamp(.95rem, min(1.2vw, 2.1vh), 1.9rem) * var(--pf)); margin-bottom: .6vh; }
+    body.prof-mode .unit-instr,
+    body.prof-mode .source-note { font-size: calc(clamp(.85rem, min(1.05vw, 1.9vh), 1.7rem) * var(--pf)); }
+    body.prof-mode .passage-intro { font-size: calc(clamp(.9rem, min(1.2vw, 2.1vh), 1.9rem) * var(--pf)); }
+    body.prof-mode .passage,
+    body.prof-mode .text-box {
+      font-size: calc(clamp(.9rem, min(1.25vw, 2.25vh), 2.1rem) * var(--pf));
+      line-height: 1.5; margin-bottom: 0;
+    }
+    body.prof-mode .text-box h4 { font-size: 1.1em; }
+    body.prof-mode .text-box .text-tag { width: 1.7em; height: 1.7em; font-size: .9em; }
+    body.prof-mode .gap { font-size: .8em; height: 1.4em; min-width: 2.6em; }
+    body.prof-mode .texts-grid { margin-bottom: 0; }
+    body.prof-mode .q-ref { font-size: calc(clamp(.7rem, min(.9vw, 1.6vh), 1.3rem) * var(--pf)); }
+    body.prof-mode .q-text {
+      font-size: calc(clamp(1.3rem, min(2.4vw, 4.2vh), 4.5rem) * var(--pf));
+      line-height: 1.3; margin-bottom: calc(1.4vh * var(--pf));
+    }
+    body.prof-mode .q-num { min-width: 1.6em; }
+    body.prof-mode .opts {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: calc(1vh * var(--pf)) 1vw; margin-top: 0;
+    }
+    body.prof-mode .opts.prof-opts-muitas { grid-template-columns: repeat(3, 1fr); }
+    body.prof-mode .opt {
+      font-size: calc(clamp(1.05rem, min(1.8vw, 3.2vh), 3.2rem) * var(--pf));
+      padding: calc(min(1.1vw, 1.9vh) * var(--pf)) 1.2vw;
+      border-radius: .6em; gap: .6em; line-height: 1.3; align-items: center;
+    }
+    body.prof-mode .opt .letter { width: 1.6em; height: 1.6em; font-size: .85em; }
+    body.prof-mode .multi-hint { font-size: calc(clamp(.85rem, min(1.1vw, 2vh), 1.8rem) * var(--pf)); }
+    body.prof-mode .expl {
+      font-size: calc(clamp(1rem, min(1.5vw, 2.7vh), 2.6rem) * var(--pf));
+      line-height: 1.45; margin-top: calc(1.4vh * var(--pf));
+      padding: calc(1vh * var(--pf)) 1.2vw;
+    }
+    /* leitura: texto à esquerda, questão à direita */
+    body.prof-mode .prof-leitura {
+      display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 2vw; align-items: start;
+    }
+    body.prof-mode .prof-leitura > .q-block { margin-top: 0; padding-top: 0; border-top: none; }
+    body.prof-mode .prof-leitura .q-text { font-size: calc(clamp(1.1rem, min(1.8vw, 3.2vh), 3.4rem) * var(--pf)); }
+    body.prof-mode .prof-leitura .opt { font-size: calc(clamp(1rem, min(1.4vw, 2.5vh), 2.6rem) * var(--pf)); }
+    body.prof-mode .prof-leitura .opts { grid-template-columns: 1fr; }
+    body.prof-mode .prof-leitura .opts.prof-opts-muitas { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 900px) {
+      body.prof-mode .prof-leitura { grid-template-columns: 1fr; }
+      body.prof-mode .opts, body.prof-mode .opts.prof-opts-muitas { grid-template-columns: 1fr; }
+    }
+    /* a barra do professor, fixa no rodapé da tela da questão */
+    .prof-bar { display: none; }
+    body.prof-mode .prof-bar.on { display: block; padding: .6vh 1.25rem .5vh; }
+    .prof-bar-inner { flex-direction: column; align-items: stretch; gap: .35vh; max-width: min(96vw, 1800px); }
+    body.prof-mode .prof-nav .btn {
+      font-size: clamp(.9rem, min(1.15vw, 2vh), 1.8rem);
+      padding: clamp(.6rem, 1.2vh, 1.2rem) 1rem;
+    }
+    .prof-atalhos {
+      font: 600 clamp(.7rem, min(.8vw, 1.4vh), 1.1rem) var(--font-b);
+      color: var(--text-soft); text-align: center;
+    }
+    /* a troca de modo, para quem chegou pelo Portal com `modo` na URL */
+    .modo-troca {
+      display: none; align-items: center; gap: .3rem;
+      margin: .8rem 0 0 .4rem; padding: .3rem .9rem; border-radius: 999px;
+      border: 1.5px solid #a78bfa; color: #c4b5fd; background: transparent;
+      font: 700 .78rem var(--font-h); letter-spacing: .02em; white-space: nowrap;
+      text-decoration: none; cursor: pointer; vertical-align: top;
+    }
+    .modo-troca:hover { background: rgba(124,58,237,.25); color: #fff; }
+    body.tem-troca .modo-troca { display: inline-flex; }
+
     /* ── Results ── */
     .results-hero { text-align: center; padding: 2.2rem 0 .8rem; }
     .score-ring { position: relative; width: 150px; height: 150px; margin: 0 auto 1rem; }
@@ -795,7 +889,7 @@
       </a>
       <h1 id="home-h1">Treino MET</h1>
       <p id="hero-sub">Michigan English Test · Practice Test #5 RED</p>
-      <span class="prof-badge" id="prof-badge" style="display:none">📺 Modo Professor</span>
+      <span class="prof-badge" id="prof-badge" style="display:none">📺 Modo Professor</span><a id="modo-troca" class="modo-troca" href="#"></a>
     </header>
 
     <main class="container" style="flex:1">
@@ -888,6 +982,14 @@
         <button class="btn btn-primary" id="phase-btn" style="min-width:220px">Enviar respostas</button>
       </div>
     </div>
+    <!-- Barra do modo professor (17/09/2026): mora fora do #quiz-body, que o
+         profRender apaga a cada questão, e só aparece com body.prof-mode. -->
+    <div class="action-bar prof-bar" id="prof-bar">
+      <div class="action-bar-inner prof-bar-inner">
+        <div class="prof-nav" id="prof-nav"></div>
+        <div class="prof-atalhos" id="prof-atalhos"></div>
+      </div>
+    </div>
   </div>
 
   <!-- ═══════════ PAINEL DO PROFESSOR: RESULTADOS ═══════════ -->
@@ -962,6 +1064,38 @@
     return p;
   }
   const PROF_MODE = new URLSearchParams(location.search).get('modo') === 'professor';
+  /* a classe liga todo o CSS de TV; sem ela o aluno vê a página de sempre */
+  if (PROF_MODE) document.body.classList.add('prof-mode');
+  /* Textos do modo professor na língua do exame: o SIELE (m0 e m1) é
+     projetado para turma de espanhol. */
+  const PROF_ES = /^siele/.test((new URLSearchParams(location.search).get('exame') || '').toLowerCase());
+  const PROF_TXT = PROF_ES ? {
+    trocaAluno: '👤 Pasar al Modo Alumno',
+    trocaProf:  '📺 Pasar al Modo Profesor',
+    atalhos:    'Teclado o puntero: → siguiente · ← atrás · Espacio revela · A–D marca la respuesta del grupo'
+  } : {
+    trocaAluno: '👤 Switch to Student Mode',
+    trocaProf:  '📺 Switch to Teacher Mode',
+    atalhos:    'Keyboard or clicker: → next · ← back · Space reveals · A–D marks the class answer'
+  };
+
+  /* ── A troca de modo (17/09/2026) ──
+     O professor chega pelo Portal do Aluno, na visão do professor, e o card
+     de lá abre com `?modo=professor`. Quem chega assim (ou com `?modo=aluno`,
+     depois de trocar) ganha o botão que alterna os dois modos sem sair da
+     ferramenta, para conferir como o aluno vê a prova. O aluno comum, que
+     chega sem `modo`, não vê botão nenhum. O resto da query (`exame`) e o
+     fragmento (#raf=&nome=) viajam junto. */
+  (function () {
+    const qs = new URLSearchParams(location.search);
+    if (!qs.has('modo')) return;
+    const a = document.getElementById('modo-troca');
+    if (!a) return;
+    document.body.classList.add('tem-troca');
+    qs.set('modo', PROF_MODE ? 'aluno' : 'professor');
+    a.href = location.pathname + '?' + qs.toString() + location.hash;
+    a.textContent = PROF_MODE ? PROF_TXT.trocaAluno : PROF_TXT.trocaProf;
+  })();
 
   /* Qual exame abrir: ?exame=met (padrão, inglês) ou ?exame=siele (espanhol, S1).
      O engine é o mesmo — só muda o banco de itens. */
@@ -2801,34 +2935,74 @@
 
     const card = document.createElement('div');
     card.className = 'unit-card';
+    card.id = 'prof-card';
+    /* Leitura em duas colunas na TV (17/09/2026): o texto fica à esquerda e a
+       questão à direita, senão o texto empurra a questão para baixo da barra. */
+    const leitura = unit.type === 'reading' || unit.type === 'reading-multi';
+    const col = leitura ? document.createElement('div') : card;
+    if (leitura) { card.classList.add('prof-leitura'); card.appendChild(col); }
     if (unit.title) {
       const t = document.createElement('div');
       t.className = 'unit-title';
       t.innerHTML = '<span class="dot"></span>' + esc(unit.title);
-      card.appendChild(t);
+      col.appendChild(t);
     }
-    if (unit.audio) card.appendChild(getPlayer(unit, unit.audio, unit.cues));
+    /* A instrução da tarefa do SIELE (quantas vezes o áudio toca, o que
+       fazer) faltava aqui até 17/09/2026: o modo aluno mostrava e o professor,
+       que lê a instrução para a turma, não. */
+    if (unit.instr) {
+      const ins = document.createElement('div');
+      ins.className = 'unit-instr';
+      ins.textContent = unit.instr;
+      col.appendChild(ins);
+    }
+    if (unit.audio) col.appendChild(getPlayer(unit, unit.audio, unit.cues));
     if (unit.type === 'reading') {
       const pi = document.createElement('div');
       pi.className = 'passage-intro';
       pi.textContent = unit.passageIntro;
-      card.appendChild(pi);
+      col.appendChild(pi);
       const pass = document.createElement('div');
       pass.className = 'passage';
       pass.innerHTML = unit.passage;
-      card.appendChild(pass);
+      col.appendChild(pass);
     }
     if (unit.type === 'reading-multi') {
       const grid = document.createElement('div');
       grid.className = 'texts-grid';
-      unit.texts.forEach(t => {
+      /* SÓ O TEXTO REFERIDO NA TV (17/09/2026). A Tarea 1 do SIELE tem cinco
+         textos curtos: em grade, o encaixe descia o `--pf` a 0,55 e a turma
+         não lia nada, embora a questão já diga "se refiere al texto 2".
+         Quando a questão aponta UM texto, só ele aparece, com o rótulo
+         "Texto 2 de 5"; sem `ref` (EMERALD, AMBER, Tarea 3) ou com
+         `ref: 'multi'`, todos continuam. O SIELE grava `ref: '2'` e a
+         etiqueta `'Texto 2'`, o MET grava `'A'` nos dois: casam os dois. */
+      const casa = t => q.ref === t.tag || String(t.tag).replace(/^\D+/, '') === q.ref;
+      const idx = q.ref && q.ref !== 'multi' ? unit.texts.findIndex(casa) : -1;
+      if (idx >= 0) {
+        const rot = document.createElement('div');
+        rot.className = 'q-ref';
+        rot.textContent = (PROF_ES ? 'Texto {i} de {n}' : 'Text {i} of {n}')
+          .replace('{i}', idx + 1).replace('{n}', unit.texts.length);
+        col.appendChild(rot);
+        grid.style.gridTemplateColumns = '1fr';
+      }
+      unit.texts.forEach((t, i) => {
+        if (idx >= 0 && i !== idx) return;
         const box = document.createElement('div');
         box.className = 'text-box';
-        if (q.ref === t.tag || q.ref === 'multi') box.classList.add('highlight');
+        if (idx < 0 && q.ref === 'multi') box.classList.add('highlight');
         box.innerHTML = '<span class="text-tag">' + t.tag + '</span>' + t.html;
         grid.appendChild(box);
       });
-      card.appendChild(grid);
+      col.appendChild(grid);
+    }
+    if (unit.sourceNote) {
+      const sn = document.createElement('div');
+      sn.className = 'source-note';
+      sn.style.margin = '.5rem 0 0';
+      sn.textContent = unit.sourceNote;
+      col.appendChild(sn);
     }
 
     // Questão única do passo
@@ -2847,7 +3021,8 @@
     qt.innerHTML = '<span class="q-num">' + q.n + '.</span><span>' + q.text + (q.replay ? ' ' + SPEAKER_SVG : '') + '</span>';
     block.appendChild(qt);
     const optsWrap = document.createElement('div');
-    optsWrap.className = 'opts';
+    // banco do SIELE (até 15 opções): três colunas na TV, e não duas
+    optsWrap.className = 'opts' + (q.opts.length > 6 ? ' prof-opts-muitas' : '');
     q.opts.forEach((txt, j) => {
       const b = document.createElement('button');
       b.className = 'opt';
@@ -2878,16 +3053,16 @@
     block.appendChild(ex);
     card.appendChild(block);
     body.appendChild(card);
+    state.profQ = q;   // o teclado revela a questão da tela
 
-    // Navegação
-    const nav = document.createElement('div');
-    nav.className = 'prof-nav';
-    nav.style.margin = '1.2rem 0 2rem';
+    // Navegação, na barra fixa do rodapé (fora do #quiz-body)
+    const nav = $('prof-nav');
+    nav.innerHTML = '';
     const prev = document.createElement('button');
     prev.className = 'btn btn-ghost';
     prev.textContent = '← Anterior';
     prev.disabled = state.stepIdx === 0;
-    prev.addEventListener('click', () => { if (state.stepIdx > 0) { state.stepIdx--; profRender(); } });
+    prev.addEventListener('click', profPrev);
     const reveal = document.createElement('button');
     reveal.className = 'btn btn-accent';
     reveal.id = 'prof-reveal';
@@ -2896,19 +3071,81 @@
     const next = document.createElement('button');
     next.className = 'btn btn-primary';
     next.textContent = state.stepIdx === state.steps.length - 1 ? 'Concluir ✓' : 'Próxima →';
-    next.addEventListener('click', () => {
-      if (state.stepIdx === state.steps.length - 1) { profEnd(); }
-      else { state.stepIdx++; profRender(); window.scrollTo(0, 0); }
-    });
+    next.addEventListener('click', profNext);
     // mudo do som de acerto, junto dos controles que o professor já usa
     const som = document.createElement('button');
     som.className = 'btn btn-ghost som-toggle';
     som.type = 'button';
     som.addEventListener('click', alternarSom);
     nav.append(prev, reveal, next, som);
-    body.appendChild(nav);
+    $('prof-atalhos').textContent = PROF_TXT.atalhos;
+    $('prof-bar').classList.add('on');
     pintarBotoesSom();
+    profEncaixa();
   }
+
+  function profPrev() {
+    if (state.stepIdx > 0) { state.stepIdx--; profRender(); }
+  }
+  function profNext() {
+    if (state.stepIdx === state.steps.length - 1) { profEnd(); }
+    else { state.stepIdx++; profRender(); }
+  }
+
+  /* Reduz o fator de tamanho até o cartão da questão (texto de leitura,
+     player, opções e a explicação, se aberta) terminar acima da barra.
+     Ver o comentário do `--pf` no CSS. Chamado ao desenhar, ao revelar, no
+     resize e quando as fontes do Google terminam de carregar (a primeira
+     medida, com a fonte reserva, sai menor que a real). */
+  function profEncaixa() {
+    const body = $('quiz-body');
+    const card = $('prof-card');
+    const bar = $('prof-bar');
+    if (!PROF_MODE || !card || !bar || !bar.classList.contains('on')) return;
+    if (!$('screen-quiz').classList.contains('active')) return;
+    let pf = 1;
+    body.style.setProperty('--pf', pf);
+    window.scrollTo(0, 0);
+    const fundo = () => card.getBoundingClientRect().bottom;
+    const teto = () => bar.getBoundingClientRect().top - 12;
+    while (pf > 0.55 && fundo() > teto()) {
+      pf = Math.round((pf - 0.05) * 100) / 100;
+      body.style.setProperty('--pf', pf);
+    }
+  }
+  window.addEventListener('resize', () => { if (PROF_MODE) profEncaixa(); });
+  if (PROF_MODE && document.fonts && document.fonts.ready) document.fonts.ready.then(profEncaixa);
+
+  /* O professor passa as questões pelo teclado ou pelo passador de slides
+     (que manda PageDown/PageUp ou as setas): a mão não precisa ir ao mouse no
+     meio da explicação. Com o foco num campo (inclusive a barra de tempo do
+     player, que é um input), as teclas ficam com o campo. */
+  document.addEventListener('keydown', ev => {
+    if (!PROF_MODE || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    if (!$('screen-quiz').classList.contains('active') || !$('prof-card')) return;
+    const alvo = ev.target && ev.target.tagName || '';
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(alvo) || (ev.target && ev.target.isContentEditable)) return;
+    const k = ev.key;
+    let feito = true;
+    if (k === 'ArrowRight' || k === 'PageDown') profNext();
+    else if (k === 'ArrowLeft' || k === 'PageUp') profPrev();
+    else if (k === ' ' || k === 'Enter') { if (state.profQ) profReveal(state.profQ); }
+    else {
+      /* A–D (e as letras seguintes do banco do SIELE, que chega a 15
+         opções) e 1–9. O clique simulado passa pela mesma regra do mouse,
+         inclusive a votação múltipla. */
+      const n = LETTERS.indexOf(k.toUpperCase());
+      const d = /^[1-9]$/.test(k) ? Number(k) - 1 : -1;
+      const b = $('prof-opt-' + (n >= 0 ? n : d));
+      if ((n >= 0 || d >= 0) && b) b.click();
+      else feito = false;
+    }
+    if (!feito) return;
+    ev.preventDefault();
+    /* Sem isto, o Espaço ou o Enter sobre um botão com foco (a opção que o
+       professor acabou de clicar) também o acionaria. */
+    if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur();
+  });
 
 
   /* ── Som discreto de acerto ──────────────────────────────────────────────
@@ -2970,10 +3207,13 @@
     if (ex && q.expl) { ex.textContent = '💡 ' + q.expl; ex.classList.add('show'); }
     const btn = $('prof-reveal');
     if (btn) btn.disabled = true;
+    profEncaixa();   // a explicação aberta também tem de caber
   }
 
   function profEnd() {
     stopAllAudio();
+    $('prof-bar').classList.remove('on');
+    state.profQ = null;
     const body = $('quiz-body');
     body.innerHTML = '<div class="end-note"><h2>🎉 Fim do ' + rotuloComTag(state.scope.label) + '!</h2>' +
       '<p>Todas as ' + state.steps.length + ' questões foram conduzidas.</p>' +
@@ -3006,6 +3246,9 @@
    aluno de espanhol não pode receber o tour do MET. */
 (function(){
   if(!window.FiskTour) return;
+  /* No modo professor a tela está na TV (17/09/2026): o tour é do aluno
+     ("digite seu nome", "sua nota") e cobriria a home na frente da turma. */
+  if(new URLSearchParams(location.search).get('modo')==='professor') return;
   var exame=(new URLSearchParams(location.search).get('exame')||'met').toLowerCase();
   var siele=(exame==='siele');
   function vis(sel){ var el=document.querySelector(sel); return !!(el && el.offsetParent!==null); }
