@@ -1276,7 +1276,11 @@
       const raw = localStorage.getItem(saveKey());
       if (!raw) return;
       const saved = JSON.parse(raw);
-      if (saved && saved.answers && Object.keys(saved.answers).length) {
+      /* Retoma também quem só OUVIU. Antes a retomada exigia resposta marcada:
+         o aluno que tocava o áudio da Q1 e recarregava antes de responder
+         voltava a uma prova nova, com o áudio liberado de novo. */
+      const temAlgo = o => !!(o && Object.keys(o).length);
+      if (saved && (temAlgo(saved.answers) || temAlgo(saved.playedAudio))) {
         state.answers = saved.answers;
         state.phaseIdx = Math.min(saved.phaseIdx || 0, state.phases.length - 1);
         state.playedAudio = saved.playedAudio || {};
@@ -1704,6 +1708,21 @@
       return '<div class="pick-lock">🔒 <span>Complete' + pilulas
         + ' para liberar</span></div>';
     }
+    /* SOON: prova que só abre numa data (`liberaEm`, "AAAA-MM-DD", no banco).
+       Pedido do Pedro em 24/09/2026 para a PEARL: entra no ar antes, mas o
+       aluno só a faz a partir do dia. Até lá o card aparece, cinza, com o
+       Soon e a data, e não abre. O professor abre sempre, para preparar a
+       aula. A data é a do aparelho: adiantar o relógio abre a prova, e isso é
+       aceitável porque o gabarito é do servidor e o prejuízo é só do aluno. */
+    function hojeISO() {
+      const h = new Date();
+      return h.getFullYear() + '-' + String(h.getMonth() + 1).padStart(2, '0') + '-' + String(h.getDate()).padStart(2, '0');
+    }
+    function emBreve(d) { return !PROF_MODE && !!d.liberaEm && hojeISO() < d.liberaEm; }
+    function soonHTML(d) {
+      const p = String(d.liberaEm).split('-');
+      return '<div class="pick-lock">⏳ <span>Soon · disponível em ' + p[2] + '/' + p[1] + '</span></div>';
+    }
     function aplicaTranca(botao, d, faltam) {
       botao.classList.add('is-locked');
       botao.setAttribute('aria-disabled', 'true');
@@ -1755,6 +1774,7 @@
     /* Abrir uma prova é trocar o banco em uso e só então começar. A cor da
        tela acompanha, senão o aluno faria o EMERALD numa página vermelha. */
     function abrir(d, scope) {
+      if (emBreve(d)) return;   // o Soon vale também para quem chamar abrir() sem passar pelo card
       if (DATA !== d) aplicarBanco(d);
       document.documentElement.style.setProperty('--cor-exame', d.cor || '#d81f26');
       startPractice(scope);
@@ -1782,11 +1802,12 @@
       // o tour guiado aponta para o primeiro card do completo
       if (i === 0) b.dataset.scope = 'full';
       const travaF = pendencias(d, MAPA);
-      b.innerHTML = '<div class="pick-icon">' + (travaF.length ? '🔒' : '🎓') + '</div>'
+      const soonF = emBreve(d);
+      b.innerHTML = '<div class="pick-icon">' + (soonF ? '⏳' : travaF.length ? '🔒' : '🎓') + '</div>'
         + '<h3>' + esc(rot) + tagHTML(d) + '</h3>'
         + '<p>' + esc(d.fullDesc || DESC_PADRAO) + '</p>'
-        + (travaF.length ? trancaHTML(travaF) : barra(d, { type: 'full', id: 'full' }));
-      if (travaF.length) aplicaTranca(b, d, travaF);
+        + (soonF ? soonHTML(d) : travaF.length ? trancaHTML(travaF) : barra(d, { type: 'full', id: 'full' }));
+      if (soonF || travaF.length) aplicaTranca(b, d, travaF);
       b.addEventListener('click', () => {
         if (b.classList.contains('is-locked')) return;
         abrir(d, { type: 'full', id: 'full', label: rot + ' ' + tagDe(d) });
@@ -1818,11 +1839,12 @@
         b.className = 'pick-card pick-mini';
         b.style.setProperty('--accent', d.cor || '#d81f26');
         const travaM = pendencias(d, MAPA);
-        b.innerHTML = '<div class="pick-icon">' + (travaM.length ? '🔒' : '⚡️') + '</div>'
+        const soonM = emBreve(d);
+        b.innerHTML = '<div class="pick-icon">' + (soonM ? '⏳' : travaM.length ? '🔒' : '⚡️') + '</div>'
           + '<h3>' + esc(m.name) + tagHTML(d) + '</h3>'
           + '<p>' + esc(m.desc) + '</p>'
-          + (travaM.length ? trancaHTML(travaM) : barra(d, { type: 'mini', id: m.id }));
-        if (travaM.length) aplicaTranca(b, d, travaM);
+          + (soonM ? soonHTML(d) : travaM.length ? trancaHTML(travaM) : barra(d, { type: 'mini', id: m.id }));
+        if (soonM || travaM.length) aplicaTranca(b, d, travaM);
         b.addEventListener('click', () => {
           if (b.classList.contains('is-locked')) return;
           abrir(d, { type: 'mini', id: m.id, label: m.name + ' ' + tagDe(d) });
@@ -2157,20 +2179,42 @@
       note.textContent = '⚠️ This audio plays ONLY ONCE, press play when you are ready.';
       wrap.appendChild(note);
     }
-    function lockUI() {
+    /* TOCA UMA VEZ, DE VERDADE (24/09/2026, pedido do Pedro). Antes o áudio
+       só era marcado como ouvido no 'ended': quem recarregasse a página no
+       meio ouvia tudo de novo desde o começo, e o botão virava pausa, então
+       dava para parar e pensar no meio da conversa. Agora a marca nasce no
+       'play' e é gravada na hora; o botão fica cinza enquanto toca e não
+       pausa. Recarregar ou sair no meio não devolve o áudio: a parte que não
+       foi ouvida está perdida, como na prova oficial.
+       A única pausa aceita é a que o aluno não pediu (outro player tocou, o
+       sistema interrompeu): aí o botão volta para CONTINUAR do mesmo ponto,
+       nunca do começo. Continuar não é ouvir de novo. */
+    function lockUI(motivo) {
       play.disabled = true;
       play.style.opacity = '.35';
       play.style.cursor = 'not-allowed';
-      note.textContent = '✔ Audio played. In the full test, each audio plays only once, just like in the official exam.';
+      play.style.background = '#9CA3AF';
+      play.innerHTML = '▶';
+      note.textContent = motivo === 'tocando'
+        ? '🔊 Playing. This audio will not be played again.'
+        : '✔ Audio played. In the full test, each audio plays only once, just like in the official exam.';
     }
     const alreadyPlayed = () => !!(state.playedAudio && state.playedAudio[unit.id]);
+    let tocouAqui = false;   // começou NESTA página (e não numa visita anterior)
     if (oneShot && alreadyPlayed()) lockUI();
     if (oneShot) {
-      audio.addEventListener('ended', () => {
-        state.playedAudio[unit.id] = true;
-        persist();
-        lockUI();
+      audio.addEventListener('play', () => {
+        tocouAqui = true;
+        if (!alreadyPlayed()) { state.playedAudio[unit.id] = true; persist(); }
+        lockUI('tocando');
       });
+      audio.addEventListener('pause', () => {
+        if (audio.ended) return;
+        // pausa que o aluno não pediu: libera só o CONTINUAR
+        play.disabled = false; play.style.opacity = ''; play.style.cursor = ''; play.style.background = '';
+        note.textContent = '⏸ Audio interrupted. Press play to continue from where it stopped.';
+      });
+      audio.addEventListener('ended', () => lockUI());
     }
 
     if (!oneShot && cues && cues.length) {
@@ -2190,11 +2234,14 @@
     }
 
     function playThis() {
-      if (oneShot && alreadyPlayed()) return;
+      if (oneShot && alreadyPlayed() && (!tocouAqui || audio.ended)) return;
       players.forEach((p, id) => { if (id !== unit.id) p.audio.pause(); });
       audio.play();
     }
-    play.addEventListener('click', () => { audio.paused ? playThis() : audio.pause(); });
+    play.addEventListener('click', () => {
+      if (!audio.paused) { if (!oneShot) audio.pause(); return; }
+      playThis();
+    });
     restart.addEventListener('click', () => { audio.currentTime = 0; playThis(); });
     back5.addEventListener('click', () => { audio.currentTime = Math.max(0, audio.currentTime - 5); });
     fwd5.addEventListener('click', () => { audio.currentTime = Math.min(audio.duration || 1e9, audio.currentTime + 5); });
@@ -2205,7 +2252,7 @@
       audio.playbackRate = speeds[spIdx];
       speed.textContent = String(speeds[spIdx]).replace('.', ',') + '×';
     });
-    audio.addEventListener('play', () => play.innerHTML = '⏸');
+    audio.addEventListener('play', () => { if (!oneShot) play.innerHTML = '⏸'; });
     audio.addEventListener('pause', () => play.innerHTML = '▶');
     audio.addEventListener('loadedmetadata', () => tTot.textContent = fmtTime(audio.duration));
     audio.addEventListener('timeupdate', () => {
