@@ -1105,6 +1105,10 @@
      nem do aluno logado, nem solto. Para publicar, tire o `rascunho` do JSON. */
   const EXAMS = { met: 'questions/red.json', siele: 'questions/siele-m0.json',
                   emerald: 'questions/emerald.json', amber: 'questions/amber.json',
+                  /* PEARL: a MET 2603 A oficial (setembro de 2026), com o áudio
+                     da banca. Entrou em 24/09/2026 com `liberaEm`: até o dia,
+                     o aluno vê o card como "Soon". */
+                  pearl: 'questions/pearl.json',
                   /* Modelo 1 do SIELE, escrito pela Fisk (o m0 é o oficial de
                      2019). Liberado em 01/09/2026, depois de o Pedro ouvir e
                      aprovar os seis áudios de audio/siele-m1/ (gerados por
@@ -1121,8 +1125,8 @@
      home só o abre para quem já fechou o RED e o EMERALD. O SIELE é outro
      exame e fica sozinho: misturar as famílias mandaria o aluno de espanhol
      fazer o MET. */
-  const FAMILIAS = { met: ['met', 'emerald', 'amber'], emerald: ['met', 'emerald', 'amber'],
-                     amber: ['met', 'emerald', 'amber'],
+  const FAMILIAS = { met: ['met', 'emerald', 'amber', 'pearl'], emerald: ['met', 'emerald', 'amber', 'pearl'],
+                     amber: ['met', 'emerald', 'amber', 'pearl'], pearl: ['met', 'emerald', 'amber', 'pearl'],
                      /* O SIELE tem DOIS modelos desde 01/09/2026: o m0, que é o
                         oficial de 2019, e o m1, escrito pela Fisk. Dividem a
                         mesma home, como as três provas do MET. Entrar aqui só
@@ -1564,6 +1568,59 @@
     return d;
   }
 
+  /* ══ PROVA CIFRADA (24/09/2026) ══════════════════════════════════════════
+     A PEARL é uma forma OFICIAL e "SECURE TEST" da Michigan, e este
+     repositório é público. No GitHub ela mora cifrada (AES-256-GCM): o
+     `pearl.json` é só o esqueleto que a home precisa (cor, seções, minis, a
+     CONTAGEM de questões) mais `cifra`, o banco inteiro; cada áudio é um
+     `.mp3.enc`. A chave vem do backend (rota `provaChave`), que só a entrega
+     a RAF do roster a partir de `liberaEm`, ou antes disso a quem tem a chave
+     do professor (a mesma do painel de resultados, guardada neste aparelho).
+     A fonte e o cifrador: fisk-hub-backend/provas-privadas/pearl/.
+     Nada disso impede quem já tem acesso de gravar a tela; tira a prova do
+     alcance público. */
+  const b64bytes = b => Uint8Array.from(atob(b), c => c.charCodeAt(0));
+  async function decifra(chave, bytes) {
+    return crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes.slice(0, 12) }, chave, bytes.slice(12));
+  }
+  async function abreCofre(d) {
+    if (d._chave) return;
+    let tkey = '';
+    try { tkey = localStorage.getItem('met_teacher_key') || ''; } catch (e) {}
+    const raf = state.studentRaf || (fiskParams().get('raf') || '').trim();
+    let res;
+    try {
+      res = await fetch(CLOUD.endpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action: 'provaChave', key: CLOUD.appKey, prova: d.id, raf: raf, tkey: tkey }) })
+        .then(r => r.json());
+    } catch (e) { throw new Error('rede'); }
+    if (!res || !res.ok) throw new Error((res && res.cod) || 'recusa');
+    const chave = await crypto.subtle.importKey('raw', b64bytes(res.chave), 'AES-GCM', false, ['decrypt']);
+    const banco = JSON.parse(new TextDecoder().decode(await decifra(chave, b64bytes(d.cifra))));
+    /* Troca o conteúdo NO MESMO objeto: os cards da home guardam a referência. */
+    Object.keys(d).forEach(k => { delete d[k]; });
+    Object.assign(d, normaliza(banco));
+    d._chave = chave;
+    d._audios = {};
+  }
+  const COFRE_MSG = {
+    soon: 'Esta prova ainda não foi liberada.',
+    sem_raf: 'Esta prova é feita só pelo Portal do Aluno. Entre por lá, no card do Treino MET.',
+    raf: 'Não encontramos o seu RAF. Entre pelo Portal do Aluno, no card do Treino MET.',
+    rede: 'Sem conexão para abrir esta prova. Confira a internet e tente de novo.'
+  };
+  /* O áudio de uma prova cifrada: baixa o .enc, decifra e vira um blob local.
+     Guarda a promessa, para o mesmo arquivo não ser baixado duas vezes. */
+  function audioCifrado(d, arq) {
+    if (!d._audios[arq]) {
+      d._audios[arq] = fetch(d.audioBase + arq + '.enc')
+        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer(); })
+        .then(buf => decifra(d._chave, new Uint8Array(buf)))
+        .then(claro => URL.createObjectURL(new Blob([claro], { type: 'audio/mpeg' })));
+    }
+    return d._audios[arq];
+  }
+
   /* Põe um banco em uso. Os índices são RECONSTRUÍDOS do zero: `gr-q51` existe
      nos dois bancos, e um mapa acumulado devolveria a questão da prova errada.
      Este é o erro que o aluno não veria acontecer, só o resultado estranho. */
@@ -1773,8 +1830,19 @@
 
     /* Abrir uma prova é trocar o banco em uso e só então começar. A cor da
        tela acompanha, senão o aluno faria o EMERALD numa página vermelha. */
-    function abrir(d, scope) {
+    async function abrir(d, scope) {
       if (emBreve(d)) return;   // o Soon vale também para quem chamar abrir() sem passar pelo card
+      if (d.cifra) {
+        try { await abreCofre(d); }
+        catch (e) {
+          const cod = e.message;
+          alert(cod === 'soon' && d.liberaEm
+            ? 'Esta prova ainda não foi liberada. Ela abre em ' + d.liberaEm.split('-').reverse().join('/') + '.'
+            : (COFRE_MSG[cod] || 'Não foi possível abrir esta prova agora. Tente de novo em instantes.'));
+          return;
+        }
+        aplicarBanco(d);   // o banco acabou de ganhar conteúdo: reconstrói os índices mesmo se já era o DATA
+      }
       if (DATA !== d) aplicarBanco(d);
       document.documentElement.style.setProperty('--cor-exame', d.cor || '#d81f26');
       startPractice(scope);
@@ -2139,7 +2207,8 @@
   /* ══════════════ Player de áudio ══════════════ */
   function getPlayer(unit, audioFile, cues, oneShot) {
     if (players.has(unit.id)) return players.get(unit.id).el;
-    const audio = new Audio(DATA.audioBase + audioFile);
+    const cifrado = !!DATA._chave;
+    const audio = cifrado ? new Audio() : new Audio(DATA.audioBase + audioFile);
     audio.preload = 'none';
     const wrap = document.createElement('div');
     wrap.className = 'player';
@@ -2262,6 +2331,24 @@
     seek.addEventListener('input', () => {
       if (audio.duration) audio.currentTime = seek.value / 1000 * audio.duration;
     });
+
+    /* Prova cifrada: o botão só acende quando o áudio já foi decifrado. No
+       completo isso importa: o play gasta a única vez, e não pode gastar num
+       arquivo que ainda nem chegou. */
+    if (cifrado) {
+      const d = DATA;
+      play.disabled = true; play.style.opacity = '.5';
+      const avisoAntes = note.textContent;
+      note.textContent = '⏳ Loading audio…';
+      if (!note.parentNode) wrap.appendChild(note);
+      audioCifrado(d, audioFile).then(url => {
+        audio.src = url;
+        audio.load();
+        note.textContent = avisoAntes;
+        if (!note.textContent) note.remove();
+        if (!(oneShot && alreadyPlayed())) { play.disabled = false; play.style.opacity = ''; }
+      }).catch(() => { note.textContent = '⚠️ Could not load this audio. Check your connection and reload the page.'; });
+    }
 
     players.set(unit.id, { el: wrap, audio });
     return wrap;

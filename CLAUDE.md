@@ -38,3 +38,24 @@ Modo professor (desde 17/09/2026, o mesmo desenho do Quick Practice,
   fragmento. O aluno comum, sem `modo`, não vê.
 - A barra e a linha de atalhos ficam em inglês no MET e em espanhol no SIELE
   (`PROF_TXT`); os botões da barra continuam em português.
+
+## PEARL: prova oficial CIFRADA (desde 24/09/2026)
+
+A PEARL é a MET 2603 A, forma **oficial** e "SECURE TEST" da Michigan. Este
+repositório é público, então ela mora aqui **cifrada** (AES-256-GCM):
+
+- `questions/pearl.json` é só o esqueleto que a home precisa (cor, seções,
+  minis, a contagem de questões) mais `cifra`, o banco inteiro cifrado;
+- `audio/pearl/*.mp3.enc` são os áudios oficiais, cifrados.
+
+Ao abrir, `abreCofre()` pede a chave ao backend (rota `provaChave`), decifra
+o banco no mesmo objeto e os áudios viram blobs locais (`audioCifrado`). A
+chave só sai para RAF do roster a partir de `liberaEm` (01/11/2026; até lá o
+card é "Soon"), ou antes disso para quem tem a chave do professor salva no
+aparelho. **A fonte em claro e o cifrador não moram aqui**: estão em
+`fisk-hub-backend/provas-privadas/pearl/` (repositório privado). Nunca
+commitar o `pearl.json` em claro, os MP3 da PEARL ou os scripts que os montam
+neste repositório.
+
+A PEARL **não tem `expl`** (decisão do Pedro): o Teacher Mode revela só a
+letra.
