@@ -125,6 +125,16 @@
       flex-shrink: 0;
     }
     .back-btn:hover { color: #fff; }
+    body:not(:has(#screen-home.active)) #mst-back { display: none; }
+    /* O logo nas barras das telas internas: o mesmo destino do logo da home.
+       Na prova ele é só a marca (sem link), para um toque não tirar o aluno
+       do simulado. */
+    .qh-logo { display: inline-flex; flex: none; line-height: 0; border-radius: 6px; transition: opacity .12s; }
+    .qh-logo img { height: 24px; width: auto; display: block; }
+    a.qh-logo:hover { opacity: .85; }
+    a.qh-logo:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .quiz-header > div:not([class]) { min-width: 0; }
+    @media (max-width: 420px) { .qh-logo img { height: 20px; } }
 
     /* ── Screens / container ── */
     .screen { display: none; flex-direction: column; flex: 1; }
@@ -862,8 +872,11 @@
   <!-- Voltar. Esta ferramenta atende professor (vem do Fisk Hub) e aluno (vem
        do Portal): quem chega com ?raf= veio do Portal. Com histórico na aba,
        volta de verdade, que devolve a página exata de origem. -->
+  <!-- ⚠️ SÓ NA TELA INICIAL (09/10/2026): era `position:fixed` com z-index 9999
+       em TODAS as telas, e na prova ficava em cima do "← Sair" (medido a 375px).
+       Quem tocava em "Sair" saía da ferramenta sem passar pela confirmação. -->
   <a href="https://pedro-fisk.github.io/fisk-hub/" id="mst-back"
-     style="position:fixed;top:10px;left:12px;z-index:9999;font:700 .82rem/1 system-ui,sans-serif;
+     style="position:absolute;top:10px;left:12px;z-index:40;font:700 .82rem/1 system-ui,sans-serif;
             color:#fff;background:rgba(0,0,0,.55);padding:.5rem .7rem;border-radius:999px;
             text-decoration:none;backdrop-filter:blur(4px)">&#8592; Voltar</a>
 
@@ -948,6 +961,7 @@
         <div class="qh-sub">Leia com atenção antes de começar</div>
       </div>
       <div class="qh-spacer"></div>
+      <a class="qh-logo" data-home href="https://portalfisk.com.br/" aria-label="Início"><img src="assets/fisk-logo.png" alt="Fisk"></a>
       <button class="theme-toggle" id="theme-toggle-5" title="Alternar tema" style="position:relative;top:auto;right:auto">🌙</button>
     </div>
     <main class="container" style="flex:1">
@@ -970,6 +984,7 @@
         <div class="qh-sub" id="qh-sub"></div>
       </div>
       <div class="qh-spacer"></div>
+      <span class="qh-logo"><img src="assets/fisk-logo.png" alt="Fisk"></span>
       <div class="qh-timer" id="qh-timer" style="display:none">65:00</div>
       <button class="theme-toggle" id="theme-toggle-2" title="Alternar tema" style="position:relative;top:auto;right:auto">🌙</button>
     </div>
@@ -1001,6 +1016,7 @@
         <div class="qh-sub">Registros deste navegador + códigos importados</div>
       </div>
       <div class="qh-spacer"></div>
+      <a class="qh-logo" data-home href="https://portalfisk.com.br/" aria-label="Início"><img src="assets/fisk-logo.png" alt="Fisk"></a>
       <button class="theme-toggle" id="theme-toggle-4" title="Alternar tema" style="position:relative;top:auto;right:auto">🌙</button>
     </div>
     <main class="container" style="flex:1">
@@ -1035,6 +1051,7 @@
         <div class="qh-sub" id="results-sub"></div>
       </div>
       <div class="qh-spacer"></div>
+      <a class="qh-logo" data-home href="https://portalfisk.com.br/" aria-label="Início"><img src="assets/fisk-logo.png" alt="Fisk"></a>
       <button class="theme-toggle" id="theme-toggle-3" title="Alternar tema" style="position:relative;top:auto;right:auto">🌙</button>
     </div>
     <main class="container" style="flex:1">
@@ -1095,6 +1112,8 @@
     qs.set('modo', PROF_MODE ? 'aluno' : 'professor');
     a.href = location.pathname + '?' + qs.toString() + location.hash;
     a.textContent = PROF_MODE ? PROF_TXT.trocaAluno : PROF_TXT.trocaProf;
+    /* troca no lugar: o voltar do navegador continua levando de onde a pessoa veio */
+    a.addEventListener('click', function (ev) { ev.preventDefault(); location.replace(a.href); });
   })();
 
   /* Qual exame abrir: ?exame=met (padrão, inglês) ou ?exame=siele (espanhol, S1).
@@ -3429,9 +3448,7 @@
 (function () {
   var el = document.getElementById('mst-back');
   if (!el) return;
-  /* O logo da home segue a MESMA regra deste botão: mesmo destino, mesmo
-     `history.back()`. Ele é tratado à parte só porque o `innerHTML` abaixo
-     apagaria a imagem e deixaria a seta escrita no lugar do logo. */
+  /* O logo da home segue a MESMA regra deste botão: mesmo destino. */
   var logo = document.getElementById('logo-home');
   /* Quem chegou com ?raf= veio do Portal e volta para lá, não para o Hub.
      O parâmetro é o sinal, mesmo VAZIO: a direção entra com raf em branco, e
@@ -3448,15 +3465,16 @@
   if (qs.has('raf')) {
     el.href = 'https://portalfisk.com.br/' + (raf ? '#raf=' + encodeURIComponent(raf) : '');
     el.innerHTML = '&#8592; Portal do Aluno';
-    if (logo) logo.href = el.href;
   }
-  /* Voltar de verdade preserva a página do Portal como ela estava, sem
-     recarregar nada. O href acima é a rede de segurança. */
-  function voltar(ev) {
-    if (history.length > 1) { ev.preventDefault(); history.back(); }
-  }
-  el.addEventListener('click', voltar);
-  if (logo) logo.addEventListener('click', voltar);
+  /* SEM `history.back()` (09/10/2026). Ele devolvia "a página anterior da
+     aba", que nem sempre é o Portal: depois de trocar de modo era a própria
+     ferramenta no outro modo, e numa aba aberta por link era outro site. O
+     href já leva o RAF, e o Portal entra direto com ele. O logo, sem `raf`,
+     apontava para o Portal enquanto o voltar ia ao Hub: agora os dois (e os
+     logos das telas internas) saem do mesmo endereço. */
+  var casas = document.querySelectorAll('[data-home]');
+  for (var i = 0; i < casas.length; i++) casas[i].href = el.href;
+  if (logo) logo.href = el.href;
 })();
 </script>
 </body>
